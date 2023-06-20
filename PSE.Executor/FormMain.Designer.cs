@@ -174,6 +174,7 @@
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 6;
             pictureBoxLogo.TabStop = false;
+            pictureBoxLogo.Visible = false;
             // 
             // FormMain
             // 
@@ -188,7 +189,7 @@
             Controls.Add(buttonBrowseSourceFiles);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormMain";
-            Text = "Apsoft SA - Portfolio Statement Extractor";
+            Text = "Portfolio Statement Extractor";
             tabControl.ResumeLayout(false);
             tabPageLog.ResumeLayout(false);
             tabPageOutput.ResumeLayout(false);

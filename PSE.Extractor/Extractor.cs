@@ -20,10 +20,10 @@ namespace PSE.Extractor
             {
                 return recordContent.Trim()[..3].ToUpper() switch
                 {
-                    nameof(CUR) => typeof(CUR),
+                    //nameof(CUR) => typeof(CUR),
                     nameof(IDE) => typeof(IDE),
                     nameof(PER) => typeof(PER),
-                    nameof(POR) => typeof(POR),
+                    //nameof(POR) => typeof(POR),
                     nameof(POS) => typeof(POS),
                     _ => null,
                 };

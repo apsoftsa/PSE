@@ -10,6 +10,8 @@
     <FileVersion>1.0.0</FileVersion>
     <IsPublishable>True</IsPublishable>
     <ApplicationIcon>Images\icon.ico</ApplicationIcon>
+    <Copyright>Apsoft SA Copyright 2023</Copyright>
+    <PackageIcon>LogoApsoft.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +37,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Images\LogoApsoft.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

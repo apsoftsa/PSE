@@ -9,3 +9,6 @@ PSE.Extractor/obj/
 PSE.Model/.vs/
 PSE.Model/bin/
 PSE.Model/obj/
+.vs/
+PSE.Executor/bin/
+PSE.Executor/Properties/PublishProfiles/FolderProfile.pubxml.user
