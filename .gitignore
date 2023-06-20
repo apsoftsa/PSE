@@ -1,0 +1,11 @@
+PSE.Builder/bin/
+PSE.Builder/obj/
+PSE.BusinessLogic/bin/
+PSE.BusinessLogic/obj/
+PSE.Executor/bin/Debug/
+PSE.Executor/obj/
+PSE.Extractor/bin/
+PSE.Extractor/obj/
+PSE.Model/.vs/
+PSE.Model/bin/
+PSE.Model/obj/
