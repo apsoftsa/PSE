@@ -7,7 +7,7 @@ namespace PSE.Model.Input.Models
 
     [FixedLengthRecord(FixedMode.AllowMoreChars)]
     [IgnoreEmptyLines()]
-    public class IDE : InputRecord
+    public class IDE : InputRecordB
     {
 
         [FieldFixedLength(2)]

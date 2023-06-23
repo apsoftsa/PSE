@@ -7,7 +7,7 @@ namespace PSE.Model.Input.Models
 
     [FixedLengthRecord(FixedMode.AllowMoreChars)]
     [IgnoreEmptyLines()]
-    public class POS : InputRecord
+    public class POS : InputRecordB
     {
 
         [FieldFixedLength(5)]
@@ -131,8 +131,8 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldConverter(ConverterKind.Int32, ".")]
-        public int? Quantity_28 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        public decimal? Quantity_28 { get; set; }
 
         [FieldFixedLength(15)]
         [FieldOptional]

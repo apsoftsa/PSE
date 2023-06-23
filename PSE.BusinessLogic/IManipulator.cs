@@ -4,7 +4,7 @@ using PSE.Model.Output.Interfaces;
 namespace PSE.BusinessLogic
 {
 
-    public interface IManipolator
+    public interface IManipulator
     {
 
         IOutputModel Manipulate(IList<IInputRecord> extractedData);

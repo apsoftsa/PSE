@@ -12,7 +12,7 @@
 
         string Service { get; set; }
 
-        int? RiskProfile { get; set; }
+        string RiskProfile { get; set; }
 
         decimal? PercentWeightedPerformance { get; set; }
 

@@ -7,7 +7,7 @@ namespace PSE.Model.Input.Models
 
     [FixedLengthRecord(FixedMode.AllowMoreChars)]
     [IgnoreEmptyLines()]
-    public class POR : InputRecord
+    public class POR : InputRecordB
     {
 
         // to-do ...

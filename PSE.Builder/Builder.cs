@@ -2,11 +2,11 @@
 using PSE.Model.Input.Models;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output;
+using PSE.Model.Output.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.BusinessLogic;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
-using PSE.Model.Output.Models;
-using PSE.Model.Output.Common;
 
 namespace PSE.Builder
 {
@@ -14,28 +14,111 @@ namespace PSE.Builder
     public class Builder : IBuilder
     {
 
-        private static bool CheckParamsCompatibility(IBuiltData buildData, IList<IInputRecord> extractedData, ManipolationTypes manipolationType, BuildFormats formatToBuild)
+        private static void CheckInputData(IBuiltData buildData, IList<IInputRecord> extractedData, ManipolationTypes manipolationType, bool isMandatory, BuildFormats formatToBuild)
         {
-            bool _checked = false;
             if (formatToBuild != BuildFormats.Undefined)
             {
                 if (manipolationType != ManipolationTypes.Undefined)
                 {
                     if (extractedData != null && extractedData.Any())
                     {
-                        bool _inputOutputCompatible = false;
-                        if (manipolationType == ManipolationTypes.AsSection3
-                            && extractedData.Any(_flt => _flt.RecordType == nameof(IDE))
-                            && extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
-                            _inputOutputCompatible = true;
-                        else
+                        switch (manipolationType)
                         {
-                            buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
-                                $"at least one input record data source having the formats: '{nameof(IDE)}, {nameof(PER)}' must be provided!";
-                            buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                            case ManipolationTypes.AsHeader:
+                                {
+                                    if (extractedData.Any()) // !!!! temporaneo, manca analisi
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    else if (isMandatory)
+                                    {
+                                        buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                            "at least one input element into data source having must be provided!";
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                    }
+                                    else
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                }
+                                break;
+                            case ManipolationTypes.AsSection1:
+                                {
+                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)))
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    else if(isMandatory)
+                                    {
+                                        buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                            $"at least one input record data source having the format ' { nameof(IDE) } ' must be provided!";
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                    }
+                                    else
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                }
+                                break;
+                            case ManipolationTypes.AsSection3:
+                                {
+                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
+                                        extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    else if(isMandatory)
+                                    {
+                                        buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                            $"at least one input record data source having the formats: '{nameof(IDE)}, {nameof(PER)}' must be provided!";
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                    }
+                                    else
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                }
+                                break;
+                            case ManipolationTypes.AsSection8:
+                            case ManipolationTypes.AsSection12:
+                            case ManipolationTypes.AsSection15:
+                                {
+                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+                                    {
+                                        IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>();
+                                        if ((manipolationType == ManipolationTypes.AsSection8 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION8))
+                                            || (manipolationType == ManipolationTypes.AsSection12 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12))
+                                            || (manipolationType == ManipolationTypes.AsSection15 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION15)))
+                                            buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                        else if (isMandatory)
+                                        {
+                                            string _subCatCode = string.Empty;
+                                            switch (manipolationType)
+                                            {
+                                                case ManipolationTypes.AsSection8:
+                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION8;
+                                                    break;
+                                                case ManipolationTypes.AsSection12:
+                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION12;
+                                                    break;
+                                                case ManipolationTypes.AsSection15:
+                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION15;
+                                                    break;
+                                            }
+                                            buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                                $"at least one input record having format '{nameof(POS)}' and sub-category code '{ _subCatCode }' must be provided!";
+                                            buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                        }
+                                        else
+                                            buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                    }
+                                    else if (isMandatory)
+                                    {
+                                        buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                            $"at least one input record data source having the format '{nameof(POS)}' must be provided!";
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                    }
+                                    else
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                }
+                                break;
+                            case ManipolationTypes.Undefined:
+                            default:
+                                {
+                                    buildData.BuildingLog.FurtherErrorMessage = "If the manipolation type requested is undefined or unknown, " +
+                                        "it is impossible to determinate its compatibility respeact at the input data!";
+                                    buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                }
+                                break;
                         }
-                        if (_inputOutputCompatible)
-                            _checked = true;
                     }
                     else
                     {
@@ -54,21 +137,20 @@ namespace PSE.Builder
                 buildData.BuildingLog.FurtherErrorMessage = "Build output format unknown!";
                 buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
             }
-            return _checked;
         }
 
         private static IOutputModel? ManipulateInputData(IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
-            IOutputModel? _output;
-            switch (manipolationType)
+            IOutputModel? _output = manipolationType switch
             {
-                case ManipolationTypes.AsSection3:
-                    _output = new ManipolatorSection3().Manipulate(extractedData);
-                    break;
-                default:
-                    _output = null;
-                    break;
-            }
+                ManipolationTypes.AsHeader => new ManipulatorHeader().Manipulate(extractedData),
+                ManipolationTypes.AsSection1 => new ManipulatorSection1().Manipulate(extractedData),
+                ManipolationTypes.AsSection3 => new ManipulatorSection3().Manipulate(extractedData),
+                ManipolationTypes.AsSection8 => new ManipulatorSection8().Manipulate(extractedData),
+                ManipolationTypes.AsSection12 => new ManipulatorSection12().Manipulate(extractedData),
+                ManipolationTypes.AsSection15 => new ManipulatorSection15().Manipulate(extractedData),
+                _ => null,
+            };
             return _output;
         }
 
@@ -94,17 +176,26 @@ namespace PSE.Builder
 
         public IBuiltData Build(IList<IInputRecord> extractedData, BuildFormats formatToBuild)
         {
-            List<ManipolationTypes> _manipolationTypesToManage = new List<ManipolationTypes>() { ManipolationTypes.AsSection3 };
+            Dictionary<ManipolationTypes, bool> _manipolationTypesToManage = new Dictionary<ManipolationTypes, bool>() 
+            {
+                { ManipolationTypes.AsHeader, true },
+                { ManipolationTypes.AsSection1, true },
+                { ManipolationTypes.AsSection3, true },
+                { ManipolationTypes.AsSection8, false },
+                { ManipolationTypes.AsSection12, false },
+                { ManipolationTypes.AsSection15, false }
+            };
             IBuiltData _buildData = new BuiltData();
             IList<IOutputModel> _sections = new List<IOutputModel>();
             try
             {
                 _buildData.BuildingLog.BuildingStart = DateTime.Now;
-                foreach (ManipolationTypes _manipolationTypeToManage in _manipolationTypesToManage)
+                foreach (KeyValuePair<ManipolationTypes, bool> _manipolationTypeToManage in _manipolationTypesToManage)
                 {
-                    if (CheckParamsCompatibility(_buildData, extractedData, _manipolationTypeToManage, formatToBuild))
+                    CheckInputData(_buildData, extractedData, _manipolationTypeToManage.Key, _manipolationTypeToManage.Value, formatToBuild);
+                    if (_buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
                     {
-                        IOutputModel? _output = ManipulateInputData(extractedData, _manipolationTypeToManage);
+                        IOutputModel? _output = ManipulateInputData(extractedData, _manipolationTypeToManage.Key);
                         if (_output != null)
                             _sections.Add(_output);
                         else

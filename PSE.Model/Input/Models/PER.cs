@@ -7,7 +7,7 @@ namespace PSE.Model.Input.Models
 
     [FixedLengthRecord(FixedMode.AllowMoreChars)]
     [IgnoreEmptyLines()]
-    public class PER : InputRecord
+    public class PER : InputRecordB
     {
 
         [FieldFixedLength(5)]

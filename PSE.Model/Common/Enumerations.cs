@@ -17,13 +17,19 @@ namespace PSE.Model.Common
         {
             Unknown = -1,
             Success = 0,
-            Failed = 1
+            Failed = 1,
+            Ignored = 2
         };
 
         public enum ManipolationTypes : int
         {
             Undefined = -1,
-            AsSection3 = 3
+            AsHeader = 0,
+            AsSection1 = 1,
+            AsSection3 = 3,
+            AsSection8 = 8,
+            AsSection12 = 12,
+            AsSection15 = 15
         };
 
         public enum BuildFormats : int

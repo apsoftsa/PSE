@@ -8,18 +8,10 @@ using static PSE.Model.Common.Constants;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipolatorSection3 : IManipolator
+    public class ManipulatorSection3 : ManipulatorBase, IManipulator
     {
 
-        private readonly CultureInfo _culture;
-
-        public ManipolatorSection3(CultureInfo? culture = null)
-        {
-            if (culture == null)
-                _culture = new CultureInfo("en-US"); // default;
-            else
-                _culture = culture;
-        }
+        public ManipulatorSection3(CultureInfo? culture = null) : base(culture) { }
 
         public IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
@@ -35,19 +27,20 @@ namespace PSE.BusinessLogic
                 IKeyInformation _currKeyInf;
                 IAssetExtract _currAsstExtr;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                List<PER> _perItems = extractedData.Where(_flt => _flt.RecordType == nameof(PER)).OfType<PER>().ToList();
                 foreach (IDE _ideItem in _ideItems) 
                 {
-                    if (extractedData.Any(_flt => _flt.RecordType == nameof(PER) && _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    if (_perItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         // it is necessary to take only the PER item having the property Type_5 value smallest
-                        PER _perItem = extractedData.Where(_flt => _flt.RecordType == nameof(PER) && _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).OfType<PER>().OrderBy(_ob => _ob.Type_5).First();
+                        PER _perItem = _perItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).OrderBy(_ob => _ob.Type_5).First();
                         _currKeyInf = new KeyInformation()
                         {
                             ClientName = _ideItem.CustomerNameShort_5,
                             ClientNumber = _ideItem.CustomerNumber_2,
                             Portfolio = _ideItem.ModelCode_21,
                             Service = _ideItem.Mandate_11,
-                            RiskProfile = 0,// to-do !!!!
+                            RiskProfile = "[RiskProfile]",
                             PercentWeightedPerformance = _perItem.TWR_14
                         };
                         _output.Content.KeysInformation.Add(new KeyInformation(_currKeyInf));

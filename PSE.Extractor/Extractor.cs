@@ -20,7 +20,7 @@ namespace PSE.Extractor
             {
                 return recordContent.Trim()[..3].ToUpper() switch
                 {
-                    //nameof(CUR) => typeof(CUR),
+                    nameof(REQ) => typeof(REQ),
                     nameof(IDE) => typeof(IDE),
                     nameof(PER) => typeof(PER),
                     //nameof(POR) => typeof(POR),
@@ -67,7 +67,7 @@ namespace PSE.Extractor
         private static void ConvertInputStream(string inputStream, IExtractedData extractedData)
         {
             MultiRecordEngine _engine = new(
-                //typeof(CUR),
+                typeof(REQ),
                 typeof(IDE),
                 typeof(PER),
                 //typeof(POR),

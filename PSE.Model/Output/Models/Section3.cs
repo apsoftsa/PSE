@@ -19,7 +19,7 @@ namespace PSE.Model.Output.Models
 
         public string Service { get; set; }
 
-        public int? RiskProfile { get; set; }
+        public string RiskProfile { get; set; }
 
         public decimal? PercentWeightedPerformance { get; set; }
 
@@ -29,7 +29,7 @@ namespace PSE.Model.Output.Models
             ClientNumber = string.Empty;
             Portfolio = string.Empty;
             Service = string.Empty;
-            RiskProfile = null;
+            RiskProfile = string.Empty;
             PercentWeightedPerformance = null;
         }
 

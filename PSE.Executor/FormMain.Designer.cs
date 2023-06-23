@@ -61,6 +61,7 @@
             // 
             openFileDialog.DefaultExt = "*.txt";
             openFileDialog.Filter = "Text fles|*.txt";
+            openFileDialog.Multiselect = true;
             openFileDialog.RestoreDirectory = true;
             openFileDialog.Title = "Source files selection...";
             // 

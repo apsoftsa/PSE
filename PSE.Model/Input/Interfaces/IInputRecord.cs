@@ -8,6 +8,20 @@
 
         string MessageType_1 { get; set; }
 
+    }
+
+    public interface IInputRecordA : IInputRecord
+    {
+        
+        string Block_2 { get; set; }
+
+        string CustomerNumber_3 { get; set; }
+
+    }
+
+    public interface IInputRecordB : IInputRecord
+    {
+
         string CustomerNumber_2 { get; set; }
 
         string Grouping_3 { get; set; }
