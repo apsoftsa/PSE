@@ -20,7 +20,7 @@ namespace PSE.BusinessLogic
                 SectionCode = OUTPUT_SECTION3_CODE,
                 SectionName = "Portfolio Details"
             };
-            if(extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER))) 
+            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER))) 
             {
                 decimal _tmpValue1, _tmpValue2, _tot1, _tot2;
                 bool _hasValue, _hasValue1, _hasValue2;

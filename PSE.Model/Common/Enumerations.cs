@@ -27,9 +27,11 @@ namespace PSE.Model.Common
             AsHeader = 0,
             AsSection1 = 1,
             AsSection3 = 3,
+            AsSection4 = 4,
             AsSection8 = 8,
             AsSection12 = 12,
-            AsSection15 = 15
+            AsSection15 = 15,
+            AsFooter = 99
         };
 
         public enum BuildFormats : int

@@ -18,8 +18,8 @@ namespace PSE.BusinessLogic
             {
                 SectionCode = OUTPUT_HEADER_CODE,
                 SectionName = "Headers",
-                Logo = string.Empty,
-                CompanyName = string.Empty
+                Logo = "[Logo]",
+                CompanyName = "[CompanyName]"
             };
             return _headerContent;
         }

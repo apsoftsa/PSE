@@ -13,18 +13,22 @@ namespace PSE.Model.Output.Models
         public IList<IOutputModel>? Header { get; set; }
         public IOutputModel? Section1 { get; set; }
         public IOutputModel? Section3 { get; set; }
+        public IOutputModel? Section4 { get; set; }
         public IOutputModel? Section8 { get; set; }
         public IOutputModel? Section12 { get; set; }
         public IOutputModel? Section15 { get; set; }
+        public IList<IOutputModel>? Footer { get; set; }
 
         private void Init()
         {
             Header = null;
             Section1 = null;
             Section3 = null;
+            Section4 = null;    
             Section8 = null;
             Section12 = null;
             Section15 = null;
+            Footer = null;  
         }
 
         public SectionsContainer() 
@@ -50,6 +54,9 @@ namespace PSE.Model.Output.Models
                         case OUTPUT_SECTION3_CODE:
                             Section3 = _section;
                             break;
+                        case OUTPUT_SECTION4_CODE:
+                            Section4 = _section;
+                            break;
                         case OUTPUT_SECTION8_CODE:
                             Section8 = _section;
                             break;
@@ -58,6 +65,9 @@ namespace PSE.Model.Output.Models
                             break;
                         case OUTPUT_SECTION15_CODE:
                             Section15 = _section;
+                            break;
+                        case OUTPUT_FOOTER_CODE:
+                            Footer = new List<IOutputModel>() { _section };
                             break;
                     }
                 }

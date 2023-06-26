@@ -20,39 +20,44 @@ namespace PSE.BusinessLogic
                 SectionCode = OUTPUT_SECTION12_CODE,
                 SectionName = "Bonds-5-years"
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
+                IBondsMaturingLessThan5Years _bondLessThan5;
+                ISection12Content _sectionContent;
+                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => _fltSubCat.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12);
-                if (_posItems != null && _posItems.Any())
+                foreach (IDE _ideItem in _ideItems)
                 {
-                    IBondsMaturingLessThan5Years _bondLessThan5;
-                    ISection12Content _sectionContent = new Section12Content();
-                    foreach (POS _posItem in _posItems)
+                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
-                        _bondLessThan5 = new BondsMaturingLessThan5Years()
+                        _sectionContent = new Section12Content();
+                        foreach (POS _posItem in _posItems)
                         {
-                            ValorNumber = _posItem.NumSecurity_29,
-                            Currency = _posItem.HostPositionCurrency_8,
-                            Description = _posItem.Description1_32,
-                            Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd/MM/yyyy", _culture) : "",
-                            CurrentPrice = _posItem.Quote_48,
-                            PurchasePrice = _posItem.BuyPriceHistoric_53,
-                            Isin = _posItem.IsinIban_85,
-                            PriceAtTheBeginningOfTheYear = _posItem.BuyPriceAverage_87,
-                            AmountNominal = "[AmountNominal]",
-                            MsciEsg = "[MsciEsg]",
-                            PercentAssets = "[PercentAssets]",
-                            PercentCoupon = "[PercentCoupon]",
-                            PercentImpactChangeFromPurchase = "[PercentImpactChangeFromPurchase]",
-                            PercentImpactChangeYTD = "[PercentImpactChangeYTD]",
-                            PercentPerformancefromPurchase = "[PercentPerformancefromPurchase]",
-                            PercentPerformanceYTD = "[PercentPerformanceYTD]",
-                            PercentYTM = "[PercentYTM]",
-                            SPRating = "[SPRating]"
-                        };
-                        _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
+                            _bondLessThan5 = new BondsMaturingLessThan5Years()
+                            {
+                                ValorNumber = _posItem.NumSecurity_29,
+                                Currency = _posItem.HostPositionCurrency_8,
+                                Description = _posItem.Description1_32,
+                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd/MM/yyyy", _culture) : "",
+                                CurrentPrice = _posItem.Quote_48,
+                                PurchasePrice = _posItem.BuyPriceHistoric_53,
+                                Isin = _posItem.IsinIban_85,
+                                PriceAtTheBeginningOfTheYear = _posItem.BuyPriceAverage_87,
+                                AmountNominal = "[AmountNominal]",
+                                MsciEsg = "[MsciEsg]",
+                                PercentAssets = "[PercentAssets]",
+                                PercentCoupon = "[PercentCoupon]",
+                                PercentImpactChangeFromPurchase = "[PercentImpactChangeFromPurchase]",
+                                PercentImpactChangeYTD = "[PercentImpactChangeYTD]",
+                                PercentPerformancefromPurchase = "[PercentPerformancefromPurchase]",
+                                PercentPerformanceYTD = "[PercentPerformanceYTD]",
+                                PercentYTM = "[PercentYTM]",
+                                SPRating = "[SPRating]"
+                            };
+                            _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
+                        }
+                        _output.Content = new Section12Content(_sectionContent);
                     }
-                    _output.Content = new Section12Content(_sectionContent);
                 }
             }
             return _output;
