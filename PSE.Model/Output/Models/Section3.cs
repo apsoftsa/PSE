@@ -21,7 +21,7 @@ namespace PSE.Model.Output.Models
 
         public string RiskProfile { get; set; }
 
-        public decimal? PercentWeightedPerformance { get; set; }
+        public string PercentWeightedPerformance { get; set; }
 
         public KeyInformation() 
         { 
@@ -30,7 +30,7 @@ namespace PSE.Model.Output.Models
             Portfolio = string.Empty;
             Service = string.Empty;
             RiskProfile = string.Empty;
-            PercentWeightedPerformance = null;
+            PercentWeightedPerformance = string.Empty;
         }
 
         public KeyInformation(IKeyInformation source)
@@ -52,12 +52,12 @@ namespace PSE.Model.Output.Models
 
         public string Type { get; set; }
 
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public string MarketValueReportingCurrency { get; set; }
 
         public AssetType()
         {
             Type = string.Empty;    
-            MarketValueReportingCurrency = null;
+            MarketValueReportingCurrency = string.Empty;
         }
 
         public AssetType(IAssetType source)
@@ -75,7 +75,7 @@ namespace PSE.Model.Output.Models
 
         public string AssetClass { get; set; }
 
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public string MarketValueReportingCurrency { get; set; }
 
         [JsonIgnore]
         public IList<IAssetType> AssetsType { get; set; }
@@ -90,7 +90,7 @@ namespace PSE.Model.Output.Models
         public AssetExtract()
         {
             AssetClass = string.Empty;  
-            MarketValueReportingCurrency = null;
+            MarketValueReportingCurrency = string.Empty;
             AssetsType = new List<IAssetType>();
         }
 

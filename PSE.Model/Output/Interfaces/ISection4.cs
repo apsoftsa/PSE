@@ -6,13 +6,13 @@
 
         string Period { get; set; }
 
-        decimal? InitialAmount { get; set; }
+        string InitialAmount { get; set; }
 
-        decimal? FinalAmount { get; set; }
+        string FinalAmount { get; set; }
 
-        decimal? InputsOutputs { get; set; }
+        string InputsOutputs { get; set; }
 
-        decimal? PercentPerformance { get; set; }
+        string PercentPerformance { get; set; }
 
     }
 
@@ -21,7 +21,7 @@
 
         string Period { get; set; }
 
-        decimal? PercentPerformance { get; set; }
+        string PercentPerformance { get; set; }
 
     }
 

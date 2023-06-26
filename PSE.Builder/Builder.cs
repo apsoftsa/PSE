@@ -168,6 +168,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection8 => new ManipulatorSection8().Manipulate(extractedData),
                 ManipolationTypes.AsSection12 => new ManipulatorSection12().Manipulate(extractedData),
                 ManipolationTypes.AsSection15 => new ManipulatorSection15().Manipulate(extractedData),
+                ManipolationTypes.AsSection18And19 => new ManipulatorSection18And19().Manipulate(extractedData),
                 ManipolationTypes.AsFooter => new ManipulatorFooter().Manipulate(extractedData),
                 _ => null,
             };
@@ -205,6 +206,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection8, false ),
                 ( ManipolationTypes.AsSection12, false ),
                 ( ManipolationTypes.AsSection15, false ),
+                ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsFooter, true )
             };           
         }
@@ -216,12 +218,12 @@ namespace PSE.Builder
             try
             {
                 _buildData.BuildingLog.BuildingStart = DateTime.Now;
-                foreach ((ManipolationTypes manipolationType, bool isMandatory) _manipolationTypeToManage in _manipolationTypesToManage)
+                foreach ((ManipolationTypes manipolationType, bool isMandatory) in _manipolationTypesToManage)
                 {
-                    CheckInputData(_buildData, extractedData, _manipolationTypeToManage.manipolationType, _manipolationTypeToManage.isMandatory, formatToBuild);
+                    CheckInputData(_buildData, extractedData, manipolationType, isMandatory, formatToBuild);
                     if (_buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
                     {
-                        IOutputModel? _output = ManipulateInputData(extractedData, _manipolationTypeToManage.manipolationType);
+                        IOutputModel? _output = ManipulateInputData(extractedData, manipolationType);
                         if (_output != null)
                             _sections.Add(_output);
                         else

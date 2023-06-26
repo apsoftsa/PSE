@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
 
         public IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            Section15 _output = new Section15()
+            Section15 _output = new()
             {
                 SectionCode = OUTPUT_SECTION15_CODE,
                 SectionName = "Shares"

@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
 
         public IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            Section4 _output = new Section4()
+            Section4 _output = new()
             {
                 SectionCode = OUTPUT_SECTION4_CODE,
                 SectionName = "Performance evolution"
@@ -56,16 +56,16 @@ namespace PSE.BusinessLogic
                             _historyEvo = new HistoryEvolutionPerformanceCurrency()
                             {
                                 Period = _tmpPeriod,
-                                PercentPerformance = _perItem.TWR_14,
-                                InitialAmount = _perItem.StartValue_8,
-                                FinalAmount = _perItem.EndValue_9,
-                                InputsOutputs = _tmpInpOut
+                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value.ToString(_culture) : string.Empty,
+                                InitialAmount = _perItem.StartValue_8 != null ? _perItem.StartValue_8.Value.ToString(_culture) : string.Empty,
+                                FinalAmount = _perItem.EndValue_9 != null ? _perItem.EndValue_9.Value.ToString(_culture) : string.Empty,
+                                InputsOutputs = _tmpInpOut.ToString(_culture)
                             };
                             _sectionContent.HistoryEvolutionPerformancesCurrency.Add(_historyEvo);
                             _chartEvo = new ChartPerformanceEvolution()
                             {
                                 Period = _tmpPeriod,
-                                PercentPerformance = _perItem.TWR_14
+                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value.ToString(_culture) : string.Empty
                             };
                             _sectionContent.ChartPerformanceEvolutions.Insert(0, _chartEvo);
                         }

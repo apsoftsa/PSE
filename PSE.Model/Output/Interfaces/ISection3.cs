@@ -14,7 +14,7 @@
 
         string RiskProfile { get; set; }
 
-        decimal? PercentWeightedPerformance { get; set; }
+        string PercentWeightedPerformance { get; set; }
 
     }
 
@@ -23,7 +23,7 @@
 
         string Type { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        string MarketValueReportingCurrency { get; set; }
 
     }
 
@@ -32,7 +32,7 @@
 
         string AssetClass { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        string MarketValueReportingCurrency { get; set; }
 
         IList<IAssetType> AssetsType { get; set; }
 

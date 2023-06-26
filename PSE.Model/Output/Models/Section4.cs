@@ -14,23 +14,23 @@ namespace PSE.Model.Output.Models
         public string Period { get; set; }
 
         [JsonProperty(propertyName: "initial_amount")]
-        public decimal? InitialAmount { get; set; }
+        public string InitialAmount { get; set; }
 
         [JsonProperty(propertyName: "final_amount")]
-        public decimal? FinalAmount { get; set; }
+        public string FinalAmount { get; set; }
 
         [JsonProperty(propertyName: "inputs/outputs")]
-        public decimal? InputsOutputs { get; set; }
+        public string InputsOutputs { get; set; }
 
-        public decimal? PercentPerformance { get; set; }
+        public string PercentPerformance { get; set; }
 
         public HistoryEvolutionPerformanceCurrency()
         {
             this.Period = string.Empty;
-            this.InitialAmount = null;
-            this.FinalAmount = null;
-            this.InputsOutputs = null;  
-            this.PercentPerformance = null; 
+            this.InitialAmount = string.Empty;
+            this.FinalAmount = string.Empty;
+            this.InputsOutputs = string.Empty;  
+            this.PercentPerformance = string.Empty; 
         }
 
         public HistoryEvolutionPerformanceCurrency(IHistoryEvolutionPerformanceCurrency source)
@@ -51,12 +51,12 @@ namespace PSE.Model.Output.Models
 
         public string Period { get; set; }
 
-        public decimal? PercentPerformance { get; set; }
+        public string PercentPerformance { get; set; }
 
         public ChartPerformanceEvolution() 
         { 
             this.Period = string.Empty;
-            this.PercentPerformance = null;
+            this.PercentPerformance = string.Empty;
         }
 
         public ChartPerformanceEvolution(IChartPerformanceEvolution source)

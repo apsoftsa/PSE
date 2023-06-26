@@ -18,11 +18,13 @@
         public const string OUTPUT_SECTION8_CODE = "Section8";
         public const string OUTPUT_SECTION12_CODE = "Section12";
         public const string OUTPUT_SECTION15_CODE = "Section15";
+        public const string OUTPUT_SECTION18AND19_CODE = "Section18-19";
         public const string OUTPUT_FOOTER_CODE = "Footer";
 
         public const string CODE_SUB_CATEGORY_SECTION8 = "1010";
         public const string CODE_SUB_CATEGORY_SECTION12 = "4020";
         public const string CODE_SUB_CATEGORY_SECTION15 = "5010";
+        public const string CODE_SUB_CATEGORY_SECTION18AND19 = "7090";
 
     }
 

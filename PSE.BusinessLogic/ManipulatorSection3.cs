@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
 
         public IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            Section3 _output = new Section3()
+            Section3 _output = new()
             {
                 SectionCode = OUTPUT_SECTION3_CODE,
                 SectionName = "Portfolio Details"
@@ -41,7 +41,7 @@ namespace PSE.BusinessLogic
                             Portfolio = _ideItem.ModelCode_21,
                             Service = _ideItem.Mandate_11,
                             RiskProfile = "[RiskProfile]",
-                            PercentWeightedPerformance = _perItem.TWR_14
+                            PercentWeightedPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value.ToString(_culture) :string.Empty,
                         };
                         _output.Content.KeysInformation.Add(new KeyInformation(_currKeyInf));
                         if (_perItem.StartValue_8 != null || _perItem.StartDate_6 != null)
@@ -49,17 +49,17 @@ namespace PSE.BusinessLogic
                             _currAsstExtr = new AssetExtract()
                             {
                                 AssetClass = _perItem.StartDate_6 != null ? "Portfolio Value " + ((DateTime)_perItem.StartDate_6).ToString("dd/MM/yyyy", _culture) : string.Empty,
-                                MarketValueReportingCurrency = _perItem.StartValue_8
+                                MarketValueReportingCurrency = _perItem.StartValue_8 != null ? _perItem.StartValue_8.Value.ToString(_culture) : string.Empty,
                             };
                             _currAsstExtr.AssetsType.Add(new AssetType()
                             {
                                 Type = "contributions",
-                                MarketValueReportingCurrency = _perItem.CashIn_10
+                                MarketValueReportingCurrency = _perItem.CashIn_10 != null ? _perItem.CashIn_10.Value.ToString(_culture) : string.Empty,
                             });
                             _currAsstExtr.AssetsType.Add(new AssetType()
                             {
                                 Type = "withdrawals",
-                                MarketValueReportingCurrency = _perItem.CashOut_11
+                                MarketValueReportingCurrency = _perItem.CashOut_11 != null ? _perItem.CashOut_11.Value.ToString(_culture) : string.Empty,
                             });
                             _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         }
@@ -79,7 +79,7 @@ namespace PSE.BusinessLogic
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Portfolio Value Rectified",
-                            MarketValueReportingCurrency = _hasValue ? _tot1 : null
+                            MarketValueReportingCurrency = _hasValue ? _tot1.ToString(_culture) : string.Empty
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _hasValue = false;
@@ -98,19 +98,19 @@ namespace PSE.BusinessLogic
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = _perItem.EndDate_7 != null ? "Portfolio Value " + ((DateTime)_perItem.EndDate_7).ToString("dd/MM/yyyy", _culture) : string.Empty,
-                            MarketValueReportingCurrency = _hasValue ? _tot2 : null
+                            MarketValueReportingCurrency = _hasValue ? _tot2.ToString(_culture) : string.Empty
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Plus/Less Value",
-                            MarketValueReportingCurrency = _tot2 - _tot1
+                            MarketValueReportingCurrency = (_tot2 - _tot1).ToString(_culture)
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Dividend and Interest",
-                            MarketValueReportingCurrency = _perItem.Interest_15
+                            MarketValueReportingCurrency = _perItem.Interest_15 != null ? _perItem.Interest_15.Value.ToString(_culture) : string.Empty
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _hasValue = _hasValue1 = _hasValue2 = false;
@@ -129,17 +129,17 @@ namespace PSE.BusinessLogic
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Realized Gains/Losses",
-                            MarketValueReportingCurrency = _hasValue ? _tot1 : null
+                            MarketValueReportingCurrency = _hasValue ? _tot1.ToString(_culture) : string.Empty
                         };
                         _currAsstExtr.AssetsType.Add(new AssetType()
                         {
                             Type = "of with on course",
-                            MarketValueReportingCurrency = _hasValue1 ? _tmpValue1 : null
+                            MarketValueReportingCurrency = _hasValue1 ? _tmpValue1.ToString(_culture) : string.Empty
                         });
                         _currAsstExtr.AssetsType.Add(new AssetType()
                         {
                             Type = "of with on currency",
-                            MarketValueReportingCurrency = _hasValue2 ? _tmpValue2 : null
+                            MarketValueReportingCurrency = _hasValue2 ? _tmpValue2.ToString(_culture) : string.Empty
                         });
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _hasValue = _hasValue1 = _hasValue2 = false;
@@ -158,23 +158,23 @@ namespace PSE.BusinessLogic
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Not Realized Gains/Losses",
-                            MarketValueReportingCurrency = _hasValue ? _tot2 : null
+                            MarketValueReportingCurrency = _hasValue ? _tot2.ToString(_culture) : string.Empty
                         };
                         _currAsstExtr.AssetsType.Add(new AssetType()
                         {
                             Type = "of with on course",
-                            MarketValueReportingCurrency = _hasValue1 ? _tmpValue1 : null
+                            MarketValueReportingCurrency = _hasValue1 ? _tmpValue1.ToString(_culture) : string.Empty
                         });
                         _currAsstExtr.AssetsType.Add(new AssetType()
                         {
                             Type = "of with on currency",
-                            MarketValueReportingCurrency = _hasValue2 ? _tmpValue2 : null
+                            MarketValueReportingCurrency = _hasValue2 ? _tmpValue2.ToString(_culture) : string.Empty
                         });
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                         _currAsstExtr = new AssetExtract()
                         {
                             AssetClass = "Plus/Less Value",
-                            MarketValueReportingCurrency = _perItem.Interest_15 + _tot1 + _tot2
+                            MarketValueReportingCurrency = ((_perItem.Interest_15 != null ? _perItem.Interest_15.Value : 0) + _tot1 + _tot2).ToString(_culture)
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
                     }
