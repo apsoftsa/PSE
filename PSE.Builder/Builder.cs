@@ -73,14 +73,16 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection8:
                             case ManipolationTypes.AsSection12:
                             case ManipolationTypes.AsSection15:
-                                {
+                            case ManipolationTypes.AsSection18And19:
+                            {
                                     if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
                                     {
                                         IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>();
                                         if ((manipolationType == ManipolationTypes.AsSection8 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION8))
                                             || (manipolationType == ManipolationTypes.AsSection12 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12))
-                                            || (manipolationType == ManipolationTypes.AsSection15 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION15)))
+                                            || (manipolationType == ManipolationTypes.AsSection15 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION15))
+                                            || (manipolationType == ManipolationTypes.AsSection18And19 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION18AND19)))
                                             buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                         else if (isMandatory)
                                         {
@@ -95,6 +97,9 @@ namespace PSE.Builder
                                                     break;
                                                 case ManipolationTypes.AsSection15:
                                                     _subCatCode = CODE_SUB_CATEGORY_SECTION15;
+                                                    break;
+                                                case ManipolationTypes.AsSection18And19:
+                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION18AND19;
                                                     break;
                                             }
                                             buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +

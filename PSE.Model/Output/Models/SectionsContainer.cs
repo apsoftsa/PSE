@@ -10,14 +10,23 @@ namespace PSE.Model.Output.Models
     public sealed class SectionsContainer
     {
 
+        [JsonProperty(propertyName: OUTPUT_HEADER_CODE)]
         public IList<IOutputModel>? Header { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION1_CODE)]
         public IOutputModel? Section1 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION3_CODE)]
         public IOutputModel? Section3 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION4_CODE)]
         public IOutputModel? Section4 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION8_CODE)]
         public IOutputModel? Section8 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION12_CODE)]
         public IOutputModel? Section12 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION15_CODE)]
         public IOutputModel? Section15 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION18AND19_CODE)]
         public IOutputModel? Section18And19 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_FOOTER_CODE)]
         public IList<IOutputModel>? Footer { get; set; }
 
         private void Init()
