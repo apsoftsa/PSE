@@ -194,7 +194,7 @@ namespace PSE.Builder
                     }
                     break;
                 case BuildFormats.Json:
-                    _serializedData = Utility.JsonObjectSerialization<SectionsContainer>(outputDataContainer);
+                    _serializedData = Model.Common.JsonUtility.JsonObjectSerialization<SectionsContainer>(outputDataContainer);
                     break;
             }
             return _serializedData ?? string.Empty;

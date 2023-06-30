@@ -15,7 +15,13 @@
         public const string OUTPUT_SECTION1_CODE = "section1";
         public const string OUTPUT_SECTION3_CODE = "section3";
         public const string OUTPUT_SECTION4_CODE = "section4";
+        public const string OUTPUT_SECTION5_CODE = "section5";
+        public const string OUTPUT_SECTION6_CODE = "section6";
+        public const string OUTPUT_SECTION7_CODE = "section7";
         public const string OUTPUT_SECTION8_CODE = "section8";
+        public const string OUTPUT_SECTION9_CODE = "section9";
+        public const string OUTPUT_SECTION10_CODE = "section10";
+        public const string OUTPUT_SECTION11_CODE = "section11";
         public const string OUTPUT_SECTION12_CODE = "section12";
         public const string OUTPUT_SECTION15_CODE = "section15";
         public const string OUTPUT_SECTION18AND19_CODE = "section18-19";
