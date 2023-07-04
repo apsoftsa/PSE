@@ -12,6 +12,9 @@ namespace PSE.Extractor
     public class Extractor : IExtractor
     {
 
+        private static bool _saveToFile;
+        private static string _outputFileNameAndPath;
+
         private static Type? ModelSelector(MultiRecordEngine engine, string recordContent) 
         {
             if (string.IsNullOrEmpty(recordContent) || recordContent.Trim().Length < 3)
@@ -24,6 +27,7 @@ namespace PSE.Extractor
                     nameof(IDE) => typeof(IDE),
                     nameof(PER) => typeof(PER),
                     //nameof(POR) => typeof(POR),
+                    //nameof(CUR) => typeof(CUR),
                     nameof(POS) => typeof(POS),
                     _ => null,
                 };
@@ -81,9 +85,26 @@ namespace PSE.Extractor
             object[] _itemsExtracted = _engine.ReadString(inputStream);
             if (_itemsExtracted != null && _itemsExtracted.Length > 0)
             {
+                StringBuilder? _sb = null;
+                if (_saveToFile && string.IsNullOrEmpty(_outputFileNameAndPath) == false)
+                {
+                    _sb = new StringBuilder();
+                    if (File.Exists(_outputFileNameAndPath))
+                        File.Delete(_outputFileNameAndPath);
+                }
+                else
+                    _saveToFile = false;    
                 foreach (object _itemExtracted in _itemsExtracted)
                 {
                     extractedData.ExtractedItems.Add((IInputRecord)_itemExtracted);
+                    _sb?.Append(((IInputRecord)_itemExtracted).ToString());
+                }
+                if (_sb != null)
+                {
+                    FileInfo _fileInfo = new FileInfo(_outputFileNameAndPath);
+                    if (_fileInfo.Exists == false && _fileInfo.Directory != null)
+                        Directory.CreateDirectory(_fileInfo.Directory.FullName);
+                    File.WriteAllText(_outputFileNameAndPath, _sb.ToString());
                 }
             }
             if (_engine.ErrorManager.HasErrors)
@@ -104,8 +125,18 @@ namespace PSE.Extractor
             else
                 extractedData.ExtractionLog.Outcome = StreamAcquisitionOutcomes.Success;
         }
-        
-        public Extractor() { }        
+
+        static Extractor()
+        {
+            _saveToFile = false;
+            _outputFileNameAndPath = "";
+        }
+
+        public Extractor(bool saveToFile = false, string outputFileNameAndPath = "") 
+        { 
+            _saveToFile = saveToFile; 
+            _outputFileNameAndPath = outputFileNameAndPath;
+        }        
 
         public IExtractedData Extract(byte[] input)
         {

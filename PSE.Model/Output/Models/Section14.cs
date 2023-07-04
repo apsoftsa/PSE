@@ -8,7 +8,7 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class BondsWithMaturityGreatherThanFiveYears : IBondsWithMaturityGreatherThanFiveYears
+    public class ObligationsWithMaturityGreatherThanFiveYears : IObligationsWithMaturityGreatherThanFiveYears
     {
 
         public string Description { get; set; }
@@ -20,6 +20,12 @@ namespace PSE.Model.Output.Models
         public string NominalAmount { get; set; }
 
         public string Currency { get; set; }
+
+        public string PercentCoupon { get; set; }
+
+        public string PercentYTM { get; set; }
+
+        public string Expiration { get; set; }
 
         [JsonProperty(propertyName: "s&pRatings")]
         public string SPRating { get; set; }
@@ -40,38 +46,43 @@ namespace PSE.Model.Output.Models
 
         public string PerformancePurchase { get; set; }
 
-        public string PercentperformanceYTD { get; set; }
+        public string PerformanceYTD { get; set; }
 
         public string PercentAssets { get; set; }
 
-
-        public BondsWithMaturityGreatherThanFiveYears()
+        public ObligationsWithMaturityGreatherThanFiveYears()
         {
             Description = string.Empty;
             ValorNumber = string.Empty;
             Isin = string.Empty;
             NominalAmount = string.Empty;
             Currency = string.Empty;
+            PercentCoupon = string.Empty;
+            PercentYTM = string.Empty;
+            Expiration = string.Empty;
             SPRating = string.Empty;
             MsciEsg = string.Empty;
             PurchasePrice = string.Empty;
-            PriceBeginningYear = string.Empty;            
+            PriceBeginningYear = string.Empty;
             CurrentPriceFromPurchase = string.Empty;
             CurrentPriceFromYTD = string.Empty;
             ExchangeRateImpactPurchase = string.Empty;
             ExchangeRateImpactYTD = string.Empty;
             PerformancePurchase = string.Empty;
-            PercentperformanceYTD = string.Empty;
+            PerformanceYTD = string.Empty;
             PercentAssets = string.Empty;
         }
 
-        public BondsWithMaturityGreatherThanFiveYears(IBondsWithMaturityGreatherThanFiveYears source)
+        public ObligationsWithMaturityGreatherThanFiveYears(IObligationsWithMaturityGreatherThanFiveYears source)
         {
             Description = source.Description;
             ValorNumber = source.ValorNumber;
             Isin = source.Isin;
             NominalAmount = source.NominalAmount;
             Currency = source.Currency;
+            PercentCoupon = source.PercentCoupon;
+            PercentYTM = source.PercentYTM;
+            Expiration = source.Expiration;
             SPRating = source.SPRating;
             MsciEsg = source.MsciEsg;
             PurchasePrice = source.PurchasePrice;
@@ -81,7 +92,7 @@ namespace PSE.Model.Output.Models
             ExchangeRateImpactPurchase = source.ExchangeRateImpactPurchase;
             ExchangeRateImpactYTD = source.ExchangeRateImpactYTD;
             PerformancePurchase = source.PerformancePurchase;
-            PercentperformanceYTD = source.PercentperformanceYTD;
+            PerformanceYTD = source.PerformanceYTD;
             PercentAssets = source.PercentAssets;
         }
 
@@ -89,27 +100,27 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Section15Content : ISection15Content
+    public class Section14Content : ISection14Content
     {
 
-        [JsonProperty(propertyName: "bondsWithMaturityGreatherThanFiveYears")]
-        public IList<IBondsWithMaturityGreatherThanFiveYears> BondsWithMatGreatThanFiveYears { get; set; }
+        [JsonProperty(propertyName: "obligationsWithMaturityGreatherThanFiveYears")]
+        public IList<IObligationsWithMaturityGreatherThanFiveYears> ObligationsWithMaturityGreatherThanFiveYears { get; set; }
 
-        public Section15Content()
+        public Section14Content()
         {
-            BondsWithMatGreatThanFiveYears = new List<IBondsWithMaturityGreatherThanFiveYears>();
+            ObligationsWithMaturityGreatherThanFiveYears = new List<IObligationsWithMaturityGreatherThanFiveYears>();
         }
 
-        public Section15Content(ISection15Content source)
+        public Section14Content(ISection14Content source)
         {
-            BondsWithMatGreatThanFiveYears = new List<IBondsWithMaturityGreatherThanFiveYears>();
+            ObligationsWithMaturityGreatherThanFiveYears = new List<IObligationsWithMaturityGreatherThanFiveYears>();
             if (source != null)
             {
-                if (source.BondsWithMatGreatThanFiveYears != null && source.BondsWithMatGreatThanFiveYears.Any())
+                if (source.ObligationsWithMaturityGreatherThanFiveYears != null && source.ObligationsWithMaturityGreatherThanFiveYears.Any())
                 {
-                    foreach (IBondsWithMaturityGreatherThanFiveYears _bwmgt5y in source.BondsWithMatGreatThanFiveYears)
+                    foreach (IObligationsWithMaturityGreatherThanFiveYears _owmgt5y in source.ObligationsWithMaturityGreatherThanFiveYears)
                     {
-                        BondsWithMatGreatThanFiveYears.Add(new BondsWithMaturityGreatherThanFiveYears(_bwmgt5y));
+                        ObligationsWithMaturityGreatherThanFiveYears.Add(new ObligationsWithMaturityGreatherThanFiveYears(_owmgt5y));
                     }
                 }
             }
@@ -119,26 +130,26 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Section15 : OutputModel
+    public class Section14 : OutputModel
     {
 
         [JsonProperty(propertyName: "name", Order = 1)]
         public string FakeName { get { return base.SectionName; } private set { } }
 
         [JsonProperty(Order = 2)]
-        public ISection15Content Content { get; set; }
+        public ISection14Content Content { get; set; }
 
-        public Section15() : base(OUTPUT_SECTION15_CODE)
+        public Section14() : base(OUTPUT_SECTION14_CODE)
         {
-            Content = new Section15Content();
+            Content = new Section14Content();
         }
 
-        public Section15(Section15 source) : base(source)
+        public Section14(Section14 source) : base(source)
         {
             if (source.Content != null)
-                Content = new Section15Content(source.Content);
+                Content = new Section14Content(source.Content);
             else
-                Content = new Section15Content();
+                Content = new Section14Content();
         }
 
     }

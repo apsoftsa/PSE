@@ -18,7 +18,7 @@ namespace PSE.Executor
             Assembly _assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
             this.Text += " - Ver. " + _fvi.FileVersion;
-            _extractor = new Extractor.Extractor();
+            _extractor = new Extractor.Extractor(true,AppDomain.CurrentDomain.BaseDirectory + @"PSEStructuresExport.txt");
             _builder = new Builder.Builder();
         }
 
@@ -64,7 +64,7 @@ namespace PSE.Executor
                         _fileLogs.Nodes.Add("No meaningful elements found!");
                     if (_extrData.ExtractionLog.RecordsLog != null && _extrData.ExtractionLog.RecordsLog.Any())
                     {
-                        List<TreeNode> _errorNodes = new List<TreeNode>();
+                        List<TreeNode> _errorNodes = new();
                         foreach (IRecordExtractionLog _error in _extrData.ExtractionLog.RecordsLog)
                         {
                             _errorNodes.Add(new TreeNode("Error message: " + _error.FurtherMessage));
@@ -87,7 +87,7 @@ namespace PSE.Executor
                 if (_fileLogs != null && _allExtractedItems.Any())
                 {
                     this.treeViewLog.Nodes.Add("bldngNode", "BUILDING");
-                    List<TreeNode> _builderNodes = new List<TreeNode>();
+                    List<TreeNode> _builderNodes = new();
                     _fileLogs = this.treeViewLog.Nodes["bldngNode"];
                     this.textBoxJson.Text = "";
                     this.buttonCopy.Enabled = false;

@@ -29,7 +29,11 @@ namespace PSE.Model.Common
             AsSection3 = 3,
             AsSection4 = 4,
             AsSection8 = 8,
+            AsSection9 = 9,
+            AsSection10 = 10,
             AsSection12 = 12,
+            AsSection13 = 13,
+            AsSection14 = 14,
             AsSection15 = 15,
             AsSection18And19 = 1819,
             AsFooter = 99

@@ -37,7 +37,7 @@ namespace PSE.BusinessLogic
                             {
                                 AccountData = _posItem.HostPositionReference_6,
                                 Currency = _posItem.Currency1_17,
-                                MarketValueReportingCurrency = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value.ToString(_culture) : "",
+                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value.ToString(_culture) : "",
                                 CurrentBalance = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value.ToString(_culture) : "",
                                 Iban = _posItem.IsinIban_85,
                                 AccruedInterestReportingCurrency = "[AccruedInterestReportingCurrency]",

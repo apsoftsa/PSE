@@ -24,12 +24,17 @@
         public const string OUTPUT_SECTION11_CODE = "section11";
         public const string OUTPUT_SECTION12_CODE = "section12";
         public const string OUTPUT_SECTION13_CODE = "section13";
+        public const string OUTPUT_SECTION14_CODE = "section14";
         public const string OUTPUT_SECTION15_CODE = "section15";
         public const string OUTPUT_SECTION18AND19_CODE = "section18-19";
         public const string OUTPUT_FOOTER_CODE = "footer";
 
         public const string CODE_SUB_CATEGORY_SECTION8 = "1010";
-        public const string CODE_SUB_CATEGORY_SECTION12 = "4020";
+        public const string CODE_SUB_CATEGORY_SECTION9 = "1015";
+        public const string CODE_SUB_CATEGORY_SECTION10 = "1020";
+        public const string CODE_SUB_CATEGORY_SECTION12 = "4010";
+        public const string CODE_SUB_CATEGORY_SECTION13 = "4005";
+        public const string CODE_SUB_CATEGORY_SECTION14 = "4020";
         public const string CODE_SUB_CATEGORY_SECTION15 = "5010";
         public const string CODE_SUB_CATEGORY_SECTION18AND19 = "7090";
 

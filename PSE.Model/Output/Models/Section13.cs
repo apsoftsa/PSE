@@ -8,10 +8,10 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class BondsMinorOrEqualTo1Year : BondsMaturingLessThan5Years, IBondsMinorOrEqualTo1Year
+    public class BondsMinorOrEqualTo1Year : BondsBase, IBondsMinorOrEqualTo1Year
     {
 
-        public new string AmountNominal { get; set; }
+        public string AmountNominal { get; set; }
 
         public BondsMinorOrEqualTo1Year() : base()
         { 

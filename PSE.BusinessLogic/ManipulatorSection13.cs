@@ -8,36 +8,36 @@ using static PSE.Model.Common.Constants;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection12 : ManipulatorBase, IManipulator
+    public class ManipulatorSection13 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection12(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection13(CultureInfo? culture = null) : base(culture) { }
 
         public IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            Section12 _output = new()
+            Section13 _output = new()
             {
-                SectionCode = OUTPUT_SECTION12_CODE,
-                SectionName = "Bonds-5-years"
+                SectionCode = OUTPUT_SECTION13_CODE,
+                SectionName = "BONDS-1-year"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                IBondsMaturingLessThan5Years _bondLessThan5;
-                ISection12Content _sectionContent;
+                IBondsMinorOrEqualTo1Year _bondMinOrEquTo1Year;
+                ISection13Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => _fltSubCat.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12);
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => _fltSubCat.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION13);
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section12Content();
+                        _sectionContent = new Section13Content();
                         foreach (POS _posItem in _posItems)
                         {
-                            _bondLessThan5 = new BondsMaturingLessThan5Years()
+                            _bondMinOrEquTo1Year = new BondsMinorOrEqualTo1Year()
                             {
                                 ValorNumber = _posItem.NumSecurity_29,
                                 Currency = _posItem.Currency1_17,
-                                Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
+                                Description = _posItem.Description2_33,
                                 Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
@@ -51,12 +51,12 @@ namespace PSE.BusinessLogic
                                 PercentImpactChangeYTD = "[PercentImpactChangeYTD]",
                                 PercentPerformancefromPurchase = "[PercentPerformancefromPurchase]",
                                 PercentPerformanceYTD = "[PercentPerformanceYTD]",
-                                PercentYTM = "[PercentYTM]",
+                                PercentYTM = "[PercentYTM]",                                
                                 SPRating = "[SPRating]"
                             };
-                            _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
+                            _sectionContent.BondsMaturingMinorOrEqualTo1Year.Add(_bondMinOrEquTo1Year);
                         }
-                        _output.Content = new Section12Content(_sectionContent);
+                        _output.Content = new Section13Content(_sectionContent);
                     }
                 }
             }

@@ -8,6 +8,8 @@
 
         string MessageType_1 { get; set; }
 
+        string ToString();
+
     }
 
     public interface IInputRecordA : IInputRecord

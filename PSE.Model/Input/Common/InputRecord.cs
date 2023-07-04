@@ -1,4 +1,6 @@
-﻿using FileHelpers;
+﻿using System.Text;
+using System.Reflection;
+using FileHelpers;
 using PSE.Model.Input.Interfaces;
 
 namespace PSE.Model.Input.Common
@@ -32,6 +34,28 @@ namespace PSE.Model.Input.Common
         protected InputRecord(InputRecord source)
         {
             MessageType_1 = source.MessageType_1;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder _sb = new();
+            _sb.Append("----------------------------------------");
+            _sb.Append(Environment.NewLine);
+            _sb.Append(RecordType);
+            _sb.Append(Environment.NewLine);
+            _sb.Append("----------------------------------------");
+            _sb.Append(Environment.NewLine);
+            foreach (PropertyInfo _property in this.GetType().GetProperties())
+            {
+                _sb.Append(_property.Name);
+                _sb.Append(": ");
+                _sb.Append(_property.GetValue(this, null));
+                _sb.Append(Environment.NewLine);
+            }
+            _sb.Append("----------------------------------------");
+            _sb.Append(Environment.NewLine);
+            _sb.Append(Environment.NewLine);
+            return _sb.ToString();
         }
 
     }

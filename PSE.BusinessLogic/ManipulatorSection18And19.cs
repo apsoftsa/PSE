@@ -39,9 +39,9 @@ namespace PSE.BusinessLogic
                             {
                                 ValorNumber = _posItem.NumSecurity_29,
                                 Currency = _posItem.Currency1_17,
-                                Description = _posItem.Description1_32,
-                                CurrentPriceFromPurchase = _posItem.Quote_48,
-                                PurchasePrice = _posItem.BuyPriceHistoric_53,
+                                Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
+                                CurrentPriceFromPurchase = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
+                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
                                 Isin = _posItem.IsinIban_85,
                                 PriceBeginningYear = _posItem.BuyPriceAverage_87,
                                 PercentAssets = "[PercentAssets]",

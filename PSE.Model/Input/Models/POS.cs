@@ -226,13 +226,13 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
-        public string InterestRate_47 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        public decimal? InterestRate_47 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
-        public string Quote_48 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        public decimal? Quote_48 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
@@ -257,8 +257,8 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
-        public string BuyPriceHistoric_53 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        public decimal? BuyPriceHistoric_53 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
@@ -535,13 +535,13 @@ namespace PSE.Model.Input.Models
             ConversionFactor_44 = string.Empty;
             ConversionDesc_45 = string.Empty;
             IssueDate_46 = null;
-            InterestRate_47 = string.Empty;
-            Quote_48 = string.Empty;
+            InterestRate_47 = null;
+            Quote_48 = null;
             QuoteDate_49 = string.Empty;
             QuoteOfficial_50 = false;
             QuoteType_51 = string.Empty;
             MaturityPrice_52 = string.Empty;
-            BuyPriceHistoric_53 = string.Empty;
+            BuyPriceHistoric_53 = null;
             PriceWarning_54 = false;
             ProRataCur1_55 = string.Empty;
             ProRataBase_56 = string.Empty;
