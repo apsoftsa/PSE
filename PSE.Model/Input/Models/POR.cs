@@ -12,6 +12,7 @@ namespace PSE.Model.Input.Models
 
         // to-do ...
         [FieldFixedLength(898)]
+        [FieldOrder(4)]
         public string? ToDefine { get; set; }
 
         public POR() : base(INPUT_POR_MSG_TYPE)

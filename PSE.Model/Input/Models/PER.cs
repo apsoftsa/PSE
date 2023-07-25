@@ -12,91 +12,109 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(5)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(4)]
         public string PortfolioNumber_4 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldOrder(5)]
         public int? Type_5 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(6)]
         public DateTime? StartDate_6 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(7)]
         public DateTime? EndDate_7 { get; set; }
 
         [FieldFixedLength(17)]        
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(8)]
         public decimal? StartValue_8 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(9)]
         public decimal? EndValue_9 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(10)]
         public decimal? CashIn_10 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(11)]
         public decimal? CashOut_11 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(12)]
         public decimal? SecIn_12 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(13)]
         public decimal? SecOut_13 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(14)]
         public decimal? TWR_14 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(15)]
         public decimal? Interest_15 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(16)]
         public decimal? PlRealEquity_16 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(17)]
         public decimal? PlRealCurrency_17 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(18)]
         public decimal? PlNonRealEquity_18 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(19)]
         public decimal? PlNonRealCurrency_19 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(20)]
         public string Currency_20 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(21)]
         public bool? Consolidate_21 { get; set; }
 
         public PER() : base(INPUT_PER_MSG_TYPE)

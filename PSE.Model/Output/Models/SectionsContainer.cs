@@ -24,6 +24,8 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section9 { get; set; }
         [JsonProperty(propertyName: OUTPUT_SECTION10_CODE)]
         public IOutputModel? Section10 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION11_CODE)]
+        public IOutputModel? Section11 { get; set; }
         [JsonProperty(propertyName: OUTPUT_SECTION12_CODE)]
         public IOutputModel? Section12 { get; set; }
         [JsonProperty(propertyName: OUTPUT_SECTION13_CODE)]
@@ -88,6 +90,9 @@ namespace PSE.Model.Output.Models
                             break;
                         case OUTPUT_SECTION10_CODE:
                             Section10 = _section;
+                            break;
+                        case OUTPUT_SECTION11_CODE:
+                            Section11 = _section;
                             break;
                         case OUTPUT_SECTION12_CODE:
                             Section12 = _section;

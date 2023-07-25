@@ -11,10 +11,10 @@ namespace PSE.Model.Output.Models
     public class ProfitLossOperation : IProfitLossOperation
     {
 
-        [JsonProperty("amountl", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("amount1", NullValueHandling = NullValueHandling.Ignore)]
         public string AmountLoss { get; set; }
 
-        [JsonProperty("currencyl", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("currency1", NullValueHandling = NullValueHandling.Ignore)]
         public string CurrencyLoss { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]

@@ -12,67 +12,82 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(8)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(4)]
         public string Grouping_4 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(5)]
         public string GroupingNumberRequested_5 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldOrder(6)]
         public int CopiesNumber_6 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(7)]
         public string Currency_7 { get; set; }
 
         [FieldFixedLength(5)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(8)]
         public string ModelCode_8 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(9)]
         public DateTime? Date_9 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldOrder(10)]
         public int Time_10 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(11)]
         public string RiskAllocation_11 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(12)]
         public string Language_12 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(13)]
         public string Usage_13 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(14)]
         public string Origin_14 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(15)]
         public string CurrencyAggregation_15 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(16)]
         public string OutputType_16 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(17)]
         public string PerformanceType_17 { get; set; }
 
         [FieldFixedLength(60)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(18)]
         public string Options_18 { get; set; }
 
         public REQ() : base(INPUT_REQ_MSG_TYPE)

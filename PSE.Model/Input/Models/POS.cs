@@ -12,482 +12,578 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(5)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(4)]
         public string PortfolioNumber_4 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(5)]
         public string HostPositionType_5 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(6)]
         public string HostPositionReference_6 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(7)]
         public string HostPositionAgency_7 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(8)]
         public string HostPositionCurrency_8 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(9)]
         public bool? Visible_9 { get; set; }
 
         [FieldFixedLength(5)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(10)]
         public string Type_10 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(11)]
         public string Category_11 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(12)]
         public string SubCat1_12 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(13)]
         public string SubCat2_13 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(14)]
         public string SubCat3_14 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(15)]
         public string SubCat4_15 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(16)]
         public string SubCat5_16 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(17)]
         public string Currency1_17 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(18)]
         public string Currency2_18 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(19)]
         public DateTime? CouponDate_19 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(20)]
         public string Country_20 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(21)]
         public string CountryCurrency_21 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(22)]
         public decimal? Amount1Cur1_22 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(23)]
         public decimal? Amount1Base_23 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(24)]
         public decimal? Amount1Euro_24 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(25)]
         public decimal? Amount1Country_25 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(26)]
         public decimal? Amount2Cur1_26 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(27)]
         public decimal? Amount1ProRataHostCur_27 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(28)]
         public decimal? Quantity_28 { get; set; }
 
         [FieldFixedLength(15)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(29)]
         public string NumSecurity_29 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(30)]
         public string NumSavingsBook_30 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(31)]
         public string MovementKey_31 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(32)]
         public string Description1_32 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(33)]
         public string Description2_33 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(34)]
         public string CouponFrequency_34 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(35)]
         public string CouponText_35 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(36)]
         public DateTime? MaturityDate_36 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(37)]
         public bool? Callable_37 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(38)]
         public DateTime? CallaDate_38 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(39)]
         public bool? OnCall_39 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(40)]
         public DateTime? AmortizationDate_40 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(41)]
         public DateTime? ConversionDateStart_41 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(42)]
         public DateTime? ConversionDateEnd_42 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(43)]
         public string ConversionCurrency_43 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(44)]
         public string ConversionFactor_44 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(45)]
         public string ConversionDesc_45 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(46)]
         public DateTime? IssueDate_46 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(47)]
         public decimal? InterestRate_47 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(48)]
         public decimal? Quote_48 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
         //[FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(49)]
         public string QuoteDate_49 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(50)]
         public bool? QuoteOfficial_50 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(51)]
         public string QuoteType_51 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(52)]
         public string MaturityPrice_52 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(53)]
         public decimal? BuyPriceHistoric_53 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Boolean, "1", "0")]
+        [FieldOrder(54)]
         public bool? PriceWarning_54 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(55)]
         public string ProRataCur1_55 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(56)]
         public string ProRataBase_56 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(57)]
         public string ProRataEuro_57 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(58)]
         public string ProRataCountry_58 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
-        public string Amount2Cur2_59 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(59)]
+        public decimal? Amount2Cur2_59 { get; set; }
+
+        [FieldFixedLength(17)]
+        [FieldOptional]
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(60)]
+        public decimal? Amount2Base_60 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
-        public string Amount2Base_60 { get; set; }
-
-        [FieldFixedLength(17)]
-        [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldOrder(61)]
         public string Amount2Euro_61 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(62)]
         public string Amount2HoustCur_62 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
-        public string MaturityRoi_63 { get; set; }
+        [FieldConverter(ConverterKind.Decimal, ".")]
+        [FieldOrder(63)]
+        public decimal? MaturityRoi_63 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(64)]
         public string DirectRoi_64 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(65)]
         public string CallRoi_65 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(66)]
         public string BuyExchangeRateHistoric_66 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(67)]
         public string Strike_67 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(68)]
         public string Duration_68 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(69)]
         public string MaturityProRataCurr1_69 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(70)]
         public string MaturityProRataBase_70 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(71)]
         public string MaturityProRataEuro_71 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(72)]
         public string MaturityProRataCountry_72 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(73)]
         public string Lock1_73 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(74)]
         public string QuantityLock1_74 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(75)]
         public string Lock2_75 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(76)]
         public string QuantityLock2_76 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(77)]
         public string Lock3_77 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(78)]
         public string QuantityLock3_78 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(79)]
         public string Lock4_79 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(80)]
         public string QuantityLock4_80 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(81)]
         public string Lock5_81 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(82)]
         public string QuantityLock5_82 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(83)]
         public string EngagementValueBase_83 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(84)]
         public DateTime? MaturityDateObbl_84 { get; set; }
 
         [FieldFixedLength(34)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(85)]
         public string IsinIban_85 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(86)]
         public string TaxType_86 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(87)]
         public string BuyPriceAverage_87 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(88)]
         public string BuyExchangeRateAverage_88 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(89)]
         public string InverseExchangeRate_89 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(90)]
         public string Amount1Request_90 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(91)]
         public string Amount2Request_91 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(92)]
         public string ProRataRequest_92 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(93)]
         public string ConversionBDesc_93 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(94)]
         public string ConversionCDesc_94 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(95)]
         public string ConversionDDesc_95 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(96)]
         public string ConversionEDesc_96 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(97)]
         public string AgeRat_97 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(98)]
         public string Rating_98 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(99)]
         public string OptionsLock_99 { get; set; }
 
         public POS() : base(INPUT_POS_MSG_TYPE)
@@ -547,11 +643,11 @@ namespace PSE.Model.Input.Models
             ProRataBase_56 = string.Empty;
             ProRataEuro_57 = string.Empty;
             ProRataCountry_58 = string.Empty;
-            Amount2Cur2_59 = string.Empty;
-            Amount2Base_60 = string.Empty;
+            Amount2Cur2_59 = null;
+            Amount2Base_60 = null;
             Amount2Euro_61 = string.Empty;
             Amount2HoustCur_62 = string.Empty;
-            MaturityRoi_63 = string.Empty;
+            MaturityRoi_63 = null;
             DirectRoi_64 = string.Empty;
             CallRoi_65 = string.Empty;
             BuyExchangeRateHistoric_66 = string.Empty;

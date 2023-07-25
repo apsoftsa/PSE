@@ -12,6 +12,7 @@ namespace PSE.Model.Input.Models
 
         // to-do ...
         [FieldFixedLength(898)]
+        [FieldOrder(4)]
         public string? ToDefine { get; set; }
 
         public CUR() : base(INPUT_CUR_MSG_TYPE)

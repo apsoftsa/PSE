@@ -73,6 +73,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection8:
                             case ManipolationTypes.AsSection9:
                             case ManipolationTypes.AsSection10:
+                            case ManipolationTypes.AsSection11:
                             case ManipolationTypes.AsSection12:
                             case ManipolationTypes.AsSection13:
                             case ManipolationTypes.AsSection14:
@@ -86,6 +87,7 @@ namespace PSE.Builder
                                         if ((manipolationType == ManipolationTypes.AsSection8 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION8))
                                             || (manipolationType == ManipolationTypes.AsSection9 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION9))
                                             || (manipolationType == ManipolationTypes.AsSection10 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION10))
+                                            || (manipolationType == ManipolationTypes.AsSection11 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION11))
                                             || (manipolationType == ManipolationTypes.AsSection12 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12))
                                             || (manipolationType == ManipolationTypes.AsSection13 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION13))
                                             || (manipolationType == ManipolationTypes.AsSection14 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION14))
@@ -105,6 +107,9 @@ namespace PSE.Builder
                                                     break;
                                                 case ManipolationTypes.AsSection10:
                                                     _subCatCode = CODE_SUB_CATEGORY_SECTION10;
+                                                    break;
+                                                case ManipolationTypes.AsSection11:
+                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION11;
                                                     break;
                                                 case ManipolationTypes.AsSection12:
                                                     _subCatCode = CODE_SUB_CATEGORY_SECTION12;
@@ -193,6 +198,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection8 => new ManipulatorSection8().Manipulate(extractedData),
                 ManipolationTypes.AsSection9 => new ManipulatorSection9().Manipulate(extractedData),
                 ManipolationTypes.AsSection10 => new ManipulatorSection10().Manipulate(extractedData),
+                ManipolationTypes.AsSection11 => new ManipulatorSection11().Manipulate(extractedData),
                 ManipolationTypes.AsSection12 => new ManipulatorSection12().Manipulate(extractedData),
                 ManipolationTypes.AsSection13 => new ManipulatorSection13().Manipulate(extractedData),
                 ManipolationTypes.AsSection14 => new ManipulatorSection14().Manipulate(extractedData),
@@ -235,6 +241,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection8, false ),
                 ( ManipolationTypes.AsSection9, false ),
                 ( ManipolationTypes.AsSection10, false ),
+                ( ManipolationTypes.AsSection11, false ),
                 ( ManipolationTypes.AsSection12, false ),
                 ( ManipolationTypes.AsSection13, false ),
                 ( ManipolationTypes.AsSection14, false ),

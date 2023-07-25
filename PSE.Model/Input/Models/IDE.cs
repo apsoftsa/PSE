@@ -12,147 +12,177 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(2)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(4)]
         public string Agency_4 { get; set; }
 
         [FieldFixedLength(30)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(5)]
         public string CustomerNameShort_5 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(6)]
         public string CustomerId_6 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(7)]
         public string Nature_7 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(8)]
         public string Manager_8 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldOrder(9)]
         public int? EmployeeType_9 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(10)]
         public string Employee_10 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(11)]
         public string Mandate_11 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(12)]
         public string PortfolioType_12 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(13)]
         public string ResidenceCurrency_13 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(14)]
         public string Dimension_14 { get; set; }
 
         [FieldFixedLength(8)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldOrder(15)]
         public DateTime? Date_15 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldOrder(16)]
         public int? Time_16 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(17)]
         public string RiskAllocation_17 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(18)]
         public string Language_18 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(19)]
         public string Currency_19 { get; set; }
 
         [FieldFixedLength(10)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(20)]
         public string BaseOptions_20 { get; set; }
 
         [FieldFixedLength(5)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(21)]
         public string ModelCode_21 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(22)]
         public string Origin_22 { get; set; }
 
         [FieldFixedLength(32)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(23)]
         public string CustomerName1_23 { get; set; }
 
         [FieldFixedLength(32)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(24)]
         public string CustomerName2_24 { get; set; }
 
         [FieldFixedLength(32)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(25)]
         public string CustomerName3_25 { get; set; }
 
         [FieldFixedLength(32)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(26)]
         public string CustomerName4_26 { get; set; }
 
         [FieldFixedLength(32)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(27)]
         public string CustomerName5_27 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(28)]
         public string Manager1_28 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(29)]
         public string Manager2_29 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(30)]
         public string Nationality_30 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(31)]
         public string Residence_31 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(32)]
         public string FiscalResidence_32 { get; set; }
 
         [FieldFixedLength(3)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
+        [FieldOrder(33)]
         public string ClientGroup_33 { get; set; }
 
         public IDE() : base(INPUT_IDE_MSG_TYPE)
