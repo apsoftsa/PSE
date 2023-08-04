@@ -3,84 +3,130 @@ using PSE.Model.Output.Interfaces;
 
 [Serializable]
 [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-public abstract class BondsBase : IBondsBase
+public abstract class ObligationsBase : IObligationsBase
 {
 
-    public string Description { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string? Description { get; set; }
 
-    public string ValorNumber { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? ValorNumber { get; set; }
 
-    public string Isin { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string? Isin { get; set; }
 
-    public string Currency { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? NominalAmount { get; set; }
 
-    public string PercentCoupon { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string? Currency { get; set; }
 
-    public string PercentYTM { get; set; }
+    [JsonProperty(propertyName: "spRating", NullValueHandling = NullValueHandling.Ignore)]
+    public string? SPRating { get; set; }
 
-    public string Expiration { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string? MsciEsg { get; set; }
 
-    [JsonProperty(propertyName: "s&pRating")]
-    public string SPRating { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PurchasePrice { get; set; }
 
-    public string MsciEsg { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PriceBeginningYear { get; set; }
 
-    public string PurchasePrice { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? CurrentPrice { get; set; }
 
-    public string PriceAtTheBeginningOfTheYear { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? ExchangeRateImpactPurchase { get; set; }
 
-    public string CurrentPrice { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? ExchangeRateImpactYTD { get; set; }
 
-    public string PercentImpactChangeFromPurchase { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PerformancePurchase { get; set; }
 
-    public string PercentImpactChangeYTD { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PercentPerformancePurchase { get; set; }
 
-    public string PercentPerformancefromPurchase { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PerformanceYTD { get; set; }
 
-    public string PercentPerformanceYTD { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PercentPerformanceYTD { get; set; }
 
-    public string PercentAssets { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PercentAsset { get; set; }
 
-    public BondsBase()
+    public ObligationsBase()
     {
-        Description = string.Empty;
-        ValorNumber = string.Empty;
-        Isin = string.Empty;
-        Currency = string.Empty;
-        PercentCoupon = string.Empty;
-        PercentYTM = string.Empty;
-        Expiration = string.Empty;
-        SPRating = string.Empty;
-        MsciEsg = string.Empty;
-        PurchasePrice = string.Empty;
-        PriceAtTheBeginningOfTheYear = string.Empty;
-        CurrentPrice = string.Empty;
-        PercentImpactChangeFromPurchase = string.Empty;
-        PercentImpactChangeYTD = string.Empty;
-        PercentPerformancefromPurchase = string.Empty;
-        PercentPerformanceYTD = string.Empty;
-        PercentAssets = string.Empty;
+        Description = null;
+        ValorNumber = null;
+        Isin = null;
+        NominalAmount = null;
+        Currency = null;
+        SPRating = null;
+        MsciEsg = null;
+        PurchasePrice = null;
+        PriceBeginningYear = null;
+        CurrentPrice = null;
+        ExchangeRateImpactPurchase = null;
+        ExchangeRateImpactYTD = null;
+        PerformancePurchase = null;
+        PercentPerformancePurchase = null;
+        PerformanceYTD = null;
+        PercentPerformanceYTD = null;
+        PercentAsset = null;
     }
 
-    public BondsBase(IBondsBase source)
+    public ObligationsBase(IObligationsBase source)
     {
         Description = source.Description;
         ValorNumber = source.ValorNumber;
         Isin = source.Isin;
+        NominalAmount = source.NominalAmount;
         Currency = source.Currency;
-        PercentCoupon = source.PercentCoupon;
-        PercentYTM = source.PercentYTM;
-        Expiration = source.Expiration;
         SPRating = source.SPRating;
         MsciEsg = source.MsciEsg;
         PurchasePrice = source.PurchasePrice;
-        PriceAtTheBeginningOfTheYear = source.PriceAtTheBeginningOfTheYear;
+        PriceBeginningYear = source.PriceBeginningYear;
         CurrentPrice = source.CurrentPrice;
-        PercentImpactChangeFromPurchase = source.PercentImpactChangeFromPurchase;
-        PercentImpactChangeYTD = source.PercentImpactChangeYTD;
-        PercentPerformancefromPurchase = source.PercentPerformancefromPurchase;
+        ExchangeRateImpactPurchase = source.ExchangeRateImpactPurchase;
+        ExchangeRateImpactYTD = source.ExchangeRateImpactYTD;
+        PerformancePurchase = source.PerformancePurchase;
+        PercentPerformancePurchase = source.PercentPerformancePurchase;
+        PerformanceYTD = source.PerformanceYTD;
         PercentPerformanceYTD = source.PercentPerformanceYTD;
-        PercentAssets = source.PercentAssets;
+        PercentAsset = source.PercentAsset;
+    }
+
+}
+
+[Serializable]
+[JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+public abstract class BondsBase : ObligationsBase, IBondsBase
+{
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? PercentCoupon { get; set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public decimal? PercentYTM { get; set; }
+
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string? Expiration { get; set; }
+
+    public BondsBase() : base()
+    {
+        PercentCoupon = null;
+        PercentYTM = null;
+        Expiration = null;
+    }
+
+    public BondsBase(IBondsBase source) : base(source)  
+    {
+        PercentCoupon = source.PercentCoupon;
+        PercentYTM = source.PercentYTM;
+        Expiration = source.Expiration;
     }
 
 }

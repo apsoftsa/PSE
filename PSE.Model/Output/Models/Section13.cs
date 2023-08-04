@@ -11,17 +11,9 @@ namespace PSE.Model.Output.Models
     public class BondsMinorOrEqualTo1Year : BondsBase, IBondsMinorOrEqualTo1Year
     {
 
-        public string AmountNominal { get; set; }
+        public BondsMinorOrEqualTo1Year() : base() { }
 
-        public BondsMinorOrEqualTo1Year() : base()
-        { 
-            AmountNominal = string.Empty;
-        }
-
-        public BondsMinorOrEqualTo1Year(IBondsMinorOrEqualTo1Year source) : base(source)
-        {
-            AmountNominal = source.AmountNominal;
-        }
+        public BondsMinorOrEqualTo1Year(IBondsMinorOrEqualTo1Year source) : base(source) { }
 
     }
 

@@ -161,9 +161,8 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(15)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
         [FieldOrder(29)]
-        public string NumSecurity_29 { get; set; }
+        public int? NumSecurity_29 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]
@@ -324,9 +323,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(56)]
-        public string ProRataBase_56 { get; set; }
+        public decimal? ProRataBase_56 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
@@ -510,9 +509,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(87)]
-        public string BuyPriceAverage_87 { get; set; }
+        public decimal? BuyPriceAverage_87 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
@@ -613,7 +612,7 @@ namespace PSE.Model.Input.Models
             Amount2Cur1_26 = 0;
             Amount1ProRataHostCur_27 = 0;
             Quantity_28 = 0;
-            NumSecurity_29 = string.Empty;
+            NumSecurity_29 = null;
             NumSavingsBook_30 = string.Empty;
             MovementKey_31 = string.Empty;
             Description1_32 = string.Empty;
@@ -640,7 +639,7 @@ namespace PSE.Model.Input.Models
             BuyPriceHistoric_53 = null;
             PriceWarning_54 = false;
             ProRataCur1_55 = string.Empty;
-            ProRataBase_56 = string.Empty;
+            ProRataBase_56 = null;
             ProRataEuro_57 = string.Empty;
             ProRataCountry_58 = string.Empty;
             Amount2Cur2_59 = null;
@@ -671,7 +670,7 @@ namespace PSE.Model.Input.Models
             MaturityDateObbl_84 = null;
             IsinIban_85 = string.Empty;
             TaxType_86 = string.Empty;
-            BuyPriceAverage_87 = string.Empty;
+            BuyPriceAverage_87 = null;
             BuyExchangeRateAverage_88 = string.Empty;
             InverseExchangeRate_89 = string.Empty;
             Amount1Request_90 = string.Empty;

@@ -37,15 +37,14 @@ namespace PSE.BusinessLogic
                             {
                                 Account = _posItem.HostPositionReference_6,
                                 Currency = _posItem.Currency1_17,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value.ToString(_culture) : "",
-                                FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value.ToString(_culture) : "",
-                                PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value.ToString(_culture) : "",
+                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : null,
+                                FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
+                                PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : null,
                                 ExpirationDate = _posItem.MaturityDate_36 != null ? _posItem.MaturityDate_36.Value.ToString("dd.MM.yyyy") : "",
                                 OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString("dd.MM.yyyy") : "",
                                 NoDeposit = _posItem.MovementKey_31,
                                 Correspondent = _posItem.Description2_33,
-                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56,
-                                PercentAssets = "[PercentAssets]"
+                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : null,
                             };
                             _sectionContent.Accounts.Add(_account);
                         }

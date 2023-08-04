@@ -8,26 +8,42 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class SubAsset : ISubAsset
+    public class Asset : IAsset
     {
 
-        public string TypeInvestment { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? AssetClass { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrencyT { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentInvestment { get; set; }
+        public decimal? PercentInvestmentT { get; set; }
 
-        public SubAsset() 
-        { 
-            TypeInvestment = string.Empty;
-            MarketValueReportingCurrency = string.Empty;    
-            PercentInvestment = string.Empty;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? TypeInvestment { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? MarketValueReportingCurrency { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? PercentInvestment { get; set; }
+
+        public Asset()
+        {
+            AssetClass = null;
+            MarketValueReportingCurrencyT = null;
+            PercentInvestmentT = null;
+            TypeInvestment = null;
+            MarketValueReportingCurrency = null;
+            PercentInvestment = null;
         }
 
-        public SubAsset(ISubAsset source)
+        public Asset(IAsset source)
         {
+            AssetClass = source.AssetClass;
+            MarketValueReportingCurrencyT = source.MarketValueReportingCurrencyT;
+            PercentInvestmentT = source.PercentInvestmentT;
             TypeInvestment = source.TypeInvestment;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             PercentInvestment = source.PercentInvestment;
@@ -37,58 +53,19 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Asset : IAsset
-    {
-
-        public string AssetClass { get; set; }  
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string MarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentInvestment { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<ISubAsset> SubAssets { get; set; }
-
-        public Asset()
-        {
-            AssetClass = string.Empty;
-            MarketValueReportingCurrency = string.Empty;
-            PercentInvestment = string.Empty;
-            SubAssets = new List<ISubAsset>();
-        }
-
-        public Asset(IAsset source)
-        {
-            AssetClass = source.AssetClass;
-            MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-            PercentInvestment = source.PercentInvestment;
-            SubAssets = new List<ISubAsset>();
-            if (source != null && source.SubAssets != null && source.SubAssets.Any())
-            {
-                foreach (ISubAsset _subAss in source.SubAssets)
-                {
-                    SubAssets.Add(new SubAsset(_subAss));
-                }
-            }
-        }
-
-    }
-
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class ChartAsset : IChartAsset
     {
 
-        public string AssetClass { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? AssetClass { get; set; }
 
-        public string PercentInvestment { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? PercentInvestment { get; set; }
 
         public ChartAsset()
         {
             this.AssetClass = string.Empty;
-            this.PercentInvestment = string.Empty;
+            this.PercentInvestment = 0;
         }
 
         public ChartAsset(IChartAsset source)

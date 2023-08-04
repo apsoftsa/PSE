@@ -11,18 +11,9 @@ namespace PSE.Model.Output.Models
     public class BondsMaturingLessThan5Years : BondsBase, IBondsMaturingLessThan5Years
     {
 
-        [JsonProperty(propertyName: "amount Nominal")]
-        public string AmountNominal { get; set; }
+        public BondsMaturingLessThan5Years() : base() { }
 
-        public BondsMaturingLessThan5Years() : base()
-        {
-            AmountNominal= string.Empty;
-        }
-
-        public BondsMaturingLessThan5Years(IBondsMaturingLessThan5Years source) : base(source)
-        {
-            AmountNominal = source.AmountNominal;
-        }
+        public BondsMaturingLessThan5Years(IBondsMaturingLessThan5Years source) : base(source) { }
 
     }
 

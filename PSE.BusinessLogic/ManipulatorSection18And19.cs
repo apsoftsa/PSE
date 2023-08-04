@@ -37,27 +37,21 @@ namespace PSE.BusinessLogic
                         {
                             _altProdDetails = new AlternativeProductDetail()
                             {
-                                ValorNumber = _posItem.NumSecurity_29,
+                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : null,
                                 Currency = _posItem.Currency1_17,
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                CurrentPriceFromPurchase = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
-                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
+                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
+                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
                                 Isin = _posItem.IsinIban_85,
-                                PriceBeginningYear = _posItem.BuyPriceAverage_87,
-                                PercentAssets = "[PercentAssets]",
-                                CurrentPriceFromYTD = "[CurrentPriceFromYTD]",
-                                ExchangeRateImpactPurchase = "[ExchangeRateImpactPurchase]",
-                                ExchangeRateImpactYTD = "[ExchangeRateImpactYTD]",
-                                NominalAmmount = "[NominalAmount]",                                
-                                PercentPerformanceYTD = "[PercentPerformanceYTD]",
-                                PercentPerformancePurchase = "[PercentPerformancePurchase]" // !!!! a quale campo corrisponde "cambio storico"?                                
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null
                             };
                             // !!!!
-                            // come faccio a capire a quale di questi 4 sotto insiemi li devo associare?!
+                            // come faccio a capire a quale di questi 5 sotto insiemi li devo associare?!
                             //IList<IAlternativeProductDetail> DerivativesOnSecurities { get; set; }
                             //IList<IAlternativeProductDetail> DerivativesOnMetals { get; set; }
                             //IList<IAlternativeProductDetail> DerivativesFutures { get; set; }
                             //IList<IAlternativeProductDetail> Different { get; set; }
+                            //IList<IAlternativeProductDetail> DifferentExtra { get; set; }
                             _altProdDefinitions.Different.Add(_altProdDetails); // temporaneo per ora vanno tutti su 'different' !!!!
                         }                                                
                         _sectionContent.AlternativeProducts.Add(_altProdDefinitions);

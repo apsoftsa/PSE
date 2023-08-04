@@ -35,24 +35,14 @@ namespace PSE.BusinessLogic
                         {
                             _bondLessThan5 = new BondsMaturingLessThan5Years()
                             {
-                                ValorNumber = _posItem.NumSecurity_29,
+                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : null,
                                 Currency = _posItem.Currency1_17,
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
                                 Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
-                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
-                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
+                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
+                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
                                 Isin = _posItem.IsinIban_85,
-                                PriceAtTheBeginningOfTheYear = _posItem.BuyPriceAverage_87,
-                                AmountNominal = "[AmountNominal]",
-                                MsciEsg = "[MsciEsg]",
-                                PercentAssets = "[PercentAssets]",
-                                PercentCoupon = "[PercentCoupon]",
-                                PercentImpactChangeFromPurchase = "[PercentImpactChangeFromPurchase]",
-                                PercentImpactChangeYTD = "[PercentImpactChangeYTD]",
-                                PercentPerformancefromPurchase = "[PercentPerformancefromPurchase]",
-                                PercentPerformanceYTD = "[PercentPerformanceYTD]",
-                                PercentYTM = "[PercentYTM]",
-                                SPRating = "[SPRating]"
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null
                             };
                             _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
                         }

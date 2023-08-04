@@ -16,36 +16,34 @@ namespace PSE.Model.Output.Models
         public bool IsTotal { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string ManagementLine { get; set; }
+        public string? ManagementLine { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalLine { get; set; }
+        public string? Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        public string MarketValueReportingCurrency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentWeight { get; set; }
 
-        public string PercentWeight { get; set; }
-
-        public string PercentPerformance { get; set; }        
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? PercentPerformance { get; set; }        
 
         public MultilineManagement()
         {
             this.IsTotal = false;
-            this.ManagementLine = string.Empty;
-            this.TotalLine = string.Empty;  
-            this.Currency = string.Empty;
-            this.MarketValueReportingCurrency = string.Empty;
-            this.PercentWeight = string.Empty;
-            this.PercentPerformance = string.Empty;
+            this.ManagementLine = null;
+            this.Currency = null;
+            this.MarketValueReportingCurrency = null;
+            this.PercentWeight = null;
+            this.PercentPerformance = null;
         }
 
         public MultilineManagement(IMultilineManagement source)
         {
             this.IsTotal = source.IsTotal;
             this.ManagementLine = source.ManagementLine;
-            this.TotalLine = source.TotalLine;  
             this.Currency = source.Currency;
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             this.PercentWeight = source.PercentWeight;
@@ -60,25 +58,26 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonIgnore]
-        public string Currency { get;set; }
+        public string? Currency { get;set; }
 
-        public string ManagementLine { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? ManagementLine { get; set; }
 
-        [JsonDynamicName("percent" + nameof(Currency))]
-        public string PercentCurrency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? Percent { get; set; }
 
         public ChartMultilineManagement()
         {
-            this.Currency= string.Empty;    
-            this.ManagementLine = string.Empty;
-            this.PercentCurrency = string.Empty;
+            this.Currency= null;    
+            this.ManagementLine = null;
+            this.Percent = null;
         }
 
         public ChartMultilineManagement(IChartMultilineManagement source)
         {
             this.Currency = source.Currency;
             this.ManagementLine = source.ManagementLine;
-            this.PercentCurrency = source.PercentCurrency;
+            this.Percent = source.Percent;
         }
 
     }

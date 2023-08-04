@@ -1,36 +1,29 @@
 ﻿namespace PSE.Model.Output.Interfaces
 {
 
-    public interface ISubAsset
-    {
-
-        string TypeInvestment { get; set; }
-
-        string MarketValueReportingCurrency { get; set; }
-
-        string PercentInvestment { get; set; }
-
-    }
-
     public interface IAsset
     {        
 
-        string AssetClass { get; set; }
+        string? AssetClass { get; set; }
 
-        string MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrencyT { get; set; }
 
-        string PercentInvestment { get; set; }
+        decimal? PercentInvestmentT { get; set; }
 
-        IList<ISubAsset> SubAssets { get; set; }
+        string? TypeInvestment { get; set; }
+
+        int? MarketValueReportingCurrency { get; set; }
+
+        int? PercentInvestment { get; set; }
 
     }
 
     public interface IChartAsset
     {
 
-        string AssetClass { get; set; }
+        string? AssetClass { get; set; }
 
-        string PercentInvestment { get; set; }
+        int? PercentInvestment { get; set; }
 
     }
 

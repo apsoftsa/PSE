@@ -11,30 +11,36 @@ namespace PSE.Model.Output.Models
     public class Account : IAccount
     {
 
-        [JsonProperty(propertyName: "account")]
-        public string AccountData { get; set; }
+        [JsonProperty(propertyName: "account", NullValueHandling = NullValueHandling.Ignore)]
+        public string? AccountData { get; set; }
 
-        public string Iban { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Iban { get; set; }
 
-        public string Currency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Currency { get; set; }
 
-        public string CurrentBalance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? CurrentBalance { get; set; }
 
-        public string MarketValueReportingCurrency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        public string AccruedInterestReportingCurrency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? AccruedInterestReportingCurrency { get; set; }
 
-        public string ParentAssets { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? ParentAssets { get; set; }
 
         public Account()
         {
-            this.AccountData = string.Empty;
-            this.Iban = string.Empty;
-            this.Currency = string.Empty;
-            this.CurrentBalance = string.Empty;
-            this.MarketValueReportingCurrency = string.Empty;
-            this.AccruedInterestReportingCurrency = string.Empty;
-            this.ParentAssets = string.Empty;
+            this.AccountData = null;
+            this.Iban = null;
+            this.Currency = null;
+            this.CurrentBalance = null;
+            this.MarketValueReportingCurrency = null;
+            this.AccruedInterestReportingCurrency = null;
+            this.ParentAssets = null;
         }
 
         public Account(IAccount source)

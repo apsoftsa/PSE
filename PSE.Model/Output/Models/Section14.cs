@@ -8,93 +8,12 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class ObligationsWithMaturityGreatherThanFiveYears : IObligationsWithMaturityGreatherThanFiveYears
+    public class ObligationsWithMaturityGreatherThanFiveYears : BondsBase, IObligationsWithMaturityGreatherThanFiveYears
     {
 
-        public string Description { get; set; }
+        public ObligationsWithMaturityGreatherThanFiveYears() : base() { }
 
-        public string ValorNumber { get; set; }
-
-        public string Isin { get; set; }
-
-        public string NominalAmount { get; set; }
-
-        public string Currency { get; set; }
-
-        public string PercentCoupon { get; set; }
-
-        public string PercentYTM { get; set; }
-
-        public string Expiration { get; set; }
-
-        [JsonProperty(propertyName: "s&pRatings")]
-        public string SPRating { get; set; }
-
-        public string MsciEsg { get; set; }
-
-        public string PurchasePrice { get; set; }
-
-        public string PriceBeginningYear { get; set; }
-
-        public string CurrentPriceFromPurchase { get; set; }
-
-        public string CurrentPriceFromYTD { get; set; }
-
-        public string ExchangeRateImpactPurchase { get; set; }
-
-        public string ExchangeRateImpactYTD { get; set; }
-
-        public string PerformancePurchase { get; set; }
-
-        public string PerformanceYTD { get; set; }
-
-        public string PercentAssets { get; set; }
-
-        public ObligationsWithMaturityGreatherThanFiveYears()
-        {
-            Description = string.Empty;
-            ValorNumber = string.Empty;
-            Isin = string.Empty;
-            NominalAmount = string.Empty;
-            Currency = string.Empty;
-            PercentCoupon = string.Empty;
-            PercentYTM = string.Empty;
-            Expiration = string.Empty;
-            SPRating = string.Empty;
-            MsciEsg = string.Empty;
-            PurchasePrice = string.Empty;
-            PriceBeginningYear = string.Empty;
-            CurrentPriceFromPurchase = string.Empty;
-            CurrentPriceFromYTD = string.Empty;
-            ExchangeRateImpactPurchase = string.Empty;
-            ExchangeRateImpactYTD = string.Empty;
-            PerformancePurchase = string.Empty;
-            PerformanceYTD = string.Empty;
-            PercentAssets = string.Empty;
-        }
-
-        public ObligationsWithMaturityGreatherThanFiveYears(IObligationsWithMaturityGreatherThanFiveYears source)
-        {
-            Description = source.Description;
-            ValorNumber = source.ValorNumber;
-            Isin = source.Isin;
-            NominalAmount = source.NominalAmount;
-            Currency = source.Currency;
-            PercentCoupon = source.PercentCoupon;
-            PercentYTM = source.PercentYTM;
-            Expiration = source.Expiration;
-            SPRating = source.SPRating;
-            MsciEsg = source.MsciEsg;
-            PurchasePrice = source.PurchasePrice;
-            PriceBeginningYear = source.PriceBeginningYear;
-            CurrentPriceFromPurchase = source.CurrentPriceFromPurchase;
-            CurrentPriceFromYTD = source.CurrentPriceFromYTD;
-            ExchangeRateImpactPurchase = source.ExchangeRateImpactPurchase;
-            ExchangeRateImpactYTD = source.ExchangeRateImpactYTD;
-            PerformancePurchase = source.PerformancePurchase;
-            PerformanceYTD = source.PerformanceYTD;
-            PercentAssets = source.PercentAssets;
-        }
+        public ObligationsWithMaturityGreatherThanFiveYears(IObligationsWithMaturityGreatherThanFiveYears source) : base(source) { }
 
     }
 

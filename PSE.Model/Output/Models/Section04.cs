@@ -11,26 +11,28 @@ namespace PSE.Model.Output.Models
     public class HistoryEvolutionPerformanceCurrency: IHistoryEvolutionPerformanceCurrency
     {
 
-        public string Period { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Period { get; set; }
 
-        [JsonProperty(propertyName: "initial_amount")]
-        public string InitialAmount { get; set; }
+        [JsonProperty(propertyName: "initial_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? InitialAmount { get; set; }
 
-        [JsonProperty(propertyName: "final_amount")]
-        public string FinalAmount { get; set; }
+        [JsonProperty(propertyName: "final_amount", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? FinalAmount { get; set; }
 
-        [JsonProperty(propertyName: "inputs/outputs")]
-        public string InputsOutputs { get; set; }
+        [JsonProperty(propertyName: "inputs/outputs", NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? InputsOutputs { get; set; }
 
-        public string PercentPerformance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentPerformance { get; set; }
 
         public HistoryEvolutionPerformanceCurrency()
         {
-            this.Period = string.Empty;
-            this.InitialAmount = string.Empty;
-            this.FinalAmount = string.Empty;
-            this.InputsOutputs = string.Empty;  
-            this.PercentPerformance = string.Empty; 
+            this.Period = null;
+            this.InitialAmount = null;
+            this.FinalAmount = null;
+            this.InputsOutputs = null;  
+            this.PercentPerformance = null; 
         }
 
         public HistoryEvolutionPerformanceCurrency(IHistoryEvolutionPerformanceCurrency source)
@@ -49,19 +51,21 @@ namespace PSE.Model.Output.Models
     public class ChartPerformanceEvolution : IChartPerformanceEvolution
     {
 
-        public string Period { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Year { get; set; }
 
-        public string PercentPerformance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentPerformance { get; set; }
 
         public ChartPerformanceEvolution() 
         { 
-            this.Period = string.Empty;
-            this.PercentPerformance = string.Empty;
+            this.Year = null;
+            this.PercentPerformance = null;
         }
 
         public ChartPerformanceEvolution(IChartPerformanceEvolution source)
         {
-            this.Period = source.Period;
+            this.Year = source.Year;
             this.PercentPerformance = source.PercentPerformance;
         }
 

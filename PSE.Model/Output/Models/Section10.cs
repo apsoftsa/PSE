@@ -13,51 +13,51 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Account { get; set; }
+        public string? Account { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; set; }
+        public string? Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string NoDeposit { get; set; }
+        public string? NoDeposit { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentInterest { get; set; }
+        public decimal? PercentInterest { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Correspondent { get; set; }
+        public string? Correspondent { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string OpeningDate { get; set; }
+        public string? OpeningDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpirationDate { get; set; }
+        public string? ExpirationDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string FaceValue { get; set; }
+        public decimal? FaceValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string AccruedInterestReportingCurrency { get; set; }
+        public decimal? AccruedInterestReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentAssets { get; set; }
-
+        public decimal? PercentAsset { get; set; }
+        
         public FiduciaryInvestmentAccount()
         {
-            Account = string.Empty;
-            Currency = string.Empty;
-            NoDeposit = string.Empty;
-            PercentInterest = string.Empty;
-            Correspondent = string.Empty;
-            OpeningDate = string.Empty;
-            ExpirationDate = string.Empty;
-            FaceValue = string.Empty;
-            MarketValueReportingCurrency = string.Empty;
-            AccruedInterestReportingCurrency = string.Empty;
-            PercentAssets = string.Empty;
+            Account = null;
+            Currency = null;
+            NoDeposit = null;
+            PercentInterest = null;
+            Correspondent = null;
+            OpeningDate = null;
+            ExpirationDate = null;
+            FaceValue = null;
+            MarketValueReportingCurrency = null;
+            AccruedInterestReportingCurrency = null;
+            PercentAsset = null;
         }
 
         public FiduciaryInvestmentAccount(IFiduciaryInvestmentAccount source)
@@ -72,7 +72,7 @@ namespace PSE.Model.Output.Models
             FaceValue = source.FaceValue;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             AccruedInterestReportingCurrency = source.AccruedInterestReportingCurrency;
-            PercentAssets = source.PercentAssets;
+            PercentAsset = source.PercentAsset;
         }
 
     }

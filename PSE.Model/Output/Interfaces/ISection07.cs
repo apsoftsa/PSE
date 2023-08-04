@@ -6,17 +6,15 @@
 
         bool IsTotal { get; set; }
 
-        string TotalCurrency { get; set; }
+        string? Currency { get; set; }
 
-        string Currency { get; set; }
+        decimal? Amount { get; set; }
 
-        string Amount { get; set; }
+        decimal? Exchange { get; set; }
 
-        string Exchange { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        string MarketValueReportingCurrency { get; set; }
-
-        string PercentAsset { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 
@@ -25,9 +23,9 @@
 
         string PercentType { get; set; }    
 
-        string Currency { get; set; }
+        string? Currency { get; set; }
 
-        string PercentValue { get; set; }
+        int? PercentAsset { get; set; }
 
     }
 

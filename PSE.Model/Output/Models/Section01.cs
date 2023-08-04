@@ -11,20 +11,24 @@ namespace PSE.Model.Output.Models
     public class AssetStatement : IAssetStatement
     {
 
-        public string Customer { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Customer { get; set; }
 
-        public string Portfolio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Portfolio { get; set; }
 
-        public string Date { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Date { get; set; }
 
-        public string Advisor { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Advisor { get; set; }
 
         public AssetStatement()
         {
-            this.Customer = string.Empty;   
-            this.Portfolio = string.Empty;
-            this.Date = string.Empty;
-            this.Advisor = string.Empty;
+            this.Customer = null;   
+            this.Portfolio = null;
+            this.Date = null;
+            this.Advisor = null;
         }
 
         public AssetStatement(IAssetStatement source)

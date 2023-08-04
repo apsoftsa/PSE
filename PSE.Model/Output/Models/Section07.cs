@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PSE.Model.Common;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
 using static PSE.Model.Common.Constants;
@@ -16,37 +15,33 @@ namespace PSE.Model.Output.Models
         public bool IsTotal { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string TotalCurrency { get; set; }
+        public string? Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; set; }
+        public decimal? Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Amount { get; set; }
+        public decimal? Exchange { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Exchange { get; set; }
-
-        public string MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentAsset { get; set; }        
+        public decimal? PercentAsset { get; set; }        
         
         public Investment()
         {
             this.IsTotal = false;
-            this.TotalCurrency = string.Empty;
-            this.Amount = string.Empty;
-            this.Currency = string.Empty;
-            this.MarketValueReportingCurrency = string.Empty;
-            this.Exchange = string.Empty;
-            this.PercentAsset = string.Empty;
+            this.Amount = null;
+            this.Currency = null;
+            this.MarketValueReportingCurrency = null;
+            this.Exchange = null;
+            this.PercentAsset = null;
         }
 
         public Investment(IInvestment source)
         {
             this.IsTotal = source.IsTotal;
-            this.TotalCurrency = source.TotalCurrency;
             this.Amount = source.Amount;
             this.Currency = source.Currency;
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;
@@ -64,23 +59,24 @@ namespace PSE.Model.Output.Models
         [JsonIgnore]
         public string PercentType { get; set; }
 
-        public string Currency { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Currency { get; set; }
 
-        [JsonDynamicName("percent" + nameof(PercentType))]
-        public string PercentValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? PercentAsset { get; set; }
 
         public ChartInvestment()
         {
-            this.Currency = string.Empty;
+            this.Currency = null;
             this.PercentType = string.Empty;
-            this.PercentValue = string.Empty;
+            this.PercentAsset = null;
         }
 
         public ChartInvestment(IChartInvestment source)
         {
             this.Currency = source.Currency;
             this.PercentType = source.PercentType;
-            this.PercentValue = source.PercentValue;
+            this.PercentAsset = source.PercentAsset;
         }
 
     }

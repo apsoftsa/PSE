@@ -4,13 +4,13 @@
     public interface IAssetStatement
     {
 
-        string Customer { get; set; }
+        string? Customer { get; set; }
 
-        string Portfolio { get; set; }
+        string? Portfolio { get; set; }
 
-        string Date { get; set; }
+        string? Date { get; set; }
 
-        string Advisor { get; set; }
+        string? Advisor { get; set; }
 
     }
 

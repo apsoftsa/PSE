@@ -1,12 +1,7 @@
 ﻿namespace PSE.Model.Output.Interfaces
 {
 
-    public interface IBondsMaturingLessThan5Years : IBondsBase
-    {
-
-        string AmountNominal { get; set; }
-
-    }
+    public interface IBondsMaturingLessThan5Years : IBondsBase { }
 
     public interface ISection12Content
     {

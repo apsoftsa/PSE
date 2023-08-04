@@ -11,68 +11,80 @@ namespace PSE.Model.Output.Models
     public class AlternativeProductDetail : IAlternativeProductDetail
     {
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string ValorNumber { get; set; }
+        public string? DescriptionExtra { get; set; }
 
-        public string Isin { get; set; }
+        public int? ValorNumber { get; set; }
 
-        public string NominalAmmount { get; set; }
+        public string? Isin { get; set; }
 
-        public string Currency { get; set; }
+        public decimal? NominalAmmount { get; set; }
 
-        public string PurchasePrice { get; set; }
+        public string? UnderlyingDescription { get; set; }
 
-        public string PriceBeginningYear { get; set; }
+        public string? Currency { get; set; }
 
-        public string CurrentPriceFromPurchase { get; set; }
+        public decimal? PurchasePrice { get; set; }
 
-        public string CurrentPriceFromYTD { get; set; }
+        public decimal? PriceBeginningYear { get; set; }
 
-        public string ExchangeRateImpactPurchase { get; set; }
+        public decimal? CurrentPrice { get; set; }
 
-        public string ExchangeRateImpactYTD { get; set; }
+        public decimal? ExchangeRateImpactPurchase { get; set; }
 
-        public string PercentPerformancePurchase { get; set; }
+        public decimal? ExchangeRateImpactYTD { get; set; }
 
-        public string PercentPerformanceYTD { get; set; }
+        public decimal? PerformancePurchase { get; set; }
 
-        public string PercentAssets { get; set; }
+        public decimal? PercentPerformancePurchase { get; set; }
+
+        public decimal? PerformanceYTD { get; set; }
+
+        public decimal? PercentPerformanceYTD { get; set; }
+
+        public decimal? PercentAsset { get; set; }
 
         public AlternativeProductDetail()
         {
-            Description = string.Empty;
-            ValorNumber = string.Empty;
-            Isin = string.Empty;
-            NominalAmmount = string.Empty;
-            Currency = string.Empty;
-            PurchasePrice = string.Empty;
-            PriceBeginningYear = string.Empty;
-            CurrentPriceFromPurchase = string.Empty;
-            CurrentPriceFromYTD = string.Empty;
-            ExchangeRateImpactPurchase = string.Empty;
-            ExchangeRateImpactYTD = string.Empty;
-            PercentPerformancePurchase = string.Empty;
-            PercentPerformanceYTD = string.Empty;
-            PercentAssets = string.Empty;
+            Description = null;
+            DescriptionExtra = null;    
+            ValorNumber = null;
+            Isin = null;
+            NominalAmmount = null;
+            UnderlyingDescription = null;   
+            Currency = null;
+            PurchasePrice = null;
+            PriceBeginningYear = null;
+            CurrentPrice = null;
+            ExchangeRateImpactPurchase = null;
+            ExchangeRateImpactYTD = null;
+            PerformancePurchase = null; 
+            PercentPerformancePurchase = null;
+            PerformanceYTD = null;  
+            PercentPerformanceYTD = null;
+            PercentAsset = null;
         }
 
         public AlternativeProductDetail(IAlternativeProductDetail source)
         {
             Description = source.Description;
+            DescriptionExtra = source.DescriptionExtra;
             ValorNumber = source.ValorNumber;
             Isin = source.Isin;
             NominalAmmount = source.NominalAmmount;
+            UnderlyingDescription = source.UnderlyingDescription;
             Currency = source.Currency;
             PurchasePrice = source.PurchasePrice;
             PriceBeginningYear = source.PriceBeginningYear;
-            CurrentPriceFromPurchase = source.CurrentPriceFromPurchase;
-            CurrentPriceFromYTD = source.CurrentPriceFromYTD;
+            CurrentPrice = source.CurrentPrice;
             ExchangeRateImpactPurchase = source.ExchangeRateImpactPurchase;
             ExchangeRateImpactYTD = source.ExchangeRateImpactYTD;
+            PerformancePurchase = source.PerformancePurchase;   
             PercentPerformancePurchase = source.PercentPerformancePurchase;
+            PerformanceYTD = source.PercentAsset;   
             PercentPerformanceYTD = source.PercentPerformanceYTD;
-            PercentAssets = source.PercentAssets;
+            PercentAsset = source.PercentAsset;
         }
 
     }
@@ -122,12 +134,23 @@ namespace PSE.Model.Output.Models
             private set { }
         }
 
+        [JsonIgnore]
+        public IList<IAlternativeProductDetail> DifferentExtra { get; set; }
+
+        [JsonProperty("differentExtra")]
+        public IList<IAlternativeProductDetail>? SerializationDifferentExtra
+        {
+            get { return DifferentExtra != null && DifferentExtra.Any() ? (List<IAlternativeProductDetail>)DifferentExtra : null; }
+            private set { }
+        }
+
         public AlternativeProducts()
         {
             DerivativesOnSecurities = new List<IAlternativeProductDetail>();
             DerivativesOnMetals = new List<IAlternativeProductDetail>();
             DerivativesFutures = new List<IAlternativeProductDetail>();
             Different = new List<IAlternativeProductDetail>();
+            DifferentExtra = new List<IAlternativeProductDetail>();
         }
 
         public AlternativeProducts(IAlternativeProducts source)
@@ -162,6 +185,14 @@ namespace PSE.Model.Output.Models
                 foreach (IAlternativeProductDetail _altProdDet in source.Different)
                 {
                     Different.Add(new AlternativeProductDetail(_altProdDet));
+                }
+            }
+            DifferentExtra = new List<IAlternativeProductDetail>();
+            if (source.DifferentExtra != null && source.DifferentExtra.Any())
+            {
+                foreach (IAlternativeProductDetail _altProdDet in source.DifferentExtra)
+                {
+                    DifferentExtra.Add(new AlternativeProductDetail(_altProdDet));
                 }
             }
         }

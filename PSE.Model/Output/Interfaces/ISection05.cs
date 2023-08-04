@@ -6,30 +6,28 @@ namespace PSE.Model.Output.Interfaces
     public interface IMultilineManagement
     {
 
-        bool IsTotal { get; set; }   
+        bool IsTotal { get; set; }
 
-        string ManagementLine { get; set; }
+        string? ManagementLine { get; set; }
 
-        string TotalLine { get; set; }
+        string? Currency { get; set; }
 
-        string Currency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        string MarketValueReportingCurrency { get; set; }
+        decimal? PercentWeight { get; set; }
 
-        string PercentWeight { get; set; }
-
-        string PercentPerformance { get; set; }
+        int? PercentPerformance { get; set; }
 
     }
 
     public interface IChartMultilineManagement
     {
 
-        string Currency { get; set; }
+        string? Currency { get; set; }
 
-        string ManagementLine { get; set; }
+        string? ManagementLine { get; set; }
 
-        string PercentCurrency { get; set; }
+        int? Percent { get; set; }
 
     }
 

@@ -40,13 +40,12 @@ namespace PSE.BusinessLogic
                             {
                                 CurrencyLoss = _posItem.Currency1_17,
                                 Currency2 = _posItem.Currency2_18,
-                                AmountLoss = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value.ToString(_culture) : "",
+                                AmountLoss = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value : null,
                                 ExpirationDate = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
-                                CurrentExchangeRate = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
-                                Change = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
-                                Amount2 = _posItem.Amount2Cur2_59 != null ? _posItem.Amount2Cur2_59.Value.ToString(_culture) : "",
-                                ProfitlossReportingCurrency = (_tmp1 + _tmp2).ToString(_culture),
-                                PercentAssets = "[PercentAssets]"
+                                CurrentExchangeRate = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
+                                Change = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
+                                Amount2 = _posItem.Amount2Cur2_59 != null ? _posItem.Amount2Cur2_59.Value : null,
+                                ProfitlossReportingCurrency = _tmp1 + _tmp2,
                             };
                             _sectionContent.Operations.Add(_profitLossOperation);
                         }

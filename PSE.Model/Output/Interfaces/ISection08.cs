@@ -4,19 +4,19 @@
     public interface IAccount
     {
 
-        string AccountData { get; set; }
+        string? AccountData { get; set; }
 
-        string Iban { get; set; }
+        string? Iban { get; set; }
 
-        string Currency { get; set; }
+        string? Currency { get; set; }
 
-        string CurrentBalance { get; set; }
+        decimal? CurrentBalance { get; set; }
 
-        string MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        string AccruedInterestReportingCurrency { get; set; }
+        decimal? AccruedInterestReportingCurrency { get; set; }
 
-        string ParentAssets { get; set; }
+        decimal? ParentAssets { get; set; }
 
     }
 

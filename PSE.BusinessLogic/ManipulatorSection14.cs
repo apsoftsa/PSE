@@ -35,25 +35,14 @@ namespace PSE.BusinessLogic
                         {
                             _oblWithMatGreatThan5 = new ObligationsWithMaturityGreatherThanFiveYears()
                             {
-                                ValorNumber = _posItem.NumSecurity_29,
+                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : null,
                                 Currency = _posItem.Currency1_17,
                                 Description = _posItem.Description1_32,
-                                CurrentPriceFromPurchase = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
-                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
-                                PriceBeginningYear = _posItem.BuyPriceAverage_87,
+                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
+                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null,
                                 Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
-                                Isin = _posItem.IsinIban_85,
-                                MsciEsg = "[MsciEsg]",
-                                PercentAssets = "[PercentAssets]",
-                                CurrentPriceFromYTD = "[CurrentPriceFromYTD]",
-                                ExchangeRateImpactPurchase = "[ExchangeRateImpactPurchase]",
-                                ExchangeRateImpactYTD = "[ExchangeRateImpactYTD]",
-                                NominalAmount = "[NominalAmount]",
-                                PercentCoupon = "[PercentCoupon]",
-                                PercentYTM = "[PercentYTM]",
-                                PerformanceYTD = "[PerformanceYTD]",
-                                PerformancePurchase = "[PerformancePurchase]",
-                                SPRating = "[SPRating]"
+                                Isin = _posItem.IsinIban_85
                             };
                             _sectionContent.ObligationsWithMaturityGreatherThanFiveYears.Add(_oblWithMatGreatThan5);
                         }

@@ -56,16 +56,16 @@ namespace PSE.BusinessLogic
                             _historyEvo = new HistoryEvolutionPerformanceCurrency()
                             {
                                 Period = _tmpPeriod,
-                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value.ToString(_culture) : string.Empty,
-                                InitialAmount = _perItem.StartValue_8 != null ? _perItem.StartValue_8.Value.ToString(_culture) : string.Empty,
-                                FinalAmount = _perItem.EndValue_9 != null ? _perItem.EndValue_9.Value.ToString(_culture) : string.Empty,
-                                InputsOutputs = _tmpInpOut.ToString(_culture)
+                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value : 0,
+                                InitialAmount = _perItem.StartValue_8 != null ? _perItem.StartValue_8.Value : 0,
+                                FinalAmount = _perItem.EndValue_9 != null ? _perItem.EndValue_9.Value : 0,
+                                InputsOutputs = _tmpInpOut
                             };
                             _sectionContent.HistoryEvolutionPerformancesCurrency.Add(_historyEvo);
                             _chartEvo = new ChartPerformanceEvolution()
                             {
-                                Period = _tmpPeriod,
-                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value.ToString(_culture) : string.Empty
+                                Year = _tmpPeriod,
+                                PercentPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value : 0
                             };
                             _sectionContent.ChartPerformanceEvolutions.Insert(0, _chartEvo);
                         }

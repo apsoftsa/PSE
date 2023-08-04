@@ -26,6 +26,7 @@
         public const string OUTPUT_SECTION13_CODE = "section13";
         public const string OUTPUT_SECTION14_CODE = "section14";
         public const string OUTPUT_SECTION15_CODE = "section15";
+        public const string OUTPUT_SECTION16AND17_CODE = "section16-17";
         public const string OUTPUT_SECTION18AND19_CODE = "section18-19";
         public const string OUTPUT_FOOTER_CODE = "footer";
 

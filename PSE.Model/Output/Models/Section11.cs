@@ -12,43 +12,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty("amount1", NullValueHandling = NullValueHandling.Ignore)]
-        public string AmountLoss { get; set; }
+        public decimal? AmountLoss { get; set; }
 
         [JsonProperty("currency1", NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrencyLoss { get; set; }
+        public string? CurrencyLoss { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Change { get; set; }
+        public decimal? Change { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Amount2 { get; set; }
+        public decimal? Amount2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency2 { get; set; }
+        public string? Currency2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpirationDate { get; set; }
+        public string? ExpirationDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentExchangeRate { get; set; }
+        public decimal? CurrentExchangeRate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string ProfitlossReportingCurrency { get; set; }
+        public decimal? ProfitlossReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentAssets { get; set; }
+        public decimal? PercentAssets { get; set; }
 
         public ProfitLossOperation()
         {
-            AmountLoss = string.Empty;
-            CurrencyLoss = string.Empty;
-            Change = string.Empty;
-            Amount2 = string.Empty;
-            Currency2 = string.Empty;
-            ExpirationDate = string.Empty;
-            CurrentExchangeRate = string.Empty;
-            ProfitlossReportingCurrency = string.Empty;
-            PercentAssets = string.Empty;
+            AmountLoss = null;
+            CurrencyLoss = null;
+            Change = null;
+            Amount2 = null;
+            Currency2 = null;
+            ExpirationDate = null;
+            CurrentExchangeRate = null;
+            ProfitlossReportingCurrency = null;
+            PercentAssets = null;
         }
 
         public ProfitLossOperation(IProfitLossOperation source)

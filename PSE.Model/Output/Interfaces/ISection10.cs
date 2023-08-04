@@ -4,27 +4,27 @@
     public interface IFiduciaryInvestmentAccount
     {
 
-        string Account { get; set; }
+        string? Account { get; set; }
 
-        string Currency { get; set; }
+        string? Currency { get; set; }
 
-        string NoDeposit { get; set; }
+        string? NoDeposit { get; set; }
 
-        string PercentInterest { get; set; }
+        decimal? PercentInterest { get; set; }
 
-        string Correspondent { get; set; }
+        string? Correspondent { get; set; }
 
-        string OpeningDate { get; set; }
+        string? OpeningDate { get; set; }
 
-        string ExpirationDate { get; set; }
+        string? ExpirationDate { get; set; }
 
-        string FaceValue { get; set; }
+        decimal? FaceValue { get; set; }
 
-        string MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        string AccruedInterestReportingCurrency { get; set; }
+        decimal? AccruedInterestReportingCurrency { get; set; }
 
-        string PercentAssets { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 

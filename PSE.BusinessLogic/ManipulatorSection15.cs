@@ -35,22 +35,12 @@ namespace PSE.BusinessLogic
                         {
                             _bondGreatThan5 = new BondsWithMaturityGreatherThanFiveYears()
                             {
-                                ValorNumber = _posItem.NumSecurity_29,
+                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : null,
                                 Currency = _posItem.Currency1_17,
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                CurrentPriceFromPurchase = _posItem.Quote_48 != null ? _posItem.Quote_48.Value.ToString(_culture) : "",
-                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value.ToString(_culture) : "",
-                                PriceBeginningYear = _posItem.BuyPriceAverage_87,
-                                Isin = "[Isin]",                                
-                                MsciEsg = "[MsciEsg]",
-                                PercentAssets = "[PercentAssets]",
-                                CurrentPriceFromYTD = "[CurrentPriceFromYTD]",
-                                ExchangeRateImpactPurchase = "[ExchangeRateImpactPurchase]",
-                                ExchangeRateImpactYTD = "[ExchangeRateImpactYTD]",
-                                NominalAmount = "[NominalAmount]",
-                                PercentperformanceYTD = "[PercentperformanceYTD]",
-                                PerformancePurchase = "[PerformancePurchase]",
-                                SPRating = "[SPRating]"
+                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
+                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null
                             };
                             _sectionContent.BondsWithMatGreatThanFiveYears.Add(_bondGreatThan5);
                         }

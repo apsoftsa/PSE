@@ -4,37 +4,41 @@
     public interface IShortTermInvestment
     {
 
-        string Description { get; set; }
+        string? Description { get; set; }
 
-        string Isin { get; set; }
+        string? DescriptionExtra { get; set; }
 
-        string ValorNumber { get; set; }
+        int? ValorNumber { get; set; }
 
-        string NominalAmount { get; set; }
+        string? Isin { get; set; }
 
-        string Currency { get; set; }
+        decimal? NominalAmount { get; set; }
 
-        string SAndPRating { get; set; }
+        string? Currency { get; set; }
 
-        string MsciEsg { get; set; }
+        string? SPRating { get; set; }
 
-        string PurchasePrice { get; set; }
+        string? MsciEsg { get; set; }
 
-        string CurrentPriceToPurchase { get; set; }
+        decimal? PurchasePrice { get; set; }
 
-        string PercentImpactChangeToPurchase { get; set; }
+        decimal? PriceBeginningYear { get; set; }
 
-        string PriceAtTheBeginningOfTheYear { get; set; }
+        decimal? CurrentPrice { get; set; }
 
-        string CurrentPriceYTD { get; set; }
+        decimal? ExchangeRateImpactPurchase { get; set; }
 
-        string PercentImpactChangeYTD { get; set; }
+        decimal? ExchangeRateImpactYTD { get; set; }
 
-        string Performance { get; set; }
+        decimal? PerformancePurchase { get; set; }
 
-        string PercentPerformance { get; set; }
+        decimal? PercentPerformancePurchase { get; set; }
 
-        string PercentAssets { get; set; }
+        decimal? PerformanceYTD { get; set; }
+
+        decimal? PercentPerformanceYTD { get; set; }
+
+        decimal? PercentAsset { get; set; }
 
     }
 

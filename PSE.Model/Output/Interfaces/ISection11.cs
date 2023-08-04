@@ -4,23 +4,23 @@
     public interface IProfitLossOperation
     {
 
-        string AmountLoss { get; set; }
+        decimal? AmountLoss { get; set; }
 
-        string CurrencyLoss { get; set; }
+        string? CurrencyLoss { get; set; }
 
-        string Change { get; set; }
+        decimal? Change { get; set; }
 
-        string Amount2 { get; set; }
+        decimal? Amount2 { get; set; }
 
-        string Currency2 { get; set; }
+        string? Currency2 { get; set; }
 
-        string ExpirationDate { get; set; }
+        string? ExpirationDate { get; set; }
 
-        string CurrentExchangeRate { get; set; }
+        decimal? CurrentExchangeRate { get; set; }
 
-        string ProfitlossReportingCurrency { get; set; }
+        decimal? ProfitlossReportingCurrency { get; set; }
 
-        string PercentAssets { get; set; }
+        decimal? PercentAssets { get; set; }
 
     }
 

@@ -4,24 +4,24 @@
     public interface IHistoryEvolutionPerformanceCurrency
     {
 
-        string Period { get; set; }
+        string? Period { get; set; }
 
-        string InitialAmount { get; set; }
+        decimal? InitialAmount { get; set; }
 
-        string FinalAmount { get; set; }
+        decimal? FinalAmount { get; set; }
 
-        string InputsOutputs { get; set; }
+        decimal? InputsOutputs { get; set; }
 
-        string PercentPerformance { get; set; }
+        decimal? PercentPerformance { get; set; }
 
     }
 
     public interface IChartPerformanceEvolution
     {
 
-        string Period { get; set; }
+        string? Year { get; set; }
 
-        string PercentPerformance { get; set; }
+        decimal? PercentPerformance { get; set; }
 
     }
 

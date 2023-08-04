@@ -12,71 +12,79 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Isin { get; set; }
+        public string? DescriptionExtra { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string ValorNumber { get; set; }
+        public int? ValorNumber { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string NominalAmount { get; set; }
+        public string? Isin { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; set; }
-
-        [JsonProperty("s&pRating", NullValueHandling = NullValueHandling.Ignore)]
-        public string SAndPRating { get; set; }
+        public decimal? NominalAmount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string MsciEsg { get; set; }
+        public string? Currency { get; set; }
+
+        [JsonProperty("spRating", NullValueHandling = NullValueHandling.Ignore)]
+        public string? SPRating { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PurchasePrice { get; set; }
+        public string? MsciEsg { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentPriceToPurchase { get; set; }
+        public decimal? PurchasePrice { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentImpactChangeToPurchase { get; set; }
+        public decimal? PriceBeginningYear { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PriceAtTheBeginningOfTheYear { get; set; }
+        public decimal? CurrentPrice { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string CurrentPriceYTD { get; set; }
+        public decimal? ExchangeRateImpactPurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentImpactChangeYTD { get; set; }
+        public decimal? ExchangeRateImpactYTD { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Performance { get; set; }
+        public decimal? PerformancePurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentPerformance { get; set; }
+        public decimal? PercentPerformancePurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string PercentAssets { get; set; }
+        public decimal? PerformanceYTD { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentPerformanceYTD { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentAsset { get; set; }
                       
         public ShortTermInvestment()
         {
-            Description = string.Empty;
-            Isin = string.Empty;
-            ValorNumber = string.Empty;
-            NominalAmount = string.Empty;
-            Currency = string.Empty;
-            SAndPRating = string.Empty;
-            MsciEsg = string.Empty;
-            PurchasePrice = string.Empty;
-            CurrentPriceToPurchase = string.Empty;
-            PercentImpactChangeToPurchase = string.Empty;
-            PriceAtTheBeginningOfTheYear = string.Empty;
-            CurrentPriceYTD = string.Empty;
-            PercentImpactChangeYTD = string.Empty;
-            Performance = string.Empty;
-            PercentPerformance = string.Empty;
-            PercentAssets = string.Empty;
+            Description = null;
+            DescriptionExtra = null;
+            Isin = null;
+            ValorNumber = null;
+            NominalAmount = null;
+            Currency = null;
+            SPRating = null;
+            MsciEsg = null;
+            PurchasePrice = null;
+            PriceBeginningYear = null;
+            CurrentPrice = null;
+            ExchangeRateImpactPurchase = null;
+            ExchangeRateImpactYTD = null;
+            PerformancePurchase = null;
+            PercentPerformancePurchase = null;
+            PerformanceYTD = null;
+            PercentPerformanceYTD = null;
+            PercentAsset = null;
         }
 
         public ShortTermInvestment(IShortTermInvestment source)
@@ -86,17 +94,19 @@ namespace PSE.Model.Output.Models
             ValorNumber = source.ValorNumber;
             NominalAmount = source.NominalAmount;
             Currency = source.Currency;
-            SAndPRating = source.SAndPRating;
+            SPRating = source.SPRating;
             MsciEsg = source.MsciEsg;
             PurchasePrice = source.PurchasePrice;
-            CurrentPriceToPurchase = source.CurrentPriceToPurchase;
-            PercentImpactChangeToPurchase = source.PercentImpactChangeToPurchase;
-            PriceAtTheBeginningOfTheYear = source.PriceAtTheBeginningOfTheYear;
-            CurrentPriceYTD = source.CurrentPriceYTD;
-            PercentImpactChangeYTD = source.PercentImpactChangeYTD;
-            Performance = source.Performance;
-            PercentPerformance = source.PercentPerformance;
-            PercentAssets = source.PercentAssets;
+            DescriptionExtra = source.DescriptionExtra;
+            PriceBeginningYear = source.PriceBeginningYear;
+            CurrentPrice = source.CurrentPrice;
+            ExchangeRateImpactPurchase = source.ExchangeRateImpactPurchase;
+            ExchangeRateImpactYTD = source.ExchangeRateImpactYTD;
+            PerformancePurchase = source.PerformancePurchase;
+            PercentPerformancePurchase = source.PercentPerformancePurchase;
+            PerformanceYTD = source.PerformanceYTD;
+            PercentPerformanceYTD = source.PercentPerformanceYTD;
+            PercentAsset = source.PercentAsset;
         }
 
     }    

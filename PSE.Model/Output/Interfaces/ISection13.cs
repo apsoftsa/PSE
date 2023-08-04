@@ -1,12 +1,7 @@
 ﻿namespace PSE.Model.Output.Interfaces
 {
 
-    public interface IBondsMinorOrEqualTo1Year : IBondsBase 
-    {
-
-        string AmountNominal { get; set; }
-
-    }
+    public interface IBondsMinorOrEqualTo1Year : IBondsBase { }
 
     public interface ISection13Content
     {

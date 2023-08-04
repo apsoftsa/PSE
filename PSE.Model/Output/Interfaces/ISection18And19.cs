@@ -4,33 +4,39 @@
     public interface IAlternativeProductDetail
     {
 
-        string Description { get; set; }
+        string? Description { get; set; }
 
-        string ValorNumber { get; set; }
+        string? DescriptionExtra { get; set; }
 
-        string Isin { get; set; }
+        int? ValorNumber { get; set; }
 
-        string NominalAmmount { get; set; }
+        string? Isin { get; set; }
 
-        string Currency { get; set; }
+        decimal? NominalAmmount { get; set; }
 
-        string PurchasePrice { get; set; }
+        string? UnderlyingDescription { get; set; }
 
-        string PriceBeginningYear { get; set; }
+        string? Currency { get; set; }
 
-        string CurrentPriceFromPurchase { get; set; }
+        decimal? PurchasePrice { get; set; }
 
-        string CurrentPriceFromYTD { get; set; }
+        decimal? PriceBeginningYear { get; set; }
 
-        string ExchangeRateImpactPurchase { get; set; }
+        decimal? CurrentPrice { get; set; }
 
-        string ExchangeRateImpactYTD { get; set; }
+        decimal? ExchangeRateImpactPurchase { get; set; }
 
-        string PercentPerformancePurchase { get; set; }
+        decimal? ExchangeRateImpactYTD { get; set; }
 
-        string PercentPerformanceYTD { get; set; }
+        decimal? PerformancePurchase { get; set; }
 
-        string PercentAssets { get; set; }
+        decimal? PercentPerformancePurchase { get; set; }
+
+        decimal? PerformanceYTD { get; set; }
+
+        decimal? PercentPerformanceYTD { get; set; }
+
+        decimal? PercentAsset { get; set; }
 
     }
 
@@ -44,6 +50,8 @@
         IList<IAlternativeProductDetail> DerivativesFutures { get; set; }
 
         IList<IAlternativeProductDetail> Different { get; set; }
+
+        IList<IAlternativeProductDetail> DifferentExtra { get; set; }
 
     }
 

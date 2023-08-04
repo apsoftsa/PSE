@@ -7,42 +7,55 @@ using System.Threading.Tasks;
 namespace PSE.Model.Output.Interfaces
 {
 
-    public interface IBondsBase
+    public interface IObligationsBase
     {
 
-        string Description { get; set; }
+        string? Description { get; set; }
 
-        string ValorNumber { get; set; }
+        int? ValorNumber { get; set; }
 
-        string Isin { get; set; }
+        string? Isin { get; set; }
 
-        string Currency { get; set; }
+        decimal? NominalAmount { get; set; }
 
-        string PercentCoupon { get; set; }
+        string? Currency { get; set; }
 
-        string PercentYTM { get; set; }
+        string? SPRating { get; set; }
 
-        string Expiration { get; set; }
+        string? MsciEsg { get; set; }
 
-        string SPRating { get; set; }
+        decimal? PurchasePrice { get; set; }
 
-        string MsciEsg { get; set; }
+        decimal? PriceBeginningYear { get; set; }
 
-        string PurchasePrice { get; set; }
+        decimal? CurrentPrice { get; set; }
 
-        string PriceAtTheBeginningOfTheYear { get; set; }
+        decimal? ExchangeRateImpactPurchase { get; set; }
 
-        string CurrentPrice { get; set; }
+        decimal? ExchangeRateImpactYTD { get; set; }
 
-        string PercentImpactChangeFromPurchase { get; set; }
+        decimal? PerformancePurchase { get; set; }
 
-        string PercentImpactChangeYTD { get; set; }
+        decimal? PercentPerformancePurchase { get; set; }
 
-        string PercentPerformancefromPurchase { get; set; }
+        decimal? PerformanceYTD { get; set; }
 
-        string PercentPerformanceYTD { get; set; }
+        decimal? PercentPerformanceYTD { get; set; }
 
-        string PercentAssets { get; set; }
+        decimal? PercentAsset { get; set; }
+
+    }
+
+    public interface IFundBase : IObligationsBase { }
+
+    public interface IBondsBase : IObligationsBase
+    {
+
+        int? PercentCoupon { get; set; }
+
+        decimal? PercentYTM { get; set; }
+
+        string? Expiration { get; set; }
 
     }
 
