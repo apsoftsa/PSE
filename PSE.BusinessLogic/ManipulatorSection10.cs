@@ -37,14 +37,15 @@ namespace PSE.BusinessLogic
                             {
                                 Account = _posItem.HostPositionReference_6,
                                 Currency = _posItem.Currency1_17,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : null,
-                                FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
-                                PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : null,
+                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
+                                FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
+                                PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
                                 ExpirationDate = _posItem.MaturityDate_36 != null ? _posItem.MaturityDate_36.Value.ToString("dd.MM.yyyy") : "",
                                 OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString("dd.MM.yyyy") : "",
                                 NoDeposit = _posItem.MovementKey_31,
                                 Correspondent = _posItem.Description2_33,
-                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : null
+                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : 0,
+                                PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.Accounts.Add(_account);
                         }

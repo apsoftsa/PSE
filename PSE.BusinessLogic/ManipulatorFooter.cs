@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             {
                 SectionCode = OUTPUT_FOOTER_CODE,
                 SectionName = "Footers",
-                BankAddress = string.Empty
+                BankAddress = "[BankAddress]" // not still recovered (!)
             };
             return _footerContent;
         }

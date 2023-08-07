@@ -12,10 +12,10 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Amount { get; set; }
+        public string? Account { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Account { get; set; }
+        public decimal? Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? CostPrice { get; set; }

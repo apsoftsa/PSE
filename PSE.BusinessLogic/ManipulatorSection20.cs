@@ -36,10 +36,13 @@ namespace PSE.BusinessLogic
                             _metPhyMetAcc = new MetalPhysicalMetalAccount()
                             {
                                 Account = _posItem.HostPositionReference_6,
-                                CurrentBalance = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value : null,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : null,
-                                Amount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
-                                PurchasingCourse = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null
+                                CurrentBalance = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value : 0,
+                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
+                                Amount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
+                                PurchasingCourse = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
+                                CostPrice = 0, // not still recovered (!)
+                                PercentDifference = 0, // not still recovered (!)
+                                PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.MetalPhysicalMetalAccounts.Add(_metPhyMetAcc);
                         }

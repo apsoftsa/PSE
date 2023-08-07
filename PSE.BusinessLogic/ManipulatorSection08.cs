@@ -37,9 +37,11 @@ namespace PSE.BusinessLogic
                             {
                                 AccountData = _posItem.HostPositionReference_6,
                                 Currency = _posItem.Currency1_17,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : null,
-                                CurrentBalance = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
-                                Iban = _posItem.IsinIban_85
+                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
+                                CurrentBalance = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
+                                Iban = _posItem.IsinIban_85,
+                                AccruedInterestReportingCurrency = 0, // not still recovered (!)
+                                ParentAssets = 0 // not still recovered (!)
                             };
                             _sectionContent.Accounts.Add(_account);
                         }
