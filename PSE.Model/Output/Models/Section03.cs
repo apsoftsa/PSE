@@ -11,32 +11,38 @@ namespace PSE.Model.Output.Models
     public class KeyInformation : IKeyInformation
     {
 
-        public string ClientName { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? CustomerName { get; set; }
 
-        public string ClientNumber { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? CustomerNumber { get; set; }
 
-        public string Portfolio { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Portfolio { get; set; }
 
-        public string Service { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Service { get; set; }
 
-        public string RiskProfile { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? RiskProfile { get; set; }
 
-        public string PercentWeightedPerformance { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentWeightedPerformance { get; set; }
 
         public KeyInformation() 
         { 
-            ClientName = string.Empty;
-            ClientNumber = string.Empty;
-            Portfolio = string.Empty;
-            Service = string.Empty;
-            RiskProfile = string.Empty;
-            PercentWeightedPerformance = string.Empty;
+            CustomerName = null;
+            CustomerNumber = null;
+            Portfolio = null;
+            Service = null;
+            RiskProfile = null;
+            PercentWeightedPerformance = null;
         }
 
         public KeyInformation(IKeyInformation source)
         {
-            ClientName = source.ClientName;
-            ClientNumber = source.ClientNumber;
+            CustomerNumber = source.CustomerNumber;
+            CustomerName = source.CustomerName;
             Portfolio = source.Portfolio;
             Service = source.Service;
             RiskProfile = source.RiskProfile;
@@ -47,65 +53,58 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class AssetType : IAssetType
-    {
-
-        public string Type { get; set; }
-
-        public string MarketValueReportingCurrency { get; set; }
-
-        public AssetType()
-        {
-            Type = string.Empty;    
-            MarketValueReportingCurrency = string.Empty;
-        }
-
-        public AssetType(IAssetType source)
-        {
-            Type = source.Type;
-            MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-        }
-
-    }
-
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class AssetExtract : IAssetExtract
     {
 
-        public string AssetClass { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? AssetClass { get; set; }
 
-        public string MarketValueReportingCurrency { get; set; }
+        [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
+        public string? AssetType { get; set; }
 
-        [JsonIgnore]
-        public IList<IAssetType> AssetsType { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty("assetsType")]
-        public IList<IAssetType>? SerializationAssetsType
-        {
-            get { return AssetsType != null && AssetsType.Any() ? (List<IAssetType>)AssetsType : null; }
-            private set { }
-        }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? MarketValueReportingCurrencyT { get; set; }
 
         public AssetExtract()
         {
-            AssetClass = string.Empty;  
-            MarketValueReportingCurrency = string.Empty;
-            AssetsType = new List<IAssetType>();
+            AssetClass = null;  
+            AssetType = null;   
+            MarketValueReportingCurrency = null;
+            MarketValueReportingCurrencyT = null;
         }
 
         public AssetExtract(IAssetExtract source)
         {
             AssetClass = source.AssetClass;
+            AssetType = source.AssetType;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-            AssetsType = new List<IAssetType>();
-            if(source.AssetsType != null && source.AssetsType.Any()) 
-            { 
-                foreach(IAssetType _assetType in source.AssetsType)
-                {
-                    AssetsType.Add(new AssetType(_assetType));
-                }
-            }
+            MarketValueReportingCurrencyT = source.MarketValueReportingCurrencyT;
+        }
+
+    }
+
+    public class FooterInformation : IFooterInformation
+    {
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Footer1 { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? Footer2 { get; set; }
+
+        public FooterInformation()
+        {
+            Footer1 = null;
+            Footer2 = null;
+        }
+
+        public FooterInformation(IFooterInformation source)
+        {
+            Footer1 = source.Footer1;
+            Footer2 = source.Footer2;
         }
 
     }
@@ -121,16 +120,26 @@ namespace PSE.Model.Output.Models
         [JsonProperty(propertyName: "assetsExtract", Order = 2)]
         public IList<IAssetExtract> AssetsExtract { get; set; }
 
+        [JsonProperty(propertyName: "dividendsInterests", Order = 3)]
+        public IList<IAssetExtract> DividendsInterests { get; set; }
+
+        [JsonProperty(propertyName: "footerInformation", Order = 4)]
+        public IList<IFooterInformation> FooterInformation { get; set; }
+
         public Section3Content()
         {
             KeysInformation = new List<IKeyInformation>();
             AssetsExtract = new List<IAssetExtract>();
+            DividendsInterests = new List<IAssetExtract>();
+            FooterInformation = new List<IFooterInformation>();
         }
 
         public Section3Content(ISection3Content source)
         {
             KeysInformation = new List<IKeyInformation>();
             AssetsExtract = new List<IAssetExtract>();
+            DividendsInterests = new List<IAssetExtract>();
+            FooterInformation = new List<IFooterInformation>();
             if (source != null)
             {
                 if (source.KeysInformation != null && source.KeysInformation.Any())
@@ -145,6 +154,20 @@ namespace PSE.Model.Output.Models
                     foreach (IAssetExtract _assetExtract in source.AssetsExtract)
                     {
                         AssetsExtract.Add(new AssetExtract(_assetExtract));
+                    }
+                }
+                if (source.DividendsInterests != null && source.DividendsInterests.Any())
+                {
+                    foreach (IAssetExtract _dividendInterest in source.DividendsInterests)
+                    {
+                        DividendsInterests.Add(new AssetExtract(_dividendInterest));
+                    }
+                }
+                if (source.FooterInformation != null && source.FooterInformation.Any())
+                {
+                    foreach (IFooterInformation _footerInf in source.FooterInformation)
+                    {
+                        FooterInformation.Add(new FooterInformation(_footerInf));
                     }
                 }
             }

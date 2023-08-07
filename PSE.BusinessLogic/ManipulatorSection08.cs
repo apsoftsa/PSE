@@ -39,9 +39,7 @@ namespace PSE.BusinessLogic
                                 Currency = _posItem.Currency1_17,
                                 MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : null,
                                 CurrentBalance = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
-                                Iban = _posItem.IsinIban_85,
-                                AccruedInterestReportingCurrency = null,
-                                ParentAssets = null
+                                Iban = _posItem.IsinIban_85
                             };
                             _sectionContent.Accounts.Add(_account);
                         }

@@ -40,10 +40,12 @@ namespace PSE.BusinessLogic
                                 ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : null,
                                 Currency = _posItem.Currency1_17,
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
+                                DescriptionExtra = string.IsNullOrEmpty(_posItem.ConversionDesc_45) ? "" : _posItem.ConversionDesc_45.Trim(),
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
                                 Isin = _posItem.IsinIban_85,
-                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null,
+                                // cambio storico ?! (!!!!)
                             };
                             // !!!!
                             // come faccio a capire a quale di questi 5 sotto insiemi li devo associare?!

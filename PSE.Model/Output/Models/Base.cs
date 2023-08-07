@@ -10,7 +10,7 @@ public abstract class ObligationsBase : IObligationsBase
     public string? Description { get; set; }
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public int? ValorNumber { get; set; }
+    public long? ValorNumber { get; set; }
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public string? Isin { get; set; }

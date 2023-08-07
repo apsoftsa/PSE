@@ -36,7 +36,9 @@ namespace PSE.Model.Common
             AsSection13 = 13,
             AsSection14 = 14,
             AsSection15 = 15,
+            AsSection16And17 = 1617,
             AsSection18And19 = 1819,
+            AsSection20 = 20,
             AsFooter = 99
         };
 

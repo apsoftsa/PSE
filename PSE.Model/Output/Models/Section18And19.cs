@@ -15,7 +15,7 @@ namespace PSE.Model.Output.Models
 
         public string? DescriptionExtra { get; set; }
 
-        public int? ValorNumber { get; set; }
+        public long? ValorNumber { get; set; }
 
         public string? Isin { get; set; }
 
@@ -97,7 +97,7 @@ namespace PSE.Model.Output.Models
         [JsonIgnore]
         public IList<IAlternativeProductDetail> DerivativesOnSecurities { get; set; }
 
-        [JsonProperty("derivativesOnSecurities")]
+        [JsonProperty("derivativesOnSecurity")]
         public IList<IAlternativeProductDetail>? SerializationDerivativesOnSecurities
         {
             get { return DerivativesOnSecurities != null && DerivativesOnSecurities.Any() ? (List<IAlternativeProductDetail>)DerivativesOnSecurities : null; }
@@ -107,7 +107,7 @@ namespace PSE.Model.Output.Models
         [JsonIgnore]
         public IList<IAlternativeProductDetail> DerivativesOnMetals { get; set; }
 
-        [JsonProperty("derivativesOnMetals")]
+        [JsonProperty("derivativesOnMetal")]
         public IList<IAlternativeProductDetail>? SerializationDerivativesOnMetals
         {
             get { return DerivativesOnMetals != null && DerivativesOnMetals.Any() ? (List<IAlternativeProductDetail>)DerivativesOnMetals : null; }
@@ -117,7 +117,7 @@ namespace PSE.Model.Output.Models
         [JsonIgnore]
         public IList<IAlternativeProductDetail> DerivativesFutures { get; set; }
 
-        [JsonProperty("derivativesFutures")]
+        [JsonProperty("derivativesFuture")]
         public IList<IAlternativeProductDetail>? SerializationDerivativesFutures
         {
             get { return DerivativesFutures != null && DerivativesFutures.Any() ? (List<IAlternativeProductDetail>)DerivativesFutures : null; }

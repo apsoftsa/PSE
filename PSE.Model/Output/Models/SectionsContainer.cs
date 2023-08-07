@@ -36,6 +36,8 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section15 { get; set; }
         [JsonProperty(propertyName: OUTPUT_SECTION18AND19_CODE)]
         public IOutputModel? Section18And19 { get; set; }
+        [JsonProperty(propertyName: OUTPUT_SECTION20_CODE)]
+        public IOutputModel? Section20 { get; set; }
         [JsonProperty(propertyName: OUTPUT_FOOTER_CODE)]
         public IList<IOutputModel>? Footer { get; set; }
 
@@ -53,6 +55,7 @@ namespace PSE.Model.Output.Models
             Section14 = null;
             Section15 = null;
             Section18And19 = null;
+            Section20 = null;   
             Footer = null;  
         }
 
@@ -108,6 +111,9 @@ namespace PSE.Model.Output.Models
                             break;
                         case OUTPUT_SECTION18AND19_CODE:
                             Section18And19 = _section;
+                            break;
+                        case OUTPUT_SECTION20_CODE:
+                            Section20 = _section;
                             break;
                         case OUTPUT_FOOTER_CODE:
                             Footer = new List<IOutputModel>() { _section };

@@ -12,7 +12,7 @@ namespace PSE.Model.Output.Interfaces
 
         string? Description { get; set; }
 
-        int? ValorNumber { get; set; }
+        long? ValorNumber { get; set; }
 
         string? Isin { get; set; }
 

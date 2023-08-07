@@ -22,7 +22,7 @@ namespace PSE.Model.Output.Models
     public class Section12Content : ISection12Content
     {
 
-        [JsonProperty(propertyName: "bondsMaturing<5years")]
+        [JsonProperty(propertyName: "bondsExpiration_less5years")]
         public IList<IBondsMaturingLessThan5Years> BondsMaturingLessThan5Years { get; set; }
 
         public Section12Content()

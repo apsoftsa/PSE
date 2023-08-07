@@ -18,7 +18,7 @@ namespace PSE.Model.Output.Models
         public string? DescriptionExtra { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? ValorNumber { get; set; }
+        public long? ValorNumber { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Isin { get; set; }

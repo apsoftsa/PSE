@@ -45,7 +45,7 @@ namespace PSE.BusinessLogic
                                 CurrentExchangeRate = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
                                 Change = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
                                 Amount2 = _posItem.Amount2Cur2_59 != null ? _posItem.Amount2Cur2_59.Value : null,
-                                ProfitlossReportingCurrency = _tmp1 + _tmp2,
+                                ProfitlossReportingCurrency = _tmp1 + _tmp2
                             };
                             _sectionContent.Operations.Add(_profitLossOperation);
                         }

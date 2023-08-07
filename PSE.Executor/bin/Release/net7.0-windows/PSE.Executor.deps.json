@@ -34,7 +34,6 @@
       },
       "PSE.Builder/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
           "PSE.BusinessLogic": "1.0.0",
           "PSE.Model": "1.0.0"
         },

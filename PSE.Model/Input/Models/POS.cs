@@ -161,8 +161,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(15)]
         [FieldOptional]
+        [FieldConverter(ConverterKind.Int64)]
         [FieldOrder(29)]
-        public int? NumSecurity_29 { get; set; }
+        public long? NumSecurity_29 { get; set; }
 
         [FieldFixedLength(6)]
         [FieldOptional]

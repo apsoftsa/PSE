@@ -8,7 +8,7 @@
 
         string? DescriptionExtra { get; set; }
 
-        int? ValorNumber { get; set; }
+        long? ValorNumber { get; set; }
 
         string? Isin { get; set; }
 

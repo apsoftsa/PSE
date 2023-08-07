@@ -44,7 +44,7 @@ namespace PSE.BusinessLogic
                                 OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString("dd.MM.yyyy") : "",
                                 NoDeposit = _posItem.MovementKey_31,
                                 Correspondent = _posItem.Description2_33,
-                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : null,
+                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : null
                             };
                             _sectionContent.Accounts.Add(_account);
                         }

@@ -28,6 +28,7 @@
         public const string OUTPUT_SECTION15_CODE = "section15";
         public const string OUTPUT_SECTION16AND17_CODE = "section16-17";
         public const string OUTPUT_SECTION18AND19_CODE = "section18-19";
+        public const string OUTPUT_SECTION20_CODE = "section20";
         public const string OUTPUT_FOOTER_CODE = "footer";
 
         public const string CODE_SUB_CATEGORY_SECTION8 = "1010";
@@ -39,6 +40,8 @@
         public const string CODE_SUB_CATEGORY_SECTION14 = "4020";
         public const string CODE_SUB_CATEGORY_SECTION15 = "5010";
         public const string CODE_SUB_CATEGORY_SECTION18AND19 = "7090";
+        public const string CODE_SUB_CATEGORY_SECTION20 = "6010";
+        public const string CODE_SUB_CATEGORY_SECTION21 = "9010";
 
     }
 

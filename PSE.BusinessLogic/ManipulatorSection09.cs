@@ -37,10 +37,12 @@ namespace PSE.BusinessLogic
                             {
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
                                 Currency = _posItem.Currency1_17,
+                                NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
+                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29.Value : null,
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : null,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : null,
-                                NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : null,
-                                ValorNumber = _posItem.NumSecurity_29 != null ?_posItem.NumSecurity_29.Value : null,
+                                Isin = _posItem.IsinIban_85,
+                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : null
                             };
                             _sectionContent.Investments.Add(_shortTermInvestiment);
                         }
