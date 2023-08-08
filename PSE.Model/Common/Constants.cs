@@ -31,6 +31,12 @@
         public const string OUTPUT_SECTION16AND17_CODE = "section16-17";
         public const string OUTPUT_SECTION18AND19_CODE = "section18-19";
         public const string OUTPUT_SECTION20_CODE = "section20";
+        public const string OUTPUT_SECTION21_CODE = "section21";
+        public const string OUTPUT_SECTION22_CODE = "section22";
+        public const string OUTPUT_SECTION23_CODE = "section23";
+        public const string OUTPUT_SECTION24_CODE = "section24";
+        public const string OUTPUT_SECTION25_CODE = "section25";
+        public const string OUTPUT_SECTION26_CODE = "section26";
         public const string OUTPUT_FOOTER_CODE = "footer";
 
         public const string CODE_SUB_CATEGORY_SECTION8 = "1010";
