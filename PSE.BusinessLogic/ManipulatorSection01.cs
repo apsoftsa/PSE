@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             Section1 _output = new()
             {
                 SectionCode = OUTPUT_SECTION1_CODE,
-                SectionName = "Asset Statement"
+                SectionName = "ASSETS STATEMENT"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)))
             {

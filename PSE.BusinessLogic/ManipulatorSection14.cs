@@ -41,7 +41,7 @@ namespace PSE.BusinessLogic
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
                                 PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
-                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
+                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
                                 Isin = _posItem.IsinIban_85,
                                 PercentCoupon = 0, // not still recovered (!)
                                 PercentYTM = 0, // not still recovered (!)

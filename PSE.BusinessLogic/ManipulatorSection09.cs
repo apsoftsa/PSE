@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             Section9 _output = new()
             {
                 SectionCode = OUTPUT_SECTION9_CODE,
-                SectionName = "SHORT-TERM INVESTMENTS"
+                SectionName = "Short-term investments"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {

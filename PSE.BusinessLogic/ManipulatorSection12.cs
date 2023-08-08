@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             Section12 _output = new()
             {
                 SectionCode = OUTPUT_SECTION12_CODE,
-                SectionName = "Bonds-5-years"
+                SectionName = "Bonds"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
@@ -38,7 +38,7 @@ namespace PSE.BusinessLogic
                                 ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
                                 Currency = _posItem.Currency1_17,
                                 Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString("dd.MM.yyyy", _culture) : "",
+                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
                                 Isin = _posItem.IsinIban_85,

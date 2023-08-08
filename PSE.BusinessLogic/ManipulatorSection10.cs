@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             Section10 _output = new()
             {
                 SectionCode = OUTPUT_SECTION10_CODE,
-                SectionName = "FIDUCIARY INVESTMENTS"
+                SectionName = "Fiduciary Investments"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
@@ -40,8 +40,8 @@ namespace PSE.BusinessLogic
                                 MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
                                 FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                 PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
-                                ExpirationDate = _posItem.MaturityDate_36 != null ? _posItem.MaturityDate_36.Value.ToString("dd.MM.yyyy") : "",
-                                OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString("dd.MM.yyyy") : "",
+                                ExpirationDate = _posItem.MaturityDate_36 != null ? _posItem.MaturityDate_36.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
                                 NoDeposit = _posItem.MovementKey_31,
                                 Correspondent = _posItem.Description2_33,
                                 AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : 0,

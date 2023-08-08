@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
             Section4 _output = new()
             {
                 SectionCode = OUTPUT_SECTION4_CODE,
-                SectionName = "Performance evolution"
+                SectionName = "Performance Evolution"
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
             {
@@ -42,11 +42,11 @@ namespace PSE.BusinessLogic
                                 && _perItem.StartDate_6.Value.Day == 1 && _perItem.EndDate_7.Value.Day == 31)
                                 _tmpPeriod = _perItem.StartDate_6.Value.Year.ToString();
                             else if (_perItem.StartDate_6 != null && _perItem.EndDate_7 != null)
-                                _tmpPeriod = _perItem.StartDate_6.Value.ToString("dd.MM.yyyy") + "-" + _perItem.EndDate_7.Value.ToString("dd.MM.yyyy");
+                                _tmpPeriod = _perItem.StartDate_6.Value.ToString(DEFAULT_DATE_FORMAT, _culture) + "-" + _perItem.EndDate_7.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
                             else if (_perItem.StartDate_6 != null)
-                                _tmpPeriod = _perItem.StartDate_6.Value.ToString("dd.MM.yyyy");
+                                _tmpPeriod = _perItem.StartDate_6.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
                             else if (_perItem.EndDate_7 != null)
-                                _tmpPeriod = _perItem.EndDate_7.Value.ToString("dd.MM.yyyy");
+                                _tmpPeriod = _perItem.EndDate_7.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
                             else
                                 _tmpPeriod = string.Empty;
                             _tmpInpOut = _perItem.CashIn_10 != null ? _perItem.CashIn_10.Value : 0;
