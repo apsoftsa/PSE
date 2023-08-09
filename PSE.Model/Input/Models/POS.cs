@@ -384,9 +384,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(66)]
-        public string BuyExchangeRateHistoric_66 { get; set; }
+        public decimal? BuyExchangeRateHistoric_66 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
@@ -650,7 +650,7 @@ namespace PSE.Model.Input.Models
             MaturityRoi_63 = null;
             DirectRoi_64 = string.Empty;
             CallRoi_65 = string.Empty;
-            BuyExchangeRateHistoric_66 = string.Empty;
+            BuyExchangeRateHistoric_66 = null;
             Strike_67 = string.Empty;
             Duration_68 = string.Empty;
             MaturityProRataCurr1_69 = string.Empty;

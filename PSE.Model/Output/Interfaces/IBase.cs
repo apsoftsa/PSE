@@ -51,7 +51,7 @@ namespace PSE.Model.Output.Interfaces
     public interface IBondsBase : IObligationsBase
     {
 
-        int? PercentCoupon { get; set; }
+        decimal? PercentCoupon { get; set; }
 
         decimal? PercentYTM { get; set; }
 

@@ -122,7 +122,7 @@ public abstract class BondsBase : IBondsBase
     public string? Currency { get; set; }
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-    public int? PercentCoupon { get; set; }
+    public decimal? PercentCoupon { get; set; }
 
     [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
     public decimal? PercentYTM { get; set; }
