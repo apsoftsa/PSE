@@ -37,7 +37,7 @@ namespace PSE.BusinessLogic
                             {
                                 ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
                                 Currency = _posItem.Currency1_17,
-                                Description = _posItem.Description2_33,
+                                Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
                                 Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
