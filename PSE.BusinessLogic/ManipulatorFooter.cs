@@ -1,23 +1,26 @@
 ﻿using System.Globalization;
+using PSE.Model.Common;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
-using static PSE.Model.Common.Constants;
+using PSE.Model.SupportTables;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorFooter : ManipulatorBase, IManipulator
+    public class ManipulatorFooter : ManipulatorBase
     {
 
-        public ManipulatorFooter(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorFooter(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsFooter, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             IFooterContent _footerContent = new FooterContent()
             {
-                SectionCode = OUTPUT_FOOTER_CODE,
-                SectionName = "Footers",
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent,
                 BankAddress = "[BankAddress]" // not still recovered (!)
             };
             return _footerContent;

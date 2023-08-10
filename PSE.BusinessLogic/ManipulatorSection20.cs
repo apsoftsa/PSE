@@ -3,29 +3,32 @@ using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
-using static PSE.Model.Common.Constants;
+using PSE.Model.SupportTables;
+using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection20 : ManipulatorBase, IManipulator
+    public class ManipulatorSection20 : ManipulatorBase
     {
 
-        public ManipulatorSection20(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection20(CultureInfo? culture = null) : base(PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO, ManipolationTypes.AsSection20, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             Section20 _output = new()
             {
-                SectionCode = OUTPUT_SECTION20_CODE,
-                SectionName = "Metals"
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
                 IMetalPhysicalMetalAccount _metPhyMetAcc;
                 ISection20Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => _fltSubCat.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION20);
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.SupportTablesIntegrator.IsDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))

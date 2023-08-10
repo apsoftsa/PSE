@@ -1,24 +1,28 @@
 ﻿using System.Globalization;
+using PSE.Model.Common;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
+using PSE.Model.SupportTables;
 using static PSE.Model.Common.Constants;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection1 : ManipulatorBase, IManipulator
+    public class ManipulatorSection1 : ManipulatorBase
     {
 
-        public ManipulatorSection1(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection1(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection1, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             Section1 _output = new()
             {
-                SectionCode = OUTPUT_SECTION1_CODE,
-                SectionName = "ASSETS STATEMENT"
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)))
             {
@@ -29,7 +33,7 @@ namespace PSE.BusinessLogic
                     Portfolio = _ideItem.CustomerNumber_2,
                     Advisor = _ideItem.Manager_8,
                     Customer = _ideItem.CustomerNameShort_5,
-                    Date = _ideItem.Date_15 != null ? ((DateTime)_ideItem.Date_15).ToString("dd/MM/yyyy", _culture) : string.Empty
+                    Date = _ideItem.Date_15 != null ? ((DateTime)_ideItem.Date_15).ToString(DEFAULT_DATE_FORMAT, _culture) : string.Empty
                 };
                 _sectionContent.AssetStatements.Add(_assetStatement);
                 _output.Content = new Section1Content(_sectionContent);

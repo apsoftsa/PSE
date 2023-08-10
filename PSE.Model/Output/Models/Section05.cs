@@ -135,7 +135,7 @@ namespace PSE.Model.Output.Models
         [JsonProperty(Order = 2)]
         public ISection5Content Content { get; set; }
 
-        public Section5() : base(OUTPUT_SECTION5_CODE)
+        public Section5() : base()
         {
             Content = new Section5Content();
         }

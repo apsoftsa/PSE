@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
+using PSE.Model.Common;
 using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {
@@ -10,35 +10,21 @@ namespace PSE.Model.Output.Models
     public sealed class SectionsContainer
     {
 
-        [JsonProperty(propertyName: OUTPUT_HEADER_CODE)]
         public IList<IOutputModel>? Header { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION1_CODE)]
         public IOutputModel? Section1 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION3_CODE)]
         public IOutputModel? Section3 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION4_CODE)]
         public IOutputModel? Section4 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION8_CODE)]
         public IOutputModel? Section8 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION9_CODE)]
         public IOutputModel? Section9 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION10_CODE)]
         public IOutputModel? Section10 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION11_CODE)]
         public IOutputModel? Section11 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION12_CODE)]
         public IOutputModel? Section12 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION13_CODE)]
         public IOutputModel? Section13 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION14_CODE)]
         public IOutputModel? Section14 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION15_CODE)]
         public IOutputModel? Section15 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION18AND19_CODE)]
+        [JsonProperty(propertyName: "section18_19")]
         public IOutputModel? Section18And19 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_SECTION20_CODE)]
         public IOutputModel? Section20 { get; set; }
-        [JsonProperty(propertyName: OUTPUT_FOOTER_CODE)]
         public IList<IOutputModel>? Footer { get; set; }
 
         private void Init()
@@ -71,51 +57,51 @@ namespace PSE.Model.Output.Models
             { 
                 foreach(IOutputModel _section in sections)
                 {
-                    switch(_section.SectionCode) 
+                    switch(_section.SectionId) 
                     {
-                        case OUTPUT_HEADER_CODE:
+                        case Enumerations.ManipolationTypes.AsHeader:
                             Header = new List<IOutputModel>() { _section };
                             break;
-                        case OUTPUT_SECTION1_CODE:
+                        case Enumerations.ManipolationTypes.AsSection1:
                             Section1 = _section;
                             break;
-                        case OUTPUT_SECTION3_CODE:
+                        case Enumerations.ManipolationTypes.AsSection3:
                             Section3 = _section;
                             break;
-                        case OUTPUT_SECTION4_CODE:
+                        case Enumerations.ManipolationTypes.AsSection4:
                             Section4 = _section;
                             break;
-                        case OUTPUT_SECTION8_CODE:
+                        case Enumerations.ManipolationTypes.AsSection8:
                             Section8 = _section;
                             break;
-                        case OUTPUT_SECTION9_CODE:
+                        case Enumerations.ManipolationTypes.AsSection9:
                             Section9 = _section;
                             break;
-                        case OUTPUT_SECTION10_CODE:
+                        case Enumerations.ManipolationTypes.AsSection10:
                             Section10 = _section;
                             break;
-                        case OUTPUT_SECTION11_CODE:
+                        case Enumerations.ManipolationTypes.AsSection11:
                             Section11 = _section;
                             break;
-                        case OUTPUT_SECTION12_CODE:
+                        case Enumerations.ManipolationTypes.AsSection12:
                             Section12 = _section;
                             break;
-                        case OUTPUT_SECTION13_CODE:
+                        case Enumerations.ManipolationTypes.AsSection13:
                             Section13 = _section;
                             break;
-                        case OUTPUT_SECTION14_CODE:
+                        case Enumerations.ManipolationTypes.AsSection14:
                             Section14 = _section;
                             break;
-                        case OUTPUT_SECTION15_CODE:
+                        case Enumerations.ManipolationTypes.AsSection15:
                             Section15 = _section;
                             break;
-                        case OUTPUT_SECTION18AND19_CODE:
+                        case Enumerations.ManipolationTypes.AsSection18And19:
                             Section18And19 = _section;
                             break;
-                        case OUTPUT_SECTION20_CODE:
+                        case Enumerations.ManipolationTypes.AsSection20:
                             Section20 = _section;
                             break;
-                        case OUTPUT_FOOTER_CODE:
+                        case Enumerations.ManipolationTypes.AsFooter:
                             Footer = new List<IOutputModel>() { _section };
                             break;
                     }

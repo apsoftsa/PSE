@@ -3,29 +3,33 @@ using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
+using PSE.Model.SupportTables;
 using static PSE.Model.Common.Constants;
+using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection12 : ManipulatorBase, IManipulator
+    public class ManipulatorSection12 : ManipulatorBase
     {
 
-        public ManipulatorSection12(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection12(CultureInfo? culture = null) : base(PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI, ManipolationTypes.AsSection12, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             Section12 _output = new()
             {
-                SectionCode = OUTPUT_SECTION12_CODE,
-                SectionName = "Bonds"
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
                 IBondsMaturingLessThan5Years _bondLessThan5;
                 ISection12Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => _fltSubCat.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12);
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.SupportTablesIntegrator.IsDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))

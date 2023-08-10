@@ -1,24 +1,28 @@
 ﻿using System.Globalization;
+using PSE.Model.Common;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
+using PSE.Model.SupportTables;
 using static PSE.Model.Common.Constants;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection3 : ManipulatorBase, IManipulator
+    public class ManipulatorSection3 : ManipulatorBase
     {
 
-        public ManipulatorSection3(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection3(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection3, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             Section3 _output = new()
             {
-                SectionCode = OUTPUT_SECTION3_CODE,
-                SectionName = "Portfolio Details"
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER))) 
             {
@@ -47,7 +51,7 @@ namespace PSE.BusinessLogic
                         {
                             _currAsstExtr = new AssetExtract()
                             {
-                                AssetClass = _perItem.StartDate_6 != null ? "Portfolio Value " + ((DateTime)_perItem.StartDate_6).ToString("dd/MM/yyyy", _culture) : string.Empty,
+                                AssetClass = _perItem.StartDate_6 != null ? "Portfolio Value " + ((DateTime)_perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture) : string.Empty,
                                 MarketValueReportingCurrency = _perItem.StartValue_8 != null ? _perItem.StartValue_8.Value : null,
                             };
                             // !!!! pppp
@@ -99,7 +103,7 @@ namespace PSE.BusinessLogic
                         _tot2 = _tmpValue1 + _tmpValue2;
                         _currAsstExtr = new AssetExtract()
                         {
-                            AssetClass = _perItem.EndDate_7 != null ? "Portfolio Value " + ((DateTime)_perItem.EndDate_7).ToString("dd/MM/yyyy", _culture) : string.Empty,
+                            AssetClass = _perItem.EndDate_7 != null ? "Portfolio Value " + ((DateTime)_perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture) : string.Empty,
                             MarketValueReportingCurrency = _hasValue ? _tot2 : null
                         };
                         _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));

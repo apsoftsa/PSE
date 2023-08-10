@@ -58,7 +58,7 @@ namespace PSE.Model.Output.Models
         [JsonProperty(Order = 2)]
         public ISection12Content Content { get; set; }
 
-        public Section12() : base(OUTPUT_SECTION12_CODE)
+        public Section12() : base()
         {
             Content = new Section12Content();
         }

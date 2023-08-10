@@ -3,22 +3,26 @@ using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
+using PSE.Model.SupportTables;
 using static PSE.Model.Common.Constants;
+using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection4 : ManipulatorBase, IManipulator
+    public class ManipulatorSection4 : ManipulatorBase
     {
 
-        public ManipulatorSection4(CultureInfo? culture = null) : base(culture) { }
+        public ManipulatorSection4(CultureInfo? culture = null) : base(ManipolationTypes.AsSection4, culture) { }
 
-        public IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
+            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
             Section4 _output = new()
             {
-                SectionCode = OUTPUT_SECTION4_CODE,
-                SectionName = "Performance Evolution"
+                SectionId = _sectionDest.SectionId,
+                SectionCode = _sectionDest.SectionCode,
+                SectionName = _sectionDest.SectionContent
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
             {

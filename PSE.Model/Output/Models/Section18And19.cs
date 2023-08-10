@@ -240,7 +240,7 @@ namespace PSE.Model.Output.Models
         [JsonProperty(Order = 2)]
         public ISection18And19Content Content { get; set; }
 
-        public Section18And19() : base(OUTPUT_SECTION18AND19_CODE)
+        public Section18And19() : base()
         {
             Content = new Section18And19Content();
         }
