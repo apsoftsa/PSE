@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         protected ManipulatorBase(ManipolationTypes sectionDestination, CultureInfo? culture = null)
         {
-            PositionClassificationsSource = null;
+            PositionClassificationsSource = new List<PositionClassifications>();
             SectionDestination = sectionDestination;
             if (culture == null)
                 _culture = new CultureInfo(DEFAULT_CULTURE);

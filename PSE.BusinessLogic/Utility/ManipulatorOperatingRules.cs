@@ -180,12 +180,12 @@ namespace PSE.BusinessLogic.Utility
 
         public static SectionBinding GetDestinationSection(IManipulator manipulator)
         {
-            return _sectionsBinding.FirstOrDefault(_flt => _flt.SectionId == manipulator.SectionDestination);
+            return _sectionsBinding.First(_flt => _flt.SectionId == manipulator.SectionDestination);
         }
 
         public static List<PositionClassifications> GetClassificationsBoundToSection(ManipolationTypes sectionId)
         {
-            return _sectionsBinding.FirstOrDefault(_flt => _flt.SectionId == sectionId).ClassificationsBound;
+            return _sectionsBinding.First(_flt => _flt.SectionId == sectionId).ClassificationsBound;
         }
 
     }

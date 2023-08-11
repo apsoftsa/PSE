@@ -59,14 +59,15 @@ namespace PSE.Model.Output.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? AssetClass { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? MarketValueReportingCurrencyT { get; set; }
+
         [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
         public string? AssetType { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrencyT { get; set; }
 
         public AssetExtract()
         {
