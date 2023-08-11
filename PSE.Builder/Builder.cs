@@ -5,6 +5,7 @@ using PSE.Model.Output;
 using PSE.Model.Output.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.BusinessLogic;
+using static PSE.BusinessLogic.Utility.ManipulatorOperatingRules;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
@@ -78,62 +79,28 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection13:
                             case ManipolationTypes.AsSection14:
                             case ManipolationTypes.AsSection15:
+                            case ManipolationTypes.AsSection16And17:
                             case ManipolationTypes.AsSection18And19:
                             case ManipolationTypes.AsSection20:
                                 {
                                     if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
                                     {
-                                        IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>();
-                                        if ((manipolationType == ManipolationTypes.AsSection8 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION8))
-                                            || (manipolationType == ManipolationTypes.AsSection9 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION9))
-                                            || (manipolationType == ManipolationTypes.AsSection10 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION10))
-                                            || (manipolationType == ManipolationTypes.AsSection11 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION11))
-                                            || (manipolationType == ManipolationTypes.AsSection12 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION12))
-                                            || (manipolationType == ManipolationTypes.AsSection13 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION13))
-                                            || (manipolationType == ManipolationTypes.AsSection14 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION14))
-                                            || (manipolationType == ManipolationTypes.AsSection15 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION15))
-                                            || (manipolationType == ManipolationTypes.AsSection18And19 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION18AND19))
-                                            || (manipolationType == ManipolationTypes.AsSection20 && _posItems.Any(_flt => _flt.SubCat4_15.Trim() == CODE_SUB_CATEGORY_SECTION20)))
+                                        if(ArePOSRowsManipulable(extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>(), manipolationType))
                                             buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                         else if (isMandatory)
                                         {
-                                            string _subCatCode = string.Empty;
-                                            switch (manipolationType)
+                                            List<PositionClassifications> _classificationsBound = GetClassificationsBoundToSection(manipolationType);
+                                            string _classificationsDescr = string.Empty;
+                                            if (_classificationsBound != null && _classificationsBound.Any())
                                             {
-                                                case ManipolationTypes.AsSection8:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION8;
-                                                    break;
-                                                case ManipolationTypes.AsSection9:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION9;
-                                                    break;
-                                                case ManipolationTypes.AsSection10:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION10;
-                                                    break;
-                                                case ManipolationTypes.AsSection11:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION11;
-                                                    break;
-                                                case ManipolationTypes.AsSection12:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION12;
-                                                    break;
-                                                case ManipolationTypes.AsSection13:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION13;
-                                                    break;
-                                                case ManipolationTypes.AsSection14:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION14;
-                                                    break;
-                                                case ManipolationTypes.AsSection15:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION15;
-                                                    break;
-                                                case ManipolationTypes.AsSection18And19:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION18AND19;
-                                                    break;
-                                                case ManipolationTypes.AsSection20:
-                                                    _subCatCode = CODE_SUB_CATEGORY_SECTION20;
-                                                    break;
+                                                foreach (PositionClassifications _classificationBound in _classificationsBound)
+                                                {
+                                                    _classificationsDescr += _classificationBound.ToString() + " ";
+                                                }
                                             }
                                             buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
-                                                $"at least one input record having format '{nameof(POS)}' and sub-category code '{ _subCatCode }' must be provided!";
+                                                $"at least one input record having format '{nameof(POS)}' and sub-category code '{ _classificationsDescr.Trim() }' must be provided!";
                                             buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
                                         }
                                         else
@@ -208,6 +175,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection13 => new ManipulatorSection13().Manipulate(extractedData),
                 ManipolationTypes.AsSection14 => new ManipulatorSection14().Manipulate(extractedData),
                 ManipolationTypes.AsSection15 => new ManipulatorSection15().Manipulate(extractedData),
+                ManipolationTypes.AsSection16And17 => new ManipulatorSection16And17().Manipulate(extractedData),
                 ManipolationTypes.AsSection18And19 => new ManipulatorSection18And19().Manipulate(extractedData),
                 ManipolationTypes.AsSection20 => new ManipulatorSection20().Manipulate(extractedData),
                 ManipolationTypes.AsFooter => new ManipulatorFooter().Manipulate(extractedData),
@@ -252,6 +220,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection13, false ),
                 ( ManipolationTypes.AsSection14, false ),
                 ( ManipolationTypes.AsSection15, false ),
+                ( ManipolationTypes.AsSection16And17, false ),
                 ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsSection20, false ),
                 ( ManipolationTypes.AsFooter, true )

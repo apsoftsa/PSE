@@ -1,10 +1,11 @@
-﻿using PSE.Model.SupportTables;
+﻿using PSE.Model.Input.Models;
+using PSE.Model.SupportTables;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic.Utility
 {
 
-    internal static class SupportTablesIntegrator
+    public static class ManipulatorOperatingRules
     {
 
         private static readonly List<InvestmentType> _investmentTypes;
@@ -12,7 +13,7 @@ namespace PSE.BusinessLogic.Utility
         private static readonly List<ValueTypology> _valueTypes;
         private static readonly List<SectionBinding> _sectionsBinding;
 
-        static SupportTablesIntegrator()
+        static ManipulatorOperatingRules()
         {
             _investmentTypes = new List<InvestmentType>()
             {
@@ -142,22 +143,49 @@ namespace PSE.BusinessLogic.Utility
                 new SectionBinding(ManipolationTypes.AsSection13, "section13", "Bonds", new List<PositionClassifications>() { PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO }),
                 new SectionBinding(ManipolationTypes.AsSection14, "section14", "Bonds", new List<PositionClassifications>() { PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI }),
                 new SectionBinding(ManipolationTypes.AsSection15, "section15", "Shares", new List<PositionClassifications>() { PositionClassifications.AZIONI_FONDI_AZIONARI }),
+                new SectionBinding(ManipolationTypes.AsSection16And17, "section16-17", "Funds", new List<PositionClassifications>() { PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO, PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI, PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI }),
                 new SectionBinding(ManipolationTypes.AsSection18And19, "section18-19", "Others investments", new List<PositionClassifications>() { PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI, PositionClassifications.PRODOTTI_DERIVATI, PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI }),
                 new SectionBinding(ManipolationTypes.AsSection20, "section20", "Metals", new List<PositionClassifications>() { PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO }),
                 new SectionBinding(ManipolationTypes.AsFooter, "footer", "Footers"),
             };
         }
 
-        public static bool IsDestinatedToManipulator(IManipulator manipulator, string subCategory)
+        public static bool IsRowDestinatedToManipulator(IManipulator manipulator, string subCategory)
         {
             return string.IsNullOrEmpty(subCategory) == false && string.IsNullOrWhiteSpace(subCategory) == false 
                 && Enum.IsDefined(typeof(PositionClassifications), int.Parse(subCategory)) 
-                && manipulator.PostionClassificationSource == (PositionClassifications)int.Parse(subCategory);
+                && manipulator.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(subCategory));
+        }
+
+        public static bool ArePOSRowsManipulable(IEnumerable<POS> sourcePOSRows, ManipolationTypes currentManipulationType)
+        {
+            bool _areManipulable = false;
+            if (sourcePOSRows != null && _sectionsBinding.Any(_flt => _flt.SectionId == currentManipulationType))
+            {
+                SectionBinding _sectionDest = _sectionsBinding.First(_flt => _flt.SectionId == currentManipulationType);
+                if (_sectionDest.ClassificationsBound != null && _sectionDest.ClassificationsBound.Any())
+                {
+                    foreach (PositionClassifications _positionClassificationBound in _sectionDest.ClassificationsBound)
+                    {
+                        if (sourcePOSRows.Any(_flt => _flt.SubCat4_15.Trim() == ((int)_positionClassificationBound).ToString()))
+                        {
+                            _areManipulable = true; // if there is at least one POS row compatible with one of the classification bound to the destination section,
+                            break;                  // this means the the source POS rows can be manipulated by the specific manipulator object
+                        }
+                    }
+                }
+            }
+            return _areManipulable;
         }
 
         public static SectionBinding GetDestinationSection(IManipulator manipulator)
         {
             return _sectionsBinding.FirstOrDefault(_flt => _flt.SectionId == manipulator.SectionDestination);
+        }
+
+        public static List<PositionClassifications> GetClassificationsBoundToSection(ManipolationTypes sectionId)
+        {
+            return _sectionsBinding.FirstOrDefault(_flt => _flt.SectionId == sectionId).ClassificationsBound;
         }
 
     }

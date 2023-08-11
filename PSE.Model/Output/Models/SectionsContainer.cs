@@ -22,6 +22,8 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section13 { get; set; }
         public IOutputModel? Section14 { get; set; }
         public IOutputModel? Section15 { get; set; }
+        [JsonProperty(propertyName: "section16_17")]
+        public IOutputModel? Section16And17 { get; set; }
         [JsonProperty(propertyName: "section18_19")]
         public IOutputModel? Section18And19 { get; set; }
         public IOutputModel? Section20 { get; set; }
@@ -40,6 +42,7 @@ namespace PSE.Model.Output.Models
             Section13 = null;
             Section14 = null;
             Section15 = null;
+            Section16And17 = null;
             Section18And19 = null;
             Section20 = null;   
             Footer = null;  
@@ -94,6 +97,9 @@ namespace PSE.Model.Output.Models
                             break;
                         case Enumerations.ManipolationTypes.AsSection15:
                             Section15 = _section;
+                            break;
+                        case Enumerations.ManipolationTypes.AsSection16And17:
+                            Section16And17 = _section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection18And19:
                             Section18And19 = _section;

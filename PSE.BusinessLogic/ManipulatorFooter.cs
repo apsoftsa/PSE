@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = Utility.SupportTablesIntegrator.GetDestinationSection(this);
+            SectionBinding _sectionDest = Utility.ManipulatorOperatingRules.GetDestinationSection(this);
             IFooterContent _footerContent = new FooterContent()
             {
                 SectionId = _sectionDest.SectionId,

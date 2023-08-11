@@ -19,7 +19,7 @@ namespace PSE.Model.Output.Models
 
         public string? Isin { get; set; }
 
-        public decimal? NominalAmmount { get; set; }
+        public decimal? NominalAmount { get; set; }
 
         public string? UnderlyingDescription { get; set; }
 
@@ -51,7 +51,7 @@ namespace PSE.Model.Output.Models
             DescriptionExtra = null;    
             ValorNumber = null;
             Isin = null;
-            NominalAmmount = null;
+            NominalAmount = null;
             UnderlyingDescription = null;   
             Currency = null;
             PurchasePrice = null;
@@ -72,7 +72,7 @@ namespace PSE.Model.Output.Models
             DescriptionExtra = source.DescriptionExtra;
             ValorNumber = source.ValorNumber;
             Isin = source.Isin;
-            NominalAmmount = source.NominalAmmount;
+            NominalAmount = source.NominalAmount;
             UnderlyingDescription = source.UnderlyingDescription;
             Currency = source.Currency;
             PurchasePrice = source.PurchasePrice;

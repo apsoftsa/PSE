@@ -4,22 +4,22 @@ using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
-using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection18And19 : ManipulatorBase
+    public class ManipulatorSection16And17 : ManipulatorBase
     {
 
-        public ManipulatorSection18And19(CultureInfo? culture = null) : base(new List<PositionClassifications>()
+        public ManipulatorSection16And17(CultureInfo? culture = null) : base(new List<PositionClassifications>()
             {
-                PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI, 
-                PositionClassifications.PRODOTTI_DERIVATI, 
-                PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI
+                PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO,
+                PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI,
+                PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI
             }
-            , ManipolationTypes.AsSection18And19, culture) { }
+            , ManipolationTypes.AsSection16And17, culture)
+        { }
 
         public override string GetObjectNameDestination(IInputRecord inputRecord)
         {
@@ -27,18 +27,28 @@ namespace PSE.BusinessLogic
             if (inputRecord != null && inputRecord.GetType() == typeof(POS))
             {
                 string _subCategory = ((POS)inputRecord).SubCat4_15;
-                if (_subCategory != null && Enum.IsDefined(typeof(PositionClassifications), int.Parse(_subCategory)))
+                string _category = ((POS)inputRecord).Category_11;
+                if (_subCategory != string.Empty && _category != string.Empty && _category.Trim().Length >= 8 
+                    && Enum.IsDefined(typeof(PositionClassifications), int.Parse(_subCategory)))
                 {
                     if (this.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(_subCategory)))
                     {
-                        switch ((PositionClassifications)int.Parse(_subCategory))
+                        switch (_category.Substring(6,2).ToUpper())
                         {
-                            case PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI:
-                                _destinationObjectName = "DerivativesOnMetals";
+                            case "FO":
+                                _destinationObjectName = "BondFunds";
                                 break;
-                            case PositionClassifications.PRODOTTI_DERIVATI:
-                            case PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI:
-                                _destinationObjectName = "Different";
+                            case "FA":
+                                _destinationObjectName = "EquityFunds";
+                                break;
+                            case "FI":
+                                _destinationObjectName = "RealEstateFunds";
+                                break;
+                            case "MF":
+                                _destinationObjectName = "MetalFunds";
+                                break;
+                            case "FM":
+                                _destinationObjectName = "MixedFunds";
                                 break;
                         }
                     }
@@ -50,7 +60,7 @@ namespace PSE.BusinessLogic
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
             SectionBinding _sectionDest = Utility.ManipulatorOperatingRules.GetDestinationSection(this);
-            Section18And19 _output = new()
+            Section16And17 _output = new()
             {
                 SectionId = _sectionDest.SectionId,
                 SectionCode = _sectionDest.SectionCode,
@@ -59,22 +69,20 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
                 string _destinationObjectName;
-                IAlternativeProductDetail _altProdDetails;
-                IAlternativeProducts _altProdDefinitions;
-                ISection18And19Content _sectionContent;
+                IFundDetails _fundDetails;
+                ISection16And17Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section18And19Content();
-                        _altProdDefinitions = new AlternativeProducts();
+                        _sectionContent = new Section16And17Content();
                         foreach (POS _posItem in _posItems)
                         {
                             if ((_destinationObjectName = GetObjectNameDestination(_posItem)) != string.Empty)
                             {
-                                _altProdDetails = new AlternativeProductDetail()
+                                _fundDetails = new FundDetail()
                                 {
                                     ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
                                     Currency = _posItem.Currency1_17,
@@ -85,36 +93,38 @@ namespace PSE.BusinessLogic
                                          (string.IsNullOrEmpty(_posItem.Description2_33)
                                              ? ""
                                              : _posItem.Description2_33)).Trim(),
-                                    DescriptionExtra = _posItem.CallaDate_38 != null
-                                        ? ((DateTime)_posItem.CallaDate_38).ToString(DEFAULT_DATE_FORMAT, _culture)
-                                        : "",
                                     CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
                                     PurchasePrice = _posItem.BuyPriceHistoric_53 != null
                                         ? _posItem.BuyPriceHistoric_53.Value
                                         : 0,
-                                    Isin = _posItem.IsinIban_85,
                                     PriceBeginningYear = _posItem.BuyPriceAverage_87 != null
                                         ? _posItem.BuyPriceAverage_87.Value
                                         : 0,
                                     NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                    UnderlyingDescription = "[UnderlyingDescription]", // not still recovered (!)
-                                    ExchangeRateImpactPurchase = 0, // not still recovered (!)
+                                    ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,
+                                    Isin = "[Isin]", // not still recovered (!)
+                                    SPRating = "[SPRating]", // not still recovered (!)
+                                    MsciEsg = "[MsciEsg]", // not still recovered (!)
                                     ExchangeRateImpactYTD = 0, // not still recovered (!)
                                     PerformancePurchase = 0, // not still recovered (!)
                                     PercentPerformancePurchase = 0, // not still recovered (!)
                                     PerformanceYTD = 0, // not still recovered (!)
                                     PercentPerformanceYTD = 0, // not still recovered (!)
                                     PercentAsset = 0 // not still recovered (!)
-                                    // cambio storico ?! (!!!!)
                                 };
-                                if (_destinationObjectName == "Different")
-                                    _altProdDefinitions.Different.Add(_altProdDetails);
-                                else if (_destinationObjectName == "DerivativesOnMetals")
-                                    _altProdDefinitions.DerivativesOnMetals.Add(_altProdDetails);
+                                if (_destinationObjectName == "BondFunds")
+                                    _sectionContent.BondFunds.Add(_fundDetails);
+                                else if (_destinationObjectName == "EquityFunds")
+                                    _sectionContent.EquityFunds.Add(_fundDetails);
+                                else if (_destinationObjectName == "RealEstateFunds")
+                                    _sectionContent.RealEstateFunds.Add(_fundDetails);
+                                else if (_destinationObjectName == "MetalFunds")
+                                    _sectionContent.MetalFunds.Add(_fundDetails);
+                                else if (_destinationObjectName == "MixedFunds")
+                                    _sectionContent.MixedFunds.Add(_fundDetails);
                             }
-                        }                                                
-                        _sectionContent.AlternativeProducts.Add(_altProdDefinitions);
-                        _output.Content = new Section18And19Content(_sectionContent);
+                        }
+                        _output.Content = new Section16And17Content(_sectionContent);
                     }
                 }
             }

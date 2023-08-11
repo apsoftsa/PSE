@@ -12,7 +12,7 @@
 
         string? Isin { get; set; }
 
-        decimal? NominalAmmount { get; set; }
+        decimal? NominalAmount { get; set; }
 
         string? UnderlyingDescription { get; set; }
 

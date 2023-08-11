@@ -12,12 +12,12 @@ namespace PSE.BusinessLogic
 
         protected readonly CultureInfo _culture;
 
-        public PositionClassifications PostionClassificationSource { get; }
+        public List<PositionClassifications> PositionClassificationsSource { get; }
         public ManipolationTypes SectionDestination { get; }
 
         protected ManipulatorBase(ManipolationTypes sectionDestination, CultureInfo? culture = null)
         {
-            PostionClassificationSource = PositionClassifications.UNKNOWN;
+            PositionClassificationsSource = null;
             SectionDestination = sectionDestination;
             if (culture == null)
                 _culture = new CultureInfo(DEFAULT_CULTURE);
@@ -25,9 +25,19 @@ namespace PSE.BusinessLogic
                 _culture = culture;
         }
 
-        protected ManipulatorBase(PositionClassifications postionClassificationSource, ManipolationTypes sectionDestination, CultureInfo? culture = null)
+        protected ManipulatorBase(PositionClassifications positionClassificationSource, ManipolationTypes sectionDestination, CultureInfo? culture = null)
         {
-            PostionClassificationSource = postionClassificationSource;
+            PositionClassificationsSource = new List<PositionClassifications>() { positionClassificationSource };
+            SectionDestination = sectionDestination;
+            if (culture == null)
+                _culture = new CultureInfo(DEFAULT_CULTURE);
+            else
+                _culture = culture;
+        }
+
+        protected ManipulatorBase(List<PositionClassifications> positionClassificationsSource, ManipolationTypes sectionDestination, CultureInfo? culture = null)
+        {
+            PositionClassificationsSource = new List<PositionClassifications>(positionClassificationsSource);
             SectionDestination = sectionDestination;
             if (culture == null)
                 _culture = new CultureInfo(DEFAULT_CULTURE); 
@@ -36,6 +46,8 @@ namespace PSE.BusinessLogic
         }
 
         public abstract IOutputModel Manipulate(IList<IInputRecord> extractedData);
+
+        public virtual string GetObjectNameDestination(IInputRecord inputRecord) { return string.Empty; }
 
     }
 

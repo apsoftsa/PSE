@@ -8,10 +8,12 @@ namespace PSE.BusinessLogic
     public interface IManipulator
     {
 
-        PositionClassifications PostionClassificationSource { get; }
+        List<PositionClassifications> PositionClassificationsSource { get; }
         ManipolationTypes SectionDestination { get; }
 
         IOutputModel Manipulate(IList<IInputRecord> extractedData);
+
+        string GetObjectNameDestination(IInputRecord inputRecord);
 
     }
 
