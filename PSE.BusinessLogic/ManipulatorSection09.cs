@@ -29,7 +29,7 @@ namespace PSE.BusinessLogic
                 IShortTermInvestment _shortTermInvestiment;
                 ISection9Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
@@ -48,8 +48,8 @@ namespace PSE.BusinessLogic
                                 Isin = _posItem.IsinIban_85,
                                 PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
                                 DescriptionExtra = "[DescriptionExtra]", // not still recovered (!)
-                                SPRating = "[SPRating]", // not still recovered (!)
-                                MsciEsg = "[MsciEsg]", // not still recovered (!)
+                                SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
+                                MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
                                 ExchangeRateImpactPurchase = 0, // not still recovered (!)
                                 ExchangeRateImpactYTD = 0, // not still recovered (!)
                                 PerformancePurchase = 0, // not still recovered (!)
@@ -59,6 +59,7 @@ namespace PSE.BusinessLogic
                                 PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.Investments.Add(_shortTermInvestiment);
+                            _posItem.AlreadyUsed = true;
                         }
                         _output.Content = new Section9Content(_sectionContent);
                     }

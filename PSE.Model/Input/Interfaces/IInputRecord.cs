@@ -6,6 +6,8 @@
 
         string RecordType { get; }
 
+        bool AlreadyUsed { get; set; }
+
         string MessageType_1 { get; set; }
 
         string ToString();

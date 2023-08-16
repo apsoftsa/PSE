@@ -33,7 +33,8 @@ namespace PSE.BusinessLogic
                     Portfolio = _ideItem.CustomerNumber_2,
                     Advisor = _ideItem.Manager_8,
                     Customer = _ideItem.CustomerNameShort_5,
-                    Date = _ideItem.Date_15 != null ? ((DateTime)_ideItem.Date_15).ToString(DEFAULT_DATE_FORMAT, _culture) : string.Empty
+                    Date = _ideItem.Date_15 != null ? _ideItem.Date_15 : string.Empty
+                    //Date = _ideItem.Date_15 != null ? ((DateTime)_ideItem.Date_15).ToString(DEFAULT_DATE_FORMAT, _culture) : string.Empty
                 };
                 _sectionContent.AssetStatements.Add(_assetStatement);
                 _output.Content = new Section1Content(_sectionContent);

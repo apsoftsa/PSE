@@ -216,11 +216,12 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection9, false ),
                 ( ManipolationTypes.AsSection10, false ),
                 ( ManipolationTypes.AsSection11, false ),
+                ( ManipolationTypes.AsSection16And17, false ), // section with high priority (!)
                 ( ManipolationTypes.AsSection12, false ),
                 ( ManipolationTypes.AsSection13, false ),
                 ( ManipolationTypes.AsSection14, false ),
                 ( ManipolationTypes.AsSection15, false ),
-                ( ManipolationTypes.AsSection16And17, false ),
+                //( ManipolationTypes.AsSection16And17, false ),
                 ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsSection20, false ),
                 ( ManipolationTypes.AsFooter, true )

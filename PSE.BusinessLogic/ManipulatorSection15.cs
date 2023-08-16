@@ -29,7 +29,7 @@ namespace PSE.BusinessLogic
                 IBondsWithMaturityGreatherThanFiveYears _bondGreatThan5;
                 ISection15Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
@@ -47,8 +47,8 @@ namespace PSE.BusinessLogic
                                 PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
                                 Isin = _posItem.IsinIban_85,
                                 NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                SPRating = "[SPRating]", // not still recovered (!)
-                                MsciEsg = "[MsciEsg]", // not still recovered (!)
+                                SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
+                                MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
                                 ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,
                                 ExchangeRateImpactYTD = 0, // not still recovered (!)
                                 PerformancePurchase = 0, // not still recovered (!)
@@ -58,6 +58,7 @@ namespace PSE.BusinessLogic
                                 PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.BondsWithMatGreatThanFiveYears.Add(_bondGreatThan5);
+                            _posItem.AlreadyUsed = true;
                         }
                         _output.Content = new Section15Content(_sectionContent);
                     }

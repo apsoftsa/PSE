@@ -29,7 +29,7 @@ namespace PSE.BusinessLogic
                 IBondsMaturingLessThan5Years _bondLessThan5;
                 ISection12Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
@@ -61,6 +61,7 @@ namespace PSE.BusinessLogic
                                 PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
+                            _posItem.AlreadyUsed = true;
                         }
                         _output.Content = new Section12Content(_sectionContent);
                     }

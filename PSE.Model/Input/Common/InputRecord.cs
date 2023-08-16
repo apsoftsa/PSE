@@ -23,6 +23,12 @@ namespace PSE.Model.Input.Common
             private set { }
         }
 
+        [FieldHidden]
+        public bool AlreadyUsed
+        {
+            get; set;
+        }
+
         [FieldFixedLength(6)]
         [FieldTrim(TrimMode.Both)]
         [FieldOrder(1)]
@@ -30,11 +36,13 @@ namespace PSE.Model.Input.Common
 
         protected InputRecord(string messageType)
         {
+            AlreadyUsed = false;
             MessageType_1 = messageType;
         }
 
         protected InputRecord(InputRecord source)
         {
+            AlreadyUsed = source.AlreadyUsed;
             MessageType_1 = source.MessageType_1;
         }
 

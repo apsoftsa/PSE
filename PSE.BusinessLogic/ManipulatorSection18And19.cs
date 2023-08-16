@@ -63,7 +63,7 @@ namespace PSE.BusinessLogic
                 IAlternativeProducts _altProdDefinitions;
                 ISection18And19Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
+                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => Utility.ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
@@ -97,7 +97,7 @@ namespace PSE.BusinessLogic
                                         ? _posItem.BuyPriceAverage_87.Value
                                         : 0,
                                     NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                    UnderlyingDescription = "[UnderlyingDescription]", // not still recovered (!)
+                                    UnderlyingDescription = _posItem.ConversionDesc_45,
                                     ExchangeRateImpactPurchase = 0, // not still recovered (!)
                                     ExchangeRateImpactYTD = 0, // not still recovered (!)
                                     PerformancePurchase = 0, // not still recovered (!)
@@ -111,6 +111,7 @@ namespace PSE.BusinessLogic
                                     _altProdDefinitions.Different.Add(_altProdDetails);
                                 else if (_destinationObjectName == "DerivativesOnMetals")
                                     _altProdDefinitions.DerivativesOnMetals.Add(_altProdDetails);
+                                _posItem.AlreadyUsed = true;
                             }
                         }                                                
                         _sectionContent.AlternativeProducts.Add(_altProdDefinitions);

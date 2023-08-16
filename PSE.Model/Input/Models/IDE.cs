@@ -73,15 +73,15 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(8)]
         [FieldOptional]
-        [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
+        [FieldTrim(TrimMode.Both)]
         [FieldOrder(15)]
-        public DateTime? Date_15 { get; set; }
+        public string Date_15 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
-        [FieldConverter(ConverterKind.Int32, ".")]
+        [FieldTrim(TrimMode.Both)]
         [FieldOrder(16)]
-        public int? Time_16 { get; set; }
+        public string Time_16 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
