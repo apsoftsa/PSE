@@ -84,7 +84,7 @@ namespace PSE.BusinessLogic
                                     _cashIn = _perItem.CashIn_10.Value;
                                 if (_perItem.SecIn_12 != null)
                                     _secIn = _perItem.SecIn_12.Value;
-                                _portfolioValueRectified = _startValue + (_cashIn + _secIn - _cashOut - _secOut);
+                                _portfolioValueRectified = _startValue + (_cashIn + _secIn + _cashOut + _secOut);
                                 _currAsstExtr = new AssetExtract()
                                 {
                                     AssetClass = "Portfolio Value Rectified",

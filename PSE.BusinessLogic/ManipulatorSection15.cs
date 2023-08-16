@@ -45,7 +45,7 @@ namespace PSE.BusinessLogic
                                 CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
                                 PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
                                 PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
-                                Isin = "[Isin]", // not still recovered (!)
+                                Isin = _posItem.IsinIban_85,
                                 NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                 SPRating = "[SPRating]", // not still recovered (!)
                                 MsciEsg = "[MsciEsg]", // not still recovered (!)

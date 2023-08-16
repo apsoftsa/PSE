@@ -50,8 +50,8 @@ namespace PSE.BusinessLogic
                                 PercentCoupon = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
                                 PercentYTM = 0, // not still recovered (!)
                                 NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                SPRating = "[SPRating]", // not still recovered (!)
-                                MsciEsg = "[MsciEsg]", // not still recovered (!)
+                                SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
+                                MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
                                 ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,
                                 ExchangeRateImpactYTD = 0, // not still recovered (!)
                                 PerformancePurchase = 0, // not still recovered (!)
