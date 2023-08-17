@@ -45,7 +45,7 @@ namespace PSE.BusinessLogic
                                     if(_currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO
                                         || _currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI
                                         || _currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI)
-                                    _destinationObjectName = "BondFunds";
+                                        _destinationObjectName = "BondFunds";
                                     break;
                                 }
                             case "FA":
@@ -124,7 +124,7 @@ namespace PSE.BusinessLogic
                                         : 0,
                                     NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                     ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,
-                                    Isin = "[Isin]", // not still recovered (!)
+                                    Isin = _posItem.IsinIban_85,
                                     SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
                                     MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
                                     ExchangeRateImpactYTD = 0, // not still recovered (!)
