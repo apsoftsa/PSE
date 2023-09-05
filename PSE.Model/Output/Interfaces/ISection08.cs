@@ -16,7 +16,7 @@
 
         decimal? AccruedInterestReportingCurrency { get; set; }
 
-        decimal? PercentAssets { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 

@@ -44,7 +44,7 @@ namespace PSE.BusinessLogic
                                 CurrentBalance = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                 Iban = _posItem.IsinIban_85,
                                 AccruedInterestReportingCurrency = 0, // not still recovered (!)
-                                PercentAssets = 0 // not still recovered (!)
+                                PercentAsset = 0 // not still recovered (!)
                             };
                             _sectionContent.Accounts.Add(_account);
                             _posItem.AlreadyUsed = true;

@@ -30,7 +30,7 @@ namespace PSE.Model.Output.Models
         public decimal? AccruedInterestReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentAssets { get; set; }
+        public decimal? PercentAsset { get; set; }
 
         public Account()
         {
@@ -40,7 +40,7 @@ namespace PSE.Model.Output.Models
             this.CurrentBalance = null;
             this.MarketValueReportingCurrency = null;
             this.AccruedInterestReportingCurrency = null;
-            this.PercentAssets = null;
+            this.PercentAsset = null;
         }
 
         public Account(IAccount source)
@@ -51,7 +51,7 @@ namespace PSE.Model.Output.Models
             this.CurrentBalance = source.CurrentBalance;
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             this.AccruedInterestReportingCurrency = source.AccruedInterestReportingCurrency;
-            this.PercentAssets = source.PercentAssets;
+            this.PercentAsset = source.PercentAsset;
         }
 
     }
