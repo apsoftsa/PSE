@@ -1,16 +1,21 @@
 using System.Reflection;
 using System.Diagnostics;
+using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.Executor
 {
+
     public partial class FormMain : Form
     {
 
         private readonly Extractor.Extractor _extractor;
         private readonly Builder.Builder _builder;
+        private readonly Decoder.IDecoder _decoder;
+
+        private readonly List<TreeNode> _builderNodes;
 
         public FormMain()
         {
@@ -18,8 +23,22 @@ namespace PSE.Executor
             Assembly _assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
             this.Text += " - Ver. " + _fvi.FileVersion;
-            _extractor = new Extractor.Extractor(true,AppDomain.CurrentDomain.BaseDirectory + @"PSEStructuresExport.txt");
+            _extractor = new Extractor.Extractor(true, AppDomain.CurrentDomain.BaseDirectory + @"PSEStructuresExport.txt");
+            _decoder = new Decoder.Decoder();
+            _decoder.ExternalCodifyErrorOccurred += DecoderExternalCodifyErrorOccurredManagement;
             _builder = new Builder.Builder();
+            _builder.ExternalCodifyRequest += BuilderExternalCodifyRequestManagement;
+            _builderNodes = new List<TreeNode>();
+        }
+
+        private void DecoderExternalCodifyErrorOccurredManagement(object sender, ExternalCodifyRequestEventArgs e)
+        {
+            string _errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
+            _builderNodes.Add(new TreeNode("Decoding error occurred: " + e.ErrorOccurred + " (" + _errSource + ")"));
+        }
+        private void BuilderExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
+        {
+            _decoder.Decode(e);
         }
 
         private void browseFiles_Click(object sender, EventArgs e)
@@ -87,7 +106,7 @@ namespace PSE.Executor
                 if (_fileLogs != null && _allExtractedItems.Any())
                 {
                     this.treeViewLog.Nodes.Add("bldngNode", "BUILDING");
-                    List<TreeNode> _builderNodes = new();
+
                     _fileLogs = this.treeViewLog.Nodes["bldngNode"];
                     this.textBoxJson.Text = "";
                     this.buttonCopy.Enabled = false;
@@ -112,10 +131,10 @@ namespace PSE.Executor
                     else
                         this.tabControl.SelectedIndex = 0;
                     this.treeViewLog.Nodes["bldngNode"].ExpandAll();
-                }                                
+                }
             }
         }
-      
+
         private void buttonCopy_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.textBoxJson.Text))
@@ -123,6 +142,11 @@ namespace PSE.Executor
                 Clipboard.SetText(this.textBoxJson.Text);
                 MessageBox.Show("The output data have been copied to clipboard.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _decoder.Dispose();
         }
 
     }

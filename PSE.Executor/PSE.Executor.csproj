@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>1.4.2</AssemblyVersion>
-    <FileVersion>1.4.2</FileVersion>
+    <AssemblyVersion>1.5.0</AssemblyVersion>
+    <FileVersion>1.5.0</FileVersion>
     <IsPublishable>True</IsPublishable>
     <ApplicationIcon>Images\icon.ico</ApplicationIcon>
     <Copyright>Apsoft SA Copyright 2023</Copyright>
@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PSE.Builder\PSE.Builder.csproj" />
+    <ProjectReference Include="..\PSE.Decoder\PSE.Decoder.csproj" />
     <ProjectReference Include="..\PSE.Extractor\PSE.Extractor.csproj" />
     <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
   </ItemGroup>

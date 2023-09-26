@@ -5,13 +5,15 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Model", "PSE.Model\PSE.Model.csproj", "{3A9A3CF1-C976-40A9-9A32-6D6E73E73F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.Extractor", "PSE.Extractor\PSE.Extractor.csproj", "{B2D29257-CD5F-4230-AED5-EC361350A7C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Extractor", "PSE.Extractor\PSE.Extractor.csproj", "{B2D29257-CD5F-4230-AED5-EC361350A7C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.BusinessLogic", "PSE.BusinessLogic\PSE.BusinessLogic.csproj", "{F717446F-3427-4504-98A6-B6BC672E7C89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.BusinessLogic", "PSE.BusinessLogic\PSE.BusinessLogic.csproj", "{F717446F-3427-4504-98A6-B6BC672E7C89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.Builder", "PSE.Builder\PSE.Builder.csproj", "{53A488AB-E4A1-4A98-BDB4-52E7EA62A523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Builder", "PSE.Builder\PSE.Builder.csproj", "{53A488AB-E4A1-4A98-BDB4-52E7EA62A523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.Executor", "PSE.Executor\PSE.Executor.csproj", "{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Executor", "PSE.Executor\PSE.Executor.csproj", "{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Decoder", "PSE.Decoder\PSE.Decoder.csproj", "{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

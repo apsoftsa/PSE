@@ -1,4 +1,5 @@
-﻿using PSE.Model.Input.Interfaces;
+﻿using PSE.Model.Events;
+using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
 using System.Globalization;
 using static PSE.Model.Common.Constants;
@@ -14,6 +15,13 @@ namespace PSE.BusinessLogic
 
         public List<PositionClassifications> PositionClassificationsSource { get; }
         public ManipolationTypes SectionDestination { get; }
+
+        public event ExternalCodifyEventHandler? ExternalCodifyRequest;
+
+        protected virtual void OnExternalCodifyRequest(ExternalCodifyRequestEventArgs e)
+        {
+            ExternalCodifyRequest?.Invoke(this, e);
+        }
 
         protected ManipulatorBase(ManipolationTypes sectionDestination, CultureInfo? culture = null)
         {
@@ -40,7 +48,7 @@ namespace PSE.BusinessLogic
             PositionClassificationsSource = new List<PositionClassifications>(positionClassificationsSource);
             SectionDestination = sectionDestination;
             if (culture == null)
-                _culture = new CultureInfo(DEFAULT_CULTURE); 
+                _culture = new CultureInfo(DEFAULT_CULTURE);
             else
                 _culture = culture;
         }
