@@ -40,7 +40,7 @@ namespace PSE.BusinessLogic
                     {
                         // it is necessary to take only the PER item having the property Type_5 value smallest (!!!!)
                         PER _perItem = _perItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).OrderBy(_ob => _ob.Type_5).First();
-                        _extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), string.IsNullOrEmpty(_ideItem.ModelCode_21) ? "" : _ideItem.ModelCode_21[..1]);
+                        _extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), _ideItem.ModelCode_21);
                         OnExternalCodifyRequest(_extEventArgsPortfolio);
                         if (!_extEventArgsPortfolio.Cancel)
                         {

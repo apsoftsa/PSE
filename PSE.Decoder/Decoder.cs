@@ -54,8 +54,8 @@ namespace PSE.Decoder
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Portfolio))
                         {
-                            if (_context.Tabelle.Any(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey))
-                                e.PropertyValue = _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey).TextI;
+                            if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0,1))) 
+                                e.PropertyValue = _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextI;
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Service))
                         {
@@ -75,6 +75,8 @@ namespace PSE.Decoder
                         }
                     }
                 }
+                else if (_serviceProvider == null && e != null && string.IsNullOrEmpty(e.PropertyKey) == false) // feature not activated
+                    e.PropertyValue = e.PropertyKey;
             }
             catch(Exception _ex)
             {
