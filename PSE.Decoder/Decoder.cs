@@ -54,8 +54,11 @@ namespace PSE.Decoder
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Portfolio))
                         {
-                            if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0,1))) 
+                            if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)))
+                            {
                                 e.PropertyValue = _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextI;
+                                e.PropertyValue = e.PropertyKey[1..] + " - " + e.PropertyValue;
+                            }
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Service))
                         {
