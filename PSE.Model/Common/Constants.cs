@@ -6,6 +6,7 @@
 
         public const string DEFAULT_CULTURE = "en-US";
         public const string DEFAULT_DATE_FORMAT = "dd/MM/yyyy";
+        public const string NEGATIVE_SIGN = "-";
 
         public const string INPUT_REQ_MSG_TYPE = "REQ";
         public const string INPUT_IDE_MSG_TYPE = "IDE";

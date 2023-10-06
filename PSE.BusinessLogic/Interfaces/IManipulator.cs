@@ -3,7 +3,7 @@ using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
-namespace PSE.BusinessLogic
+namespace PSE.BusinessLogic.Interfaces
 {
 
     public delegate void ExternalCodifyEventHandler(object sender, ExternalCodifyRequestEventArgs e);

@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
@@ -9,7 +11,7 @@ using static PSE.Model.Common.Enumerations;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection8 : ManipulatorBase
+    public class ManipulatorSection8 : ManipulatorBase, IManipulator
     {
 
         public ManipulatorSection8(CultureInfo? culture = null) : base(PositionClassifications.CONTI, ManipolationTypes.AsSection8, culture) { }

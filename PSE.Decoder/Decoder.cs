@@ -20,20 +20,23 @@ namespace PSE.Decoder
 
         public Decoder()
         {
+            _serviceProvider = null;
             AppDomain _currentDomain = AppDomain.CurrentDomain;
-            IConfiguration _config = ConfigurationReader.ReadConfiguration();
-            AppSettings _appSettings = new AppSettings(_config);
-            if (_appSettings.DecoderEnable)
+            IConfiguration? _config = ConfigurationReader.ReadConfiguration();
+            if (_config != null)
             {
-                var _serviceCollection = new ServiceCollection();
-                _serviceCollection.AddDbContext<BOSSDbContext>(_options => {
-                    _options.UseSqlServer(_appSettings.ConnectionString);
-                    _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); 
-                });
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                AppSettings _appSettings = new AppSettings(_config);
+                if (_appSettings.DecoderEnable)
+                {
+                    var _serviceCollection = new ServiceCollection();
+                    _serviceCollection.AddDbContext<BOSSDbContext>(_options =>
+                    {
+                        _options.UseSqlServer(_appSettings.ConnectionString);
+                        _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                    });
+                    _serviceProvider = _serviceCollection.BuildServiceProvider();
+                }
             }
-            else
-                _serviceProvider = null;
         }
 
         public virtual bool Decode(ExternalCodifyRequestEventArgs e)

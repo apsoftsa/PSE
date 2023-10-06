@@ -8,6 +8,7 @@ using PSE.Model.Output.Interfaces;
 using PSE.BusinessLogic;
 using static PSE.BusinessLogic.Utility.ManipulatorOperatingRules;
 using static PSE.Model.Common.Enumerations;
+using PSE.BusinessLogic.Utility;
 
 namespace PSE.Builder
 {
@@ -95,7 +96,17 @@ namespace PSE.Builder
                                         extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
                                     {
                                         if (ArePOSRowsManipulable(extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>(), manipolationType))
-                                            buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                        {
+                                            if ((manipolationType == ManipolationTypes.AsSection12 || manipolationType == ManipolationTypes.AsSection13 || manipolationType == ManipolationTypes.AsSection14)
+                                                && isMandatory && extractedData.Any(_flt => _flt.RecordType == nameof(CUR)) == false)
+                                            {
+                                                buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                                    $"at least one input record having format '{nameof(CUR)}' must be provided!";
+                                                buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                            }
+                                            else
+                                                buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                        }
                                         else if (isMandatory)
                                         {
                                             List<PositionClassifications> _classificationsBound = GetClassificationsBoundToSection(manipolationType);
@@ -169,6 +180,7 @@ namespace PSE.Builder
 
         private IOutputModel? ManipulateInputData(IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
+            BondsCalculation _bondsCalculation = new BondsCalculation();
             ManipulatorHeader _manHeader = new();
             _manHeader.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection1 _manSect1 = new();
@@ -185,11 +197,11 @@ namespace PSE.Builder
             _manSect10.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection11 _manSect11 = new();
             _manSect11.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection12 _manSect12 = new();
+            ManipulatorSection12 _manSect12 = new(_bondsCalculation);
             _manSect12.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection13 _manSect13 = new();
+            ManipulatorSection13 _manSect13 = new(_bondsCalculation);
             _manSect13.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection14 _manSect14 = new();
+            ManipulatorSection14 _manSect14 = new(_bondsCalculation);
             _manSect14.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection15 _manSect15 = new();
             _manSect15.ExternalCodifyRequest += ExternalCodifyRequestManagement;

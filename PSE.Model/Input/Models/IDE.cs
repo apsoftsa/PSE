@@ -75,13 +75,13 @@ namespace PSE.Model.Input.Models
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
         [FieldOrder(15)]
-        public string Date_15 { get; set; }
+        public string? Date_15 { get; set; }
 
         [FieldFixedLength(4)]
         [FieldOptional]
         [FieldTrim(TrimMode.Both)]
         [FieldOrder(16)]
-        public string Time_16 { get; set; }
+        public string? Time_16 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]

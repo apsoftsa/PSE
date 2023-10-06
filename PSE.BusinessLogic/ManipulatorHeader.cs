@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Common;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
@@ -8,7 +10,7 @@ using PSE.Model.SupportTables;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorHeader : ManipulatorBase
+    public class ManipulatorHeader : ManipulatorBase, IManipulator
     {
 
         public ManipulatorHeader(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsHeader, culture) { }

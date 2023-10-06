@@ -19,7 +19,7 @@ namespace PSE.Model.SupportTables
             ClassificationsBound = new List<PositionClassifications>();
         }
 
-        public SectionBinding(ManipolationTypes sectionId, string sectionCode, string sectionContent, List<PositionClassifications> classificationsBound = null)
+        public SectionBinding(ManipolationTypes sectionId, string sectionCode, string sectionContent, List<PositionClassifications>? classificationsBound = null)
         {
             SectionId = sectionId;
             SectionCode = sectionCode;

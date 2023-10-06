@@ -7,18 +7,24 @@ namespace PSE.Decoder.Config
     internal static class ConfigurationReader
     {
 
-        private static string GetBasePath()
+        private static string? GetBasePath()
         {
             ProcessModule? _processModule = Process.GetCurrentProcess()?.MainModule;
-            return Path.GetDirectoryName(_processModule.FileName);
+            return _processModule != null ? Path.GetDirectoryName(_processModule.FileName) : string.Empty;
         }
 
-        public static IConfiguration ReadConfiguration()
+        public static IConfiguration? ReadConfiguration()
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(GetBasePath())
-                .AddJsonFile("PSE.Decoder.settings.json", optional: false, reloadOnChange: true);
-            return builder.Build();
+            string ? _basePath = GetBasePath();
+            if (_basePath != null)
+            {
+                var builder = new ConfigurationBuilder()
+                    .SetBasePath(_basePath)
+                    .AddJsonFile("PSE.Decoder.settings.json", optional: false, reloadOnChange: true);
+                return builder.Build();
+            }
+            else
+                return null;
         }
 
     }

@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
@@ -10,10 +12,15 @@ using static PSE.Model.Common.Enumerations;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection14 : ManipulatorBase
+    public class ManipulatorSection14 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection14(CultureInfo? culture = null) : base(PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI, ManipolationTypes.AsSection14, culture) { }
+        private readonly IBondsCalculation _bondsCalculation;
+
+        public ManipulatorSection14(IBondsCalculation bondsCalculation, CultureInfo? culture = null) : base(PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI, ManipolationTypes.AsSection14, culture) 
+        {
+            _bondsCalculation = bondsCalculation;
+        }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {

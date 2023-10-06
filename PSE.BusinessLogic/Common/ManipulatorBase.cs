@@ -1,11 +1,12 @@
-﻿using PSE.Model.Events;
+﻿using PSE.BusinessLogic.Interfaces;
+using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
 using System.Globalization;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
-namespace PSE.BusinessLogic
+namespace PSE.BusinessLogic.Common
 {
 
     public abstract class ManipulatorBase : IManipulator
