@@ -1,0 +1,4 @@
+﻿{
+  "ConnectionString": "Server=SBDWLU02\\BDW;Initial Catalog=BSBOSS;User Id=serviceapp;Password=!S3mp10n3;",
+  "DecoderEnable": "true"
+}
