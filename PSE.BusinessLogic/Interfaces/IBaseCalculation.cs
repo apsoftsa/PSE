@@ -3,7 +3,7 @@
 namespace PSE.BusinessLogic.Interfaces
 {
 
-    public interface IBondsCalculation
+    public interface IBaseCalculation
     {
 
         decimal GetGlobalVariationValue(GlobalVariationValueParams recParams);

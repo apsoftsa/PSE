@@ -3,7 +3,7 @@ using PSE.Model.Input.Models;
 using PSE.Model.SupportTables;
 using static PSE.Model.Common.Enumerations;
 
-namespace PSE.BusinessLogic.Utility
+namespace PSE.BusinessLogic.Common
 {
 
     public static class ManipulatorOperatingRules
@@ -153,8 +153,8 @@ namespace PSE.BusinessLogic.Utility
 
         public static bool IsRowDestinatedToManipulator(IManipulator manipulator, string subCategory)
         {
-            return string.IsNullOrEmpty(subCategory) == false && string.IsNullOrWhiteSpace(subCategory) == false 
-                && Enum.IsDefined(typeof(PositionClassifications), int.Parse(subCategory)) 
+            return string.IsNullOrEmpty(subCategory) == false && string.IsNullOrWhiteSpace(subCategory) == false
+                && Enum.IsDefined(typeof(PositionClassifications), int.Parse(subCategory))
                 && manipulator.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(subCategory));
         }
 

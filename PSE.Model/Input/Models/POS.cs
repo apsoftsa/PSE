@@ -516,9 +516,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(88)]
-        public string BuyExchangeRateAverage_88 { get; set; }
+        public decimal? BuyExchangeRateAverage_88 { get; set; }
 
         [FieldFixedLength(2)]
         [FieldOptional]
@@ -672,7 +672,7 @@ namespace PSE.Model.Input.Models
             IsinIban_85 = string.Empty;
             TaxType_86 = string.Empty;
             BuyPriceAverage_87 = null;
-            BuyExchangeRateAverage_88 = string.Empty;
+            BuyExchangeRateAverage_88 = null;
             InverseExchangeRate_89 = string.Empty;
             Amount1Request_90 = string.Empty;
             Amount2Request_91 = string.Empty;

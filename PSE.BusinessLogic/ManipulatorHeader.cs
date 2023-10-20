@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = Utility.ManipulatorOperatingRules.GetDestinationSection(this);
+            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             IHeaderContent _headerContent = new HeaderContent()
             {
                 SectionId = _sectionDest.SectionId,
