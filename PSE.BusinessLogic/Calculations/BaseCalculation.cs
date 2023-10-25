@@ -67,7 +67,7 @@ namespace PSE.BusinessLogic.Utility
                     _change1c = recParams.Change1;
                     _change2c = recParams.Change2;
                 }
-                _divider = recParams.Trend1 * _change1c * (decimal)100;
+                _divider = recParams.Trend1 * _change1c * 100m;
                 if (_divider > 0)
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
@@ -107,18 +107,19 @@ namespace PSE.BusinessLogic.Utility
             return _priceDifferenceValue;
         }
 
+        /*
         // Corrisponde a: "ValoreVariazioneCorso"
         public virtual decimal GetCourseChangeValue(CourseChangeValueParams recParams)
         {
             decimal _courseChangeValue = 0;
             if (recParams != null && recParams.IsValid)
             {
-                if (!(recParams.Trend1 < (decimal)0.01 || recParams.Trend2 < (decimal)0.01))
+                if (!(recParams.Trend1 < 0.01m || recParams.Trend2 < 0.01m))
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * (decimal)100;
+                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
                     else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * (decimal)100;
+                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
                 }
             }
             return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
@@ -130,12 +131,48 @@ namespace PSE.BusinessLogic.Utility
             decimal _courseChangeValue = 0;
             if (recParams != null && recParams.IsValid)
             {
-                if (!(recParams.Trend1 < (decimal)0.00001 || recParams.Trend2 < (decimal)0.00001))
+                if (!(recParams.Trend1 < 0.00001m || recParams.Trend2 < 0.00001m))
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * (decimal)100;
+                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
                     else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * (decimal)100;
+                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
+                }
+            }
+            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
+        }
+        */
+
+        // ???? Corretto?! Non corrisponde alla documentazione ricevuta...
+        // Corrisponde a: "ValoreVariazioneCorso"
+        public virtual decimal GetCourseChangeValue(CourseChangeValueParams recParams)
+        {
+            decimal _courseChangeValue = 0;
+            if (recParams != null && recParams.IsValid)
+            {
+                if (!(recParams.Trend1 < 0.01m || recParams.Trend2 < 0.01m))
+                {
+                    if (recParams.Sign == NEGATIVE_SIGN)
+                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend2 * 100m;
+                    else
+                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend2 * 100m;
+                }
+            }
+            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
+        }
+
+        // Corrisponde a: "ValoreVariazioneCorso5"
+        public virtual decimal GetCourseChangeValue5(CourseChangeValueParams recParams)
+        {
+            decimal _courseChangeValue = 0;
+            if (recParams != null && recParams.IsValid)
+            {
+                if (!(recParams.Trend1 < 0.00001m || recParams.Trend2 < 0.00001m))
+                {
+                    if (recParams.Sign == NEGATIVE_SIGN)
+                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend2 * 100m;
+                    else
+                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend2 * 100m;
                 }
             }
             return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
@@ -231,7 +268,7 @@ namespace PSE.BusinessLogic.Utility
                         if (_trend1 == 0 && _change1 != 0 && _trend2 != 0 && _change2 != 0)
                         {
                             if (recParams.Sign == NEGATIVE_SIGN)
-                                _unrealizedValue = Math.Abs(recParams.ImpCtv) * (decimal)-1;
+                                _unrealizedValue = Math.Abs(recParams.ImpCtv) * -1m;
                             else
                                 _unrealizedValue = recParams.ImpCtv;
                             _continue = false;
@@ -251,15 +288,15 @@ namespace PSE.BusinessLogic.Utility
                         recParams.ChangeM, 
                         recParams.Reverse)
                     );
-                    _global /= (decimal)100;
+                    _global /= 100m;
                     if (_global == -1) // ???
                         _unrealizedValue = 0 - recParams.ImpCtv;
                     else if(_global != 0)
                     {
                         if (recParams.Sign == NEGATIVE_SIGN)
-                            _unrealizedValue = Math.Abs(recParams.ImpCtv) * (_global / ((decimal)1 - _global));
+                            _unrealizedValue = Math.Abs(recParams.ImpCtv) * (_global / (1m - _global));
                         else
-                            _unrealizedValue = recParams.ImpCtv * (_global / ((decimal)1 + _global));
+                            _unrealizedValue = recParams.ImpCtv * (_global / (1m + _global));
                     }
                 }
             }
@@ -288,9 +325,9 @@ namespace PSE.BusinessLogic.Utility
                     _change2c = recParams.Change2;
                 }
                 if (recParams.Sign == NEGATIVE_SIGN)
-                    _exchangeRateChangeValue = (_change1c - _change2c) / _change1c * (decimal)100;
+                    _exchangeRateChangeValue = (_change1c - _change2c) / _change1c * 100m;
                 else
-                    _exchangeRateChangeValue = (_change2c - _change1c) / _change1c * (decimal)100;
+                    _exchangeRateChangeValue = (_change2c - _change1c) / _change1c * 100m;
             }
             return Math.Round(_exchangeRateChangeValue, _calcSettings.MeaningfulDecimalDigits);
         }

@@ -28,12 +28,14 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
+                decimal _customerSumAmounts;
                 IFiduciaryInvestmentAccount _account;
                 ISection10Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         _sectionContent = new Section10Content();
@@ -51,7 +53,7 @@ namespace PSE.BusinessLogic
                                 NoDeposit = _posItem.MovementKey_31,
                                 Correspondent = _posItem.Description2_33,
                                 AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : 0,
-                                PercentAsset = 0 // not still recovered (!)
+                                PercentAsset = _posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
                             _sectionContent.Accounts.Add(_account);
                             _posItem.AlreadyUsed = true;

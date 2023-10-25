@@ -35,7 +35,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate;
+                decimal _currencyRate, _customerSumAmounts, _quoteType;
                 IBondsWithMaturityGreatherThanFiveYears _bondGreatThan5;
                 ISection15Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
@@ -43,11 +43,13 @@ namespace PSE.BusinessLogic
                 IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         _sectionContent = new Section15Content();
-                        foreach (POS _posItem in _posItems)
+                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                         {
+                            _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
                             _bondGreatThan5 = new BondsWithMaturityGreatherThanFiveYears()
                             {
                                 ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
@@ -60,17 +62,19 @@ namespace PSE.BusinessLogic
                                 NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                 SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
                                 MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
-                                ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,  //temporary
-                                ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0,  //temporary
-                                PercentAsset = 0 // not still recovered (!)
+                                //ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0,  //temporary
+                                //ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0,  //temporary
+                                PercentAsset = _posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, _calcShares.MeaningfulDecimalDigits) : 0
                             };
                             _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _bondGreatThan5.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _bondGreatThan5.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                            _bondGreatThan5.PerformancePurchase = Math.Round((_bondGreatThan5.CurrentPrice.Value - _bondGreatThan5.PurchasePrice.Value) * _bondGreatThan5.NominalAmount.Value, _calcShares.MeaningfulDecimalDigits);
-                            _bondGreatThan5.PerformanceYTD = Math.Round((_bondGreatThan5.CurrentPrice.Value - _bondGreatThan5.PriceBeginningYear.Value) * _bondGreatThan5.NominalAmount.Value, _calcShares.MeaningfulDecimalDigits);
+                            _bondGreatThan5.PerformancePurchase = Math.Round((_bondGreatThan5.CurrentPrice.Value - _bondGreatThan5.PurchasePrice.Value) * _bondGreatThan5.NominalAmount.Value / _quoteType, _calcShares.MeaningfulDecimalDigits);
+                            _bondGreatThan5.PerformanceYTD = Math.Round((_bondGreatThan5.CurrentPrice.Value - _bondGreatThan5.PriceBeginningYear.Value) * _bondGreatThan5.NominalAmount.Value / _quoteType, _calcShares.MeaningfulDecimalDigits);
                             _bondGreatThan5.PercentPerformancePurchase = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _bondGreatThan5.CurrentPrice), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.PurchasePrice.Value));
                             _bondGreatThan5.PercentPerformanceYTD = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _bondGreatThan5.CurrentPrice), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.PriceBeginningYear.Value));
-                            _bondGreatThan5.ExchangeRateImpactPurchase = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _currencyRate), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.ExchangeRateImpactPurchase.Value));
-                            _bondGreatThan5.ExchangeRateImpactYTD = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _currencyRate), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.ExchangeRateImpactYTD.Value));
+                            //_bondGreatThan5.ExchangeRateImpactPurchase = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _currencyRate), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.ExchangeRateImpactPurchase.Value));
+                            //_bondGreatThan5.ExchangeRateImpactYTD = _calcShares.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcShares.GetSign(_bondGreatThan5.NominalAmount, _currencyRate), _bondGreatThan5.CurrentPrice.Value, _bondGreatThan5.ExchangeRateImpactYTD.Value));
+                            _bondGreatThan5.ExchangeRateImpactPurchase = Math.Round(_bondGreatThan5.NominalAmount.Value * _bondGreatThan5.CurrentPrice.Value / 100m, _calcShares.MeaningfulDecimalDigits);
+                            _bondGreatThan5.ExchangeRateImpactYTD = Math.Round(_bondGreatThan5.NominalAmount.Value * _bondGreatThan5.PriceBeginningYear.Value / 100m, _calcShares.MeaningfulDecimalDigits);
                             _sectionContent.BondsWithMatGreatThanFiveYears.Add(_bondGreatThan5);
                             _posItem.AlreadyUsed = true;
                         }

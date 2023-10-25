@@ -28,17 +28,18 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                decimal _tmp1, _tmp2;
+                decimal _tmp1, _tmp2, _customerSumAmounts;
                 IProfitLossOperation _profitLossOperation;
                 ISection11Content _sectionContent;
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         _sectionContent = new Section11Content();
-                        foreach (POS _posItem in _posItems)
+                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                         {
                             _tmp1 = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0;
                             _tmp2 = _posItem.Amount2Base_60 != null ? _posItem.Amount2Base_60.Value : 0;
@@ -52,7 +53,7 @@ namespace PSE.BusinessLogic
                                 Change = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
                                 Amount2 = _posItem.Amount2Cur2_59 != null ? _posItem.Amount2Cur2_59.Value : 0,
                                 ProfitlossReportingCurrency = _tmp1 + _tmp2,
-                                PercentAssets = 0 // not still recovered (!)
+                                PercentAssets = _posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
                             _posItem.AlreadyUsed = true;
                             _sectionContent.Operations.Add(_profitLossOperation);

@@ -35,19 +35,21 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate;
+                decimal _currencyRate, _customerSumAmounts, _quoteType;
                 IBondsMaturingLessThan5Years _bondLessThan5;
-                ISection12Content _sectionContent;
+                ISection12Content _sectionContent;                
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
                 IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>(); 
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section12Content();
-                        foreach (POS _posItem in _posItems)                        
+                        _sectionContent = new Section12Content();                        
+                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))                        
                         {
+                            _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
                             _bondLessThan5 = new BondsMaturingLessThan5Years()
                             {
                                 ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
@@ -61,19 +63,21 @@ namespace PSE.BusinessLogic
                                 PercentCoupon = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
                                 PercentYTM = 0, // not still recovered (!)
                                 NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
+                                //ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
                                 SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
                                 MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
-                                ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, // temporary                                                             
-                                PercentAsset = 0 // not still recovered (!)
+                                //ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, // temporary                                                             
+                                PercentAsset =_posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, _calcBonds.MeaningfulDecimalDigits) : 0
                             };
                             _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _bondLessThan5.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _bondLessThan5.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                            _bondLessThan5.PerformancePurchase = Math.Round((_bondLessThan5.CurrentPrice.Value - _bondLessThan5.PurchasePrice.Value) * _bondLessThan5.NominalAmount.Value, _calcBonds.MeaningfulDecimalDigits);
-                            _bondLessThan5.PerformanceYTD = Math.Round((_bondLessThan5.CurrentPrice.Value - _bondLessThan5.PriceBeginningYear.Value) * _bondLessThan5.NominalAmount.Value, _calcBonds.MeaningfulDecimalDigits);
+                            _bondLessThan5.PerformancePurchase = Math.Round((_bondLessThan5.CurrentPrice.Value - _bondLessThan5.PurchasePrice.Value) * _bondLessThan5.NominalAmount.Value / _quoteType, _calcBonds.MeaningfulDecimalDigits);
+                            _bondLessThan5.PerformanceYTD = Math.Round((_bondLessThan5.CurrentPrice.Value - _bondLessThan5.PriceBeginningYear.Value) * _bondLessThan5.NominalAmount.Value / _quoteType, _calcBonds.MeaningfulDecimalDigits);
                             _bondLessThan5.PercentPerformancePurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.PurchasePrice.Value)); 
                             _bondLessThan5.PercentPerformanceYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.PriceBeginningYear.Value));
-                            _bondLessThan5.ExchangeRateImpactPurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _currencyRate), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.ExchangeRateImpactPurchase.Value));
-                            _bondLessThan5.ExchangeRateImpactYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _currencyRate), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.ExchangeRateImpactYTD.Value));
+                            //_bondLessThan5.ExchangeRateImpactPurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _currencyRate, _bondLessThan5.ExchangeRateImpactPurchase.Value));
+                            //_bondLessThan5.ExchangeRateImpactYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _currencyRate, _bondLessThan5.ExchangeRateImpactYTD.Value));
+                            _bondLessThan5.ExchangeRateImpactPurchase = Math.Round(_bondLessThan5.NominalAmount.Value * _bondLessThan5.CurrentPrice.Value / 100m, _calcBonds.MeaningfulDecimalDigits);
+                            _bondLessThan5.ExchangeRateImpactYTD = Math.Round(_bondLessThan5.NominalAmount.Value * _bondLessThan5.PriceBeginningYear.Value / 100m, _calcBonds.MeaningfulDecimalDigits);
                             _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
                             _posItem.AlreadyUsed = true;
                         }

@@ -67,7 +67,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate;
+                decimal _currencyRate, _customerSumAmounts, _quoteType;
                 string _destinationObjectName;
                 IAlternativeProductDetail _altProdDetails;
                 IAlternativeProducts _altProdDefinitions;
@@ -77,14 +77,16 @@ namespace PSE.BusinessLogic
                 IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         _sectionContent = new Section18And19Content();
                         _altProdDefinitions = new AlternativeProducts();
-                        foreach (POS _posItem in _posItems)
+                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                         {
                             if ((_destinationObjectName = GetObjectNameDestination(_posItem)) != string.Empty)
                             {
+                                _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
                                 _altProdDetails = new AlternativeProductDetail()
                                 {
                                     ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
@@ -97,17 +99,19 @@ namespace PSE.BusinessLogic
                                     PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
                                     NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
                                     UnderlyingDescription = _posItem.ConversionDesc_45,
-                                    ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, // temporary
-                                    ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, // temporary
-                                    PercentAsset = 0 // not still recovered (!)
+                                    //ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, // temporary
+                                    //ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, // temporary
+                                    PercentAsset = _posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, _calcOtherInvs.MeaningfulDecimalDigits) : 0
                                 };
                                 _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _altProdDetails.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _altProdDetails.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                                _altProdDetails.PerformancePurchase = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PurchasePrice.Value) * _altProdDetails.NominalAmount.Value, _calcOtherInvs.MeaningfulDecimalDigits);
-                                _altProdDetails.PerformanceYTD = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PriceBeginningYear.Value) * _altProdDetails.NominalAmount.Value, _calcOtherInvs.MeaningfulDecimalDigits);
+                                _altProdDetails.PerformancePurchase = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PurchasePrice.Value) * _altProdDetails.NominalAmount.Value / _quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
+                                _altProdDetails.PerformanceYTD = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PriceBeginningYear.Value) * _altProdDetails.NominalAmount.Value / _quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
                                 _altProdDetails.PercentPerformancePurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.CurrentPrice.Value, _altProdDetails.PurchasePrice.Value));
                                 _altProdDetails.PercentPerformanceYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.CurrentPrice.Value, _altProdDetails.PriceBeginningYear.Value));
-                                _altProdDetails.ExchangeRateImpactPurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _currencyRate), _altProdDetails.CurrentPrice.Value, _altProdDetails.ExchangeRateImpactPurchase.Value));
-                                _altProdDetails.ExchangeRateImpactYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _currencyRate), _altProdDetails.CurrentPrice.Value, _altProdDetails.ExchangeRateImpactYTD.Value));
+                                //_altProdDetails.ExchangeRateImpactPurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _currencyRate), _altProdDetails.CurrentPrice.Value, _altProdDetails.ExchangeRateImpactPurchase.Value));
+                                //_altProdDetails.ExchangeRateImpactYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _currencyRate), _altProdDetails.CurrentPrice.Value, _altProdDetails.ExchangeRateImpactYTD.Value));
+                                _altProdDetails.ExchangeRateImpactPurchase = Math.Round(_altProdDetails.NominalAmount.Value * _altProdDetails.CurrentPrice.Value / 100m, _calcOtherInvs.MeaningfulDecimalDigits);
+                                _altProdDetails.ExchangeRateImpactYTD = Math.Round(_altProdDetails.NominalAmount.Value * _altProdDetails.PriceBeginningYear.Value / 100m, _calcOtherInvs.MeaningfulDecimalDigits);
                                 if (_destinationObjectName == "Different")
                                     _altProdDefinitions.Different.Add(_altProdDetails);
                                 else if (_destinationObjectName == "DerivativesOnMetals")

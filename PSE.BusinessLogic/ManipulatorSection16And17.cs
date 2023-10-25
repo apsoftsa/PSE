@@ -98,7 +98,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate;
+                decimal _currencyRate, _customerSumAmounts, _quoteType;
                 string _destinationObjectName;
                 IFundDetails _fundDetails;
                 ISection16And17Content _sectionContent;
@@ -107,13 +107,15 @@ namespace PSE.BusinessLogic
                 IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Cur1_22.HasValue).Sum(_sum => _sum.Amount1Cur1_22.Value);
                     if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         _sectionContent = new Section16And17Content();
-                        foreach (POS _posItem in _posItems)
+                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                         {
                             if ((_destinationObjectName = GetObjectNameDestination(_posItem)) != string.Empty)
                             {
+                                _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
                                 _fundDetails = new FundDetail()
                                 {
                                     ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
@@ -123,20 +125,22 @@ namespace PSE.BusinessLogic
                                     PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
                                     PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
                                     NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                    ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
+                                    //ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
                                     Isin = _posItem.IsinIban_85,
                                     SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
                                     MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
-                                    ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
-                                    PercentAsset = 0 // not still recovered (!)
+                                    //ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
+                                    PercentAsset = _posItem.Amount1Cur1_22.HasValue && _customerSumAmounts != 0 ? Math.Round(_posItem.Amount1Cur1_22.Value / _customerSumAmounts * 100m, _calcFunds.MeaningfulDecimalDigits) : 0
                                 };
                                 _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _fundDetails.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _fundDetails.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                                _fundDetails.PerformancePurchase = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PurchasePrice.Value) * _fundDetails.NominalAmount.Value, _calcFunds.MeaningfulDecimalDigits);
-                                _fundDetails.PerformanceYTD = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PriceBeginningYear.Value) * _fundDetails.NominalAmount.Value, _calcFunds.MeaningfulDecimalDigits);
+                                _fundDetails.PerformancePurchase = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PurchasePrice.Value) * _fundDetails.NominalAmount.Value / _quoteType, _calcFunds.MeaningfulDecimalDigits);
+                                _fundDetails.PerformanceYTD = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PriceBeginningYear.Value) * _fundDetails.NominalAmount.Value / _quoteType, _calcFunds.MeaningfulDecimalDigits);
                                 _fundDetails.PercentPerformancePurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.CurrentPrice.Value, _fundDetails.PurchasePrice.Value));
                                 _fundDetails.PercentPerformanceYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.CurrentPrice.Value, _fundDetails.PriceBeginningYear.Value));
-                                _fundDetails.ExchangeRateImpactPurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _currencyRate), _fundDetails.CurrentPrice.Value, _fundDetails.ExchangeRateImpactPurchase.Value));
-                                _fundDetails.ExchangeRateImpactYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _currencyRate), _fundDetails.CurrentPrice.Value, _fundDetails.ExchangeRateImpactYTD.Value));
+                                //_fundDetails.ExchangeRateImpactPurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _currencyRate), _fundDetails.CurrentPrice.Value, _fundDetails.ExchangeRateImpactPurchase.Value));
+                                //_fundDetails.ExchangeRateImpactYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _currencyRate), _fundDetails.CurrentPrice.Value, _fundDetails.ExchangeRateImpactYTD.Value));
+                                _fundDetails.ExchangeRateImpactPurchase = Math.Round(_fundDetails.NominalAmount.Value * _fundDetails.CurrentPrice.Value / 100m, _calcFunds.MeaningfulDecimalDigits);
+                                _fundDetails.ExchangeRateImpactYTD = Math.Round(_fundDetails.NominalAmount.Value * _fundDetails.PriceBeginningYear.Value / 100m, _calcFunds.MeaningfulDecimalDigits);
                                 if (_destinationObjectName == "BondFunds")
                                     _sectionContent.BondFunds.Add(_fundDetails);
                                 else if (_destinationObjectName == "EquityFunds")
