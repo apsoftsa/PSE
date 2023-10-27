@@ -106,8 +106,7 @@ namespace PSE.BusinessLogic.Utility
             }
             return _priceDifferenceValue;
         }
-
-        /*
+        
         // Corrisponde a: "ValoreVariazioneCorso"
         public virtual decimal GetCourseChangeValue(CourseChangeValueParams recParams)
         {
@@ -140,43 +139,7 @@ namespace PSE.BusinessLogic.Utility
                 }
             }
             return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
-        }
-        */
-
-        // ???? Corretto?! Non corrisponde alla documentazione ricevuta...
-        // Corrisponde a: "ValoreVariazioneCorso"
-        public virtual decimal GetCourseChangeValue(CourseChangeValueParams recParams)
-        {
-            decimal _courseChangeValue = 0;
-            if (recParams != null && recParams.IsValid)
-            {
-                if (!(recParams.Trend1 < 0.01m || recParams.Trend2 < 0.01m))
-                {
-                    if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend2 * 100m;
-                    else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend2 * 100m;
-                }
-            }
-            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
-        }
-
-        // Corrisponde a: "ValoreVariazioneCorso5"
-        public virtual decimal GetCourseChangeValue5(CourseChangeValueParams recParams)
-        {
-            decimal _courseChangeValue = 0;
-            if (recParams != null && recParams.IsValid)
-            {
-                if (!(recParams.Trend1 < 0.00001m || recParams.Trend2 < 0.00001m))
-                {
-                    if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend2 * 100m;
-                    else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend2 * 100m;
-                }
-            }
-            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
-        }
+        }       
 
         // Corrisponde a: "ValoreDifferenzaGlobale"
         public virtual decimal GetGlobalDifferenceValue(GlobalDifferenceValueParams recParams)
