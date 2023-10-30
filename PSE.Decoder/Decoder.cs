@@ -14,7 +14,7 @@ namespace PSE.Decoder
 
         private const string NOT_FOUND = "[NOT_FOUND]";
 
-        private readonly ServiceProvider? _serviceProvider;
+        private readonly ServiceProvider? _serviceProvider;        
 
         public event ExternalCodifyErrorOccurredEventHandler? ExternalCodifyErrorOccurred;
 
@@ -28,10 +28,10 @@ namespace PSE.Decoder
                 AppSettings _appSettings = new AppSettings(_config);
                 if (_appSettings.DecoderEnable)
                 {
-                    var _serviceCollection = new ServiceCollection();
+                    ServiceCollection _serviceCollection = new ServiceCollection();
                     _serviceCollection.AddDbContext<BOSSDbContext>(_options =>
                     {
-                        _options.UseSqlServer(_appSettings.ConnectionString);
+                        _options.UseSqlServer(_appSettings.ConnectionString);                       
                         _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                     });
                     _serviceProvider = _serviceCollection.BuildServiceProvider();
@@ -50,6 +50,11 @@ namespace PSE.Decoder
                     BOSSDbContext? _context = _serviceProvider.GetService<BOSSDbContext>();
                     if (_context != null)
                     {
+                        // Only for debug (!)
+                        e.ErrorOccurred = _context.Database.GetConnectionString();
+                        e.PropertyValue = "[current_connection_string]";
+                        this.ExternalCodifyErrorOccurred?.Invoke(this,e);
+                        //
                         if (e.SectionName == nameof(Section1) && e.PropertyName == nameof(AssetStatement.Advisor))
                         {
                             if (_context.AdaAuIde.Any(_flt => _flt.AuiNumPer == e.PropertyKey))

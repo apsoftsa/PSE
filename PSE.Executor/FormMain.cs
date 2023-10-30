@@ -33,8 +33,13 @@ namespace PSE.Executor
 
         private void DecoderExternalCodifyErrorOccurredManagement(object sender, ExternalCodifyRequestEventArgs e)
         {
-            string _errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
-            _builderNodes.Add(new TreeNode("Decoding error occurred: " + e.ErrorOccurred + " (" + _errSource + ")"));
+            if (e.PropertyValue == "[current_connection_string]")
+                _builderNodes.Add(new TreeNode("Connection string used: " + e.ErrorOccurred));
+            else
+            {
+                string _errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
+                _builderNodes.Add(new TreeNode("Decoding error occurred: " + e.ErrorOccurred + " (" + _errSource + ")"));
+            }
         }
         private void BuilderExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
         {

@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>1.6.5</AssemblyVersion>
-    <FileVersion>1.6.5</FileVersion>
+    <AssemblyVersion>1.6.6</AssemblyVersion>
+    <FileVersion>1.6.6</FileVersion>
     <IsPublishable>True</IsPublishable>
     <ApplicationIcon>Images\icon.ico</ApplicationIcon>
     <Copyright>Apsoft SA Copyright 2023</Copyright>
