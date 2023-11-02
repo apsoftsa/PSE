@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Executor", "PSE.Executo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSE.Decoder", "PSE.Decoder\PSE.Decoder.csproj", "{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{EFF1F844-ADC6-496F-8296-9124539AA0CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.WebApi", "PSE.WebApi\PSE.WebApi.csproj", "{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +49,17 @@ Global
 		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E2AF2FE-D07A-4049-B4F0-66F294F10A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F22D89AE-7016-4E75-A7E3-EDCFA55DCF52} = {EFF1F844-ADC6-496F-8296-9124539AA0CA}
+		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9} = {EFF1F844-ADC6-496F-8296-9124539AA0CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37642602-C062-4708-8508-8BD6669992EE}
