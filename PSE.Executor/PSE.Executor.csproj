@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <AssemblyVersion>1.6.6</AssemblyVersion>
-    <FileVersion>1.6.6</FileVersion>
+    <AssemblyVersion>1.7.0</AssemblyVersion>
+    <FileVersion>1.7.0</FileVersion>
     <IsPublishable>True</IsPublishable>
     <ApplicationIcon>Images\icon.ico</ApplicationIcon>
     <Copyright>Apsoft SA Copyright 2023</Copyright>
@@ -19,13 +19,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PSE.Builder\PSE.Builder.csproj" />
-    <ProjectReference Include="..\PSE.Decoder\PSE.Decoder.csproj" />
-    <ProjectReference Include="..\PSE.Extractor\PSE.Extractor.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AppSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppSettings.json</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -41,6 +49,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AppSettings.json">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\LogoApsoft.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

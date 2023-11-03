@@ -1,9 +1,8 @@
 using System.Reflection;
 using System.Diagnostics;
-using PSE.Model.Events;
-using PSE.Model.Input.Interfaces;
-using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Enumerations;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using PSE.Model.Exchange;
 
 namespace PSE.Executor
 {
@@ -11,39 +10,17 @@ namespace PSE.Executor
     public partial class FormMain : Form
     {
 
-        private readonly Extractor.Extractor _extractor;
-        private readonly Builder.Builder _builder;
-        private readonly Decoder.IDecoder _decoder;
+        private readonly IConfiguration _configuration;        
+        private readonly string _webApiUrl;
 
-        private readonly List<TreeNode> _builderNodes;
-
-        public FormMain()
+        public FormMain(IConfiguration configuration)
         {
             InitializeComponent();
+            _configuration = configuration;
             Assembly _assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
-            this.Text += " - Ver. " + _fvi.FileVersion;
-            _extractor = new Extractor.Extractor(true, AppDomain.CurrentDomain.BaseDirectory + @"PSEStructuresExport.txt");
-            _decoder = new Decoder.Decoder();
-            _decoder.ExternalCodifyErrorOccurred += DecoderExternalCodifyErrorOccurredManagement;
-            _builder = new Builder.Builder();
-            _builder.ExternalCodifyRequest += BuilderExternalCodifyRequestManagement;
-            _builderNodes = new List<TreeNode>();
-        }
-
-        private void DecoderExternalCodifyErrorOccurredManagement(object sender, ExternalCodifyRequestEventArgs e)
-        {
-            if (e.PropertyValue == "[current_connection_string]")
-                _builderNodes.Add(new TreeNode("Connection string used: " + e.ErrorOccurred));
-            else
-            {
-                string _errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
-                _builderNodes.Add(new TreeNode("Decoding error occurred: " + e.ErrorOccurred + " (" + _errSource + ")"));
-            }
-        }
-        private void BuilderExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
-        {
-            _decoder.Decode(e);
+            this.Text += " - Ver. " + _fvi.FileVersion;            
+            _webApiUrl = _configuration["WebApiSettings:Url"];
         }
 
         private void browseFiles_Click(object sender, EventArgs e)
@@ -60,83 +37,89 @@ namespace PSE.Executor
             this.buttonExtraction.Enabled = this.listViewSourceFiles.Items.Count > 0;
         }
 
-        private void buttonExtraction_Click(object sender, EventArgs e)
+        private async void buttonExtraction_Click(object sender, EventArgs e)
         {
             if (this.listViewSourceFiles.Items.Count > 0)
             {
-                string _tmpNodeKey;
-                TreeNode? _fileLogs = null;
-                List<IInputRecord> _allExtractedItems = new();
+                string _oldCaption = this.Text;
+                this.Text = "Please wait, extraction in progress...";
+                this.buttonExtraction.Enabled = false;
                 this.treeViewLog.Nodes.Clear();
-                this.treeViewLog.Nodes.Add("extrctnNode", "EXTRACTION");
-                for (int _f = 0; _f < this.listViewSourceFiles.Items.Count; _f++)
+                this.treeViewLog.Nodes.Add("extraction", "EXTRACTION");
+                this.treeViewLog.Nodes.Add("building", "BUILDING");
+                this.Refresh();
+                using (var _client = new HttpClient())
                 {
-                    _fileLogs = new TreeNode("File to extract: '" + this.listViewSourceFiles.Items[_f].Text + "'");
-                    IExtractedData _extrData = _extractor.Extract(File.ReadAllBytes(this.listViewSourceFiles.Items[_f].Text));
-                    _fileLogs.Nodes.Add("Stream length: " + _extrData.ExtractionLog.StreamLength.ToString());
-                    if (_extrData.ExtractionLog.AcquisitionStart != null)
-                        _fileLogs.Nodes.Add("Date/time extraction starting: " + ((DateTime)_extrData.ExtractionLog.AcquisitionStart).ToString("dd/MM/yyyy") + " " + ((DateTime)_extrData.ExtractionLog.AcquisitionStart).ToString("HH:mm:ss"));
-                    if (_extrData.ExtractionLog.AcquisitionEnd != null)
-                        _fileLogs.Nodes.Add("Date/time extraction ending: " + ((DateTime)_extrData.ExtractionLog.AcquisitionEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)_extrData.ExtractionLog.AcquisitionEnd).ToString("HH:mm:ss"));
-                    _fileLogs.Nodes.Add("Extraction outcome: " + _extrData.ExtractionLog.Outcome.ToString());
-                    if (_extrData.ExtractedItems != null && _extrData.ExtractedItems.Any())
+                    using (var _formContent = new MultipartFormDataContent())
                     {
-                        _allExtractedItems.AddRange(_extrData.ExtractedItems);
-                        _fileLogs.Nodes.Add("Elements extracted: " + _extrData.ExtractedItems.Count.ToString());
-                    }
-                    else
-                        _fileLogs.Nodes.Add("No meaningful elements found!");
-                    if (_extrData.ExtractionLog.RecordsLog != null && _extrData.ExtractionLog.RecordsLog.Any())
-                    {
-                        List<TreeNode> _errorNodes = new();
-                        foreach (IRecordExtractionLog _error in _extrData.ExtractionLog.RecordsLog)
+                        FileInfo _fileInfo;
+                        StreamContent _fileContent;
+                        for (int _f = 0; _f < this.listViewSourceFiles.Items.Count; _f++)
                         {
-                            _errorNodes.Add(new TreeNode("Error message: " + _error.FurtherMessage));
-                            if (_error.LineNumber != null && _error.LineNumber > 0)
-                                _errorNodes.Add(new TreeNode("    - Line number: " + _error.LineNumber.ToString()));
-                            if (!string.IsNullOrEmpty(_error.RecordTypeName))
-                                _errorNodes.Add(new TreeNode("    - Record type name: " + _error.RecordTypeName));
-                            if (!string.IsNullOrEmpty(_error.RecordInnerContent))
-                                _errorNodes.Add(new TreeNode("    - Record inner content: " + _error.RecordInnerContent));
-                            if (_error.ExceptionOccurred != null)
-                                _errorNodes.Add(new TreeNode("    - Has inner exception bound: yes (" + _error.ExceptionOccurred.Message + ")"));
+                            _fileInfo = new FileInfo(this.listViewSourceFiles.Items[_f].Text);
+                            _fileContent = new StreamContent(File.OpenRead(this.listViewSourceFiles.Items[_f].Text));
+                            _formContent.Add(_fileContent, "files", _fileInfo.Name);
                         }
-                        _tmpNodeKey = Guid.NewGuid().ToString();
-                        _fileLogs.Nodes.Add(_tmpNodeKey, "Extraction errors occurred: ");
-                        _fileLogs.Nodes[_tmpNodeKey].Nodes.AddRange(_errorNodes.ToArray());
+                        var _response = await _client.PostAsync(_webApiUrl, _formContent);
+                        if (_response.IsSuccessStatusCode)
+                        {
+                            OutputContent _outCont = JsonConvert.DeserializeObject<OutputContent>(await _response.Content.ReadAsStringAsync());
+                            this.textBoxJson.Text = _outCont?.JsonGenerated;
+                            if (_outCont.Logs != null && _outCont.Logs.Any())
+                            {
+                                TreeNode _node;
+                                foreach (OutputLog _log in _outCont.Logs)
+                                {
+                                    if (this.treeViewLog.Nodes.ContainsKey(_log.ActivityType))
+                                    {
+                                        _node = new TreeNode(_log.Content);
+                                        if (_log.Childs != null && _log.Childs.Any())
+                                        {
+                                            foreach (OutputLog _subLog in _log.Childs)
+                                            {
+                                                _node.Nodes.Add(_subLog.Content);
+                                            }
+                                        }
+                                        this.treeViewLog.Nodes[_log.ActivityType].Nodes.Add(_node);
+                                    }
+                                }
+                            }
+                            this.treeViewLog.Nodes["extraction"].ExpandAll();
+                            this.treeViewLog.Nodes["building"].ExpandAll();
+                            this.tabControl.SelectedIndex = 1;
+                            this.buttonCopy.Enabled = true;
+                            this.buttonCopy.Focus();
+                        }
+                        else 
+                        {
+                            List<TreeNode> _errorNodes = new List<TreeNode>();
+                            if (_response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                            {
+                                _errorNodes.Add(new TreeNode("Error occurred: BAD REQUEST [400] (Extraction operation failed!)"));
+                                this.tabControl.SelectedIndex = 0;
+                            }
+                            else if (_response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                            {
+                                _errorNodes.Add(new TreeNode("Error occurred: NOT FOUND [404] (No valid input files received!)"));
+                                this.tabControl.SelectedIndex = 0;
+                            }
+                            else if (_response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                            {
+                                _errorNodes.Add(new TreeNode("Error occurred: UNAUTHORIZED [401] (User without enough privileges to proceed!)"));
+                                this.tabControl.SelectedIndex = 0;
+                            }
+                            else if (_response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                            {
+                                _errorNodes.Add(new TreeNode("Error occurred: INTERNAL SERVER ERROR [500] (Internal server error occurred during request elaboration!)"));
+                                this.tabControl.SelectedIndex = 0;
+                            }
+                            this.treeViewLog.Nodes["extraction"].Nodes.AddRange(_errorNodes.ToArray());
+                            this.treeViewLog.Nodes["extraction"].ExpandAll();
+                        }
                     }
-                    this.treeViewLog.Nodes["extrctnNode"].Nodes.Add(_fileLogs);
-                    this.treeViewLog.Nodes["extrctnNode"].ExpandAll();
                 }
-                if (_fileLogs != null && _allExtractedItems.Any())
-                {
-                    this.treeViewLog.Nodes.Add("bldngNode", "BUILDING");
-
-                    _fileLogs = this.treeViewLog.Nodes["bldngNode"];
-                    this.textBoxJson.Text = "";
-                    this.buttonCopy.Enabled = false;
-                    IBuiltData _builtData = _builder.Build(_allExtractedItems, BuildFormats.Json);
-                    if (_builtData.BuildingLog.BuildingStart != null)
-                        _builderNodes.Add(new TreeNode("Date/time built start: " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("dd/MM/yyyy") + " " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("HH:mm:ss")));
-                    if (_builtData.BuildingLog.BuildingEnd != null)
-                        _builderNodes.Add(new TreeNode("Date/time built end: " + ((DateTime)_builtData.BuildingLog.BuildingEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)_builtData.BuildingLog.BuildingEnd).ToString("HH:mm:ss")));
-                    _builderNodes.Add(new TreeNode("Built outcome: " + _builtData.BuildingLog.Outcome.ToString()));
-                    if (!string.IsNullOrEmpty(_builtData.BuildingLog.FurtherErrorMessage))
-                        _builderNodes.Add(new TreeNode("Error message: " + _builtData.BuildingLog.FurtherErrorMessage));
-                    if (_builtData.BuildingLog.ExceptionOccurred != null)
-                        _builderNodes.Add(new TreeNode("Inner exception bound: " + _builtData.BuildingLog.ExceptionOccurred.Message));
-                    _fileLogs.Nodes.AddRange(_builderNodes.ToArray());
-                    if (_builtData.BuildingLog.Outcome == BuildingOutcomes.Success || _builtData.BuildingLog.Outcome == BuildingOutcomes.Ignored)
-                    {
-                        this.tabControl.SelectedIndex = 1;
-                        this.textBoxJson.Text = _builtData.OutputData;
-                        this.buttonCopy.Enabled = true;
-                        this.buttonCopy.Focus();
-                    }
-                    else
-                        this.tabControl.SelectedIndex = 0;
-                    this.treeViewLog.Nodes["bldngNode"].ExpandAll();
-                }
+                this.buttonExtraction.Enabled = true;
+                this.Text = _oldCaption;
             }
         }
 
@@ -147,11 +130,6 @@ namespace PSE.Executor
                 Clipboard.SetText(this.textBoxJson.Text);
                 MessageBox.Show("The output data have been copied to clipboard.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _decoder.Dispose();
         }
 
     }

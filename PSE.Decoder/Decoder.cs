@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PSE.Decoder.Config;
 using PSE.Decoder.Database;
 using PSE.Model.Events;
+using PSE.Model.Common;
 using PSE.Model.Output.Models;
 
 namespace PSE.Decoder
@@ -18,24 +18,18 @@ namespace PSE.Decoder
 
         public event ExternalCodifyErrorOccurredEventHandler? ExternalCodifyErrorOccurred;
 
-        public Decoder()
+        public Decoder(AppSettings appSettings)
         {
             _serviceProvider = null;
-            AppDomain _currentDomain = AppDomain.CurrentDomain;
-            IConfiguration? _config = ConfigurationReader.ReadConfiguration();
-            if (_config != null)
+            if (appSettings.DecoderEnabled)
             {
-                AppSettings _appSettings = new AppSettings(_config);
-                if (_appSettings.DecoderEnable)
+                ServiceCollection _serviceCollection = new ServiceCollection();
+                _serviceCollection.AddDbContext<BOSSDbContext>(_options =>
                 {
-                    ServiceCollection _serviceCollection = new ServiceCollection();
-                    _serviceCollection.AddDbContext<BOSSDbContext>(_options =>
-                    {
-                        _options.UseSqlServer(_appSettings.ConnectionString);                       
-                        _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                    });
-                    _serviceProvider = _serviceCollection.BuildServiceProvider();
-                }
+                    _options.UseSqlServer(appSettings.DecoderStringConnection);                       
+                    _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                });
+                _serviceProvider = _serviceCollection.BuildServiceProvider();
             }
         }
 
@@ -49,12 +43,7 @@ namespace PSE.Decoder
                     e.PropertyValue = NOT_FOUND;
                     BOSSDbContext? _context = _serviceProvider.GetService<BOSSDbContext>();
                     if (_context != null)
-                    {
-                        // Only for debug (!)
-                        e.ErrorOccurred = _context.Database.GetConnectionString();
-                        e.PropertyValue = "[current_connection_string]";
-                        this.ExternalCodifyErrorOccurred?.Invoke(this,e);
-                        //
+                    {                        
                         if (e.SectionName == nameof(Section1) && e.PropertyName == nameof(AssetStatement.Advisor))
                         {
                             if (_context.AdaAuIde.Any(_flt => _flt.AuiNumPer == e.PropertyKey))

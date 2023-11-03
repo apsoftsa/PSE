@@ -12,4 +12,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PSE.Builder\PSE.Builder.csproj" />
+    <ProjectReference Include="..\PSE.Decoder\PSE.Decoder.csproj" />
+    <ProjectReference Include="..\PSE.Extractor\PSE.Extractor.csproj" />
+    <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
+  </ItemGroup>
+
 </Project>

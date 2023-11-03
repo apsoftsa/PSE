@@ -1,8 +1,13 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using PSE.WebApi.ApplicationSettings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var configuration = ConfigurationReader.ReadConfiguration();
+var appSettings = configuration.ReadAppSettings();
+builder.Services.AddSingleton(appSettings);
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
