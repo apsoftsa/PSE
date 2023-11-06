@@ -105,8 +105,7 @@ namespace PSE.WebApi.ApplicationLogic
             }
             if (_allExtractedItems.Any())
             {
-                IBuiltData _builtData = _builder.Build(_allExtractedItems, BuildFormats.Json);
-                List<OutputLog> _buildSubgroupLogs = new List<OutputLog>();
+                IBuiltData _builtData = _builder.Build(_allExtractedItems, BuildFormats.Json);                
                 if (_builtData.BuildingLog.BuildingStart != null)
                     _outCont?.Logs?.Add(new OutputLog("building", "Date /time built start: " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("dd/MM/yyyy") + " " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("HH:mm:ss")));
                 if (_builtData.BuildingLog.BuildingEnd != null)

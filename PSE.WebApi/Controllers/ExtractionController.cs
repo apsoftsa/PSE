@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿#define ALLOW_ANONYMOUS_NO
+
+using Microsoft.AspNetCore.Mvc;
+#if ALLOW_ANONYMOUS
 using Microsoft.AspNetCore.Authorization;
+#endif
 using Newtonsoft.Json;
 using PSE.Model.Common;
 using PSE.WebApi.ApplicationLogic;
@@ -9,7 +13,9 @@ namespace PSE.WebApi.Controllers
 {
 
     [ApiController]
+#if ALLOW_ANONYMOUS
     [AllowAnonymous]
+#endif
     [Route("api/[controller]")]
     public class ExtractionController : Controller
     {

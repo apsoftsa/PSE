@@ -48,7 +48,7 @@ namespace PSE.Executor
                 this.treeViewLog.Nodes.Add("extraction", "EXTRACTION");
                 this.treeViewLog.Nodes.Add("building", "BUILDING");
                 this.Refresh();
-                using (var _client = new HttpClient())
+                using (var _client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = true }))
                 {
                     using (var _formContent = new MultipartFormDataContent())
                     {
