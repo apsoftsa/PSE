@@ -83,7 +83,7 @@ namespace PSE.WebApi.ApplicationLogic
                     _outCont?.Logs?.Add(new OutputLog("extraction", "Elements extracted: " + _extrData.ExtractedItems.Count.ToString()));
                 }
                 else
-                    _outCont?.Logs?.Add(new OutputLog("extraction", "No meaningful elements found!"));
+                    _outCont?.Logs?.Add(new OutputLog("extraction", "No meaningful elements found."));
                 if (_extrData.ExtractionLog.RecordsLog != null && _extrData.ExtractionLog.RecordsLog.Any())
                 {
                     _tmpNodeKey = Guid.NewGuid().ToString();

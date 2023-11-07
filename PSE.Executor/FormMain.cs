@@ -21,6 +21,8 @@ namespace PSE.Executor
             FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
             this.Text += " - Ver. " + _fvi.FileVersion;            
             _webApiUrl = _configuration["WebApiSettings:Url"];
+            if(!_webApiUrl.EndsWith("/")) _webApiUrl += "/";
+            _webApiUrl += "api/Extraction/";
         }
 
         private void browseFiles_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace PSE.Executor
                             _fileContent = new StreamContent(File.OpenRead(this.listViewSourceFiles.Items[_f].Text));
                             _formContent.Add(_fileContent, "files", _fileInfo.Name);
                         }
-                        var _response = await _client.PostAsync(_webApiUrl, _formContent);
+                        var _response = await _client.PostAsync(_webApiUrl + "build", _formContent);
                         if (_response.IsSuccessStatusCode)
                         {
                             OutputContent _outCont = JsonConvert.DeserializeObject<OutputContent>(await _response.Content.ReadAsStringAsync());
