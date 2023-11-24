@@ -81,6 +81,7 @@ namespace PSE.Builder
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
+                            case ManipolationTypes.AsSection6:
                             case ManipolationTypes.AsSection8:
                             case ManipolationTypes.AsSection9:
                             case ManipolationTypes.AsSection10:
@@ -267,6 +268,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection1, true ),
                 ( ManipolationTypes.AsSection3, true ),
                 ( ManipolationTypes.AsSection4, true ),
+                ( ManipolationTypes.AsSection6, false ),
                 ( ManipolationTypes.AsSection8, false ),
                 ( ManipolationTypes.AsSection9, false ),
                 ( ManipolationTypes.AsSection10, false ),

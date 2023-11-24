@@ -12,9 +12,9 @@
 
         string? TypeInvestment { get; set; }
 
-        int? MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        int? PercentInvestment { get; set; }
+        decimal? PercentInvestment { get; set; }
 
     }
 
@@ -23,7 +23,7 @@
 
         string? AssetClass { get; set; }
 
-        int? PercentInvestment { get; set; }
+        decimal? PercentInvestment { get; set; }
 
     }
 

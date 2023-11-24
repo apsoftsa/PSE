@@ -24,10 +24,10 @@ namespace PSE.Model.Output.Models
         public string? TypeInvestment { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentInvestment { get; set; }
+        public decimal? PercentInvestment { get; set; } 
 
         public Asset()
         {
@@ -60,7 +60,7 @@ namespace PSE.Model.Output.Models
         public string? AssetClass { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentInvestment { get; set; }
+        public decimal? PercentInvestment { get; set; } 
 
         public ChartAsset()
         {
