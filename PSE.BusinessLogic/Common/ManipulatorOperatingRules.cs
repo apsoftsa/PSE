@@ -1,6 +1,7 @@
 ﻿using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.SupportTables;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic.Common
@@ -188,6 +189,14 @@ namespace PSE.BusinessLogic.Common
         public static List<PositionClassifications> GetClassificationsBoundToSection(ManipolationTypes sectionId)
         {
             return _sectionsBinding.First(_flt => _flt.SectionId == sectionId).ClassificationsBound;
+        }
+
+        public static bool CheckInputLanguage(string language)
+        {
+            bool _checked = false;
+            if (!(string.IsNullOrEmpty(language) || language.Trim() == ""))
+                _checked = language == ENGLISH_LANGUAGE_CODE || language == GERMAN_LANGUAGE_CODE || language == FRENCH_LANGUAGE_CODE || language == ITALIAN_LANGUAGE_CODE;
+            return _checked;
         }
 
     }

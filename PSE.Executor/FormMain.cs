@@ -1,5 +1,3 @@
-using System.Reflection;
-using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using PSE.Model.Exchange;
@@ -10,20 +8,29 @@ namespace PSE.Executor
     public partial class FormMain : Form
     {
 
-        private readonly IConfiguration _configuration;        
+        private readonly IConfiguration _configuration;
         private readonly string _webApiUrl;
 
         public FormMain(IConfiguration configuration)
         {
             InitializeComponent();
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(GlobalExceptionHandler);
-            _configuration = configuration;
-            Assembly _assembly = Assembly.GetExecutingAssembly();
-            FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
-            this.Text += " - Ver. " + _fvi.FileVersion;            
+            _configuration = configuration;                   
             _webApiUrl = _configuration["WebApiSettings:Url"];
-            if(!_webApiUrl.EndsWith("/")) _webApiUrl += "/";
+            if (!_webApiUrl.EndsWith("/")) _webApiUrl += "/";
             _webApiUrl += "api/Extraction/";
+        }
+
+        private async void FormMain_Load(object sender, EventArgs e)
+        {
+            using (var _client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = false }))
+            {
+                var _response = await _client.GetAsync(_webApiUrl + "version");
+                if (_response.IsSuccessStatusCode)
+                    this.Text += " - Ver. " + await _response.Content.ReadAsStringAsync();
+                else
+                    this.Text += " - Ver. [UNKNOWN]";
+            }
         }
 
         private void UnexpectedExceptionMangement(Exception ex)
@@ -66,7 +73,7 @@ namespace PSE.Executor
             try
             {
                 if (this.listViewSourceFiles.Items.Count > 0)
-                {                    
+                {
                     this.Text = "Please wait, extraction in progress...";
                     this.buttonExtraction.Enabled = false;
                     this.treeViewLog.Nodes.Clear();
@@ -143,10 +150,10 @@ namespace PSE.Executor
                             }
                         }
                     }
-                    this.buttonExtraction.Enabled = true;                    
+                    this.buttonExtraction.Enabled = true;
                 }
             }
-            catch(Exception _ex)
+            catch (Exception _ex)
             {
                 UnexpectedExceptionMangement(_ex);
             }

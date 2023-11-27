@@ -8,6 +8,9 @@ using Newtonsoft.Json;
 using PSE.Model.Common;
 using PSE.WebApi.ApplicationLogic;
 using PSE.Model.Exchange;
+using System.Diagnostics;
+using System.Reflection;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PSE.WebApi.Controllers
 {
@@ -23,6 +26,15 @@ namespace PSE.WebApi.Controllers
         public ExtractionController(AppSettings appSettings) 
         { 
             ExtractionManager.Initialize(appSettings);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("Version")]        
+        public ActionResult<string> GetVersion()
+        {
+            Assembly _assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
+            return Ok(_fvi.FileVersion);
         }
 
         [HttpPost("Build")]

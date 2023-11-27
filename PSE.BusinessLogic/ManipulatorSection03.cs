@@ -34,19 +34,22 @@ namespace PSE.BusinessLogic
                 IAssetExtract _currAsstExtr;
                 ExternalCodifyRequestEventArgs _extEventArgsPortfolio;
                 ExternalCodifyRequestEventArgs _extEventArgsService;
+                Dictionary<string, object> _propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 List<PER> _perItems = extractedData.Where(_flt => _flt.RecordType == nameof(PER)).OfType<PER>().ToList();
                 foreach (IDE _ideItem in _ideItems)
                 {
+                    if (ManipulatorOperatingRules.CheckInputLanguage(_ideItem.Language_18))
+                        _propertyParams[nameof(IDE.Language_18)] = _ideItem.Language_18;
                     if (_perItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
                     {
                         // it is necessary to take only the PER item having the property Type_5 value smallest (!!!!)
                         PER _perItem = _perItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).OrderBy(_ob => _ob.Type_5).First();
-                        _extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), _ideItem.ModelCode_21);
+                        _extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), _ideItem.ModelCode_21, _propertyParams);
                         OnExternalCodifyRequest(_extEventArgsPortfolio);
                         if (!_extEventArgsPortfolio.Cancel)
                         {
-                            _extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Service), _ideItem.Mandate_11);
+                            _extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Service), _ideItem.Mandate_11, _propertyParams);
                             OnExternalCodifyRequest(_extEventArgsService);
                             if (!_extEventArgsService.Cancel)
                             {

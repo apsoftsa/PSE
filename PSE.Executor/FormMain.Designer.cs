@@ -191,6 +191,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormMain";
             Text = "Portfolio Statement Extractor";
+            Load += FormMain_Load;
             tabControl.ResumeLayout(false);
             tabPageLog.ResumeLayout(false);
             tabPageOutput.ResumeLayout(false);

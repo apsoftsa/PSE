@@ -82,6 +82,20 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection6:
+                                {
+                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
+                                        extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    else if (isMandatory)
+                                    {
+                                        buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                            $"at least one input record data source having the formats: '{nameof(IDE)}, {nameof(POS)}' must be provided!";
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                    }
+                                    else
+                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                }
+                                break;
                             case ManipolationTypes.AsSection8:
                             case ManipolationTypes.AsSection9:
                             case ManipolationTypes.AsSection10:
@@ -193,6 +207,8 @@ namespace PSE.Builder
             _manSect3.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection4 _manSect4 = new();
             _manSect4.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            ManipulatorSection6 _manSect6 = new();
+            _manSect6.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection8 _manSect8 = new();
             _manSect8.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             ManipulatorSection9 _manSect9 = new();
@@ -223,6 +239,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection1 => _manSect1.Manipulate(extractedData),
                 ManipolationTypes.AsSection3 => _manSect3.Manipulate(extractedData),
                 ManipolationTypes.AsSection4 => _manSect4.Manipulate(extractedData),
+                ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),
                 ManipolationTypes.AsSection8 => _manSect8.Manipulate(extractedData),
                 ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),
                 ManipolationTypes.AsSection10 => _manSect10.Manipulate(extractedData),

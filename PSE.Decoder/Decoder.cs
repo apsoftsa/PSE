@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PSE.Decoder.Database;
 using PSE.Model.Events;
 using PSE.Model.Common;
+using PSE.Model.Input.Models;
 using PSE.Model.Output.Models;
 
 namespace PSE.Decoder
@@ -53,14 +53,53 @@ namespace PSE.Decoder
                         {
                             if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)))
                             {
-                                e.PropertyValue = _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextI;
+                                string? _languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    _languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = _languageToCheck switch
+                                {
+                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextF,
+                                    _ => _context.Tabelle.First(_flt => _flt.Tab == "N121" && _flt.Code == e.PropertyKey.Substring(0, 1)).TextI,
+                                };
                                 e.PropertyValue = e.PropertyKey[1..] + " - " + e.PropertyValue;
                             }
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Service))
                         {
                             if (_context.Tabelle.Any(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey))
-                                e.PropertyValue = _context.Tabelle.First(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey).TextI;
+                            {
+                                string? _languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    _languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = _languageToCheck switch
+                                {
+                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey).TextF,
+                                    _ => _context.Tabelle.First(_flt => _flt.Tab == "L066" && _flt.Code == e.PropertyKey).TextI,
+                                };
+                            }
+                        }
+                        else if (e.SectionName == nameof(Section6) && (e.PropertyName == nameof(Asset.AssetClass) || e.PropertyName == nameof(Asset.TypeInvestment)))
+                        {
+                            if (_context.Tabelle.Any(_flt => _flt.Tab == "E185" && _flt.Code == e.PropertyKey))
+                            {
+                                string? _languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    _languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = _languageToCheck switch
+                                {
+                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "E185" && _flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "E185" && _flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(_flt => _flt.Tab == "E185" && _flt.Code == e.PropertyKey).TextF,
+                                    _ => _context.Tabelle.First(_flt => _flt.Tab == "E185" && _flt.Code == e.PropertyKey).TextI,
+                                };
+                            }
                         }
                         if (!(string.IsNullOrEmpty(e.PropertyValue) || string.IsNullOrWhiteSpace(e.PropertyValue) || e.PropertyValue == NOT_FOUND))
                         {

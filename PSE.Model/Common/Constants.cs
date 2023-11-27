@@ -11,6 +11,11 @@
         public const string MULTIPLE_BY = "*";
         public const int DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION = 6;
 
+        public const string ITALIAN_LANGUAGE_CODE = "I";
+        public const string FRENCH_LANGUAGE_CODE = "F";
+        public const string GERMAN_LANGUAGE_CODE = "T";
+        public const string ENGLISH_LANGUAGE_CODE = "E";
+
         public const string INPUT_REQ_MSG_TYPE = "REQ";
         public const string INPUT_IDE_MSG_TYPE = "IDE";
         public const string INPUT_POS_MSG_TYPE = "POS";
