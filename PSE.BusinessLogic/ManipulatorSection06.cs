@@ -64,10 +64,10 @@ namespace PSE.BusinessLogic
                             {
                                 _asset = new Asset()
                                 {
-                                    MarketValueReportingCurrency = Math.Round(_subCategory.Sum(_sum => _sum.Amount1Cur1_22).Value, 2),
+                                    MarketValueReportingCurrency = Math.Round(_subCategory.Sum(_sum => _sum.Amount1Base_23).Value, 2),
                                     AssetClass = _categoryDescr,
                                     TypeInvestment = _extEventArgsAdvisor.PropertyValue,
-                                    MarketValueReportingCurrencyT = Math.Round(_groupByCategory.First(_flt => _flt.Key == _subCategory.First().SubCat3_14).Sum(_sum => _sum.Amount1Cur1_22).Value, 2)
+                                    MarketValueReportingCurrencyT = Math.Round(_groupByCategory.First(_flt => _flt.Key == _subCategory.First().SubCat3_14).Sum(_sum => _sum.Amount1Base_23).Value, 2)
                                 };
                                 _sectionContent.Assets.Add(_asset);
                             }                            
