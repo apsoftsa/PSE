@@ -77,12 +77,8 @@ namespace PSE.BusinessLogic
                             _bondLessThan5.PerformanceYTD = Math.Round((_bondLessThan5.CurrentPrice.Value - _bondLessThan5.PriceBeginningYear.Value) * _bondLessThan5.NominalAmount.Value / _quoteType, _calcBonds.MeaningfulDecimalDigits);
                             _bondLessThan5.PercentPerformancePurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.PurchasePrice.Value, _bondLessThan5.CurrentPrice.Value));
                             _bondLessThan5.PercentPerformanceYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.PriceBeginningYear.Value, _bondLessThan5.CurrentPrice.Value));
-                            //_bondLessThan5.PercentPerformancePurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.PurchasePrice.Value)); 
-                            //_bondLessThan5.PercentPerformanceYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.CurrentPrice.Value, _bondLessThan5.PriceBeginningYear.Value));
                             _bondLessThan5.ExchangeRateImpactPurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.ExchangeRateImpactPurchase.Value, _currencyRate));
                             _bondLessThan5.ExchangeRateImpactYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_bondLessThan5.NominalAmount, _bondLessThan5.CurrentPrice), _bondLessThan5.ExchangeRateImpactYTD.Value, _currencyRate));
-                            //_bondLessThan5.ExchangeRateImpactPurchase = Math.Round(_bondLessThan5.NominalAmount.Value * _bondLessThan5.CurrentPrice.Value / 100m, _calcBonds.MeaningfulDecimalDigits);
-                            //_bondLessThan5.ExchangeRateImpactYTD = Math.Round(_bondLessThan5.NominalAmount.Value * _bondLessThan5.PriceBeginningYear.Value / 100m, _calcBonds.MeaningfulDecimalDigits);
                             _sectionContent.BondsMaturingLessThan5Years.Add(_bondLessThan5);
                             _posItem.AlreadyUsed = true;
                         }

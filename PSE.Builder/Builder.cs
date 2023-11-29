@@ -17,6 +17,26 @@ namespace PSE.Builder
     public class Builder : IBuilder
     {
 
+        private readonly CalculationSettings _calcSettings;
+        private readonly ManipulatorHeader _manHeader;
+        private readonly ManipulatorSection1 _manSect1;
+        private readonly ManipulatorSection3 _manSect3;
+        private readonly ManipulatorSection4 _manSect4;
+        private readonly ManipulatorSection6 _manSect6;
+        private readonly ManipulatorSection7 _manSect7;
+        private readonly ManipulatorSection8 _manSect8;
+        private readonly ManipulatorSection9 _manSect9;
+        private readonly ManipulatorSection10 _manSect10;
+        private readonly ManipulatorSection11 _manSect11;
+        private readonly ManipulatorSection12 _manSect12;
+        private readonly ManipulatorSection13 _manSect13;
+        private readonly ManipulatorSection14 _manSect14;
+        private readonly ManipulatorSection15 _manSect15;
+        private readonly ManipulatorSection16And17 _manSect16And17;
+        private readonly ManipulatorSection18And19 _manSect18And19;
+        private readonly ManipulatorSection20 _manSect20;
+        private readonly ManipulatorFooter _manFooter;
+
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
 
         public delegate void ExternalCodifyEventHandler(object sender, ExternalCodifyRequestEventArgs e);
@@ -25,6 +45,69 @@ namespace PSE.Builder
         private void ExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
         {
             ExternalCodifyRequest?.Invoke(sender, e);
+        }
+
+        public Builder()
+        {
+            _calcSettings = new CalculationSettings();
+            _manHeader = new();
+            _manHeader.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect1 = new();
+            _manSect1.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect3 = new();
+            _manSect3.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect4 = new();
+            _manSect4.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect6 = new();
+            _manSect6.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect7 = new();
+            _manSect7.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect8 = new();
+            _manSect8.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect9 = new();
+            _manSect9.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect10 = new();
+            _manSect10.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect11 = new();
+            _manSect11.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect12 = new(_calcSettings);
+            _manSect12.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect13 = new(_calcSettings);
+            _manSect13.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect14 = new(_calcSettings);
+            _manSect14.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect15 = new(_calcSettings);
+            _manSect15.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect16And17 = new(_calcSettings);
+            _manSect16And17.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect18And19 = new(_calcSettings);
+            _manSect18And19.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect20 = new();
+            _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manFooter = new();
+            _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
+            {
+                ( ManipolationTypes.AsHeader, true ),
+                ( ManipolationTypes.AsSection1, true ),
+                ( ManipolationTypes.AsSection3, true ),
+                ( ManipolationTypes.AsSection4, true ),
+                ( ManipolationTypes.AsSection6, false ),
+                ( ManipolationTypes.AsSection7, false ),
+                ( ManipolationTypes.AsSection8, false ),
+                ( ManipolationTypes.AsSection9, false ),
+                ( ManipolationTypes.AsSection10, false ),
+                ( ManipolationTypes.AsSection11, false ),
+                ( ManipolationTypes.AsSection16And17, false ), // section with high priority (!)
+                ( ManipolationTypes.AsSection12, false ),
+                ( ManipolationTypes.AsSection13, false ),
+                ( ManipolationTypes.AsSection14, false ),
+                ( ManipolationTypes.AsSection15, false ),
+                //( ManipolationTypes.AsSection16And17, false ),
+                ( ManipolationTypes.AsSection18And19, false ),
+                ( ManipolationTypes.AsSection20, false ),
+                ( ManipolationTypes.AsFooter, true )
+            };
         }
 
         private static void CheckInputData(IBuiltData buildData, IList<IInputRecord> extractedData, ManipolationTypes manipolationType, bool isMandatory, BuildFormats formatToBuild)
@@ -82,10 +165,25 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection6:
+                            case ManipolationTypes.AsSection7:
                                 {
                                     if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
-                                        buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    {
+                                        if (manipolationType == ManipolationTypes.AsSection7 && extractedData.Any(_flt => _flt.RecordType == nameof(CUR)) == false)
+                                        {
+                                            if (isMandatory)
+                                            {
+                                                buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
+                                                $"at least one input record having format '{nameof(CUR)}' must be provided!";
+                                                buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                                            }
+                                            else
+                                                buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
+                                        }
+                                        else
+                                            buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                                    }
                                     else if (isMandatory)
                                     {
                                         buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
@@ -198,41 +296,6 @@ namespace PSE.Builder
 
         private IOutputModel? ManipulateInputData(IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
-            CalculationSettings _calcSettings = new CalculationSettings();
-            ManipulatorHeader _manHeader = new();
-            _manHeader.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection1 _manSect1 = new();
-            _manSect1.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection3 _manSect3 = new();
-            _manSect3.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection4 _manSect4 = new();
-            _manSect4.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection6 _manSect6 = new();
-            _manSect6.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection8 _manSect8 = new();
-            _manSect8.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection9 _manSect9 = new();
-            _manSect9.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection10 _manSect10 = new();
-            _manSect10.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection11 _manSect11 = new();
-            _manSect11.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection12 _manSect12 = new(_calcSettings);
-            _manSect12.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection13 _manSect13 = new(_calcSettings);
-            _manSect13.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection14 _manSect14 = new(_calcSettings);
-            _manSect14.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection15 _manSect15 = new(_calcSettings);
-            _manSect15.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection16And17 _manSect16And17 = new(_calcSettings);
-            _manSect16And17.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection18And19 _manSect18And19 = new(_calcSettings);
-            _manSect18And19.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorSection20 _manSect20 = new();
-            _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            ManipulatorFooter _manFooter = new();
-            _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             IOutputModel? _output = manipolationType switch
             {
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
@@ -240,6 +303,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection3 => _manSect3.Manipulate(extractedData),
                 ManipolationTypes.AsSection4 => _manSect4.Manipulate(extractedData),
                 ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),
+                ManipolationTypes.AsSection7 => _manSect7.Manipulate(extractedData),
                 ManipolationTypes.AsSection8 => _manSect8.Manipulate(extractedData),
                 ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),
                 ManipolationTypes.AsSection10 => _manSect10.Manipulate(extractedData),
@@ -275,31 +339,6 @@ namespace PSE.Builder
                     break;
             }
             return _serializedData ?? string.Empty;
-        }
-
-        public Builder()
-        {
-            _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
-            {
-                ( ManipolationTypes.AsHeader, true ),
-                ( ManipolationTypes.AsSection1, true ),
-                ( ManipolationTypes.AsSection3, true ),
-                ( ManipolationTypes.AsSection4, true ),
-                ( ManipolationTypes.AsSection6, false ),
-                ( ManipolationTypes.AsSection8, false ),
-                ( ManipolationTypes.AsSection9, false ),
-                ( ManipolationTypes.AsSection10, false ),
-                ( ManipolationTypes.AsSection11, false ),
-                ( ManipolationTypes.AsSection16And17, false ), // section with high priority (!)
-                ( ManipolationTypes.AsSection12, false ),
-                ( ManipolationTypes.AsSection13, false ),
-                ( ManipolationTypes.AsSection14, false ),
-                ( ManipolationTypes.AsSection15, false ),
-                //( ManipolationTypes.AsSection16And17, false ),
-                ( ManipolationTypes.AsSection18And19, false ),
-                ( ManipolationTypes.AsSection20, false ),
-                ( ManipolationTypes.AsFooter, true )
-            };
         }
 
         public IBuiltData Build(IList<IInputRecord> extractedData, BuildFormats formatToBuild)

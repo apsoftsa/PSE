@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {

@@ -71,9 +71,9 @@ namespace PSE.BusinessLogic
                                 };
                                 _sectionContent.Assets.Add(_asset);
                             }                            
-                        }                        
+                        }
                         decimal? _totalSum = _sectionContent.Assets.Sum(_sum => _sum.MarketValueReportingCurrency);
-                        if (_totalSum != 0)
+                        if (_totalSum != null && _totalSum != 0)
                         {
                             foreach (IAsset _assetToUpgrd in _sectionContent.Assets)
                             {
@@ -88,6 +88,17 @@ namespace PSE.BusinessLogic
                                 }
                                 _sectionContent.ChartAssets.Add(new ChartAsset() { AssetClass = _groupByAssetClass.Key, PercentInvestment = _groupByAssetClass.Sum(_sum => _sum.PercentInvestment) });
                             }
+                            decimal _sumAccrued = _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _flt.ProRataBase_56 != null).Sum(_sum => _sum.ProRataBase_56.Value);
+                            _asset = new Asset()
+                            {
+                                TypeInvestment = "Accrued Interest",
+                                MarketValueReportingCurrency = Math.Round(_sumAccrued, 2),
+                                PercentInvestment = Math.Round((_sumAccrued / _totalSum.Value * 100m), 2),
+                                AssetClass = "TOTAL INVESTMENTS",
+                                MarketValueReportingCurrencyT = Math.Round(_totalSum.Value, 2),
+                                PercentInvestmentT = 100.0m
+                            };
+                            _sectionContent.Assets.Add(_asset);
                         }
                     }
                     _output.Content = new Section6Content(_sectionContent);

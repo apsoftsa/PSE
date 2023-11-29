@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {    
@@ -10,9 +9,6 @@ namespace PSE.Model.Output.Models
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Investment : IInvestment
     {
-
-        [JsonIgnore]
-        public bool IsTotal { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Currency { get; set; }
@@ -31,7 +27,6 @@ namespace PSE.Model.Output.Models
         
         public Investment()
         {
-            this.IsTotal = false;
             this.Amount = null;
             this.Currency = null;
             this.MarketValueReportingCurrency = null;
@@ -41,7 +36,6 @@ namespace PSE.Model.Output.Models
 
         public Investment(IInvestment source)
         {
-            this.IsTotal = source.IsTotal;
             this.Amount = source.Amount;
             this.Currency = source.Currency;
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;
@@ -55,27 +49,22 @@ namespace PSE.Model.Output.Models
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class ChartInvestment : IChartInvestment
     {
-
-        [JsonIgnore]
-        public string PercentType { get; set; }
-
+       
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentAsset { get; set; }
+        public decimal? PercentAsset { get; set; }
 
         public ChartInvestment()
         {
-            this.Currency = null;
-            this.PercentType = string.Empty;
+            this.Currency = null;            
             this.PercentAsset = null;
         }
 
         public ChartInvestment(IChartInvestment source)
         {
-            this.Currency = source.Currency;
-            this.PercentType = source.PercentType;
+            this.Currency = source.Currency;            
             this.PercentAsset = source.PercentAsset;
         }
 

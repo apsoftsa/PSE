@@ -4,8 +4,6 @@
     public interface IInvestment
     {
 
-        bool IsTotal { get; set; }
-
         string? Currency { get; set; }
 
         decimal? Amount { get; set; }
@@ -19,13 +17,11 @@
     }
 
     public interface IChartInvestment
-    {
-
-        string PercentType { get; set; }    
+    {       
 
         string? Currency { get; set; }
 
-        int? PercentAsset { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 
