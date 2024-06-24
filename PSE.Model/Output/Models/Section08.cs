@@ -76,9 +76,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Accounts != null && source.Accounts.Any())
                 {
-                    foreach (IAccount _account in source.Accounts)
+                    foreach (IAccount account in source.Accounts)
                     {
-                        Accounts.Add(new Account(_account));
+                        Accounts.Add(new Account(account));
                     }
                 }
             }

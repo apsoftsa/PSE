@@ -145,30 +145,30 @@ namespace PSE.Model.Output.Models
             {
                 if (source.KeysInformation != null && source.KeysInformation.Any())
                 {
-                    foreach (IKeyInformation _keyInformation in source.KeysInformation)
+                    foreach (IKeyInformation keyInformation in source.KeysInformation)
                     {
-                        KeysInformation.Add(new KeyInformation(_keyInformation));
+                        KeysInformation.Add(new KeyInformation(keyInformation));
                     }
                 }
                 if (source.AssetsExtract != null && source.AssetsExtract.Any())
                 {
-                    foreach (IAssetExtract _assetExtract in source.AssetsExtract)
+                    foreach (IAssetExtract assetExtract in source.AssetsExtract)
                     {
-                        AssetsExtract.Add(new AssetExtract(_assetExtract));
+                        AssetsExtract.Add(new AssetExtract(assetExtract));
                     }
                 }
                 if (source.DividendsInterests != null && source.DividendsInterests.Any())
                 {
-                    foreach (IAssetExtract _dividendInterest in source.DividendsInterests)
+                    foreach (IAssetExtract dividendInterest in source.DividendsInterests)
                     {
-                        DividendsInterests.Add(new AssetExtract(_dividendInterest));
+                        DividendsInterests.Add(new AssetExtract(dividendInterest));
                     }
                 }
                 if (source.FooterInformation != null && source.FooterInformation.Any())
                 {
-                    foreach (IFooterInformation _footerInf in source.FooterInformation)
+                    foreach (IFooterInformation footerInf in source.FooterInformation)
                     {
-                        FooterInformation.Add(new FooterInformation(_footerInf));
+                        FooterInformation.Add(new FooterInformation(footerInf));
                     }
                 }
             }

@@ -130,16 +130,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.PossibleCommitments != null && source.PossibleCommitments.Any())
                 {
-                    foreach (IPossibleCommitment _possComm in source.PossibleCommitments)
+                    foreach (IPossibleCommitment possComm in source.PossibleCommitments)
                     {
-                        PossibleCommitments.Add(new PossibleCommitment(_possComm));
+                        PossibleCommitments.Add(new PossibleCommitment(possComm));
                     }
                 }
                 if (source.MortgageLoans != null && source.MortgageLoans.Any())
                 {
-                    foreach (IMortgageLoan _mortLoan in source.MortgageLoans)
+                    foreach (IMortgageLoan mortLoan in source.MortgageLoans)
                     {
-                        MortgageLoans.Add(new MortgageLoan(_mortLoan));
+                        MortgageLoans.Add(new MortgageLoan(mortLoan));
                     }
                 }
             }

@@ -107,16 +107,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.MultilinesManagement != null && source.MultilinesManagement.Any())
                 {
-                    foreach (IMultilineManagement _multiMan in source.MultilinesManagement)
+                    foreach (IMultilineManagement multiMan in source.MultilinesManagement)
                     {
-                        MultilinesManagement.Add(new MultilineManagement(_multiMan));
+                        MultilinesManagement.Add(new MultilineManagement(multiMan));
                     }
                 }
                 if (source.ChartMultilinesManagement != null && source.ChartMultilinesManagement.Any())
                 {
-                    foreach (IChartMultilineManagement _chartMultiMan in source.ChartMultilinesManagement)
+                    foreach (IChartMultilineManagement chartMultiMan in source.ChartMultilinesManagement)
                     {
-                        ChartMultilinesManagement.Add(new ChartMultilineManagement(_chartMultiMan));
+                        ChartMultilinesManagement.Add(new ChartMultilineManagement(chartMultiMan));
                     }
                 }
             }

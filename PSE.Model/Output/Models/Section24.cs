@@ -84,9 +84,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Exchange != null && source.Exchange.Any())
                 {
-                    foreach (IExchange _exch in source.Exchange)
+                    foreach (IExchange exch in source.Exchange)
                     {
-                        Exchange.Add(new Exchange(_exch));
+                        Exchange.Add(new Exchange(exch));
                     }
                 }
 

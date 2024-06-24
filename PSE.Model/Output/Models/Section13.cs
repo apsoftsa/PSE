@@ -37,9 +37,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.BondsMaturingMinorOrEqualTo1Year != null && source.BondsMaturingMinorOrEqualTo1Year.Any())
                 {
-                    foreach (IBondsMinorOrEqualTo1Year _bmmoet1y in source.BondsMaturingMinorOrEqualTo1Year)
+                    foreach (IBondsMinorOrEqualTo1Year bmmoet1y in source.BondsMaturingMinorOrEqualTo1Year)
                     {
-                        BondsMaturingMinorOrEqualTo1Year.Add(new BondsMinorOrEqualTo1Year(_bmmoet1y));
+                        BondsMaturingMinorOrEqualTo1Year.Add(new BondsMinorOrEqualTo1Year(bmmoet1y));
                     }
                 }
             }

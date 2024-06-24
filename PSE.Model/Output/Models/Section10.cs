@@ -96,9 +96,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Accounts != null && source.Accounts.Any())
                 {
-                    foreach (IFiduciaryInvestmentAccount _fidInvAcc in source.Accounts)
+                    foreach (IFiduciaryInvestmentAccount fidInvAcc in source.Accounts)
                     {
-                        Accounts.Add(new FiduciaryInvestmentAccount(_fidInvAcc));
+                        Accounts.Add(new FiduciaryInvestmentAccount(fidInvAcc));
                     }
                 }
             }

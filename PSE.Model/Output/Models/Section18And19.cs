@@ -158,41 +158,41 @@ namespace PSE.Model.Output.Models
             DerivativesOnSecurities = new List<IAlternativeProductDetail>();
             if (source.DerivativesOnSecurities != null && source.DerivativesOnSecurities.Any())
             {
-                foreach (IAlternativeProductDetail _altProdDet in source.DerivativesOnSecurities)
+                foreach (IAlternativeProductDetail altProdDet in source.DerivativesOnSecurities)
                 {
-                    DerivativesOnSecurities.Add(new AlternativeProductDetail(_altProdDet));
+                    DerivativesOnSecurities.Add(new AlternativeProductDetail(altProdDet));
                 }
             }
             DerivativesOnMetals = new List<IAlternativeProductDetail>();
             if (source.DerivativesOnMetals != null && source.DerivativesOnMetals.Any())
             {
-                foreach (IAlternativeProductDetail _altProdDet in source.DerivativesOnMetals)
+                foreach (IAlternativeProductDetail altProdDet in source.DerivativesOnMetals)
                 {
-                    DerivativesOnMetals.Add(new AlternativeProductDetail(_altProdDet));
+                    DerivativesOnMetals.Add(new AlternativeProductDetail(altProdDet));
                 }
             }
             DerivativesFutures = new List<IAlternativeProductDetail>();
             if (source.DerivativesFutures != null && source.DerivativesFutures.Any())
             {
-                foreach (IAlternativeProductDetail _altProdDet in source.DerivativesFutures)
+                foreach (IAlternativeProductDetail altProdDet in source.DerivativesFutures)
                 {
-                    DerivativesFutures.Add(new AlternativeProductDetail(_altProdDet));
+                    DerivativesFutures.Add(new AlternativeProductDetail(altProdDet));
                 }
             }
             Different = new List<IAlternativeProductDetail>();
             if (source.Different != null && source.Different.Any())
             {
-                foreach (IAlternativeProductDetail _altProdDet in source.Different)
+                foreach (IAlternativeProductDetail altProdDet in source.Different)
                 {
-                    Different.Add(new AlternativeProductDetail(_altProdDet));
+                    Different.Add(new AlternativeProductDetail(altProdDet));
                 }
             }
             DifferentExtra = new List<IAlternativeProductDetail>();
             if (source.DifferentExtra != null && source.DifferentExtra.Any())
             {
-                foreach (IAlternativeProductDetail _altProdDet in source.DifferentExtra)
+                foreach (IAlternativeProductDetail altProdDet in source.DifferentExtra)
                 {
-                    DifferentExtra.Add(new AlternativeProductDetail(_altProdDet));
+                    DifferentExtra.Add(new AlternativeProductDetail(altProdDet));
                 }
             }
         }

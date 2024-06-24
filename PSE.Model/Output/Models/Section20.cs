@@ -80,9 +80,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.MetalPhysicalMetalAccounts != null && source.MetalPhysicalMetalAccounts.Any())
                 {
-                    foreach (IMetalPhysicalMetalAccount _metPhyMetAcc in source.MetalPhysicalMetalAccounts)
+                    foreach (IMetalPhysicalMetalAccount metPhyMetAcc in source.MetalPhysicalMetalAccounts)
                     {
-                        MetalPhysicalMetalAccounts.Add(new MetalPhysicalMetalAccount(_metPhyMetAcc));
+                        MetalPhysicalMetalAccounts.Add(new MetalPhysicalMetalAccount(metPhyMetAcc));
                     }
                 }
             }

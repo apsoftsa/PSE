@@ -64,66 +64,66 @@ namespace PSE.Model.Output.Models
             Init();
             if (sections != null && sections.Any()) 
             { 
-                foreach(IOutputModel _section in sections)
+                foreach(IOutputModel section in sections)
                 {
-                    switch(_section.SectionId) 
+                    switch(section.SectionId) 
                     {
                         case Enumerations.ManipolationTypes.AsHeader:
-                            Header = new List<IOutputModel>() { _section };
+                            Header = new List<IOutputModel>() { section };
                             break;
                         case Enumerations.ManipolationTypes.AsSection1:
-                            Section1 = _section;
+                            Section1 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection3:
-                            Section3 = _section;
+                            Section3 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection4:
-                            Section4 = _section;
+                            Section4 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection6:
-                            Section6 = _section;
+                            Section6 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection7:
-                            Section7 = _section;
+                            Section7 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection8:
-                            Section8 = _section;
+                            Section8 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection9:
-                            Section9 = _section;
+                            Section9 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection10:
-                            Section10 = _section;
+                            Section10 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection11:
-                            Section11 = _section;
+                            Section11 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection12:
-                            Section12 = _section;
+                            Section12 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection13:
-                            Section13 = _section;
+                            Section13 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection14:
-                            Section14 = _section;
+                            Section14 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection15:
-                            Section15 = _section;
+                            Section15 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection16And17:
-                            Section16And17 = _section;
+                            Section16And17 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection18And19:
-                            Section18And19 = _section;
+                            Section18And19 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection20:
-                            Section20 = _section;
+                            Section20 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection23:
-                            Section23 = _section;
+                            Section23 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsFooter:
-                            Footer = new List<IOutputModel>() { _section };
+                            Footer = new List<IOutputModel>() { section };
                             break;
                     }
                 }

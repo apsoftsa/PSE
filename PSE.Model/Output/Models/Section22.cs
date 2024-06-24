@@ -64,9 +64,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Countries != null && source.Countries.Any())
                 {
-                    foreach (ICountry _country in source.Countries)
+                    foreach (ICountry country in source.Countries)
                     {
-                        Countries.Add(new Country(_country));
+                        Countries.Add(new Country(country));
                     }
                 }
                 MarketValueReportingCurrency = source.MarketValueReportingCurrency;
@@ -104,9 +104,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Continents != null && source.Continents.Any())
                 {
-                    foreach (IContinent _continent in source.Continents)
+                    foreach (IContinent continent in source.Continents)
                     {
-                        Continents.Add(new Continent(_continent));
+                        Continents.Add(new Continent(continent));
                     }
                 }
                 TotalMarketValue = source.TotalMarketValue;
@@ -201,37 +201,37 @@ namespace PSE.Model.Output.Models
             {
                 if (source.SharesByNations != null && source.SharesByNations.Any())
                 {
-                    foreach (ISharesByNation _shByNt in source.SharesByNations)
+                    foreach (ISharesByNation shByNt in source.SharesByNations)
                     {
-                        SharesByNations.Add(new SharesByNation(_shByNt));
+                        SharesByNations.Add(new SharesByNation(shByNt));
                     }
                 }
                 if (source.ChartSharesByContinents != null && source.ChartSharesByContinents.Any())
                 {
-                    foreach (IChartSharesByContinent _chartByCont in source.ChartSharesByContinents)
+                    foreach (IChartSharesByContinent chartByCont in source.ChartSharesByContinents)
                     {
-                        ChartSharesByContinents.Add(new ChartSharesByContinent(_chartByCont));
+                        ChartSharesByContinents.Add(new ChartSharesByContinent(chartByCont));
                     }
                 }
                 if (source.ChartSharesbyCountriesEuropa != null && source.ChartSharesbyCountriesEuropa.Any())
                 {
-                    foreach (IChartSharesByCountry _chartByCntr in source.ChartSharesbyCountriesEuropa)
+                    foreach (IChartSharesByCountry chartByCntr in source.ChartSharesbyCountriesEuropa)
                     {
-                        ChartSharesbyCountriesEuropa.Add(new ChartSharesByCountry(_chartByCntr));
+                        ChartSharesbyCountriesEuropa.Add(new ChartSharesByCountry(chartByCntr));
                     }
                 }
                 if (source.ChartSharesbyCountriesAmerica != null && source.ChartSharesbyCountriesAmerica.Any())
                 {
-                    foreach (IChartSharesByCountry _chartByCntr in source.ChartSharesbyCountriesAmerica)
+                    foreach (IChartSharesByCountry chartByCntr in source.ChartSharesbyCountriesAmerica)
                     {
-                        ChartSharesbyCountriesAmerica.Add(new ChartSharesByCountry(_chartByCntr));
+                        ChartSharesbyCountriesAmerica.Add(new ChartSharesByCountry(chartByCntr));
                     }
                 }
                 if (source.ChartSharesbyCountriesAsia != null && source.ChartSharesbyCountriesAsia.Any())
                 {
-                    foreach (IChartSharesByCountry _chartByCntr in source.ChartSharesbyCountriesAsia)
+                    foreach (IChartSharesByCountry chartByCntr in source.ChartSharesbyCountriesAsia)
                     {
-                        ChartSharesbyCountriesAsia.Add(new ChartSharesByCountry(_chartByCntr));
+                        ChartSharesbyCountriesAsia.Add(new ChartSharesByCountry(chartByCntr));
                     }
                 }
             }

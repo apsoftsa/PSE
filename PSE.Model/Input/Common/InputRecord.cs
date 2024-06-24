@@ -15,10 +15,10 @@ namespace PSE.Model.Input.Common
         { 
             get
             {
-                string _recordType = "";
+                string recordType = "";
                 if(string.IsNullOrEmpty(MessageType_1) == false && MessageType_1.Length >= 3)
-                    _recordType = MessageType_1[..3].ToUpper();
-                return _recordType;
+                    recordType = MessageType_1[..3].ToUpper();
+                return recordType;
             }
             private set { }
         }
@@ -48,47 +48,47 @@ namespace PSE.Model.Input.Common
 
         public override string ToString()
         {
-            StringBuilder _sb = new();
-            //_sb.Append("----------------------------------------");
-            _sb.Append(Environment.NewLine);
-            _sb.Append(RecordType);
-            _sb.Append(Environment.NewLine);
-            _sb.Append("----------------------------------------");
-            _sb.Append(Environment.NewLine);
-            object? _objOrder;
-            int _orderIndex;
-            List<(string name, int order, object? value)> _propsOrderAndValue = new();
-            foreach (PropertyInfo _property in this.GetType().GetProperties())
+            StringBuilder sb = new();
+            //sb.Append("----------------------------------------");
+            sb.Append(Environment.NewLine);
+            sb.Append(RecordType);
+            sb.Append(Environment.NewLine);
+            sb.Append("----------------------------------------");
+            sb.Append(Environment.NewLine);
+            object? objOrder;
+            int orderIndex;
+            List<(string name, int order, object? value)> propsOrderAndValue = new();
+            foreach (PropertyInfo property in this.GetType().GetProperties())
             {
-                _orderIndex = 0;
-                _objOrder = null;
-                if (_property.CustomAttributes != null && _property.CustomAttributes.Any()
-                && _property.CustomAttributes.Last().NamedArguments != null && _property.CustomAttributes.Last().ConstructorArguments.Any()
-                && _property.CustomAttributes.Last().ConstructorArguments.Last().Value != null)
-                    _objOrder = _property.CustomAttributes.Last().ConstructorArguments.Last().Value;
-                if(_objOrder != null && int.TryParse(_objOrder.ToString(), out _orderIndex))
-                    _propsOrderAndValue.Add((_property.Name, _orderIndex, _property.GetValue(this, null)));
+                orderIndex = 0;
+                objOrder = null;
+                if (property.CustomAttributes != null && property.CustomAttributes.Any()
+                && property.CustomAttributes.Last().NamedArguments != null && property.CustomAttributes.Last().ConstructorArguments.Any()
+                && property.CustomAttributes.Last().ConstructorArguments.Last().Value != null)
+                    objOrder = property.CustomAttributes.Last().ConstructorArguments.Last().Value;
+                if(objOrder != null && int.TryParse(objOrder.ToString(), out orderIndex))
+                    propsOrderAndValue.Add((property.Name, orderIndex, property.GetValue(this, null)));
             }
-            foreach(var (name, order, value) in _propsOrderAndValue.OrderBy(_ob => _ob.order))
+            foreach(var (name, order, value) in propsOrderAndValue.OrderBy(ob => ob.order))
             {
-                _sb.Append(name);
-                _sb.Append(": ");
-                _sb.Append(value);
-                _sb.Append(Environment.NewLine);
+                sb.Append(name);
+                sb.Append(": ");
+                sb.Append(value);
+                sb.Append(Environment.NewLine);
             }
             /*
-            foreach (PropertyInfo _property in this.GetType().GetProperties())
+            foreach (PropertyInfo property in this.GetType().GetProperties())
             {
-                _sb.Append(_property.Name);
-                _sb.Append(": ");
-                _sb.Append(_property.GetValue(this, null));
-                _sb.Append(Environment.NewLine);
+                sb.Append(property.Name);
+                sb.Append(": ");
+                sb.Append(property.GetValue(this, null));
+                sb.Append(Environment.NewLine);
             }
             */            
-            _sb.Append("----------------------------------------");
-            _sb.Append(Environment.NewLine);
-            _sb.Append(Environment.NewLine);
-            return _sb.ToString();
+            sb.Append("----------------------------------------");
+            sb.Append(Environment.NewLine);
+            sb.Append(Environment.NewLine);
+            return sb.ToString();
         }
 
     }

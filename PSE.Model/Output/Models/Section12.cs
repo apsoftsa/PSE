@@ -37,9 +37,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.BondsMaturingLessThan5Years != null && source.BondsMaturingLessThan5Years.Any())
                 {
-                    foreach (IBondsMaturingLessThan5Years _bmlt5y in source.BondsMaturingLessThan5Years)
+                    foreach (IBondsMaturingLessThan5Years bmlt5y in source.BondsMaturingLessThan5Years)
                     {
-                        BondsMaturingLessThan5Years.Add(new BondsMaturingLessThan5Years(_bmlt5y));
+                        BondsMaturingLessThan5Years.Add(new BondsMaturingLessThan5Years(bmlt5y));
                     }
                 }
             }

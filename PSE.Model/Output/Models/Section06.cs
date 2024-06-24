@@ -100,16 +100,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Assets != null && source.Assets.Any())
                 {
-                    foreach (IAsset _asset in source.Assets)
+                    foreach (IAsset asset in source.Assets)
                     {
-                        Assets.Add(new Asset(_asset));
+                        Assets.Add(new Asset(asset));
                     }
                 }
                 if (source.ChartAssets != null && source.ChartAssets.Any())
                 {
-                    foreach (IChartAsset _chartAsset in source.ChartAssets)
+                    foreach (IChartAsset chartAsset in source.ChartAssets)
                     {
-                        ChartAssets.Add(new ChartAsset(_chartAsset));
+                        ChartAssets.Add(new ChartAsset(chartAsset));
                     }
                 }
             }

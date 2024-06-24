@@ -60,9 +60,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Sectors != null && source.Sectors.Any())
                 {
-                    foreach (IEconSector _sector in source.Sectors)
+                    foreach (IEconSector sector in source.Sectors)
                     {
-                        Sectors.Add(new EconSector(_sector));
+                        Sectors.Add(new EconSector(sector));
                     }
                 }
                 TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
@@ -121,16 +121,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.ActionByEconSector != null && source.ActionByEconSector.Any())
                 {
-                    foreach (IActionByEconSector _actByEconSec in source.ActionByEconSector)
+                    foreach (IActionByEconSector actByEconSec in source.ActionByEconSector)
                     {
-                        ActionByEconSector.Add(new ActionByEconSector(_actByEconSec));
+                        ActionByEconSector.Add(new ActionByEconSector(actByEconSec));
                     }
                 }
                 if (source.ChartGraphicEconomicalSector != null && source.ChartGraphicEconomicalSector.Any())
                 {
-                    foreach (IEconominalSector _ecSect in source.ChartGraphicEconomicalSector)
+                    foreach (IEconominalSector ecSect in source.ChartGraphicEconomicalSector)
                     {
-                        ChartGraphicEconomicalSector.Add(new EconominalSector(_ecSect));
+                        ChartGraphicEconomicalSector.Add(new EconominalSector(ecSect));
                     }
                 }
 

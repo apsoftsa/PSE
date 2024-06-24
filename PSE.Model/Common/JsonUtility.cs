@@ -48,33 +48,33 @@ namespace PSE.Model.Common
                 }
                 else
                 {
-                    JObject _o = (JObject)token;
-                    var _propertiesWithDynamicNameAttribute = value.GetType().GetProperties().Where(
-                        _prop => _prop.CustomAttributes.Any(_attr => _attr.AttributeType == typeof(JsonDynamicNameAttribute))
+                    JObject o = (JObject)token;
+                    var propertiesWithDynamicNameAttribute = value.GetType().GetProperties().Where(
+                        prop => prop.CustomAttributes.Any(attr => attr.AttributeType == typeof(JsonDynamicNameAttribute))
                     );
-                    foreach (var _property in _propertiesWithDynamicNameAttribute)
+                    foreach (var property in propertiesWithDynamicNameAttribute)
                     {
-                        CustomAttributeData? _dynamicAttributeData = _property.CustomAttributes.FirstOrDefault(_attr => _attr.AttributeType == typeof(JsonDynamicNameAttribute));
+                        CustomAttributeData? dynamicAttributeData = property.CustomAttributes.FirstOrDefault(attr => attr.AttributeType == typeof(JsonDynamicNameAttribute));
                         // Determine what we should rename the property from and to.
-                        var _currentName = _property.Name;
-                        if (_dynamicAttributeData != null)
+                        var currentName = property.Name;
+                        if (dynamicAttributeData != null)
                         {
-                            object? _propertyNameContainingNewName = _dynamicAttributeData.ConstructorArguments[0].Value;
-                            if (_propertyNameContainingNewName != null)
+                            object? propertyNameContainingNewName = dynamicAttributeData.ConstructorArguments[0].Value;
+                            if (propertyNameContainingNewName != null)
                             {
-                                if (value.GetType().GetProperty((string)_propertyNameContainingNewName) != null)
+                                if (value.GetType().GetProperty((string)propertyNameContainingNewName) != null)
                                 {
-                                    PropertyInfo? _propInfo = value.GetType().GetProperty((string)_propertyNameContainingNewName);
-                                    if (_propInfo != null)
+                                    PropertyInfo? propInfo = value.GetType().GetProperty((string)propertyNameContainingNewName);
+                                    if (propInfo != null)
                                     {
-                                        object? _newName = _propInfo.GetValue(value);
-                                        if (_newName != null)
+                                        object? newName = propInfo.GetValue(value);
+                                        if (newName != null)
                                         {
                                             // Perform the renaming in the JSON object.
-                                            var _currentJsonPropertyValue = _o[_currentName];
-                                            var _newJsonProperty = new JProperty((string)_newName, _currentJsonPropertyValue);
-                                            if (_currentJsonPropertyValue != null && _currentJsonPropertyValue.Parent != null)
-                                                _currentJsonPropertyValue.Parent.Replace(_newJsonProperty);
+                                            var currentJsonPropertyValue = o[currentName];
+                                            var newJsonProperty = new JProperty((string)newName, currentJsonPropertyValue);
+                                            if (currentJsonPropertyValue != null && currentJsonPropertyValue.Parent != null)
+                                                currentJsonPropertyValue.Parent.Replace(newJsonProperty);
                                         }
                                     }
                                 }
@@ -98,12 +98,12 @@ namespace PSE.Model.Common
 
         public static string? JsonObjectSerialization<T>(this T toSerialize, bool lowerCase = true)
         {
-            string? _jsonData = "";
+            string? jsonData = "";
             try
             {
                 if (toSerialize != null)
                 {
-                    var _settings = new JsonSerializerSettings
+                    var settings = new JsonSerializerSettings
                     {
                         NullValueHandling = NullValueHandling.Ignore,
                         DefaultValueHandling = DefaultValueHandling.Ignore,
@@ -111,15 +111,15 @@ namespace PSE.Model.Common
                         Converters = new JsonConverter[] { new DynamicNameConverter() }
                     };
                     if (lowerCase)
-                        _settings.ContractResolver = DefinedContractResolver;
-                    _jsonData = JsonConvert.SerializeObject(toSerialize, Formatting.Indented, _settings);
+                        settings.ContractResolver = DefinedContractResolver;
+                    jsonData = JsonConvert.SerializeObject(toSerialize, Formatting.Indented, settings);
                 }
             }
             catch
             {
-                _jsonData = null;
+                jsonData = null;
             }
-            return _jsonData;
+            return jsonData;
         }
 
     }

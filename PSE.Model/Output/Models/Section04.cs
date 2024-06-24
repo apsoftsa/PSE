@@ -96,16 +96,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.HistoryEvolutionPerformancesCurrency != null && source.HistoryEvolutionPerformancesCurrency.Any())
                 {
-                    foreach (IHistoryEvolutionPerformanceCurrency _histEvoPerfCurr in source.HistoryEvolutionPerformancesCurrency)
+                    foreach (IHistoryEvolutionPerformanceCurrency histEvoPerfCurr in source.HistoryEvolutionPerformancesCurrency)
                     {
-                        HistoryEvolutionPerformancesCurrency.Add(new HistoryEvolutionPerformanceCurrency(_histEvoPerfCurr));
+                        HistoryEvolutionPerformancesCurrency.Add(new HistoryEvolutionPerformanceCurrency(histEvoPerfCurr));
                     }
                 }
                 if (source.ChartPerformanceEvolutions != null && source.ChartPerformanceEvolutions.Any())
                 {
-                    foreach (IChartPerformanceEvolution _chartPerfEvo in source.ChartPerformanceEvolutions)
+                    foreach (IChartPerformanceEvolution chartPerfEvo in source.ChartPerformanceEvolutions)
                     {
-                        ChartPerformanceEvolutions.Add(new ChartPerformanceEvolution(_chartPerfEvo));
+                        ChartPerformanceEvolutions.Add(new ChartPerformanceEvolution(chartPerfEvo));
                     }
                 }
             }

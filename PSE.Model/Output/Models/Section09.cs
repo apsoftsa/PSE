@@ -131,9 +131,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Investments != null && source.Investments.Any())
                 {
-                    foreach (IShortTermInvestment _shortTermInv in source.Investments)
+                    foreach (IShortTermInvestment shortTermInv in source.Investments)
                     {
-                        Investments.Add(new ShortTermInvestment(_shortTermInv));
+                        Investments.Add(new ShortTermInvestment(shortTermInv));
                     }
                 }
             }

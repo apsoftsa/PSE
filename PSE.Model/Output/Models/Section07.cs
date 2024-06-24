@@ -95,16 +95,16 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Investments != null && source.Investments.Any())
                 {
-                    foreach (IInvestment _inv in source.Investments)
+                    foreach (IInvestment inv in source.Investments)
                     {
-                        Investments.Add(new Investment(_inv));
+                        Investments.Add(new Investment(inv));
                     }
                 }
                 if (source.ChartInvestments != null && source.ChartInvestments.Any())
                 {
-                    foreach (IChartInvestment _chartInv in source.ChartInvestments)
+                    foreach (IChartInvestment chartInv in source.ChartInvestments)
                     {
-                        ChartInvestments.Add(new ChartInvestment(_chartInv));
+                        ChartInvestments.Add(new ChartInvestment(chartInv));
                     }
                 }
             }

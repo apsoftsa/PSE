@@ -147,30 +147,30 @@ namespace PSE.Model.Output.Models
             {
                 if (source.OverviewPortfolio != null && source.OverviewPortfolio.Any())
                 {
-                    foreach (IOverviewPortfolio _overPort in source.OverviewPortfolio)
+                    foreach (IOverviewPortfolio overPort in source.OverviewPortfolio)
                     {
-                        OverviewPortfolio.Add(new OverviewPortfolio(_overPort));
+                        OverviewPortfolio.Add(new OverviewPortfolio(overPort));
                     }
                 }
                 if (source.ChartGraphicalInvestment != null && source.ChartGraphicalInvestment.Any())
                 {
-                    foreach (IGraphicalInvestment _graphInvest in source.ChartGraphicalInvestment)
+                    foreach (IGraphicalInvestment graphInvest in source.ChartGraphicalInvestment)
                     {
-                        ChartGraphicalInvestment.Add(new GraphicalInvestment(_graphInvest));
+                        ChartGraphicalInvestment.Add(new GraphicalInvestment(graphInvest));
                     }
                 }
                 if (source.Investment != null && source.Investment.Any())
                 {
-                    foreach (ITypeInvestment _typeInvestment in source.Investment)
+                    foreach (ITypeInvestment typeInvestment in source.Investment)
                     {
-                        Investment.Add(new TypeInvestment(_typeInvestment));
+                        Investment.Add(new TypeInvestment(typeInvestment));
                     }
                 }
                 if (source.InformationPosition != null && source.InformationPosition.Any())
                 {
-                    foreach (IAnyCommitments _anyComm in source.InformationPosition)
+                    foreach (IAnyCommitments anyComm in source.InformationPosition)
                     {
-                        InformationPosition.Add(new AnyCommitments(_anyComm));
+                        InformationPosition.Add(new AnyCommitments(anyComm));
                     }
                 }
             }

@@ -61,9 +61,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.AssetStatements != null && source.AssetStatements.Any())
                 {
-                    foreach (IAssetStatement _assetSttmnt in source.AssetStatements)
+                    foreach (IAssetStatement assetSttmnt in source.AssetStatements)
                     {
-                        AssetStatements.Add(new AssetStatement(_assetSttmnt));
+                        AssetStatements.Add(new AssetStatement(assetSttmnt));
                     }
                 }
             }

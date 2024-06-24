@@ -85,9 +85,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.Operations != null && source.Operations.Any())
                 {
-                    foreach (IProfitLossOperation _profitLoss in source.Operations)
+                    foreach (IProfitLossOperation profitLoss in source.Operations)
                     {
-                        Operations.Add(new ProfitLossOperation(_profitLoss));
+                        Operations.Add(new ProfitLossOperation(profitLoss));
                     }
                 }
             }

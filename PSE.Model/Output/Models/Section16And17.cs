@@ -87,41 +87,41 @@ namespace PSE.Model.Output.Models
             BondFunds = new List<IFundDetails>();
             if (source.BondFunds != null && source.BondFunds.Any())
             {
-                foreach (IFundDetails _fund in source.BondFunds)
+                foreach (IFundDetails fund in source.BondFunds)
                 {
-                    BondFunds.Add(new FundDetail(_fund));
+                    BondFunds.Add(new FundDetail(fund));
                 }
             }
             EquityFunds = new List<IFundDetails>();
             if (source.EquityFunds != null && source.EquityFunds.Any())
             {
-                foreach (IFundDetails _fund in source.EquityFunds)
+                foreach (IFundDetails fund in source.EquityFunds)
                 {
-                    EquityFunds.Add(new FundDetail(_fund));
+                    EquityFunds.Add(new FundDetail(fund));
                 }
             }
             MixedFunds = new List<IFundDetails>();
             if (source.MixedFunds != null && source.MixedFunds.Any())
             {
-                foreach (IFundDetails _fund in source.MixedFunds)
+                foreach (IFundDetails fund in source.MixedFunds)
                 {
-                    MixedFunds.Add(new FundDetail(_fund));
+                    MixedFunds.Add(new FundDetail(fund));
                 }
             }
             RealEstateFunds = new List<IFundDetails>();
             if (source.RealEstateFunds != null && source.RealEstateFunds.Any())
             {
-                foreach (IFundDetails _fund in source.RealEstateFunds)
+                foreach (IFundDetails fund in source.RealEstateFunds)
                 {
-                    RealEstateFunds.Add(new FundDetail(_fund));
+                    RealEstateFunds.Add(new FundDetail(fund));
                 }
             }
             MetalFunds = new List<IFundDetails>();
             if (source.MetalFunds != null && source.MetalFunds.Any())
             {
-                foreach (IFundDetails _fund in source.MetalFunds)
+                foreach (IFundDetails fund in source.MetalFunds)
                 {
-                    MetalFunds.Add(new FundDetail(_fund));
+                    MetalFunds.Add(new FundDetail(fund));
                 }
             }
         }

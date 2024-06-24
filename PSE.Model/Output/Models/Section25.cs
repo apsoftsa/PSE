@@ -87,16 +87,16 @@ namespace PSE.Model.Output.Models
                 TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
                 if (source.RelationshipNonTransferedToAdmin != null && source.RelationshipNonTransferedToAdmin.Any())
                 {
-                    foreach (IRelationshipToAdmin _relToAdmin in source.RelationshipNonTransferedToAdmin)
+                    foreach (IRelationshipToAdmin relToAdmin in source.RelationshipNonTransferedToAdmin)
                     {
-                        RelationshipNonTransferedToAdmin.Add(new RelationshipToAdmin(_relToAdmin));
+                        RelationshipNonTransferedToAdmin.Add(new RelationshipToAdmin(relToAdmin));
                     }
                 }
                 if (source.RelationshipTransferedToAdmin != null && source.RelationshipTransferedToAdmin.Any())
                 {
-                    foreach (IRelationshipToAdmin _relToAdmin in source.RelationshipTransferedToAdmin)
+                    foreach (IRelationshipToAdmin relToAdmin in source.RelationshipTransferedToAdmin)
                     {
-                        RelationshipTransferedToAdmin.Add(new RelationshipToAdmin(_relToAdmin));
+                        RelationshipTransferedToAdmin.Add(new RelationshipToAdmin(relToAdmin));
                     }
                 }
             }

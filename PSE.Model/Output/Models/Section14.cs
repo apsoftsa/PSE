@@ -37,9 +37,9 @@ namespace PSE.Model.Output.Models
             {
                 if (source.ObligationsWithMaturityGreatherThanFiveYears != null && source.ObligationsWithMaturityGreatherThanFiveYears.Any())
                 {
-                    foreach (IObligationsWithMaturityGreatherThanFiveYears _owmgt5y in source.ObligationsWithMaturityGreatherThanFiveYears)
+                    foreach (IObligationsWithMaturityGreatherThanFiveYears owmgt5y in source.ObligationsWithMaturityGreatherThanFiveYears)
                     {
-                        ObligationsWithMaturityGreatherThanFiveYears.Add(new ObligationsWithMaturityGreatherThanFiveYears(_owmgt5y));
+                        ObligationsWithMaturityGreatherThanFiveYears.Add(new ObligationsWithMaturityGreatherThanFiveYears(owmgt5y));
                     }
                 }
             }
