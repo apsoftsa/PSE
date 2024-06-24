@@ -82,7 +82,7 @@ namespace PSE.Model.Output.Models
         public string? Sector { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public EconominalSector()
         {

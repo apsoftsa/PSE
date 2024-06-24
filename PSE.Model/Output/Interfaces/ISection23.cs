@@ -28,7 +28,7 @@
 
         string? Sector { get; set; }
 
-        int? PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }
 

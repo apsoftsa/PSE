@@ -35,6 +35,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection16And17 _manSect16And17;
         private readonly ManipulatorSection18And19 _manSect18And19;
         private readonly ManipulatorSection20 _manSect20;
+        private readonly ManipulatorSection23 _manSect23;
         private readonly ManipulatorFooter _manFooter;
 
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
@@ -84,6 +85,8 @@ namespace PSE.Builder
             _manSect18And19.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect20 = new();
             _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect23 = new();
+            _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
             _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
@@ -106,6 +109,7 @@ namespace PSE.Builder
                 //( ManipolationTypes.AsSection16And17, false ),
                 ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsSection20, false ),
+                ( ManipolationTypes.AsSection23, false ),
                 ( ManipolationTypes.AsFooter, true )
             };
         }
@@ -166,6 +170,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsSection6:
                             case ManipolationTypes.AsSection7:
+                            case ManipolationTypes.AsSection23:
                                 {
                                     if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
@@ -315,6 +320,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection16And17 => _manSect16And17.Manipulate(extractedData),
                 ManipolationTypes.AsSection18And19 => _manSect18And19.Manipulate(extractedData),
                 ManipolationTypes.AsSection20 => _manSect20.Manipulate(extractedData),
+                ManipolationTypes.AsSection23 => _manSect23.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,
             };

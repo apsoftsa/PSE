@@ -4,10 +4,10 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Authors>Apsoft SA Copyright 2023</Authors>
+    <Authors>Apsoft SA Copyright 2024</Authors>
     <Company>Apsoft SA</Company>
     <Title>PSEWebApi</Title>
-    <Version>1.7.3.0</Version>
+    <Version>1.7.4.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
