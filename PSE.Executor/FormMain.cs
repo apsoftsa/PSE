@@ -8,26 +8,26 @@ namespace PSE.Executor
     public partial class FormMain : Form
     {
 
-        private readonly IConfiguration _configuration;
+        private readonly IConfiguration? _configuration;
         private readonly string _webApiUrl;
 
-        public FormMain(IConfiguration configuration)
+        public FormMain(IConfiguration? configuration)
         {
             InitializeComponent();
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(GlobalExceptionHandler);
             _configuration = configuration;                   
-            _webApiUrl = _configuration["WebApiSettings:Url"];
+            _webApiUrl = _configuration != null ? ( _configuration["WebApiSettings:Url"] ?? string.Empty) : string.Empty;
             if (!_webApiUrl.EndsWith("/")) _webApiUrl += "/";
             _webApiUrl += "api/Extraction/";
         }
 
         private async void FormMain_Load(object sender, EventArgs e)
         {
-            using (var _client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = false }))
+            using (var client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = false }))
             {
-                var _response = await _client.GetAsync(_webApiUrl + "version");
-                if (_response.IsSuccessStatusCode)
-                    this.Text += " - Ver. " + await _response.Content.ReadAsStringAsync();
+                var response = await client.GetAsync(_webApiUrl + "version");
+                if (response.IsSuccessStatusCode)
+                    this.Text += " - Ver. " + await response.Content.ReadAsStringAsync();
                 else
                     this.Text += " - Ver. [UNKNOWN]";
             }
@@ -49,19 +49,19 @@ namespace PSE.Executor
 
         private void GlobalExceptionHandler(object sender, UnhandledExceptionEventArgs args)
         {
-            Exception _ex = (Exception)args.ExceptionObject;
-            UnexpectedExceptionMangement(_ex);
+            Exception ex = (Exception)args.ExceptionObject;
+            UnexpectedExceptionMangement(ex);
         }
 
         private void browseFiles_Click(object sender, EventArgs e)
         {
-            DialogResult _drFiles = this.openFileDialog.ShowDialog();
-            if (_drFiles == DialogResult.OK)
+            DialogResult drFiles = this.openFileDialog.ShowDialog();
+            if (drFiles == DialogResult.OK)
             {
                 this.listViewSourceFiles.Items.Clear();
-                foreach (string _fileName in this.openFileDialog.FileNames)
+                foreach (string fileName in this.openFileDialog.FileNames)
                 {
-                    this.listViewSourceFiles.Items.Add(_fileName);
+                    this.listViewSourceFiles.Items.Add(fileName);
                 }
             }
             this.buttonExtraction.Enabled = this.listViewSourceFiles.Items.Count > 0;
@@ -69,7 +69,7 @@ namespace PSE.Executor
 
         private async void buttonExtraction_Click(object sender, EventArgs e)
         {
-            string _oldCaption = this.Text;
+            string oldCaption = this.Text;
             try
             {
                 if (this.listViewSourceFiles.Items.Count > 0)
@@ -80,39 +80,39 @@ namespace PSE.Executor
                     this.treeViewLog.Nodes.Add("extraction", "EXTRACTION");
                     this.treeViewLog.Nodes.Add("building", "BUILDING");
                     this.Refresh();
-                    using (var _client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = true }))
+                    using (var client = new HttpClient(new HttpClientHandler { UseDefaultCredentials = true }))
                     {
-                        using (var _formContent = new MultipartFormDataContent())
+                        using (var formContent = new MultipartFormDataContent())
                         {
-                            FileInfo _fileInfo;
-                            StreamContent _fileContent;
-                            for (int _f = 0; _f < this.listViewSourceFiles.Items.Count; _f++)
+                            FileInfo fileInfo;
+                            StreamContent fileContent;
+                            for (int f = 0; f < this.listViewSourceFiles.Items.Count; f++)
                             {
-                                _fileInfo = new FileInfo(this.listViewSourceFiles.Items[_f].Text);
-                                _fileContent = new StreamContent(File.OpenRead(this.listViewSourceFiles.Items[_f].Text));
-                                _formContent.Add(_fileContent, "files", _fileInfo.Name);
+                                fileInfo = new FileInfo(this.listViewSourceFiles.Items[f].Text);
+                                fileContent = new StreamContent(File.OpenRead(this.listViewSourceFiles.Items[f].Text));
+                                formContent.Add(fileContent, "files", fileInfo.Name);
                             }
-                            var _response = await _client.PostAsync(_webApiUrl + "build", _formContent);
-                            if (_response.IsSuccessStatusCode)
+                            var response = await client.PostAsync(_webApiUrl + "build", formContent);
+                            if (response.IsSuccessStatusCode)
                             {
-                                OutputContent _outCont = JsonConvert.DeserializeObject<OutputContent>(await _response.Content.ReadAsStringAsync());
-                                this.textBoxJson.Text = _outCont?.JsonGenerated;
-                                if (_outCont.Logs != null && _outCont.Logs.Any())
+                                OutputContent outCont = JsonConvert.DeserializeObject<OutputContent>(await response.Content.ReadAsStringAsync());
+                                this.textBoxJson.Text = outCont?.JsonGenerated;
+                                if (outCont.Logs != null && outCont.Logs.Any())
                                 {
-                                    TreeNode _node;
-                                    foreach (OutputLog _log in _outCont.Logs)
+                                    TreeNode node;
+                                    foreach (OutputLog log in outCont.Logs)
                                     {
-                                        if (this.treeViewLog.Nodes.ContainsKey(_log.ActivityType))
+                                        if (this.treeViewLog.Nodes.ContainsKey(log.ActivityType))
                                         {
-                                            _node = new TreeNode(_log.Content);
-                                            if (_log.Childs != null && _log.Childs.Any())
+                                            node = new TreeNode(log.Content);
+                                            if (log.Childs != null && log.Childs.Any())
                                             {
-                                                foreach (OutputLog _subLog in _log.Childs)
+                                                foreach (OutputLog subLog in log.Childs)
                                                 {
-                                                    _node.Nodes.Add(_subLog.Content);
+                                                    node.Nodes.Add(subLog.Content);
                                                 }
                                             }
-                                            this.treeViewLog.Nodes[_log.ActivityType].Nodes.Add(_node);
+                                            this.treeViewLog.Nodes[log.ActivityType].Nodes.Add(node);
                                         }
                                     }
                                 }
@@ -124,28 +124,28 @@ namespace PSE.Executor
                             }
                             else
                             {
-                                List<TreeNode> _errorNodes = new List<TreeNode>();
-                                if (_response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                                List<TreeNode> errorNodes = new List<TreeNode>();
+                                if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                                 {
-                                    _errorNodes.Add(new TreeNode("Error occurred: BAD REQUEST [400] (Extraction operation failed!)"));
+                                    errorNodes.Add(new TreeNode("Error occurred: BAD REQUEST [400] (Extraction operation failed!)"));
                                     this.tabControl.SelectedIndex = 0;
                                 }
-                                else if (_response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                                 {
-                                    _errorNodes.Add(new TreeNode("Error occurred: NOT FOUND [404] (No valid input files received!)"));
+                                    errorNodes.Add(new TreeNode("Error occurred: NOT FOUND [404] (No valid input files received!)"));
                                     this.tabControl.SelectedIndex = 0;
                                 }
-                                else if (_response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                                else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                                 {
-                                    _errorNodes.Add(new TreeNode("Error occurred: UNAUTHORIZED [401] (User without enough privileges to proceed!)"));
+                                    errorNodes.Add(new TreeNode("Error occurred: UNAUTHORIZED [401] (User without enough privileges to proceed!)"));
                                     this.tabControl.SelectedIndex = 0;
                                 }
-                                else if (_response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                                else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
                                 {
-                                    _errorNodes.Add(new TreeNode("Error occurred: INTERNAL SERVER ERROR [500] (Internal server error occurred during request elaboration!)"));
+                                    errorNodes.Add(new TreeNode("Error occurred: INTERNAL SERVER ERROR [500] (Internal server error occurred during request elaboration!)"));
                                     this.tabControl.SelectedIndex = 0;
                                 }
-                                this.treeViewLog.Nodes["extraction"].Nodes.AddRange(_errorNodes.ToArray());
+                                this.treeViewLog.Nodes["extraction"].Nodes.AddRange(errorNodes.ToArray());
                                 this.treeViewLog.Nodes["extraction"].ExpandAll();
                             }
                         }
@@ -153,13 +153,13 @@ namespace PSE.Executor
                     this.buttonExtraction.Enabled = true;
                 }
             }
-            catch (Exception _ex)
+            catch (Exception ex)
             {
-                UnexpectedExceptionMangement(_ex);
+                UnexpectedExceptionMangement(ex);
             }
             finally
             {
-                this.Text = _oldCaption;
+                this.Text = oldCaption;
             }
         }
 

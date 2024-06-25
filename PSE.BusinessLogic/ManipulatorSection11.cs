@@ -19,53 +19,53 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section11 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section11 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _tmp1, _tmp2, _customerSumAmounts, _currentBaseValue;
-                IProfitLossOperation _profitLossOperation;
-                ISection11Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                foreach (IDE _ideItem in _ideItems)
+                decimal tmp1, tmp2, customerSumAmounts, currentBaseValue;
+                IProfitLossOperation profitLossOperation;
+                ISection11Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    _customerSumAmounts += extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.ProRataBase_56.HasValue).Sum(_sum => _sum.ProRataBase_56.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section11Content();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section11Content();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                            _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                            _tmp1 = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0;
-                            _tmp2 = _posItem.Amount2Base_60 != null ? _posItem.Amount2Base_60.Value : 0;
-                            _profitLossOperation = new ProfitLossOperation()
+                            currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                            currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                            tmp1 = posItem.Amount1Base_23 != null ? posItem.Amount1Base_23.Value : 0;
+                            tmp2 = posItem.Amount2Base_60 != null ? posItem.Amount2Base_60.Value : 0;
+                            profitLossOperation = new ProfitLossOperation()
                             {
-                                CurrencyLoss = _posItem.Currency1_17,
-                                Currency2 = _posItem.Currency2_18,
-                                AmountLoss = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value : 0,
-                                ExpirationDate = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                CurrentExchangeRate = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
-                                Change = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
-                                Amount2 = _posItem.Amount2Cur2_59 != null ? _posItem.Amount2Cur2_59.Value : 0,
-                                ProfitlossReportingCurrency = _tmp1 + _tmp2,
-                                PercentAssets = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
+                                CurrencyLoss = posItem.Currency1_17,
+                                Currency2 = posItem.Currency2_18,
+                                AmountLoss = posItem.Amount1Cur1_22 != null ? posItem.Amount1Cur1_22.Value : 0,
+                                ExpirationDate = posItem.MaturityDate_36 != null ? ((DateTime)posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                CurrentExchangeRate = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
+                                Change = posItem.BuyPriceHistoric_53 != null ? posItem.BuyPriceHistoric_53.Value : 0,
+                                Amount2 = posItem.Amount2Cur2_59 != null ? posItem.Amount2Cur2_59.Value : 0,
+                                ProfitlossReportingCurrency = tmp1 + tmp2,
+                                PercentAssets = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
-                            _posItem.AlreadyUsed = true;
-                            _sectionContent.Operations.Add(_profitLossOperation);
+                            posItem.AlreadyUsed = true;
+                            sectionContent.Operations.Add(profitLossOperation);
                         }
-                        _output.Content = new Section11Content(_sectionContent);
+                        output.Content = new Section11Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

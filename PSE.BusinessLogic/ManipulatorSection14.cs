@@ -26,67 +26,67 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section14 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section14 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate, _customerSumAmounts, _currentBaseValue, _quoteType;
-                IObligationsWithMaturityGreatherThanFiveYears _oblWithMatGreatThan5;
-                ISection14Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
-                foreach (IDE _ideItem in _ideItems)
+                decimal currencyRate, customerSumAmounts, currentBaseValue, quoteType;
+                IObligationsWithMaturityGreatherThanFiveYears oblWithMatGreatThan5;
+                ISection14Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    _customerSumAmounts += extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.ProRataBase_56.HasValue).Sum(_sum => _sum.ProRataBase_56.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section14Content();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section14Content();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                            _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                            _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
-                            _oblWithMatGreatThan5 = new ObligationsWithMaturityGreatherThanFiveYears()
+                            currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                            currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                            quoteType = string.IsNullOrEmpty(posItem.QuoteType_51) == false && posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
+                            oblWithMatGreatThan5 = new ObligationsWithMaturityGreatherThanFiveYears()
                             {
-                                ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
-                                Currency = _posItem.Currency1_17,
-                                Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
-                                PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
-                                PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
-                                Expiration = _posItem.MaturityDate_36 != null ? ((DateTime)_posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                Isin = _posItem.IsinIban_85,
-                                PercentCoupon = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
+                                ValorNumber = posItem.NumSecurity_29 != null ? posItem.NumSecurity_29 : 0,
+                                Currency = posItem.Currency1_17,
+                                Description = ((string.IsNullOrEmpty(posItem.Description1_32) ? "" : posItem.Description1_32) + " " + (string.IsNullOrEmpty(posItem.Description2_33) ? "" : posItem.Description2_33)).Trim(),
+                                CurrentPrice = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
+                                PurchasePrice = posItem.BuyPriceHistoric_53 != null ? posItem.BuyPriceHistoric_53.Value : 0,
+                                PriceBeginningYear = posItem.BuyPriceAverage_87 != null ? posItem.BuyPriceAverage_87.Value : 0,
+                                Expiration = posItem.MaturityDate_36 != null ? ((DateTime)posItem.MaturityDate_36).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                Isin = posItem.IsinIban_85,
+                                PercentCoupon = posItem.InterestRate_47 != null ? posItem.InterestRate_47.Value : 0,
                                 PercentYTM = 0, // not still recovered (!)
-                                NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
-                                MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
-                                ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary                               
-                                ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
-                                PercentAsset = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, _calcBonds.MeaningfulDecimalDigits) : 0
+                                NominalAmount = posItem.Quantity_28 != null ? posItem.Quantity_28.Value : 0,
+                                SPRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
+                                MsciEsg = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "ES") ? posItem.Rating_98 : string.Empty,
+                                ExchangeRateImpactPurchase = posItem.BuyExchangeRateHistoric_66 != null ? posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary                               
+                                ExchangeRateImpactYTD = posItem.BuyExchangeRateAverage_88 != null ? posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
+                                PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, _calcBonds.MeaningfulDecimalDigits) : 0
                             };
-                            _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _oblWithMatGreatThan5.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _oblWithMatGreatThan5.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                            _oblWithMatGreatThan5.PerformancePurchase = Math.Round((_oblWithMatGreatThan5.CurrentPrice.Value - _oblWithMatGreatThan5.PurchasePrice.Value) * _oblWithMatGreatThan5.NominalAmount.Value / _quoteType, _calcBonds.MeaningfulDecimalDigits);
-                            _oblWithMatGreatThan5.PerformanceYTD = Math.Round((_oblWithMatGreatThan5.CurrentPrice.Value - _oblWithMatGreatThan5.PriceBeginningYear.Value) * _oblWithMatGreatThan5.NominalAmount.Value / _quoteType, _calcBonds.MeaningfulDecimalDigits);
-                            _oblWithMatGreatThan5.PercentPerformancePurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_oblWithMatGreatThan5.NominalAmount, _oblWithMatGreatThan5.CurrentPrice), _oblWithMatGreatThan5.PurchasePrice.Value, _oblWithMatGreatThan5.CurrentPrice.Value));
-                            _oblWithMatGreatThan5.PercentPerformanceYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_oblWithMatGreatThan5.NominalAmount, _oblWithMatGreatThan5.CurrentPrice), _oblWithMatGreatThan5.PriceBeginningYear.Value, _oblWithMatGreatThan5.CurrentPrice.Value));
-                            _oblWithMatGreatThan5.ExchangeRateImpactPurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_oblWithMatGreatThan5.NominalAmount, _oblWithMatGreatThan5.CurrentPrice), _oblWithMatGreatThan5.ExchangeRateImpactPurchase.Value, _currencyRate));
-                            _oblWithMatGreatThan5.ExchangeRateImpactYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(_oblWithMatGreatThan5.NominalAmount, _oblWithMatGreatThan5.CurrentPrice), _oblWithMatGreatThan5.ExchangeRateImpactYTD.Value, _currencyRate));
-                            _sectionContent.ObligationsWithMaturityGreatherThanFiveYears.Add(_oblWithMatGreatThan5);
-                            _posItem.AlreadyUsed = true;
+                            currencyRate = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == oblWithMatGreatThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == oblWithMatGreatThan5.Currency && flt.Rate_6 != null).Rate_6.Value : 0;
+                            oblWithMatGreatThan5.PerformancePurchase = Math.Round((oblWithMatGreatThan5.CurrentPrice.Value - oblWithMatGreatThan5.PurchasePrice.Value) * oblWithMatGreatThan5.NominalAmount.Value / quoteType, _calcBonds.MeaningfulDecimalDigits);
+                            oblWithMatGreatThan5.PerformanceYTD = Math.Round((oblWithMatGreatThan5.CurrentPrice.Value - oblWithMatGreatThan5.PriceBeginningYear.Value) * oblWithMatGreatThan5.NominalAmount.Value / quoteType, _calcBonds.MeaningfulDecimalDigits);
+                            oblWithMatGreatThan5.PercentPerformancePurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(oblWithMatGreatThan5.NominalAmount, oblWithMatGreatThan5.CurrentPrice), oblWithMatGreatThan5.PurchasePrice.Value, oblWithMatGreatThan5.CurrentPrice.Value));
+                            oblWithMatGreatThan5.PercentPerformanceYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(oblWithMatGreatThan5.NominalAmount, oblWithMatGreatThan5.CurrentPrice), oblWithMatGreatThan5.PriceBeginningYear.Value, oblWithMatGreatThan5.CurrentPrice.Value));
+                            oblWithMatGreatThan5.ExchangeRateImpactPurchase = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(oblWithMatGreatThan5.NominalAmount, oblWithMatGreatThan5.CurrentPrice), oblWithMatGreatThan5.ExchangeRateImpactPurchase.Value, currencyRate));
+                            oblWithMatGreatThan5.ExchangeRateImpactYTD = _calcBonds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcBonds.GetSign(oblWithMatGreatThan5.NominalAmount, oblWithMatGreatThan5.CurrentPrice), oblWithMatGreatThan5.ExchangeRateImpactYTD.Value, currencyRate));
+                            sectionContent.ObligationsWithMaturityGreatherThanFiveYears.Add(oblWithMatGreatThan5);
+                            posItem.AlreadyUsed = true;
                         }
-                        _output.Content = new Section14Content(_sectionContent);
+                        output.Content = new Section14Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

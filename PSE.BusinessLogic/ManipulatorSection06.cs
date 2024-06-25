@@ -19,92 +19,92 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section6 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section6 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                ExternalCodifyRequestEventArgs _extEventArgsAdvisor;
-                IAsset _asset;                
-                ISection6Content _sectionContent;
-                Dictionary<string, object> _propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), Model.Common.Constants.ITALIAN_LANGUAGE_CODE } };
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>();
-                foreach (IDE _ideItem in _ideItems)
+                ExternalCodifyRequestEventArgs extEventArgsAdvisor;
+                IAsset asset;                
+                ISection6Content sectionContent;
+                Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), Model.Common.Constants.ITALIAN_LANGUAGE_CODE } };
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
+                foreach (IDE ideItem in ideItems)
                 {
-                    if (ManipulatorOperatingRules.CheckInputLanguage(_ideItem.Language_18))
-                        _propertyParams[nameof(IDE.Language_18)] = _ideItem.Language_18;
-                    _sectionContent = new Section6Content();
-                    IEnumerable<IGrouping<string, POS>> _groupByCategory = _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).GroupBy(_gb => _gb.SubCat3_14).OrderBy(_ob => _ob.Key);
-                    IEnumerable<IGrouping<string, POS>> _groupBySubCategory = _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).GroupBy(_gb => _gb.SubCat4_15).OrderBy(_ob => _ob.Key);
-                    if (_groupBySubCategory != null && _groupBySubCategory.Any())
+                    if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                        propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    sectionContent = new Section6Content();
+                    IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    if (groupBySubCategory != null && groupBySubCategory.Any())
                     {
-                        string? _categoryDescr = string.Empty;
-                        string _prevCategory = string.Empty;
-                        string _currCategory = string.Empty;
-                        foreach (IGrouping<string, POS> _subCategory in _groupBySubCategory)
+                        string categoryDescr = string.Empty;
+                        string prevCategory = string.Empty;
+                        string currCategory = string.Empty;
+                        foreach (IGrouping<string, POS> subCategory in groupBySubCategory)
                         {                            
-                            _currCategory = _subCategory.First().SubCat3_14;
-                            if (_currCategory != _prevCategory)
+                            currCategory = subCategory.First().SubCat3_14;
+                            if (currCategory != prevCategory)
                             {
-                                _categoryDescr = "(Unknown)";
-                                _extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.AssetClass), _currCategory, _propertyParams);
-                                OnExternalCodifyRequest(_extEventArgsAdvisor);
-                                if (!_extEventArgsAdvisor.Cancel)
-                                    _categoryDescr = _extEventArgsAdvisor.PropertyValue;
-                                _prevCategory = _currCategory;
+                                categoryDescr = "(Unknown)";
+                                extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.AssetClass), currCategory, propertyParams);
+                                OnExternalCodifyRequest(extEventArgsAdvisor);
+                                if (!extEventArgsAdvisor.Cancel)
+                                    categoryDescr = extEventArgsAdvisor.PropertyValue;
+                                prevCategory = currCategory;
                             }
-                            _extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.TypeInvestment), _subCategory.Key, _propertyParams);
-                            OnExternalCodifyRequest(_extEventArgsAdvisor);
-                            if (!_extEventArgsAdvisor.Cancel)
+                            extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.TypeInvestment), subCategory.Key, propertyParams);
+                            OnExternalCodifyRequest(extEventArgsAdvisor);
+                            if (!extEventArgsAdvisor.Cancel)
                             {
-                                _asset = new Asset()
+                                asset = new Asset()
                                 {
-                                    MarketValueReportingCurrency = Math.Round(_subCategory.Sum(_sum => _sum.Amount1Base_23).Value, 2),
-                                    AssetClass = _categoryDescr,
-                                    TypeInvestment = _extEventArgsAdvisor.PropertyValue,
-                                    MarketValueReportingCurrencyT = Math.Round(_groupByCategory.First(_flt => _flt.Key == _subCategory.First().SubCat3_14).Sum(_sum => _sum.Amount1Base_23).Value, 2)
+                                    MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                    AssetClass = categoryDescr,
+                                    TypeInvestment = extEventArgsAdvisor.PropertyValue,
+                                    MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
                                 };
-                                _sectionContent.Assets.Add(_asset);
+                                sectionContent.Assets.Add(asset);
                             }                            
                         }
-                        decimal? _totalSum = _sectionContent.Assets.Sum(_sum => _sum.MarketValueReportingCurrency);
-                        if (_totalSum != null && _totalSum != 0)
+                        decimal? totalSum = sectionContent.Assets.Sum(sum => sum.MarketValueReportingCurrency);
+                        if (totalSum != null && totalSum != 0)
                         {
-                            foreach (IAsset _assetToUpgrd in _sectionContent.Assets)
+                            foreach (IAsset assetToUpgrd in sectionContent.Assets)
                             {
-                                _assetToUpgrd.PercentInvestment = Math.Round((_assetToUpgrd.MarketValueReportingCurrency / _totalSum.Value * 100m).Value, 2);
+                                assetToUpgrd.PercentInvestment = Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2);
                             }
-                            IEnumerable<IGrouping<string, IAsset?>> _groupByAssetClasses = _sectionContent.Assets.GroupBy(_gb => _gb.AssetClass);
-                            foreach (IGrouping<string, IAsset> _groupByAssetClass in _groupByAssetClasses)
+                            IEnumerable<IGrouping<string, IAsset?>> groupByAssetClasses = sectionContent.Assets.GroupBy(gb => gb.AssetClass);
+                            foreach (IGrouping<string, IAsset> groupByAssetClass in groupByAssetClasses)
                             {
-                                foreach(IAsset _assetToUpgrd in _sectionContent.Assets.Where(_flt => _flt.AssetClass == _groupByAssetClass.Key))
+                                foreach(IAsset assetToUpgrd in sectionContent.Assets.Where(flt => flt.AssetClass == groupByAssetClass.Key))
                                 {
-                                    _assetToUpgrd.PercentInvestmentT = _groupByAssetClass.Sum(_sum => _sum.PercentInvestment);
+                                    assetToUpgrd.PercentInvestmentT = groupByAssetClass.Sum(sum => sum.PercentInvestment);
                                 }
-                                _sectionContent.ChartAssets.Add(new ChartAsset() { AssetClass = _groupByAssetClass.Key, PercentInvestment = _groupByAssetClass.Sum(_sum => _sum.PercentInvestment) });
+                                sectionContent.ChartAssets.Add(new ChartAsset() { AssetClass = groupByAssetClass.Key, PercentInvestment = groupByAssetClass.Sum(sum => sum.PercentInvestment) });
                             }
-                            decimal _sumAccrued = _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _flt.ProRataBase_56 != null).Sum(_sum => _sum.ProRataBase_56.Value);
-                            _asset = new Asset()
+                            decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
+                            asset = new Asset()
                             {
                                 TypeInvestment = "Accrued Interest",
-                                MarketValueReportingCurrency = Math.Round(_sumAccrued, 2),
-                                PercentInvestment = Math.Round((_sumAccrued / _totalSum.Value * 100m), 2),
+                                MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
+                                PercentInvestment = Math.Round(sumAccrued / totalSum.Value * 100m, 2),
                                 AssetClass = "TOTAL INVESTMENTS",
-                                MarketValueReportingCurrencyT = Math.Round(_totalSum.Value, 2),
+                                MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
                                 PercentInvestmentT = 100.0m
                             };
-                            _sectionContent.Assets.Add(_asset);
+                            sectionContent.Assets.Add(asset);
                         }
                     }
-                    _output.Content = new Section6Content(_sectionContent);
+                    output.Content = new Section6Content(sectionContent);
                 }
             }
-            return _output;
+            return output;
         }
 
     }

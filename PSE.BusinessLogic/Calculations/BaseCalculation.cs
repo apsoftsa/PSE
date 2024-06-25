@@ -21,73 +21,73 @@ namespace PSE.BusinessLogic.Utility
         // Corrisponde a : ValoreSegno
         public virtual string GetSign(decimal? quantity, decimal? number)
         {
-            string _sign;            
+            string sign;            
             if(_calcSettings.SetNetting == 2) // SE, absolute netting 
-                _sign = MULTIPLE_BY;
+                sign = MULTIPLE_BY;
             else
             {
-                string _signQta = POSITIVE_SIGN;
+                string signQta = POSITIVE_SIGN;
                 if (quantity.HasValue && quantity.Value < 0)
-                    _signQta = NEGATIVE_SIGN;
+                    signQta = NEGATIVE_SIGN;
                 if (!number.HasValue)
-                    _sign = _signQta;
+                    sign = signQta;
                 else if (number.Value < 0)
-                    _sign = NEGATIVE_SIGN;
+                    sign = NEGATIVE_SIGN;
                 else if (number.Value == 0)
-                    _sign = _signQta;
+                    sign = signQta;
                 else
-                    _sign = POSITIVE_SIGN;
+                    sign = POSITIVE_SIGN;
             }
-            return _sign;
+            return sign;
         }
 
         // Corrisponde a: "ValoreVariazioneGlobale"
         public virtual decimal GetGlobalVariationValue(GlobalVariationValueParams recParams)
         {
-            decimal _globalVariationValue = 0;
+            decimal globalVariationValue = 0;
             if (recParams != null && recParams.IsValid)
             {
-                decimal _divider;
-                bool _isOpposite = false;
-                decimal _change1c = 0;
-                decimal _change2c = 0;
+                decimal divider;
+                bool isOpposite = false;
+                decimal change1c = 0;
+                decimal change2c = 0;
                 if (recParams.Percentage == -1)
-                    _isOpposite = true;
-                if (_isOpposite)
+                    isOpposite = true;
+                if (isOpposite)
                 {
                     if (recParams.Change1 > 0 && recParams.Change2 > 0)
                     {
-                        _divider = 1;
-                        _change1c = _divider / recParams.Change1;
-                        _change2c = _divider / recParams.Change2;
+                        divider = 1;
+                        change1c = divider / recParams.Change1;
+                        change2c = divider / recParams.Change2;
                     }
                 }
                 else
                 {
-                    _change1c = recParams.Change1;
-                    _change2c = recParams.Change2;
+                    change1c = recParams.Change1;
+                    change2c = recParams.Change2;
                 }
-                _divider = recParams.Trend1 * _change1c * 100m;
-                if (_divider > 0)
+                divider = recParams.Trend1 * change1c * 100m;
+                if (divider > 0)
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
-                        _globalVariationValue = (recParams.Trend1 * _change1c - recParams.Trend2 * _change2c) / _divider;
+                        globalVariationValue = (recParams.Trend1 * change1c - recParams.Trend2 * change2c) / divider;
                     else
-                        _globalVariationValue = (recParams.Trend2 * _change2c - recParams.Trend1 * _change1c) / _divider;
+                        globalVariationValue = (recParams.Trend2 * change2c - recParams.Trend1 * change1c) / divider;
                 }
             }
-            return Math.Round(_globalVariationValue, _calcSettings.MeaningfulDecimalDigits);
+            return Math.Round(globalVariationValue, _calcSettings.MeaningfulDecimalDigits);
         }
 
         // Corrisponde a: "ValoreDifferenzaCorso"
         public virtual decimal GetPriceDifferenceValue(PriceDifferenceValueParams recParams)
         {
-            decimal _priceDifferenceValue = 0;
+            decimal priceDifferenceValue = 0;
             if (recParams.IsValid)
             {
                 if (string.IsNullOrEmpty(_calcSettings.ClassGroup) == false && _calcSettings.ClassGroup == "D") // derivati
                 {
-                    _priceDifferenceValue = GetCourseChangeValue5(new CourseChangeValueParams()
+                    priceDifferenceValue = GetCourseChangeValue5(new CourseChangeValueParams()
                     {
                         Sign = recParams.Sign,
                         Trend1 = recParams.Trend1,
@@ -96,7 +96,7 @@ namespace PSE.BusinessLogic.Utility
                 }
                 else
                 {
-                    _priceDifferenceValue = GetCourseChangeValue(new CourseChangeValueParams()
+                    priceDifferenceValue = GetCourseChangeValue(new CourseChangeValueParams()
                     {
                         Sign = recParams.Sign,
                         Trend1 = recParams.Trend1,
@@ -104,52 +104,52 @@ namespace PSE.BusinessLogic.Utility
                     });
                 }
             }
-            return _priceDifferenceValue;
+            return priceDifferenceValue;
         }
         
         // Corrisponde a: "ValoreVariazioneCorso"
         public virtual decimal GetCourseChangeValue(CourseChangeValueParams recParams)
         {
-            decimal _courseChangeValue = 0;
+            decimal courseChangeValue = 0;
             if (recParams != null && recParams.IsValid)
             {
                 if (!(recParams.Trend1 < 0.01m || recParams.Trend2 < 0.01m))
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
+                        courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
                     else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
+                        courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
                 }
             }
-            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
+            return Math.Round(courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
         }
 
         // Corrisponde a: "ValoreVariazioneCorso5"
         public virtual decimal GetCourseChangeValue5(CourseChangeValueParams recParams)
         {
-            decimal _courseChangeValue = 0;
+            decimal courseChangeValue = 0;
             if (recParams != null && recParams.IsValid)
             {
                 if (!(recParams.Trend1 < 0.00001m || recParams.Trend2 < 0.00001m))
                 {
                     if (recParams.Sign == NEGATIVE_SIGN)
-                        _courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
+                        courseChangeValue = (recParams.Trend1 - recParams.Trend2) / recParams.Trend1 * 100m;
                     else
-                        _courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
+                        courseChangeValue = (recParams.Trend2 - recParams.Trend1) / recParams.Trend1 * 100m;
                 }
             }
-            return Math.Round(_courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
+            return Math.Round(courseChangeValue, _calcSettings.MeaningfulDecimalDigits);
         }       
 
         // Corrisponde a: "ValoreDifferenzaGlobale"
         public virtual decimal GetGlobalDifferenceValue(GlobalDifferenceValueParams recParams)
         {
-            decimal _globalDifferenceValue = 0;
+            decimal globalDifferenceValue = 0;
             if (recParams.IsValid)
             {
                 if (_calcSettings.StockMarketToChange(recParams.Code))
                 {
-                    _globalDifferenceValue = GetGlobalVariationValue(new GlobalVariationValueParams() { 
+                    globalDifferenceValue = GetGlobalVariationValue(new GlobalVariationValueParams() { 
                         Sign = recParams.Sign,
                         Trend1 = recParams.TrendAcq,
                         Trend2 = recParams.Trend,
@@ -160,7 +160,7 @@ namespace PSE.BusinessLogic.Utility
                 }
                 else
                 {
-                    _globalDifferenceValue = GetGlobalVariationValue(new GlobalVariationValueParams()
+                    globalDifferenceValue = GetGlobalVariationValue(new GlobalVariationValueParams()
                     {
                         Sign = recParams.Sign,
                         Trend1 = recParams.TrendAcq,
@@ -171,18 +171,18 @@ namespace PSE.BusinessLogic.Utility
                     });
                 }
             }
-            return _globalDifferenceValue;
+            return globalDifferenceValue;
         }
 
         // Corrisponde a: "ValoreDifferenzaCambio"
         public virtual decimal GetExchangeRateDifferenceValue(ExchangeRateDifferenceValueParams recParams)
         {
-            decimal _exchangeRateDifferenceValue = 0;
+            decimal exchangeRateDifferenceValue = 0;
             if (recParams.IsValid)
             {
                 if (_calcSettings.StockMarketToChange(recParams.Code))
                 {
-                    _exchangeRateDifferenceValue = GetExchangeRateChangeValue(new ExchangeRateChangeValueParams()
+                    exchangeRateDifferenceValue = GetExchangeRateChangeValue(new ExchangeRateChangeValueParams()
                     {
                         Sign = recParams.Sign,
                         Change1 = recParams.ChangeAcqM,
@@ -192,7 +192,7 @@ namespace PSE.BusinessLogic.Utility
                 }
                 else
                 {
-                    _exchangeRateDifferenceValue = GetExchangeRateChangeValue(new ExchangeRateChangeValueParams()
+                    exchangeRateDifferenceValue = GetExchangeRateChangeValue(new ExchangeRateChangeValueParams()
                     {
                         Sign = recParams.Sign,
                         Change1 = recParams.ChangeAcq,
@@ -201,46 +201,46 @@ namespace PSE.BusinessLogic.Utility
                     });
                 }
             }
-            return _exchangeRateDifferenceValue;
+            return exchangeRateDifferenceValue;
         }
 
         // Corrisponde a: "ValoreNonRealizzato"
         public virtual decimal GetUnrealizedValue(UnrealizedValueParams recParams)
         {
-            decimal _unrealizedValue = 0;
+            decimal unrealizedValue = 0;
             if (recParams != null && recParams.IsValid)
             {
-                bool _continue = true;
+                bool continueCheck = true;
                 if (_calcSettings.ZeroHistoricalPurchasePriceSet)
                 {
-                    decimal? _change1, _change2;
-                    decimal? _trend1 = recParams.TrendAcq;
-                    decimal? _trend2 = recParams.Trend;
+                    decimal? change1, change2;
+                    decimal? trend1 = recParams.TrendAcq;
+                    decimal? trend2 = recParams.Trend;
                     if (_calcSettings.StockMarketToChange(recParams.Code))
                     {
-                        _change1 = recParams.ChangeAcqM;
-                        _change2 = recParams.ChangeM;
+                        change1 = recParams.ChangeAcqM;
+                        change2 = recParams.ChangeM;
                     }
                     else
                     {
-                        _change1 = recParams.ChangeAcq;
-                        _change2 = recParams.Change;
+                        change1 = recParams.ChangeAcq;
+                        change2 = recParams.Change;
                     }
-                    if (_change1.HasValue && _change2.HasValue && _trend1.HasValue && _trend2.HasValue)
+                    if (change1.HasValue && change2.HasValue && trend1.HasValue && trend2.HasValue)
                     {
-                        if (_trend1 == 0 && _change1 != 0 && _trend2 != 0 && _change2 != 0)
+                        if (trend1 == 0 && change1 != 0 && trend2 != 0 && change2 != 0)
                         {
                             if (recParams.Sign == NEGATIVE_SIGN)
-                                _unrealizedValue = Math.Abs(recParams.ImpCtv) * -1m;
+                                unrealizedValue = Math.Abs(recParams.ImpCtv) * -1m;
                             else
-                                _unrealizedValue = recParams.ImpCtv;
-                            _continue = false;
+                                unrealizedValue = recParams.ImpCtv;
+                            continueCheck = false;
                         }
                     }
                 }
-                if (_continue)
+                if (continueCheck)
                 {
-                    decimal _global = GetGlobalDifferenceValue(new GlobalDifferenceValueParams(
+                    decimal global = GetGlobalDifferenceValue(new GlobalDifferenceValueParams(
                         recParams.Code, 
                         recParams.Sign, 
                         recParams.TrendAcq, 
@@ -251,48 +251,48 @@ namespace PSE.BusinessLogic.Utility
                         recParams.ChangeM, 
                         recParams.Reverse)
                     );
-                    _global /= 100m;
-                    if (_global == -1) // ???
-                        _unrealizedValue = 0 - recParams.ImpCtv;
-                    else if(_global != 0)
+                    global /= 100m;
+                    if (global == -1) // ???
+                        unrealizedValue = 0 - recParams.ImpCtv;
+                    else if(global != 0)
                     {
                         if (recParams.Sign == NEGATIVE_SIGN)
-                            _unrealizedValue = Math.Abs(recParams.ImpCtv) * (_global / (1m - _global));
+                            unrealizedValue = Math.Abs(recParams.ImpCtv) * (global / (1m - global));
                         else
-                            _unrealizedValue = recParams.ImpCtv * (_global / (1m + _global));
+                            unrealizedValue = recParams.ImpCtv * (global / (1m + global));
                     }
                 }
             }
-            return Math.Round(_unrealizedValue, _calcSettings.MeaningfulDecimalDigits);
+            return Math.Round(unrealizedValue, _calcSettings.MeaningfulDecimalDigits);
         }
 
         // Corrisponde a: "ValoreVariazioneCambio"
         public virtual decimal GetExchangeRateChangeValue(ExchangeRateChangeValueParams recParams)
         {
-            decimal _exchangeRateChangeValue = 0;
+            decimal exchangeRateChangeValue = 0;
             if (recParams != null && recParams.IsValid)
             {
-                decimal _change1c, _change2c;                
-                bool _isOpposite = false;                
+                decimal change1c, change2c;                
+                bool isOpposite = false;                
                 if (recParams.Percentage == -1)
-                    _isOpposite = true;
-                if (_isOpposite)
+                    isOpposite = true;
+                if (isOpposite)
                 {
-                    decimal _divider = 1;
-                    _change1c = _divider / recParams.Change1;
-                    _change2c = _divider / recParams.Change2;
+                    decimal divider = 1;
+                    change1c = divider / recParams.Change1;
+                    change2c = divider / recParams.Change2;
                 }
                 else
                 {
-                    _change1c = recParams.Change1;
-                    _change2c = recParams.Change2;
+                    change1c = recParams.Change1;
+                    change2c = recParams.Change2;
                 }
                 if (recParams.Sign == NEGATIVE_SIGN)
-                    _exchangeRateChangeValue = (_change1c - _change2c) / _change1c * 100m;
+                    exchangeRateChangeValue = (change1c - change2c) / change1c * 100m;
                 else
-                    _exchangeRateChangeValue = (_change2c - _change1c) / _change1c * 100m;
+                    exchangeRateChangeValue = (change2c - change1c) / change1c * 100m;
             }
-            return Math.Round(_exchangeRateChangeValue, _calcSettings.MeaningfulDecimalDigits);
+            return Math.Round(exchangeRateChangeValue, _calcSettings.MeaningfulDecimalDigits);
         }
 
     }

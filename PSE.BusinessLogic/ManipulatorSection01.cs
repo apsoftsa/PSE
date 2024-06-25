@@ -19,33 +19,33 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section1 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section1 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
             {
-                IDE _ideItem = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().First();
-                ExternalCodifyRequestEventArgs _extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section1), nameof(AssetStatement.Advisor), _ideItem.Manager_8);
-                OnExternalCodifyRequest(_extEventArgsAdvisor);
-                if (!_extEventArgsAdvisor.Cancel)
+                IDE ideItem = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().First();
+                ExternalCodifyRequestEventArgs extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section1), nameof(AssetStatement.Advisor), ideItem.Manager_8);
+                OnExternalCodifyRequest(extEventArgsAdvisor);
+                if (!extEventArgsAdvisor.Cancel)
                 {
-                    ISection1Content _sectionContent = new Section1Content();
-                    IAssetStatement _assetStatement = new AssetStatement()
+                    ISection1Content sectionContent = new Section1Content();
+                    IAssetStatement assetStatement = new AssetStatement()
                     {
-                        Portfolio = _ideItem.CustomerNumber_2,
-                        Advisor = _extEventArgsAdvisor.PropertyValue,
-                        Customer = _ideItem.CustomerNameShort_5,
-                        Date = _ideItem.Date_15 != null ? _ideItem.Date_15 : string.Empty
+                        Portfolio = ideItem.CustomerNumber_2,
+                        Advisor = extEventArgsAdvisor.PropertyValue,
+                        Customer = ideItem.CustomerNameShort_5,
+                        Date = ideItem.Date_15 != null ? ideItem.Date_15 : string.Empty
                     };
-                    _sectionContent.AssetStatements.Add(_assetStatement);
-                    _output.Content = new Section1Content(_sectionContent);
+                    sectionContent.AssetStatements.Add(assetStatement);
+                    output.Content = new Section1Content(sectionContent);
                 }
             }
-            return _output;
+            return output;
         }
 
     }

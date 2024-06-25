@@ -35,6 +35,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection16And17 _manSect16And17;
         private readonly ManipulatorSection18And19 _manSect18And19;
         private readonly ManipulatorSection20 _manSect20;
+        private readonly ManipulatorSection21 _manSect21;
         private readonly ManipulatorSection23 _manSect23;
         private readonly ManipulatorFooter _manFooter;
 
@@ -85,6 +86,8 @@ namespace PSE.Builder
             _manSect18And19.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect20 = new();
             _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect21 = new();
+            _manSect21.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect23 = new();
             _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
@@ -109,6 +112,7 @@ namespace PSE.Builder
                 //( ManipolationTypes.AsSection16And17, false ),
                 ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsSection20, false ),
+                ( ManipolationTypes.AsSection21, false ),
                 ( ManipolationTypes.AsSection23, false ),
                 ( ManipolationTypes.AsFooter, true )
             };
@@ -140,7 +144,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsSection1:
                                 {
-                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)))
+                                    if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
                                     {
@@ -155,8 +159,8 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection3:
                             case ManipolationTypes.AsSection4:
                                 {
-                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
-                                        extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
+                                    if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
+                                        extractedData.Any(flt => flt.RecordType == nameof(PER)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
                                     {
@@ -172,10 +176,10 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection7:
                             case ManipolationTypes.AsSection23:
                                 {
-                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
-                                        extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+                                    if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
+                                        extractedData.Any(flt => flt.RecordType == nameof(POS)))
                                     {
-                                        if (manipolationType == ManipolationTypes.AsSection7 && extractedData.Any(_flt => _flt.RecordType == nameof(CUR)) == false)
+                                        if (manipolationType == ManipolationTypes.AsSection7 && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)
                                         {
                                             if (isMandatory)
                                             {
@@ -210,16 +214,17 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection16And17:
                             case ManipolationTypes.AsSection18And19:
                             case ManipolationTypes.AsSection20:
+                            case ManipolationTypes.AsSection21:
                                 {
-                                    if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) &&
-                                        extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+                                    if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
+                                        extractedData.Any(flt => flt.RecordType == nameof(POS)))
                                     {
-                                        if (ArePOSRowsManipulable(extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>(), manipolationType))
+                                        if (ArePOSRowsManipulable(extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>(), manipolationType))
                                         {
                                             // ????
                                             //if ((manipolationType == ManipolationTypes.AsSection12 || manipolationType == ManipolationTypes.AsSection13 || manipolationType == ManipolationTypes.AsSection14)
-                                            //    && isMandatory && extractedData.Any(_flt => _flt.RecordType == nameof(CUR)) == false)                                            
-                                            if (isMandatory && extractedData.Any(_flt => _flt.RecordType == nameof(CUR)) == false)
+                                            //    && isMandatory && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)                                            
+                                            if (isMandatory && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)
                                             {
                                                 buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
                                                     $"at least one input record having format '{nameof(CUR)}' must be provided!";
@@ -230,17 +235,17 @@ namespace PSE.Builder
                                         }
                                         else if (isMandatory)
                                         {
-                                            List<PositionClassifications> _classificationsBound = GetClassificationsBoundToSection(manipolationType);
-                                            string _classificationsDescr = string.Empty;
-                                            if (_classificationsBound != null && _classificationsBound.Any())
+                                            List<PositionClassifications> classificationsBound = GetClassificationsBoundToSection(manipolationType);
+                                            string classificationsDescr = string.Empty;
+                                            if (classificationsBound != null && classificationsBound.Any())
                                             {
-                                                foreach (PositionClassifications _classificationBound in _classificationsBound)
+                                                foreach (PositionClassifications classificationBound in classificationsBound)
                                                 {
-                                                    _classificationsDescr += _classificationBound.ToString() + " ";
+                                                    classificationsDescr += classificationBound.ToString() + " ";
                                                 }
                                             }
                                             buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
-                                                $"at least one input record having format '{nameof(POS)}' and sub-category code '{_classificationsDescr.Trim()}' must be provided!";
+                                                $"at least one input record having format '{nameof(POS)}' and sub-category code '{classificationsDescr.Trim()}' must be provided!";
                                             buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
                                         }
                                         else
@@ -301,7 +306,7 @@ namespace PSE.Builder
 
         private IOutputModel? ManipulateInputData(IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
-            IOutputModel? _output = manipolationType switch
+            IOutputModel? output = manipolationType switch
             {
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
                 ManipolationTypes.AsSection1 => _manSect1.Manipulate(extractedData),
@@ -320,75 +325,76 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection16And17 => _manSect16And17.Manipulate(extractedData),
                 ManipolationTypes.AsSection18And19 => _manSect18And19.Manipulate(extractedData),
                 ManipolationTypes.AsSection20 => _manSect20.Manipulate(extractedData),
+                ManipolationTypes.AsSection21 => _manSect21.Manipulate(extractedData),
                 ManipolationTypes.AsSection23 => _manSect23.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,
             };
-            return _output;
+            return output;
         }
 
         private static string SerializeOutputData(SectionsContainer outputDataContainer, BuildFormats formatToBuild)
         {
-            string? _serializedData = null;
+            string? serializedData = null;
             switch (formatToBuild)
             {
                 case BuildFormats.Xml:
                     {
-                        var _serializer = new XmlSerializer(typeof(SectionsContainer));
+                        var serializer = new XmlSerializer(typeof(SectionsContainer));
                         using StringWriter textWriter = new();
-                        _serializer.Serialize(textWriter, outputDataContainer);
-                        _serializedData = textWriter.ToString();
+                        serializer.Serialize(textWriter, outputDataContainer);
+                        serializedData = textWriter.ToString();
                     }
                     break;
                 case BuildFormats.Json:
-                    _serializedData = Model.Common.JsonUtility.JsonObjectSerialization<SectionsContainer>(outputDataContainer);
+                    serializedData = Model.Common.JsonUtility.JsonObjectSerialization<SectionsContainer>(outputDataContainer);
                     break;
             }
-            return _serializedData ?? string.Empty;
+            return serializedData ?? string.Empty;
         }
 
         public IBuiltData Build(IList<IInputRecord> extractedData, BuildFormats formatToBuild)
         {
-            IBuiltData _buildData = new BuiltData();
-            IList<IOutputModel> _sections = new List<IOutputModel>();
+            IBuiltData buildData = new BuiltData();
+            IList<IOutputModel> sections = new List<IOutputModel>();
             try
             {
-                _buildData.BuildingLog.BuildingStart = DateTime.Now;
+                buildData.BuildingLog.BuildingStart = DateTime.Now;
                 foreach ((ManipolationTypes manipolationType, bool isMandatory) in _manipolationTypesToManage)
                 {
-                    CheckInputData(_buildData, extractedData, manipolationType, isMandatory, formatToBuild);
-                    if (_buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
+                    CheckInputData(buildData, extractedData, manipolationType, isMandatory, formatToBuild);
+                    if (buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
                     {
-                        IOutputModel? _output = ManipulateInputData(extractedData, manipolationType);
-                        if (_output != null)
-                            _sections.Add(_output);
+                        IOutputModel? output = ManipulateInputData(extractedData, manipolationType);
+                        if (output != null)
+                            sections.Add(output);
                         else
                         {
-                            _buildData.BuildingLog.FurtherErrorMessage = "Input data manipulation failed, impossible to generate the output object!";
-                            _buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                            buildData.BuildingLog.FurtherErrorMessage = "Input data manipulation failed, impossible to generate the output object!";
+                            buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
                         }
                     }
                 }
-                _buildData.OutputData = SerializeOutputData(new SectionsContainer(_sections), formatToBuild);
-                if (string.IsNullOrEmpty(_buildData.OutputData))
+                buildData.OutputData = SerializeOutputData(new SectionsContainer(sections), formatToBuild);
+                if (string.IsNullOrEmpty(buildData.OutputData))
                 {
-                    _buildData.BuildingLog.FurtherErrorMessage = "Input data serialization failed, impossible to generate the output file!";
-                    _buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                    buildData.BuildingLog.FurtherErrorMessage = "Input data serialization failed, impossible to generate the output file!";
+                    buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
                 }
                 else
-                    _buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
+                    buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
             }
-            catch (Exception _ex)
+            catch (Exception ex)
             {
-                _buildData.BuildingLog.FurtherErrorMessage = "Unexpected error occurred! Please see inner exception for more details.";
-                _buildData.BuildingLog.ExceptionOccurred = _ex;
-                _buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
+                buildData.BuildingLog.FurtherErrorMessage = "Unexpected error occurred! Please see inner exception for more details.";
+                buildData.BuildingLog.ExceptionOccurred = ex;
+                buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
             }
             finally
             {
-                _buildData.BuildingLog.BuildingEnd = DateTime.Now;
+                buildData.BuildingLog.BuildingEnd = DateTime.Now;
             }
-            return _buildData;
+            return buildData;
         }
 
     }

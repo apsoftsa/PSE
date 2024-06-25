@@ -57,7 +57,7 @@ namespace PSE.BusinessLogic
                             Sector = sectorDescr,
                             PercentShares = 0
                         };
-                        totalSum += Math.Abs(econSector.MarketValueReportingCurrency!.Value);
+                        totalSum += econSector.MarketValueReportingCurrency.HasValue ? Math.Abs(econSector.MarketValueReportingCurrency.Value) : 0;
                         sectionContent.ActionByEconSector.First().Sectors.Add(econSector);                        
                     }
                     totalPerc = currPerc = 0;

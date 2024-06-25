@@ -20,197 +20,197 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section3 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section3 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(PER)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(PER)))
             {
-                bool _hasValue;
-                IKeyInformation _currKeyInf;
-                IAssetExtract _currAsstExtr;
-                ExternalCodifyRequestEventArgs _extEventArgsPortfolio;
-                ExternalCodifyRequestEventArgs _extEventArgsService;
-                Dictionary<string, object> _propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                List<PER> _perItems = extractedData.Where(_flt => _flt.RecordType == nameof(PER)).OfType<PER>().ToList();
-                foreach (IDE _ideItem in _ideItems)
+                bool hasValue;
+                IKeyInformation currKeyInf;
+                IAssetExtract currAsstExtr;
+                ExternalCodifyRequestEventArgs extEventArgsPortfolio;
+                ExternalCodifyRequestEventArgs extEventArgsService;
+                Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                List<PER> perItems = extractedData.Where(flt => flt.RecordType == nameof(PER)).OfType<PER>().ToList();
+                foreach (IDE ideItem in ideItems)
                 {
-                    if (ManipulatorOperatingRules.CheckInputLanguage(_ideItem.Language_18))
-                        _propertyParams[nameof(IDE.Language_18)] = _ideItem.Language_18;
-                    if (_perItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                        propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    if (perItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
                         // it is necessary to take only the PER item having the property Type_5 value smallest (!!!!)
-                        PER _perItem = _perItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).OrderBy(_ob => _ob.Type_5).First();
-                        _extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), _ideItem.ModelCode_21, _propertyParams);
-                        OnExternalCodifyRequest(_extEventArgsPortfolio);
-                        if (!_extEventArgsPortfolio.Cancel)
+                        PER perItem = perItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).OrderBy(ob => ob.Type_5).First();
+                        extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Portfolio), ideItem.ModelCode_21, propertyParams);
+                        OnExternalCodifyRequest(extEventArgsPortfolio);
+                        if (!extEventArgsPortfolio.Cancel)
                         {
-                            _extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Service), _ideItem.Mandate_11, _propertyParams);
-                            OnExternalCodifyRequest(_extEventArgsService);
-                            if (!_extEventArgsService.Cancel)
+                            extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section3), nameof(KeyInformation.Service), ideItem.Mandate_11, propertyParams);
+                            OnExternalCodifyRequest(extEventArgsService);
+                            if (!extEventArgsService.Cancel)
                             {
-                                _currKeyInf = new KeyInformation()
+                                currKeyInf = new KeyInformation()
                                 {
-                                    CustomerName = _ideItem.CustomerNameShort_5,
-                                    CustomerNumber = _ideItem.CustomerNumber_2,
-                                    Portfolio = _extEventArgsPortfolio.PropertyValue,
-                                    Service = _extEventArgsService.PropertyValue,
+                                    CustomerName = ideItem.CustomerNameShort_5,
+                                    CustomerNumber = ideItem.CustomerNumber_2,
+                                    Portfolio = extEventArgsPortfolio.PropertyValue,
+                                    Service = extEventArgsService.PropertyValue,
                                     RiskProfile = "[RiskProfile]", // not still recovered (!)
-                                    PercentWeightedPerformance = _perItem.TWR_14 != null ? _perItem.TWR_14.Value : null,
+                                    PercentWeightedPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : null,
                                 };
-                                _output.Content.KeysInformation.Add(new KeyInformation(_currKeyInf));
-                                if (_perItem.StartValue_8 != null && _perItem.StartDate_6 != null)
+                                output.Content.KeysInformation.Add(new KeyInformation(currKeyInf));
+                                if (perItem.StartValue_8 != null && perItem.StartDate_6 != null)
                                 {
-                                    decimal _startValue, _cashIn, _cashOut, _secIn, _secOut, _portfolioValueRectified;
-                                    _cashIn = _cashOut = _secIn = _secOut = 0;
-                                    _startValue = _perItem.StartValue_8.Value;
-                                    _currAsstExtr = new AssetExtract()
+                                    decimal startValue, cashIn, cashOut, secIn, secOut, portfolioValueRectified;
+                                    cashIn = cashOut = secIn = secOut = 0;
+                                    startValue = perItem.StartValue_8.Value;
+                                    currAsstExtr = new AssetExtract()
                                     {
-                                        AssetClass = "Portfolio Value " + ((DateTime)_perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                        MarketValueReportingCurrencyT = _startValue,
+                                        AssetClass = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                        MarketValueReportingCurrencyT = startValue,
                                         AssetType = "+ Contributions"
                                     };
-                                    _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
-                                    _hasValue = false;
-                                    if (_perItem.CashOut_11 != null)
+                                    output.Content.AssetsExtract.Add(new AssetExtract(currAsstExtr));
+                                    hasValue = false;
+                                    if (perItem.CashOut_11 != null)
                                     {
-                                        _cashOut = _perItem.CashOut_11.Value;
-                                        _hasValue = true;
+                                        cashOut = perItem.CashOut_11.Value;
+                                        hasValue = true;
                                     }
-                                    if (_perItem.SecOut_13 != null)
+                                    if (perItem.SecOut_13 != null)
                                     {
-                                        _secOut = _perItem.SecOut_13.Value;
-                                        _hasValue = true;
+                                        secOut = perItem.SecOut_13.Value;
+                                        hasValue = true;
                                     }
-                                    if (_hasValue)
+                                    if (hasValue)
                                     {
-                                        _currAsstExtr = new AssetExtract()
+                                        currAsstExtr = new AssetExtract()
                                         {
-                                            AssetClass = "Portfolio Value " + ((DateTime)_perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                            MarketValueReportingCurrencyT = _startValue,
+                                            AssetClass = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                            MarketValueReportingCurrencyT = startValue,
                                             AssetType = "- Withdrawals",
-                                            MarketValueReportingCurrency = _cashOut + _secOut
+                                            MarketValueReportingCurrency = cashOut + secOut
                                         };
-                                        _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
-                                        if (_perItem.CashIn_10 != null)
-                                            _cashIn = _perItem.CashIn_10.Value;
-                                        if (_perItem.SecIn_12 != null)
-                                            _secIn = _perItem.SecIn_12.Value;
-                                        _portfolioValueRectified = _startValue + (_cashIn + _secIn + _cashOut + _secOut);
-                                        _currAsstExtr = new AssetExtract()
+                                        output.Content.AssetsExtract.Add(new AssetExtract(currAsstExtr));
+                                        if (perItem.CashIn_10 != null)
+                                            cashIn = perItem.CashIn_10.Value;
+                                        if (perItem.SecIn_12 != null)
+                                            secIn = perItem.SecIn_12.Value;
+                                        portfolioValueRectified = startValue + (cashIn + secIn + cashOut + secOut);
+                                        currAsstExtr = new AssetExtract()
                                         {
                                             AssetClass = "Portfolio Value Rectified",
-                                            MarketValueReportingCurrencyT = _portfolioValueRectified
+                                            MarketValueReportingCurrencyT = portfolioValueRectified
                                         };
-                                        _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
-                                        if (_perItem.EndValue_9 != null && _perItem.EndDate_7 != null)
+                                        output.Content.AssetsExtract.Add(new AssetExtract(currAsstExtr));
+                                        if (perItem.EndValue_9 != null && perItem.EndDate_7 != null)
                                         {
-                                            _currAsstExtr = new AssetExtract()
+                                            currAsstExtr = new AssetExtract()
                                             {
-                                                AssetClass = "Portfolio Value " + ((DateTime)_perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                                MarketValueReportingCurrencyT = _perItem.EndValue_9.Value
+                                                AssetClass = "Portfolio Value " + ((DateTime)perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                                MarketValueReportingCurrencyT = perItem.EndValue_9.Value
                                             };
-                                            _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
-                                            _currAsstExtr = new AssetExtract()
+                                            output.Content.AssetsExtract.Add(new AssetExtract(currAsstExtr));
+                                            currAsstExtr = new AssetExtract()
                                             {
                                                 AssetClass = "Plus/less value",
-                                                MarketValueReportingCurrencyT = _perItem.EndValue_9.Value - _portfolioValueRectified
+                                                MarketValueReportingCurrencyT = perItem.EndValue_9.Value - portfolioValueRectified
                                             };
-                                            _output.Content.AssetsExtract.Add(new AssetExtract(_currAsstExtr));
+                                            output.Content.AssetsExtract.Add(new AssetExtract(currAsstExtr));
 
                                         }
                                     }
                                 }
-                                if (_perItem.Interest_15 != null)
+                                if (perItem.Interest_15 != null)
                                 {
-                                    decimal _interest, _realEquity, _realCurr, _nonRealEquity, _nonRealCurrency;
-                                    _realEquity = _realCurr = _nonRealEquity = _nonRealCurrency = 0;
-                                    _interest = _perItem.Interest_15.Value;
-                                    _currAsstExtr = new AssetExtract()
+                                    decimal interest, realEquity, realCurr, nonRealEquity, nonRealCurrency;
+                                    realEquity = realCurr = nonRealEquity = nonRealCurrency = 0;
+                                    interest = perItem.Interest_15.Value;
+                                    currAsstExtr = new AssetExtract()
                                     {
                                         AssetClass = "Dividend and Interest",
-                                        MarketValueReportingCurrencyT = _interest,
+                                        MarketValueReportingCurrencyT = interest,
                                     };
-                                    _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
-                                    _hasValue = false;
-                                    if (_perItem.PlRealEquity_16 != null)
+                                    output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
+                                    hasValue = false;
+                                    if (perItem.PlRealEquity_16 != null)
                                     {
-                                        _realEquity = _perItem.PlRealEquity_16.Value;
-                                        _hasValue = true;
+                                        realEquity = perItem.PlRealEquity_16.Value;
+                                        hasValue = true;
                                     }
-                                    if (_perItem.PlRealCurrency_17 != null)
+                                    if (perItem.PlRealCurrency_17 != null)
                                     {
-                                        _realCurr = _perItem.PlRealCurrency_17.Value;
-                                        _hasValue = true;
+                                        realCurr = perItem.PlRealCurrency_17.Value;
+                                        hasValue = true;
                                     }
-                                    if (_hasValue)
+                                    if (hasValue)
                                     {
-                                        _currAsstExtr = new AssetExtract()
+                                        currAsstExtr = new AssetExtract()
                                         {
                                             AssetClass = "Realized gains/losses",
-                                            MarketValueReportingCurrencyT = _realEquity + _realCurr,
+                                            MarketValueReportingCurrencyT = realEquity + realCurr,
                                             AssetType = "on which ongoing",
-                                            MarketValueReportingCurrency = _realEquity
+                                            MarketValueReportingCurrency = realEquity
                                         };
-                                        _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
-                                        _currAsstExtr = new AssetExtract()
+                                        output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
+                                        currAsstExtr = new AssetExtract()
                                         {
                                             AssetClass = "Realized gains/losses",
-                                            MarketValueReportingCurrencyT = _realEquity + _realCurr,
+                                            MarketValueReportingCurrencyT = realEquity + realCurr,
                                             AssetType = "on which on currency",
-                                            MarketValueReportingCurrency = _realCurr
+                                            MarketValueReportingCurrency = realCurr
                                         };
-                                        _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
-                                        _hasValue = false;
-                                        if (_perItem.PlNonRealEquity_18 != null)
+                                        output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
+                                        hasValue = false;
+                                        if (perItem.PlNonRealEquity_18 != null)
                                         {
-                                            _nonRealEquity = _perItem.PlNonRealEquity_18.Value;
-                                            _hasValue = true;
+                                            nonRealEquity = perItem.PlNonRealEquity_18.Value;
+                                            hasValue = true;
                                         }
-                                        if (_perItem.PlNonRealCurrency_19 != null)
+                                        if (perItem.PlNonRealCurrency_19 != null)
                                         {
-                                            _nonRealCurrency = _perItem.PlNonRealCurrency_19.Value;
-                                            _hasValue = true;
+                                            nonRealCurrency = perItem.PlNonRealCurrency_19.Value;
+                                            hasValue = true;
                                         }
-                                        if (_hasValue)
+                                        if (hasValue)
                                         {
-                                            _currAsstExtr = new AssetExtract()
+                                            currAsstExtr = new AssetExtract()
                                             {
                                                 AssetClass = "Not realized gains/losses",
-                                                MarketValueReportingCurrencyT = _nonRealEquity + _nonRealCurrency,
+                                                MarketValueReportingCurrencyT = nonRealEquity + nonRealCurrency,
                                                 AssetType = "on which ongoing",
-                                                MarketValueReportingCurrency = _nonRealEquity
+                                                MarketValueReportingCurrency = nonRealEquity
                                             };
-                                            _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
-                                            _currAsstExtr = new AssetExtract()
+                                            output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
+                                            currAsstExtr = new AssetExtract()
                                             {
                                                 AssetClass = "Not realized gains/losses",
-                                                MarketValueReportingCurrencyT = _nonRealEquity + _nonRealCurrency,
+                                                MarketValueReportingCurrencyT = nonRealEquity + nonRealCurrency,
                                                 AssetType = "on which on currency",
-                                                MarketValueReportingCurrency = _nonRealCurrency
+                                                MarketValueReportingCurrency = nonRealCurrency
                                             };
-                                            _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
-                                            _currAsstExtr = new AssetExtract()
+                                            output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
+                                            currAsstExtr = new AssetExtract()
                                             {
                                                 AssetClass = "Plus/less value",
-                                                MarketValueReportingCurrencyT = _interest + _realEquity + _realCurr +
-                                                                                _nonRealEquity + _nonRealCurrency
+                                                MarketValueReportingCurrencyT = interest + realEquity + realCurr +
+                                                                                nonRealEquity + nonRealCurrency
                                             };
-                                            _output.Content.DividendsInterests.Add(new AssetExtract(_currAsstExtr));
+                                            output.Content.DividendsInterests.Add(new AssetExtract(currAsstExtr));
                                         }
                                     }
                                 }
-                                _output.Content.FooterInformation.Add(new FooterInformation() { Footer1 = "[footer1]", Footer2 = "[footer2]" }); // not still recovered (!)
+                                output.Content.FooterInformation.Add(new FooterInformation() { Footer1 = "[footer1]", Footer2 = "[footer2]" }); // not still recovered (!)
                             }
                         }
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

@@ -32,9 +32,9 @@ namespace PSE.WebApi.Controllers
         [HttpGet("Version")]        
         public ActionResult<string> GetVersion()
         {
-            Assembly _assembly = Assembly.GetExecutingAssembly();
-            FileVersionInfo _fvi = FileVersionInfo.GetVersionInfo(_assembly.Location);
-            return Ok(_fvi.FileVersion);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            return Ok(fvi.FileVersion);
         }
 
         [HttpPost("Build")]
@@ -44,9 +44,9 @@ namespace PSE.WebApi.Controllers
             {
                 string outputJson = string.Empty;
                 var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                OutputContent _outCont = ExtractionManager.ExtractFiles(fileContentList);
-                if (_outCont != null && _outCont.JsonGenerated != string.Empty)
-                    return Ok(JsonConvert.SerializeObject(_outCont));
+                OutputContent outCont = ExtractionManager.ExtractFiles(fileContentList);
+                if (outCont != null && outCont.JsonGenerated != string.Empty)
+                    return Ok(JsonConvert.SerializeObject(outCont));
                 else
                     return BadRequest();
             }

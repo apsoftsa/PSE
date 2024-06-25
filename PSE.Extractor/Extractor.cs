@@ -37,28 +37,28 @@ namespace PSE.Extractor
         /*
         private static void ConvertInputStream(string inputStream, IExtractedData extractedData)
         {
-            var _engine = new FixedFileEngine<IDE>();
-            IDE[] _result = _engine.ReadString(inputStream);
-            _engine.ErrorManager.ErrorMode = ErrorMode.IgnoreAndContinue;
-            object[] _itemsExtracted = _engine.ReadString(inputStream);
-            if (_itemsExtracted != null && _itemsExtracted.Length > 0)
+            var engine = new FixedFileEngine<IDE>();
+            IDE[] result = engine.ReadString(inputStream);
+            engine.ErrorManager.ErrorMode = ErrorMode.IgnoreAndContinue;
+            object[] itemsExtracted = engine.ReadString(inputStream);
+            if (itemsExtracted != null && itemsExtracted.Length > 0)
             {
-                foreach (object _itemExtracted in _itemsExtracted)
+                foreach (object _itemExtracted in itemsExtracted)
                 {
                     extractedData.ExtractedItems.Add((IInputRecord)_itemExtracted);
                 }
             }
-            if (_engine.ErrorManager.HasErrors)
+            if (engine.ErrorManager.HasErrors)
             {
-                foreach (var _err in _engine.ErrorManager.Errors)
+                foreach (var err in engine.ErrorManager.Errors)
                 {
                     extractedData.ExtractionLog.RecordsLog.Add(new RecordExtractionLog()
                     {
-                        LineNumber = _err.LineNumber,
-                        ExceptionOccurred = _err.ExceptionInfo,
-                        RecordInnerContent = _err.RecordString,
-                        RecordTypeName = _err.RecordTypeName,
-                        FurtherMessage = _err.ExceptionInfo.Message
+                        LineNumber = err.LineNumber,
+                        ExceptionOccurred = err.ExceptionInfo,
+                        RecordInnerContent = err.RecordString,
+                        RecordTypeName = err.RecordTypeName,
+                        FurtherMessage = err.ExceptionInfo.Message
                     });
                 }
                 extractedData.ExtractionLog.Outcome = StreamAcquisitionOutcomes.WithErrors;
@@ -70,7 +70,7 @@ namespace PSE.Extractor
 
         private static void ConvertInputStream(string inputStream, IExtractedData extractedData)
         {
-            MultiRecordEngine _engine = new(
+            MultiRecordEngine engine = new(
                 typeof(REQ),
                 typeof(IDE),
                 typeof(PER),
@@ -81,43 +81,43 @@ namespace PSE.Extractor
                 RecordSelector = new RecordTypeSelector(ModelSelector),                 
                 Encoding = Encoding.UTF8
             };
-            _engine.ErrorManager.ErrorMode = ErrorMode.ThrowException;
-            object[] _itemsExtracted = _engine.ReadString(inputStream);
-            if (_itemsExtracted != null && _itemsExtracted.Length > 0)
+            engine.ErrorManager.ErrorMode = ErrorMode.ThrowException;
+            object[] itemsExtracted = engine.ReadString(inputStream);
+            if (itemsExtracted != null && itemsExtracted.Length > 0)
             {
-                StringBuilder? _sb = null;
+                StringBuilder? sb = null;
                 if (_saveToFile && string.IsNullOrEmpty(_outputFileNameAndPath) == false)
                 {
-                    _sb = new StringBuilder();
+                    sb = new StringBuilder();
                     if (File.Exists(_outputFileNameAndPath))
                         File.Delete(_outputFileNameAndPath);
                 }
                 else
                     _saveToFile = false;    
-                foreach (object _itemExtracted in _itemsExtracted)
+                foreach (object itemExtracted in itemsExtracted)
                 {
-                    extractedData.ExtractedItems.Add((IInputRecord)_itemExtracted);
-                    _sb?.Append(((IInputRecord)_itemExtracted).ToString());
+                    extractedData.ExtractedItems.Add((IInputRecord)itemExtracted);
+                    sb?.Append(((IInputRecord)itemExtracted).ToString());
                 }
-                if (_sb != null)
+                if (sb != null)
                 {
-                    FileInfo _fileInfo = new FileInfo(_outputFileNameAndPath);
-                    if (_fileInfo.Exists == false && _fileInfo.Directory != null)
-                        Directory.CreateDirectory(_fileInfo.Directory.FullName);
-                    File.WriteAllText(_outputFileNameAndPath, _sb.ToString());
+                    FileInfo fileInfo = new FileInfo(_outputFileNameAndPath);
+                    if (fileInfo.Exists == false && fileInfo.Directory != null)
+                        Directory.CreateDirectory(fileInfo.Directory.FullName);
+                    File.WriteAllText(_outputFileNameAndPath, sb.ToString());
                 }
             }
-            if (_engine.ErrorManager.HasErrors)
+            if (engine.ErrorManager.HasErrors)
             {                
-                foreach(var _err in _engine.ErrorManager.Errors) 
+                foreach(var err in engine.ErrorManager.Errors) 
                 {
                     extractedData.ExtractionLog.RecordsLog.Add(new RecordExtractionLog()
                     {
-                        LineNumber = _err.LineNumber,
-                        ExceptionOccurred = _err.ExceptionInfo,
-                        RecordInnerContent = _err.RecordString,
-                        RecordTypeName = _err.RecordTypeName,
-                        FurtherMessage = _err.ExceptionInfo.Message
+                        LineNumber = err.LineNumber,
+                        ExceptionOccurred = err.ExceptionInfo,
+                        RecordInnerContent = err.RecordString,
+                        RecordTypeName = err.RecordTypeName,
+                        FurtherMessage = err.ExceptionInfo.Message
                     });
                 }
                 extractedData.ExtractionLog.Outcome = StreamAcquisitionOutcomes.WithErrors;
@@ -140,38 +140,38 @@ namespace PSE.Extractor
 
         public IExtractedData Extract(byte[] input)
         {
-            IExtractedData _result = new ExtractedData();            
+            IExtractedData result = new ExtractedData();            
             try
             {
-                _result.ExtractionLog.AcquisitionStart = DateTime.Now;
+                result.ExtractionLog.AcquisitionStart = DateTime.Now;
                 if (input != null && input.Length > 0)
                 {
-                    _result.ExtractionLog.StreamLength = input.Length;
-                    ConvertInputStream(ASCIIEncoding.ASCII.GetString(input), _result);
+                    result.ExtractionLog.StreamLength = input.Length;
+                    ConvertInputStream(ASCIIEncoding.ASCII.GetString(input), result);
                 }
                 else
                 {
-                    _result.ExtractionLog.Outcome = StreamAcquisitionOutcomes.Aborted;
-                    _result.ExtractionLog.RecordsLog.Add(new RecordExtractionLog()
+                    result.ExtractionLog.Outcome = StreamAcquisitionOutcomes.Aborted;
+                    result.ExtractionLog.RecordsLog.Add(new RecordExtractionLog()
                     {
                         FurtherMessage = "The input byte stream is null or empty!"
                     });
                 }
             }
-            catch (Exception _ex)
+            catch (Exception ex)
             {
-                _result.ExtractionLog.Outcome = StreamAcquisitionOutcomes.Aborted;
-                _result.ExtractionLog.RecordsLog.Add(new RecordExtractionLog() 
+                result.ExtractionLog.Outcome = StreamAcquisitionOutcomes.Aborted;
+                result.ExtractionLog.RecordsLog.Add(new RecordExtractionLog() 
                 { 
                     FurtherMessage= "Unexpected error occurred! Please see inner exception for more details.",
-                    ExceptionOccurred = _ex 
+                    ExceptionOccurred = ex 
                 });
             }
             finally
             {
-                _result.ExtractionLog.AcquisitionEnd = DateTime.Now;
+                result.ExtractionLog.AcquisitionEnd = DateTime.Now;
             }
-            return _result;
+            return result;
         }
 
     }

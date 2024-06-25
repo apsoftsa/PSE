@@ -5,7 +5,6 @@ using PSE.Model.Events;
 using PSE.Model.Common;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Models;
-using PSE.Model.Output.Interfaces;
 
 namespace PSE.Decoder
 {
@@ -24,13 +23,13 @@ namespace PSE.Decoder
             _serviceProvider = null;
             if (appSettings.DecoderEnabled)
             {
-                ServiceCollection _serviceCollection = new ServiceCollection();
-                _serviceCollection.AddDbContext<BOSSDbContext>(_options =>
+                ServiceCollection serviceCollection = new ServiceCollection();
+                serviceCollection.AddDbContext<BOSSDbContext>(options =>
                 {
-                    _options.UseSqlServer(appSettings.DecoderStringConnection);                       
-                    _options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                    options.UseSqlServer(appSettings.DecoderStringConnection);                       
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 });
-                _serviceProvider = _serviceCollection.BuildServiceProvider();
+                _serviceProvider = serviceCollection.BuildServiceProvider();
             }
         }
 
@@ -42,17 +41,17 @@ namespace PSE.Decoder
                 if (_serviceProvider != null && e != null && string.IsNullOrEmpty(e.PropertyKey) == false)
                 {
                     e.PropertyValue = NOT_FOUND;
-                    BOSSDbContext? _context = _serviceProvider.GetService<BOSSDbContext>();
-                    if (_context != null)
+                    BOSSDbContext? context = _serviceProvider.GetService<BOSSDbContext>();
+                    if (context != null)
                     {                        
                         if (e.SectionName == nameof(Section1) && e.PropertyName == nameof(AssetStatement.Advisor))
                         {
-                            if (_context.AdaAuIde.Any(flt => flt.AuiNumPer == e.PropertyKey))
-                                e.PropertyValue = _context.AdaAuIde.First(flt => flt.AuiNumPer == e.PropertyKey).AuiNome;
+                            if (context.AdaAuIde.Any(flt => flt.AuiNumPer == e.PropertyKey))
+                                e.PropertyValue = context.AdaAuIde.First(flt => flt.AuiNumPer == e.PropertyKey).AuiNome;
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Portfolio))
                         {
-                            if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)))
+                            if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)))
                             {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -60,17 +59,17 @@ namespace PSE.Decoder
                                     languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
                                 e.PropertyValue = languageToCheck switch
                                 {
-                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextE,
-                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextT,
-                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextF,
-                                    _ => _context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextI,
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)).TextI,
                                 };
                                 e.PropertyValue = e.PropertyKey[1..] + " - " + e.PropertyValue;
                             }
                         }
                         else if (e.SectionName == nameof(Section3) && e.PropertyName == nameof(KeyInformation.Service))
                         {
-                            if (_context.Tabelle.Any(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey))
+                            if (context.Tabelle.Any(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey))
                             {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -78,16 +77,16 @@ namespace PSE.Decoder
                                     languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
                                 e.PropertyValue = languageToCheck switch
                                 {
-                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextE,
-                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextT,
-                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextF,
-                                    _ => _context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextI,
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
                         }
                         else if (e.SectionName == nameof(Section6) && (e.PropertyName == nameof(Asset.AssetClass) || e.PropertyName == nameof(Asset.TypeInvestment)))
                         {
-                            if (_context.Tabelle.Any(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey))
+                            if (context.Tabelle.Any(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey))
                             {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -95,16 +94,16 @@ namespace PSE.Decoder
                                     languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
                                 e.PropertyValue = languageToCheck switch
                                 {
-                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextE,
-                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextT,
-                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextF,
-                                    _ => _context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
                         }
                         else if (e.SectionName == nameof(Section23) && e.PropertyName == nameof(EconSector.Sector))
                         {
-                            if (e.PropertyKey.Length > 0 && _context.Tabelle.Any(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey))
+                            if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey))
                             {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -112,10 +111,10 @@ namespace PSE.Decoder
                                     languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
                                 e.PropertyValue = languageToCheck switch
                                 {
-                                    Constants.ENGLISH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextE,
-                                    Constants.GERMAN_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextT,
-                                    Constants.FRENCH_LANGUAGE_CODE => _context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextF,
-                                    _ => _context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextI,
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
                         }

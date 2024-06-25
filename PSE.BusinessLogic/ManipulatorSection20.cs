@@ -18,49 +18,49 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section20 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section20 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _customerSumAmounts, _currentBaseValue;
-                IMetalPhysicalMetalAccount _metPhyMetAcc;
-                ISection20Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                foreach (IDE _ideItem in _ideItems)
+                decimal customerSumAmounts, currentBaseValue;
+                IMetalPhysicalMetalAccount metPhyMetAcc;
+                ISection20Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section20Content();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section20Content();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                            _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                            _metPhyMetAcc = new MetalPhysicalMetalAccount()
+                            currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                            currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                            metPhyMetAcc = new MetalPhysicalMetalAccount()
                             {
-                                Account = _posItem.HostPositionReference_6,
-                                CurrentBalance = _posItem.Amount1Cur1_22 != null ? _posItem.Amount1Cur1_22.Value : 0,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
-                                Amount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                PurchasingCourse = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
+                                Account = posItem.HostPositionReference_6,
+                                CurrentBalance = posItem.Amount1Cur1_22 != null ? posItem.Amount1Cur1_22.Value : 0,
+                                MarketValueReportingCurrency = posItem.Amount1Base_23 != null ? posItem.Amount1Base_23.Value : 0,
+                                Amount = posItem.Quantity_28 != null ? posItem.Quantity_28.Value : 0,
+                                PurchasingCourse = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
                                 CostPrice = 0, // not still recovered (!)
                                 PercentDifference = 0, // not still recovered (!)
-                                PercentAsset = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
+                                PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
-                            _sectionContent.MetalPhysicalMetalAccounts.Add(_metPhyMetAcc);
-                            _posItem.AlreadyUsed = true;    
+                            sectionContent.MetalPhysicalMetalAccounts.Add(metPhyMetAcc);
+                            posItem.AlreadyUsed = true;    
                         }
-                        _output.Content = new Section20Content(_sectionContent);
+                        output.Content = new Section20Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

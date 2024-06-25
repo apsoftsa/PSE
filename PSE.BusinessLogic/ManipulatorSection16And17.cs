@@ -35,131 +35,131 @@ namespace PSE.BusinessLogic
 
         public override string GetObjectNameDestination(IInputRecord inputRecord)
         {
-            string _destinationObjectName = String.Empty;
+            string destinationObjectName = string.Empty;
             if (inputRecord != null && inputRecord.GetType() == typeof(POS))
             {
-                string _subCategory = ((POS)inputRecord).SubCat4_15;
-                string _category = ((POS)inputRecord).Category_11;
-                if (_subCategory != string.Empty && _category != string.Empty && _category.Trim().Length >= 8 
-                    && Enum.IsDefined(typeof(PositionClassifications), int.Parse(_subCategory)))
+                string subCategory = ((POS)inputRecord).SubCat4_15;
+                string category = ((POS)inputRecord).Category_11;
+                if (subCategory != string.Empty && category != string.Empty && category.Trim().Length >= 8 
+                    && Enum.IsDefined(typeof(PositionClassifications), int.Parse(subCategory)))
                 {
-                    PositionClassifications _currPosClass = (PositionClassifications)int.Parse(_subCategory);
-                    if (this.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(_subCategory)))
+                    PositionClassifications currPosClass = (PositionClassifications)int.Parse(subCategory);
+                    if (this.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(subCategory)))
                     {
-                        switch (_category.Substring(6,2).ToUpper())
+                        switch (category.Substring(6,2).ToUpper())
                         {
                             case "FO":
                                 {
-                                    if(_currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO
-                                        || _currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI
-                                        || _currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI)
-                                        _destinationObjectName = "BondFunds";
+                                    if(currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO
+                                        || currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI
+                                        || currPosClass == PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI)
+                                        destinationObjectName = "BondFunds";
                                     break;
                                 }
                             case "FA":
                                 {
-                                    if (_currPosClass == PositionClassifications.AZIONI_FONDI_AZIONARI)
-                                        _destinationObjectName = "EquityFunds";
+                                    if (currPosClass == PositionClassifications.AZIONI_FONDI_AZIONARI)
+                                        destinationObjectName = "EquityFunds";
                                     break;
                                 }
                             case "FI":
                                 {
-                                    if (_currPosClass == PositionClassifications.PARTECIPAZIONI_IMMOBILIARI_FONDI_IMMOBILIARI)
-                                        _destinationObjectName = "RealEstateFunds";
+                                    if (currPosClass == PositionClassifications.PARTECIPAZIONI_IMMOBILIARI_FONDI_IMMOBILIARI)
+                                        destinationObjectName = "RealEstateFunds";
                                     break;
                                 }
                             case "MF":
                                 {
-                                    if (_currPosClass == PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO)
-                                        _destinationObjectName = "MetalFunds";
+                                    if (currPosClass == PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO)
+                                        destinationObjectName = "MetalFunds";
                                     break;
                                 }
                             case "FM":
                                 {
-                                    if (_currPosClass == PositionClassifications.FONDI_MISTI)
-                                        _destinationObjectName = "MixedFunds";
+                                    if (currPosClass == PositionClassifications.FONDI_MISTI)
+                                        destinationObjectName = "MixedFunds";
                                     break;
                                 }
                         }
                     }
                 }
             }
-            return _destinationObjectName;
+            return destinationObjectName;
         }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section16And17 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section16And17 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate, _customerSumAmounts, _currentBaseValue, _quoteType;
-                string _destinationObjectName;
-                IFundDetails _fundDetails;
-                ISection16And17Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
-                foreach (IDE _ideItem in _ideItems)
+                decimal currencyRate, customerSumAmounts, currentBaseValue, quoteType;
+                string destinationObjectName;
+                IFundDetails fundDetails;
+                ISection16And17Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    _customerSumAmounts += extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.ProRataBase_56.HasValue).Sum(_sum => _sum.ProRataBase_56.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section16And17Content();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section16And17Content();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            if ((_destinationObjectName = GetObjectNameDestination(_posItem)) != string.Empty)
+                            if ((destinationObjectName = GetObjectNameDestination(posItem)) != string.Empty)
                             {
-                                _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                                _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                                _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
-                                _fundDetails = new FundDetail()
+                                currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                                currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                                quoteType = string.IsNullOrEmpty(posItem.QuoteType_51) == false && posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
+                                fundDetails = new FundDetail()
                                 {
-                                    ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
-                                    Currency = _posItem.Currency1_17,
-                                    Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                    CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
-                                    PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
-                                    PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
-                                    NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                    ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
-                                    Isin = _posItem.IsinIban_85,
-                                    SPRating = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "SP") ? _posItem.Rating_98 : string.Empty,
-                                    MsciEsg = (string.IsNullOrEmpty(_posItem.AgeRat_97) == false && _posItem.AgeRat_97.Trim() == "ES") ? _posItem.Rating_98 : string.Empty,
-                                    ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
-                                    PercentAsset = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, _calcFunds.MeaningfulDecimalDigits) : 0
+                                    ValorNumber = posItem.NumSecurity_29 != null ? posItem.NumSecurity_29 : 0,
+                                    Currency = posItem.Currency1_17,
+                                    Description = ((string.IsNullOrEmpty(posItem.Description1_32) ? "" : posItem.Description1_32) + " " + (string.IsNullOrEmpty(posItem.Description2_33) ? "" : posItem.Description2_33)).Trim(),
+                                    CurrentPrice = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
+                                    PurchasePrice = posItem.BuyPriceHistoric_53 != null ? posItem.BuyPriceHistoric_53.Value : 0,
+                                    PriceBeginningYear = posItem.BuyPriceAverage_87 != null ? posItem.BuyPriceAverage_87.Value : 0,
+                                    NominalAmount = posItem.Quantity_28 != null ? posItem.Quantity_28.Value : 0,
+                                    ExchangeRateImpactPurchase = posItem.BuyExchangeRateHistoric_66 != null ? posItem.BuyExchangeRateHistoric_66.Value : 0, //temporary
+                                    Isin = posItem.IsinIban_85,
+                                    SPRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
+                                    MsciEsg = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "ES") ? posItem.Rating_98 : string.Empty,
+                                    ExchangeRateImpactYTD = posItem.BuyExchangeRateAverage_88 != null ? posItem.BuyExchangeRateAverage_88.Value : 0, //temporary
+                                    PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, _calcFunds.MeaningfulDecimalDigits) : 0
                                 };
-                                _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _fundDetails.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _fundDetails.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                                _fundDetails.PerformancePurchase = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PurchasePrice.Value) * _fundDetails.NominalAmount.Value / _quoteType, _calcFunds.MeaningfulDecimalDigits);
-                                _fundDetails.PerformanceYTD = Math.Round((_fundDetails.CurrentPrice.Value - _fundDetails.PriceBeginningYear.Value) * _fundDetails.NominalAmount.Value / _quoteType, _calcFunds.MeaningfulDecimalDigits);
-                                _fundDetails.PercentPerformancePurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.PurchasePrice.Value, _fundDetails.CurrentPrice.Value));
-                                _fundDetails.PercentPerformanceYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.PriceBeginningYear.Value, _fundDetails.CurrentPrice.Value));
-                                _fundDetails.ExchangeRateImpactPurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.ExchangeRateImpactPurchase.Value, _currencyRate));
-                                _fundDetails.ExchangeRateImpactYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(_fundDetails.NominalAmount, _fundDetails.CurrentPrice), _fundDetails.ExchangeRateImpactYTD.Value, _currencyRate));
-                                if (_destinationObjectName == "BondFunds")
-                                    _sectionContent.BondFunds.Add(_fundDetails);
-                                else if (_destinationObjectName == "EquityFunds")
-                                    _sectionContent.EquityFunds.Add(_fundDetails);
-                                else if (_destinationObjectName == "RealEstateFunds")
-                                    _sectionContent.RealEstateFunds.Add(_fundDetails);
-                                else if (_destinationObjectName == "MetalFunds")
-                                    _sectionContent.MetalFunds.Add(_fundDetails);
-                                else if (_destinationObjectName == "MixedFunds")
-                                    _sectionContent.MixedFunds.Add(_fundDetails);
-                                _posItem.AlreadyUsed = true;
+                                currencyRate = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == fundDetails.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == fundDetails.Currency && flt.Rate_6 != null).Rate_6.Value : 0;
+                                fundDetails.PerformancePurchase = Math.Round((fundDetails.CurrentPrice.Value - fundDetails.PurchasePrice.Value) * fundDetails.NominalAmount.Value / quoteType, _calcFunds.MeaningfulDecimalDigits);
+                                fundDetails.PerformanceYTD = Math.Round((fundDetails.CurrentPrice.Value - fundDetails.PriceBeginningYear.Value) * fundDetails.NominalAmount.Value / quoteType, _calcFunds.MeaningfulDecimalDigits);
+                                fundDetails.PercentPerformancePurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(fundDetails.NominalAmount, fundDetails.CurrentPrice), fundDetails.PurchasePrice.Value, fundDetails.CurrentPrice.Value));
+                                fundDetails.PercentPerformanceYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(fundDetails.NominalAmount, fundDetails.CurrentPrice), fundDetails.PriceBeginningYear.Value, fundDetails.CurrentPrice.Value));
+                                fundDetails.ExchangeRateImpactPurchase = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(fundDetails.NominalAmount, fundDetails.CurrentPrice), fundDetails.ExchangeRateImpactPurchase.Value, currencyRate));
+                                fundDetails.ExchangeRateImpactYTD = _calcFunds.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcFunds.GetSign(fundDetails.NominalAmount, fundDetails.CurrentPrice), fundDetails.ExchangeRateImpactYTD.Value, currencyRate));
+                                if (destinationObjectName == "BondFunds")
+                                    sectionContent.BondFunds.Add(fundDetails);
+                                else if (destinationObjectName == "EquityFunds")
+                                    sectionContent.EquityFunds.Add(fundDetails);
+                                else if (destinationObjectName == "RealEstateFunds")
+                                    sectionContent.RealEstateFunds.Add(fundDetails);
+                                else if (destinationObjectName == "MetalFunds")
+                                    sectionContent.MetalFunds.Add(fundDetails);
+                                else if (destinationObjectName == "MixedFunds")
+                                    sectionContent.MixedFunds.Add(fundDetails);
+                                posItem.AlreadyUsed = true;
                             }
                         }
-                        _output.Content = new Section16And17Content(_sectionContent);
+                        output.Content = new Section16And17Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

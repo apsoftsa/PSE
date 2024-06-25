@@ -150,6 +150,7 @@ namespace PSE.BusinessLogic.Common
                 new SectionBinding(ManipolationTypes.AsSection16And17, "section16-17", "Funds", new List<PositionClassifications>() { PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_1_ANNO, PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MINOR_OR_EQUAL_5_ANNI, PositionClassifications.OBBLIGAZIONI_CON_SCADENZA_MAJOR_THAN_5_ANNI_FONDI_OBBLIGAZIONARI }),
                 new SectionBinding(ManipolationTypes.AsSection18And19, "section18_19", "Others investments", new List<PositionClassifications>() { PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI, PositionClassifications.PRODOTTI_DERIVATI, PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI }),
                 new SectionBinding(ManipolationTypes.AsSection20, "section20", "Metals", new List<PositionClassifications>() { PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO }),
+                new SectionBinding(ManipolationTypes.AsSection21, "section21", "Information Position", new List<PositionClassifications>() { PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE, PositionClassifications.IMPEGNI_EVENTUALI }),
                 new SectionBinding(ManipolationTypes.AsSection23, "section23", "Subdivision by economical sector"),
                 new SectionBinding(ManipolationTypes.AsFooter, "footer", "Footers"),
             };
@@ -164,41 +165,41 @@ namespace PSE.BusinessLogic.Common
 
         public static bool ArePOSRowsManipulable(IEnumerable<POS> sourcePOSRows, ManipolationTypes currentManipulationType)
         {
-            bool _areManipulable = false;
-            if (sourcePOSRows != null && _sectionsBinding.Any(_flt => _flt.SectionId == currentManipulationType))
+            bool areManipulable = false;
+            if (sourcePOSRows != null && _sectionsBinding.Any(flt => flt.SectionId == currentManipulationType))
             {
-                SectionBinding _sectionDest = _sectionsBinding.First(_flt => _flt.SectionId == currentManipulationType);
-                if (_sectionDest.ClassificationsBound != null && _sectionDest.ClassificationsBound.Any())
+                SectionBinding sectionDest = _sectionsBinding.First(flt => flt.SectionId == currentManipulationType);
+                if (sectionDest.ClassificationsBound != null && sectionDest.ClassificationsBound.Any())
                 {
-                    foreach (PositionClassifications _positionClassificationBound in _sectionDest.ClassificationsBound)
+                    foreach (PositionClassifications positionClassificationBound in sectionDest.ClassificationsBound)
                     {
-                        if (sourcePOSRows.Any(_flt => _flt.SubCat4_15.Trim() == ((int)_positionClassificationBound).ToString()))
+                        if (sourcePOSRows.Any(flt => flt.SubCat4_15.Trim() == ((int)positionClassificationBound).ToString()))
                         {
-                            _areManipulable = true; // if there is at least one POS row compatible with one of the classification bound to the destination section,
+                            areManipulable = true; // if there is at least one POS row compatible with one of the classification bound to the destination section,
                             break;                  // this means the the source POS rows can be manipulated by the specific manipulator object
                         }
                     }
                 }
             }
-            return _areManipulable;
+            return areManipulable;
         }
 
         public static SectionBinding GetDestinationSection(IManipulator manipulator)
         {
-            return _sectionsBinding.First(_flt => _flt.SectionId == manipulator.SectionDestination);
+            return _sectionsBinding.First(flt => flt.SectionId == manipulator.SectionDestination);
         }
 
         public static List<PositionClassifications> GetClassificationsBoundToSection(ManipolationTypes sectionId)
         {
-            return _sectionsBinding.First(_flt => _flt.SectionId == sectionId).ClassificationsBound;
+            return _sectionsBinding.First(flt => flt.SectionId == sectionId).ClassificationsBound;
         }
 
         public static bool CheckInputLanguage(string language)
         {
-            bool _checked = false;
+            bool @checked = false;
             if (!(string.IsNullOrEmpty(language) || language.Trim() == ""))
-                _checked = language == ENGLISH_LANGUAGE_CODE || language == GERMAN_LANGUAGE_CODE || language == FRENCH_LANGUAGE_CODE || language == ITALIAN_LANGUAGE_CODE;
-            return _checked;
+                @checked = language == ENGLISH_LANGUAGE_CODE || language == GERMAN_LANGUAGE_CODE || language == FRENCH_LANGUAGE_CODE || language == ITALIAN_LANGUAGE_CODE;
+            return @checked;
         }
 
     }

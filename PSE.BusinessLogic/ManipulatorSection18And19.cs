@@ -32,100 +32,100 @@ namespace PSE.BusinessLogic
 
         public override string GetObjectNameDestination(IInputRecord inputRecord)
         {
-            string _destinationObjectName = String.Empty;
+            string destinationObjectName = string.Empty;
             if (inputRecord != null && inputRecord.GetType() == typeof(POS))
             {
-                string _subCategory = ((POS)inputRecord).SubCat4_15;
-                if (_subCategory != null && Enum.IsDefined(typeof(PositionClassifications), int.Parse(_subCategory)))
+                string subCategory = ((POS)inputRecord).SubCat4_15;
+                if (subCategory != null && Enum.IsDefined(typeof(PositionClassifications), int.Parse(subCategory)))
                 {
-                    if (this.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(_subCategory)))
+                    if (this.PositionClassificationsSource.Contains((PositionClassifications)int.Parse(subCategory)))
                     {
-                        switch ((PositionClassifications)int.Parse(_subCategory))
+                        switch ((PositionClassifications)int.Parse(subCategory))
                         {
                             case PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI:
-                                _destinationObjectName = "DerivativesOnMetals";
+                                destinationObjectName = "DerivativesOnMetals";
                                 break;
                             case PositionClassifications.PRODOTTI_DERIVATI:
                             case PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI:
-                                _destinationObjectName = "Different";
+                                destinationObjectName = "Different";
                                 break;
                         }
                     }
                 }
             }
-            return _destinationObjectName;
+            return destinationObjectName;
         }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section18And19 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section18And19 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _currencyRate, _customerSumAmounts, _currentBaseValue, _quoteType;
-                string _destinationObjectName;
-                IAlternativeProductDetail _altProdDetails;
-                IAlternativeProducts _altProdDefinitions;
-                ISection18And19Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                IEnumerable<CUR> _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>();
-                foreach (IDE _ideItem in _ideItems)
+                decimal currencyRate, customerSumAmounts, currentBaseValue, quoteType;
+                string destinationObjectName;
+                IAlternativeProductDetail altProdDetails;
+                IAlternativeProducts altProdDefinitions;
+                ISection18And19Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    _customerSumAmounts += extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.ProRataBase_56.HasValue).Sum(_sum => _sum.ProRataBase_56.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section18And19Content();
-                        _altProdDefinitions = new AlternativeProducts();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section18And19Content();
+                        altProdDefinitions = new AlternativeProducts();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            if ((_destinationObjectName = GetObjectNameDestination(_posItem)) != string.Empty)
+                            if ((destinationObjectName = GetObjectNameDestination(posItem)) != string.Empty)
                             {
-                                _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                                _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                                _quoteType = string.IsNullOrEmpty(_posItem.QuoteType_51) == false && _posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
-                                _altProdDetails = new AlternativeProductDetail()
+                                currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                                currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                                quoteType = string.IsNullOrEmpty(posItem.QuoteType_51) == false && posItem.QuoteType_51.Trim() == "%" ? 100m : 1m;
+                                altProdDetails = new AlternativeProductDetail()
                                 {
-                                    ValorNumber = _posItem.NumSecurity_29 != null ? _posItem.NumSecurity_29 : 0,
-                                    Currency = _posItem.Currency1_17,
-                                    Description = ((string.IsNullOrEmpty(_posItem.Description1_32) ? "" : _posItem.Description1_32) + " " + (string.IsNullOrEmpty(_posItem.Description2_33) ? "" : _posItem.Description2_33)).Trim(),
-                                    DescriptionExtra = _posItem.CallaDate_38 != null ? ((DateTime)_posItem.CallaDate_38).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                    CurrentPrice = _posItem.Quote_48 != null ? _posItem.Quote_48.Value : 0,
-                                    PurchasePrice = _posItem.BuyPriceHistoric_53 != null ? _posItem.BuyPriceHistoric_53.Value : 0,
-                                    Isin = _posItem.IsinIban_85,
-                                    PriceBeginningYear = _posItem.BuyPriceAverage_87 != null ? _posItem.BuyPriceAverage_87.Value : 0,
-                                    NominalAmount = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                    UnderlyingDescription = _posItem.ConversionDesc_45,
-                                    ExchangeRateImpactPurchase = _posItem.BuyExchangeRateHistoric_66 != null ? _posItem.BuyExchangeRateHistoric_66.Value : 0, // temporary
-                                    ExchangeRateImpactYTD = _posItem.BuyExchangeRateAverage_88 != null ? _posItem.BuyExchangeRateAverage_88.Value : 0, // temporary
-                                    PercentAsset = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, _calcOtherInvs.MeaningfulDecimalDigits) : 0
+                                    ValorNumber = posItem.NumSecurity_29 != null ? posItem.NumSecurity_29 : 0,
+                                    Currency = posItem.Currency1_17,
+                                    Description = ((string.IsNullOrEmpty(posItem.Description1_32) ? "" : posItem.Description1_32) + " " + (string.IsNullOrEmpty(posItem.Description2_33) ? "" : posItem.Description2_33)).Trim(),
+                                    DescriptionExtra = posItem.CallaDate_38 != null ? ((DateTime)posItem.CallaDate_38).ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                    CurrentPrice = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
+                                    PurchasePrice = posItem.BuyPriceHistoric_53 != null ? posItem.BuyPriceHistoric_53.Value : 0,
+                                    Isin = posItem.IsinIban_85,
+                                    PriceBeginningYear = posItem.BuyPriceAverage_87 != null ? posItem.BuyPriceAverage_87.Value : 0,
+                                    NominalAmount = posItem.Quantity_28 != null ? posItem.Quantity_28.Value : 0,
+                                    UnderlyingDescription = posItem.ConversionDesc_45,
+                                    ExchangeRateImpactPurchase = posItem.BuyExchangeRateHistoric_66 != null ? posItem.BuyExchangeRateHistoric_66.Value : 0, // temporary
+                                    ExchangeRateImpactYTD = posItem.BuyExchangeRateAverage_88 != null ? posItem.BuyExchangeRateAverage_88.Value : 0, // temporary
+                                    PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, _calcOtherInvs.MeaningfulDecimalDigits) : 0
                                 };
-                                _currencyRate = (_curItems != null && _curItems.Any(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _altProdDetails.Currency && _flt.Rate_6 != null)) ? _curItems.First(_flt => _flt.CustomerNumber_2 == _posItem.CustomerNumber_2 && _flt.Currency_5 == _altProdDetails.Currency && _flt.Rate_6 != null).Rate_6.Value : 0;
-                                _altProdDetails.PerformancePurchase = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PurchasePrice.Value) * _altProdDetails.NominalAmount.Value / _quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
-                                _altProdDetails.PerformanceYTD = Math.Round((_altProdDetails.CurrentPrice.Value - _altProdDetails.PriceBeginningYear.Value) * _altProdDetails.NominalAmount.Value / _quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
-                                _altProdDetails.PercentPerformancePurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.PurchasePrice.Value, _altProdDetails.CurrentPrice.Value));
-                                _altProdDetails.PercentPerformanceYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.PriceBeginningYear.Value, _altProdDetails.CurrentPrice.Value));
-                                _altProdDetails.ExchangeRateImpactPurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.ExchangeRateImpactPurchase.Value, _currencyRate));
-                                _altProdDetails.ExchangeRateImpactYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(_altProdDetails.NominalAmount, _altProdDetails.CurrentPrice), _altProdDetails.ExchangeRateImpactYTD.Value, _currencyRate));
-                                if (_destinationObjectName == "Different")
-                                    _altProdDefinitions.Different.Add(_altProdDetails);
-                                else if (_destinationObjectName == "DerivativesOnMetals")
-                                    _altProdDefinitions.DerivativesOnMetals.Add(_altProdDetails);
-                                _posItem.AlreadyUsed = true;
+                                currencyRate = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == altProdDetails.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == altProdDetails.Currency && flt.Rate_6 != null).Rate_6.Value : 0;
+                                altProdDetails.PerformancePurchase = Math.Round((altProdDetails.CurrentPrice.Value - altProdDetails.PurchasePrice.Value) * altProdDetails.NominalAmount.Value / quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
+                                altProdDetails.PerformanceYTD = Math.Round((altProdDetails.CurrentPrice.Value - altProdDetails.PriceBeginningYear.Value) * altProdDetails.NominalAmount.Value / quoteType, _calcOtherInvs.MeaningfulDecimalDigits);
+                                altProdDetails.PercentPerformancePurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(altProdDetails.NominalAmount, altProdDetails.CurrentPrice), altProdDetails.PurchasePrice.Value, altProdDetails.CurrentPrice.Value));
+                                altProdDetails.PercentPerformanceYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(altProdDetails.NominalAmount, altProdDetails.CurrentPrice), altProdDetails.PriceBeginningYear.Value, altProdDetails.CurrentPrice.Value));
+                                altProdDetails.ExchangeRateImpactPurchase = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(altProdDetails.NominalAmount, altProdDetails.CurrentPrice), altProdDetails.ExchangeRateImpactPurchase.Value, currencyRate));
+                                altProdDetails.ExchangeRateImpactYTD = _calcOtherInvs.GetPriceDifferenceValue(new PriceDifferenceValueParams(_calcOtherInvs.GetSign(altProdDetails.NominalAmount, altProdDetails.CurrentPrice), altProdDetails.ExchangeRateImpactYTD.Value, currencyRate));
+                                if (destinationObjectName == "Different")
+                                    altProdDefinitions.Different.Add(altProdDetails);
+                                else if (destinationObjectName == "DerivativesOnMetals")
+                                    altProdDefinitions.DerivativesOnMetals.Add(altProdDetails);
+                                posItem.AlreadyUsed = true;
                             }
                         }                                                
-                        _sectionContent.AlternativeProducts.Add(_altProdDefinitions);
-                        _output.Content = new Section18And19Content(_sectionContent);
+                        sectionContent.AlternativeProducts.Add(altProdDefinitions);
+                        output.Content = new Section18And19Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

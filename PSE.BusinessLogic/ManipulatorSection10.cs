@@ -19,53 +19,53 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section10 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section10 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
-                decimal _customerSumAmounts, _currentBaseValue;
-                IFiduciaryInvestmentAccount _account;
-                ISection10Content _sectionContent;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.AlreadyUsed == false && _flt.RecordType == nameof(POS)).OfType<POS>().Where(_fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, _fltSubCat.SubCat4_15));
-                foreach (IDE _ideItem in _ideItems)
+                decimal customerSumAmounts, currentBaseValue;
+                IFiduciaryInvestmentAccount account;
+                ISection10Content sectionContent;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15));
+                foreach (IDE ideItem in ideItems)
                 {
-                    _customerSumAmounts = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.Amount1Base_23.HasValue).Sum(_sum => _sum.Amount1Base_23.Value);
-                    _customerSumAmounts += extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>().Where(_subFlt => _subFlt.CustomerNumber_2 == _ideItem.CustomerNumber_2 && _subFlt.ProRataBase_56.HasValue).Sum(_sum => _sum.ProRataBase_56.Value);
-                    if (_posItems != null && _posItems.Any(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
+                    if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        _sectionContent = new Section10Content();
-                        foreach (POS _posItem in _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2))
+                        sectionContent = new Section10Content();
+                        foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            _currentBaseValue = _posItem.Amount1Base_23.HasValue ? _posItem.Amount1Base_23.Value : 0;
-                            _currentBaseValue += _posItem.ProRataBase_56.HasValue ? _posItem.ProRataBase_56.Value : 0;
-                            _account = new FiduciaryInvestmentAccount()
+                            currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
+                            currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
+                            account = new FiduciaryInvestmentAccount()
                             {
-                                Account = _posItem.HostPositionReference_6,
-                                Currency = _posItem.Currency1_17,
-                                MarketValueReportingCurrency = _posItem.Amount1Base_23 != null ? _posItem.Amount1Base_23.Value : 0,
-                                FaceValue = _posItem.Quantity_28 != null ? _posItem.Quantity_28.Value : 0,
-                                PercentInterest = _posItem.InterestRate_47 != null ? _posItem.InterestRate_47.Value : 0,
-                                ExpirationDate = _posItem.MaturityDate_36 != null ? _posItem.MaturityDate_36.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                OpeningDate = _posItem.ConversionDateStart_41 != null ? _posItem.ConversionDateStart_41.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                NoDeposit = _posItem.MovementKey_31,
-                                Correspondent = _posItem.Description2_33,
-                                AccruedInterestReportingCurrency = _posItem.ProRataBase_56 != null ? _posItem.ProRataBase_56.Value : 0,
-                                PercentAsset = _customerSumAmounts != 0 && _currentBaseValue != 0 ? Math.Round(_currentBaseValue / _customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
+                                Account = posItem.HostPositionReference_6,
+                                Currency = posItem.Currency1_17,
+                                MarketValueReportingCurrency = posItem.Amount1Base_23 != null ? posItem.Amount1Base_23.Value : 0,
+                                FaceValue = posItem.Quantity_28 != null ? posItem.Quantity_28.Value : 0,
+                                PercentInterest = posItem.InterestRate_47 != null ? posItem.InterestRate_47.Value : 0,
+                                ExpirationDate = posItem.MaturityDate_36 != null ? posItem.MaturityDate_36.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                OpeningDate = posItem.ConversionDateStart_41 != null ? posItem.ConversionDateStart_41.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                NoDeposit = posItem.MovementKey_31,
+                                Correspondent = posItem.Description2_33,
+                                AccruedInterestReportingCurrency = posItem.ProRataBase_56 != null ? posItem.ProRataBase_56.Value : 0,
+                                PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
-                            _sectionContent.Accounts.Add(_account);
-                            _posItem.AlreadyUsed = true;
+                            sectionContent.Accounts.Add(account);
+                            posItem.AlreadyUsed = true;
                         }
-                        _output.Content = new Section10Content(_sectionContent);
+                        output.Content = new Section10Content(sectionContent);
                     }
                 }
             }
-            return _output;
+            return output;
         }
 
     }

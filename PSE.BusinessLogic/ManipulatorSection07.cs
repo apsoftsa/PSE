@@ -18,61 +18,61 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section7 _output = new()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section7 output = new()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
             };
-            if (extractedData.Any(_flt => _flt.RecordType == nameof(IDE)) && extractedData.Any(_flt => _flt.RecordType == nameof(POS)))
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {                
-                ISection7Content _sectionContent;
-                IInvestment _investment;
-                IEnumerable<CUR> _curItems;
-                List<IDE> _ideItems = extractedData.Where(_flt => _flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();                
-                IEnumerable<POS> _posItems = extractedData.Where(_flt => _flt.RecordType == nameof(POS)).OfType<POS>();
-                foreach (IDE _ideItem in _ideItems)
+                ISection7Content sectionContent;
+                IInvestment investment;
+                IEnumerable<CUR> curItems;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();                
+                IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
+                foreach (IDE ideItem in ideItems)
                 {
-                    _sectionContent = new Section7Content();
-                    _curItems = extractedData.Where(_flt => _flt.RecordType == nameof(CUR)).OfType<CUR>().Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2);
-                    IEnumerable<IGrouping<string, POS>> _groupByCurrency = _posItems.Where(_flt => _flt.CustomerNumber_2 == _ideItem.CustomerNumber_2).GroupBy(_gb => _gb.Currency1_17).OrderBy(_ob => _ob.Key);
-                    if (_groupByCurrency != null && _groupByCurrency.Any())
+                    sectionContent = new Section7Content();
+                    curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>().Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2);
+                    IEnumerable<IGrouping<string, POS>> groupByCurrency = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.Currency1_17).OrderBy(ob => ob.Key);
+                    if (groupByCurrency != null && groupByCurrency.Any())
                     {
-                        foreach (IGrouping<string, POS> _currency in _groupByCurrency)
+                        foreach (IGrouping<string, POS> currency in groupByCurrency)
                         {                                                        
-                            _investment = new Investment()
+                            investment = new Investment()
                             {
-                                Amount = Math.Round(_currency.Sum(_sum => _sum.Amount1Cur1_22).Value, 2),
-                                Currency = _currency.Key,
-                                MarketValueReportingCurrency = Math.Round(_currency.Sum(_sum => _sum.Amount1Base_23).Value, 2),
-                                Exchange = (_curItems != null && _curItems.Any(_flt => _flt.Currency_5 == _currency.Key && _flt.Rate_6 != null)) ? Math.Round(_curItems.First(_flt => _flt.Currency_5 == _currency.Key && _flt.Rate_6 != null).Rate_6.Value, 3) : 0
+                                Amount = Math.Round(currency.Sum(sum => sum.Amount1Cur1_22).Value, 2),
+                                Currency = currency.Key,
+                                MarketValueReportingCurrency = Math.Round(currency.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, 3) : 0
                             };
-                            _sectionContent.Investments.Add(_investment);
+                            sectionContent.Investments.Add(investment);
                         }                        
-                        decimal? _totalAmount = _sectionContent.Investments.Sum(_sum => _sum.Amount);
-                        if (_totalAmount != null && _totalAmount != 0)
+                        decimal? totalAmount = sectionContent.Investments.Sum(sum => sum.Amount);
+                        if (totalAmount != null && totalAmount != 0)
                         {
-                            foreach (IInvestment _invToUpgrd in _sectionContent.Investments)
+                            foreach (IInvestment invToUpgrd in sectionContent.Investments)
                             {
-                                _invToUpgrd.PercentAsset = Math.Round((_invToUpgrd.Amount / _totalAmount.Value * 100m).Value, 2);
-                                _sectionContent.ChartInvestments.Add(new ChartInvestment() { Currency = _invToUpgrd.Currency, PercentAsset = _invToUpgrd.PercentAsset });
+                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.Amount / totalAmount.Value * 100m).Value, 2);
+                                sectionContent.ChartInvestments.Add(new ChartInvestment() { Currency = invToUpgrd.Currency, PercentAsset = invToUpgrd.PercentAsset });
                             }
-                            _investment = new Investment()
+                            investment = new Investment()
                             {
                                 Amount = null,
                                 Currency = "Total",
-                                MarketValueReportingCurrency = Math.Round(_totalAmount.Value, 2),
+                                MarketValueReportingCurrency = Math.Round(totalAmount.Value, 2),
                                 PercentAsset = 100m,
                                 Exchange = null
                             };
-                            _sectionContent.Investments.Add(_investment);
+                            sectionContent.Investments.Add(investment);
                         }                        
                     }
-                    _output.Content = new Section7Content(_sectionContent);
+                    output.Content = new Section7Content(sectionContent);
                 }
             }
-            return _output;
+            return output;
         }
 
     }

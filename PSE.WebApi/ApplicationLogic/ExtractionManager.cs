@@ -20,8 +20,8 @@ namespace PSE.WebApi.ApplicationLogic
 
         private static void DecoderExternalCodifyErrorOccurredManagement(object sender, ExternalCodifyRequestEventArgs e)
         {            
-             string _errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
-            _outCont?.Logs?.Add(new OutputLog("building", "Decoding error occurred: " + e.ErrorOccurred + " (" + _errSource + ")"));
+             string errSource = "Section: '" + e.SectionName + "' - Property: '" + e.PropertyName + "' - Key: '" + e.PropertyKey + "'";
+            _outCont?.Logs?.Add(new OutputLog("building", "Decoding error occurred: " + e.ErrorOccurred + " (" + errSource + ")"));
         }
 
         private static void BuilderExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
@@ -33,9 +33,9 @@ namespace PSE.WebApi.ApplicationLogic
         {
             if (file.Length <= 0) 
                 return string.Empty;
-            using var _stream = file.OpenReadStream();
-            using var _reader = new StreamReader(_stream);
-            return _reader.ReadToEnd();
+            using var stream = file.OpenReadStream();
+            using var reader = new StreamReader(stream);
+            return reader.ReadToEnd();
         }
 
         public static void Initialize(AppSettings appSettings)
@@ -63,60 +63,60 @@ namespace PSE.WebApi.ApplicationLogic
 
         public static OutputContent ExtractFiles(IList<InputContent> files)
         {
-            string _tmpNodeKey;
-            IExtractedData _extrData;
-            List<IInputRecord> _allExtractedItems = new();
+            string tmpNodeKey;
+            IExtractedData extrData;
+            List<IInputRecord> allExtractedItems = new();
             _outCont = new OutputContent();
-            foreach (InputContent _file in files)
+            foreach (InputContent file in files)
             {
-                _outCont?.Logs?.Add(new OutputLog("extraction", "File to extract: '" + _file.FileName + "'"));
-                _extrData = _extractor.Extract(Encoding.ASCII.GetBytes(_file.Content));
-                _outCont?.Logs?.Add(new OutputLog("extraction", "Stream length: " + _extrData.ExtractionLog.StreamLength.ToString()));
-                if (_extrData.ExtractionLog.AcquisitionStart != null)
-                    _outCont?.Logs?.Add(new OutputLog("extraction", "Date/time extraction starting: " + ((DateTime)_extrData.ExtractionLog.AcquisitionStart).ToString("dd/MM/yyyy") + " " + ((DateTime)_extrData.ExtractionLog.AcquisitionStart).ToString("HH:mm:ss")));
-                if (_extrData.ExtractionLog.AcquisitionEnd != null)
-                    _outCont?.Logs?.Add(new OutputLog("extraction", "Date/time extraction ending: " + ((DateTime)_extrData.ExtractionLog.AcquisitionEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)_extrData.ExtractionLog.AcquisitionEnd).ToString("HH:mm:ss")));
-                _outCont?.Logs?.Add(new OutputLog("extraction", "Extraction outcome: " + _extrData.ExtractionLog.Outcome.ToString()));
-                if (_extrData.ExtractedItems != null && _extrData.ExtractedItems.Any())
+                _outCont?.Logs?.Add(new OutputLog("extraction", "File to extract: '" + file.FileName + "'"));
+                extrData = _extractor.Extract(Encoding.ASCII.GetBytes(file.Content));
+                _outCont?.Logs?.Add(new OutputLog("extraction", "Stream length: " + extrData.ExtractionLog.StreamLength.ToString()));
+                if (extrData.ExtractionLog.AcquisitionStart != null)
+                    _outCont?.Logs?.Add(new OutputLog("extraction", "Date/time extraction starting: " + ((DateTime)extrData.ExtractionLog.AcquisitionStart).ToString("dd/MM/yyyy") + " " + ((DateTime)extrData.ExtractionLog.AcquisitionStart).ToString("HH:mm:ss")));
+                if (extrData.ExtractionLog.AcquisitionEnd != null)
+                    _outCont?.Logs?.Add(new OutputLog("extraction", "Date/time extraction ending: " + ((DateTime)extrData.ExtractionLog.AcquisitionEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)extrData.ExtractionLog.AcquisitionEnd).ToString("HH:mm:ss")));
+                _outCont?.Logs?.Add(new OutputLog("extraction", "Extraction outcome: " + extrData.ExtractionLog.Outcome.ToString()));
+                if (extrData.ExtractedItems != null && extrData.ExtractedItems.Any())
                 {
-                    _allExtractedItems.AddRange(_extrData.ExtractedItems);
-                    _outCont?.Logs?.Add(new OutputLog("extraction", "Elements extracted: " + _extrData.ExtractedItems.Count.ToString()));
+                    allExtractedItems.AddRange(extrData.ExtractedItems);
+                    _outCont?.Logs?.Add(new OutputLog("extraction", "Elements extracted: " + extrData.ExtractedItems.Count.ToString()));
                 }
                 else
                     _outCont?.Logs?.Add(new OutputLog("extraction", "No meaningful elements found."));
-                if (_extrData.ExtractionLog.RecordsLog != null && _extrData.ExtractionLog.RecordsLog.Any())
+                if (extrData.ExtractionLog.RecordsLog != null && extrData.ExtractionLog.RecordsLog.Any())
                 {
-                    _tmpNodeKey = Guid.NewGuid().ToString();
-                    List<OutputLog> _extractionSubgroupLogs = new List<OutputLog>();
-                    foreach (IRecordExtractionLog _error in _extrData.ExtractionLog.RecordsLog)
+                    tmpNodeKey = Guid.NewGuid().ToString();
+                    List<OutputLog> extractionSubgroupLogs = new List<OutputLog>();
+                    foreach (IRecordExtractionLog error in extrData.ExtractionLog.RecordsLog)
                     {
-                        _extractionSubgroupLogs.Add(new OutputLog(_tmpNodeKey, "Error message: " + _error.FurtherMessage));
-                        if (_error.LineNumber != null && _error.LineNumber > 0)
-                            _extractionSubgroupLogs.Add(new OutputLog(_tmpNodeKey, "    - Line number: " + _error.LineNumber.ToString()));
-                        if (!string.IsNullOrEmpty(_error.RecordTypeName))
-                            _extractionSubgroupLogs.Add(new OutputLog(_tmpNodeKey, "    - Record type name: " + _error.RecordTypeName));
-                        if (!string.IsNullOrEmpty(_error.RecordInnerContent))
-                            _extractionSubgroupLogs.Add(new OutputLog(_tmpNodeKey, "    - Record inner content: " + _error.RecordInnerContent));
-                        if (_error.ExceptionOccurred != null)
-                            _extractionSubgroupLogs.Add(new OutputLog(_tmpNodeKey, "    - Has inner exception bound: yes (" + _error.ExceptionOccurred.Message + ")"));
+                        extractionSubgroupLogs.Add(new OutputLog(tmpNodeKey, "Error message: " + error.FurtherMessage));
+                        if (error.LineNumber != null && error.LineNumber > 0)
+                            extractionSubgroupLogs.Add(new OutputLog(tmpNodeKey, "    - Line number: " + error.LineNumber.ToString()));
+                        if (!string.IsNullOrEmpty(error.RecordTypeName))
+                            extractionSubgroupLogs.Add(new OutputLog(tmpNodeKey, "    - Record type name: " + error.RecordTypeName));
+                        if (!string.IsNullOrEmpty(error.RecordInnerContent))
+                            extractionSubgroupLogs.Add(new OutputLog(tmpNodeKey, "    - Record inner content: " + error.RecordInnerContent));
+                        if (error.ExceptionOccurred != null)
+                            extractionSubgroupLogs.Add(new OutputLog(tmpNodeKey, "    - Has inner exception bound: yes (" + error.ExceptionOccurred.Message + ")"));
                     }
-                    _outCont?.Logs?.Add(new OutputLog("extraction", "Extraction errors occurred: ", _extractionSubgroupLogs));
+                    _outCont?.Logs?.Add(new OutputLog("extraction", "Extraction errors occurred: ", extractionSubgroupLogs));
                 }
             }
-            if (_allExtractedItems.Any())
+            if (allExtractedItems.Any())
             {
-                IBuiltData _builtData = _builder.Build(_allExtractedItems, BuildFormats.Json);                
-                if (_builtData.BuildingLog.BuildingStart != null)
-                    _outCont?.Logs?.Add(new OutputLog("building", "Date /time built start: " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("dd/MM/yyyy") + " " + ((DateTime)_builtData.BuildingLog.BuildingStart).ToString("HH:mm:ss")));
-                if (_builtData.BuildingLog.BuildingEnd != null)
-                    _outCont?.Logs?.Add(new OutputLog("building", "Date/time built end: " + ((DateTime)_builtData.BuildingLog.BuildingEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)_builtData.BuildingLog.BuildingEnd).ToString("HH:mm:ss")));
-                _outCont?.Logs?.Add(new OutputLog("building", "Built outcome: " + _builtData.BuildingLog.Outcome.ToString()));
-                if (!string.IsNullOrEmpty(_builtData.BuildingLog.FurtherErrorMessage))
-                    _outCont?.Logs?.Add(new OutputLog("building", "Error message: " + _builtData.BuildingLog.FurtherErrorMessage));
-                if (_builtData.BuildingLog.ExceptionOccurred != null)
-                    _outCont?.Logs?.Add(new OutputLog("building", "Inner exception bound: " + _builtData.BuildingLog.ExceptionOccurred.Message));
-                if (_builtData.BuildingLog.Outcome == BuildingOutcomes.Success || _builtData.BuildingLog.Outcome == BuildingOutcomes.Ignored)
-                    _outCont.JsonGenerated = _builtData.OutputData;
+                IBuiltData builtData = _builder.Build(allExtractedItems, BuildFormats.Json);                
+                if (builtData.BuildingLog.BuildingStart != null)
+                    _outCont?.Logs?.Add(new OutputLog("building", "Date /time built start: " + ((DateTime)builtData.BuildingLog.BuildingStart).ToString("dd/MM/yyyy") + " " + ((DateTime)builtData.BuildingLog.BuildingStart).ToString("HH:mm:ss")));
+                if (builtData.BuildingLog.BuildingEnd != null)
+                    _outCont?.Logs?.Add(new OutputLog("building", "Date/time built end: " + ((DateTime)builtData.BuildingLog.BuildingEnd).ToString("dd/MM/yyyy") + " " + ((DateTime)builtData.BuildingLog.BuildingEnd).ToString("HH:mm:ss")));
+                _outCont?.Logs?.Add(new OutputLog("building", "Built outcome: " + builtData.BuildingLog.Outcome.ToString()));
+                if (!string.IsNullOrEmpty(builtData.BuildingLog.FurtherErrorMessage))
+                    _outCont?.Logs?.Add(new OutputLog("building", "Error message: " + builtData.BuildingLog.FurtherErrorMessage));
+                if (builtData.BuildingLog.ExceptionOccurred != null)
+                    _outCont?.Logs?.Add(new OutputLog("building", "Inner exception bound: " + builtData.BuildingLog.ExceptionOccurred.Message));
+                if (builtData.BuildingLog.Outcome == BuildingOutcomes.Success || builtData.BuildingLog.Outcome == BuildingOutcomes.Ignored)
+                    _outCont.JsonGenerated = builtData.OutputData;
             }
             return _outCont;
         }

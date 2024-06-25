@@ -17,16 +17,16 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            IHeaderContent _headerContent = new HeaderContent()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            IHeaderContent headerContent = new HeaderContent()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent,
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent,
                 Logo = "[Logo]", // not still recovered (!)
                 CompanyName = "[CompanyName]" // not still recovered (!)
             };
-            return _headerContent;
+            return headerContent;
         }
 
     }

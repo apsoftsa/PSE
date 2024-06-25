@@ -17,15 +17,15 @@ namespace PSE.BusinessLogic
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
-            SectionBinding _sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            IFooterContent _footerContent = new FooterContent()
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            IFooterContent footerContent = new FooterContent()
             {
-                SectionId = _sectionDest.SectionId,
-                SectionCode = _sectionDest.SectionCode,
-                SectionName = _sectionDest.SectionContent,
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent,
                 BankAddress = "[BankAddress]" // not still recovered (!)
             };
-            return _footerContent;
+            return footerContent;
         }
 
     }
