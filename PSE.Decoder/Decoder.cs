@@ -101,6 +101,45 @@ namespace PSE.Decoder
                                 };
                             }
                         }
+                        else if (e.SectionName == nameof(Section22) && e.PropertyName == nameof(Country.CountryName))
+                        {
+                            if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
+                            {
+                                string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = languageToCheck switch
+                                {
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).TextI,
+                                };
+                            }
+                        }
+                        else if (e.SectionName == nameof(Section22) && e.PropertyName == "Continent.Code")
+                        {
+                            if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
+                                e.PropertyValue = context.Tabelle.First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).Col12;
+                        }
+                        else if (e.SectionName == nameof(Section22) && e.PropertyName == nameof(ChartSharesByContinent.Continent))
+                        {
+                            if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey))
+                            {
+                                string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = languageToCheck switch
+                                {
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.First(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.First(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey).TextI,
+                                };
+                            }
+                        }
                         else if (e.SectionName == nameof(Section23) && e.PropertyName == nameof(EconSector.Sector))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.Any(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey))

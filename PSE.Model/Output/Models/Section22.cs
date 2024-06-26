@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PSE.Model.Common;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
 using static PSE.Model.Common.Constants;
@@ -18,7 +19,7 @@ namespace PSE.Model.Output.Models
         public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public Country()
         {
@@ -41,20 +42,24 @@ namespace PSE.Model.Output.Models
     public class Continent : IContinent
     {
 
-        [JsonProperty(propertyName: "items")] // ????
+        [JsonDynamicName("ContinentName")] // ???
         public List<ICountry> Countries { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
+
+        [JsonIgnore]
+        public string ContinentName { get; set; }
 
         public Continent()
         {
             Countries = new List<ICountry>();
             MarketValueReportingCurrency = null;
             PercentShares = null;
+            ContinentName = "";
         }
 
         public Continent(IContinent source)
@@ -72,6 +77,7 @@ namespace PSE.Model.Output.Models
                 MarketValueReportingCurrency = source.MarketValueReportingCurrency;
                 PercentShares = source.PercentShares;
             }
+            ContinentName = source.ContinentName;
         }
 
     }
@@ -88,7 +94,7 @@ namespace PSE.Model.Output.Models
         public decimal? TotalMarketValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? TotalPercentShares { get; set; }
+        public decimal? TotalPercentShares { get; set; }
 
         public SharesByNation()
         {
@@ -125,7 +131,7 @@ namespace PSE.Model.Output.Models
         public string? Continent { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ChartSharesByContinent()
         {
@@ -150,7 +156,7 @@ namespace PSE.Model.Output.Models
         public string? Country { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ChartSharesByCountry()
         {

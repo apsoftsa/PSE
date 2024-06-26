@@ -36,6 +36,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection18And19 _manSect18And19;
         private readonly ManipulatorSection20 _manSect20;
         private readonly ManipulatorSection21 _manSect21;
+        private readonly ManipulatorSection22 _manSect22;
         private readonly ManipulatorSection23 _manSect23;
         private readonly ManipulatorFooter _manFooter;
 
@@ -88,6 +89,8 @@ namespace PSE.Builder
             _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect21 = new();
             _manSect21.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect22 = new();
+            _manSect22.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect23 = new();
             _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
@@ -113,6 +116,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection18And19, false ),
                 ( ManipolationTypes.AsSection20, false ),
                 ( ManipolationTypes.AsSection21, false ),
+                ( ManipolationTypes.AsSection22, false ),
                 ( ManipolationTypes.AsSection23, false ),
                 ( ManipolationTypes.AsFooter, true )
             };
@@ -174,6 +178,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsSection6:
                             case ManipolationTypes.AsSection7:
+                            case ManipolationTypes.AsSection22:
                             case ManipolationTypes.AsSection23:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
@@ -214,7 +219,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection16And17:
                             case ManipolationTypes.AsSection18And19:
                             case ManipolationTypes.AsSection20:
-                            case ManipolationTypes.AsSection21:
+                            case ManipolationTypes.AsSection21:                            
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -326,6 +331,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection18And19 => _manSect18And19.Manipulate(extractedData),
                 ManipolationTypes.AsSection20 => _manSect20.Manipulate(extractedData),
                 ManipolationTypes.AsSection21 => _manSect21.Manipulate(extractedData),
+                ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
                 ManipolationTypes.AsSection23 => _manSect23.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,

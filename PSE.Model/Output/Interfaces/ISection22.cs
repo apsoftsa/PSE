@@ -8,7 +8,7 @@
 
         decimal? MarketValueReportingCurrency { get; set; }
 
-        int? PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }
 
@@ -19,7 +19,9 @@
 
         decimal? MarketValueReportingCurrency { get; set; }
 
-        int? PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
+
+        string ContinentName { get; set; }
 
     }
 
@@ -30,7 +32,7 @@
 
         decimal? TotalMarketValue { get; set; }
 
-        int? TotalPercentShares { get; set; }
+        decimal? TotalPercentShares { get; set; }
 
     }
 
@@ -39,7 +41,7 @@
 
         string? Continent { get; set; }
 
-        int? PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }
 
@@ -48,7 +50,7 @@
 
         string? Country { get; set; }
 
-        int? PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }
 

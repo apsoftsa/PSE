@@ -151,6 +151,7 @@ namespace PSE.BusinessLogic.Common
                 new SectionBinding(ManipolationTypes.AsSection18And19, "section18_19", "Others investments", new List<PositionClassifications>() { PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI, PositionClassifications.PRODOTTI_DERIVATI, PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI }),
                 new SectionBinding(ManipolationTypes.AsSection20, "section20", "Metals", new List<PositionClassifications>() { PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO }),
                 new SectionBinding(ManipolationTypes.AsSection21, "section21", "Information Position", new List<PositionClassifications>() { PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE, PositionClassifications.IMPEGNI_EVENTUALI }),
+                new SectionBinding(ManipolationTypes.AsSection22, "section22", "Geographical Division"),
                 new SectionBinding(ManipolationTypes.AsSection23, "section23", "Subdivision by economical sector"),
                 new SectionBinding(ManipolationTypes.AsFooter, "footer", "Footers"),
             };
