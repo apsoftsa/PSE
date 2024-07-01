@@ -39,8 +39,9 @@ namespace PSE.BusinessLogic
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     sectionContent = new Section6Content();
-                    IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
-                    IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    // Exclude 'informative positions'
+                    IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != "90").GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith("90") == false).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                     if (groupBySubCategory != null && groupBySubCategory.Any())
                     {
                         string categoryDescr = string.Empty;
@@ -99,6 +100,41 @@ namespace PSE.BusinessLogic
                                 PercentInvestmentT = 100.0m
                             };
                             sectionContent.Assets.Add(asset);
+                        }
+                    }
+                    // Take only 'informative positions' if exists
+                    groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == "90").GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
+                    groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith("90")).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    if (groupBySubCategory != null && groupBySubCategory.Any())
+                    {
+                        string categoryDescr = string.Empty;
+                        string prevCategory = string.Empty;
+                        string currCategory = string.Empty;
+                        foreach (IGrouping<string, POS> subCategory in groupBySubCategory)
+                        {
+                            currCategory = subCategory.First().SubCat3_14;
+                            if (currCategory != prevCategory)
+                            {
+                                categoryDescr = "(Unknown)";
+                                extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.AssetClass), currCategory, propertyParams);
+                                OnExternalCodifyRequest(extEventArgsAdvisor);
+                                if (!extEventArgsAdvisor.Cancel)
+                                    categoryDescr = extEventArgsAdvisor.PropertyValue;
+                                prevCategory = currCategory;
+                            }
+                            extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section6), nameof(Asset.TypeInvestment), subCategory.Key, propertyParams);
+                            OnExternalCodifyRequest(extEventArgsAdvisor);
+                            if (!extEventArgsAdvisor.Cancel)
+                            {
+                                asset = new Asset()
+                                {
+                                    MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                    AssetClass = categoryDescr,
+                                    TypeInvestment = extEventArgsAdvisor.PropertyValue,
+                                    MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
+                                };
+                                sectionContent.Assets.Add(asset);
+                            }
                         }
                     }
                     output.Content = new Section6Content(sectionContent);
