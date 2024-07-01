@@ -48,7 +48,7 @@ namespace PSE.BusinessLogic
                     sectionContent = new Section22Content();
                     continentsCountryItems = new Dictionary<string, List<ICountry>>();
                     continentsDescription = new Dictionary<string, string>();
-                    groupByCountries = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.Country_20) == false).GroupBy(gb => gb.Country_20).OrderBy(ob => ob.Key);
+                    groupByCountries = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.Country_20) == false && flt.SubCat4_15 == "5010").GroupBy(gb => gb.Country_20).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> groupByCountry in groupByCountries)
                     {
                         tmpValue = string.Empty;
