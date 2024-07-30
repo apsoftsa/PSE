@@ -8,7 +8,6 @@ using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.Params;
 using PSE.Model.SupportTables;
-using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
