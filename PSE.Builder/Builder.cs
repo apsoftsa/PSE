@@ -6,10 +6,9 @@ using PSE.Model.Output;
 using PSE.Model.Output.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.BusinessLogic;
+using PSE.BusinessLogic.Calculations;
 using static PSE.BusinessLogic.Common.ManipulatorOperatingRules;
 using static PSE.Model.Common.Enumerations;
-using PSE.BusinessLogic.Utility;
-using PSE.BusinessLogic.Calculations;
 
 namespace PSE.Builder
 {
@@ -38,6 +37,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection21 _manSect21;
         private readonly ManipulatorSection22 _manSect22;
         private readonly ManipulatorSection23 _manSect23;
+        private readonly ManipulatorSection26 _manSect26;
         private readonly ManipulatorFooter _manFooter;
 
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
@@ -93,6 +93,8 @@ namespace PSE.Builder
             _manSect22.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect23 = new();
             _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect26 = new();
+            _manSect26.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
             _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
@@ -118,6 +120,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection21, false ),
                 ( ManipolationTypes.AsSection22, false ),
                 ( ManipolationTypes.AsSection23, false ),
+                ( ManipolationTypes.AsSection26, false ),
                 ( ManipolationTypes.AsFooter, true )
             };
         }
@@ -180,6 +183,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection7:
                             case ManipolationTypes.AsSection22:
                             case ManipolationTypes.AsSection23:
+                            case ManipolationTypes.AsSection26:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -333,6 +337,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection21 => _manSect21.Manipulate(extractedData),
                 ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
                 ManipolationTypes.AsSection23 => _manSect23.Manipulate(extractedData),
+                ManipolationTypes.AsSection26 => _manSect26.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,
             };

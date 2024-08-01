@@ -55,7 +55,7 @@ namespace PSE.Model.Output.Models
         public string? TypeInvestment { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? Percent { get; set; }
+        public decimal? Percent { get; set; }
 
         public GraphicalInvestment()
         {
