@@ -153,6 +153,7 @@ namespace PSE.BusinessLogic.Common
                 new SectionBinding(ManipolationTypes.AsSection21, "section21", "Information Position", new List<PositionClassifications>() { PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE, PositionClassifications.IMPEGNI_EVENTUALI }),
                 new SectionBinding(ManipolationTypes.AsSection22, "section22", "Geographical Division"),
                 new SectionBinding(ManipolationTypes.AsSection23, "section23", "Subdivision by economical sector"),
+                new SectionBinding(ManipolationTypes.AsSection24, "section24", "Pending orders"),
                 new SectionBinding(ManipolationTypes.AsSection26, "section26", "Investments"),
                 new SectionBinding(ManipolationTypes.AsFooter, "footer", "Footers"),
             };

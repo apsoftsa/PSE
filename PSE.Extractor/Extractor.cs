@@ -26,7 +26,7 @@ namespace PSE.Extractor
                     nameof(REQ) => typeof(REQ),
                     nameof(IDE) => typeof(IDE),
                     nameof(PER) => typeof(PER),
-                    //nameof(POR) => typeof(POR),
+                    nameof(ORD) => typeof(ORD),
                     nameof(CUR) => typeof(CUR),
                     nameof(POS) => typeof(POS),
                     _ => null,
@@ -74,6 +74,7 @@ namespace PSE.Extractor
                 typeof(REQ),
                 typeof(IDE),
                 typeof(PER),
+                typeof(ORD),
                 typeof(CUR),
                 typeof(POS)
             )

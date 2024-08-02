@@ -4,19 +4,19 @@
     public interface IExchange
     {
 
-        int? ExchangeOrder { get; set; }
+        string ExchangeOrder { get; set; }
 
-        int? ExchangeValue { get; set; }
+        long? ExchangeValue { get; set; }
 
         string? Description { get; set; }
 
         string? Operation { get; set; }
 
-        int? Quantity { get; set; }
+        decimal? Quantity { get; set; }
 
         string? Currency { get; set; }
 
-        string? LimitStopLoss { get; set; }
+        string LimitStopLoss { get; set; }
 
         decimal? CourseCost { get; set; }
 
