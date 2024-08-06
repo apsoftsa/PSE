@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
+using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
@@ -18,7 +19,7 @@ namespace PSE.BusinessLogic
         public ManipulatorSection24(CultureInfo? culture = null) : base(ManipolationTypes.AsSection24, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
-        {
+        {            
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section24 output = new()
             {
@@ -30,6 +31,8 @@ namespace PSE.BusinessLogic
             {
                 ISection24Content sectionContent;
                 IExchange exchange;
+                ExternalCodifyRequestEventArgs extEventArgsOperation;
+                Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<ORD> ordItems = extractedData.Where(flt => flt.RecordType == nameof(ORD)).OfType<ORD>();
                 foreach (IDE ideItem in ideItems)
@@ -39,19 +42,25 @@ namespace PSE.BusinessLogic
                         sectionContent = new Section24Content();
                         foreach (ORD ordItem in ordItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            exchange = new Exchange()
+                            extEventArgsOperation = new ExternalCodifyRequestEventArgs(nameof(Section24), nameof(Exchange.Operation), ordItem.Direction_10, propertyParams);
+                            OnExternalCodifyRequest(extEventArgsOperation);
+                            if (!extEventArgsOperation.Cancel)
                             {
-                                ExchangeOrder = ordItem.Reference_8,
-                                Operation = ordItem.Direction_10,
-                                ExpirationDate = ordItem.Limit_Date_End_11 != null ? ordItem.Limit_Date_End_11.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                Quantity = ordItem.Quantity_13,
-                                ExchangeValue = ordItem.Sec_Num_14,
-                                Description = ordItem.Sec_Description_15,
-                                Currency = ordItem.Currency_16,
-                                CourseCost = ordItem.Quote_17,
-                                LimitStopLoss = ordItem.Limit_Price_18 != null ? ordItem.Limit_Price_18.Value.ToString() : string.Empty
-                            };
-                            sectionContent.Exchange.Add(exchange);  
+
+                                exchange = new Exchange()
+                                {
+                                    ExchangeOrder = ordItem.Reference_8,
+                                    Operation = extEventArgsOperation.PropertyValue,
+                                    ExpirationDate = ordItem.Limit_Date_End_11 != null ? ordItem.Limit_Date_End_11.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
+                                    Quantity = ordItem.Quantity_13,
+                                    ExchangeValue = ordItem.Sec_Num_14,
+                                    Description = ordItem.Sec_Description_15,
+                                    Currency = ordItem.Currency_16,
+                                    CourseCost = ordItem.Quote_17,
+                                    LimitStopLoss = ordItem.Limit_Price_18 != null ? ordItem.Limit_Price_18.Value.ToString() : string.Empty
+                                };
+                                sectionContent.Exchange.Add(exchange);
+                            }
                         }
                         output.Content = new Section24Content(sectionContent);
                     }

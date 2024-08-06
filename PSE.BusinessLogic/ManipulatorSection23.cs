@@ -43,7 +43,7 @@ namespace PSE.BusinessLogic
                     sectionContent = new Section23Content();
                     sectionContent.ActionByEconSector.Add(new ActionByEconSector());
                     totalSum = 0;
-                    IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.SubCat1_12) == false && flt.SubCat4_15 == "5010").GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.SubCat1_12) == false && flt.SubCat4_15 == ((int)PositionClassifications.AZIONI_FONDI_AZIONARI).ToString()).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> economicalSector in groupByEconomicalSector)
                     {
                         sectorDescr = "(Unknown)";

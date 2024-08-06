@@ -40,8 +40,8 @@ namespace PSE.BusinessLogic
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     sectionContent = new Section6Content();
                     // Exclude 'informative positions'
-                    IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != "90").GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
-                    IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith("90") == false).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith(((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()) == false).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                     if (groupBySubCategory != null && groupBySubCategory.Any())
                     {
                         string categoryDescr = string.Empty;
@@ -103,8 +103,8 @@ namespace PSE.BusinessLogic
                         }
                     }
                     // Take only 'informative positions' if exists
-                    groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == "90").GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
-                    groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith("90")).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
+                    groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith(((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString())).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                     if (groupBySubCategory != null && groupBySubCategory.Any())
                     {
                         string categoryDescr = string.Empty;
