@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Linq;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
@@ -62,16 +63,16 @@ namespace PSE.BusinessLogic
                             IEnumerable<IGrouping<string, POS>> groupBySubCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith(((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()) == false).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                             if (groupBySubCategory != null && groupBySubCategory.Any())
                             {
-                                foreach (IGrouping<string, POS> subCategory in groupBySubCategory)
+                                foreach (IGrouping<string, POS> category in groupByCategory)
                                 {
-                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(Asset.TypeInvestment), subCategory.Key, propertyParams);
+                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(Asset.TypeInvestment), category.Key, propertyParams);
                                     OnExternalCodifyRequest(extEventArgsAdvisor);
                                     if (!extEventArgsAdvisor.Cancel)
                                     {
                                         typeInvestment = new TypeInvestment()
                                         {
                                             InvestmentType = extEventArgsAdvisor.PropertyValue,
-                                            MarketValueReportingCurrency = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
+                                            MarketValueReportingCurrency = Math.Round(category.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value), 2)
                                         };
                                         sectionContent.Investment.Add(typeInvestment);
                                     }
@@ -84,8 +85,6 @@ namespace PSE.BusinessLogic
                                         sectionContent.ChartGraphicalInvestment.Add(new GraphicalInvestment() { TypeInvestment = typeInv.InvestmentType, Percent = Math.Round((typeInv.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2) });
                                     }
                                 } 
-                                
-                                // ????
                                 typeInvestment = new TypeInvestment()
                                 {
                                     InvestmentType = "TOTAL INVESTMENTS",
@@ -98,9 +97,7 @@ namespace PSE.BusinessLogic
                                     InvestmentType = "ACCURED INTEREST",
                                     MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                                 };
-
                                 sectionContent.Investment.Add(typeInvestment);
-
                             }
                             // Take only 'informative positions' if exists
                             groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);

@@ -51,6 +51,7 @@ namespace PSE.BusinessLogic
                                 PurchasingCourse = posItem.Quote_48 != null ? posItem.Quote_48.Value : 0,
                                 CostPrice = 0, // not still recovered (!)
                                 PercentDifference = 0, // not still recovered (!)
+                                // ????
                                 PercentAsset = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
                             sectionContent.MetalPhysicalMetalAccounts.Add(metPhyMetAcc);
