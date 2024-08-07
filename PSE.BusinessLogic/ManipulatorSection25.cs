@@ -38,7 +38,7 @@ namespace PSE.BusinessLogic
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section25Content();
-                    IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 == "00002").GroupBy(gb => gb.HostPositionReference_6);
+                    IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())
                     {
                         foreach (IGrouping<string, POS> relationshipNonTransferedToAdminItem in relationshipesNonTransferedToAdmin)
@@ -51,7 +51,7 @@ namespace PSE.BusinessLogic
                                 {
                                     Object = relationshipNonTransferedToAdminItem.First().HostPositionReference_6,
                                     Description = extEventArgsDescription.PropertyValue,
-                                    AddressBook = relationshipNonTransferedToAdminItem.First().Description2_33,
+                                    AddressBook = relationshipNonTransferedToAdminItem.First().HostPositionType_5 != "50" ? relationshipNonTransferedToAdminItem.First().Description2_33 : "",
                                     Currency = relationshipNonTransferedToAdminItem.First().HostPositionCurrency_8,
                                     CurrentBalance = relationshipNonTransferedToAdminItem.Sum(s => s.Amount1ProRataHostCur_27),
                                     MarketValueReportingCurrency = relationshipNonTransferedToAdminItem.Sum(s => s.Amount1Base_23) + relationshipNonTransferedToAdminItem.Sum(s => s.ProRataBase_56)
@@ -75,7 +75,7 @@ namespace PSE.BusinessLogic
                                 {
                                     Object = relationshipTransferedToAdminItem.First().HostPositionReference_6,
                                     Description = extEventArgsDescription.PropertyValue,
-                                    AddressBook = relationshipTransferedToAdminItem.First().Description2_33,
+                                    AddressBook = relationshipTransferedToAdminItem.First().HostPositionType_5 != "50" ? relationshipTransferedToAdminItem.First().Description2_33 : "",
                                     Currency = relationshipTransferedToAdminItem.First().HostPositionCurrency_8,
                                     CurrentBalance = relationshipTransferedToAdminItem.Sum(s => s.Amount1ProRataHostCur_27),
                                     MarketValueReportingCurrency = relationshipTransferedToAdminItem.Sum(s => s.Amount1Base_23) + relationshipTransferedToAdminItem.Sum(s => s.ProRataBase_56)

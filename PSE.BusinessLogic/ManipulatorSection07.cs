@@ -46,7 +46,7 @@ namespace PSE.BusinessLogic
                                 Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
                                 Currency = currency.Key,
                                 MarketValueReportingCurrency = Math.Round(currency.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
-                                Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, 3) : 0
+                                Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
                             sectionContent.Investments.Add(investment);
                         }                        
