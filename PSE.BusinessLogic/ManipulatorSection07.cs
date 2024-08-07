@@ -43,19 +43,19 @@ namespace PSE.BusinessLogic
                         {                                                        
                             investment = new Investment()
                             {
-                                Amount = Math.Round(currency.Sum(sum => sum.Amount1Cur1_22).Value, 2),
+                                Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
                                 Currency = currency.Key,
-                                MarketValueReportingCurrency = Math.Round(currency.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                MarketValueReportingCurrency = Math.Round(currency.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
                                 Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, 3) : 0
                             };
                             sectionContent.Investments.Add(investment);
                         }                        
-                        decimal? totalAmount = sectionContent.Investments.Sum(sum => sum.Amount);
+                        decimal? totalAmount = sectionContent.Investments.Sum(sum => sum.MarketValueReportingCurrency);
                         if (totalAmount != null && totalAmount != 0)
                         {
                             foreach (IInvestment invToUpgrd in sectionContent.Investments)
                             {
-                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.Amount / totalAmount.Value * 100m).Value, 2);
+                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.MarketValueReportingCurrency / totalAmount.Value * 100m).Value, 2);
                                 sectionContent.ChartInvestments.Add(new ChartInvestment() { Currency = invToUpgrd.Currency, PercentAsset = invToUpgrd.PercentAsset });
                             }
                             investment = new Investment()

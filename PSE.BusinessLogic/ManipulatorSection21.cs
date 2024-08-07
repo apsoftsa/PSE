@@ -34,7 +34,7 @@ namespace PSE.BusinessLogic
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section21Content();
-                    IEnumerable<POS> possibleCommitments = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == "90" && flt.SubCat4_15 == "9020");
+                    IEnumerable<POS> possibleCommitments = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString() && flt.SubCat4_15 == ((int)PositionClassifications.IMPEGNI_EVENTUALI).ToString());
                     if (possibleCommitments != null && possibleCommitments.Any())
                     {
                         foreach (var possibleCommitment in possibleCommitments)
@@ -55,7 +55,7 @@ namespace PSE.BusinessLogic
                             });
                         }
                     }
-                    IEnumerable<POS> mortgageLoans = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == "90" && flt.SubCat4_15 == "9010");
+                    IEnumerable<POS> mortgageLoans = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString() && flt.SubCat4_15 == ((int)PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE).ToString());
                     if (mortgageLoans != null && mortgageLoans.Any())
                     {
                         foreach (var mortgageLoan in mortgageLoans)

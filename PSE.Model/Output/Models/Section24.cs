@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {
@@ -12,10 +11,10 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(PropertyName ="order", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ExchangeOrder { get; set; }
+        public string ExchangeOrder { get; set; }
 
         [JsonProperty(PropertyName = "value", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ExchangeValue { get; set; }
+        public long? ExchangeValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Description { get; set; }
@@ -24,13 +23,13 @@ namespace PSE.Model.Output.Models
         public string? Operation { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Currency { get; set; }
 
-        [JsonProperty(PropertyName = "limiteStop-less", NullValueHandling = NullValueHandling.Ignore)]
-        public string? LimitStopLoss { get; set; }
+        [JsonProperty(PropertyName = "limiteStop-loss", NullValueHandling = NullValueHandling.Ignore)]
+        public string LimitStopLoss { get; set; }
 
         [JsonProperty(PropertyName = "course-cost", NullValueHandling = NullValueHandling.Ignore)]
         public decimal? CourseCost { get; set; }
@@ -40,13 +39,13 @@ namespace PSE.Model.Output.Models
 
         public Exchange()
         {
-            ExchangeOrder = null;
+            ExchangeOrder = string.Empty;
             ExchangeValue = null;
             Description = null;
             Operation = null;   
             Quantity = null;    
             Currency = null;
-            LimitStopLoss = null;
+            LimitStopLoss = string.Empty;
             CourseCost = null;
             ExpirationDate = null;
         }

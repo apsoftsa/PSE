@@ -21,7 +21,7 @@
 
         string? TypeInvestment { get; set; }
 
-        int? Percent { get; set; }
+        decimal? Percent { get; set; }
 
     }
 
