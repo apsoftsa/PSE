@@ -28,7 +28,7 @@ namespace PSE.Model.Common
         {
             Undefined = -1,
             AsHeader = 0,
-            AsSection1 = 1,
+            AsSection0 = 1,
             AsSection3 = 3,
             AsSection4 = 4,
             AsSection6 = 6,

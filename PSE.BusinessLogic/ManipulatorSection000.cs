@@ -8,19 +8,20 @@ using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using static PSE.Model.Common.Constants;
 
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection1 : ManipulatorBase, IManipulator
+    public class ManipulatorSection0 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection1(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection1, culture) { }
+        public ManipulatorSection0(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection0, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section1 output = new()
+            Section0 output = new()
             {
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
@@ -29,20 +30,21 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
             {
                 IDE ideItem = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().First();
-                ExternalCodifyRequestEventArgs extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section1), nameof(AssetStatement.Advisor), ideItem.Manager_8);
+                ExternalCodifyRequestEventArgs extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section0), nameof(AssetStatement.Advisory), ideItem.Manager_8);
                 OnExternalCodifyRequest(extEventArgsAdvisor);
                 if (!extEventArgsAdvisor.Cancel)
                 {
-                    ISection1Content sectionContent = new Section1Content();
+                    ISection0Content sectionContent = new Section0Content();
                     IAssetStatement assetStatement = new AssetStatement()
                     {
                         Portfolio = ideItem.CustomerNumber_2,
-                        Advisor = extEventArgsAdvisor.PropertyValue,
+                        CustomerID = ideItem.CustomerId_6,
+                        Advisory = extEventArgsAdvisor.PropertyValue,
                         Customer = ideItem.CustomerNameShort_5,
-                        Date = ideItem.Date_15 != null ? ideItem.Date_15 : string.Empty
+                        Settled = ideItem.Date_15 != null ? new List<ISettled>() { new Settled(ideItem.Date_15.Value.ToString(DEFAULT_DATE_FORMAT, _culture), ideItem.Time_16.Value.ToString(DEFAULT_TIME_FORMAT, _culture)) } : null
                     };
                     sectionContent.AssetStatements.Add(assetStatement);
-                    output.Content = new Section1Content(sectionContent);
+                    output.Content = new Section0Content(sectionContent);
                 }
             }
             return output;

@@ -7,7 +7,7 @@
     <Authors>Apsoft SA Copyright 2024</Authors>
     <Company>Apsoft SA</Company>
     <Title>PSEWebApi</Title>
-    <Version>1.7.4.4</Version>
+    <Version>2.0.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

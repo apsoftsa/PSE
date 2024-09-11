@@ -11,7 +11,7 @@ namespace PSE.Model.Output.Models
     {
 
         public IList<IOutputModel>? Header { get; set; }
-        public IOutputModel? Section1 { get; set; }
+        public IOutputModel? Section0 { get; set; }
         public IOutputModel? Section3 { get; set; }
         public IOutputModel? Section4 { get; set; }
         public IOutputModel? Section6 { get; set; }
@@ -40,7 +40,7 @@ namespace PSE.Model.Output.Models
         private void Init()
         {
             Header = null;
-            Section1 = null;
+            Section0 = null;
             Section3 = null;
             Section4 = null;
             Section6 = null;
@@ -81,8 +81,8 @@ namespace PSE.Model.Output.Models
                         case Enumerations.ManipolationTypes.AsHeader:
                             Header = new List<IOutputModel>() { section };
                             break;
-                        case Enumerations.ManipolationTypes.AsSection1:
-                            Section1 = section;
+                        case Enumerations.ManipolationTypes.AsSection0:
+                            Section0 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection3:
                             Section3 = section;

@@ -18,7 +18,7 @@ namespace PSE.Builder
 
         private readonly CalculationSettings _calcSettings;
         private readonly ManipulatorHeader _manHeader;
-        private readonly ManipulatorSection1 _manSect1;
+        private readonly ManipulatorSection0 _manSect1;
         private readonly ManipulatorSection3 _manSect3;
         private readonly ManipulatorSection4 _manSect4;
         private readonly ManipulatorSection6 _manSect6;
@@ -106,7 +106,7 @@ namespace PSE.Builder
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
             {
                 ( ManipolationTypes.AsHeader, true ),
-                ( ManipolationTypes.AsSection1, true ),
+                ( ManipolationTypes.AsSection0, true ),
                 ( ManipolationTypes.AsSection3, true ),
                 ( ManipolationTypes.AsSection4, true ),
                 ( ManipolationTypes.AsSection6, false ),
@@ -145,19 +145,19 @@ namespace PSE.Builder
                         {
                             case ManipolationTypes.AsHeader:
                                 {
-                                    if (extractedData.Any()) // !!!! temporaneo, manca analisi
+                                    if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
                                     {
                                         buildData.BuildingLog.FurtherErrorMessage = $"If the manipolation type requested is '{manipolationType}', " +
-                                            "at least one input element into data source having must be provided!";
+                                            $"at least one input record data source having the format ' {nameof(IDE)} ' must be provided!";
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Failed;
                                     }
                                     else
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
-                            case ManipolationTypes.AsSection1:
+                            case ManipolationTypes.AsSection0:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
@@ -342,7 +342,7 @@ namespace PSE.Builder
             IOutputModel? output = manipolationType switch
             {
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
-                ManipolationTypes.AsSection1 => _manSect1.Manipulate(extractedData),
+                ManipolationTypes.AsSection0 => _manSect1.Manipulate(extractedData),
                 ManipolationTypes.AsSection3 => _manSect3.Manipulate(extractedData),
                 ManipolationTypes.AsSection4 => _manSect4.Manipulate(extractedData),
                 ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),

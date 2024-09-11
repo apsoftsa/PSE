@@ -44,7 +44,7 @@ namespace PSE.Decoder
                     BOSSDbContext? context = _serviceProvider.GetService<BOSSDbContext>();
                     if (context != null)
                     {                        
-                        if (e.SectionName == nameof(Section1) && e.PropertyName == nameof(AssetStatement.Advisor))
+                        if (e.SectionName == nameof(Section0) && e.PropertyName == nameof(AssetStatement.Advisory))
                         {
                             if (context.AdaAuIde.Any(flt => flt.AuiNumPer == e.PropertyKey))
                                 e.PropertyValue = context.AdaAuIde.First(flt => flt.AuiNumPer == e.PropertyKey).AuiNome;

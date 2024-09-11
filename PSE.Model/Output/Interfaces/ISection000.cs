@@ -6,15 +6,17 @@
 
         string? Customer { get; set; }
 
+        string? CustomerID { get; set; }
+
+        IList<ISettled>? Settled { get; set; }
+
         string? Portfolio { get; set; }
 
-        string? Date { get; set; }
-
-        string? Advisor { get; set; }
+        string? Advisory { get; set; }
 
     }
 
-    public interface ISection1Content
+    public interface ISection0Content
     {
 
         IList<IAssetStatement> AssetStatements { get; set; }
