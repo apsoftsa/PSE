@@ -12,15 +12,15 @@ using static PSE.Model.Common.Enumerations;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection4 : ManipulatorBase, IManipulator
+    public class ManipulatorSection020 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection4(CultureInfo? culture = null) : base(ManipolationTypes.AsSection4, culture) { }
+        public ManipulatorSection020(CultureInfo? culture = null) : base(ManipolationTypes.AsSection020, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section4 output = new()
+            Section020 output = new()
             {
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
@@ -30,7 +30,7 @@ namespace PSE.BusinessLogic
             {
                 IHistoryEvolutionPerformanceCurrency historyEvo;
                 IChartPerformanceEvolution chartEvo;
-                ISection4Content sectionContent;
+                ISection020Content sectionContent;
                 decimal tmpInpOut;
                 string tmpPeriod;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
@@ -39,7 +39,7 @@ namespace PSE.BusinessLogic
                 {
                     if (perItems != null && perItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        sectionContent = new Section4Content();
+                        sectionContent = new Section020Content();
                         foreach (PER perItem in perItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).OrderByDescending(ob => ob.StartDate_6))
                         {
                             if (perItem.StartDate_6 != null && perItem.EndDate_7 != null
@@ -67,15 +67,15 @@ namespace PSE.BusinessLogic
                                 FinalAmount = perItem.EndValue_9 != null ? perItem.EndValue_9.Value : 0,
                                 InputsOutputs = tmpInpOut
                             };
-                            sectionContent.HistoryEvolutionPerformancesCurrency.Add(historyEvo);
+                            sectionContent.SubSection2000.Content.Add(historyEvo);
                             chartEvo = new ChartPerformanceEvolution()
                             {
-                                Year = tmpPeriod,
+                                Period = tmpPeriod,
                                 PercentPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : 0
                             };
-                            sectionContent.ChartPerformanceEvolutions.Insert(0, chartEvo);
+                            sectionContent.SubSection2010.Content.Insert(0, chartEvo);
                         }
-                        output.Content = new Section4Content(sectionContent);
+                        output.Content = new Section020Content(sectionContent);
                     }
                 }
             }

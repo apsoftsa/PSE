@@ -30,7 +30,7 @@ namespace PSE.Model.Common
             AsHeader = 0,
             AsSection000 = 1,
             AsSection010 = 3,
-            AsSection4 = 4,
+            AsSection020 = 4,
             AsSection6 = 6,
             AsSection7 = 7,
             AsSection8 = 8,

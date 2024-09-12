@@ -20,7 +20,7 @@ namespace PSE.Builder
         private readonly ManipulatorHeader _manHeader;
         private readonly ManipulatorSection000 _manSect000;
         private readonly ManipulatorSection010 _manSect010;
-        private readonly ManipulatorSection4 _manSect4;
+        private readonly ManipulatorSection020 _manSect4;
         private readonly ManipulatorSection6 _manSect6;
         private readonly ManipulatorSection7 _manSect7;
         private readonly ManipulatorSection8 _manSect8;
@@ -108,7 +108,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsHeader, true ),
                 ( ManipolationTypes.AsSection000, true ),
                 ( ManipolationTypes.AsSection010, true ),
-                ( ManipolationTypes.AsSection4, true ),
+                ( ManipolationTypes.AsSection020, true ),
                 ( ManipolationTypes.AsSection6, false ),
                 ( ManipolationTypes.AsSection7, false ),
                 ( ManipolationTypes.AsSection8, false ),
@@ -172,7 +172,7 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection010:
-                            case ManipolationTypes.AsSection4:
+                            case ManipolationTypes.AsSection020:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(PER)))
@@ -344,7 +344,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
                 ManipolationTypes.AsSection000 => _manSect000.Manipulate(extractedData),
                 ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
-                ManipolationTypes.AsSection4 => _manSect4.Manipulate(extractedData),
+                ManipolationTypes.AsSection020 => _manSect4.Manipulate(extractedData),
                 ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),
                 ManipolationTypes.AsSection7 => _manSect7.Manipulate(extractedData),
                 ManipolationTypes.AsSection8 => _manSect8.Manipulate(extractedData),

@@ -241,15 +241,11 @@ namespace PSE.Model.Output.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public ISubSection1011Content SubSection1011 { get; set; }
 
-        [JsonProperty(propertyName: "footerInformation", Order = 4)]
-        public IList<IFooterInformation> FooterInformation { get; set; }
-
         public Section010Content()
         {
             SubSection1000 = new SubSection1000Content();   
             SubSection1010 = new SubSection1010Content();
             SubSection1011 = new SubSection1011Content();
-            FooterInformation = new List<IFooterInformation>();
         }
 
         public Section010Content(ISection010Content source)
