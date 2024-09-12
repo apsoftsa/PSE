@@ -16,7 +16,7 @@
 
     }
 
-    public interface ISection0Content
+    public interface ISection000Content
     {
 
         IList<IAssetStatement> AssetStatements { get; set; }

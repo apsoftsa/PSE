@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
-using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {
@@ -55,18 +54,18 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Section0Content : ISection0Content
+    public class Section000Content : ISection000Content
     {
 
         [JsonProperty(propertyName: "assetStatement")]
         public IList<IAssetStatement> AssetStatements { get; set; }
 
-        public Section0Content()
+        public Section000Content()
         {
             AssetStatements = new List<IAssetStatement>();
         }
 
-        public Section0Content(ISection0Content source)
+        public Section000Content(ISection000Content source)
         {
             AssetStatements = new List<IAssetStatement>();
             if (source != null)
@@ -85,26 +84,26 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Section0 : OutputModel
+    public class Section000 : OutputModel
     {
 
         [JsonProperty(propertyName: "name", Order = 1)]
         public string FakeName { get { return base.SectionName; } private set { } }
 
         [JsonProperty(Order = 2)]
-        public ISection0Content Content { get; set; }
+        public ISection000Content Content { get; set; }
 
-        public Section0() : base()
+        public Section000() : base()
         {
-            Content = new Section0Content();
+            Content = new Section000Content();
         }
 
-        public Section0(Section0 source) : base(source)
+        public Section000(Section000 source) : base(source)
         {
             if (source.Content != null)
-                Content = new Section0Content(source.Content);
+                Content = new Section000Content(source.Content);
             else
-                Content = new Section0Content();
+                Content = new Section000Content();
         }
 
     }

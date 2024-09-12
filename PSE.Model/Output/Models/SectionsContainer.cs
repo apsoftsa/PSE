@@ -12,13 +12,13 @@ namespace PSE.Model.Output.Models
 
         public IList<IOutputModel>? Header { get; set; }
         public IOutputModel? Section0 { get; set; }
-        public IOutputModel? Section3 { get; set; }
+        public IOutputModel? Section10 { get; set; }
         public IOutputModel? Section4 { get; set; }
         public IOutputModel? Section6 { get; set; }
         public IOutputModel? Section7 { get; set; }
         public IOutputModel? Section8 { get; set; }
         public IOutputModel? Section9 { get; set; }
-        public IOutputModel? Section10 { get; set; }
+        public IOutputModel? Section10Old { get; set; }
         public IOutputModel? Section11 { get; set; }
         public IOutputModel? Section12 { get; set; }
         public IOutputModel? Section13 { get; set; }
@@ -41,13 +41,13 @@ namespace PSE.Model.Output.Models
         {
             Header = null;
             Section0 = null;
-            Section3 = null;
+            Section10 = null;
             Section4 = null;
             Section6 = null;
             Section7 = null;
             Section8 = null;
             Section9 = null;
-            Section10 = null;
+            Section10Old = null;
             Section12 = null;
             Section13 = null;
             Section14 = null;
@@ -81,11 +81,11 @@ namespace PSE.Model.Output.Models
                         case Enumerations.ManipolationTypes.AsHeader:
                             Header = new List<IOutputModel>() { section };
                             break;
-                        case Enumerations.ManipolationTypes.AsSection0:
+                        case Enumerations.ManipolationTypes.AsSection000:
                             Section0 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection3:
-                            Section3 = section;
+                        case Enumerations.ManipolationTypes.AsSection010:
+                            Section10 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection4:
                             Section4 = section;
@@ -103,7 +103,7 @@ namespace PSE.Model.Output.Models
                             Section9 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection10:
-                            Section10 = section;
+                            Section10Old = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection11:
                             Section11 = section;

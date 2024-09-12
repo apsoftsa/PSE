@@ -44,12 +44,12 @@ namespace PSE.Decoder
                     BOSSDbContext? context = _serviceProvider.GetService<BOSSDbContext>();
                     if (context != null)
                     {                        
-                        if (e.SectionName == nameof(Section0) && e.PropertyName == nameof(AssetStatement.Advisory))
+                        if (e.SectionName == nameof(Section000) && e.PropertyName == nameof(AssetStatement.Advisory))
                         {
                             if (context.AdaAuIde.Any(flt => flt.AuiNumPer == e.PropertyKey))
                                 e.PropertyValue = context.AdaAuIde.First(flt => flt.AuiNumPer == e.PropertyKey).AuiNome;
                         }
-                        else if ((e.SectionName == nameof(Section3) || e.SectionName == nameof(Section26)) && e.PropertyName == nameof(KeyInformation.Portfolio))
+                        else if ((e.SectionName == nameof(Section010) || e.SectionName == nameof(Section26)) && e.PropertyName == nameof(KeyInformation.Portfolio))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "N121" && flt.Code == e.PropertyKey.Substring(0, 1)))
                             {
@@ -67,7 +67,7 @@ namespace PSE.Decoder
                                 e.PropertyValue = e.PropertyKey[1..] + " - " + e.PropertyValue;
                             }
                         }
-                        else if ((e.SectionName == nameof(Section3) || e.SectionName == nameof(Section26)) && e.PropertyName == nameof(KeyInformation.Service))
+                        else if ((e.SectionName == nameof(Section010) || e.SectionName == nameof(Section26)) && e.PropertyName == nameof(KeyInformation.EsgProfile))
                         {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey))
                             {

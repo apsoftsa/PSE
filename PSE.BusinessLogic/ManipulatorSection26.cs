@@ -43,7 +43,7 @@ namespace PSE.BusinessLogic
                     OnExternalCodifyRequest(extEventArgsPortfolio);
                     if (!extEventArgsPortfolio.Cancel)
                     {
-                        extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(KeyInformation.Service), ideItem.Mandate_11, propertyParams);
+                        extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
                         OnExternalCodifyRequest(extEventArgsService);
                         if (!extEventArgsService.Cancel)
                         {

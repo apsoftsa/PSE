@@ -18,8 +18,8 @@ namespace PSE.Builder
 
         private readonly CalculationSettings _calcSettings;
         private readonly ManipulatorHeader _manHeader;
-        private readonly ManipulatorSection0 _manSect1;
-        private readonly ManipulatorSection3 _manSect3;
+        private readonly ManipulatorSection000 _manSect000;
+        private readonly ManipulatorSection010 _manSect010;
         private readonly ManipulatorSection4 _manSect4;
         private readonly ManipulatorSection6 _manSect6;
         private readonly ManipulatorSection7 _manSect7;
@@ -57,10 +57,10 @@ namespace PSE.Builder
             _calcSettings = new CalculationSettings();
             _manHeader = new();
             _manHeader.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect1 = new();
-            _manSect1.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect3 = new();
-            _manSect3.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect000 = new();
+            _manSect000.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect010 = new();
+            _manSect010.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect4 = new();
             _manSect4.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect6 = new();
@@ -106,8 +106,8 @@ namespace PSE.Builder
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
             {
                 ( ManipolationTypes.AsHeader, true ),
-                ( ManipolationTypes.AsSection0, true ),
-                ( ManipolationTypes.AsSection3, true ),
+                ( ManipolationTypes.AsSection000, true ),
+                ( ManipolationTypes.AsSection010, true ),
                 ( ManipolationTypes.AsSection4, true ),
                 ( ManipolationTypes.AsSection6, false ),
                 ( ManipolationTypes.AsSection7, false ),
@@ -157,7 +157,7 @@ namespace PSE.Builder
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
-                            case ManipolationTypes.AsSection0:
+                            case ManipolationTypes.AsSection000:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
@@ -171,7 +171,7 @@ namespace PSE.Builder
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
-                            case ManipolationTypes.AsSection3:
+                            case ManipolationTypes.AsSection010:
                             case ManipolationTypes.AsSection4:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
@@ -342,8 +342,8 @@ namespace PSE.Builder
             IOutputModel? output = manipolationType switch
             {
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
-                ManipolationTypes.AsSection0 => _manSect1.Manipulate(extractedData),
-                ManipolationTypes.AsSection3 => _manSect3.Manipulate(extractedData),
+                ManipolationTypes.AsSection000 => _manSect000.Manipulate(extractedData),
+                ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
                 ManipolationTypes.AsSection4 => _manSect4.Manipulate(extractedData),
                 ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),
                 ManipolationTypes.AsSection7 => _manSect7.Manipulate(extractedData),

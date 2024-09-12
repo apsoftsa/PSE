@@ -134,8 +134,8 @@ namespace PSE.BusinessLogic.Common
             _sectionsBinding = new List<SectionBinding>()
             {
                 new SectionBinding(ManipolationTypes.AsHeader, "header", "Headers"),
-                new SectionBinding(ManipolationTypes.AsSection0, "section0", "Cover"),
-                new SectionBinding(ManipolationTypes.AsSection3, "section3", "Portfolio Details"),
+                new SectionBinding(ManipolationTypes.AsSection000, "section0", "Cover"),
+                new SectionBinding(ManipolationTypes.AsSection010, "section10", "Portfolio Details"),
                 new SectionBinding(ManipolationTypes.AsSection4, "section4", "Performance Evolution"),
                 new SectionBinding(ManipolationTypes.AsSection6, "section6", "Breakdown by type of investment"),
                 new SectionBinding(ManipolationTypes.AsSection7, "section7", "Breakdown by currency"),
