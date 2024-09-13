@@ -14,7 +14,7 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section0 { get; set; }
         public IOutputModel? Section10 { get; set; }
         public IOutputModel? Section20 { get; set; }
-        public IOutputModel? Section6 { get; set; }
+        public IOutputModel? Section40 { get; set; }
         public IOutputModel? Section7 { get; set; }
         public IOutputModel? Section8 { get; set; }
         public IOutputModel? Section9 { get; set; }
@@ -43,7 +43,7 @@ namespace PSE.Model.Output.Models
             Section0 = null;
             Section10 = null;
             Section20 = null;
-            Section6 = null;
+            Section40 = null;
             Section7 = null;
             Section8 = null;
             Section9 = null;
@@ -90,8 +90,8 @@ namespace PSE.Model.Output.Models
                         case Enumerations.ManipolationTypes.AsSection020:
                             Section20 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection6:
-                            Section6 = section;
+                        case Enumerations.ManipolationTypes.AsSection040:
+                            Section40 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection7:
                             Section7 = section;

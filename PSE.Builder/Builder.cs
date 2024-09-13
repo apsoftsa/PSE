@@ -20,8 +20,8 @@ namespace PSE.Builder
         private readonly ManipulatorHeader _manHeader;
         private readonly ManipulatorSection000 _manSect000;
         private readonly ManipulatorSection010 _manSect010;
-        private readonly ManipulatorSection020 _manSect4;
-        private readonly ManipulatorSection6 _manSect6;
+        private readonly ManipulatorSection020 _manSect020;
+        private readonly ManipulatorSection040 _manSect040;
         private readonly ManipulatorSection7 _manSect7;
         private readonly ManipulatorSection8 _manSect8;
         private readonly ManipulatorSection9 _manSect9;
@@ -61,10 +61,10 @@ namespace PSE.Builder
             _manSect000.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect010 = new();
             _manSect010.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect4 = new();
-            _manSect4.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect6 = new();
-            _manSect6.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect020 = new();
+            _manSect020.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect040 = new();
+            _manSect040.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect7 = new();
             _manSect7.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect8 = new();
@@ -109,7 +109,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection000, true ),
                 ( ManipolationTypes.AsSection010, true ),
                 ( ManipolationTypes.AsSection020, true ),
-                ( ManipolationTypes.AsSection6, false ),
+                ( ManipolationTypes.AsSection040, false ),
                 ( ManipolationTypes.AsSection7, false ),
                 ( ManipolationTypes.AsSection8, false ),
                 ( ManipolationTypes.AsSection9, false ),
@@ -202,7 +202,7 @@ namespace PSE.Builder
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
-                            case ManipolationTypes.AsSection6:
+                            case ManipolationTypes.AsSection040:
                             case ManipolationTypes.AsSection7:
                             case ManipolationTypes.AsSection22:
                             case ManipolationTypes.AsSection23:
@@ -344,8 +344,8 @@ namespace PSE.Builder
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
                 ManipolationTypes.AsSection000 => _manSect000.Manipulate(extractedData),
                 ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
-                ManipolationTypes.AsSection020 => _manSect4.Manipulate(extractedData),
-                ManipolationTypes.AsSection6 => _manSect6.Manipulate(extractedData),
+                ManipolationTypes.AsSection020 => _manSect020.Manipulate(extractedData),
+                ManipolationTypes.AsSection040 => _manSect040.Manipulate(extractedData),
                 ManipolationTypes.AsSection7 => _manSect7.Manipulate(extractedData),
                 ManipolationTypes.AsSection8 => _manSect8.Manipulate(extractedData),
                 ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),

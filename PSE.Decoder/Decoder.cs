@@ -84,7 +84,7 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        else if ((e.SectionName == nameof(Section6) || e.SectionName == nameof(Section26)) && (e.PropertyName == nameof(Asset.AssetClass) || e.PropertyName == nameof(Asset.TypeInvestment)))
+                        else if ((e.SectionName == nameof(Section040) || e.SectionName == nameof(Section26)) && (e.PropertyName == nameof(InvestmentAsset.AssetClass) || e.PropertyName == nameof(InvestmentAsset.TypeInvestment)))
                         {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey))
                             {

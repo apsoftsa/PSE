@@ -65,7 +65,7 @@ namespace PSE.BusinessLogic
                             {
                                 foreach (IGrouping<string, POS> category in groupByCategory)
                                 {
-                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(Asset.TypeInvestment), category.Key, propertyParams);
+                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section26), nameof(InvestmentAsset.TypeInvestment), category.Key, propertyParams);
                                     OnExternalCodifyRequest(extEventArgsAdvisor);
                                     if (!extEventArgsAdvisor.Cancel)
                                     {

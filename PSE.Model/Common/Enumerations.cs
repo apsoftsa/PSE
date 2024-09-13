@@ -31,7 +31,7 @@ namespace PSE.Model.Common
             AsSection000 = 1,
             AsSection010 = 3,
             AsSection020 = 4,
-            AsSection6 = 6,
+            AsSection040 = 6,
             AsSection7 = 7,
             AsSection8 = 8,
             AsSection9 = 9,
