@@ -22,8 +22,8 @@ namespace PSE.Builder
         private readonly ManipulatorSection010 _manSect010;
         private readonly ManipulatorSection020 _manSect020;
         private readonly ManipulatorSection040 _manSect040;
-        private readonly ManipulatorSection7 _manSect7;
-        private readonly ManipulatorSection8 _manSect8;
+        private readonly ManipulatorSection060 _manSect7;
+        private readonly ManipulatorSection070 _manSect8;
         private readonly ManipulatorSection9 _manSect9;
         private readonly ManipulatorSection10 _manSect10;
         private readonly ManipulatorSection11 _manSect11;
@@ -110,8 +110,8 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection010, true ),
                 ( ManipolationTypes.AsSection020, true ),
                 ( ManipolationTypes.AsSection040, false ),
-                ( ManipolationTypes.AsSection7, false ),
-                ( ManipolationTypes.AsSection8, false ),
+                ( ManipolationTypes.AsSection060, false ),
+                ( ManipolationTypes.AsSection070, false ),
                 ( ManipolationTypes.AsSection9, false ),
                 ( ManipolationTypes.AsSection10, false ),
                 ( ManipolationTypes.AsSection11, false ),
@@ -203,7 +203,7 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection040:
-                            case ManipolationTypes.AsSection7:
+                            case ManipolationTypes.AsSection060:
                             case ManipolationTypes.AsSection22:
                             case ManipolationTypes.AsSection23:
                             case ManipolationTypes.AsSection26:
@@ -211,7 +211,7 @@ namespace PSE.Builder
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
                                     {
-                                        if (manipolationType == ManipolationTypes.AsSection7 && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)
+                                        if (manipolationType == ManipolationTypes.AsSection060 && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)
                                         {
                                             if (isMandatory)
                                             {
@@ -235,7 +235,7 @@ namespace PSE.Builder
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Ignored;
                                 }
                                 break;
-                            case ManipolationTypes.AsSection8:
+                            case ManipolationTypes.AsSection070:
                             case ManipolationTypes.AsSection9:
                             case ManipolationTypes.AsSection10:
                             case ManipolationTypes.AsSection11:
@@ -346,8 +346,8 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
                 ManipolationTypes.AsSection020 => _manSect020.Manipulate(extractedData),
                 ManipolationTypes.AsSection040 => _manSect040.Manipulate(extractedData),
-                ManipolationTypes.AsSection7 => _manSect7.Manipulate(extractedData),
-                ManipolationTypes.AsSection8 => _manSect8.Manipulate(extractedData),
+                ManipolationTypes.AsSection060 => _manSect7.Manipulate(extractedData),
+                ManipolationTypes.AsSection070 => _manSect8.Manipulate(extractedData),
                 ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),
                 ManipolationTypes.AsSection10 => _manSect10.Manipulate(extractedData),
                 ManipolationTypes.AsSection11 => _manSect11.Manipulate(extractedData),
