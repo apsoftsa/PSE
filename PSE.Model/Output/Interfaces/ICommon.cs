@@ -10,4 +10,15 @@
 
     }
 
+    public interface IDetailSummary
+    {
+        string? ValueDate { get; set; }
+        decimal? ValuePrice { get; set; }
+        decimal? PercentPrice { get; set; }
+        decimal? ExchangeValue { get; set; }
+        decimal? PercentExchange { get; set; }
+        decimal? ProfitLossNotRealizedValue { get; set; }
+        decimal? PercentProfitLossN { get; set; }
+    }
+
 }

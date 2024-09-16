@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ManipulatorSection09.cs" />
+    <Compile Remove="ManipulatorSection10.cs" />
+    <Compile Remove="ManipulatorSection11.cs" />
+    <Compile Remove="ManipulatorSection13.cs" />
+    <Compile Remove="ManipulatorSection14.cs" />
+    <Compile Remove="ManipulatorSection16And17.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
   </ItemGroup>
 

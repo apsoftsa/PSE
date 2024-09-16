@@ -18,7 +18,7 @@ namespace PSE.Model.Output.Models
 
         public MultilineAssetsTo()
         {
-            ValueDate = string.Empty;
+            ValueDate = null;
             ValueAsset = null;
         }
 
@@ -49,7 +49,7 @@ namespace PSE.Model.Output.Models
 
         public MultilineKeyInformation()
         {
-            Period = string.Empty;
+            Period = null;
             Currency = null;
             AssetsTo = new List<IMultilineAssetsTo>();  
             PercentPerformance = 0;
@@ -88,7 +88,7 @@ namespace PSE.Model.Output.Models
 
         public LinePerformanceAnalysis()
         {
-            ModelLine = string.Empty;
+            ModelLine = null;
             Currency = null;
             PercentNetContribution = 0;
         }
@@ -115,7 +115,7 @@ namespace PSE.Model.Output.Models
 
         public LineAllocationEvolutionChartModelLine()
         {
-            ModelLine = string.Empty;
+            ModelLine = null;
             PercentNetContribution = 0;
         }
 
@@ -140,7 +140,7 @@ namespace PSE.Model.Output.Models
 
         public LineAllocationEvolutionChart()
         {
-            Period = string.Empty;
+            Period = null;
             ModelLines = new List<ILineAllocationEvolutionChartModelLine>();
         }
 

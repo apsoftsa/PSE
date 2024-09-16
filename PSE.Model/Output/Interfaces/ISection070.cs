@@ -1,6 +1,4 @@
-﻿using PSE.Model.Output.Models;
-
-namespace PSE.Model.Output.Interfaces
+﻿namespace PSE.Model.Output.Interfaces
 {
 
     public interface ILiquidityAccount
@@ -25,31 +23,7 @@ namespace PSE.Model.Output.Interfaces
 
         IList<ILiquidityAccount> Content { get; set; }
 
-    }
-
-    public interface ILiquiditySummary
-    {
-
-        decimal? ValuePrice { get; set; }
-
-        decimal? PercentPrice { get; set; }
-
-        decimal? ExchangeValue { get; set; }
-
-        decimal? PercentExchange { get; set; }
-
-        decimal? ProfitLossNotRealizedValue { get; set; }
-
-        decimal? PercentProfitLossN { get; set; }
-
-    }
-
-    public interface ILiquiditySummaryDate : ILiquiditySummary
-    {
-
-        string ValueDate { get; set; }
-
-    }
+    }       
 
     public interface ILiquidityShortTermFund 
     {
@@ -62,11 +36,11 @@ namespace PSE.Model.Output.Interfaces
 
         string? Currency { get; set; }
 
-        IList<ILiquiditySummaryDate> SummaryTo {  get; set; }
+        IList<IDetailSummary> SummaryTo {  get; set; }
 
-        IList<ILiquiditySummary> SummaryBeginningYear { get; set; }
+        IList<IDetailSummary> SummaryBeginningYear { get; set; }
 
-        IList<ILiquiditySummary> SummaryPurchase { get; set; }
+        IList<IDetailSummary> SummaryPurchase { get; set; }
 
         decimal? CapitalMarketValueReportingCurrency { get; set; }
 
@@ -108,7 +82,7 @@ namespace PSE.Model.Output.Interfaces
 
         decimal? AccruedInterestReportingCurrency { get; set; }
 
-        decimal? PercentWeigth { get; set; }
+        decimal? PercentWeight { get; set; }
 
     }
 
@@ -148,7 +122,7 @@ namespace PSE.Model.Output.Interfaces
 
         decimal? ProfitLoss { get; set; }
 
-        decimal? PercentWeigth { get; set; }
+        decimal? PercentWeight { get; set; }
 
     }
 
@@ -174,11 +148,11 @@ namespace PSE.Model.Output.Interfaces
 
         string? Strike { get; set; }
 
-        IList<ILiquiditySummaryDate> SummaryTo { get; set; }
+        IList<IDetailSummary> SummaryTo { get; set; }
 
-        IList<ILiquiditySummary> SummaryBeginningYear { get; set; }
+        IList<IDetailSummary> SummaryBeginningYear { get; set; }
 
-        IList<ILiquiditySummary> SummaryPurchase { get; set; }
+        IList<IDetailSummary> SummaryPurchase { get; set; }
 
         decimal? MarketValueReportingCurrency { get; set; }
 

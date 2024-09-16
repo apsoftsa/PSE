@@ -17,15 +17,15 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section40 { get; set; }
         public IOutputModel? Section60 { get; set; }
         public IOutputModel? Section70 { get; set; }
-        public IOutputModel? Section9 { get; set; }
-        public IOutputModel? Section10Old { get; set; }
-        public IOutputModel? Section11 { get; set; }
-        public IOutputModel? Section12 { get; set; }
-        public IOutputModel? Section13 { get; set; }
-        public IOutputModel? Section14 { get; set; }
-        public IOutputModel? Section15 { get; set; }
-        [JsonProperty(propertyName: "section16_17")]
-        public IOutputModel? Section16And17 { get; set; }
+        //public IOutputModel? Section9 { get; set; }
+        //public IOutputModel? Section10 { get; set; }
+        //public IOutputModel? Section11 { get; set; }
+        public IOutputModel? Section80 { get; set; }
+        //public IOutputModel? Section13 { get; set; }
+        //public IOutputModel? Section14 { get; set; }
+        public IOutputModel? Section90 { get; set; }
+        //[JsonProperty(propertyName: "section16_17")]
+        //public IOutputModel? Section16And17 { get; set; }
         [JsonProperty(propertyName: "section18_19")]
         public IOutputModel? Section18And19 { get; set; }
         public IOutputModel? Section20Old { get; set; }
@@ -46,13 +46,13 @@ namespace PSE.Model.Output.Models
             Section40 = null;
             Section60 = null;
             Section70 = null;
-            Section9 = null;
-            Section10Old = null;
-            Section12 = null;
-            Section13 = null;
-            Section14 = null;
-            Section15 = null;
-            Section16And17 = null;
+            //Section9 = null;
+            //Section10 = null;
+            Section80 = null;
+            //Section13 = null;
+            //Section14 = null;
+            Section90 = null;
+            //Section16And17 = null;
             Section18And19 = null;
             Section20Old = null;
             Section21 = null;
@@ -99,6 +99,7 @@ namespace PSE.Model.Output.Models
                         case Enumerations.ManipolationTypes.AsSection070:
                             Section70 = section;
                             break;
+                            /*
                         case Enumerations.ManipolationTypes.AsSection9:
                             Section9 = section;
                             break;
@@ -108,25 +109,28 @@ namespace PSE.Model.Output.Models
                         case Enumerations.ManipolationTypes.AsSection11:
                             Section11 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection12:
-                            Section12 = section;
+                            */
+                        case Enumerations.ManipolationTypes.AsSection080:
+                            Section80 = section;
                             break;
+                        /*
                         case Enumerations.ManipolationTypes.AsSection13:
                             Section13 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection14:
                             Section14 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection15:
-                            Section15 = section;
+                        */
+                        case Enumerations.ManipolationTypes.AsSection090:
+                            Section90 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection16And17:
-                            Section16And17 = section;
-                            break;
+                        //case Enumerations.ManipolationTypes.AsSection16And17:
+                        //    Section16And17 = section;
+                        //    break;
                         case Enumerations.ManipolationTypes.AsSection18And19:
                             Section18And19 = section;
                             break;
-                        case Enumerations.ManipolationTypes.AsSection20:
+                        case Enumerations.ManipolationTypes.AsSection100:
                             Section20Old = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection21:

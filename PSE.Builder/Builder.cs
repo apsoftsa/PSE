@@ -22,18 +22,18 @@ namespace PSE.Builder
         private readonly ManipulatorSection010 _manSect010;
         private readonly ManipulatorSection020 _manSect020;
         private readonly ManipulatorSection040 _manSect040;
-        private readonly ManipulatorSection060 _manSect7;
-        private readonly ManipulatorSection070 _manSect8;
-        private readonly ManipulatorSection9 _manSect9;
-        private readonly ManipulatorSection10 _manSect10;
-        private readonly ManipulatorSection11 _manSect11;
-        private readonly ManipulatorSection12 _manSect12;
-        private readonly ManipulatorSection13 _manSect13;
-        private readonly ManipulatorSection14 _manSect14;
-        private readonly ManipulatorSection15 _manSect15;
-        private readonly ManipulatorSection16And17 _manSect16And17;
+        private readonly ManipulatorSection060 _manSect060;
+        private readonly ManipulatorSection070 _manSect070;
+        //private readonly ManipulatorSection9 _manSect9;
+        //private readonly ManipulatorSection10 _manSect10;
+        //private readonly ManipulatorSection11 _manSect11;
+        private readonly ManipulatorSection080 _manSect080;
+        //private readonly ManipulatorSection13 _manSect13;
+        //private readonly ManipulatorSection14 _manSect14;
+        private readonly ManipulatorSection090 _manSect090;
+        //private readonly ManipulatorSection16And17 _manSect16And17;
         private readonly ManipulatorSection18And19 _manSect18And19;
-        private readonly ManipulatorSection20 _manSect20;
+        private readonly ManipulatorSection100 _manSect100;
         private readonly ManipulatorSection21 _manSect21;
         private readonly ManipulatorSection22 _manSect22;
         private readonly ManipulatorSection23 _manSect23;
@@ -65,30 +65,34 @@ namespace PSE.Builder
             _manSect020.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect040 = new();
             _manSect040.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect7 = new();
-            _manSect7.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect8 = new();
-            _manSect8.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect060 = new();
+            _manSect060.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect070 = new();
+            _manSect070.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            /*
             _manSect9 = new();
             _manSect9.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect10 = new();
             _manSect10.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect11 = new();
             _manSect11.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect12 = new(_calcSettings);
-            _manSect12.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            */
+            _manSect080 = new(_calcSettings);
+            _manSect080.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            /*
             _manSect13 = new(_calcSettings);
             _manSect13.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect14 = new(_calcSettings);
             _manSect14.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect15 = new(_calcSettings);
-            _manSect15.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect16And17 = new(_calcSettings);
-            _manSect16And17.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            */
+            _manSect090 = new(_calcSettings);
+            _manSect090.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            //_manSect16And17 = new(_calcSettings);
+            //_manSect16And17.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect18And19 = new(_calcSettings);
             _manSect18And19.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect20 = new();
-            _manSect20.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect100 = new();
+            _manSect100.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect21 = new();
             _manSect21.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect22 = new();
@@ -112,17 +116,17 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection040, false ),
                 ( ManipolationTypes.AsSection060, false ),
                 ( ManipolationTypes.AsSection070, false ),
-                ( ManipolationTypes.AsSection9, false ),
-                ( ManipolationTypes.AsSection10, false ),
-                ( ManipolationTypes.AsSection11, false ),
-                ( ManipolationTypes.AsSection16And17, false ), // section with high priority (!)
-                ( ManipolationTypes.AsSection12, false ),
-                ( ManipolationTypes.AsSection13, false ),
-                ( ManipolationTypes.AsSection14, false ),
-                ( ManipolationTypes.AsSection15, false ),
+                //( ManipolationTypes.AsSection9, false ),
+                //( ManipolationTypes.AsSection10, false ),
+                //( ManipolationTypes.AsSection11, false ),
+                //( ManipolationTypes.AsSection16And17, false ), // section with high priority (!)
+                ( ManipolationTypes.AsSection080, false ),
+                //( ManipolationTypes.AsSection13, false ),
+                //( ManipolationTypes.AsSection14, false ),
+                ( ManipolationTypes.AsSection090, false ),
                 //( ManipolationTypes.AsSection16And17, false ),
                 ( ManipolationTypes.AsSection18And19, false ),
-                ( ManipolationTypes.AsSection20, false ),
+                ( ManipolationTypes.AsSection100, false ),
                 ( ManipolationTypes.AsSection21, false ),
                 ( ManipolationTypes.AsSection22, false ),
                 ( ManipolationTypes.AsSection23, false ),
@@ -236,16 +240,16 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection070:
-                            case ManipolationTypes.AsSection9:
-                            case ManipolationTypes.AsSection10:
-                            case ManipolationTypes.AsSection11:
-                            case ManipolationTypes.AsSection12:
-                            case ManipolationTypes.AsSection13:
-                            case ManipolationTypes.AsSection14:
-                            case ManipolationTypes.AsSection15:
-                            case ManipolationTypes.AsSection16And17:
+                            //case ManipolationTypes.AsSection9:
+                            //case ManipolationTypes.AsSection10:
+                            //case ManipolationTypes.AsSection11:
+                            case ManipolationTypes.AsSection080:
+                            //case ManipolationTypes.AsSection13:
+                            //case ManipolationTypes.AsSection14:
+                            case ManipolationTypes.AsSection090:
+                            //case ManipolationTypes.AsSection16And17:
                             case ManipolationTypes.AsSection18And19:
-                            case ManipolationTypes.AsSection20:
+                            case ManipolationTypes.AsSection100:
                             case ManipolationTypes.AsSection21:
                             case ManipolationTypes.AsSection25:
                                 {
@@ -255,7 +259,7 @@ namespace PSE.Builder
                                         if (ArePOSRowsManipulable(extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>(), manipolationType))
                                         {
                                             // ????
-                                            //if ((manipolationType == ManipolationTypes.AsSection12 || manipolationType == ManipolationTypes.AsSection13 || manipolationType == ManipolationTypes.AsSection14)
+                                            //if ((manipolationType == ManipolationTypes.AsSection080 || manipolationType == ManipolationTypes.AsSection13 || manipolationType == ManipolationTypes.AsSection14)
                                             //    && isMandatory && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)                                            
                                             if (isMandatory && extractedData.Any(flt => flt.RecordType == nameof(CUR)) == false)
                                             {
@@ -346,18 +350,20 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
                 ManipolationTypes.AsSection020 => _manSect020.Manipulate(extractedData),
                 ManipolationTypes.AsSection040 => _manSect040.Manipulate(extractedData),
-                ManipolationTypes.AsSection060 => _manSect7.Manipulate(extractedData),
-                ManipolationTypes.AsSection070 => _manSect8.Manipulate(extractedData),
+                ManipolationTypes.AsSection060 => _manSect060.Manipulate(extractedData),
+                ManipolationTypes.AsSection070 => _manSect070.Manipulate(extractedData),
+                /*
                 ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),
                 ManipolationTypes.AsSection10 => _manSect10.Manipulate(extractedData),
                 ManipolationTypes.AsSection11 => _manSect11.Manipulate(extractedData),
-                ManipolationTypes.AsSection12 => _manSect12.Manipulate(extractedData),
-                ManipolationTypes.AsSection13 => _manSect13.Manipulate(extractedData),
-                ManipolationTypes.AsSection14 => _manSect14.Manipulate(extractedData),
-                ManipolationTypes.AsSection15 => _manSect15.Manipulate(extractedData),
-                ManipolationTypes.AsSection16And17 => _manSect16And17.Manipulate(extractedData),
+                */
+                ManipolationTypes.AsSection080 => _manSect080.Manipulate(extractedData),
+                //ManipolationTypes.AsSection13 => _manSect13.Manipulate(extractedData),
+                //ManipolationTypes.AsSection14 => _manSect14.Manipulate(extractedData),
+                ManipolationTypes.AsSection090 => _manSect090.Manipulate(extractedData),
+                //ManipolationTypes.AsSection16And17 => _manSect16And17.Manipulate(extractedData),
                 ManipolationTypes.AsSection18And19 => _manSect18And19.Manipulate(extractedData),
-                ManipolationTypes.AsSection20 => _manSect20.Manipulate(extractedData),
+                ManipolationTypes.AsSection100 => _manSect100.Manipulate(extractedData),
                 ManipolationTypes.AsSection21 => _manSect21.Manipulate(extractedData),
                 ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
                 ManipolationTypes.AsSection23 => _manSect23.Manipulate(extractedData),

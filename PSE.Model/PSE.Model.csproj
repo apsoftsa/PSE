@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Output\Interfaces\ISection09.cs" />
+    <Compile Remove="Output\Interfaces\ISection10.cs" />
+    <Compile Remove="Output\Interfaces\ISection11.cs" />
+    <Compile Remove="Output\Interfaces\ISection13.cs" />
+    <Compile Remove="Output\Interfaces\ISection14.cs" />
+    <Compile Remove="Output\Interfaces\ISection16And17.cs" />
+    <Compile Remove="Output\Models\Section09.cs" />
+    <Compile Remove="Output\Models\Section10.cs" />
+    <Compile Remove="Output\Models\Section11.cs" />
+    <Compile Remove="Output\Models\Section13.cs" />
+    <Compile Remove="Output\Models\Section14.cs" />
+    <Compile Remove="Output\Models\Section16And17.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FileHelpers" Version="3.5.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

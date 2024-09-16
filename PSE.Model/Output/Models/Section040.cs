@@ -63,7 +63,7 @@ namespace PSE.Model.Output.Models
 
         public AssetClassChart()
         {
-            this.AssetClass = string.Empty;
+            this.AssetClass = null;
             this.PercentInvestment = 0;
         }
 
