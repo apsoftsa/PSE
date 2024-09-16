@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Output\Interfaces\IBase.cs" />
     <Compile Remove="Output\Interfaces\ISection09.cs" />
     <Compile Remove="Output\Interfaces\ISection10.cs" />
     <Compile Remove="Output\Interfaces\ISection11.cs" />
     <Compile Remove="Output\Interfaces\ISection13.cs" />
     <Compile Remove="Output\Interfaces\ISection14.cs" />
     <Compile Remove="Output\Interfaces\ISection16And17.cs" />
+    <Compile Remove="Output\Models\Base.cs" />
     <Compile Remove="Output\Models\Section09.cs" />
     <Compile Remove="Output\Models\Section10.cs" />
     <Compile Remove="Output\Models\Section11.cs" />

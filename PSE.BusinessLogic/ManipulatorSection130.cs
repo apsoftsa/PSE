@@ -13,15 +13,15 @@ using static PSE.Model.Common.Enumerations;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection24 : ManipulatorBase, IManipulator
+    public class ManipulatorSection130 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection24(CultureInfo? culture = null) : base(ManipolationTypes.AsSection24, culture) { }
+        public ManipulatorSection130(CultureInfo? culture = null) : base(ManipolationTypes.AsSection130, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {            
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section24 output = new()
+            Section130 output = new()
             {
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
@@ -29,8 +29,8 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(ORD)))
             {
-                ISection24Content sectionContent;
-                IExchange exchange;
+                ISection130Content sectionContent;
+                IStockOrder stockOrder;
                 ExternalCodifyRequestEventArgs extEventArgsOperation;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
@@ -39,30 +39,30 @@ namespace PSE.BusinessLogic
                 {
                     if (ordItems != null && ordItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
-                        sectionContent = new Section24Content();
+                        sectionContent = new Section130Content();
                         foreach (ORD ordItem in ordItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
-                            extEventArgsOperation = new ExternalCodifyRequestEventArgs(nameof(Section24), nameof(Exchange.Operation), ordItem.Direction_10, propertyParams);
+                            extEventArgsOperation = new ExternalCodifyRequestEventArgs(nameof(Section130), nameof(StockOrder.Operation), ordItem.Direction_10, propertyParams);
                             OnExternalCodifyRequest(extEventArgsOperation);
                             if (!extEventArgsOperation.Cancel)
                             {
 
-                                exchange = new Exchange()
+                                stockOrder = new StockOrder()
                                 {
-                                    ExchangeOrder = ordItem.Reference_8,
+                                    Order = ordItem.Reference_8,
                                     Operation = extEventArgsOperation.PropertyValue,
                                     ExpirationDate = ordItem.Limit_Date_End_11 != null ? ordItem.Limit_Date_End_11.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                    Quantity = ordItem.Quantity_13,
-                                    ExchangeValue = ordItem.Sec_Num_14,
+                                    Amount = ordItem.Quantity_13,
+                                    OrderValue = ordItem.Sec_Num_14,
                                     Description = ordItem.Sec_Description_15,
                                     Currency = ordItem.Currency_16,
-                                    CourseCost = ordItem.Quote_17,
+                                    Price = ordItem.Quote_17,
                                     LimitStopLoss = ordItem.Limit_Price_18 != null ? ordItem.Limit_Price_18.Value.ToString() : string.Empty
                                 };
-                                sectionContent.Exchange.Add(exchange);
+                                sectionContent.SubSection13000.Content.Add(stockOrder);
                             }
                         }
-                        output.Content = new Section24Content(sectionContent);
+                        output.Content = new Section130Content(sectionContent);
                     }
                 }
             }

@@ -157,7 +157,7 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        else if (e.SectionName == nameof(Section24) && e.PropertyName == nameof(Exchange.Operation))
+                        else if (e.SectionName == nameof(Section130) && e.PropertyName == nameof(StockOrder.Operation))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "N047" && string.IsNullOrEmpty(flt.Col7) == false && flt.Col7.Trim() == "X" && flt.Code.Substring(0, 1) == e.PropertyKey))
                             {
