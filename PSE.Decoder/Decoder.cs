@@ -101,6 +101,7 @@ namespace PSE.Decoder
                                 };
                             }
                         }
+                        /*
                         else if (e.SectionName == nameof(Section22) && e.PropertyName == nameof(Country.CountryName))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
@@ -140,7 +141,8 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        else if (e.SectionName == nameof(Section23) && e.PropertyName == nameof(EconSector.Sector))
+                        */
+                        else if (e.SectionName == nameof(Section160) && e.PropertyName == nameof(ShareEconomicSector.Sector))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey))
                             {

@@ -12,15 +12,15 @@ using static PSE.Model.Common.Enumerations;
 namespace PSE.BusinessLogic
 {
 
-    public class ManipulatorSection23 : ManipulatorBase, IManipulator
+    public class ManipulatorSection160 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection23(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection23, culture) { }
+        public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection160, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section23 output = new()
+            Section160 output = new()
             {
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
@@ -29,8 +29,8 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {                
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
-                IEconSector econSector;                
-                ISection23Content sectionContent;
+                IShareEconomicSector econSector;                
+                ISection160Content sectionContent;
                 string sectorDescr;
                 decimal totalSum, totalPerc, currPerc;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), Model.Common.Constants.ITALIAN_LANGUAGE_CODE } };
@@ -40,28 +40,27 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
-                    sectionContent = new Section23Content();
-                    sectionContent.ActionByEconSector.Add(new ActionByEconSector());
+                    sectionContent = new Section160Content();
                     totalSum = 0;
                     IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15 == ((int)PositionClassifications.AZIONI_FONDI_AZIONARI).ToString()).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> economicalSector in groupByEconomicalSector)
                     {
                         sectorDescr = "(Unknown)";
-                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section23), nameof(EconSector.Sector), economicalSector.Key, propertyParams);
+                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section160), nameof(ShareEconomicSector.Sector), economicalSector.Key, propertyParams);
                         OnExternalCodifyRequest(extEventArgsAdvisor);
                         if (!extEventArgsAdvisor.Cancel)
                             sectorDescr = extEventArgsAdvisor.PropertyValue;
-                        econSector = new EconSector()
+                        econSector = new ShareEconomicSector()
                         {
                             MarketValueReportingCurrency = Math.Round(economicalSector.Sum(sum => sum.Amount1Base_23).Value, 2),
                             Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
                             PercentShares = 0
                         };
                         totalSum += econSector.MarketValueReportingCurrency.HasValue ? Math.Abs(econSector.MarketValueReportingCurrency.Value) : 0;
-                        sectionContent.ActionByEconSector.First().Sectors.Add(econSector);                        
+                        sectionContent.SubSection16000.Content.Add(econSector);                        
                     }
                     totalPerc = currPerc = 0;
-                    foreach(var sector in sectionContent.ActionByEconSector.First().Sectors)
+                    foreach(var sector in sectionContent.SubSection16000.Content)
                     {
                         if (totalSum > 0)
                         {
@@ -73,20 +72,19 @@ namespace PSE.BusinessLogic
                     if (totalPerc > 100.0m)
                     {
                         currPerc = currPerc - (totalPerc - 100.0m);
-                        sectionContent.ActionByEconSector.First().Sectors.Last().PercentShares = currPerc;
+                        sectionContent.SubSection16000.Content.Last().PercentShares = currPerc;
                     }
                     else if (totalPerc < 100.0m)
                     {
                         currPerc = currPerc + (100.0m - totalPerc);
-                        sectionContent.ActionByEconSector.First().Sectors.Last().PercentShares = currPerc;
-                    }
-                    sectionContent.ActionByEconSector.First().TotalPercentShares = 100;
-                    sectionContent.ActionByEconSector.First().TotalMarketValueReportingCurrency = totalSum;                    
-                    foreach (var sector in sectionContent.ActionByEconSector.First().Sectors)
+                        sectionContent.SubSection16000.Content.Last().PercentShares = currPerc;
+                    }                    
+                    foreach (var sector in sectionContent.SubSection16000.Content)
                     {
-                        sectionContent.ChartGraphicEconomicalSector.Add(new EconominalSector() { Sector = sector.Sector, PercentShares = sector.PercentShares });
+                        sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares });
                     }
-                    output.Content = new Section23Content(sectionContent);
+                    sectionContent.SubSection16000.Content.Add(new ShareEconomicSector() { TotalShares = string.Empty, TotalPercentShares = 100.0m, TotalMarketValueReportingCurrency = totalSum });
+                    output.Content = new Section160Content(sectionContent);
                 }
             }    
             return output;

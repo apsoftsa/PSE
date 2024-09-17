@@ -13,6 +13,7 @@
     <Compile Remove="ManipulatorSection13.cs" />
     <Compile Remove="ManipulatorSection14.cs" />
     <Compile Remove="ManipulatorSection16And17.cs" />
+    <Compile Remove="ManipulatorSection22.cs" />
   </ItemGroup>
 
   <ItemGroup>

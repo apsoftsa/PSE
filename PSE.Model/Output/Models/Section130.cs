@@ -10,10 +10,10 @@ namespace PSE.Model.Output.Models
     public class StockOrder : IStockOrder
     {
 
-        [JsonProperty(PropertyName ="order", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Order { get; set; }
 
-        [JsonProperty(PropertyName = "value", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public long? OrderValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
