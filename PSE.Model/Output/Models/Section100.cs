@@ -363,6 +363,8 @@ namespace PSE.Model.Output.Models
 
     }
 
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Section100Content : ISection100Content
     {
 

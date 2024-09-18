@@ -38,8 +38,8 @@ namespace PSE.Builder
         //private readonly ManipulatorSection22 _manSect22;
         private readonly ManipulatorSection160 _manSect23;
         private readonly ManipulatorSection130 _manSect130;
-        private readonly ManipulatorSection25 _manSect25;
-        private readonly ManipulatorSection26 _manSect26;
+        private readonly ManipulatorSection190 _manSect190;
+        //private readonly ManipulatorSection26 _manSect26;
         private readonly ManipulatorFooter _manFooter;
 
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
@@ -101,10 +101,10 @@ namespace PSE.Builder
             _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect130 = new();
             _manSect130.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect25 = new();
-            _manSect25.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect26 = new();
-            _manSect26.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect190 = new();
+            _manSect190.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            //_manSect26 = new();
+            //_manSect26.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
             _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
@@ -131,8 +131,9 @@ namespace PSE.Builder
                 //( ManipolationTypes.AsSection22, false ),
                 ( ManipolationTypes.AsSection160, false ),
                 ( ManipolationTypes.AsSection130, false ),
-                ( ManipolationTypes.AsSection25, false ),
-                ( ManipolationTypes.AsSection26, false ),
+                ( ManipolationTypes.AsSection190, false ),
+                //( ManipolationTypes.AsSection26, false ),
+                ( ManipolationTypes.AsSection200, false ),
                 ( ManipolationTypes.AsFooter, true )
             };
         }
@@ -210,7 +211,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection060:
                             //case ManipolationTypes.AsSection22:
                             case ManipolationTypes.AsSection160:
-                            case ManipolationTypes.AsSection26:
+                            //case ManipolationTypes.AsSection26:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -251,7 +252,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection110:
                             case ManipolationTypes.AsSection100:
                             case ManipolationTypes.AsSection150:
-                            case ManipolationTypes.AsSection25:
+                            case ManipolationTypes.AsSection190:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -368,8 +369,8 @@ namespace PSE.Builder
                 //ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
                 ManipolationTypes.AsSection160 => _manSect23.Manipulate(extractedData),
                 ManipolationTypes.AsSection130 => _manSect130.Manipulate(extractedData),
-                ManipolationTypes.AsSection25 => _manSect25.Manipulate(extractedData),
-                ManipolationTypes.AsSection26 => _manSect26.Manipulate(extractedData),
+                ManipolationTypes.AsSection190 => _manSect190.Manipulate(extractedData),
+                //ManipolationTypes.AsSection26 => _manSect26.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,
             };

@@ -15,6 +15,7 @@
     <Compile Remove="Output\Interfaces\ISection14.cs" />
     <Compile Remove="Output\Interfaces\ISection16And17.cs" />
     <Compile Remove="Output\Interfaces\ISection22.cs" />
+    <Compile Remove="Output\Interfaces\ISection26.cs" />
     <Compile Remove="Output\Models\Base.cs" />
     <Compile Remove="Output\Models\Section09.cs" />
     <Compile Remove="Output\Models\Section10.cs" />
@@ -23,6 +24,7 @@
     <Compile Remove="Output\Models\Section14.cs" />
     <Compile Remove="Output\Models\Section16And17.cs" />
     <Compile Remove="Output\Models\Section22.cs" />
+    <Compile Remove="Output\Models\Section26.cs" />
   </ItemGroup>
 
   <ItemGroup>

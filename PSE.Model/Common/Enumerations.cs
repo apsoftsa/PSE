@@ -48,8 +48,10 @@ namespace PSE.Model.Common
             //AsSection22 = 22,
             AsSection160 = 23,
             AsSection130 = 24,
-            AsSection25 = 25,
-            AsSection26 = 26,
+            AsSection190 = 25,
+            //AsSection26 = 26,
+            AsSection170 = 170,
+            AsSection200 = 200,
             AsFooter = 99
         };
 

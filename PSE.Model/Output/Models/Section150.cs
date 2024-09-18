@@ -55,9 +55,7 @@ namespace PSE.Model.Output.Models
         }
 
     }
-
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+   
     public class PossibleCommitmentSubSection : IPossibleCommitmentSubSection
     {
 
