@@ -61,7 +61,7 @@ namespace PSE.BusinessLogic
                                     Portfolio = extEventArgsPortfolio.PropertyValue,
                                     EsgProfile = extEventArgsService.PropertyValue,
                                     RiskProfile = "[RiskProfile]", // not still recovered (!)
-                                    PercentWeightedPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : null,
+                                    //PercentWeightedPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : null,
                                 };
                                 output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
                                 if (perItem.StartValue_8 != null && perItem.StartDate_6 != null && perItem.EndDate_7 != null)
@@ -70,14 +70,8 @@ namespace PSE.BusinessLogic
                                     cashIn = cashOut = secIn = secOut = 0;
                                     startValue = perItem.StartValue_8.Value;
                                     output.Content.SubSection1010.Name = $"Managment report {((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture)} – {((DateTime)perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture)}";
-                                    currAsstExtr = new AssetExtract()
-                                    {
-                                        Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                        MarketValueReportingCurrency = startValue,
-                                        AssetType = "+ Contributions"
-                                    };
-                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     hasValue = false;
+                                    cashOut = secOut = 0;
                                     if (perItem.CashOut_11 != null)
                                     {
                                         cashOut = perItem.CashOut_11.Value;
@@ -88,14 +82,21 @@ namespace PSE.BusinessLogic
                                         secOut = perItem.SecOut_13.Value;
                                         hasValue = true;
                                     }
+                                    currAsstExtr = new AssetExtract()
+                                    {
+                                        Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                        MarketValueReportingCurrency = startValue,
+                                        AssetType = "Contributions",
+                                        MarketValueReportingCurrencyContr = cashOut + secOut
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     if (hasValue)
                                     {
                                         currAsstExtr = new AssetExtract()
                                         {
                                             Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
                                             MarketValueReportingCurrency = startValue,
-                                            AssetType = "- Withdrawals",
-                                            MarketValueReportingCurrencyContr = cashOut + secOut
+                                            AssetType = "Withdrawals"                                            
                                         };
                                         output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                         if (perItem.CashIn_10 != null)

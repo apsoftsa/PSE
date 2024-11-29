@@ -28,8 +28,8 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(PER)))
             {
-                IHistoryEvolutionPerformanceCurrency historyEvo;
-                IChartPerformanceEvolution chartEvo;
+                IPerformanceEvolutionHistoryCHF historyEvo;
+                IPerformanceEvolutionChart chartEvo;
                 ISection020Content sectionContent;
                 decimal tmpInpOut;
                 string tmpPeriod;
@@ -59,7 +59,7 @@ namespace PSE.BusinessLogic
                             tmpInpOut += perItem.CashOut_11 != null ? perItem.CashOut_11.Value : 0;
                             tmpInpOut += perItem.SecIn_12 != null ? perItem.SecIn_12.Value : 0;
                             tmpInpOut += perItem.SecOut_13 != null ? perItem.SecOut_13.Value : 0;
-                            historyEvo = new HistoryEvolutionPerformanceCurrency()
+                            historyEvo = new PerformanceEvolutionHistoryCHF()
                             {
                                 Period = tmpPeriod,
                                 PercentPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : 0,
@@ -68,7 +68,7 @@ namespace PSE.BusinessLogic
                                 InputsOutputs = tmpInpOut
                             };
                             sectionContent.SubSection2000.Content.Add(historyEvo);
-                            chartEvo = new ChartPerformanceEvolution()
+                            chartEvo = new PerformanceEvolutionChart()
                             {
                                 Period = tmpPeriod,
                                 PercentPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : 0

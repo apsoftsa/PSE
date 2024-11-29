@@ -11,83 +11,109 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description1 { get; set; }
+        public string Description1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description2 { get; set; }
+        public string Description2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description3 { get; set; }
+        public decimal Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Amount { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public IList<ISummaryTo> SummaryTo { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryTo { get; set; }
+        public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryBeginningYear { get; set; }
+        public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryPurchase { get; set; }
+        public decimal CapitalMarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CapitalMarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalMarketValueReportingCurrency { get; set; }
-      
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public ShareDetail()
         {
-            Description1 = null;
-            Description2 = null;
-            Description3 = null;
-            Amount = null;
-            Currency = null;
-            SummaryTo = new List<IDetailSummary>();
-            SummaryBeginningYear = new List<IDetailSummary>();
-            SummaryPurchase = new List<IDetailSummary>();
-            CapitalMarketValueReportingCurrency = null;
-            TotalMarketValueReportingCurrency = null;
-            PercentWeight = null;
+            Description1 = string.Empty;
+            Description2 = string.Empty;            
+            Amount = 0;
+            Currency = string.Empty;
+            SummaryTo = new List<ISummaryTo>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
+            SummaryPurchase = new List<ISummaryPurchase>();
+            CapitalMarketValueReportingCurrency = 0;
+            PercentWeight = 0;
         }
 
         public ShareDetail(IShareDetail source)
         {
             Description1 = source.Description1;
-            Description2 = source.Description2;
-            Description3 = source.Description3;
+            Description2 = source.Description2;            
             Amount = source.Amount;
             Currency = source.Currency;
-            SummaryTo = new List<IDetailSummary>();
+            SummaryTo = new List<ISummaryTo>();
             if (source.SummaryTo != null && source.SummaryTo.Any())
             {
                 foreach (var item in source.SummaryTo)
-                    SummaryTo.Add(new DetailSummary(item));
+                    SummaryTo.Add(new SummaryTo(item));
             }
-            SummaryBeginningYear = new List<IDetailSummary>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
             if (source.SummaryBeginningYear != null && source.SummaryBeginningYear.Any())
             {
                 foreach (var item in source.SummaryBeginningYear)
-                    SummaryBeginningYear.Add(new DetailSummary(item));
+                    SummaryBeginningYear.Add(new SummaryBeginningYear(item));
             }
-            SummaryPurchase = new List<IDetailSummary>();
+            SummaryPurchase = new List<ISummaryPurchase>();
             if (source.SummaryPurchase != null && source.SummaryPurchase.Any())
             {
                 foreach (var item in source.SummaryPurchase)
-                    SummaryPurchase.Add(new DetailSummary(item));
+                    SummaryPurchase.Add(new SummaryPurchase(item));
             }
             CapitalMarketValueReportingCurrency = source.CapitalMarketValueReportingCurrency;
-            TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
             PercentWeight = source.PercentWeight;
         }
     }
+
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    public class EquityFundDetail : ShareDetail, IEquityFundDetail
+    {
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string Description3 { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal TotalMarketValueReportingCurrency { get; set; }
+
+        public EquityFundDetail() : base()
+        {
+            Description3 = string.Empty;
+            TotalMarketValueReportingCurrency = 0;
+        }
+
+        public EquityFundDetail(IEquityFundDetail source) : base(source)
+        {
+            Description3 = source.Description3;
+            TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
+        }
+    }
+
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    public class DerivateDetail : EquityFundDetail, IDerivateDetail
+    {
+
+        public DerivateDetail() : base() { }
+
+        public DerivateDetail(IDerivateDetail source) : base(source) { }
+
+    }
+
 
     public class ShareSubSection : IShareSubSection
     {
@@ -115,6 +141,58 @@ namespace PSE.Model.Output.Models
 
     }
 
+    public class EquityFundSubSection : IEquityFundSubSection
+    {
+
+        public string Name { get; set; }
+
+        public IList<IEquityFundDetail> Content { get; set; }
+
+        public EquityFundSubSection(string name)
+        {
+            Name = name;
+            Content = new List<IEquityFundDetail>();
+        }
+
+        public EquityFundSubSection(IEquityFundSubSection source)
+        {
+            Name = source.Name;
+            Content = new List<IEquityFundDetail>();
+            if (source.Content != null && source.Content.Any())
+            {
+                foreach (var item in source.Content)
+                    Content.Add(new EquityFundDetail(item));
+            }
+        }
+
+    }
+
+    public class DerivateSubSection : IDerivateSubSection
+    {
+
+        public string Name { get; set; }
+
+        public IList<IDerivateDetail> Content { get; set; }
+
+        public DerivateSubSection(string name)
+        {
+            Name = name;
+            Content = new List<IDerivateDetail>();
+        }
+
+        public DerivateSubSection(IDerivateSubSection source)
+        {
+            Name = source.Name;
+            Content = new List<IDerivateDetail>();
+            if (source.Content != null && source.Content.Any())
+            {
+                foreach (var item in source.Content)
+                    Content.Add(new DerivateDetail(item));
+            }
+        }
+
+    }
+
     public class Section090Content : ISection090Content
     {
 
@@ -122,23 +200,23 @@ namespace PSE.Model.Output.Models
         public IShareSubSection Subsection9010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareSubSection Subsection9020 { get; set; }
+        public IEquityFundSubSection Subsection9020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareSubSection SubSection9030 { get; set; }
+        public IDerivateSubSection SubSection9030 { get; set; }
 
         public Section090Content()
         {
             Subsection9010 = new ShareSubSection("Shares");
-            Subsection9020 = new ShareSubSection("Equity Funds");
-            SubSection9030 = new ShareSubSection("Derivative products on securities");
+            Subsection9020 = new EquityFundSubSection("Equity Funds");
+            SubSection9030 = new DerivateSubSection("Derivative products on securities");
         }
 
         public Section090Content(ISection090Content source)
         {
             Subsection9010 = new ShareSubSection(source.Subsection9010);
-            Subsection9020 = new ShareSubSection(source.Subsection9020);
-            SubSection9030 = new ShareSubSection(source.SubSection9030);
+            Subsection9020 = new EquityFundSubSection(source.Subsection9020);
+            SubSection9030 = new DerivateSubSection(source.SubSection9030);
         }
 
     }

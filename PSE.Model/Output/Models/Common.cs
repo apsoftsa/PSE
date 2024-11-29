@@ -32,44 +32,134 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class DetailSummary : IDetailSummary
+    public class SummaryTo : ISummaryTo
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? ValueDate { get; set; }
+        public string ValueDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ValuePrice { get; set; }
+        public decimal ValuePrice { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentPrice { get; set; }
+        public decimal PercentPrice { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ExchangeValue { get; set; }
+        public decimal ExchangeValue { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentExchange { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ProfitLossNotRealizedValue { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentProfitLossN { get; set; }
+
+        public SummaryTo()
+        {
+            ValueDate = string.Empty;
+            ValuePrice = 0;
+            PercentPrice = 0;
+            ExchangeValue = 0;
+            PercentExchange = 0;
+            ProfitLossNotRealizedValue = 0;
+            PercentProfitLossN = 0;
+        }
+
+        public SummaryTo(ISummaryTo source)
+        {
+            ValueDate = source.ValueDate;
+            ValuePrice = source.ValuePrice;
+            PercentPrice = source.PercentPrice;
+            ExchangeValue = source.ExchangeValue;
+            PercentExchange = source.PercentExchange;
+            ProfitLossNotRealizedValue = source.ProfitLossNotRealizedValue;
+            PercentProfitLossN = source.PercentProfitLossN;
+        }
+
+    }
+
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    public class SummaryBeginningYear : ISummaryBeginningYear
+    {
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ValuePrice { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentPrice { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ExchangeValue { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentExchange { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ProfitLossNotRealizedValue { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentProfitLossN { get; set; }
+
+        public SummaryBeginningYear()
+        {
+            ValuePrice = 0;
+            PercentPrice = 0;
+            ExchangeValue = 0;
+            PercentExchange = 0;
+            ProfitLossNotRealizedValue = 0;
+            PercentProfitLossN = 0;
+        }
+
+        public SummaryBeginningYear(ISummaryBeginningYear source)
+        {
+            ValuePrice = source.ValuePrice;
+            PercentPrice = source.PercentPrice;
+            ExchangeValue = source.ExchangeValue;
+            PercentExchange = source.PercentExchange;
+            ProfitLossNotRealizedValue = source.ProfitLossNotRealizedValue;
+            PercentProfitLossN = source.PercentProfitLossN;
+        }
+
+    }
+
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    public class SummaryPurchase : ISummaryPurchase
+    {
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ValuePrice { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal PercentPrice { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal ExchangeValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PercentExchange { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ProfitLossNotRealizedValue { get; set; }
+        public decimal ProfitLossNotRealizedValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentProfitLossN { get; set; }
+        public decimal PercentProfitLossN { get; set; }
 
-        public DetailSummary()
+        public SummaryPurchase()
         {
-            ValueDate = null;
-            ValuePrice = null;
-            PercentPrice = null;
-            ExchangeValue = null;
+            ValuePrice = 0;
+            PercentPrice = 0;
+            ExchangeValue = 0;
             PercentExchange = null;
-            ProfitLossNotRealizedValue = null;
-            PercentProfitLossN = null;
+            ProfitLossNotRealizedValue = 0;
+            PercentProfitLossN = 0;
         }
 
-        public DetailSummary(IDetailSummary source)
+        public SummaryPurchase(ISummaryPurchase source)
         {
-            ValueDate = source.ValueDate;
             ValuePrice = source.ValuePrice;
             PercentPrice = source.PercentPrice;
             ExchangeValue = source.ExchangeValue;

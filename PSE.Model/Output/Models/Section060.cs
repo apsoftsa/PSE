@@ -11,7 +11,7 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
@@ -20,18 +20,18 @@ namespace PSE.Model.Output.Models
         public decimal? Exchange { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentAsset { get; set; }        
+        public decimal PercentAsset { get; set; }        
         
         public InvestmentCurrency()
         {
             this.Amount = null;
-            this.Currency = null;
-            this.MarketValueReportingCurrency = null;
+            this.Currency = string.Empty;
+            this.MarketValueReportingCurrency = 0;
             this.Exchange = null;
-            this.PercentAsset = null;
+            this.PercentAsset = 0;
         }
 
         public InvestmentCurrency(IInvestmentCurrency source)
@@ -51,15 +51,15 @@ namespace PSE.Model.Output.Models
     {
        
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentAsset { get; set; }
+        public decimal PercentAsset { get; set; }
 
         public ChartInvestmentCurrency()
         {
-            this.Currency = null;            
-            this.PercentAsset = null;
+            this.Currency = string.Empty;            
+            this.PercentAsset = 0;
         }
 
         public ChartInvestmentCurrency(IChartInvestmentCurrency source)

@@ -14,12 +14,12 @@ namespace PSE.Model.Output.Models
         public string ValueDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ValueAsset { get; set; }
+        public decimal ValueAsset { get; set; }
 
         public MultilineAssetsTo()
         {
-            ValueDate = null;
-            ValueAsset = null;
+            ValueDate = string.Empty;
+            ValueAsset = 0;
         }
 
         public MultilineAssetsTo(IMultilineAssetsTo source)
@@ -42,15 +42,15 @@ namespace PSE.Model.Output.Models
         public IList<IMultilineAssetsTo> AssetsTo { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal PercentPerformance { get; set; }
 
         public MultilineKeyInformation()
         {
-            Period = null;
-            Currency = null;
+            Period = string.Empty;
+            Currency = string.Empty;
             AssetsTo = new List<IMultilineAssetsTo>();  
             PercentPerformance = 0;
         }
@@ -81,15 +81,15 @@ namespace PSE.Model.Output.Models
         public string ModelLine { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal PercentNetContribution { get; set; }
 
         public LinePerformanceAnalysis()
         {
-            ModelLine = null;
-            Currency = null;
+            ModelLine = string.Empty;
+            Currency = string.Empty;
             PercentNetContribution = 0;
         }
 
@@ -113,16 +113,21 @@ namespace PSE.Model.Output.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal PercentNetContribution { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string Period { get; set; }
+
         public LineAllocationEvolutionChartModelLine()
         {
-            ModelLine = null;
+            ModelLine = string.Empty;
             PercentNetContribution = 0;
+            Period = string.Empty;  
         }
 
         public LineAllocationEvolutionChartModelLine(ILineAllocationEvolutionChartModelLine source)
         {
             ModelLine = source.ModelLine;
             PercentNetContribution = source.PercentNetContribution;
+            Period = source.Period;
         }
 
     }
@@ -140,7 +145,7 @@ namespace PSE.Model.Output.Models
 
         public LineAllocationEvolutionChart()
         {
-            Period = null;
+            Period = string.Empty;
             ModelLines = new List<ILineAllocationEvolutionChartModelLine>();
         }
 

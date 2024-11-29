@@ -1,27 +1,27 @@
 ﻿namespace PSE.Model.Output.Interfaces
 {
 
-    public interface IHistoryEvolutionPerformanceCurrency
+    public interface IPerformanceEvolutionHistoryCHF
     {
 
-        string? Period { get; set; }
+        string Period { get; set; }
 
-        decimal? InitialAmount { get; set; }
+        decimal InitialAmount { get; set; }
 
-        decimal? FinalAmount { get; set; }
+        decimal FinalAmount { get; set; }
 
-        decimal? InputsOutputs { get; set; }
+        decimal InputsOutputs { get; set; }
 
-        decimal? PercentPerformance { get; set; }
+        decimal PercentPerformance { get; set; }
 
     }
 
-    public interface IChartPerformanceEvolution
+    public interface IPerformanceEvolutionChart
     {
 
-        string? Period { get; set; }
+        string Period { get; set; }
 
-        decimal? PercentPerformance { get; set; }
+        decimal PercentPerformance { get; set; }
 
     }
 
@@ -30,7 +30,7 @@
 
         string Name { get; set; }
 
-        IList<IHistoryEvolutionPerformanceCurrency> Content { get; set; }
+        IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
     }
 
@@ -39,7 +39,7 @@
 
         string Name { get; set; }
 
-        IList<IChartPerformanceEvolution> Content { get; set; }
+        IList<IPerformanceEvolutionChart> Content { get; set; }
 
     }
 

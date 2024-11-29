@@ -11,31 +11,27 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Customer { get; set; }
+        public string Customer { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? CustomerID { get; set; }
+        public string CustomerID { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Portfolio { get; set; }
+        public string Portfolio { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? RiskProfile { get; set; }
+        public string RiskProfile { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? EsgProfile { get; set; }
-       
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeightedPerformance { get; set; }
+        public string EsgProfile { get; set; }       
 
         public KeyInformation() 
         { 
-            Customer = null;
-            CustomerID = null;
-            Portfolio = null;
-            EsgProfile = null;
-            RiskProfile = null;
-            PercentWeightedPerformance = null;
+            Customer = string.Empty;
+            CustomerID = string.Empty;
+            Portfolio = string.Empty;
+            EsgProfile = string.Empty;
+            RiskProfile = string.Empty;
         }
 
         public KeyInformation(IKeyInformation source)
@@ -45,7 +41,6 @@ namespace PSE.Model.Output.Models
             Portfolio = source.Portfolio;
             EsgProfile = source.EsgProfile;
             RiskProfile = source.RiskProfile;
-            PercentWeightedPerformance = source.PercentWeightedPerformance;
         }
 
     }
@@ -56,10 +51,10 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Entry { get; set; }
+        public string Entry { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
         public string? AssetType { get; set; }
@@ -70,9 +65,9 @@ namespace PSE.Model.Output.Models
 
         public AssetExtract()
         {
-            Entry = null;  
+            Entry = string.Empty;  
             AssetType = null;   
-            MarketValueReportingCurrency = null;
+            MarketValueReportingCurrency = 0;
             MarketValueReportingCurrencyContr = null;
         }
 
@@ -92,10 +87,10 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Entry { get; set; }
+        public string Entry { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrencyT { get; set; }
+        public decimal MarketValueReportingCurrencyT { get; set; }
 
         [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
         public string? AssetType { get; set; }
@@ -106,9 +101,9 @@ namespace PSE.Model.Output.Models
 
         public DividendInterest()
         {
-            Entry = null;
+            Entry = string.Empty;
             AssetType = null;
-            MarketValueReportingCurrencyT = null;
+            MarketValueReportingCurrencyT = 0;
             MarketValueReportingCurrency = null;
         }
 
@@ -126,11 +121,11 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Note { get; set; }
+        public string Note { get; set; }
 
         public FooterInformation()
         {
-            Note = null;
+            Note = string.Empty;
         }
 
         public FooterInformation(IFooterInformation source)

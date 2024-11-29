@@ -50,19 +50,19 @@ namespace PSE.BusinessLogic
                             };
                             sectionContent.SubSection6000.Content.Add(investment);
                         }                        
-                        decimal? totalAmount = sectionContent.SubSection6000.Content.Sum(sum => sum.MarketValueReportingCurrency);
-                        if (totalAmount != null && totalAmount != 0)
+                        decimal totalAmount = sectionContent.SubSection6000.Content.Sum(sum => sum.MarketValueReportingCurrency);
+                        if (totalAmount != 0)
                         {
                             foreach (IInvestmentCurrency invToUpgrd in sectionContent.SubSection6000.Content)
                             {
-                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.MarketValueReportingCurrency / totalAmount.Value * 100m).Value, 2);
+                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.MarketValueReportingCurrency / totalAmount * 100m), 2);
                                 sectionContent.SubSection6010.Content.Add(new ChartInvestmentCurrency() { Currency = invToUpgrd.Currency, PercentAsset = invToUpgrd.PercentAsset });
                             }
                             investment = new InvestmentCurrency()
                             {
                                 Amount = null,
                                 Currency = "Total",
-                                MarketValueReportingCurrency = Math.Round(totalAmount.Value, 2),
+                                MarketValueReportingCurrency = Math.Round(totalAmount, 2),
                                 PercentAsset = 100m,
                                 Exchange = null
                             };

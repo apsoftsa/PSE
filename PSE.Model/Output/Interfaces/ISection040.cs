@@ -4,7 +4,7 @@
     public interface IInvestmentAsset
     {        
 
-        string? AssetClass { get; set; }
+        string AssetClass { get; set; }
 
         decimal? MarketValueReportingCurrencyT { get; set; }
 
@@ -21,9 +21,9 @@
     public interface IAssetClassChart
     {
 
-        string? AssetClass { get; set; }
+        string AssetClass { get; set; }
 
-        decimal? PercentInvestment { get; set; }
+        decimal PercentInvestment { get; set; }
 
     }
 

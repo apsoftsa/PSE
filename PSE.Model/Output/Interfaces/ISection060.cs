@@ -4,24 +4,24 @@
     public interface IInvestmentCurrency
     {
 
-        string? Currency { get; set; }
+        string Currency { get; set; }
 
         decimal? Amount { get; set; }
 
         decimal? Exchange { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        decimal? PercentAsset { get; set; }
+        decimal PercentAsset { get; set; }
 
     }
 
     public interface IChartInvestmentCurrency
     {       
 
-        string? Currency { get; set; }
+        string Currency { get; set; }
 
-        decimal? PercentAsset { get; set; }
+        decimal PercentAsset { get; set; }
 
     }
 

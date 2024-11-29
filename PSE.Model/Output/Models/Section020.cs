@@ -7,34 +7,34 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class HistoryEvolutionPerformanceCurrency: IHistoryEvolutionPerformanceCurrency
+    public class PerformanceEvolutionHistoryCHF: IPerformanceEvolutionHistoryCHF
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Period { get; set; }
+        public string Period { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? InitialAmount { get; set; }
+        public decimal InitialAmount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? FinalAmount { get; set; }
+        public decimal FinalAmount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? InputsOutputs { get; set; }
+        public decimal InputsOutputs { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentPerformance { get; set; }
+        public decimal PercentPerformance { get; set; }
 
-        public HistoryEvolutionPerformanceCurrency()
+        public PerformanceEvolutionHistoryCHF()
         {
-            this.Period = null;
-            this.InitialAmount = null;
-            this.FinalAmount = null;
-            this.InputsOutputs = null;  
-            this.PercentPerformance = null; 
+            this.Period = string.Empty;
+            this.InitialAmount = 0;
+            this.FinalAmount = 0;
+            this.InputsOutputs = 0;  
+            this.PercentPerformance = 0; 
         }
 
-        public HistoryEvolutionPerformanceCurrency(IHistoryEvolutionPerformanceCurrency source)
+        public PerformanceEvolutionHistoryCHF(IPerformanceEvolutionHistoryCHF source)
         {
             this.Period = source.Period;
             this.InitialAmount = source.InitialAmount;
@@ -47,22 +47,22 @@ namespace PSE.Model.Output.Models
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class ChartPerformanceEvolution : IChartPerformanceEvolution
+    public class PerformanceEvolutionChart : IPerformanceEvolutionChart
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Period { get; set; }
+        public string Period { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentPerformance { get; set; }
+        public decimal PercentPerformance { get; set; }
 
-        public ChartPerformanceEvolution() 
+        public PerformanceEvolutionChart() 
         { 
-            this.Period = null;
-            this.PercentPerformance = null;
+            this.Period = string.Empty;
+            this.PercentPerformance = 0;
         }
 
-        public ChartPerformanceEvolution(IChartPerformanceEvolution source)
+        public PerformanceEvolutionChart(IPerformanceEvolutionChart source)
         {
             this.Period = source.Period;
             this.PercentPerformance = source.PercentPerformance;
@@ -75,22 +75,22 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
-        public IList<IHistoryEvolutionPerformanceCurrency> Content { get; set; }
+        public IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
         public SubSection2000Content()
         {
             Name = "Performance Evolution History (CHF)";
-            Content = new List<IHistoryEvolutionPerformanceCurrency>();
+            Content = new List<IPerformanceEvolutionHistoryCHF>();
         }
 
         public SubSection2000Content(ISubSection2000Content source)
         {
             Name = source.Name;
-            Content = new List<IHistoryEvolutionPerformanceCurrency>();
+            Content = new List<IPerformanceEvolutionHistoryCHF>();
             if (source.Content != null && source.Content.Any())
             {
                 foreach (var item in source.Content)
-                    Content.Add(new HistoryEvolutionPerformanceCurrency(item));
+                    Content.Add(new PerformanceEvolutionHistoryCHF(item));
             }
         }
 
@@ -101,22 +101,22 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
-        public IList<IChartPerformanceEvolution> Content { get; set; }
+        public IList<IPerformanceEvolutionChart> Content { get; set; }
 
         public SubSection2010Content()
         {
             Name = "Performance Evolution Chart";
-            Content = new List<IChartPerformanceEvolution>();
+            Content = new List<IPerformanceEvolutionChart>();
         }
 
         public SubSection2010Content(ISubSection2010Content source)
         {
             Name = source.Name;
-            Content = new List<IChartPerformanceEvolution>();
+            Content = new List<IPerformanceEvolutionChart>();
             if (source.Content != null && source.Content.Any())
             {
                 foreach (var item in source.Content)
-                    Content.Add(new ChartPerformanceEvolution(item));
+                    Content.Add(new PerformanceEvolutionChart(item));
             }
         }
 

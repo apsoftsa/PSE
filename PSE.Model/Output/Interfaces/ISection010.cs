@@ -4,26 +4,24 @@
     public interface IKeyInformation
     {
 
-        string? Customer { get; set; }
+        string Customer { get; set; }
 
-        string? CustomerID { get; set; }
+        string CustomerID { get; set; }
 
-        string? Portfolio { get; set; }        
+        string Portfolio { get; set; }        
 
-        string? RiskProfile { get; set; }
+        string RiskProfile { get; set; }
 
-        string? EsgProfile { get; set; }
-
-        decimal? PercentWeightedPerformance { get; set; }
+        string EsgProfile { get; set; }
 
     }
 
     public interface IAssetExtract
     {
 
-        string? Entry { get; set; }
+        string Entry { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
         string? AssetType { get; set; }
 
@@ -34,9 +32,9 @@
     public interface IDividendInterest
     {
 
-        string? Entry { get; set; }
+        string Entry { get; set; }
 
-        decimal? MarketValueReportingCurrencyT { get; set; }
+        decimal MarketValueReportingCurrencyT { get; set; }
 
         string? AssetType { get; set; }
 
@@ -47,7 +45,7 @@
     public interface IFooterInformation
     {
 
-        string? Note { get; set; }
+        string Note { get; set; }
 
     }
 

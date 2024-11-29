@@ -87,7 +87,7 @@ namespace PSE.BusinessLogic
                                 {
                                     assetToUpgrd.PercentInvestmentT = groupByAssetClass.Sum(sum => sum.PercentInvestment);
                                 }
-                                sectionContent.SubSection4010.Content.Add(new AssetClassChart() { AssetClass = groupByAssetClass.Key, PercentInvestment = groupByAssetClass.Sum(sum => sum.PercentInvestment) });
+                                sectionContent.SubSection4010.Content.Add(new AssetClassChart() { AssetClass = groupByAssetClass.Key, PercentInvestment = groupByAssetClass.Where(f => f.PercentInvestment.HasValue).Sum(sum => sum.PercentInvestment.Value) });
                             }
                             decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
                             investmentAsset = new InvestmentAsset()

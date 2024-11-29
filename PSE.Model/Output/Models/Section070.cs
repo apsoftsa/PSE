@@ -11,27 +11,27 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Iban { get; set; }
+        public string Iban { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrentBalance { get; set; }
+        public decimal CurrentBalance { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public LiquidityAccount()
         {
-            this.Description = null;
-            this.Iban = null;
-            this.CurrentBalance = null;
-            this.MarketValueReportingCurrency = null;
-            this.PercentWeight = null;
+            this.Description = string.Empty;
+            this.Iban = string.Empty;
+            this.CurrentBalance = 0;
+            this.MarketValueReportingCurrency = 0;
+            this.PercentWeight = 0;
         }
 
         public LiquidityAccount(ILiquidityAccount source)
@@ -75,51 +75,51 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description1 { get; set; }
+        public string Description1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description2 { get; set; }
+        public string Description2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Quantity { get; set; }
+        public decimal Quantity { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryTo { get; set; }
+        public IList<ISummaryTo> SummaryTo { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryBeginningYear { get; set; }
+        public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryPurchase { get; set; }
+        public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CapitalMarketValueReportingCurrency { get; set; }
+        public decimal CapitalMarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? InterestMarketValueReportingCurrency { get; set; }
+        public decimal InterestMarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalMarketValueReportingCurrency { get; set; }
+        public decimal TotalMarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public LiquidityShortTermFund()
         {
-            Description1 = null;
-            Description2 = null;    
-            Quantity = null;
-            Currency = null;
-            SummaryTo = new List<IDetailSummary>();
-            SummaryBeginningYear = new List<IDetailSummary>();
-            SummaryPurchase = new List<IDetailSummary>();
-            CapitalMarketValueReportingCurrency = null;
-            InterestMarketValueReportingCurrency = null;    
-            TotalMarketValueReportingCurrency = null;   
-            PercentWeight = null;
+            Description1 = string.Empty;
+            Description2 = string.Empty;    
+            Quantity = 0;
+            Currency = string.Empty;
+            SummaryTo = new List<ISummaryTo>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
+            SummaryPurchase = new List<ISummaryPurchase>();
+            CapitalMarketValueReportingCurrency = 0;
+            InterestMarketValueReportingCurrency = 0;    
+            TotalMarketValueReportingCurrency = 0;   
+            PercentWeight = 0;
         }
 
         public LiquidityShortTermFund(ILiquidityShortTermFund source)
@@ -128,23 +128,23 @@ namespace PSE.Model.Output.Models
             Description2 = source.Description2;
             Quantity = source.Quantity;
             Currency = source.Currency;
-            SummaryTo = new List<IDetailSummary>();
+            SummaryTo = new List<ISummaryTo>();
             if (source.SummaryTo != null && source.SummaryTo.Any())
             {
                 foreach(var item in source.SummaryTo) 
-                    SummaryTo.Add(new DetailSummary(item)); 
+                    SummaryTo.Add(new SummaryTo(item)); 
             }
-            SummaryBeginningYear = new List<IDetailSummary>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
             if (source.SummaryBeginningYear != null && source.SummaryBeginningYear.Any())
             {
                 foreach (var item in source.SummaryBeginningYear)
-                    SummaryBeginningYear.Add(new DetailSummary(item));
+                    SummaryBeginningYear.Add(new SummaryBeginningYear(item));
             }
-            SummaryPurchase = new List<IDetailSummary>();
+            SummaryPurchase = new List<ISummaryPurchase>();
             if (source.SummaryPurchase != null && source.SummaryPurchase.Any())
             {
                 foreach (var item in source.SummaryPurchase)
-                    SummaryPurchase.Add(new DetailSummary(item));
+                    SummaryPurchase.Add(new SummaryPurchase(item));
             }
             CapitalMarketValueReportingCurrency = source.CapitalMarketValueReportingCurrency;
             InterestMarketValueReportingCurrency = source.InterestMarketValueReportingCurrency;
@@ -184,47 +184,47 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description1 { get; set; }
+        public string Description1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description2 { get; set; }
+        public string Description2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentRate { get; set; }
+        public decimal PercentRate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Correspondent { get; set; }
+        public string Correspondent { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? OpeningDate { get; set; }
+        public string OpeningDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrentBalance { get; set; }
+        public decimal CurrentBalance { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? AccruedInterestReportingCurrency { get; set; }
+        public decimal AccruedInterestReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public LiquidityFiduciaryInvestmentTemporaryDeposit()
         {
-            Description1 = null;    
-            Description2 = null;    
-            PercentRate = null;
-            Correspondent = null;
-            OpeningDate = null;
-            ExpirationDate = null;
-            CurrentBalance = null;
-            MarketValueReportingCurrency = null;
-            AccruedInterestReportingCurrency = null;
-            PercentWeight = null;
+            Description1 = string.Empty;    
+            Description2 = string.Empty;    
+            PercentRate = 0;
+            Correspondent = string.Empty;
+            OpeningDate = string.Empty;
+            ExpirationDate = string.Empty;
+            CurrentBalance = 0;
+            MarketValueReportingCurrency = 0;
+            AccruedInterestReportingCurrency = 0;
+            PercentWeight = 0;
         }
 
         public LiquidityFiduciaryInvestmentTemporaryDeposit(ILiquidityFiduciaryInvestmentTemporaryDeposit source)
@@ -299,43 +299,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency1 { get; set; }
+        public string Currency1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrencyValue { get; set; }
+        public decimal CurrencyValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ExchangeRate { get; set; }
+        public decimal ExchangeRate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ExchangeValue { get; set; }
+        public decimal ExchangeValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency2 { get; set; }
+        public string Currency2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrentRate { get; set; }
+        public decimal CurrentRate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? ProfitLoss { get; set; }
+        public decimal ProfitLoss { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public LiquidityForwardExchangeOperation() 
         { 
-            Currency1 = null;   
-            CurrencyValue = null;   
-            ExchangeRate = null;
-            ExchangeValue = null;   
-            Currency2 = null;   
-            ExpirationDate = null;  
-            CurrentRate = null; 
-            ProfitLoss = null;  
-            PercentWeight = null;   
+            Currency1 = string.Empty;   
+            CurrencyValue = 0;   
+            ExchangeRate = 0;
+            ExchangeValue = 0;   
+            Currency2 = string.Empty;   
+            ExpirationDate = string.Empty;  
+            CurrentRate = 0; 
+            ProfitLoss = 0;  
+            PercentWeight = 0;   
         }
 
         public LiquidityForwardExchangeOperation(ILiquidityForwardExchangeOperation source)
@@ -383,47 +383,47 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description1 { get; set; }
+        public string Description1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description2 { get; set; }
+        public string Description2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description3 { get; set; }
+        public string Description3 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Amount { get; set; }
+        public decimal Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Strike { get; set; }
+        public string Strike { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryTo { get; set; }
+        public IList<ISummaryTo> SummaryTo { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryBeginningYear { get; set; }
+        public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<IDetailSummary> SummaryPurchase { get; set; }
+        public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentWeight { get; set; }
+        public decimal PercentWeight { get; set; }
 
         public LiquidityCurrencyDerivativeProduct()
         {
-            Description1 = null;
-            Description2 = null;
-            Description3 = null;    
-            Amount = null;
-            Strike = null;
-            SummaryTo = new List<IDetailSummary>();
-            SummaryBeginningYear = new List<IDetailSummary>();
-            SummaryPurchase = new List<IDetailSummary>();
-            MarketValueReportingCurrency = null;
-            PercentWeight = null;
+            Description1 = string.Empty;
+            Description2 = string.Empty;
+            Description3 = string.Empty;    
+            Amount = 0;
+            Strike = string.Empty;
+            SummaryTo = new List<ISummaryTo>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
+            SummaryPurchase = new List<ISummaryPurchase>();
+            MarketValueReportingCurrency = 0;
+            PercentWeight = 0;
         }
 
         public LiquidityCurrencyDerivativeProduct(ILiquidityCurrencyDerivativeProduct source)
@@ -433,23 +433,23 @@ namespace PSE.Model.Output.Models
             Description3 = source.Description3;
             Amount = source.Amount;
             Strike = source.Strike;
-            SummaryTo = new List<IDetailSummary>();
+            SummaryTo = new List<ISummaryTo>();
             if (source.SummaryTo != null && source.SummaryTo.Any())
             {
                 foreach (var item in source.SummaryTo)
-                    SummaryTo.Add(new DetailSummary(item));
+                    SummaryTo.Add(new SummaryTo(item));
             }
-            SummaryBeginningYear = new List<IDetailSummary>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
             if (source.SummaryBeginningYear != null && source.SummaryBeginningYear.Any())
             {
                 foreach (var item in source.SummaryBeginningYear)
-                    SummaryBeginningYear.Add(new DetailSummary(item));
+                    SummaryBeginningYear.Add(new SummaryBeginningYear(item));
             }
-            SummaryPurchase = new List<IDetailSummary>();
+            SummaryPurchase = new List<ISummaryPurchase>();
             if (source.SummaryPurchase != null && source.SummaryPurchase.Any())
             {
                 foreach (var item in source.SummaryPurchase)
-                    SummaryPurchase.Add(new DetailSummary(item));
+                    SummaryPurchase.Add(new SummaryPurchase(item));
             }
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             PercentWeight = source.PercentWeight;

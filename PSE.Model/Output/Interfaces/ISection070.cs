@@ -4,15 +4,15 @@
     public interface ILiquidityAccount
     {
 
-        string? Description { get; set; }
+        string Description { get; set; }
 
-        string? Iban { get; set; }
+        string Iban { get; set; }
 
-        decimal? CurrentBalance { get; set; }
+        decimal CurrentBalance { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        decimal? PercentWeight { get; set; }
+        decimal PercentWeight { get; set; }
 
     }
 
@@ -28,27 +28,27 @@
     public interface ILiquidityShortTermFund 
     {
 
-        string? Description1 { get; set; }
+        string Description1 { get; set; }
 
-        string? Description2 { get; set; }
+        string Description2 { get; set; }
 
-        decimal? Quantity { get; set; }
+        decimal Quantity { get; set; }
 
-        string? Currency { get; set; }
+        string Currency { get; set; }
 
-        IList<IDetailSummary> SummaryTo {  get; set; }
+        IList<ISummaryTo> SummaryTo {  get; set; }
 
-        IList<IDetailSummary> SummaryBeginningYear { get; set; }
+        IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        IList<IDetailSummary> SummaryPurchase { get; set; }
+        IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        decimal? CapitalMarketValueReportingCurrency { get; set; }
+        decimal CapitalMarketValueReportingCurrency { get; set; }
 
-        decimal? InterestMarketValueReportingCurrency { get; set; }
+        decimal InterestMarketValueReportingCurrency { get; set; }
 
-        decimal? TotalMarketValueReportingCurrency { get; set; }
+        decimal TotalMarketValueReportingCurrency { get; set; }
 
-        decimal? PercentWeight { get; set; }
+        decimal PercentWeight { get; set; }
 
     }
 
@@ -64,25 +64,25 @@
     public interface ILiquidityFiduciaryInvestmentTemporaryDeposit
     {
 
-        string? Description1 { get; set; }
+        string Description1 { get; set; }
 
-        string? Description2 { get; set; }
+        string Description2 { get; set; }
 
-        decimal? PercentRate { get; set; }
+        decimal PercentRate { get; set; }
 
-        string? Correspondent { get; set; }
+        string Correspondent { get; set; }
 
-        string? OpeningDate { get; set; }
+        string OpeningDate { get; set; }
 
-        string? ExpirationDate { get; set; }
+        string ExpirationDate { get; set; }
 
-        decimal? CurrentBalance { get; set; }
+        decimal CurrentBalance { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        decimal? AccruedInterestReportingCurrency { get; set; }
+        decimal AccruedInterestReportingCurrency { get; set; }
 
-        decimal? PercentWeight { get; set; }
+        decimal PercentWeight { get; set; }
 
     }
 
@@ -106,23 +106,23 @@
     public interface ILiquidityForwardExchangeOperation
     {
 
-        string? Currency1 { get; set; }
+        string Currency1 { get; set; }
 
-        decimal? CurrencyValue { get; set; }
+        decimal CurrencyValue { get; set; }
 
-        decimal? ExchangeRate { get; set; }
+        decimal ExchangeRate { get; set; }
 
-        decimal? ExchangeValue { get; set; }
+        decimal ExchangeValue { get; set; }
 
-        string? Currency2 { get; set; }
+        string Currency2 { get; set; }
 
-        string? ExpirationDate { get; set; }
+        string ExpirationDate { get; set; }
 
-        decimal? CurrentRate { get; set; }
+        decimal CurrentRate { get; set; }
 
-        decimal? ProfitLoss { get; set; }
+        decimal ProfitLoss { get; set; }
 
-        decimal? PercentWeight { get; set; }
+        decimal PercentWeight { get; set; }
 
     }
 
@@ -138,25 +138,25 @@
     public interface ILiquidityCurrencyDerivativeProduct
     {
 
-        string? Description1 { get; set; }
+        string Description1 { get; set; }
 
-        string? Description2 { get; set; }
+        string Description2 { get; set; }
 
-        string? Description3 { get; set; }
+        string Description3 { get; set; }
 
-        decimal? Amount { get; set; }
+        decimal Amount { get; set; }
 
-        string? Strike { get; set; }
+        string Strike { get; set; }
 
-        IList<IDetailSummary> SummaryTo { get; set; }
+        IList<ISummaryTo> SummaryTo { get; set; }
 
-        IList<IDetailSummary> SummaryBeginningYear { get; set; }
+        IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        IList<IDetailSummary> SummaryPurchase { get; set; }
+        IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        decimal? PercentWeight { get; set; }
+        decimal PercentWeight { get; set; }
 
     }
 
