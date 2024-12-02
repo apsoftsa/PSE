@@ -30,7 +30,8 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
                 ISection190Content sectionContent;
-                AccountAndDepositReport acctAndDepReport;
+                IReportsTransferredToAdministration acctAndDepReportTrans;
+                IReportsNotTransferredToAdministration acctAndDepReportNotTrans;
                 ExternalCodifyRequestEventArgs extEventArgsDescription;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
@@ -41,50 +42,52 @@ namespace PSE.BusinessLogic
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())
                     {
+                        acctAndDepReportNotTrans = new ReportsNotTransferredToAdministration();
                         foreach (IGrouping<string, POS> relationshipNonTransferedToAdminItem in relationshipesNonTransferedToAdmin)
                         {
-                            extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(AccountAndDepositReport.Description), relationshipNonTransferedToAdminItem.First().HostPositionType_5, propertyParams);
+                            extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(ObjectReportsNotTransferredToAdministration.Description), relationshipNonTransferedToAdminItem.First().HostPositionType_5, propertyParams);
                             OnExternalCodifyRequest(extEventArgsDescription);
                             if (!extEventArgsDescription.Cancel)
                             {
-                                acctAndDepReport = new AccountAndDepositReport()
+                                acctAndDepReportNotTrans.Objects.Add(new ObjectReportsNotTransferredToAdministration()
                                 {
                                     Object = relationshipNonTransferedToAdminItem.First().HostPositionReference_6,
                                     Description = extEventArgsDescription.PropertyValue,
                                     AddressBook = relationshipNonTransferedToAdminItem.First().HostPositionType_5 != "50" ? relationshipNonTransferedToAdminItem.First().Description2_33 : "",
                                     Currency = relationshipNonTransferedToAdminItem.First().HostPositionCurrency_8,
-                                    CurrentBalance = relationshipNonTransferedToAdminItem.Sum(s => s.Amount1ProRataHostCur_27),
-                                    MarketValueReportingCurrency = relationshipNonTransferedToAdminItem.Sum(s => s.Amount1Base_23) + relationshipNonTransferedToAdminItem.Sum(s => s.ProRataBase_56),
+                                    CurrentBalance = relationshipNonTransferedToAdminItem.Where(f => f.Amount1ProRataHostCur_27.HasValue).Sum(s => s.Amount1ProRataHostCur_27.Value),
+                                    MarketValueReportingCurrency = relationshipNonTransferedToAdminItem.Where(f => f.Amount1Base_23.HasValue).Sum(s => s.Amount1Base_23.Value) + relationshipNonTransferedToAdminItem.Where(f => f.ProRataBase_56.HasValue).Sum(s => s.ProRataBase_56.Value)
                                     //TotalAddressBook = sectionContent.RelationshipNonTransferedToAdmin.Last().Description;
                                     //TotalMarketValueReportingCurrency = sectionContent.RelationshipNonTransferedToAdmin.Sum(sum => sum.MarketValueReportingCurrency);
-                                };
-                                sectionContent.SubSection19000.Content.Add(acctAndDepReport);
+                                });
                             }
                         }
+                        sectionContent.SubSection19000.Content.Add(acctAndDepReportNotTrans);
                         //sectionContent.TotalAddressBook = sectionContent.RelationshipNonTransferedToAdmin.Last().Description;
                         //sectionContent.TotalMarketValueReportingCurrency = sectionContent.RelationshipNonTransferedToAdmin.Sum(sum => sum.MarketValueReportingCurrency);
                     }
                     IEnumerable<IGrouping<string, POS>> relationshipesTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 == "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesTransferedToAdmin != null && relationshipesTransferedToAdmin.Any())
                     {
+                        acctAndDepReportTrans = new ReportsTransferredToAdministration();                        
                         foreach (IGrouping<string, POS> relationshipTransferedToAdminItem in relationshipesTransferedToAdmin)
                         {
-                            extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(AccountAndDepositReport.Description), relationshipTransferedToAdminItem.First().HostPositionType_5, propertyParams);
+                            extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(ObjectReportsTransferredToAdministration.Description), relationshipTransferedToAdminItem.First().HostPositionType_5, propertyParams);
                             OnExternalCodifyRequest(extEventArgsDescription);
                             if (!extEventArgsDescription.Cancel)
                             {
-                                acctAndDepReport = new AccountAndDepositReport()
+                                acctAndDepReportTrans.Objects.Add(new ObjectReportsTransferredToAdministration()
                                 {
                                     Object = relationshipTransferedToAdminItem.First().HostPositionReference_6,
                                     Description = extEventArgsDescription.PropertyValue,
                                     AddressBook = relationshipTransferedToAdminItem.First().HostPositionType_5 != "50" ? relationshipTransferedToAdminItem.First().Description2_33 : "",
                                     Currency = relationshipTransferedToAdminItem.First().HostPositionCurrency_8,
-                                    CurrentBalance = relationshipTransferedToAdminItem.Sum(s => s.Amount1ProRataHostCur_27),
-                                    MarketValueReportingCurrency = relationshipTransferedToAdminItem.Sum(s => s.Amount1Base_23) + relationshipTransferedToAdminItem.Sum(s => s.ProRataBase_56)
-                                };
-                                sectionContent.SubSection19010.Content.Add(acctAndDepReport);
+                                    CurrentBalance = relationshipTransferedToAdminItem.Where(f => f.Amount1ProRataHostCur_27.HasValue).Sum(s => s.Amount1ProRataHostCur_27.Value),
+                                    MarketValueReportingCurrency = relationshipTransferedToAdminItem.Where(f => f.Amount1Base_23.HasValue).Sum(s => s.Amount1Base_23.Value) + relationshipTransferedToAdminItem.Where(f => f.ProRataBase_56.HasValue).Sum(s => s.ProRataBase_56.Value)
+                                });
                             }
                         }
+                        sectionContent.SubSection19010.Content.Add(acctAndDepReportTrans);
                     }
                     output.Content = new Section190Content(sectionContent);                    
                 }

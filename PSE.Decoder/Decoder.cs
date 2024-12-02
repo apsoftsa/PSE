@@ -176,7 +176,8 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        else if (e.SectionName == nameof(Section190) && e.PropertyName == nameof(AccountAndDepositReport.Description))
+                        //else if (e.SectionName == nameof(Section190) && e.PropertyName == nameof(AccountAndDepositReport.Description))
+                        else if (e.SectionName == nameof(Section190) && (e.PropertyName == nameof(ObjectReportsTransferredToAdministration.Description) || e.PropertyName == nameof(ObjectReportsNotTransferredToAdministration.Description)))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "N003" && string.IsNullOrEmpty(flt.Code) == false && flt.Code == e.PropertyKey))
                             {

@@ -11,43 +11,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Order { get; set; }
+        public decimal Order { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public long? OrderValue { get; set; }
+        public long OrderValue { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description { get; set; }
+        public string Description { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Operation { get; set; }
+        public string Operation { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Amount { get; set; }
+        public decimal Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Currency { get; set; }
+        public string Currency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string LimitStopLoss { get; set; }
+        public decimal LimitStopLoss { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
 
         public StockOrder()
         {
-            Order = string.Empty;
-            OrderValue = null;
-            Description = null;
-            Operation = null;   
-            Amount = null;    
-            Currency = null;
-            LimitStopLoss = string.Empty;
-            Price = null;
-            ExpirationDate = null;
+            Order = 0;
+            OrderValue = 0;
+            Description = string.Empty;
+            Operation = string.Empty;   
+            Amount = 0;    
+            Currency = string.Empty;
+            LimitStopLoss = 0;
+            Price = 0;
+            ExpirationDate = string.Empty;
         }
 
         public StockOrder(IStockOrder source)

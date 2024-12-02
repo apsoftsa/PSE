@@ -26,8 +26,8 @@ namespace PSE.Model.Output.Models
         public IOutputModel? Section90 { get; set; }
         //[JsonProperty(propertyName: "section16_17")]
         //public IOutputModel? Section16And17 { get; set; }
-        public IOutputModel? Section110 { get; set; }
-        public IOutputModel? Section20Old { get; set; }
+        public IOutputModel? Section100 { get; set; }
+        public IOutputModel? Section110 { get; set; }        
         public IOutputModel? Section150 { get; set; }
         //public IOutputModel? Section22 { get; set; }
         public IOutputModel? Section160 { get; set; }
@@ -54,8 +54,8 @@ namespace PSE.Model.Output.Models
             //Section14 = null;
             Section90 = null;
             //Section16And17 = null;
+            Section100 = null;
             Section110 = null;
-            Section20Old = null;
             Section150 = null;
             //Section22 = null;
             Section160 = null;
@@ -134,7 +134,7 @@ namespace PSE.Model.Output.Models
                             Section110 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection100:
-                            Section20Old = section;
+                            Section100 = section;
                             break;
                         case Enumerations.ManipolationTypes.AsSection150:
                             Section150 = section;

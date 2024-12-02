@@ -11,31 +11,19 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Sector { get; set; }
+        public string Sector { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentShares { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? TotalShares { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalMarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalPercentShares { get; set; }
+        public decimal PercentShares { get; set; }
 
         public ShareEconomicSector()
         {
-            Sector = null;
-            MarketValueReportingCurrency = null;
-            PercentShares = null;
-            TotalShares = null; 
-            TotalMarketValueReportingCurrency = null;
-            TotalPercentShares = null;
+            Sector = string.Empty;
+            MarketValueReportingCurrency = 0;
+            PercentShares = 0;
         }
 
         public ShareEconomicSector(IShareEconomicSector source)
@@ -43,9 +31,6 @@ namespace PSE.Model.Output.Models
             Sector = source.Sector;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             PercentShares = source.PercentShares;
-            TotalShares = source.TotalShares;
-            TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
-            TotalPercentShares = source.TotalPercentShares;
         }
 
     }
@@ -56,15 +41,15 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Sector { get; set; }
+        public string Sector { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentShares { get; set; }
+        public decimal PercentShares { get; set; }
 
         public ShareEconomicSectorChart()
         {
-            Sector = null;
-            PercentShares = null;
+            Sector = string.Empty;
+            PercentShares = 0;
         }
 
         public ShareEconomicSectorChart(IShareEconomicSectorChart source)

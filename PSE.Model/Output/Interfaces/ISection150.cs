@@ -4,19 +4,19 @@
     public interface IPossibleCommitment
     {
 
-        string? Description1 { get; set; }
+        string Description1 { get; set; }
 
-        string? Description2 { get; set; }
+        string Description2 { get; set; }
 
-        string? OpeningDate { get; set; }
+        string OpeningDate { get; set; }
 
-        string? ExpirationDate { get; set; }
+        string ExpirationDate { get; set; }
 
-        decimal? CurrentBalance { get; set; }
+        decimal CurrentBalance { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        int? AccruedInterestReportingCurrency { get; set; }
+        int AccruedInterestReportingCurrency { get; set; }
 
     }
 

@@ -4,23 +4,23 @@
     public interface IStockOrder
     {
 
-        string? Order { get; set; }
+        decimal Order { get; set; }
 
-        long? OrderValue { get; set; }
+        long OrderValue { get; set; }
 
-        string? Description { get; set; }
+        string Description { get; set; }
 
-        string? Operation { get; set; }
+        string Operation { get; set; }
 
-        decimal? Amount { get; set; }
+        decimal Amount { get; set; }
 
-        string? Currency { get; set; }
+        string Currency { get; set; }
 
-        string LimitStopLoss { get; set; }
+        decimal LimitStopLoss { get; set; }
 
-        decimal? Price { get; set; }
+        decimal Price { get; set; }
 
-        string? ExpirationDate { get; set; }
+        string ExpirationDate { get; set; }
 
     }
 

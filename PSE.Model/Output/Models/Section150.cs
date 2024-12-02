@@ -12,35 +12,35 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description1 { get; set; }
+        public string Description1 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Description2 { get; set; }
+        public string Description2 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? OpeningDate { get; set; }
+        public string OpeningDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? ExpirationDate { get; set; }
+        public string ExpirationDate { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? CurrentBalance { get; set; }
+        public decimal CurrentBalance { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? AccruedInterestReportingCurrency { get; set; }
+        public int AccruedInterestReportingCurrency { get; set; }
 
         public PossibleCommitment()
         {
-            Description1 = null;    
-            Description2 = null;
-            OpeningDate = null;
-            ExpirationDate = null;
-            CurrentBalance = null;
-            MarketValueReportingCurrency = null;
-            AccruedInterestReportingCurrency = null;
+            Description1 = string.Empty;    
+            Description2 = string.Empty;
+            OpeningDate = string.Empty;
+            ExpirationDate = string.Empty;
+            CurrentBalance = 0;
+            MarketValueReportingCurrency = 0;
+            AccruedInterestReportingCurrency = 0;
         }
 
         public PossibleCommitment(IPossibleCommitment source)

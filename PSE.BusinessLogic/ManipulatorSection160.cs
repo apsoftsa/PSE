@@ -56,7 +56,7 @@ namespace PSE.BusinessLogic
                             Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
                             PercentShares = 0
                         };
-                        totalSum += econSector.MarketValueReportingCurrency.HasValue ? Math.Abs(econSector.MarketValueReportingCurrency.Value) : 0;
+                        totalSum += Math.Abs(econSector.MarketValueReportingCurrency);
                         sectionContent.SubSection16000.Content.Add(econSector);                        
                     }
                     totalPerc = currPerc = 0;
@@ -64,7 +64,7 @@ namespace PSE.BusinessLogic
                     {
                         if (totalSum > 0)
                         {
-                            currPerc = sector.MarketValueReportingCurrency.HasValue ? Math.Round(sector.MarketValueReportingCurrency.Value * 100.0m / totalSum, 2) : 0;
+                            currPerc = Math.Round(sector.MarketValueReportingCurrency * 100.0m / totalSum, 2);
                             totalPerc += currPerc;
                             sector.PercentShares = currPerc;
                         }
@@ -83,7 +83,6 @@ namespace PSE.BusinessLogic
                     {
                         sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares });
                     }
-                    sectionContent.SubSection16000.Content.Add(new ShareEconomicSector() { TotalShares = string.Empty, TotalPercentShares = 100.0m, TotalMarketValueReportingCurrency = totalSum });
                     output.Content = new Section160Content(sectionContent);
                 }
             }    

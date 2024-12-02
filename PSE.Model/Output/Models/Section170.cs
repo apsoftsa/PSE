@@ -11,19 +11,19 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Country { get; set; }
+        public string Country { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentShares { get; set; }
+        public decimal PercentShares { get; set; }
 
         public ShareByCountry()
         {
             Country = string.Empty;
-            MarketValueReportingCurrency = null;
-            PercentShares = null;
+            MarketValueReportingCurrency = 0;
+            PercentShares = 0;
         }
 
         public ShareByCountry(IShareByCountry source)
@@ -40,23 +40,23 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Nation { get; set; }
+        public string Nation { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IShareByCountry>? Content { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentShares { get; set; }
+        public decimal PercentShares { get; set; }
 
         public ShareByNation()
         {
             Nation = string.Empty;
             Content = new List<IShareByCountry>();
-            MarketValueReportingCurrency = null;
-            PercentShares = null;
+            MarketValueReportingCurrency = 0;
+            PercentShares = 0;
         }
 
         public ShareByNation(IShareByNation source)
@@ -74,47 +74,15 @@ namespace PSE.Model.Output.Models
 
     }
 
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class TotalShares : ITotalShares
-    {
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalSharesValue { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalMarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? TotalPercentShares { get; set; }
-
-        public TotalShares()
-        {
-            TotalSharesValue = null;
-            TotalMarketValueReportingCurrency = null;
-            TotalPercentShares = null;
-        }
-
-        public TotalShares(ITotalShares source)
-        {
-            TotalSharesValue = source.TotalSharesValue;
-            TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
-            TotalPercentShares = source.TotalPercentShares;
-        }
-
-    }
-
     public class SubSection17000 : ISubSection17000
     {
-        public string? Name { get; set; }
-        public IList<IShareByNation>? Content { get; set; }
-        public ITotalShares? TotalSharesData { get; set; }
+        public string Name { get; set; }
+        public IList<IShareByNation> Content { get; set; }
 
         public SubSection17000(string name)
         {
             Name = name;
             Content = new List<IShareByNation>();
-            TotalSharesData = new TotalShares();
         }
 
         public SubSection17000(ISubSection17000 source)
@@ -126,19 +94,18 @@ namespace PSE.Model.Output.Models
                 foreach (var item in source.Content)
                     Content.Add(new ShareByNation(item));
             }
-            TotalSharesData = new TotalShares(source.TotalSharesData);
         }
     }
 
     public class ShareByNationChart : IShareByNationChart
     {
-        public string? Nation { get; set; }
-        public decimal? PercentShares { get; set; }
+        public string Nation { get; set; }
+        public decimal PercentShares { get; set; }
 
         public ShareByNationChart()
         {
             Nation = string.Empty;
-            PercentShares = null;
+            PercentShares = 0;
         }
 
         public ShareByNationChart(IShareByNationChart source)
@@ -151,8 +118,8 @@ namespace PSE.Model.Output.Models
 
     public class SubSection17010 : ISubSection17010
     {
-        public string? Name { get; set; }
-        public IList<IShareByNationChart>? Content { get; set; }
+        public string Name { get; set; }
+        public IList<IShareByNationChart> Content { get; set; }
 
         public SubSection17010(string name)
         {
@@ -177,8 +144,8 @@ namespace PSE.Model.Output.Models
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Section170Content : ISection170Content
     {
-        public ISubSection17000? SubSection17000 { get; set; }
-        public ISubSection17010? SubSection17010 { get; set; }
+        public ISubSection17000 SubSection17000 { get; set; }
+        public ISubSection17010 SubSection17010 { get; set; }
 
         public Section170Content()
         {

@@ -11,27 +11,27 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Customer { get; set; }
+        public string Customer { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? CustomerID { get; set; }
+        public string CustomerID { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? Portfolio { get; set; }
+        public string Portfolio { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? RiskProfile { get; set; }
+        public int RiskProfile { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? EsgProfile { get; set; }
+        public string EsgProfile { get; set; }
 
         public EndExtractCustomer()
         {
-            Customer = null;
-            CustomerID = null;
-            Portfolio = null;
-            RiskProfile = null;
-            EsgProfile = null;
+            Customer = string.Empty;
+            CustomerID = string.Empty;
+            Portfolio = string.Empty;
+            RiskProfile = 0;
+            EsgProfile = string.Empty;
         }
 
         public EndExtractCustomer(IEndExtractCustomer source)
@@ -50,19 +50,19 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? AssetClass { get; set; }
+        public string AssetClass { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentInvestment { get; set; }
+        public decimal PercentInvestment { get; set; }
 
         public EndExtractInvestment()
         {
-            AssetClass = null;
-            MarketValueReportingCurrency = null;
-            PercentInvestment = null;
+            AssetClass = string.Empty;
+            MarketValueReportingCurrency = 0;
+            PercentInvestment = 0;
         }
 
         public EndExtractInvestment(IEndExtractInvestment source)
@@ -79,15 +79,15 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string? AssetClass { get; set; }
+        public string AssetClass { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? PercentInvestment { get; set; }
+        public decimal PercentInvestment { get; set; }
 
         public EndExtractInvestmentChart()
         {
-            AssetClass = null;
-            PercentInvestment = null;
+            AssetClass = string.Empty;
+            PercentInvestment = 0;
         }
 
         public EndExtractInvestmentChart(IEndExtractInvestmentChart source)
@@ -100,9 +100,9 @@ namespace PSE.Model.Output.Models
     public class SubSection20000 : ISubSection20000
     {
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public IList<IEndExtractCustomer>? Content { get; set; }
+        public IList<IEndExtractCustomer> Content { get; set; }
 
         public SubSection20000(string name)
         {
@@ -125,9 +125,9 @@ namespace PSE.Model.Output.Models
     public class SubSection20010 : ISubSection20010
     {
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public IList<IEndExtractInvestment>? Content { get; set; }
+        public IList<IEndExtractInvestment> Content { get; set; }
 
         public SubSection20010(string name)
         {
@@ -150,9 +150,9 @@ namespace PSE.Model.Output.Models
     public class SubSection20020 : ISubSection20020
     {
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public IList<IEndExtractInvestmentChart>? Content { get; set; }
+        public IList<IEndExtractInvestmentChart> Content { get; set; }
 
         public SubSection20020(string name)
         {

@@ -4,26 +4,20 @@
     public interface IShareEconomicSector
     {
 
-        string? Sector { get; set; }
+        string Sector { get; set; }
 
-        decimal? MarketValueReportingCurrency { get; set; }
+        decimal MarketValueReportingCurrency { get; set; }
 
-        decimal? PercentShares { get; set; }
-
-        string? TotalShares { get; set; }
-
-        decimal? TotalMarketValueReportingCurrency { get; set; }
-
-        decimal? TotalPercentShares { get; set; }
+        decimal PercentShares { get; set; }
 
     }    
 
     public interface IShareEconomicSectorChart
     {
 
-        string? Sector { get; set; }
+        string Sector { get; set; }
 
-        decimal? PercentShares { get; set; }
+        decimal PercentShares { get; set; }
 
     }
 

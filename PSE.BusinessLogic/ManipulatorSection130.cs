@@ -49,15 +49,15 @@ namespace PSE.BusinessLogic
 
                                 stockOrder = new StockOrder()
                                 {
-                                    Order = ordItem.Reference_8,
+                                    Order = decimal.TryParse(ordItem.Reference_8, out decimal order) ? order : 0,
                                     Operation = extEventArgsOperation.PropertyValue,
                                     ExpirationDate = ordItem.Limit_Date_End_11 != null ? ordItem.Limit_Date_End_11.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
-                                    Amount = ordItem.Quantity_13,
-                                    OrderValue = ordItem.Sec_Num_14,
+                                    Amount = ordItem.Quantity_13.HasValue ? ordItem.Quantity_13.Value :  0,
+                                    OrderValue = ordItem.Sec_Num_14.HasValue ? ordItem.Sec_Num_14.Value : 0,
                                     Description = ordItem.Sec_Description_15,
                                     Currency = ordItem.Currency_16,
-                                    Price = ordItem.Quote_17,
-                                    LimitStopLoss = ordItem.Limit_Price_18 != null ? ordItem.Limit_Price_18.Value.ToString() : string.Empty
+                                    Price = ordItem.Quote_17.HasValue ? ordItem.Quote_17.Value : 0,
+                                    LimitStopLoss = ordItem.Limit_Price_18.HasValue ? ordItem.Limit_Price_18.Value : 0
                                 };
                                 sectionContent.SubSection13000.Content.Add(stockOrder);
                             }
