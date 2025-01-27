@@ -46,6 +46,7 @@ namespace PSE.BusinessLogic
                     if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
                         sectionContent = new Section090Content();
+                        sectionContent.Subsection9010 = new ShareSubSection("Shares");
                         foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
                             currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;

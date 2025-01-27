@@ -10,56 +10,39 @@ namespace PSE.Model.Output.Models
     public class BondDetail : IBondDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal NominalAmount { get; set; }
+        public decimal? NominalAmount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string SpRating { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentRate { get; set; }
+        public decimal? PercentRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Coupon { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Duration { get; set; }
+        public decimal? Duration { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal InterestMarketValueReportingCurrency { get; set; }
+        public decimal? InterestMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentYTD { get; set; }
+        public decimal? PercentYTD { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
        
         public BondDetail()
         {
@@ -124,38 +107,27 @@ namespace PSE.Model.Output.Models
     public class BondFundDetail : IBondFundDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public BondFundDetail()
         {
@@ -259,36 +231,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection Subsection8000 { get; set; }
+        public IBondSubSection? Subsection8000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection Subsection8010 { get; set; }
+        public IBondSubSection? Subsection8010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection Subsection8020 { get; set; }
+        public IBondSubSection? Subsection8020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection SubSection8030 { get; set; }
+        public IBondSubSection? Subsection8030 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IFundSubSection Subsection8040 { get; set; }
+        public IFundSubSection? Subsection8040 { get; set; }
 
         public Section080Content()
         {
+            /*
             Subsection8000 = new BondSubSection("Bonds with maturity <= 1 year");
             Subsection8010 = new BondSubSection("Bonds with maturity <= 5 year");
             Subsection8020 = new BondSubSection("Bonds with maturity > 5 year");
-            SubSection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
+            Subsection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
             Subsection8040 = new FundSubSection("Bond funds");
+            */
+            Subsection8000 = null;
+            Subsection8010 = null;
+            Subsection8020 = null;
+            Subsection8030 = null;
+            Subsection8040 = null;
         }
 
         public Section080Content(ISection080Content source)
         {
-            Subsection8000 = new BondSubSection(source.Subsection8000);
-            Subsection8010 = new BondSubSection(source.Subsection8010);
-            Subsection8020 = new BondSubSection(source.Subsection8020);
-            SubSection8030 = new BondSubSection(source.SubSection8030);
-            Subsection8040 = new FundSubSection(source.Subsection8040);
+            Subsection8000 = (source.Subsection8000 != null) ? new BondSubSection(source.Subsection8000) : null;
+            Subsection8010 = (source.Subsection8010 != null) ? new BondSubSection(source.Subsection8010) : null;
+            Subsection8020 = (source.Subsection8020 != null) ? new BondSubSection(source.Subsection8020) : null;
+            Subsection8030 = (source.Subsection8030 != null) ? new BondSubSection(source.Subsection8030) : null;
+            Subsection8040 = (source.Subsection8040 != null) ? new FundSubSection(source.Subsection8040) : null;
         }
 
     }

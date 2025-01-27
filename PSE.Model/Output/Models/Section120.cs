@@ -10,24 +10,15 @@ namespace PSE.Model.Output.Models
     public class FinancialSolutionMortgage : IFinancialSolutionMortgage
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentRate { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentRate { get; set; }
         public string OpeningDate { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string CurrentBalance { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal AccruedInterestReportingCurrency { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Exchange { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal? AccruedInterestReportingCurrency { get; set; }
+        public decimal? Exchange { get; set; }
 
         public FinancialSolutionMortgage()
         {
@@ -62,24 +53,15 @@ namespace PSE.Model.Output.Models
     public class FinancialSolutionAccount : IFinancialSolutionAccount
     {             
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal AdvanceValue { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal QuantityUsed { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal QuantityAvailable { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentRate { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? AdvanceValue { get; set; }
+        public decimal? QuantityUsed { get; set; }
+        public decimal? QuantityAvailable { get; set; }
+        public decimal? PercentRate { get; set; }
         public string OpeningDate { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]       
-        public decimal MarketValueReportingCurrency { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]       
-        public decimal Exchange { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
+        public decimal? Exchange { get; set; }
 
         public FinancialSolutionAccount()
         {
@@ -114,8 +96,7 @@ namespace PSE.Model.Output.Models
     public class FinancialSolutionFixed : FinancialSolutionMortgage, IFinancialSolutionFixed
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public FinancialSolutionFixed()
         {
@@ -206,27 +187,33 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection12000 SubSection12000 { get; set; }
+        public ISubSection12000? SubSection12000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection12010 SubSection12010 { get; set; }
+        public ISubSection12010? SubSection12010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection12020 SubSection12020 { get; set; }
+        public ISubSection12020? SubSection12020 { get; set; }
 
         public Section120Content()
         {
+            /*
             SubSection12000 = new SubSection12000("Mortgage and construction loans");
             SubSection12010 = new SubSection12010("Current account advances");
             SubSection12020 = new SubSection12020("Fixed Advances");
+            */
+            SubSection12000 = null;
+            SubSection12010 = null;
+            SubSection12020 = null;
         }
 
         public Section120Content(ISection120Content source)
         {
-            SubSection12000 = new SubSection12000(source.SubSection12000);
-            SubSection12010 = new SubSection12010(source.SubSection12010);
-            SubSection12020 = new SubSection12020(source.SubSection12020);
+            SubSection12000 = (source.SubSection12000 != null) ? new SubSection12000(source.SubSection12000) : null;
+            SubSection12010 = (source.SubSection12010 != null) ? new SubSection12010(source.SubSection12010) : null;
+            SubSection12020 = (source.SubSection12020 != null) ? new SubSection12020(source.SubSection12020) : null;
         }
+
     }
 
     [Serializable]

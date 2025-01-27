@@ -10,7 +10,6 @@ namespace PSE.Model.Output.Models
     public class FooterContent : OutputModel, IFooterContent, IOutputModel
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string BankAddress { get; set; }
 
         public FooterContent()

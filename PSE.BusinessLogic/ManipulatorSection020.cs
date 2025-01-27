@@ -67,12 +67,14 @@ namespace PSE.BusinessLogic
                                 FinalAmount = perItem.EndValue_9 != null ? perItem.EndValue_9.Value : 0,
                                 InputsOutputs = tmpInpOut
                             };
+                            sectionContent.SubSection2000 = new SubSection2000Content();
                             sectionContent.SubSection2000.Content.Add(historyEvo);
                             chartEvo = new PerformanceEvolutionChart()
                             {
                                 Period = tmpPeriod,
                                 PercentPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : 0
                             };
+                            sectionContent.SubSection2010 = new SubSection2010Content();    
                             sectionContent.SubSection2010.Content.Insert(0, chartEvo);
                         }
                         output.Content = new Section020Content(sectionContent);

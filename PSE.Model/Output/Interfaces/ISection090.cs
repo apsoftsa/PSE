@@ -4,19 +4,19 @@ public interface IShareDetail
 {
     string Description1 { get; set; }
     string Description2 { get; set; }
-    decimal Amount { get; set; }
+    decimal? Amount { get; set; }
     string Currency { get; set; }
     IList<ISummaryTo> SummaryTo { get; set; }
     IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
     IList<ISummaryPurchase> SummaryPurchase { get; set; }
-    decimal CapitalMarketValueReportingCurrency { get; set; }
-    decimal PercentWeight { get; set; }
+    decimal? CapitalMarketValueReportingCurrency { get; set; }
+    decimal? PercentWeight { get; set; }
 }
 
 public interface IEquityFundDetail : IShareDetail
 {
     string Description3 { get; set; }
-    decimal TotalMarketValueReportingCurrency { get; set; }
+    decimal? TotalMarketValueReportingCurrency { get; set; }
 }
 
 public interface IDerivateDetail : IEquityFundDetail { }
@@ -42,7 +42,7 @@ public interface IDerivateSubSection
 
 public interface ISection090Content
 {
-    IShareSubSection Subsection9010 { get; set; }
-    IEquityFundSubSection Subsection9020 { get; set; }
-    IDerivateSubSection SubSection9030 { get; set; }
+    IShareSubSection? Subsection9010 { get; set; }
+    IEquityFundSubSection? Subsection9020 { get; set; }
+    IDerivateSubSection? Subsection9030 { get; set; }
 }

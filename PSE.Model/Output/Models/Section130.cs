@@ -10,31 +10,22 @@ namespace PSE.Model.Output.Models
     public class StockOrder : IStockOrder
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Order { get; set; }
+        public decimal? Order { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public long OrderValue { get; set; }
+        public long? OrderValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Operation { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal LimitStopLoss { get; set; }
+        public decimal? LimitStopLoss { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
 
         public StockOrder()

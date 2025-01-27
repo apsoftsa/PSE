@@ -60,15 +60,16 @@ namespace PSE.BusinessLogic
                                     CustomerID = ideItem.CustomerNumber_2,
                                     Portfolio = extEventArgsPortfolio.PropertyValue,
                                     EsgProfile = extEventArgsService.PropertyValue,
-                                    RiskProfile = "[RiskProfile]", // not still recovered (!)
                                     //PercentWeightedPerformance = perItem.TWR_14 != null ? perItem.TWR_14.Value : null,
                                 };
+                                output.Content.SubSection1000 = new SubSection1000Content();
                                 output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
                                 if (perItem.StartValue_8 != null && perItem.StartDate_6 != null && perItem.EndDate_7 != null)
                                 {
                                     decimal startValue, cashIn, cashOut, secIn, secOut, portfolioValueRectified;
                                     cashIn = cashOut = secIn = secOut = 0;
                                     startValue = perItem.StartValue_8.Value;
+                                    output.Content.SubSection1010 = new SubSection1010Content();
                                     output.Content.SubSection1010.Name = $"Managment report {((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture)} – {((DateTime)perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture)}";
                                     hasValue = false;
                                     cashOut = secOut = 0;
@@ -137,6 +138,7 @@ namespace PSE.BusinessLogic
                                         Entry = "Dividend and Interest",
                                         MarketValueReportingCurrencyT = interest,
                                     };
+                                    output.Content.SubSection1011 = new SubSection1011Content();
                                     output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                     hasValue = false;
                                     if (perItem.PlRealEquity_16 != null)

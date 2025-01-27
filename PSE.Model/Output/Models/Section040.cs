@@ -10,7 +10,6 @@ namespace PSE.Model.Output.Models
     public class InvestmentAsset : IInvestmentAsset
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string AssetClass { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -55,11 +54,9 @@ namespace PSE.Model.Output.Models
     public class AssetClassChart : IAssetClassChart
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string AssetClass { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentInvestment { get; set; } 
+        public decimal? PercentInvestment { get; set; } 
 
         public AssetClassChart()
         {
@@ -133,21 +130,21 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection4000Content SubSection4000 { get; set; }
+        public ISubSection4000Content? SubSection4000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection4010Content SubSection4010 { get; set; }
+        public ISubSection4010Content? SubSection4010 { get; set; }
 
         public Section040Content()
         {
-            SubSection4000 = new SubSection4000Content();
-            SubSection4010 = new SubSection4010Content();
+            SubSection4000 = null;
+            SubSection4010 = null;
         }
 
         public Section040Content(ISection040Content source)
         {
-            SubSection4000 = new SubSection4000Content(source.SubSection4000);
-            SubSection4010 = new SubSection4010Content(source.SubSection4010);
+            SubSection4000 = (source.SubSection4000 != null) ? new SubSection4000Content(source.SubSection4000) : null;
+            SubSection4010 = (source.SubSection4010 != null) ? new SubSection4010Content(source.SubSection4010) : null;
         }
 
     }

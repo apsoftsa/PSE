@@ -10,19 +10,14 @@ namespace PSE.Model.Output.Models
     public class KeyInformation : IKeyInformation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Customer { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string CustomerID { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Portfolio { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string RiskProfile { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string EsgProfile { get; set; }       
 
         public KeyInformation() 
@@ -50,11 +45,9 @@ namespace PSE.Model.Output.Models
     public class AssetExtract : IAssetExtract
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Entry { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
         public string? AssetType { get; set; }
@@ -86,10 +79,8 @@ namespace PSE.Model.Output.Models
     public class DividendInterest : IDividendInterest
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Entry { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal MarketValueReportingCurrencyT { get; set; }
 
         [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
@@ -120,7 +111,6 @@ namespace PSE.Model.Output.Models
     public class FooterInformation : IFooterInformation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Note { get; set; }
 
         public FooterInformation()
@@ -228,26 +218,26 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection1000Content SubSection1000 { get; set; }
+        public ISubSection1000Content? SubSection1000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection1010Content SubSection1010 { get; set; }
+        public ISubSection1010Content? SubSection1010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection1011Content SubSection1011 { get; set; }
+        public ISubSection1011Content? SubSection1011 { get; set; }
 
         public Section010Content()
         {
-            SubSection1000 = new SubSection1000Content();   
-            SubSection1010 = new SubSection1010Content();
-            SubSection1011 = new SubSection1011Content();
+            SubSection1000 = null;   
+            SubSection1010 = null;
+            SubSection1011 = null;
         }
 
         public Section010Content(ISection010Content source)
         {
-            SubSection1000 = new SubSection1000Content(source.SubSection1000);
-            SubSection1010 = new SubSection1010Content(source.SubSection1010);
-            SubSection1011 = new SubSection1011Content(source.SubSection1011);
+            SubSection1000 = (source.SubSection1000 != null) ? new SubSection1000Content(source.SubSection1000) : null;
+            SubSection1010 = (source.SubSection1010 != null) ? new SubSection1010Content(source.SubSection1010) : null;
+            SubSection1011 = (source.SubSection1011 != null) ? new SubSection1011Content(source.SubSection1011) : null;
         }
 
     }

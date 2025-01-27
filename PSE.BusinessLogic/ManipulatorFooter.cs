@@ -23,7 +23,6 @@ namespace PSE.BusinessLogic
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
                 SectionName = sectionDest.SectionContent,
-                BankAddress = "[BankAddress]" // not still recovered (!)
             };
             return footerContent;
         }

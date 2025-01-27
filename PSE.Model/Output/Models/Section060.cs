@@ -10,20 +10,17 @@ namespace PSE.Model.Output.Models
     public class InvestmentCurrency : IInvestmentCurrency
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
+
+        public decimal? MarketValueReportingCurrency { get; set; }
+
+        public decimal? PercentAsset { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Amount { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Exchange { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentAsset { get; set; }        
         
         public InvestmentCurrency()
         {
@@ -50,11 +47,9 @@ namespace PSE.Model.Output.Models
     public class ChartInvestmentCurrency : IChartInvestmentCurrency
     {
        
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentAsset { get; set; }
+        public decimal? PercentAsset { get; set; }
 
         public ChartInvestmentCurrency()
         {
@@ -129,21 +124,21 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection6000Content SubSection6000 { get; set; }
+        public ISubSection6000Content? SubSection6000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection6010Content SubSection6010 { get; set; }
+        public ISubSection6010Content? SubSection6010 { get; set; }
 
         public Section060Content()
         {
-            SubSection6000 = new SubSection6000Content();
-            SubSection6010 = new SubSection6010Content();
+            SubSection6000 = null;
+            SubSection6010 = null;
         }
 
         public Section060Content(ISection060Content source)
         {
-            SubSection6000 = new SubSection6000Content(source.SubSection6000);
-            SubSection6010 = new SubSection6010Content(source.SubSection6010);
+            SubSection6000 = (source.SubSection6000 != null) ? new SubSection6000Content(source.SubSection6000) : null;
+            SubSection6010 = (source.SubSection6010 != null) ? new SubSection6010Content(source.SubSection6010) : null;
         }
 
     }

@@ -10,42 +10,35 @@ namespace PSE.Model.Output.Models
     public class AssetStatement : IAssetStatement
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Customer { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? CustomerID { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISettled>? Settled { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Portfolio { get; set; }
       
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? Advisory { get; set; }
 
         public AssetStatement()
         {
-            this.Customer = null;
-            this.CustomerID = null;
-            this.Settled = null;
-            this.Portfolio = null;
-            this.Advisory = null;
+            this.Customer = string.Empty;
+            this.CustomerID = string.Empty;
+            this.Settled = new List<ISettled>();
+            this.Portfolio = string.Empty;
+            this.Advisory = string.Empty;
         }
 
         public AssetStatement(IAssetStatement source)
         {
             this.Customer = source.Customer;
             this.CustomerID = source.CustomerID;
+            this.Settled = new List<ISettled>();
             if (source.Settled != null && source.Settled.Any())
-            {
-                this.Settled = new List<ISettled>();
+            {                
                 foreach (var item in source.Settled)
                     this.Settled.Add(new Settled(item));
             }
-            else
-                this.Settled = null;
             this.Portfolio = source.Portfolio;            
             this.Advisory = source.Advisory;
         }

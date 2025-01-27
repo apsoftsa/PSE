@@ -10,14 +10,11 @@ namespace PSE.Model.Output.Models
     public class ShareEconomicSector : IShareEconomicSector
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Sector { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ShareEconomicSector()
         {
@@ -40,11 +37,9 @@ namespace PSE.Model.Output.Models
     public class ShareEconomicSectorChart : IShareEconomicSectorChart
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Sector { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ShareEconomicSectorChart()
         {
@@ -118,21 +113,23 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareEconomicSectorSubSection SubSection16000 { get; set; }
+        public IShareEconomicSectorSubSection? SubSection16000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareEconomicSectorChartSubSection SubSection16010 { get; set; }
+        public IShareEconomicSectorChartSubSection? SubSection16010 { get; set; }
 
         public Section160Content()
         {
-            SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector");
-            SubSection16010 = new ShareEconomicSectorChartSubSection("Shares subdivision by economic sector chart");
+            //SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector");
+            //SubSection16010 = new ShareEconomicSectorChartSubSection("Shares subdivision by economic sector chart");
+            SubSection16000 = null;
+            SubSection16010 = null; 
         }
 
         public Section160Content(ISection160Content source)
         {
-            SubSection16000 = new ShareEconomicSectorSubSection(source.SubSection16000);
-            SubSection16010 = new ShareEconomicSectorChartSubSection(source.SubSection16010);
+            SubSection16000 = (source.SubSection16000 != null) ? new ShareEconomicSectorSubSection(source.SubSection16000) : null;
+            SubSection16010 = (source.SubSection16010 != null) ? new ShareEconomicSectorChartSubSection(source.SubSection16010) : null;
         }
 
     }

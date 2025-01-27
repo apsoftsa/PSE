@@ -47,6 +47,7 @@ namespace PSE.BusinessLogic
                         string categoryDescr = string.Empty;
                         string prevCategory = string.Empty;
                         string currCategory = string.Empty;
+                        sectionContent.SubSection4000 = new SubSection4000Content();
                         foreach (IGrouping<string, POS> subCategory in groupBySubCategory)
                         {                            
                             currCategory = subCategory.First().SubCat3_14;
@@ -76,6 +77,7 @@ namespace PSE.BusinessLogic
                         decimal? totalSum = sectionContent.SubSection4000.Content.Sum(sum => sum.MarketValueReportingCurrency);
                         if (totalSum != null && totalSum != 0)
                         {
+                            sectionContent.SubSection4010 = new SubSection4010Content();
                             foreach (IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content)
                             {
                                 assetToUpgrd.PercentInvestment = Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2);

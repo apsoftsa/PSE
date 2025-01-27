@@ -10,17 +10,13 @@ namespace PSE.Model.Output.Models
     public class MetalAccount : IMetalAccount
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Account { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrentBalance { get; set; }
+        public decimal? CurrentBalance { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public MetalAccount()
         {
@@ -46,35 +42,25 @@ namespace PSE.Model.Output.Models
     public class MetalDetail : IMetalDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public MetalDetail()
         {
@@ -125,35 +111,25 @@ namespace PSE.Model.Output.Models
     public class DerivateMetalDetail : IDerivateMetalDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Strike { get; set; }
+        public decimal? Strike { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public DerivateMetalDetail()
         {
@@ -204,32 +180,23 @@ namespace PSE.Model.Output.Models
     public class ForwardMetalOperation : IForwardMetalOperation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrencyValue { get; set; }
+        public decimal? CurrencyValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Exchange { get; set; }
+        public decimal? Exchange { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeValue { get; set; }
+        public decimal? ExchangeValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrencyRate { get; set; }
+        public decimal? CurrencyRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ProfitLoss { get; set; }
+        public decimal? ProfitLoss { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public ForwardMetalOperation()
         {
@@ -369,36 +336,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IMetalAccountSubSection SubSection10000 { get; set; }
+        public IMetalAccountSubSection? SubSection10000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IMetalSubSection SubSection10010 { get; set; }
+        public IMetalSubSection? SubSection10010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IMetalSubSection SubSection10020 { get; set; }
+        public IMetalSubSection? SubSection10020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IDerivateMetalSubSection SubSection10030 { get; set; }
+        public IDerivateMetalSubSection? SubSection10030 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IForwardMetalOperationSubSection SubSection10040 { get; set; }
+        public IForwardMetalOperationSubSection? SubSection10040 { get; set; }
 
         public Section100Content()
         {
+            /*
             SubSection10000 = new MetalAccountSubSection("Metals accounts");
             SubSection10010 = new MetalSubSection("Metals funds");
             SubSection10020 = new MetalSubSection("Physical metals");
             SubSection10030 = new DerivateMetalSubSection("Derivative Products on Metals");
             SubSection10040 = new ForwardMetalOperationSubSection("Forward metal operations (profit/loss)");
+            */
+            SubSection10000 = null;
+            SubSection10010 = null;
+            SubSection10020 = null;
+            SubSection10030 = null;
+            SubSection10040 = null;
         }
 
         public Section100Content(ISection100Content source)
         {
-            SubSection10000 = new MetalAccountSubSection(source.SubSection10000);
-            SubSection10010 = new MetalSubSection(source.SubSection10010);
-            SubSection10020 = new MetalSubSection(source.SubSection10020);
-            SubSection10030 = new DerivateMetalSubSection(source.SubSection10030);
-            SubSection10040 = new ForwardMetalOperationSubSection(source.SubSection10040);
+            SubSection10000 = (source.SubSection10000 != null) ? new MetalAccountSubSection(source.SubSection10000) : null;
+            SubSection10010 = (source.SubSection10010 != null) ? new MetalSubSection(source.SubSection10010) : null;
+            SubSection10020 = (source.SubSection10020 != null) ? new MetalSubSection(source.SubSection10020) : null;
+            SubSection10030 = (source.SubSection10030 != null) ? new DerivateMetalSubSection(source.SubSection10030) : null;
+            SubSection10040 = (source.SubSection10040 != null) ? new ForwardMetalOperationSubSection(source.SubSection10040) : null;
         }
 
     }

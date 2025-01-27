@@ -10,17 +10,13 @@ namespace PSE.Model.Output.Models
     public class FundAccumulationPlanPayment : IFundAccumulationPlanPayment
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Frequency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Executed { get; set; }
+        public decimal? Executed { get; set; }
 
         public FundAccumulationPlanPayment()
         {
@@ -45,32 +41,23 @@ namespace PSE.Model.Output.Models
     public class FundAccumulationPlan : IFundAccumulationPlan
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IFundAccumulationPlanPayment> Payments { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal AveragePurchasePrice { get; set; }
+        public decimal? AveragePurchasePrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal SharesPurchased { get; set; }
+        public decimal? SharesPurchased { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Exchange { get; set; }
+        public decimal? Exchange { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeigth { get; set; }
+        public decimal? PercentWeigth { get; set; }
 
         public FundAccumulationPlan()
         {

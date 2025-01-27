@@ -38,10 +38,11 @@ namespace PSE.BusinessLogic
                 IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
                 foreach (IDE ideItem in ideItems)
                 {
-                    sectionContent = new Section190Content();
+                    sectionContent = new Section190Content();                    
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())
                     {
+                        sectionContent.SubSection19000 = new SubSection19000("Reports not transferred to administration");
                         acctAndDepReportNotTrans = new ReportsNotTransferredToAdministration();
                         foreach (IGrouping<string, POS> relationshipNonTransferedToAdminItem in relationshipesNonTransferedToAdmin)
                         {
@@ -69,6 +70,7 @@ namespace PSE.BusinessLogic
                     IEnumerable<IGrouping<string, POS>> relationshipesTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 == "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesTransferedToAdmin != null && relationshipesTransferedToAdmin.Any())
                     {
+                        sectionContent.SubSection19010 = new SubSection19010("Reports transferred to administration");
                         acctAndDepReportTrans = new ReportsTransferredToAdministration();                        
                         foreach (IGrouping<string, POS> relationshipTransferedToAdminItem in relationshipesTransferedToAdmin)
                         {

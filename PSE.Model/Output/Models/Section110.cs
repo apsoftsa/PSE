@@ -10,35 +10,25 @@ namespace PSE.Model.Output.Models
     public abstract class InvestmentBase : IInvestmentBase
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<ISummaryTo> SummaryTo { get; set; }
+        public IList<ISummaryTo>? SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
+        public IList<ISummaryBeginningYear>? SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IList<ISummaryPurchase> SummaryPurchase { get; set; }
+        public IList<ISummaryPurchase>? SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public InvestmentBase()
         {
@@ -89,8 +79,7 @@ namespace PSE.Model.Output.Models
     public class InvestmentDetail : InvestmentBase, IInvestmentDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         public InvestmentDetail() : base()
         {
@@ -108,17 +97,13 @@ namespace PSE.Model.Output.Models
     public class BondInvestmentDetail : InvestmentBase, IBondInvestmentDetail
     {
        
-        [JsonProperty( NullValueHandling = NullValueHandling.Ignore)]
-        public decimal NominalAmount { get; set; }
+        public decimal? NominalAmount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentRate { get; set; }
+        public decimal? PercentRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Coupon { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal InterestMarketValueReportingCurrency { get; set; }
+        public decimal? InterestMarketValueReportingCurrency { get; set; }
 
         public BondInvestmentDetail() : base()
         {
@@ -235,31 +220,37 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection11000 SubSection11000 { get; set; }
+        public ISubSection11000? SubSection11000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection11010 SubSection11010 { get; set; }
+        public ISubSection11010? SubSection11010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection11020 SubSection11020 { get; set; }
+        public ISubSection11020? SubSection11020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection11030 SubSection11030 { get; set; }
+        public ISubSection11030? SubSection11030 { get; set; }
 
         public Section110Content()
         {
+            /*
             SubSection11000 = new SubSection11000("Mix funds");
             SubSection11010 = new SubSection11010("Alternative Products – Different");
             SubSection11020 = new SubSection11020("Derivative Products – Futures");
             SubSection11030 = new SubSection11030("Real estate investments – Real estate funds");
+            */
+            SubSection11000 = null;
+            SubSection11010 = null;
+            SubSection11020 = null;
+            SubSection11030 = null;
         }
 
         public Section110Content(ISection110Content source)
         {
-            SubSection11000 = new SubSection11000(source.SubSection11000);
-            SubSection11010 = new SubSection11010(source.SubSection11010);
-            SubSection11020 = new SubSection11020(source.SubSection11020);
-            SubSection11030 = new SubSection11030(source.SubSection11030);
+            SubSection11000 = (source.SubSection11000 != null) ? new SubSection11000(source.SubSection11000) : null;
+            SubSection11010 = (source.SubSection11010 != null) ? new SubSection11010(source.SubSection11010) : null;
+            SubSection11020 = (source.SubSection11020 != null) ? new SubSection11020(source.SubSection11020) : null;
+            SubSection11030 = (source.SubSection11030 != null) ? new SubSection11030(source.SubSection11030) : null;
         }
     }
 

@@ -80,6 +80,7 @@ namespace PSE.BusinessLogic
                     if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
                         sectionContent = new Section110Content();
+                        sectionContent.SubSection11010 = new SubSection11010("Alternative Products – Different");
                         foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
                             if ((destinationObjectName = GetObjectNameDestination(posItem)) != string.Empty)

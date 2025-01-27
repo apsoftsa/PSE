@@ -23,7 +23,7 @@
 
         string AssetClass { get; set; }
 
-        decimal PercentInvestment { get; set; }
+        decimal? PercentInvestment { get; set; }
 
     }
 
@@ -48,9 +48,9 @@
     public interface ISection040Content
     {
 
-        ISubSection4000Content SubSection4000 { get; set; }
+        ISubSection4000Content? SubSection4000 { get; set; }
 
-        ISubSection4010Content SubSection4010 { get; set; }
+        ISubSection4010Content? SubSection4010 { get; set; }
 
     }
 

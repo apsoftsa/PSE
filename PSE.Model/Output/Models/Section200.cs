@@ -10,19 +10,14 @@ namespace PSE.Model.Output.Models
     public class EndExtractCustomer : IEndExtractCustomer
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Customer { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string CustomerID { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Portfolio { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int RiskProfile { get; set; }
+        public int? RiskProfile { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string EsgProfile { get; set; }
 
         public EndExtractCustomer()
@@ -49,20 +44,18 @@ namespace PSE.Model.Output.Models
     public class EndExtractInvestment : IEndExtractInvestment
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string AssetClass { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentInvestment { get; set; }
+        public decimal? PercentInvestment { get; set; }
 
         public EndExtractInvestment()
         {
             AssetClass = string.Empty;
             MarketValueReportingCurrency = 0;
-            PercentInvestment = 0;
+            PercentInvestment = null;
         }
 
         public EndExtractInvestment(IEndExtractInvestment source)
@@ -78,11 +71,9 @@ namespace PSE.Model.Output.Models
     public class EndExtractInvestmentChart : IEndExtractInvestmentChart
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string AssetClass { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentInvestment { get; set; }
+        public decimal? PercentInvestment { get; set; }
 
         public EndExtractInvestmentChart()
         {
@@ -178,26 +169,30 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection20000 SubSection20000 { get; set; }
+        public ISubSection20000? SubSection20000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection20010 SubSection20010 { get; set; }
+        public ISubSection20010? SubSection20010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection20020 SubSection20020 { get; set; }
+        public ISubSection20020? SubSection20020 { get; set; }
 
         public Section200Content()
         {
-            SubSection20000 = new SubSection20000(string.Empty);
-            SubSection20010 = new SubSection20010("Investments");
-            SubSection20020 = new SubSection20020("Investments chart");
+            //SubSection20000 = new SubSection20000(string.Empty);
+            //SubSection20010 = new SubSection20010("Investments");
+            //SubSection20020 = new SubSection20020("Investments chart");
+            SubSection20000 = null;
+            SubSection20010 = null;
+            SubSection20020 = null;
+
         }
 
         public Section200Content(ISection200Content source)
         {
-            SubSection20000 = new SubSection20000(source.SubSection20000);
-            SubSection20010 = new SubSection20010(source.SubSection20010);
-            SubSection20020 = new SubSection20020(source.SubSection20020);
+            SubSection20000 = (source.SubSection20000 != null) ? new SubSection20000(source.SubSection20000) : null;
+            SubSection20010 = (source.SubSection20010 != null) ? new SubSection20010(source.SubSection20010) : null;
+            SubSection20020 = (source.SubSection20020 != null) ? new SubSection20020(source.SubSection20020) : null;
         }
     }
 

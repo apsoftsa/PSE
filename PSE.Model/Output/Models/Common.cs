@@ -35,26 +35,19 @@ namespace PSE.Model.Output.Models
     public class SummaryTo : ISummaryTo
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ValueDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ValuePrice { get; set; }
+        public decimal? ValuePrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPrice { get; set; }
+        public decimal? PercentPrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeValue { get; set; }
+        public decimal? ExchangeValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentExchange { get; set; }
+        public decimal? PercentExchange { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ProfitLossNotRealizedValue { get; set; }
+        public decimal? ProfitLossNotRealizedValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentProfitLossN { get; set; }
+        public decimal? PercentProfitLossN { get; set; }
 
         public SummaryTo()
         {
@@ -85,23 +78,17 @@ namespace PSE.Model.Output.Models
     public class SummaryBeginningYear : ISummaryBeginningYear
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ValuePrice { get; set; }
+        public decimal? ValuePrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPrice { get; set; }
+        public decimal? PercentPrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeValue { get; set; }
+        public decimal? ExchangeValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentExchange { get; set; }
+        public decimal? PercentExchange { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ProfitLossNotRealizedValue { get; set; }
+        public decimal? ProfitLossNotRealizedValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentProfitLossN { get; set; }
+        public decimal? PercentProfitLossN { get; set; }
 
         public SummaryBeginningYear()
         {
@@ -130,23 +117,17 @@ namespace PSE.Model.Output.Models
     public class SummaryPurchase : ISummaryPurchase
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ValuePrice { get; set; }
+        public decimal? ValuePrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPrice { get; set; }
+        public decimal? PercentPrice { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeValue { get; set; }
+        public decimal? ExchangeValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PercentExchange { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ProfitLossNotRealizedValue { get; set; }
+        public decimal? ProfitLossNotRealizedValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentProfitLossN { get; set; }
+        public decimal? PercentProfitLossN { get; set; }
 
         public SummaryPurchase()
         {

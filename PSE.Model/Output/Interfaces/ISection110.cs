@@ -10,22 +10,22 @@
         IList<ISummaryTo>? SummaryTo { get; set; }
         IList<ISummaryBeginningYear>? SummaryBeginningYear { get; set; }
         IList<ISummaryPurchase>? SummaryPurchase { get; set; }
-        decimal CapitalMarketValueReportingCurrency { get; set; }
-        decimal TotalMarketValueReportingCurrency { get; set; }
-        decimal PercentWeight { get; set; }
+        decimal? CapitalMarketValueReportingCurrency { get; set; }
+        decimal? TotalMarketValueReportingCurrency { get; set; }
+        decimal? PercentWeight { get; set; }
     }
 
     public interface IInvestmentDetail : IInvestmentBase
     {
-        decimal Amount { get; set; }
+        decimal? Amount { get; set; }
     }
 
     public interface IBondInvestmentDetail : IInvestmentBase
     {
-        decimal NominalAmount { get; set; }
-        decimal PercentRate { get; set; }
+        decimal? NominalAmount { get; set; }
+        decimal? PercentRate { get; set; }
         string Coupon { get; set; }
-        decimal InterestMarketValueReportingCurrency { get; set; }
+        decimal? InterestMarketValueReportingCurrency { get; set; }
     }
 
     public interface ISubSection11000
@@ -54,10 +54,10 @@
 
     public interface ISection110Content
     {
-        ISubSection11000 SubSection11000 { get; set; }
-        ISubSection11010 SubSection11010 { get; set; }
-        ISubSection11020 SubSection11020 { get; set; }
-        ISubSection11030 SubSection11030 { get; set; }
+        ISubSection11000? SubSection11000 { get; set; }
+        ISubSection11010? SubSection11010 { get; set; }
+        ISubSection11020? SubSection11020 { get; set; }
+        ISubSection11030? SubSection11030 { get; set; }
     }
 
 }

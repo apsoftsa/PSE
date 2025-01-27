@@ -21,7 +21,7 @@
 
         string Entry { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
         string? AssetType { get; set; }
 
@@ -81,11 +81,11 @@
     public interface ISection010Content
     {
 
-        ISubSection1000Content SubSection1000 { get; set; }
+        ISubSection1000Content? SubSection1000 { get; set; }
 
-        ISubSection1010Content SubSection1010 { get; set; }
+        ISubSection1010Content? SubSection1010 { get; set; }
 
-        ISubSection1011Content SubSection1011 { get; set; }
+        ISubSection1011Content? SubSection1011 { get; set; }
 
     }
 

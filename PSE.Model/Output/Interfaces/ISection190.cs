@@ -12,7 +12,7 @@
 
         string? Currency { get; set; }
 
-        decimal CurrentBalance { get; set; }
+        decimal? CurrentBalance { get; set; }
 
         decimal MarketValueReportingCurrency { get; set; }
 
@@ -25,11 +25,11 @@
 
         string TotalAddressBook { get; set; }
 
-        decimal TotalMarketValueReportingCurrency { get; set; }
+        decimal? TotalMarketValueReportingCurrency { get; set; }
 
         string TotalAssetsNotTransferred { get; set; }
 
-        decimal TotalNotTransferredMarketValueReportingCurrency { get; set; }               
+        decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }               
 
         List<IObjectReportsTransferredToAdministration> Objects { get; set; }
 
@@ -46,9 +46,9 @@
 
         string Currency { get; set; }
 
-        decimal CurrentBalance { get; set; }
+        decimal? CurrentBalance { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
     }
 
@@ -57,11 +57,11 @@
 
         string TotalAssetsNotTransferred { get; set; }
 
-        decimal TotalNotTransferredMarketValueReportingCurrency { get; set; }
+        decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }
 
         string TotalAsset { get; set; }
 
-        decimal TotalMarketValueReportingCurrency { get; set; }
+        decimal? TotalMarketValueReportingCurrency { get; set; }
 
         List<IObjectReportsNotTransferredToAdministration> Objects { get; set; }    
 
@@ -81,8 +81,8 @@
 
     public interface ISection190Content
     {
-        ISubSection19000 SubSection19000 { get; set; }
-        ISubSection19010 SubSection19010 { get; set; }
+        ISubSection19000? SubSection19000 { get; set; }
+        ISubSection19010? SubSection19010 { get; set; }
     }
 
 }

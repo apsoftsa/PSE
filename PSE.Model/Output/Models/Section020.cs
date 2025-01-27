@@ -10,20 +10,15 @@ namespace PSE.Model.Output.Models
     public class PerformanceEvolutionHistoryCHF: IPerformanceEvolutionHistoryCHF
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal InitialAmount { get; set; }
+        public decimal? InitialAmount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal FinalAmount { get; set; }
+        public decimal? FinalAmount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal InputsOutputs { get; set; }
+        public decimal? InputsOutputs { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPerformance { get; set; }
+        public decimal? PercentPerformance { get; set; }
 
         public PerformanceEvolutionHistoryCHF()
         {
@@ -50,11 +45,9 @@ namespace PSE.Model.Output.Models
     public class PerformanceEvolutionChart : IPerformanceEvolutionChart
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPerformance { get; set; }
+        public decimal? PercentPerformance { get; set; }
 
         public PerformanceEvolutionChart() 
         { 
@@ -128,21 +121,21 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection2000Content SubSection2000 { get; set; }
+        public ISubSection2000Content? SubSection2000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection2010Content SubSection2010 { get; set; }
+        public ISubSection2010Content? SubSection2010 { get; set; }
 
         public Section020Content()
         {
-            SubSection2000 = new SubSection2000Content();
-            SubSection2010 = new SubSection2010Content();
+            SubSection2000 = null;
+            SubSection2010 = null;
         }
 
         public Section020Content(ISection020Content source)
         {
-            SubSection2000 = new SubSection2000Content(source.SubSection2000);
-            SubSection2010 = new SubSection2010Content(source.SubSection2010);
+            SubSection2000 = (source.SubSection2000 != null) ? new SubSection2000Content(source.SubSection2000) : null;
+            SubSection2010 = (source.SubSection2010 != null) ? new SubSection2010Content(source.SubSection2010) : null;
         }
 
     }

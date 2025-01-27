@@ -10,32 +10,23 @@ namespace PSE.Model.Output.Models
     public class ShareDetail : IShareDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public ShareDetail()
         {
@@ -84,11 +75,9 @@ namespace PSE.Model.Output.Models
     public class EquityFundDetail : ShareDetail, IEquityFundDetail
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
         public EquityFundDetail() : base()
         {
@@ -197,26 +186,31 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareSubSection Subsection9010 { get; set; }
+        public IShareSubSection? Subsection9010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IEquityFundSubSection Subsection9020 { get; set; }
+        public IEquityFundSubSection? Subsection9020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IDerivateSubSection SubSection9030 { get; set; }
+        public IDerivateSubSection? Subsection9030 { get; set; }
 
         public Section090Content()
         {
+            /*
             Subsection9010 = new ShareSubSection("Shares");
             Subsection9020 = new EquityFundSubSection("Equity Funds");
-            SubSection9030 = new DerivateSubSection("Derivative products on securities");
+            Subsection9030 = new DerivateSubSection("Derivative products on securities");
+            */
+            Subsection9010 = null;
+            Subsection9020 = null;
+            Subsection9030 = null;
         }
 
         public Section090Content(ISection090Content source)
         {
-            Subsection9010 = new ShareSubSection(source.Subsection9010);
-            Subsection9020 = new EquityFundSubSection(source.Subsection9020);
-            SubSection9030 = new DerivateSubSection(source.SubSection9030);
+            Subsection9010 = (source.Subsection9010 != null) ? new ShareSubSection(source.Subsection9010) : null;
+            Subsection9020 = (source.Subsection9020 != null) ? new EquityFundSubSection(source.Subsection9020) : null;
+            Subsection9030 = (source.Subsection9030 != null) ? new DerivateSubSection(source.Subsection9030) : null;
         }
 
     }

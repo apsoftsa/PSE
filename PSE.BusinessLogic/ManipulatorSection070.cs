@@ -37,8 +37,9 @@ namespace PSE.BusinessLogic
                     customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
                     customerSumAmounts += extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
                     if (posItems != null && posItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
-                    {
+                    {                        
                         sectionContent = new Section070Content();
+                        sectionContent.SubSection7000 = new SubSection7000Content();
                         foreach (POS posItem in posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {
                             currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
@@ -51,6 +52,7 @@ namespace PSE.BusinessLogic
                                 Iban = posItem.IsinIban_85,
                                 PercentWeight = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
+                            sectionContent.SubSection7000 = new SubSection7000Content();    
                             sectionContent.SubSection7000.Content.Add(account);
                             posItem.AlreadyUsed = true;
                         }

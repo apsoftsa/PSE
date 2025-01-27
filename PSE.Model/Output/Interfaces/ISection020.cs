@@ -6,13 +6,13 @@
 
         string Period { get; set; }
 
-        decimal InitialAmount { get; set; }
+        decimal? InitialAmount { get; set; }
 
-        decimal FinalAmount { get; set; }
+        decimal? FinalAmount { get; set; }
 
-        decimal InputsOutputs { get; set; }
+        decimal? InputsOutputs { get; set; }
 
-        decimal PercentPerformance { get; set; }
+        decimal? PercentPerformance { get; set; }
 
     }
 
@@ -21,7 +21,7 @@
 
         string Period { get; set; }
 
-        decimal PercentPerformance { get; set; }
+        decimal? PercentPerformance { get; set; }
 
     }
 
@@ -46,9 +46,9 @@
     public interface ISection020Content
     {
 
-        ISubSection2000Content SubSection2000 { get; set; }
+        ISubSection2000Content? SubSection2000 { get; set; }
 
-        ISubSection2010Content SubSection2010 { get; set; }
+        ISubSection2010Content? SubSection2010 { get; set; }
 
     }
 

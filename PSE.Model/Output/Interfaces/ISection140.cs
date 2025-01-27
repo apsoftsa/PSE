@@ -8,9 +8,9 @@
        
         string Currency { get; set; }
 
-        decimal Amount { get; set; }
+        decimal? Amount { get; set; }
 
-        decimal Executed { get; set; }
+        decimal? Executed { get; set; }
 
     }
 
@@ -25,15 +25,15 @@
 
         IList<IFundAccumulationPlanPayment> Payments { get; set; }
 
-        decimal AveragePurchasePrice { get; set; }
+        decimal? AveragePurchasePrice { get; set; }
        
-        decimal SharesPurchased { get; set; }
+        decimal? SharesPurchased { get; set; }
 
-        decimal Exchange { get; set; }
+        decimal? Exchange { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        decimal PercentWeigth { get; set; }
+        decimal? PercentWeigth { get; set; }
 
     }
 

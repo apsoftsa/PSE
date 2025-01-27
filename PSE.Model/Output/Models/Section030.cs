@@ -10,11 +10,9 @@ namespace PSE.Model.Output.Models
     public class MultilineAssetsTo : IMultilineAssetsTo
     {
         
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ValueDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ValueAsset { get; set; }
+        public decimal? ValueAsset { get; set; }
 
         public MultilineAssetsTo()
         {
@@ -35,17 +33,13 @@ namespace PSE.Model.Output.Models
     public class MultilineKeyInformation : IMultilineKeyInformation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IMultilineAssetsTo> AssetsTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentPerformance { get; set; }
+        public decimal? PercentPerformance { get; set; }
 
         public MultilineKeyInformation()
         {
@@ -77,14 +71,11 @@ namespace PSE.Model.Output.Models
     public class LinePerformanceAnalysis : ILinePerformanceAnalysis
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ModelLine { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentNetContribution { get; set; }
+        public decimal? PercentNetContribution { get; set; }
 
         public LinePerformanceAnalysis()
         {
@@ -111,7 +102,7 @@ namespace PSE.Model.Output.Models
         public string ModelLine { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentNetContribution { get; set; }
+        public decimal? PercentNetContribution { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Period { get; set; }
@@ -221,20 +212,19 @@ namespace PSE.Model.Output.Models
     public class Section030Content : ISection030Content
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IMultilineKeyInformation> KeyInformation { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection3000Content SubSection3000 { get; set; }
+        public ISubSection3000Content? SubSection3000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection3010Content SubSection3010 { get; set; }
+        public ISubSection3010Content? SubSection3010 { get; set; }
 
         public Section030Content()
         {
             KeyInformation = new List<IMultilineKeyInformation>();
-            SubSection3000 = new SubSection3000Content();
-            SubSection3010 = new SubSection3010Content();
+            SubSection3000 = null;
+            SubSection3010 = null;
         }
 
         public Section030Content(ISection030Content source)
@@ -245,8 +235,8 @@ namespace PSE.Model.Output.Models
                 foreach (var item in source.KeyInformation)
                     KeyInformation.Add(new MultilineKeyInformation(item));    
             }
-            SubSection3000 = new SubSection3000Content(source.SubSection3000);
-            SubSection3010 = new SubSection3010Content(source.SubSection3010);
+            SubSection3000 = (source.SubSection3000 != null) ? new SubSection3000Content(source.SubSection3000) : null;
+            SubSection3010 = (source.SubSection3010 != null) ? new SubSection3010Content(source.SubSection3010) : null;
         }
 
     }

@@ -41,6 +41,7 @@ namespace PSE.BusinessLogic
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     sectionContent = new Section160Content();
+                    sectionContent.SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector"); 
                     totalSum = 0;
                     IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15 == ((int)PositionClassifications.AZIONI_FONDI_AZIONARI).ToString()).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> economicalSector in groupByEconomicalSector)
@@ -56,7 +57,7 @@ namespace PSE.BusinessLogic
                             Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
                             PercentShares = 0
                         };
-                        totalSum += Math.Abs(econSector.MarketValueReportingCurrency);
+                        totalSum += Math.Abs(econSector.MarketValueReportingCurrency.Value);
                         sectionContent.SubSection16000.Content.Add(econSector);                        
                     }
                     totalPerc = currPerc = 0;
@@ -64,11 +65,12 @@ namespace PSE.BusinessLogic
                     {
                         if (totalSum > 0)
                         {
-                            currPerc = Math.Round(sector.MarketValueReportingCurrency * 100.0m / totalSum, 2);
+                            currPerc = Math.Round(sector.MarketValueReportingCurrency.Value * 100.0m / totalSum, 2);
                             totalPerc += currPerc;
                             sector.PercentShares = currPerc;
                         }
                     }
+                    sectionContent.SubSection16010 = new ShareEconomicSectorChartSubSection("Shares subdivision by economic sector chart");
                     if (totalPerc > 100.0m)
                     {
                         currPerc = currPerc - (totalPerc - 100.0m);

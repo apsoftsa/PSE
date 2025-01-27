@@ -6,9 +6,9 @@
 
         string Sector { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        decimal PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }    
 
@@ -17,7 +17,7 @@
 
         string Sector { get; set; }
 
-        decimal PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
 
     }
 
@@ -42,9 +42,9 @@
     public interface ISection160Content
     {
 
-        IShareEconomicSectorSubSection SubSection16000 { get; set; }
+        IShareEconomicSectorSubSection? SubSection16000 { get; set; }
 
-        IShareEconomicSectorChartSubSection SubSection16010 { get; set; }
+        IShareEconomicSectorChartSubSection? SubSection16010 { get; set; }
 
     }
 

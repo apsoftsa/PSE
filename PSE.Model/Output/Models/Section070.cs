@@ -10,20 +10,15 @@ namespace PSE.Model.Output.Models
     public class LiquidityAccount : ILiquidityAccount
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Iban { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrentBalance { get; set; }
+        public decimal? CurrentBalance { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public LiquidityAccount()
         {
@@ -74,38 +69,27 @@ namespace PSE.Model.Output.Models
     public class LiquidityShortTermFund : ILiquidityShortTermFund
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CapitalMarketValueReportingCurrency { get; set; }
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal InterestMarketValueReportingCurrency { get; set; }
+        public decimal? InterestMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal TotalMarketValueReportingCurrency { get; set; }
+        public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public LiquidityShortTermFund()
         {
@@ -183,35 +167,25 @@ namespace PSE.Model.Output.Models
     public class LiquidityFiduciaryInvestmentTemporaryDeposit : ILiquidityFiduciaryInvestmentTemporaryDeposit
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentRate { get; set; }
+        public decimal? PercentRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Correspondent { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string OpeningDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrentBalance { get; set; }
+        public decimal? CurrentBalance { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal AccruedInterestReportingCurrency { get; set; }
+        public decimal? AccruedInterestReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public LiquidityFiduciaryInvestmentTemporaryDeposit()
         {
@@ -298,32 +272,23 @@ namespace PSE.Model.Output.Models
     public class LiquidityForwardExchangeOperation : ILiquidityForwardExchangeOperation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrencyValue { get; set; }
+        public decimal? CurrencyValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeRate { get; set; }
+        public decimal? ExchangeRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ExchangeValue { get; set; }
+        public decimal? ExchangeValue { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Currency2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string ExpirationDate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal CurrentRate { get; set; }
+        public decimal? CurrentRate { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal ProfitLoss { get; set; }
+        public decimal? ProfitLoss { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public LiquidityForwardExchangeOperation() 
         { 
@@ -382,35 +347,25 @@ namespace PSE.Model.Output.Models
     public class LiquidityCurrencyDerivativeProduct : ILiquidityCurrencyDerivativeProduct
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description1 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description2 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Description3 { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Strike { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryTo> SummaryTo { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<ISummaryPurchase> SummaryPurchase { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentWeight { get; set; }
+        public decimal? PercentWeight { get; set; }
 
         public LiquidityCurrencyDerivativeProduct()
         {
@@ -489,41 +444,41 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7000Content SubSection7000 { get; set; }
+        public ISubSection7000Content? SubSection7000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7010Content SubSection7010 { get; set; }
+        public ISubSection7010Content? SubSection7010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7020Content SubSection7020 { get; set; }      
+        public ISubSection7020Content? SubSection7020 { get; set; }      
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7030Content SubSection7030 { get; set; }
+        public ISubSection7030Content? SubSection7030 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7040Content SubSection7040 { get; set; }
+        public ISubSection7040Content? SubSection7040 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ISubSection7050Content SubSection7050 { get; set; }
+        public ISubSection7050Content? SubSection7050 { get; set; }
 
         public Section070Content()
         {
-            SubSection7000 = new SubSection7000Content();
-            SubSection7010 = new SubSection7010Content();
-            SubSection7020 = new SubSection7020Content();
-            SubSection7030 = new SubSection7030Content();
-            SubSection7040 = new SubSection7040Content();
-            SubSection7050 = new SubSection7050Content();
+            SubSection7000 = null;
+            SubSection7010 = null;
+            SubSection7020 = null;
+            SubSection7030 = null;
+            SubSection7040 = null;
+            SubSection7050 = null;
         }
 
         public Section070Content(ISection070Content source)
         {
-            SubSection7000 = new SubSection7000Content(source.SubSection7000);
-            SubSection7010 = new SubSection7010Content(source.SubSection7010);
-            SubSection7020 = new SubSection7020Content(source.SubSection7020);
-            SubSection7030 = new SubSection7030Content(source.SubSection7030);
-            SubSection7040 = new SubSection7040Content(source.SubSection7040);
-            SubSection7050 = new SubSection7050Content(source.SubSection7050);
+            SubSection7000 = (source.SubSection7000 != null) ? new SubSection7000Content(source.SubSection7000) : null;
+            SubSection7010 = (source.SubSection7010 != null) ? new SubSection7010Content(source.SubSection7010) : null;
+            SubSection7020 = (source.SubSection7020 != null) ? new SubSection7020Content(source.SubSection7020) : null;
+            SubSection7030 = (source.SubSection7030 != null) ? new SubSection7030Content(source.SubSection7030) : null;
+            SubSection7040 = (source.SubSection7040 != null) ? new SubSection7040Content(source.SubSection7040) : null;
+            SubSection7050 = (source.SubSection7050 != null) ? new SubSection7050Content(source.SubSection7050) : null;
         }
 
     }

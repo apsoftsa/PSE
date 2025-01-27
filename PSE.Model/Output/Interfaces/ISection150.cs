@@ -12,11 +12,11 @@
 
         string ExpirationDate { get; set; }
 
-        decimal CurrentBalance { get; set; }
+        decimal? CurrentBalance { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        int AccruedInterestReportingCurrency { get; set; }
+        int? AccruedInterestReportingCurrency { get; set; }
 
     }
 

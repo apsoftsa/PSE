@@ -10,9 +10,9 @@
 
         decimal? Exchange { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
-        decimal PercentAsset { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 
@@ -21,7 +21,7 @@
 
         string Currency { get; set; }
 
-        decimal PercentAsset { get; set; }
+        decimal? PercentAsset { get; set; }
 
     }
 
@@ -46,9 +46,9 @@
     public interface ISection060Content
     {
 
-        ISubSection6000Content SubSection6000 { get; set; }
+        ISubSection6000Content? SubSection6000 { get; set; }
 
-        ISubSection6010Content SubSection6010 { get; set; }
+        ISubSection6010Content? SubSection6010 { get; set; }
 
     }
 

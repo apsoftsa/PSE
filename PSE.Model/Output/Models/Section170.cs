@@ -10,14 +10,11 @@ namespace PSE.Model.Output.Models
     public class ShareByCountry : IShareByCountry
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Country { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ShareByCountry()
         {
@@ -39,17 +36,14 @@ namespace PSE.Model.Output.Models
     public class ShareByNation : IShareByNation
     {
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string Nation { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IShareByCountry>? Content { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ShareByNation()
         {
@@ -100,7 +94,7 @@ namespace PSE.Model.Output.Models
     public class ShareByNationChart : IShareByNationChart
     {
         public string Nation { get; set; }
-        public decimal PercentShares { get; set; }
+        public decimal? PercentShares { get; set; }
 
         public ShareByNationChart()
         {
@@ -144,19 +138,21 @@ namespace PSE.Model.Output.Models
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Section170Content : ISection170Content
     {
-        public ISubSection17000 SubSection17000 { get; set; }
-        public ISubSection17010 SubSection17010 { get; set; }
+        public ISubSection17000? SubSection17000 { get; set; }
+        public ISubSection17010? SubSection17010 { get; set; }
 
         public Section170Content()
         {
-            SubSection17000 = new SubSection17000("Shares by nation");
-            SubSection17010 = new SubSection17010("Shares by nations chart");
+            //SubSection17000 = new SubSection17000("Shares by nation");
+            //SubSection17010 = new SubSection17010("Shares by nations chart");
+            SubSection17000 = null;
+            SubSection17010 = null; 
         }
 
         public Section170Content(ISection170Content source)
         {
-            SubSection17000 = new SubSection17000(source.SubSection17000);
-            SubSection17010 = new SubSection17010(source.SubSection17010);
+            SubSection17000 = (source.SubSection17000 != null) ? new SubSection17000(source.SubSection17000) : null;
+            SubSection17010 = (source.SubSection17010 != null) ? new SubSection17010(source.SubSection17010) : null;
         }
 
     }

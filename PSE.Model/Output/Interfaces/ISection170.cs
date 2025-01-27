@@ -3,16 +3,16 @@
     public interface IShareByCountry
     {
         string Country { get; set; }
-        decimal MarketValueReportingCurrency { get; set; }
-        decimal PercentShares { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
+        decimal? PercentShares { get; set; }
     }
 
     public interface IShareByNation
     {
         string Nation { get; set; }
         IList<IShareByCountry>? Content { get; set; }
-        decimal MarketValueReportingCurrency { get; set; }
-        decimal PercentShares { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
+        decimal? PercentShares { get; set; }
     }   
 
     public interface ISubSection17000
@@ -24,7 +24,7 @@
     public interface IShareByNationChart
     {
         string Nation { get; set; }
-        decimal PercentShares { get; set; }
+        decimal? PercentShares { get; set; }
     }
 
     public interface ISubSection17010
@@ -35,8 +35,8 @@
 
     public interface ISection170Content
     {
-        ISubSection17000 SubSection17000 { get; set; }
-        ISubSection17010 SubSection17010 { get; set; }
+        ISubSection17000? SubSection17000 { get; set; }
+        ISubSection17010? SubSection17010 { get; set; }
     }
 
 }

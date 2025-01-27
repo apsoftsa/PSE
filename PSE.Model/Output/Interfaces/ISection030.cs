@@ -8,7 +8,7 @@ namespace PSE.Model.Output.Interfaces
 
         string ValueDate { get; set; }
 
-        decimal ValueAsset { get; set; }
+        decimal? ValueAsset { get; set; }
 
     }
 
@@ -21,7 +21,7 @@ namespace PSE.Model.Output.Interfaces
 
         string Currency {  get; set; }  
 
-        decimal PercentPerformance { get; set; }    
+        decimal? PercentPerformance { get; set; }    
 
     }
 
@@ -32,7 +32,7 @@ namespace PSE.Model.Output.Interfaces
 
         string Currency { get; set; }
 
-        decimal PercentNetContribution { get; set; }
+        decimal? PercentNetContribution { get; set; }
 
     }
 
@@ -41,7 +41,7 @@ namespace PSE.Model.Output.Interfaces
         
         string ModelLine { get; set; }
 
-        decimal PercentNetContribution { get; set; }
+        decimal? PercentNetContribution { get; set; }
 
         string Period { get; set; }
 
@@ -79,9 +79,9 @@ namespace PSE.Model.Output.Interfaces
 
         IList<IMultilineKeyInformation> KeyInformation { get; set; }
 
-        ISubSection3000Content SubSection3000 { get; set; }
+        ISubSection3000Content? SubSection3000 { get; set; }
 
-        ISubSection3010Content SubSection3010 { get; set; }      
+        ISubSection3010Content? SubSection3010 { get; set; }      
 
     }
 

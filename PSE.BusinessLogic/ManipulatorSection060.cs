@@ -39,6 +39,7 @@ namespace PSE.BusinessLogic
                     IEnumerable<IGrouping<string, POS>> groupByCurrency = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.Currency1_17).OrderBy(ob => ob.Key);
                     if (groupByCurrency != null && groupByCurrency.Any())
                     {
+                        sectionContent.SubSection6000 = new SubSection6000Content();
                         foreach (IGrouping<string, POS> currency in groupByCurrency)
                         {                                                        
                             investment = new InvestmentCurrency()
@@ -50,12 +51,13 @@ namespace PSE.BusinessLogic
                             };
                             sectionContent.SubSection6000.Content.Add(investment);
                         }                        
-                        decimal totalAmount = sectionContent.SubSection6000.Content.Sum(sum => sum.MarketValueReportingCurrency);
+                        decimal totalAmount = sectionContent.SubSection6000.Content.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(sum => sum.MarketValueReportingCurrency.Value);
                         if (totalAmount != 0)
                         {
+                            sectionContent.SubSection6010 = new SubSection6010Content();
                             foreach (IInvestmentCurrency invToUpgrd in sectionContent.SubSection6000.Content)
                             {
-                                invToUpgrd.PercentAsset = Math.Round((invToUpgrd.MarketValueReportingCurrency / totalAmount * 100m), 2);
+                                invToUpgrd.PercentAsset = Math.Round(invToUpgrd.MarketValueReportingCurrency.Value / totalAmount * 100m, 2);
                                 sectionContent.SubSection6010.Content.Add(new ChartInvestmentCurrency() { Currency = invToUpgrd.Currency, PercentAsset = invToUpgrd.PercentAsset });
                             }
                             investment = new InvestmentCurrency()
