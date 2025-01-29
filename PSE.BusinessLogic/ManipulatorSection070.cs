@@ -52,7 +52,6 @@ namespace PSE.BusinessLogic
                                 Iban = posItem.IsinIban_85,
                                 PercentWeight = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
-                            sectionContent.SubSection7000 = new SubSection7000Content();    
                             sectionContent.SubSection7000.Content.Add(account);
                             posItem.AlreadyUsed = true;
                         }
