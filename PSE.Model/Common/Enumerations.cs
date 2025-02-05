@@ -68,8 +68,8 @@ namespace PSE.Model.Common
         {
             UNKNOWN = -1,
             LIQUIDITA = 10,
-            CONTI = 1010,
-            INVESTIMENTI_BREVE_TERMINE = 1015,
+            ACCOUNT = 1010,
+            SHORT_TERM_FUND = 1015,
             INVESTIMENTI_FIDUCIARI = 1020,
             MONEY_MARKET_FUNDS = 1025,
             OPERAZIONI_CAMBI_A_TERMINE = 1030,
