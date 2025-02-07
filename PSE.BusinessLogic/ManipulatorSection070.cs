@@ -75,20 +75,20 @@ namespace PSE.BusinessLogic
                                         {
                                             summaryTo = new SummaryTo()
                                             {
-                                                ValuePrice = posItem.Quote_48,
-                                                ValueDate = posItem.QuoteDate_49,
+                                                ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                ValueDate = AssignRequiredString(posItem.QuoteDate_49),
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
                                             summaryBeginningYear = new SummaryBeginningYear()
                                             {
-                                                ValuePrice = posItem.BuyPriceAverage_87,
-                                                ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                             };
                                             summaryPurchase = new SummaryPurchase()
                                             {
-                                                ValuePrice = posItem.BuyPriceHistoric_53,
-                                                ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             shortTermFund = new LiquidityShortTermFund()
                                             {
@@ -193,19 +193,19 @@ namespace PSE.BusinessLogic
                                         {
                                             summaryTo = new SummaryTo()
                                             {
-                                                ValuePrice = posItem.Quote_48,
+                                                ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
                                             summaryBeginningYear = new SummaryBeginningYear()
                                             {
-                                                ValuePrice = posItem.BuyPriceAverage_87,
-                                                ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                             };
                                             summaryPurchase = new SummaryPurchase()
                                             {
-                                                ValuePrice = posItem.BuyPriceHistoric_53,
-                                                ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             liquidityCurrencyDerivativeProduct = new LiquidityCurrencyDerivativeProduct()
                                             {
