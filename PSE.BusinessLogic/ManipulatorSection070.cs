@@ -29,7 +29,8 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
                 ISection070Content sectionContent;
-                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();                
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section070Content();
@@ -73,10 +74,21 @@ namespace PSE.BusinessLogic
                                         sectionContent.SubSection7010 = new SubSection7010Content();
                                         foreach (POS posItem in subCategoryItems)
                                         {
+                                            shortTermFund = new LiquidityShortTermFund()
+                                            {
+                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Description2_33)),
+                                                Description2 = AssignRequiredString(posItem.IsinIban_85),
+                                                Quantity = AssignRequiredDecimal(posItem.Quantity_28),
+                                                Currency = AssignRequiredString(posItem.Currency1_17),
+                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                InterestMarketValueReportingCurrency = 0, // ??
+                                                PercentWeight = 0,  // ??
+                                            };
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                                 ValueDate = AssignRequiredString(posItem.QuoteDate_49),
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -89,16 +101,6 @@ namespace PSE.BusinessLogic
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
-                                            };
-                                            shortTermFund = new LiquidityShortTermFund()
-                                            {
-                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Description2_33)),
-                                                Description2 = AssignRequiredString(posItem.IsinIban_85),
-                                                Quantity = AssignRequiredDecimal(posItem.Quantity_28),
-                                                Currency = AssignRequiredString(posItem.Currency1_17),
-                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                InterestMarketValueReportingCurrency = 0, // ??
-                                                PercentWeight = 0,  // ??
                                             };
                                             shortTermFund.TotalMarketValueReportingCurrency = shortTermFund.CapitalMarketValueReportingCurrency + shortTermFund.InterestMarketValueReportingCurrency;
                                             CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
@@ -188,12 +190,25 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
+                                        string currency;
                                         sectionContent.SubSection7050 = new SubSection7050Content();
                                         foreach (POS posItem in subCategoryItems)
                                         {
+                                            currency = AssignRequiredString(posItem.Currency1_17);
+                                            liquidityCurrencyDerivativeProduct = new LiquidityCurrencyDerivativeProduct()
+                                            {
+                                                Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
+                                                Description2 = AssignRequiredString(posItem.Description1_32),
+                                                Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                
+                                                MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                Strike = string.Empty, // ??
+                                                PercentWeight = 0,  // ??
+                                            };
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -206,16 +221,6 @@ namespace PSE.BusinessLogic
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
-                                            };
-                                            liquidityCurrencyDerivativeProduct = new LiquidityCurrencyDerivativeProduct()
-                                            {
-                                                Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
-                                                Description2 = AssignRequiredString(posItem.Description1_32),
-                                                Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
-                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),
-                                                MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                Strike = string.Empty, // ??
-                                                PercentWeight = 0,  // ??
                                             };
                                             CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                             liquidityCurrencyDerivativeProduct.SummaryTo.Add(summaryTo);

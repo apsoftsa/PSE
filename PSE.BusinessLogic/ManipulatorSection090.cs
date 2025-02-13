@@ -35,6 +35,7 @@ namespace PSE.BusinessLogic
             {
                 ISection090Content sectionContent;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section090Content();
@@ -54,9 +55,19 @@ namespace PSE.BusinessLogic
                                         sectionContent.Subsection9010 = new ShareSubSection("Shares");
                                         foreach (POS posItem in subCategoryItems)
                                         {
+                                            shareDetail = new ShareDetail()
+                                            {
+                                                Currency = AssignRequiredString(posItem.Currency1_17),
+                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Description2_33)),
+                                                Description2 = AssignRequiredString(posItem.IsinIban_85),
+                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),
+                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                PercentWeight = 0 // ??                                                 
+                                            };
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = posItem.Quote_48,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -69,15 +80,6 @@ namespace PSE.BusinessLogic
                                             {
                                                 ValuePrice = posItem.BuyPriceHistoric_53,
                                                 ExchangeValue = posItem.BuyExchangeRateHistoric_66
-                                            };
-                                            shareDetail = new ShareDetail()
-                                            {
-                                                Currency = AssignRequiredString(posItem.Currency1_17),
-                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Description2_33)),
-                                                Description2 = AssignRequiredString(posItem.IsinIban_85),
-                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),
-                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                PercentWeight = 0 // ??                                                 
                                             };
                                             CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                             shareDetail.SummaryTo.Add(summaryTo);

@@ -134,7 +134,7 @@ namespace PSE.Model.Output.Models
             ValuePrice = 0;
             PercentPrice = 0;
             ExchangeValue = 0;
-            PercentExchange = null;
+            PercentExchange = 0;
             ProfitLossNotRealizedValue = 0;
             PercentProfitLossN = 0;
         }

@@ -78,6 +78,18 @@ namespace PSE.BusinessLogic.Common
             }
         }
 
+        protected string GetCoupon(string couponFreq, string couponText)
+        {
+            string coupon = couponFreq.Trim();            
+            if (couponText.Trim().Length >= 3)
+            {
+                if (couponText.Trim().Length == 3) couponText = "0" + couponText.Trim();
+                if (coupon.Length > 0) coupon += " ";
+                coupon += string.Concat(couponText.Substring(2, 2), ".", couponText.Substring(0, 2));   
+            }
+            return coupon;
+        }
+
         protected string AssignRequiredString(string value) { return string.IsNullOrEmpty(value) ? "" : value.Trim(); }
 
         protected decimal AssignRequiredDecimal(decimal? value) { return value.HasValue ? value.Value : decimal.Zero; }

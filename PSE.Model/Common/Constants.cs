@@ -5,7 +5,7 @@
     {
 
         public const string DEFAULT_CULTURE = "en-US";
-        public const string DEFAULT_DATE_FORMAT = "dd/MM/yyyy";
+        public const string DEFAULT_DATE_FORMAT = "dd.MM.yyyy";
         public const string DEFAULT_TIME_FORMAT = "HH:mm";
         public const string COMPACT_DATE_FORMAT = "yyyyMMdd";
         public const string NEGATIVE_SIGN = "-";
