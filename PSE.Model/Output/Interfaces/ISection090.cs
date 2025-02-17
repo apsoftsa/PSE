@@ -42,7 +42,7 @@ public interface IDerivateSubSection
 
 public interface ISection090Content
 {
-    IShareSubSection? Subsection9010 { get; set; }
-    IEquityFundSubSection? Subsection9020 { get; set; }
-    IDerivateSubSection? Subsection9030 { get; set; }
+    IShareSubSection? SubSection9010 { get; set; }
+    IEquityFundSubSection? SubSection9020 { get; set; }
+    IDerivateSubSection? SubSection9030 { get; set; }
 }

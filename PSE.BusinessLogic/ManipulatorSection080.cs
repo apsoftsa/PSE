@@ -52,7 +52,7 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
-                                        sectionContent.Subsection8000 = new BondSubSection("Bonds with maturity <= 1 year");
+                                        sectionContent.SubSection8000 = new BondSubSection("Bonds with maturity <= 1 year");
                                         foreach (POS posItem in subCategoryItems)
                                         {                                            
                                             bondLessThan1 = new BondDetail()
@@ -94,7 +94,7 @@ namespace PSE.BusinessLogic
                                             bondLessThan1.SummaryTo.Add(summaryTo);
                                             bondLessThan1.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan1.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.Subsection8000.Content.Add(bondLessThan1);
+                                            sectionContent.SubSection8000.Content.Add(bondLessThan1);
                                             posItem.AlreadyUsed = true;
                                         }
                                     }
@@ -105,7 +105,7 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
-                                        sectionContent.Subsection8010 = new BondSubSection("Bonds with maturity <= 5 year");
+                                        sectionContent.SubSection8010 = new BondSubSection("Bonds with maturity <= 5 year");
                                         foreach (POS posItem in subCategoryItems)
                                         {
                                             bondLessThan5 = new BondDetail()
@@ -146,7 +146,7 @@ namespace PSE.BusinessLogic
                                             bondLessThan5.SummaryTo.Add(summaryTo);
                                             bondLessThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan5.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.Subsection8010.Content.Add(bondLessThan5);
+                                            sectionContent.SubSection8010.Content.Add(bondLessThan5);
                                             posItem.AlreadyUsed = true;
                                         }
                                     }
@@ -157,7 +157,7 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
-                                        sectionContent.Subsection8020 = new BondSubSection("Bonds with maturity > 5 year");
+                                        sectionContent.SubSection8020 = new BondSubSection("Bonds with maturity > 5 year");
                                         foreach (POS posItem in subCategoryItems)
                                         {                                           
                                             bondMajorThan5 = new BondDetail()
@@ -198,7 +198,7 @@ namespace PSE.BusinessLogic
                                             bondMajorThan5.SummaryTo.Add(summaryTo);
                                             bondMajorThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondMajorThan5.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.Subsection8020.Content.Add(bondMajorThan5);
+                                            sectionContent.SubSection8020.Content.Add(bondMajorThan5);
                                             posItem.AlreadyUsed = true;
                                         }
                                     }
@@ -209,7 +209,7 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
-                                        sectionContent.Subsection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
+                                        sectionContent.SubSection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
                                         foreach (POS posItem in subCategoryItems)
                                         {                                            
                                             bondConvAndWarrants = new BondDetail()
@@ -250,7 +250,7 @@ namespace PSE.BusinessLogic
                                             bondConvAndWarrants.SummaryTo.Add(summaryTo);
                                             bondConvAndWarrants.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondConvAndWarrants.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.Subsection8030.Content.Add(bondConvAndWarrants);
+                                            sectionContent.SubSection8030.Content.Add(bondConvAndWarrants);
                                             posItem.AlreadyUsed = true;
                                         }
                                     }

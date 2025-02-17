@@ -231,43 +231,43 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection? Subsection8000 { get; set; }
+        public IBondSubSection? SubSection8000 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection? Subsection8010 { get; set; }
+        public IBondSubSection? SubSection8010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection? Subsection8020 { get; set; }
+        public IBondSubSection? SubSection8020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IBondSubSection? Subsection8030 { get; set; }
+        public IBondSubSection? SubSection8030 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IFundSubSection? Subsection8040 { get; set; }
+        public IFundSubSection? SubSection8040 { get; set; }
 
         public Section080Content()
         {
             /*
-            Subsection8000 = new BondSubSection("Bonds with maturity <= 1 year");
-            Subsection8010 = new BondSubSection("Bonds with maturity <= 5 year");
-            Subsection8020 = new BondSubSection("Bonds with maturity > 5 year");
-            Subsection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
-            Subsection8040 = new FundSubSection("Bond funds");
+            SubSection8000 = new BondSubSection("Bonds with maturity <= 1 year");
+            SubSection8010 = new BondSubSection("Bonds with maturity <= 5 year");
+            SubSection8020 = new BondSubSection("Bonds with maturity > 5 year");
+            SubSection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
+            SubSection8040 = new FundSubSection("Bond funds");
             */
-            Subsection8000 = null;
-            Subsection8010 = null;
-            Subsection8020 = null;
-            Subsection8030 = null;
-            Subsection8040 = null;
+            SubSection8000 = null;
+            SubSection8010 = null;
+            SubSection8020 = null;
+            SubSection8030 = null;
+            SubSection8040 = null;
         }
 
         public Section080Content(ISection080Content source)
         {
-            Subsection8000 = (source.Subsection8000 != null) ? new BondSubSection(source.Subsection8000) : null;
-            Subsection8010 = (source.Subsection8010 != null) ? new BondSubSection(source.Subsection8010) : null;
-            Subsection8020 = (source.Subsection8020 != null) ? new BondSubSection(source.Subsection8020) : null;
-            Subsection8030 = (source.Subsection8030 != null) ? new BondSubSection(source.Subsection8030) : null;
-            Subsection8040 = (source.Subsection8040 != null) ? new FundSubSection(source.Subsection8040) : null;
+            SubSection8000 = (source.SubSection8000 != null) ? new BondSubSection(source.SubSection8000) : null;
+            SubSection8010 = (source.SubSection8010 != null) ? new BondSubSection(source.SubSection8010) : null;
+            SubSection8020 = (source.SubSection8020 != null) ? new BondSubSection(source.SubSection8020) : null;
+            SubSection8030 = (source.SubSection8030 != null) ? new BondSubSection(source.SubSection8030) : null;
+            SubSection8040 = (source.SubSection8040 != null) ? new FundSubSection(source.SubSection8040) : null;
         }
 
     }

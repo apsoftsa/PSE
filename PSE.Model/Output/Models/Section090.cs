@@ -186,31 +186,31 @@ namespace PSE.Model.Output.Models
     {
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IShareSubSection? Subsection9010 { get; set; }
+        public IShareSubSection? SubSection9010 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IEquityFundSubSection? Subsection9020 { get; set; }
+        public IEquityFundSubSection? SubSection9020 { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public IDerivateSubSection? Subsection9030 { get; set; }
+        public IDerivateSubSection? SubSection9030 { get; set; }
 
         public Section090Content()
         {
             /*
-            Subsection9010 = new ShareSubSection("Shares");
-            Subsection9020 = new EquityFundSubSection("Equity Funds");
-            Subsection9030 = new DerivateSubSection("Derivative products on securities");
+            SubSection9010 = new ShareSubSection("Shares");
+            SubSection9020 = new EquityFundSubSection("Equity Funds");
+            SubSection9030 = new DerivateSubSection("Derivative products on securities");
             */
-            Subsection9010 = null;
-            Subsection9020 = null;
-            Subsection9030 = null;
+            SubSection9010 = null;
+            SubSection9020 = null;
+            SubSection9030 = null;
         }
 
         public Section090Content(ISection090Content source)
         {
-            Subsection9010 = (source.Subsection9010 != null) ? new ShareSubSection(source.Subsection9010) : null;
-            Subsection9020 = (source.Subsection9020 != null) ? new EquityFundSubSection(source.Subsection9020) : null;
-            Subsection9030 = (source.Subsection9030 != null) ? new DerivateSubSection(source.Subsection9030) : null;
+            SubSection9010 = (source.SubSection9010 != null) ? new ShareSubSection(source.SubSection9010) : null;
+            SubSection9020 = (source.SubSection9020 != null) ? new EquityFundSubSection(source.SubSection9020) : null;
+            SubSection9030 = (source.SubSection9030 != null) ? new DerivateSubSection(source.SubSection9030) : null;
         }
 
     }

@@ -50,9 +50,9 @@ public interface IFundSubSection
 
 public interface ISection080Content
 {
-    IBondSubSection? Subsection8000 { get; set; }
-    IBondSubSection? Subsection8010 { get; set; }
-    IBondSubSection? Subsection8020 { get; set; }
-    IBondSubSection? Subsection8030 { get; set; }
-    IFundSubSection? Subsection8040 { get; set; }
+    IBondSubSection? SubSection8000 { get; set; }
+    IBondSubSection? SubSection8010 { get; set; }
+    IBondSubSection? SubSection8020 { get; set; }
+    IBondSubSection? SubSection8030 { get; set; }
+    IFundSubSection? SubSection8040 { get; set; }
 }

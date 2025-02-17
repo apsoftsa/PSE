@@ -52,7 +52,7 @@ namespace PSE.BusinessLogic
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
-                                        sectionContent.Subsection9010 = new ShareSubSection("Shares");
+                                        sectionContent.SubSection9010 = new ShareSubSection("Shares");
                                         foreach (POS posItem in subCategoryItems)
                                         {
                                             shareDetail = new ShareDetail()
@@ -85,7 +85,7 @@ namespace PSE.BusinessLogic
                                             shareDetail.SummaryTo.Add(summaryTo);
                                             shareDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             shareDetail.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.Subsection9010.Content.Add(shareDetail);
+                                            sectionContent.SubSection9010.Content.Add(shareDetail);
                                             posItem.AlreadyUsed = true;
                                         }                                        
                                         break;
