@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection020(CultureInfo? culture = null) : base(ManipolationTypes.AsSection020, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section020 output = new()

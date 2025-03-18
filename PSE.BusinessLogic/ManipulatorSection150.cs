@@ -16,7 +16,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection150(CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE, PositionClassifications.IMPEGNI_EVENTUALI }, ManipolationTypes.AsSection150, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section150 output = new()

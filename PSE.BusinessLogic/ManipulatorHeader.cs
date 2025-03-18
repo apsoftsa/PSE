@@ -18,7 +18,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorHeader(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsHeader, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             IDE? ideItem = null;
             string customerName = string.Empty; 

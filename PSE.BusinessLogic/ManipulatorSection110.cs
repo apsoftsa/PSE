@@ -55,7 +55,7 @@ namespace PSE.BusinessLogic
             return destinationObjectName;
         }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section110 output = new()

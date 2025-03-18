@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorFooter(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsFooter, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             IFooterContent footerContent = new FooterContent()

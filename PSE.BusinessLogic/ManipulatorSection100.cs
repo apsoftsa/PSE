@@ -16,7 +16,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection100(CultureInfo? culture = null) : base(PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO, ManipolationTypes.AsSection100, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section100 output = new()

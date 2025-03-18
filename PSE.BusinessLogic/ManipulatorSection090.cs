@@ -22,7 +22,7 @@ namespace PSE.BusinessLogic
             _calcShares = new SharesCalculation(calcSettings);
         }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section090 output = new()
@@ -58,11 +58,11 @@ namespace PSE.BusinessLogic
                                             shareDetail = new ShareDetail()
                                             {
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
-                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Description2_33)),
+                                                Description1 = AssignRequiredString(posItem.Description1_32),
                                                 Description2 = AssignRequiredString(posItem.IsinIban_85),
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                PercentWeight = 0 // ??                                                 
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -81,7 +81,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = posItem.BuyPriceHistoric_53,
                                                 ExchangeValue = posItem.BuyExchangeRateHistoric_66
                                             };
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                             shareDetail.SummaryTo.Add(summaryTo);
                                             shareDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             shareDetail.SummaryPurchase.Add(summaryPurchase);

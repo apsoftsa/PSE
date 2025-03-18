@@ -13,10 +13,12 @@ namespace PSE.BusinessLogic.Interfaces
 
         event ExternalCodifyEventHandler? ExternalCodifyRequest;
 
+        decimal? TotalAssets { get; }  
+
         List<PositionClassifications> PositionClassificationsSource { get; }
         ManipolationTypes SectionDestination { get; }
 
-        IOutputModel Manipulate(IList<IInputRecord> extractedData);
+        IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null);
 
         string GetObjectNameDestination(IInputRecord inputRecord);
 

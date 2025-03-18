@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection070(CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.ACCOUNT , PositionClassifications.SHORT_TERM_FUND, PositionClassifications.FIDUCIARY_INVESTMENTS, PositionClassifications.TEMPORARY_DEPOSITS, PositionClassifications.FORWARD_EXCHANGE_TRANSACTIONS, PositionClassifications.CURRENCY_DERIVATIVE_PRODUCTS }, ManipolationTypes.AsSection070, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section070 output = new()
@@ -54,11 +54,11 @@ namespace PSE.BusinessLogic
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
                                             account = new LiquidityAccount()
                                             {
-                                                Description = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Currency1_17), " ", AssignRequiredString(posItem.HostPositionReference_6)),
+                                                Description = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Currency1_17), " ", AssignRequiredString(posItem.HostPositionReference_6), " ", AssignRequiredString(posItem.Description2_33)).Trim(),
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 CurrentBalance = AssignRequiredDecimal(posItem.Quantity_28),
                                                 Iban = AssignRequiredString(posItem.IsinIban_85),
-                                                PercentWeight = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             sectionContent.SubSection7000.Content.Add(account);
                                             posItem.AlreadyUsed = true;
@@ -82,7 +82,7 @@ namespace PSE.BusinessLogic
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 InterestMarketValueReportingCurrency = 0, // ??
-                                                PercentWeight = 0,  // ??
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -128,7 +128,7 @@ namespace PSE.BusinessLogic
                                                 ExpirationDate = AssignRequiredDate(posItem.MaturityDate_36, _culture),
                                                 OpeningDate = AssignRequiredDate(posItem.ConversionDateStart_41, _culture),
                                                 AccruedInterestReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
-                                                PercentWeight = 0,  // ??
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             sectionContent.SubSection7020.Content.Add(liquidityFiduciaryInvestmentTemporaryDeposit);
                                             posItem.AlreadyUsed = true;
@@ -151,7 +151,7 @@ namespace PSE.BusinessLogic
                                                 ExpirationDate = AssignRequiredDate(posItem.MaturityDate_36, _culture),
                                                 OpeningDate = AssignRequiredDate(posItem.ConversionDateStart_41, _culture),
                                                 AccruedInterestReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
-                                                PercentWeight = 0,  // ??
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             sectionContent.SubSection7030.Content.Add(liquidityFiduciaryInvestmentTemporaryDeposit);
                                             posItem.AlreadyUsed = true;
@@ -203,7 +203,7 @@ namespace PSE.BusinessLogic
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 Strike = string.Empty, // ??
-                                                PercentWeight = 0,  // ??
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo()
                                             {

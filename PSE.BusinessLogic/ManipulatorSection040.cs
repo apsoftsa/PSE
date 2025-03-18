@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection040(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection040, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData)
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section040 output = new()
@@ -101,6 +101,7 @@ namespace PSE.BusinessLogic
                                 MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
                                 PercentInvestmentT = 100.0m
                             };
+                            TotalAssets = investmentAsset.MarketValueReportingCurrency + investmentAsset.MarketValueReportingCurrencyT;
                             sectionContent.SubSection4000.Content.Add(investmentAsset);
                         }
                     }
