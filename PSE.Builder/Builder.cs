@@ -34,9 +34,9 @@ namespace PSE.Builder
         //private readonly ManipulatorSection16And17 _manSect16And17;
         private readonly ManipulatorSection110 _manSect110;
         private readonly ManipulatorSection100 _manSect100;
-        private readonly ManipulatorSection150 _manSect150;
-        //private readonly ManipulatorSection22 _manSect22;
-        private readonly ManipulatorSection160 _manSect23;
+        private readonly ManipulatorSection150 _manSect150;        
+        private readonly ManipulatorSection160 _manSect160;
+        private readonly ManipulatorSection170 _manSect170;
         private readonly ManipulatorSection130 _manSect130;
         private readonly ManipulatorSection190 _manSect190;
         //private readonly ManipulatorSection26 _manSect26;
@@ -95,10 +95,10 @@ namespace PSE.Builder
             _manSect100.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect150 = new();
             _manSect150.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            //_manSect22 = new();
-            //_manSect22.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect23 = new();
-            _manSect23.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect160 = new();
+            _manSect160.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect170 = new();
+            _manSect170.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect130 = new();
             _manSect130.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect190 = new();
@@ -130,6 +130,7 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection150, false ),
                 //( ManipolationTypes.AsSection22, false ),
                 ( ManipolationTypes.AsSection160, false ),
+                ( ManipolationTypes.AsSection170, false ),
                 ( ManipolationTypes.AsSection130, false ),
                 ( ManipolationTypes.AsSection190, false ),
                 //( ManipolationTypes.AsSection26, false ),
@@ -208,10 +209,9 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection040:
-                            case ManipolationTypes.AsSection060:
-                            //case ManipolationTypes.AsSection22:
+                            case ManipolationTypes.AsSection060:                            
                             case ManipolationTypes.AsSection160:
-                            //case ManipolationTypes.AsSection26:
+                            case ManipolationTypes.AsSection170:
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -367,7 +367,8 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection100 => _manSect100.Manipulate(extractedData),
                 ManipolationTypes.AsSection150 => _manSect150.Manipulate(extractedData),
                 //ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
-                ManipolationTypes.AsSection160 => _manSect23.Manipulate(extractedData),
+                ManipolationTypes.AsSection160 => _manSect160.Manipulate(extractedData),
+                ManipolationTypes.AsSection170 => _manSect170.Manipulate(extractedData),
                 ManipolationTypes.AsSection130 => _manSect130.Manipulate(extractedData),
                 ManipolationTypes.AsSection190 => _manSect190.Manipulate(extractedData),
                 //ManipolationTypes.AsSection26 => _manSect26.Manipulate(extractedData),
@@ -404,7 +405,7 @@ namespace PSE.Builder
             try
             {
                 buildData.BuildingLog.BuildingStart = DateTime.Now;
-                foreach ((ManipolationTypes manipolationType, bool isMandatory) in _manipolationTypesToManage)
+                foreach ((ManipolationTypes manipolationType, bool isMandatory) in _manipolationTypesToManage.OrderBy( ob => ob.manipolationType))
                 {
                     CheckInputData(buildData, extractedData, manipolationType, isMandatory, formatToBuild);
                     if (buildData.BuildingLog.Outcome == BuildingOutcomes.Success)

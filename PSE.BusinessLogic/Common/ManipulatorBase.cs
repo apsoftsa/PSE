@@ -127,6 +127,19 @@ namespace PSE.BusinessLogic.Common
 
         protected string AssignRequiredString(string value) { return string.IsNullOrEmpty(value) ? "" : value.Trim(); }
 
+        protected string BuildComposedDescription(string[] elements, string separator = "/") {
+            string outcome = "";
+            if (elements.Length > 0) {
+                for (int i = 0; i < elements.Length; i++) {
+                    if (elements[i] != string.Empty) {
+                        if(i > 0 && outcome != "") outcome += " " + separator + " ";  
+                        outcome += elements[i];
+                    }
+                }
+            }
+            return outcome;
+        }
+
         protected decimal AssignRequiredDecimal(decimal? value) { return value.HasValue ? value.Value : decimal.Zero; }
 
         protected long AssignRequiredLong(long? value) { return value.HasValue ? value.Value : 0; }

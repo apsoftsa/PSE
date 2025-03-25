@@ -59,7 +59,7 @@ namespace PSE.BusinessLogic
                                             {
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
                                                 Description1 = AssignRequiredString(posItem.Description1_32),
-                                                Description2 = AssignRequiredString(posItem.IsinIban_85),
+                                                Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)

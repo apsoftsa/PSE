@@ -100,9 +100,8 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        }
-                        /*
-                        else if (e.SectionName == nameof(Section22) && e.PropertyName == nameof(Country.CountryName))
+                        }                        
+                        else if (e.SectionName == nameof(Section170) && e.PropertyName == nameof(ShareByCountry.Country))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
                             {
@@ -119,12 +118,12 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        else if (e.SectionName == nameof(Section22) && e.PropertyName == "Continent.Code")
+                        else if (e.SectionName == nameof(Section170) && e.PropertyName == "Continent.Code")
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
                                 e.PropertyValue = context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey).Col12;
                         }
-                        else if (e.SectionName == nameof(Section22) && e.PropertyName == nameof(ChartSharesByContinent.Continent))
+                        else if (e.SectionName == nameof(Section170) && e.PropertyName == nameof(ShareByNationChart.Nation))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey))
                             {
@@ -140,8 +139,7 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "BS24" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        }
-                        */
+                        }                        
                         else if (e.SectionName == nameof(Section160) && e.PropertyName == nameof(ShareEconomicSector.Sector))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "T003" && flt.Code == e.PropertyKey))
