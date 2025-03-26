@@ -16,7 +16,7 @@ namespace PSE.Model.Output.Models
 
         public string Portfolio { get; set; }
 
-        public int? RiskProfile { get; set; }
+        public string RiskProfile { get; set; }
 
         public string EsgProfile { get; set; }
 
@@ -25,7 +25,7 @@ namespace PSE.Model.Output.Models
             Customer = string.Empty;
             CustomerID = string.Empty;
             Portfolio = string.Empty;
-            RiskProfile = 0;
+            RiskProfile = string.Empty;
             EsgProfile = string.Empty;
         }
 

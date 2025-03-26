@@ -29,22 +29,25 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
             {
+                Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 IDE ideItem = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().First();
-                ExternalCodifyRequestEventArgs extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section000), nameof(AssetStatement.Advisory), ideItem.Manager_8);
-                OnExternalCodifyRequest(extEventArgsAdvisor);
-                if (!extEventArgsAdvisor.Cancel)
-                {
-                    ISection000Content sectionContent = new Section000Content();
-                    IAssetStatement assetStatement = new AssetStatement()
-                    {
-                        Portfolio = ideItem.CustomerNumber_2,
-                        CustomerID = ideItem.CustomerId_6,
-                        Advisory = extEventArgsAdvisor.PropertyValue,
-                        Customer = ideItem.CustomerNameShort_5,
-                        Settled = ideItem.Date_15 != null ? new List<ISettled>() { new Settled(ideItem.Date_15.Value.ToString(DEFAULT_DATE_FORMAT, _culture), ideItem.Time_16.Value.ToString(DEFAULT_TIME_FORMAT, _culture)) } : null
-                    };
-                    sectionContent.AssetStatements.Add(assetStatement);
-                    output.Content = new Section000Content(sectionContent);
+                ExternalCodifyRequestEventArgs extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section000), nameof(KeyInformation.Portfolio), ideItem.ModelCode_21, propertyParams);
+                OnExternalCodifyRequest(extEventArgsPortfolio);
+                if (!extEventArgsPortfolio.Cancel) {
+                    ExternalCodifyRequestEventArgs extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section000), nameof(AssetStatement.Advisory), ideItem.Manager_8);
+                    OnExternalCodifyRequest(extEventArgsAdvisor);
+                    if (!extEventArgsAdvisor.Cancel) {
+                        ISection000Content sectionContent = new Section000Content();
+                        IAssetStatement assetStatement = new AssetStatement() {
+                            CustomerID = AssignRequiredString(ideItem.CustomerNumber_2),                            
+                            Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
+                            Advisory = AssignRequiredString(extEventArgsAdvisor.PropertyValue),
+                            Settled = ideItem.Date_15 != null ? new List<ISettled>() { new Settled(ideItem.Date_15.Value.ToString(DEFAULT_DATE_FORMAT, _culture), ideItem.Time_16.Value.ToString(DEFAULT_TIME_FORMAT, _culture)) } : new List<ISettled>() { new Settled() },
+                            Portfolio = extEventArgsPortfolio.PropertyValue
+                        };
+                        sectionContent.AssetStatements.Add(assetStatement);
+                        output.Content = new Section000Content(sectionContent);
+                    }
                 }
             }
             return output;

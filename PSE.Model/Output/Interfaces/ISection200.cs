@@ -5,7 +5,7 @@
         string Customer { get; set; }
         string CustomerID { get; set; }
         string Portfolio { get; set; }
-        int? RiskProfile { get; set; }
+        string RiskProfile { get; set; }
         string EsgProfile { get; set; }
     }
 

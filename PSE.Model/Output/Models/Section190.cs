@@ -60,7 +60,7 @@ namespace PSE.Model.Output.Models
 
         public decimal? CurrentBalance { get; set; }
 
-        public decimal MarketValueReportingCurrency { get; set; }
+        public decimal? MarketValueReportingCurrency { get; set; }
 
         public ObjectReportsTransferredToAdministration()
         {

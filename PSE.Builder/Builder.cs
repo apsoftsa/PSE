@@ -39,7 +39,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection170 _manSect170;
         private readonly ManipulatorSection130 _manSect130;
         private readonly ManipulatorSection190 _manSect190;
-        //private readonly ManipulatorSection26 _manSect26;
+        private readonly ManipulatorSection200 _manSect200;
         private readonly ManipulatorFooter _manFooter;
 
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
@@ -103,8 +103,8 @@ namespace PSE.Builder
             _manSect130.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect190 = new();
             _manSect190.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            //_manSect26 = new();
-            //_manSect26.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect200 = new();
+            _manSect200.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
             _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
@@ -179,7 +179,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsSection010:
                             case ManipolationTypes.AsSection020:
-                                {
+                            case ManipolationTypes.AsSection200: {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(PER)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
@@ -371,7 +371,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection170 => _manSect170.Manipulate(extractedData),
                 ManipolationTypes.AsSection130 => _manSect130.Manipulate(extractedData),
                 ManipolationTypes.AsSection190 => _manSect190.Manipulate(extractedData),
-                //ManipolationTypes.AsSection26 => _manSect26.Manipulate(extractedData),
+                ManipolationTypes.AsSection200 => _manSect200.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
                 _ => null,
             };

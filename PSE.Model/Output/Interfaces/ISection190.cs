@@ -14,7 +14,7 @@
 
         decimal? CurrentBalance { get; set; }
 
-        decimal MarketValueReportingCurrency { get; set; }
+        decimal? MarketValueReportingCurrency { get; set; }
 
     }
 
