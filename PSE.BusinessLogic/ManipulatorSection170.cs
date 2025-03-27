@@ -13,7 +13,7 @@ namespace PSE.BusinessLogic {
 
     public class ManipulatorSection170 : ManipulatorBase, IManipulator {
 
-        public ManipulatorSection170(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection170, culture) { }
+        public ManipulatorSection170(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection170, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null) {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
@@ -44,7 +44,7 @@ namespace PSE.BusinessLogic {
                     sectionContent.SubSection17010 = new SubSection17010("Shares by nations chart");
                     continentsCountryItems = new Dictionary<string, List<IShareByCountry>>();
                     continentsDescription = new Dictionary<string, string>();
-                    groupByCountries = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.Country_20) == false && flt.SubCat4_15 == ((int)PositionClassifications.SHARES).ToString()).GroupBy(gb => gb.Country_20).OrderBy(ob => ob.Key);
+                    groupByCountries = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && string.IsNullOrEmpty(flt.Country_20) == false && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, flt.SubCat4_15)).GroupBy(gb => gb.Country_20).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> groupByCountry in groupByCountries) {
                         tmpValue = string.Empty;
                         extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section170), nameof(ShareByCountry.Country), groupByCountry.Key, propertyParams);

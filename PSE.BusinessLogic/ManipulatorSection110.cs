@@ -20,10 +20,9 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection110(CalculationSettings calcSettings, CultureInfo? culture = null) : base(new List<PositionClassifications>()
             {
-                PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI, 
-                PositionClassifications.PRODOTTI_DERIVATI, 
-                PositionClassifications.PRODOTTI_ALTERNATIVI_DIVERSI
-            }, 
+                PositionClassifications.FONDI_MISTI,
+                PositionClassifications.PRODOTTI_DERIVATI
+            },
             ManipolationTypes.AsSection110, culture) 
         {
             _calcOtherInvs = new OtherInvestmentsCalculation(calcSettings);
@@ -55,6 +54,120 @@ namespace PSE.BusinessLogic
             return destinationObjectName;
         }
 
+        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null) {
+            SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
+            Section110 output = new() {
+                SectionId = sectionDest.SectionId,
+                SectionCode = sectionDest.SectionCode,
+                SectionName = sectionDest.SectionContent
+            };
+            if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS))) {
+                decimal customerSumAmounts;
+                IInvestmentDetail investmentDetail;
+                ISection110Content sectionContent;
+                ISummaryTo summaryTo;
+                ISummaryBeginningYear summaryBeginningYear;
+                ISummaryPurchase summaryPurchase;
+                List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
+                IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
+                foreach (IDE ideItem in ideItems) {
+                    sectionContent = new Section110Content();
+                    customerSumAmounts = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>().Where(subFlt => subFlt.CustomerNumber_2 == ideItem.CustomerNumber_2 && subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
+                    IEnumerable<IGrouping<string, POS>> posItemsGroupBySubCat = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => fltSubCat.CustomerNumber_2 == ideItem.CustomerNumber_2 && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15)).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
+                    if (posItemsGroupBySubCat != null && posItemsGroupBySubCat.Any()) {
+                        foreach (IGrouping<string, POS> subCategoryItems in posItemsGroupBySubCat) {
+                            switch ((PositionClassifications)int.Parse(subCategoryItems.Key)) {
+                                case PositionClassifications.FONDI_MISTI: {
+                                        foreach (POS posItem in subCategoryItems) {
+                                            if (string.IsNullOrEmpty(posItem.Category_11) == false && posItem.Category_11.Trim().EndsWith("FM")) { // Metal funds
+                                                if (sectionContent.SubSection11000 == null)
+                                                    sectionContent.SubSection11000 = new SubSection11000("Mix funds");
+                                                investmentDetail = new InvestmentDetail() {
+                                                    Currency = AssignRequiredString(posItem.Currency1_17),
+                                                    Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                    
+                                                    //CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23), 
+                                                    Description1 = AssignRequiredString(posItem.Description2_33),
+                                                    Description2 = AssignRequiredString(posItem.Description1_32),
+                                                    Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                    CapitalMarketValueReportingCurrency = 0, // ??
+                                                    PercentWeight = 0, // ??
+                                                    TotalMarketValueReportingCurrency = 0 // ??
+                                                };
+                                                summaryTo = new SummaryTo() {
+                                                    ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                    ValuePrice = posItem.Quote_48,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    PercentPrice = 0m,
+                                                    ProfitLossNotRealizedValue = 0m
+                                                };
+                                                summaryBeginningYear = new SummaryBeginningYear() {
+                                                    ValuePrice = posItem.BuyPriceAverage_87,
+                                                    ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                };
+                                                summaryPurchase = new SummaryPurchase() {
+                                                    ValuePrice = posItem.BuyPriceHistoric_53,
+                                                    ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                };
+                                                CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                                investmentDetail.SummaryTo.Add(summaryTo);
+                                                investmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
+                                                investmentDetail.SummaryPurchase.Add(summaryPurchase);
+                                                sectionContent.SubSection11000.Content.Add(investmentDetail);
+                                            }
+                                            posItem.AlreadyUsed = true;
+                                        }
+                                    }
+                                    break;
+                                case PositionClassifications.PRODOTTI_DERIVATI: {
+                                        sectionContent.SubSection11020 = new SubSection11020("Derivative Products – Futures");
+                                        foreach (POS posItem in subCategoryItems) {
+                                            investmentDetail = new InvestmentDetail() {
+                                                Currency = AssignRequiredString(posItem.Currency1_17),
+                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),
+                                                //CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                Description1 = AssignRequiredString(posItem.Description2_33),
+                                                Description2 = AssignRequiredString(posItem.Description1_32),
+                                                Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                CapitalMarketValueReportingCurrency = 0, // ??
+                                                PercentWeight = 0, // ??
+                                                TotalMarketValueReportingCurrency = 0 // ??
+                                            };
+                                            summaryTo = new SummaryTo() {
+                                                ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                ValuePrice = posItem.Quote_48,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                PercentPrice = 0m,
+                                                ProfitLossNotRealizedValue = 0m
+                                            };
+                                            summaryBeginningYear = new SummaryBeginningYear() {
+                                                ValuePrice = posItem.BuyPriceAverage_87,
+                                                ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                            };
+                                            summaryPurchase = new SummaryPurchase() {
+                                                ValuePrice = posItem.BuyPriceHistoric_53,
+                                                ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                            };
+                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            investmentDetail.SummaryTo.Add(summaryTo);
+                                            investmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
+                                            investmentDetail.SummaryPurchase.Add(summaryPurchase);
+                                            sectionContent.SubSection11020.Content.Add(investmentDetail);
+                                            posItem.AlreadyUsed = true;
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    output.Content = new Section110Content(sectionContent);
+                }
+            }
+            return output;
+        }
+
+        /*
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
@@ -125,6 +238,7 @@ namespace PSE.BusinessLogic
             }
             return output;
         }
+        */
 
     }
 

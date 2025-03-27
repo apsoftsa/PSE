@@ -33,7 +33,7 @@ namespace PSE.BusinessLogic
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section150Content();
-                    IEnumerable<POS> possibleCommitments = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString() && flt.SubCat4_15 == ((int)PositionClassifications.IMPEGNI_EVENTUALI).ToString());
+                    IEnumerable<POS> possibleCommitments = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, flt.SubCat4_15));
                     if (possibleCommitments != null && possibleCommitments.Any())
                     {
                         foreach (var possibleCommitment in possibleCommitments)

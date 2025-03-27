@@ -15,7 +15,7 @@ namespace PSE.BusinessLogic
     public class ManipulatorSection160 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection160, culture) { }
+        public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection160, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
@@ -43,7 +43,7 @@ namespace PSE.BusinessLogic
                     sectionContent = new Section160Content();
                     sectionContent.SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector"); 
                     totalSum = 0;
-                    IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15 == ((int)PositionClassifications.SHARES).ToString()).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
+                    IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, flt.SubCat4_15)).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
                     foreach (IGrouping<string, POS> economicalSector in groupByEconomicalSector)
                     {
                         sectorDescr = "(Unknown)";

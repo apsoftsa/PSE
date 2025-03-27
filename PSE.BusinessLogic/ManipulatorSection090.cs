@@ -49,43 +49,73 @@ namespace PSE.BusinessLogic
                                 case PositionClassifications.SHARES:
                                     {
                                         IShareDetail shareDetail;
+                                        IEquityFundDetail equityFundDetail; 
                                         ISummaryTo summaryTo;
                                         ISummaryBeginningYear summaryBeginningYear;
-                                        ISummaryPurchase summaryPurchase;
-                                        sectionContent.SubSection9010 = new ShareSubSection("Shares");
+                                        ISummaryPurchase summaryPurchase;                                        
                                         foreach (POS posItem in subCategoryItems)
                                         {
-                                            shareDetail = new ShareDetail()
-                                            {
-                                                Currency = AssignRequiredString(posItem.Currency1_17),
-                                                Description1 = AssignRequiredString(posItem.Description1_32),
-                                                Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                                Amount = AssignRequiredDecimal(posItem.Quantity_28),
-                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
-                                            };
-                                            summaryTo = new SummaryTo()
-                                            {
-                                                ValuePrice = posItem.Quote_48,
-                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
-                                                PercentPrice = 0m,
-                                                ProfitLossNotRealizedValue = 0m
-                                            };
-                                            summaryBeginningYear = new SummaryBeginningYear()
-                                            {
-                                                ValuePrice = posItem.BuyPriceAverage_87,
-                                                ExchangeValue = posItem.BuyExchangeRateAverage_88
-                                            };
-                                            summaryPurchase = new SummaryPurchase()
-                                            {
-                                                ValuePrice = posItem.BuyPriceHistoric_53,
-                                                ExchangeValue = posItem.BuyExchangeRateHistoric_66
-                                            };
-                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
-                                            shareDetail.SummaryTo.Add(summaryTo);
-                                            shareDetail.SummaryBeginningYear.Add(summaryBeginningYear);
-                                            shareDetail.SummaryPurchase.Add(summaryPurchase);
-                                            sectionContent.SubSection9010.Content.Add(shareDetail);
+                                            if (string.IsNullOrEmpty(posItem.Category_11) == false && posItem.Category_11.Trim().EndsWith("FA")) { // equity funds
+                                                if (sectionContent.SubSection9020 == null)
+                                                    sectionContent.SubSection9020 = new EquityFundSubSection("Equity Funds");
+                                                equityFundDetail = new EquityFundDetail() {
+                                                    Currency = AssignRequiredString(posItem.Currency1_17),
+                                                    CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    Amount = AssignRequiredDecimal(posItem.Quantity_28),
+                                                    Description1 = AssignRequiredString(posItem.Description1_32),
+                                                    Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),                                                                                                       
+                                                    PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                };
+                                                summaryTo = new SummaryTo() {
+                                                    ValuePrice = posItem.Quote_48,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    PercentPrice = 0m,
+                                                    ProfitLossNotRealizedValue = 0m
+                                                };
+                                                summaryBeginningYear = new SummaryBeginningYear() {
+                                                    ValuePrice = posItem.BuyPriceAverage_87,
+                                                    ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                };
+                                                summaryPurchase = new SummaryPurchase() {
+                                                    ValuePrice = posItem.BuyPriceHistoric_53,
+                                                    ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                };
+                                                CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                                equityFundDetail.SummaryTo.Add(summaryTo);
+                                                equityFundDetail.SummaryBeginningYear.Add(summaryBeginningYear);
+                                                equityFundDetail.SummaryPurchase.Add(summaryPurchase);
+                                                sectionContent.SubSection9020.Content.Add(equityFundDetail);
+                                            } else {
+                                                if (sectionContent.SubSection9010 == null) 
+                                                    sectionContent.SubSection9010 = new ShareSubSection("Shares");
+                                                shareDetail = new ShareDetail() {
+                                                    Currency = AssignRequiredString(posItem.Currency1_17),
+                                                    Description1 = AssignRequiredString(posItem.Description1_32),
+                                                    Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                    Amount = AssignRequiredDecimal(posItem.Quantity_28),
+                                                    CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                };
+                                                summaryTo = new SummaryTo() {
+                                                    ValuePrice = posItem.Quote_48,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    PercentPrice = 0m,
+                                                    ProfitLossNotRealizedValue = 0m
+                                                };
+                                                summaryBeginningYear = new SummaryBeginningYear() {
+                                                    ValuePrice = posItem.BuyPriceAverage_87,
+                                                    ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                };
+                                                summaryPurchase = new SummaryPurchase() {
+                                                    ValuePrice = posItem.BuyPriceHistoric_53,
+                                                    ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                };
+                                                CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                                shareDetail.SummaryTo.Add(summaryTo);
+                                                shareDetail.SummaryBeginningYear.Add(summaryBeginningYear);
+                                                shareDetail.SummaryPurchase.Add(summaryPurchase);
+                                                sectionContent.SubSection9010.Content.Add(shareDetail);
+                                            }
                                             posItem.AlreadyUsed = true;
                                         }                                        
                                         break;

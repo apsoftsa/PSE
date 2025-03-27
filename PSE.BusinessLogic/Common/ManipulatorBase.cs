@@ -106,7 +106,7 @@ namespace PSE.BusinessLogic.Common
                     summaryPurchase.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryPurchase.ValuePrice.Value) / summaryPurchase.ValuePrice.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
                 else
                     summaryPurchase.PercentPrice = 0m;
-                if (quantity.HasValue && quantity.Value != 0m) {
+                if (quantity.HasValue && summaryBeginningYear.ValuePrice.HasValue && quantity.Value != 0m) {
                     summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value - summaryBeginningYear.ValuePrice.Value) * quantity.Value, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
                     summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value - summaryPurchase.ValuePrice.Value) * quantity.Value, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
                 }
