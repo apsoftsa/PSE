@@ -81,8 +81,9 @@ namespace PSE.BusinessLogic
                                                 Quantity = AssignRequiredDecimal(posItem.Quantity_28),
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                InterestMarketValueReportingCurrency = 0, // ??
-                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
+                                                InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),      
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimals(posItem.Amount1Base_23, posItem.ProRataBase_56)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -202,7 +203,7 @@ namespace PSE.BusinessLogic
                                                 Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                Strike = string.Empty, // ??
+                                                Strike = AssignRequiredString(posItem.Strike_67),                                                
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo()

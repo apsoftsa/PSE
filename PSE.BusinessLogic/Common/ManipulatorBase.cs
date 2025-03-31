@@ -142,6 +142,14 @@ namespace PSE.BusinessLogic.Common
 
         protected decimal AssignRequiredDecimal(decimal? value) { return value.HasValue ? value.Value : decimal.Zero; }
 
+        protected decimal AssignRequiredDecimals(decimal? value1, decimal? value2) 
+        { 
+            decimal total = decimal.Zero;   
+            if (value1.HasValue) total += value1.Value;
+            if (value2.HasValue) total += value2.Value;
+            return total;
+        }
+
         protected long AssignRequiredLong(long? value) { return value.HasValue ? value.Value : 0; }
 
         protected string AssignRequiredDate(DateTime? value, CultureInfo culture) { return value.HasValue ? value.Value.ToString(DEFAULT_DATE_FORMAT, culture) : ""; }

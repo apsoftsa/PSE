@@ -75,35 +75,51 @@ namespace PSE.BusinessLogic
                             }                            
                         }
                         decimal? totalSum = sectionContent.SubSection4000.Content.Sum(sum => sum.MarketValueReportingCurrency);
-                        if (totalSum != null && totalSum != 0)
+                        if(!totalSum.HasValue) totalSum = decimal.Zero;
+                        sectionContent.SubSection4010 = new SubSection4010Content();
+                        foreach (IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content)
                         {
-                            sectionContent.SubSection4010 = new SubSection4010Content();
-                            foreach (IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content)
-                            {
-                                assetToUpgrd.PercentInvestment = Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2);
-                            }
-                            IEnumerable<IGrouping<string, IInvestmentAsset?>> groupByAssetClasses = sectionContent.SubSection4000.Content.GroupBy(gb => gb.AssetClass);
-                            foreach (IGrouping<string, IInvestmentAsset> groupByAssetClass in groupByAssetClasses)
-                            {
-                                foreach(IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content.Where(flt => flt.AssetClass == groupByAssetClass.Key))
-                                {
-                                    assetToUpgrd.PercentInvestmentT = groupByAssetClass.Sum(sum => sum.PercentInvestment);
-                                }
-                                sectionContent.SubSection4010.Content.Add(new AssetClassChart() { AssetClass = groupByAssetClass.Key, PercentInvestment = groupByAssetClass.Where(f => f.PercentInvestment.HasValue).Sum(sum => sum.PercentInvestment.Value) });
-                            }
-                            decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
-                            investmentAsset = new InvestmentAsset()
-                            {
-                                TypeInvestment = "Accrued Interest",
-                                MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
-                                PercentInvestment = Math.Round(sumAccrued / totalSum.Value * 100m, 2),
-                                AssetClass = "TOTAL INVESTMENTS",
-                                MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
-                                PercentInvestmentT = 100.0m
-                            };
-                            TotalAssets = investmentAsset.MarketValueReportingCurrency + investmentAsset.MarketValueReportingCurrencyT;
-                            sectionContent.SubSection4000.Content.Add(investmentAsset);
+
+                            assetToUpgrd.PercentInvestment = totalSum != 0 ? Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2) : 0m;
                         }
+                        IEnumerable<IGrouping<string, IInvestmentAsset?>> groupByAssetClasses = sectionContent.SubSection4000.Content.GroupBy(gb => gb.AssetClass);
+                        foreach (IGrouping<string, IInvestmentAsset> groupByAssetClass in groupByAssetClasses)
+                        {
+                            foreach(IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content.Where(flt => flt.AssetClass == groupByAssetClass.Key))
+                            {
+                                assetToUpgrd.PercentInvestmentT = groupByAssetClass.Sum(sum => sum.PercentInvestment);
+                            }
+                            sectionContent.SubSection4010.Content.Add(new AssetClassChart() { AssetClass = groupByAssetClass.Key, PercentInvestment = groupByAssetClass.Where(f => f.PercentInvestment.HasValue).Sum(sum => sum.PercentInvestment.Value) });
+                        }
+                        decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
+                        investmentAsset = new InvestmentAsset() {
+                            AssetClass = "TOTAL INVESTMENTS",
+                            MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
+                            PercentInvestmentT = 100.0m,
+                            MarketValueReportingCurrency = null,
+                            PercentInvestment = null,
+                            TypeInvestment = null
+                        };                            
+                        sectionContent.SubSection4000.Content.Add(investmentAsset);
+                        investmentAsset = new InvestmentAsset() {
+                            AssetClass = "TOTAL INVESTMENTS",
+                            TypeInvestment = "Accrued Interest",
+                            MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
+                            PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m,
+                            MarketValueReportingCurrencyT = null,
+                            PercentInvestmentT = null
+                        };
+                        sectionContent.SubSection4000.Content.Add(investmentAsset);
+                        investmentAsset = new InvestmentAsset() {
+                            AssetClass = "TOTAL ASSETS",
+                            MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
+                            TypeInvestment = null,                                
+                            PercentInvestment = null,
+                            MarketValueReportingCurrencyT = null,
+                            PercentInvestmentT = null
+                        };
+                        sectionContent.SubSection4000.Content.Add(investmentAsset);
+                        TotalAssets = AssignRequiredDecimals(sumAccrued, totalSum);                        
                     }
                     // Take only 'informative positions' if exists
                     groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.POSIZIONI_INFORMATIVE).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);

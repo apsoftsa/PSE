@@ -61,6 +61,7 @@ namespace PSE.BusinessLogic
                                                 equityFundDetail = new EquityFundDetail() {
                                                     Currency = AssignRequiredString(posItem.Currency1_17),
                                                     CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                     Amount = AssignRequiredDecimal(posItem.Quantity_28),
                                                     Description1 = AssignRequiredString(posItem.Description1_32),
                                                     Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),                                                                                                       

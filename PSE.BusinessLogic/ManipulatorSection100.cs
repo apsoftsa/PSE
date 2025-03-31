@@ -61,7 +61,7 @@ namespace PSE.BusinessLogic
                                                 Description1 = AssignRequiredString(posItem.Description2_33),
                                                 Description2 = AssignRequiredString(posItem.Description1_32),
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
-                                                TotalMarketValueReportingCurrency = 0 // ??
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
@@ -92,7 +92,7 @@ namespace PSE.BusinessLogic
                                                 Description1 = AssignRequiredString(posItem.Description2_33),
                                                 Description2 = AssignRequiredString(posItem.Description1_32),
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
-                                                TotalMarketValueReportingCurrency = 0 // ??
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23)
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
@@ -120,7 +120,7 @@ namespace PSE.BusinessLogic
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
                                             metAcc = new MetalAccount() {
                                                 Account = AssignRequiredString(posItem.HostPositionReference_6),
-                                                CurrentBalance = AssignRequiredDecimal(posItem.Amount1Cur1_22),
+                                                CurrentBalance = AssignRequiredDecimal(posItem.Quantity_28),
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 PercentWeight = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                                             };
@@ -135,15 +135,13 @@ namespace PSE.BusinessLogic
                                     sectionContent.SubSection10030 = new DerivateMetalSubSection("Derivative Products on Metals");
                                     foreach (POS posItem in subCategoryItems) {                                            
                                         derivateMetalDetail = new DerivateMetalDetail() {
-                                            //MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                            //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),                                            
+                                            MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                            PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),                                            
                                             Amount = AssignRequiredDecimal(posItem.Quantity_28),
-                                            Description1 = AssignRequiredString(posItem.Description2_33),
+                                            Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
                                             Description2 = AssignRequiredString(posItem.Description1_32),                                                
-                                            Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                            MarketValueReportingCurrency = 0, // ??
-                                            PercentWeight = 0, // ??
-                                            Strike = 0 // ??
+                                            Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                            Strike = AssignRequiredDecimal(posItem.InterestRate_47)
                                         };
                                         tmpCurrency = AssignRequiredString(posItem.Currency1_17);
                                         summaryTo = new SummaryTo() {

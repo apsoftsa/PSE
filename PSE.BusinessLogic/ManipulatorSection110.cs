@@ -85,14 +85,12 @@ namespace PSE.BusinessLogic
                                                 investmentDetail = new InvestmentDetail() {
                                                     Currency = AssignRequiredString(posItem.Currency1_17),
                                                     Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                    
-                                                    //CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                    //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23), 
+                                                    CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                    TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                     Description1 = AssignRequiredString(posItem.Description2_33),
                                                     Description2 = AssignRequiredString(posItem.Description1_32),
-                                                    Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                                    CapitalMarketValueReportingCurrency = 0, // ??
-                                                    PercentWeight = 0, // ??
-                                                    TotalMarketValueReportingCurrency = 0 // ??
+                                                    Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)])
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
@@ -125,14 +123,12 @@ namespace PSE.BusinessLogic
                                             investmentDetail = new InvestmentDetail() {
                                                 Currency = AssignRequiredString(posItem.Currency1_17),
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),
-                                                //CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
-                                                //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 Description1 = AssignRequiredString(posItem.Description2_33),
                                                 Description2 = AssignRequiredString(posItem.Description1_32),
-                                                Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                                CapitalMarketValueReportingCurrency = 0, // ??
-                                                PercentWeight = 0, // ??
-                                                TotalMarketValueReportingCurrency = 0 // ??
+                                                Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)])
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),

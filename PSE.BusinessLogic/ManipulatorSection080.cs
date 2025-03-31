@@ -65,6 +65,7 @@ namespace PSE.BusinessLogic
                                                 Coupon = GetCoupon(AssignRequiredString(posItem.CouponFrequency_34), AssignRequiredString(posItem.CouponText_35)),                                                              PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimals(posItem.Amount1Base_23, posItem.ProRataBase_56),
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,                                                
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
@@ -118,6 +119,7 @@ namespace PSE.BusinessLogic
                                                 PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimals(posItem.Amount1Base_23, posItem.ProRataBase_56),
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
@@ -167,12 +169,10 @@ namespace PSE.BusinessLogic
                                                     Quantity = AssignRequiredDecimal(posItem.Quantity_28),
                                                     Description1 = AssignRequiredString(posItem.Description2_33),
                                                     Description2 = AssignRequiredString(posItem.Description1_32),
-                                                    Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                                    TotalMarketValueReportingCurrency = 0, // ??
-                                                    PercentWeight = 0, // ??
-                                                    CapitalMarketValueReportingCurrency = 0, // ??
-                                                    //PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
-                                                    //CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),                                                    
+                                                    PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                                    CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                                    TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23)
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
@@ -188,7 +188,6 @@ namespace PSE.BusinessLogic
                                                     ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
-                                                //bondFunds.TotalMarketValueReportingCurrency = bondFunds.CapitalMarketValueReportingCurrency + bondFunds.InterestMarketValueReportingCurrency;
                                                 CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                                 bondFunds.SummaryTo.Add(summaryTo);
                                                 bondFunds.SummaryBeginningYear.Add(summaryBeginningYear);
@@ -208,6 +207,7 @@ namespace PSE.BusinessLogic
                                                     PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                     CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                     InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
+                                                    TotalMarketValueReportingCurrency = AssignRequiredDecimals(posItem.Amount1Base_23, posItem.ProRataBase_56),
                                                     Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                     SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                     PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
@@ -258,6 +258,7 @@ namespace PSE.BusinessLogic
                                                 PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                 CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
+                                                TotalMarketValueReportingCurrency = AssignRequiredDecimals(posItem.Amount1Base_23, posItem.ProRataBase_56),
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
