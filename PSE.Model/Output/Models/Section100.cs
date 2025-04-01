@@ -192,7 +192,7 @@ namespace PSE.Model.Output.Models
 
         public string ExpirationDate { get; set; }
 
-        public decimal? CurrencyRate { get; set; }
+        public decimal? CurrentRate { get; set; }
 
         public decimal? ProfitLoss { get; set; }
 
@@ -206,7 +206,7 @@ namespace PSE.Model.Output.Models
             ExchangeValue = 0;
             Currency2 = string.Empty;
             ExpirationDate = string.Empty;  
-            CurrencyRate = 0;
+            CurrentRate = 0;
             ProfitLoss = 0;
             PercentWeight = 0;
         }
@@ -219,7 +219,7 @@ namespace PSE.Model.Output.Models
             ExchangeValue = source.ExchangeValue;
             Currency2 = source.Currency2;
             ExpirationDate = source.ExpirationDate;
-            CurrencyRate = source.CurrencyRate;
+            CurrentRate = source.CurrentRate;
             ProfitLoss = source.ProfitLoss;
             PercentWeight = source.PercentWeight;
         }

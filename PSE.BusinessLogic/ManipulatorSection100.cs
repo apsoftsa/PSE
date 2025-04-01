@@ -16,8 +16,9 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection100(CultureInfo? culture = null) : base(new List<PositionClassifications>()
             {
-                PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO,
-                PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI
+                PositionClassifications.METALS_ACCOUNTS_FUNDS_PHYSICAL,
+                PositionClassifications.FORWARD_METAL_OPERATIONS_PROFIT_LOSS,
+                PositionClassifications.DERIVATIVE_PRODUCTS_ON_METALS
             }, ManipolationTypes.AsSection100, culture){ }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
@@ -34,6 +35,7 @@ namespace PSE.BusinessLogic
                 decimal customerSumAmounts, currentBaseValue;
                 IMetalAccount metAcc;
                 IDerivateMetalDetail derivateMetalDetail;
+                IForwardMetalOperation forwardMetalOperation;
                 IMetalDetail metalDetail;
                 ISection100Content sectionContent;
                 ISummaryTo summaryTo;
@@ -49,7 +51,7 @@ namespace PSE.BusinessLogic
                     if (posItemsGroupBySubCat != null && posItemsGroupBySubCat.Any()) {
                         foreach (IGrouping<string, POS> subCategoryItems in posItemsGroupBySubCat) {
                             switch ((PositionClassifications)int.Parse(subCategoryItems.Key)) {
-                                case PositionClassifications.CONTI_METALLO_METALLI_FONDI_METALLO: {
+                                case PositionClassifications.METALS_ACCOUNTS_FUNDS_PHYSICAL: {
                                     foreach (POS posItem in subCategoryItems) {
                                         if (string.IsNullOrEmpty(posItem.Category_11) == false && posItem.Category_11.Trim().EndsWith("MF")) { // Metal funds
                                             if (sectionContent.SubSection10010 == null)
@@ -65,7 +67,7 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
-                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -96,7 +98,7 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
-                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -130,7 +132,26 @@ namespace PSE.BusinessLogic
                                     }
                                 }
                                 break;
-                                case PositionClassifications.PRODOTTI_DERIVATI_SU_METALLI: {
+                                case PositionClassifications.FORWARD_METAL_OPERATIONS_PROFIT_LOSS: {                                    
+                                    sectionContent.SubSection10040 = new ForwardMetalOperationSubSection("Forward metal operations (profit/loss)");
+                                    foreach (POS posItem in subCategoryItems) {
+                                        forwardMetalOperation = new ForwardMetalOperation() {
+                                            Currency1 = AssignRequiredString(posItem.Currency1_17),
+                                            Currency2 = AssignRequiredString(posItem.Currency2_18),
+                                            CurrencyValue = AssignRequiredDecimal(posItem.Amount1Cur1_22),
+                                            ExpirationDate = AssignRequiredDate(posItem.MaturityDate_36, _culture),
+                                            CurrentRate = AssignRequiredDecimal(posItem.Quote_48),
+                                            Exchange = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                            ExchangeValue = AssignRequiredDecimal(posItem.Amount2Cur2_59),  
+                                            PercentWeight = 0, // ??
+                                            ProfitLoss = 0 // ??
+                                        };
+                                        sectionContent.SubSection10040.Content.Add(forwardMetalOperation);
+                                        posItem.AlreadyUsed = true;
+                                    }
+                                }
+                                break;
+                                case PositionClassifications.DERIVATIVE_PRODUCTS_ON_METALS: {
                                     string tmpCurrency;
                                     sectionContent.SubSection10030 = new DerivateMetalSubSection("Derivative Products on Metals");
                                     foreach (POS posItem in subCategoryItems) {                                            
@@ -146,7 +167,7 @@ namespace PSE.BusinessLogic
                                         tmpCurrency = AssignRequiredString(posItem.Currency1_17);
                                         summaryTo = new SummaryTo() {
                                             ValuePrice = posItem.Quote_48,
-                                            ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                            //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             PercentPrice = 0m,
                                             ProfitLossNotRealizedValue = 0m
                                         };

@@ -17,7 +17,7 @@ namespace PSE.BusinessLogic
 
         private readonly SharesCalculation _calcShares;
 
-        public ManipulatorSection090(CalculationSettings calcSettings, CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.SHARES }, ManipolationTypes.AsSection090, culture) 
+        public ManipulatorSection090(CalculationSettings calcSettings, CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.SHARES, PositionClassifications.DERIVATIVE_PRODUCTS_ON_SECURITIES }, ManipolationTypes.AsSection090, culture) 
         {
             _calcShares = new SharesCalculation(calcSettings);
         }
@@ -34,6 +34,9 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
                 ISection090Content sectionContent;
+                ISummaryTo summaryTo;
+                ISummaryBeginningYear summaryBeginningYear;
+                ISummaryPurchase summaryPurchase;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<CUR> curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>();
                 foreach (IDE ideItem in ideItems)
@@ -50,9 +53,6 @@ namespace PSE.BusinessLogic
                                     {
                                         IShareDetail shareDetail;
                                         IEquityFundDetail equityFundDetail; 
-                                        ISummaryTo summaryTo;
-                                        ISummaryBeginningYear summaryBeginningYear;
-                                        ISummaryPurchase summaryPurchase;                                        
                                         foreach (POS posItem in subCategoryItems)
                                         {
                                             if (string.IsNullOrEmpty(posItem.Category_11) == false && posItem.Category_11.Trim().EndsWith("FA")) { // equity funds
@@ -64,12 +64,12 @@ namespace PSE.BusinessLogic
                                                     TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                     Amount = AssignRequiredDecimal(posItem.Quantity_28),
                                                     Description1 = AssignRequiredString(posItem.Description1_32),
-                                                    Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),                                                                                                       
+                                                    Description2 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),                                                      
                                                     PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = posItem.Quote_48,
-                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
@@ -121,6 +121,44 @@ namespace PSE.BusinessLogic
                                         }                                        
                                         break;
                                     }
+                                case PositionClassifications.DERIVATIVE_PRODUCTS_ON_SECURITIES: {
+                                    IDerivateDetail derivateDetail;
+                                    foreach (POS posItem in subCategoryItems) {
+                                        if (sectionContent.SubSection9030 == null)
+                                            sectionContent.SubSection9030 = new DerivateSubSection("Derivative products on securities");
+                                        derivateDetail = new DerivateDetail() {
+                                            Currency = AssignRequiredString(posItem.Currency1_17),
+                                            CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                            TotalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
+                                            Amount = AssignRequiredDecimal(posItem.Quantity_28),
+                                            Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
+                                            Description2 = AssignRequiredString(posItem.Description1_32),
+                                            Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                            PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
+                                        };
+                                        summaryTo = new SummaryTo() {
+                                            ValuePrice = posItem.Quote_48,
+                                            //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == derivateDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == derivateDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                            PercentPrice = 0m,
+                                            ProfitLossNotRealizedValue = 0m
+                                        };
+                                        summaryBeginningYear = new SummaryBeginningYear() {
+                                            ValuePrice = posItem.BuyPriceAverage_87,
+                                            ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                        };
+                                        summaryPurchase = new SummaryPurchase() {
+                                            ValuePrice = posItem.BuyPriceHistoric_53,
+                                            ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                        };
+                                        CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                        derivateDetail.SummaryTo.Add(summaryTo);
+                                        derivateDetail.SummaryBeginningYear.Add(summaryBeginningYear);
+                                        derivateDetail.SummaryPurchase.Add(summaryPurchase);
+                                        sectionContent.SubSection9030.Content.Add(derivateDetail);
+                                        posItem.AlreadyUsed = true;
+                                    }
+                                    break;
+                                }
                             }
                         }
                     }

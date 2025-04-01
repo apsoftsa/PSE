@@ -44,7 +44,7 @@ public interface IForwardMetalOperation
     decimal? ExchangeValue { get; set; }
     string Currency2 { get; set; }
     string ExpirationDate { get; set; }
-    decimal? CurrencyRate { get; set; }
+    decimal? CurrentRate { get; set; }
     decimal? ProfitLoss { get; set; }
     decimal? PercentWeight { get; set; }
 

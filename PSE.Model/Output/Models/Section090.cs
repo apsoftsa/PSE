@@ -68,28 +68,78 @@ namespace PSE.Model.Output.Models
             CapitalMarketValueReportingCurrency = source.CapitalMarketValueReportingCurrency;
             PercentWeight = source.PercentWeight;
         }
+
     }
 
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class EquityFundDetail : ShareDetail, IEquityFundDetail
+    public class EquityFundDetail : IEquityFundDetail
     {
+
+        public string Description1 { get; set; }
+
+        public string Description2 { get; set; }
 
         public string Description3 { get; set; }
 
+        public decimal? Amount { get; set; }
+
+        public string Currency { get; set; }
+
+        public IList<ISummaryTo> SummaryTo { get; set; }
+
+        public IList<ISummaryBeginningYear> SummaryBeginningYear { get; set; }
+
+        public IList<ISummaryPurchase> SummaryPurchase { get; set; }
+
+        public decimal? CapitalMarketValueReportingCurrency { get; set; }
+
         public decimal? TotalMarketValueReportingCurrency { get; set; }
 
-        public EquityFundDetail() : base()
+        public decimal? PercentWeight { get; set; }
+
+        public EquityFundDetail() 
         {
+            Description1 = string.Empty;
+            Description2 = string.Empty;
             Description3 = string.Empty;
+            Amount = 0;
+            Currency = string.Empty;
+            SummaryTo = new List<ISummaryTo>();
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
+            SummaryPurchase = new List<ISummaryPurchase>();
+            CapitalMarketValueReportingCurrency = 0;
+            PercentWeight = 0;
             TotalMarketValueReportingCurrency = 0;
         }
 
-        public EquityFundDetail(IEquityFundDetail source) : base(source)
+        public EquityFundDetail(IEquityFundDetail source) 
         {
+            Description1 = source.Description1;
+            Description2 = source.Description2;
             Description3 = source.Description3;
+            Amount = source.Amount;
+            Currency = source.Currency;
+            SummaryTo = new List<ISummaryTo>();
+            if (source.SummaryTo != null && source.SummaryTo.Any()) {
+                foreach (var item in source.SummaryTo)
+                    SummaryTo.Add(new SummaryTo(item));
+            }
+            SummaryBeginningYear = new List<ISummaryBeginningYear>();
+            if (source.SummaryBeginningYear != null && source.SummaryBeginningYear.Any()) {
+                foreach (var item in source.SummaryBeginningYear)
+                    SummaryBeginningYear.Add(new SummaryBeginningYear(item));
+            }
+            SummaryPurchase = new List<ISummaryPurchase>();
+            if (source.SummaryPurchase != null && source.SummaryPurchase.Any()) {
+                foreach (var item in source.SummaryPurchase)
+                    SummaryPurchase.Add(new SummaryPurchase(item));
+            }
+            CapitalMarketValueReportingCurrency = source.CapitalMarketValueReportingCurrency;
+            PercentWeight = source.PercentWeight;
             TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
         }
+
     }
 
     [Serializable]
@@ -102,7 +152,6 @@ namespace PSE.Model.Output.Models
         public DerivateDetail(IDerivateDetail source) : base(source) { }
 
     }
-
 
     public class ShareSubSection : IShareSubSection
     {

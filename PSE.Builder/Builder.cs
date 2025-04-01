@@ -179,7 +179,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsSection010:
                             case ManipolationTypes.AsSection020:
-                            case ManipolationTypes.AsSection200: {
+                            {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(PER)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
@@ -212,6 +212,7 @@ namespace PSE.Builder
                             case ManipolationTypes.AsSection060:                            
                             case ManipolationTypes.AsSection160:
                             case ManipolationTypes.AsSection170:
+                            case ManipolationTypes.AsSection200: 
                                 {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) &&
                                         extractedData.Any(flt => flt.RecordType == nameof(POS)))
@@ -353,23 +354,14 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection040 => _manSect040.Manipulate(extractedData),
                 ManipolationTypes.AsSection060 => _manSect060.Manipulate(extractedData),
                 ManipolationTypes.AsSection070 => _manSect070.Manipulate(extractedData, _manSect040.TotalAssets),
-                /*
-                ManipolationTypes.AsSection9 => _manSect9.Manipulate(extractedData),
-                ManipolationTypes.AsSection10 => _manSect10.Manipulate(extractedData),
-                ManipolationTypes.AsSection11 => _manSect11.Manipulate(extractedData),
-                */
                 ManipolationTypes.AsSection080 => _manSect080.Manipulate(extractedData, _manSect040.TotalAssets),
-                //ManipolationTypes.AsSection13 => _manSect13.Manipulate(extractedData),
-                //ManipolationTypes.AsSection14 => _manSect14.Manipulate(extractedData),
                 ManipolationTypes.AsSection090 => _manSect090.Manipulate(extractedData, _manSect040.TotalAssets),
-                //ManipolationTypes.AsSection16And17 => _manSect16And17.Manipulate(extractedData),
-                ManipolationTypes.AsSection110 => _manSect110.Manipulate(extractedData),
-                ManipolationTypes.AsSection100 => _manSect100.Manipulate(extractedData),
-                ManipolationTypes.AsSection150 => _manSect150.Manipulate(extractedData),
-                //ManipolationTypes.AsSection22 => _manSect22.Manipulate(extractedData),
-                ManipolationTypes.AsSection160 => _manSect160.Manipulate(extractedData),
-                ManipolationTypes.AsSection170 => _manSect170.Manipulate(extractedData),
+                ManipolationTypes.AsSection100 => _manSect100.Manipulate(extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection110 => _manSect110.Manipulate(extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection130 => _manSect130.Manipulate(extractedData),
+                ManipolationTypes.AsSection150 => _manSect150.Manipulate(extractedData),
+                ManipolationTypes.AsSection160 => _manSect160.Manipulate(extractedData),
+                ManipolationTypes.AsSection170 => _manSect170.Manipulate(extractedData),                
                 ManipolationTypes.AsSection190 => _manSect190.Manipulate(extractedData),
                 ManipolationTypes.AsSection200 => _manSect200.Manipulate(extractedData),
                 ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),

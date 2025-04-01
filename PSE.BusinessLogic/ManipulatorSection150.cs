@@ -14,7 +14,7 @@ namespace PSE.BusinessLogic
     public class ManipulatorSection150 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection150(CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.MUTUI_IPOTECARI_E_CREDITI_DI_COSTRUZIONE, PositionClassifications.IMPEGNI_EVENTUALI }, ManipolationTypes.AsSection150, culture) { }
+        public ManipulatorSection150(CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.MORTGAGE_LOANS, PositionClassifications.POSSIBLE_COMMITMENTS }, ManipolationTypes.AsSection150, culture) { }
 
         public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
