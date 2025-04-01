@@ -38,12 +38,12 @@ namespace PSE.BusinessLogic {
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
                 foreach (IDE ideItem in ideItems) {
-                    extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
+                    extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.EsgProfile), ideItem.Mandate_11, propertyParams);
                     OnExternalCodifyRequest(extEventArgsService);
                     if (!extEventArgsService.Cancel) {
                         if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                             propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
-                            extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(KeyInformation.Portfolio), ideItem.ModelCode_21, propertyParams);
+                            extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.Portfolio), ideItem.ModelCode_21, propertyParams);
                             OnExternalCodifyRequest(extEventArgsPortfolio);
                         if (!extEventArgsPortfolio.Cancel) {
                             endExtractCustomer = new EndExtractCustomer() {
@@ -56,8 +56,6 @@ namespace PSE.BusinessLogic {
                             output.Content.SubSection20000 = new SubSection20000("");
                             output.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));
                             IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != ((int)PositionClassifications.INFORMATION_POSITIONS).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
-
-                            //IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat4_15.StartsWith(((int)PositionClassifications.INFORMATION_POSITIONS).ToString()) == false).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                             if (groupByCategory != null && groupByCategory.Any()) {
                                 categoryDescr = string.Empty;
                                 prevCategory = string.Empty;
@@ -67,21 +65,17 @@ namespace PSE.BusinessLogic {
                                     currCategory = category.First().SubCat3_14;
                                     if (currCategory != prevCategory) {
                                         categoryDescr = "(Unknown)";
-                                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(InvestmentAsset.AssetClass), currCategory, propertyParams);
+                                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractInvestment.AssetClass), currCategory, propertyParams);
                                         OnExternalCodifyRequest(extEventArgsAdvisor);
                                         if (!extEventArgsAdvisor.Cancel)
                                             categoryDescr = extEventArgsAdvisor.PropertyValue;
                                         prevCategory = currCategory;
                                     }
-                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(InvestmentAsset.TypeInvestment), category.Key, propertyParams);
-                                    OnExternalCodifyRequest(extEventArgsAdvisor);
-                                    if (!extEventArgsAdvisor.Cancel) {
-                                        endExtractInvestment = new EndExtractInvestment() {
-                                            MarketValueReportingCurrency = Math.Round(category.Sum(sum => sum.Amount1Base_23).Value, 2),
-                                            AssetClass = categoryDescr
-                                        };
-                                        output.Content.SubSection20010.Content.Add(endExtractInvestment);
-                                    }
+                                    endExtractInvestment = new EndExtractInvestment() {
+                                        MarketValueReportingCurrency = Math.Round(category.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                        AssetClass = categoryDescr
+                                    };
+                                    output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 }
                                 decimal? totalSum = output.Content.SubSection20010.Content.Sum(sum => sum.MarketValueReportingCurrency);
                                 if (!totalSum.HasValue)
@@ -117,21 +111,17 @@ namespace PSE.BusinessLogic {
                                     currCategory = subCategory.First().SubCat3_14;
                                     if (currCategory != prevCategory) {
                                         categoryDescr = "(Unknown)";
-                                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(InvestmentAsset.AssetClass), currCategory, propertyParams);
+                                        extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractInvestmentChart.AssetClass), currCategory, propertyParams);
                                         OnExternalCodifyRequest(extEventArgsAdvisor);
                                         if (!extEventArgsAdvisor.Cancel)
                                             categoryDescr = extEventArgsAdvisor.PropertyValue;
                                         prevCategory = currCategory;
                                     }
-                                    extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(InvestmentAsset.TypeInvestment), subCategory.Key, propertyParams);
-                                    OnExternalCodifyRequest(extEventArgsAdvisor);
-                                    if (!extEventArgsAdvisor.Cancel) {
-                                        endExtractInvestmentChart = new EndExtractInvestmentChart() {
-                                            AssetClass = categoryDescr,
-                                            PercentInvestment = totalSum != 0 ? Math.Round(subCategory.Sum(sum => sum.Amount1Base_23.Value / totalSum.Value * 100m), 2) : 0m
-                                        };
-                                        output.Content.SubSection20020.Content.Add(endExtractInvestmentChart);
-                                    }
+                                    endExtractInvestmentChart = new EndExtractInvestmentChart() {
+                                        AssetClass = categoryDescr,
+                                        PercentInvestment = totalSum != 0 ? Math.Round(subCategory.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value) / totalSum.Value * 100m, 2) : 0m
+                                    };
+                                    output.Content.SubSection20020.Content.Add(endExtractInvestmentChart);
                                 }
                             }
                         }
