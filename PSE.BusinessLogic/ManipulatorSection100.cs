@@ -132,9 +132,12 @@ namespace PSE.BusinessLogic
                                     }
                                 }
                                 break;
-                                case PositionClassifications.FORWARD_METAL_OPERATIONS_PROFIT_LOSS: {                                    
+                                case PositionClassifications.FORWARD_METAL_OPERATIONS_PROFIT_LOSS: {
+                                    decimal amount1, amount2;
                                     sectionContent.SubSection10040 = new ForwardMetalOperationSubSection("Forward metal operations (profit/loss)");
                                     foreach (POS posItem in subCategoryItems) {
+                                        if (!decimal.TryParse(posItem.Amount1Request_90, out amount1)) amount1 = 0m;
+                                        if (!decimal.TryParse(posItem.Amount2Request_91, out amount2)) amount2 = 0m;
                                         forwardMetalOperation = new ForwardMetalOperation() {
                                             Currency1 = AssignRequiredString(posItem.Currency1_17),
                                             Currency2 = AssignRequiredString(posItem.Currency2_18),
@@ -142,9 +145,9 @@ namespace PSE.BusinessLogic
                                             ExpirationDate = AssignRequiredDate(posItem.MaturityDate_36, _culture),
                                             CurrentRate = AssignRequiredDecimal(posItem.Quote_48),
                                             Exchange = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
-                                            ExchangeValue = AssignRequiredDecimal(posItem.Amount2Cur2_59),  
-                                            PercentWeight = 0, // ??
-                                            ProfitLoss = 0 // ??
+                                            ExchangeValue = AssignRequiredDecimal(posItem.Amount2Cur2_59),
+                                            ProfitLoss = amount1 + amount2,
+                                            PercentWeight = CalculatePercentWeight(totalAssets, amount1 + amount2)
                                         };
                                         sectionContent.SubSection10040.Content.Add(forwardMetalOperation);
                                         posItem.AlreadyUsed = true;

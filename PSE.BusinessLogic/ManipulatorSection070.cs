@@ -177,8 +177,8 @@ namespace PSE.BusinessLogic
                                                 CurrentRate = AssignRequiredDecimal(posItem.Quote_48),
                                                 ExchangeRate = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.Amount2Cur2_59),
-                                                ProfitLoss = amount1 + amount2, // ??
-                                                PercentWeight = 0,  // ??
+                                                ProfitLoss = amount1 + amount2, 
+                                                PercentWeight = CalculatePercentWeight(totalAssets, amount1 + amount2)  
                                             };
                                             sectionContent.SubSection7040.Content.Add(liquidityForwardExchangeOperation);
                                             posItem.AlreadyUsed = true;
