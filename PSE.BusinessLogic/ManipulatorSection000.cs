@@ -39,7 +39,7 @@ namespace PSE.BusinessLogic
                     if (!extEventArgsAdvisor.Cancel) {
                         ISection000Content sectionContent = new Section000Content();
                         IAssetStatement assetStatement = new AssetStatement() {
-                            CustomerID = AssignRequiredString(ideItem.CustomerNumber_2),                            
+                            CustomerID = AssignRequiredString(ideItem.CustomerId_6),                            
                             Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
                             Advisory = AssignRequiredString(extEventArgsAdvisor.PropertyValue),
                             Settled = ideItem.Date_15 != null ? new List<ISettled>() { new Settled(ideItem.Date_15.Value.ToString(DEFAULT_DATE_FORMAT, _culture), ideItem.Time_16.Value.ToString(DEFAULT_TIME_FORMAT, _culture)) } : new List<ISettled>() { new Settled() },

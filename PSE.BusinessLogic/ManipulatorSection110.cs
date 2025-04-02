@@ -69,9 +69,9 @@ namespace PSE.BusinessLogic
                                                     Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)])
                                                 };
                                                 summaryTo = new SummaryTo() {
-                                                    //ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                    ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
                                                     ValuePrice = posItem.Quote_48,
-                                                    //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
@@ -107,9 +107,9 @@ namespace PSE.BusinessLogic
                                                 Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)])
                                             };
                                             summaryTo = new SummaryTo() {
-                                                //ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                ValueDate = AssignRequiredDate(posItem.CallaDate_38, _culture),
                                                 ValuePrice = posItem.Quote_48,
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -149,6 +149,7 @@ namespace PSE.BusinessLogic
                                         summaryTo = new SummaryTo() {
                                             ValueDate = AssignRequiredString(posItem.QuoteDate_49),
                                             ValuePrice = posItem.Quote_48,
+                                            ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondInvestmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondInvestmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             PercentPrice = 0m,
                                             ProfitLossNotRealizedValue = 0m
                                         };
@@ -184,6 +185,7 @@ namespace PSE.BusinessLogic
                                         summaryTo = new SummaryTo() {                                                
                                             ValuePrice = posItem.Quote_48,
                                             PercentPrice = 0m,
+                                            ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             ProfitLossNotRealizedValue = 0m
                                         };
                                         summaryBeginningYear = new SummaryBeginningYear() {

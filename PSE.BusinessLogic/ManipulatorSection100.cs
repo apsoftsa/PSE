@@ -67,7 +67,7 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -98,7 +98,7 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo() {
                                                 ValuePrice = posItem.Quote_48,
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == metalDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -167,7 +167,7 @@ namespace PSE.BusinessLogic
                                         tmpCurrency = AssignRequiredString(posItem.Currency1_17);
                                         summaryTo = new SummaryTo() {
                                             ValuePrice = posItem.Quote_48,
-                                            //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                            ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == tmpCurrency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             PercentPrice = 0m,
                                             ProfitLossNotRealizedValue = 0m
                                         };

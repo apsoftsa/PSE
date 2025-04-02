@@ -76,7 +76,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                                 ValueDate = AssignRequiredString(posItem.QuoteDate_49),
                                                 PercentPrice = 0m,
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan1.Currency && flt.Rate_6.HasValue)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan1.Currency && flt.Rate_6 != null).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan1.Currency && flt.Rate_6.HasValue)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan1.Currency && flt.Rate_6 != null).Rate_6.Value : 0,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
                                             summaryBeginningYear = new SummaryBeginningYear()
@@ -128,7 +128,7 @@ namespace PSE.BusinessLogic
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
@@ -176,7 +176,7 @@ namespace PSE.BusinessLogic
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
-                                                    //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
@@ -215,7 +215,7 @@ namespace PSE.BusinessLogic
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
-                                                    //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                    ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
@@ -267,7 +267,7 @@ namespace PSE.BusinessLogic
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
-                                                //ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
+                                                ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };

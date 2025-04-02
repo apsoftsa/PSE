@@ -56,7 +56,7 @@ namespace PSE.BusinessLogic
                             //{
                                 currKeyInf = new KeyInformation()
                                 {
-                                    CustomerID = AssignRequiredString(ideItem.CustomerNumber_2),
+                                    CustomerID = AssignRequiredString(ideItem.CustomerId_6),
                                     Customer = AssignRequiredString(ideItem.CustomerNameShort_5),                                    
                                     Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
                                     EsgProfile = "", // ??

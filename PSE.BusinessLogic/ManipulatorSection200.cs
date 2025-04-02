@@ -47,7 +47,7 @@ namespace PSE.BusinessLogic {
                             OnExternalCodifyRequest(extEventArgsPortfolio);
                         if (!extEventArgsPortfolio.Cancel) {
                             endExtractCustomer = new EndExtractCustomer() {
-                                CustomerID = AssignRequiredString(ideItem.CustomerNumber_2),
+                                CustomerID = AssignRequiredString(ideItem.CustomerId_6),
                                 Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
                                 Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
                                 EsgProfile = AssignRequiredString(extEventArgsService.PropertyValue),
