@@ -10,7 +10,7 @@
 
         string Portfolio { get; set; }        
 
-        string RiskProfile { get; set; }
+        int? RiskProfile { get; set; }
 
         string EsgProfile { get; set; }
 

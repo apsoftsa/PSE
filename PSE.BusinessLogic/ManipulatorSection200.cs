@@ -51,7 +51,7 @@ namespace PSE.BusinessLogic {
                                 Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
                                 Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
                                 EsgProfile = AssignRequiredString(extEventArgsService.PropertyValue),
-                                RiskProfile = "" // ??
+                                RiskProfile = 0 // ??
                             };
                             output.Content.SubSection20000 = new SubSection20000("");
                             output.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));

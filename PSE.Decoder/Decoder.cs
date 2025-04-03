@@ -67,7 +67,7 @@ namespace PSE.Decoder
                                 e.PropertyValue = e.PropertyKey[1..] + " - " + e.PropertyValue;
                             }
                         }
-                        else if (e.SectionName == nameof(Section200) && e.PropertyName == nameof(KeyInformation.EsgProfile))
+                        else if ((e.SectionName == nameof(Section010) || e.SectionName == nameof(Section200)) && e.PropertyName == nameof(KeyInformation.EsgProfile))
                         {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey))
                             {
@@ -174,7 +174,6 @@ namespace PSE.Decoder
                                 };
                             }
                         }
-                        //else if (e.SectionName == nameof(Section190) && e.PropertyName == nameof(AccountAndDepositReport.Description))
                         else if (e.SectionName == nameof(Section190) && (e.PropertyName == nameof(ObjectReportsTransferredToAdministration.Description) || e.PropertyName == nameof(ObjectReportsNotTransferredToAdministration.Description)))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "N003" && string.IsNullOrEmpty(flt.Code) == false && flt.Code == e.PropertyKey))
@@ -200,7 +199,7 @@ namespace PSE.Decoder
                         else if (string.IsNullOrEmpty(e.PropertyValue) == false && e.PropertyValue == NOT_FOUND)
                         {
                             e.ErrorOccurred = "Element having the specified property key has not been found into target db!";
-                            e.Cancel = true;
+                            //e.Cancel = true; // ????
                             this.ExternalCodifyErrorOccurred?.Invoke(this, e);
                         }
                     }

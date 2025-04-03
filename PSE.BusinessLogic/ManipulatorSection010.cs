@@ -34,7 +34,7 @@ namespace PSE.BusinessLogic
                 IAssetExtract currAsstExtr;
                 IDividendInterest currDivInt;
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio;
-                //ExternalCodifyRequestEventArgs extEventArgsService;
+                ExternalCodifyRequestEventArgs extEventArgsService;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 List<PER> perItems = extractedData.Where(flt => flt.RecordType == nameof(PER)).OfType<PER>().ToList();
@@ -50,18 +50,17 @@ namespace PSE.BusinessLogic
                         OnExternalCodifyRequest(extEventArgsPortfolio);
                         if (!extEventArgsPortfolio.Cancel)
                         {
-                            //extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
-                            //OnExternalCodifyRequest(extEventArgsService);
-                            //if (!extEventArgsService.Cancel)
-                            //{
+                            extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
+                            OnExternalCodifyRequest(extEventArgsService);
+                            if (!extEventArgsService.Cancel)
+                            {
                                 currKeyInf = new KeyInformation()
                                 {
                                     CustomerID = AssignRequiredString(ideItem.CustomerId_6),
                                     Customer = AssignRequiredString(ideItem.CustomerNameShort_5),                                    
                                     Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
-                                    EsgProfile = "", // ??
-                                    RiskProfile = "" // ??
-                                    //EsgProfile = extEventArgsService.PropertyValue,
+                                    RiskProfile = 0, // ??
+                                    EsgProfile = extEventArgsService.PropertyValue
                                 };
                                 output.Content.SubSection1000 = new SubSection1000Content();
                                 output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
@@ -209,7 +208,7 @@ namespace PSE.BusinessLogic
                                         }
                                     }
                                 }                                
-                            //}
+                            }
                         }
                     }
                 }
