@@ -29,7 +29,6 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(PER)))
             {
-                bool hasValue;
                 IKeyInformation currKeyInf;
                 IAssetExtract currAsstExtr;
                 IDividendInterest currDivInt;
@@ -52,162 +51,116 @@ namespace PSE.BusinessLogic
                         {
                             extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
                             OnExternalCodifyRequest(extEventArgsService);
-                            if (!extEventArgsService.Cancel)
-                            {
-                                currKeyInf = new KeyInformation()
-                                {
+                            if (!extEventArgsService.Cancel) {
+                                currKeyInf = new KeyInformation() {
                                     CustomerID = AssignRequiredString(ideItem.CustomerId_6),
-                                    Customer = AssignRequiredString(ideItem.CustomerNameShort_5),                                    
+                                    Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
                                     Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
                                     RiskProfile = 0, // ??
                                     EsgProfile = extEventArgsService.PropertyValue
                                 };
                                 output.Content.SubSection1000 = new SubSection1000Content();
                                 output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
-                                if (perItem.StartValue_8 != null && perItem.StartDate_6 != null && perItem.EndDate_7 != null)
-                                {
-                                    decimal startValue, cashIn, cashOut, secIn, secOut, portfolioValueRectified;
-                                    cashIn = cashOut = secIn = secOut = 0;
-                                    startValue = perItem.StartValue_8.Value;
-                                    output.Content.SubSection1010 = new SubSection1010Content();
-                                    output.Content.SubSection1010.Name = $"Managment report {((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture)} – {((DateTime)perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture)}";
-                                    hasValue = false;
-                                    cashOut = secOut = 0;
-                                    if (perItem.CashOut_11 != null)
-                                    {
+                                if (perItem.StartValue_8 != null && perItem.StartDate_6 != null && perItem.EndDate_7 != null) {
+                                    string startDate = AssignRequiredDate(perItem.StartDate_6.Value, _culture);
+                                    string endDate = AssignRequiredDate(perItem.EndDate_7.Value, _culture);
+                                    decimal startValue, endValue, cashIn, cashOut, secIn, secOut, portfolioValueRectified;
+                                    cashIn = cashOut = secIn = secOut = startValue = endValue = 0;
+                                    if (perItem.StartValue_8.HasValue)
+                                        startValue = perItem.StartValue_8.Value;
+                                    if (perItem.EndValue_9.HasValue)
+                                        endValue = perItem.EndValue_9.Value;
+                                    if (perItem.CashIn_10.HasValue)
+                                        cashIn = perItem.CashIn_10.Value;
+                                    if (perItem.CashOut_11.HasValue)
                                         cashOut = perItem.CashOut_11.Value;
-                                        hasValue = true;
-                                    }
-                                    if (perItem.SecOut_13 != null)
-                                    {
+                                    if (perItem.SecIn_12.HasValue)
+                                        secIn = perItem.SecIn_12.Value;
+                                    if (perItem.SecOut_13.HasValue)
                                         secOut = perItem.SecOut_13.Value;
-                                        hasValue = true;
-                                    }
-                                    currAsstExtr = new AssetExtract()
-                                    {
-                                        Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                    output.Content.SubSection1010 = new SubSection1010Content();
+                                    output.Content.SubSection1010.Name = $"Managment report {startDate} – {endDate}";
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Portfolio Value " + startDate,
                                         MarketValueReportingCurrency = startValue,
                                         AssetType = "Contributions",
-                                        MarketValueReportingCurrencyContr = cashOut + secOut
+                                        MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashIn + secIn)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                    if (hasValue)
-                                    {
-                                        currAsstExtr = new AssetExtract()
-                                        {
-                                            Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                            MarketValueReportingCurrency = startValue,
-                                            AssetType = "Withdrawals"                                            
-                                        };
-                                        output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                        if (perItem.CashIn_10 != null)
-                                            cashIn = perItem.CashIn_10.Value;
-                                        if (perItem.SecIn_12 != null)
-                                            secIn = perItem.SecIn_12.Value;
-                                        portfolioValueRectified = startValue + (cashIn + secIn + cashOut + secOut);
-                                        currAsstExtr = new AssetExtract()
-                                        {
-                                            Entry = "Portfolio Value Rectified",
-                                            MarketValueReportingCurrency = portfolioValueRectified
-                                        };
-                                        output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                        if (perItem.EndValue_9 != null && perItem.EndDate_7 != null)
-                                        {
-                                            currAsstExtr = new AssetExtract()
-                                            {
-                                                Entry = "Portfolio Value " + ((DateTime)perItem.EndDate_7).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                                MarketValueReportingCurrency = perItem.EndValue_9.Value
-                                            };
-                                            output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                            currAsstExtr = new AssetExtract()
-                                            {
-                                                Entry = "Plus/less value",
-                                                MarketValueReportingCurrency = perItem.EndValue_9.Value - portfolioValueRectified
-                                            };
-                                            output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                        }
-                                    }
-                                }
-                                if (perItem.Interest_15 != null)
-                                {
-                                    decimal interest, realEquity, realCurr, nonRealEquity, nonRealCurrency;
-                                    realEquity = realCurr = nonRealEquity = nonRealCurrency = 0;
-                                    interest = perItem.Interest_15.Value;
-                                    currDivInt = new DividendInterest()
-                                    {
-                                        Entry = "Dividend and Interest",
-                                        MarketValueReportingCurrencyT = interest,
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
+                                        MarketValueReportingCurrency = startValue,
+                                        AssetType = "Withdrawals",
+                                        MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashOut + secOut)
                                     };
-                                    output.Content.SubSection1011 = new SubSection1011Content();
-                                    output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                    hasValue = false;
-                                    if (perItem.PlRealEquity_16 != null)
-                                    {
-                                        realEquity = perItem.PlRealEquity_16.Value;
-                                        hasValue = true;
-                                    }
-                                    if (perItem.PlRealCurrency_17 != null)
-                                    {
-                                        realCurr = perItem.PlRealCurrency_17.Value;
-                                        hasValue = true;
-                                    }
-                                    if (hasValue)
-                                    {
-                                        currDivInt = new DividendInterest()
-                                        {
-                                            Entry = "Realized gains/losses",
-                                            MarketValueReportingCurrencyT = realEquity + realCurr,
-                                            AssetType = "of which ongoing",
-                                            MarketValueReportingCurrency = realEquity
-                                        };
-                                        output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                        currDivInt = new DividendInterest()
-                                        {
-                                            Entry = "Realized gains/losses",
-                                            MarketValueReportingCurrencyT = realEquity + realCurr,
-                                            AssetType = "of which on currency",
-                                            MarketValueReportingCurrency = realCurr
-                                        };
-                                        output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                        hasValue = false;
-                                        if (perItem.PlNonRealEquity_18 != null)
-                                        {
-                                            nonRealEquity = perItem.PlNonRealEquity_18.Value;
-                                            hasValue = true;
-                                        }
-                                        if (perItem.PlNonRealCurrency_19 != null)
-                                        {
-                                            nonRealCurrency = perItem.PlNonRealCurrency_19.Value;
-                                            hasValue = true;
-                                        }
-                                        if (hasValue)
-                                        {
-                                            currDivInt = new DividendInterest()
-                                            {
-                                                Entry = "Not realized gains/losses",
-                                                MarketValueReportingCurrencyT = nonRealEquity + nonRealCurrency,
-                                                AssetType = "of which ongoing",
-                                                MarketValueReportingCurrency = nonRealEquity
-                                            };
-                                            output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                            currDivInt = new DividendInterest()
-                                            {
-                                                Entry = "Not realized gains/losses",
-                                                MarketValueReportingCurrencyT = nonRealEquity + nonRealCurrency,
-                                                AssetType = "of which on currency",
-                                                MarketValueReportingCurrency = nonRealCurrency
-                                            };
-                                            output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                            currDivInt = new DividendInterest()
-                                            {
-                                                Entry = "Plus/less value",
-                                                MarketValueReportingCurrencyT = interest + realEquity + realCurr +
-                                                                                nonRealEquity + nonRealCurrency
-                                            };
-                                            output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
-                                        }
-                                    }
-                                }                                
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    portfolioValueRectified = startValue + cashIn + secIn + cashOut + secOut;
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Portfolio Value Rectified",
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(portfolioValueRectified)
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Portfolio Value " + endDate,
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(endValue)
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Plus/less value",
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(endValue - portfolioValueRectified)
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Percent Weighted Performance"
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                }
+                                decimal interest, realEquity, realCurr, nonRealEquity, nonRealCurrency;
+                                interest = perItem.Interest_15.HasValue ? perItem.Interest_15.Value : 0;
+                                realEquity = perItem.PlRealEquity_16.HasValue ? perItem.PlRealEquity_16.Value : 0;
+                                realCurr = perItem.PlRealCurrency_17.HasValue ? perItem.PlRealCurrency_17.Value : 0;
+                                nonRealEquity = perItem.PlNonRealEquity_18.HasValue ? perItem.PlNonRealEquity_18.Value : 0;
+                                nonRealCurrency = perItem.PlNonRealCurrency_19.HasValue ? perItem.PlNonRealCurrency_19.Value : 0;
+                                output.Content.SubSection1011 = new SubSection1011Content();
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Dividend and Interest",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(interest),
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Realized gains/losses",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(realEquity + realCurr),
+                                    AssetType = "of which ongoing",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(realEquity)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Realized gains/losses",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(realEquity + realCurr),
+                                    AssetType = "of which on currency",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(realCurr)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Not realized gains/losses",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(nonRealEquity + nonRealCurrency),
+                                    AssetType = "of which ongoing",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(nonRealEquity)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Not realized gains/losses",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(nonRealEquity + nonRealCurrency),
+                                    AssetType = "of which on currency",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(nonRealCurrency)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "Plus/less value",
+                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(interest + realEquity + realCurr +
+                                                                    nonRealEquity + nonRealCurrency)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                             }
                         }
                     }
