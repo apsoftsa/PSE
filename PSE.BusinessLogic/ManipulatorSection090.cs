@@ -69,18 +69,18 @@ namespace PSE.BusinessLogic
                                                     PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
                                                 };
                                                 summaryTo = new SummaryTo() {
-                                                    ValuePrice = posItem.Quote_48,
+                                                    ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                                     ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == equityFundDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
                                                 summaryBeginningYear = new SummaryBeginningYear() {
-                                                    ValuePrice = posItem.BuyPriceAverage_87,
-                                                    ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                    ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                    ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                                 };
                                                 summaryPurchase = new SummaryPurchase() {
-                                                    ValuePrice = posItem.BuyPriceHistoric_53,
-                                                    ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                    ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                    ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
                                                 CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                                 equityFundDetail.SummaryTo.Add(summaryTo);
@@ -99,18 +99,18 @@ namespace PSE.BusinessLogic
                                                     PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
                                                 };
                                                 summaryTo = new SummaryTo() {
-                                                    ValuePrice = posItem.Quote_48,
+                                                    ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                                     ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shareDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
                                                 };
                                                 summaryBeginningYear = new SummaryBeginningYear() {
-                                                    ValuePrice = posItem.BuyPriceAverage_87,
-                                                    ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                                    ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                    ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                                 };
                                                 summaryPurchase = new SummaryPurchase() {
-                                                    ValuePrice = posItem.BuyPriceHistoric_53,
-                                                    ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                                    ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                    ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
                                                 CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                                 shareDetail.SummaryTo.Add(summaryTo);
@@ -138,18 +138,18 @@ namespace PSE.BusinessLogic
                                             PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
                                         };
                                         summaryTo = new SummaryTo() {
-                                            ValuePrice = posItem.Quote_48,
+                                            ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
                                             ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == derivateDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == derivateDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             PercentPrice = 0m,
                                             ProfitLossNotRealizedValue = 0m
                                         };
                                         summaryBeginningYear = new SummaryBeginningYear() {
-                                            ValuePrice = posItem.BuyPriceAverage_87,
-                                            ExchangeValue = posItem.BuyExchangeRateAverage_88
+                                            ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                            ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                         };
                                         summaryPurchase = new SummaryPurchase() {
-                                            ValuePrice = posItem.BuyPriceHistoric_53,
-                                            ExchangeValue = posItem.BuyExchangeRateHistoric_66
+                                            ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                            ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                         };
                                         CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
                                         derivateDetail.SummaryTo.Add(summaryTo);
