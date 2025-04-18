@@ -69,7 +69,7 @@ namespace PSE.BusinessLogic
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,                                                
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
-                                                PercentYTD = 0,    // ??
+                                                PercentYTD = AssignRequiredDecimal(posItem.DirectRoi_64)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -90,7 +90,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondLessThan1.TotalMarketValueReportingCurrency = bondLessThan1.CapitalMarketValueReportingCurrency + bondLessThan1.InterestMarketValueReportingCurrency;
-                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondLessThan1.SummaryTo.Add(summaryTo);
                                             bondLessThan1.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan1.SummaryPurchase.Add(summaryPurchase);
@@ -123,7 +123,7 @@ namespace PSE.BusinessLogic
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
-                                                PercentYTD = 0,    // ??
+                                                PercentYTD = AssignRequiredDecimal(posItem.DirectRoi_64)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -143,7 +143,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondLessThan5.TotalMarketValueReportingCurrency = bondLessThan5.CapitalMarketValueReportingCurrency + bondLessThan5.InterestMarketValueReportingCurrency;
-                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondLessThan5.SummaryTo.Add(summaryTo);
                                             bondLessThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan5.SummaryPurchase.Add(summaryPurchase);
@@ -188,7 +188,7 @@ namespace PSE.BusinessLogic
                                                     ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
-                                                CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                                CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                                 bondFunds.SummaryTo.Add(summaryTo);
                                                 bondFunds.SummaryBeginningYear.Add(summaryBeginningYear);
                                                 bondFunds.SummaryPurchase.Add(summaryPurchase);
@@ -211,7 +211,7 @@ namespace PSE.BusinessLogic
                                                     Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                     SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                     PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
-                                                    PercentYTD = 0,    // ??
+                                                    PercentYTD = AssignRequiredDecimal(posItem.DirectRoi_64)
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
@@ -228,7 +228,7 @@ namespace PSE.BusinessLogic
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
                                                 bondMajorThan5.TotalMarketValueReportingCurrency = bondMajorThan5.CapitalMarketValueReportingCurrency + bondMajorThan5.InterestMarketValueReportingCurrency;
-                                                CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                                CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                                 bondMajorThan5.SummaryTo.Add(summaryTo);
                                                 bondMajorThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                                 bondMajorThan5.SummaryPurchase.Add(summaryPurchase);
@@ -262,7 +262,7 @@ namespace PSE.BusinessLogic
                                                 Duration = decimal.TryParse(posItem.Duration_68, out decimal duration) ? duration : 0m,
                                                 SpRating = (string.IsNullOrEmpty(posItem.AgeRat_97) == false && posItem.AgeRat_97.Trim() == "SP") ? posItem.Rating_98 : string.Empty,
                                                 PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
-                                                PercentYTD = 0,    // ??
+                                                PercentYTD = AssignRequiredDecimal(posItem.DirectRoi_64)
                                             };
                                             summaryTo = new SummaryTo()
                                             {
@@ -282,7 +282,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondConvAndWarrants.TotalMarketValueReportingCurrency = bondConvAndWarrants.CapitalMarketValueReportingCurrency + bondConvAndWarrants.InterestMarketValueReportingCurrency;
-                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateBondsSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondConvAndWarrants.SummaryTo.Add(summaryTo);
                                             bondConvAndWarrants.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondConvAndWarrants.SummaryPurchase.Add(summaryPurchase);

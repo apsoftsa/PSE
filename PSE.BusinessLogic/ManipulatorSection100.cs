@@ -79,7 +79,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             metalDetail.SummaryTo.Add(summaryTo);
                                             metalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             metalDetail.SummaryPurchase.Add(summaryPurchase);
@@ -110,7 +110,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                            CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             metalDetail.SummaryTo.Add(summaryTo);
                                             metalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             metalDetail.SummaryPurchase.Add(summaryPurchase);
@@ -121,7 +121,7 @@ namespace PSE.BusinessLogic
                                             currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
                                             metAcc = new MetalAccount() {
-                                                Account = AssignRequiredString(posItem.HostPositionReference_6),
+                                                Account = BuildComposedDescription([AssignRequiredString(posItem.Currency1_17), AssignRequiredString(posItem.HostPositionReference_6)]), 
                                                 CurrentBalance = AssignRequiredDecimal(posItem.Quantity_28),
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 PercentWeight = customerSumAmounts != 0 && currentBaseValue != 0 ? Math.Round(currentBaseValue / customerSumAmounts * 100m, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
@@ -182,7 +182,7 @@ namespace PSE.BusinessLogic
                                             ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                             ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                         };
-                                        CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.Quantity_28);
+                                        CalculateSharesSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                         derivateMetalDetail.SummaryTo.Add(summaryTo);
                                         derivateMetalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                         derivateMetalDetail.SummaryPurchase.Add(summaryPurchase);

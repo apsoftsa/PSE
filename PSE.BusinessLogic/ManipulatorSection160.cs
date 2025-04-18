@@ -59,7 +59,7 @@ namespace PSE.BusinessLogic
                         };
                         totalSum += Math.Abs(econSector.MarketValueReportingCurrency.Value);
                         sectionContent.SubSection16000.Content.Add(econSector);                        
-                    }
+                    }                    
                     totalPerc = currPerc = 0;
                     foreach(var sector in sectionContent.SubSection16000.Content)
                     {
@@ -80,7 +80,12 @@ namespace PSE.BusinessLogic
                     {
                         currPerc = currPerc + (100.0m - totalPerc);
                         sectionContent.SubSection16000.Content.Last().PercentShares = currPerc;
-                    }                    
+                    }
+                    sectionContent.SubSection16000.Content.Add(new ShareEconomicSector() {
+                        MarketValueReportingCurrency = totalSum,
+                        Sector = "TOTAL SHARES",
+                        PercentShares = 100.0m
+                    });
                     foreach (var sector in sectionContent.SubSection16000.Content)
                     {
                         sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares });

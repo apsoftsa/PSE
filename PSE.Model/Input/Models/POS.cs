@@ -372,9 +372,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(7)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(64)]
-        public string DirectRoi_64 { get; set; }
+        public decimal? DirectRoi_64 { get; set; }
 
         [FieldFixedLength(7)]
         [FieldOptional]
@@ -648,7 +648,7 @@ namespace PSE.Model.Input.Models
             Amount2Euro_61 = string.Empty;
             Amount2HoustCur_62 = string.Empty;
             MaturityRoi_63 = null;
-            DirectRoi_64 = string.Empty;
+            DirectRoi_64 = null;
             CallRoi_65 = string.Empty;
             BuyExchangeRateHistoric_66 = null;
             Strike_67 = string.Empty;
