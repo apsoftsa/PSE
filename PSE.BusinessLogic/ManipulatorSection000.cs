@@ -31,6 +31,8 @@ namespace PSE.BusinessLogic
             {
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 IDE ideItem = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().First();
+                if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                    propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section000), nameof(KeyInformation.Portfolio), ideItem.ModelCode_21, propertyParams);
                 OnExternalCodifyRequest(extEventArgsPortfolio);
                 if (!extEventArgsPortfolio.Cancel) {

@@ -39,6 +39,8 @@ namespace PSE.BusinessLogic
                 {
                     if (ordItems != null && ordItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
+                        if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                            propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                         sectionContent = new Section130Content();
                         foreach (ORD ordItem in ordItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                         {

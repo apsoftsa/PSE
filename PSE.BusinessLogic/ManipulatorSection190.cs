@@ -38,6 +38,8 @@ namespace PSE.BusinessLogic
                 IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
                 foreach (IDE ideItem in ideItems)
                 {
+                    if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                        propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     sectionContent = new Section190Content();                    
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())

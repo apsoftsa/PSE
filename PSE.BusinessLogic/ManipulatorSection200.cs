@@ -38,13 +38,13 @@ namespace PSE.BusinessLogic {
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<POS> posItems = extractedData.Where(flt => flt.RecordType == nameof(POS)).OfType<POS>();
                 foreach (IDE ideItem in ideItems) {
+                    if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
+                        propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.EsgProfile), ideItem.Mandate_11, propertyParams);
                     OnExternalCodifyRequest(extEventArgsService);
                     if (!extEventArgsService.Cancel) {
-                        if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
-                            propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
-                            extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.Portfolio), ideItem.ModelCode_21, propertyParams);
-                            OnExternalCodifyRequest(extEventArgsPortfolio);
+                        extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.Portfolio), ideItem.ModelCode_21, propertyParams);
+                        OnExternalCodifyRequest(extEventArgsPortfolio);
                         if (!extEventArgsPortfolio.Cancel) {
                             endExtractCustomer = new EndExtractCustomer() {
                                 CustomerID = AssignRequiredString(ideItem.CustomerId_6),
