@@ -123,41 +123,43 @@ namespace PSE.BusinessLogic
                                 nonRealCurrency = perItem.PlNonRealCurrency_19.HasValue ? perItem.PlNonRealCurrency_19.Value : 0;
                                 output.Content.SubSection1011 = new SubSection1011Content();
                                 currDivInt = new DividendInterest() {
-                                    Entry = "Dividend and Interest",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(interest),
+                                    Entry = "Dividend and interest",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(interest),
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                 currDivInt = new DividendInterest() {
                                     Entry = "Realized gains/losses",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(realEquity + realCurr),
-                                    AssetType = "of which ongoing",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(realEquity + realCurr)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "of which ongoing",
                                     MarketValueReportingCurrency = AssignRequiredDecimal(realEquity)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                 currDivInt = new DividendInterest() {
-                                    Entry = "Realized gains/losses",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(realEquity + realCurr),
-                                    AssetType = "of which on currency",
+                                    Entry = "of which on currency",
                                     MarketValueReportingCurrency = AssignRequiredDecimal(realCurr)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                 currDivInt = new DividendInterest() {
                                     Entry = "Not realized gains/losses",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(nonRealEquity + nonRealCurrency),
-                                    AssetType = "of which ongoing",
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(nonRealEquity + nonRealCurrency)
+                                };
+                                output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                currDivInt = new DividendInterest() {
+                                    Entry = "of which ongoing",
                                     MarketValueReportingCurrency = AssignRequiredDecimal(nonRealEquity)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                 currDivInt = new DividendInterest() {
-                                    Entry = "Not realized gains/losses",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(nonRealEquity + nonRealCurrency),
-                                    AssetType = "of which on currency",
+                                    Entry = "of which on currency",
                                     MarketValueReportingCurrency = AssignRequiredDecimal(nonRealCurrency)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
                                 currDivInt = new DividendInterest() {
                                     Entry = "Plus/less value",
-                                    MarketValueReportingCurrencyT = AssignRequiredDecimal(interest + realEquity + realCurr +
+                                    MarketValueReportingCurrency = AssignRequiredDecimal(interest + realEquity + realCurr +
                                                                     nonRealEquity + nonRealCurrency)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
