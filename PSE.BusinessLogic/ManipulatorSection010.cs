@@ -111,7 +111,8 @@ namespace PSE.BusinessLogic
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     currAsstExtr = new AssetExtract() {
-                                        Entry = "Percent Weighted Performance"
+                                        Entry = "Percent Weighted Performance",
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(perItem.TWR_14)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                 }
