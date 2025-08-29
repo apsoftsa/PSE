@@ -119,7 +119,9 @@ namespace PSE.BusinessLogic
                             PercentInvestmentT = null
                         };
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
-                        TotalAssets = AssignRequiredDecimals(sumAccrued, totalSum);                        
+                        // ????
+                        //TotalAssets = AssignRequiredDecimals(sumAccrued, totalSum);                        
+                        TotalAssets = totalSum;
                     }
                     // Take only 'informative positions' if exists
                     groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 == ((int)PositionClassifications.INFORMATION_POSITIONS).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);

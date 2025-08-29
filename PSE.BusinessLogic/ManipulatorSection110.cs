@@ -137,10 +137,10 @@ namespace PSE.BusinessLogic
                                             Currency = AssignRequiredString(posItem.Currency1_17),
                                             CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                             NominalAmount = AssignRequiredDecimal(posItem.Quantity_28),
-                                            Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description1_32), AssignRequiredString(posItem.Description2_33)]),
+                                            Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description2_33), AssignRequiredString(posItem.Description1_32)]),
                                             Description2 = BuildComposedDescription([AssignRequiredDate(posItem.IssueDate_46, _culture), AssignRequiredDate(posItem.MaturityDate_36, _culture)]),
                                             Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
-                                            Coupon = AssignRequiredString(posItem.CouponText_35),
+                                            Coupon = GetCoupon(AssignRequiredString(posItem.CouponFrequency_34), AssignRequiredString(posItem.CouponText_35)),
                                             PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                             InterestMarketValueReportingCurrency = AssignRequiredDecimal(posItem.ProRataBase_56),
                                             PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23)
