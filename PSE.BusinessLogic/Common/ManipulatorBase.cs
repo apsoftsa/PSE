@@ -66,11 +66,11 @@ namespace PSE.BusinessLogic.Common
                 decimal quote = string.IsNullOrEmpty(quoteType) == false && quoteType == "%" ? 100.0m : 1.0m;
                 decimal exchangeRate = curItems != null && curItems.Any(f => f.Currency_5 == currency && f.Rate_6.HasValue) ? curItems.First(f => f.Currency_5 == currency && f.Rate_6.HasValue).Rate_6.Value : 0;
                 if (summaryBeginningYear.ValuePrice.HasValue && summaryBeginningYear.ValuePrice != 0m)
-                    summaryBeginningYear.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryBeginningYear.ValuePrice.Value) / summaryBeginningYear.ValuePrice.Value, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+                    summaryBeginningYear.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryBeginningYear.ValuePrice.Value) / summaryBeginningYear.ValuePrice.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
                 else
                     summaryBeginningYear.PercentPrice = 0m;
                 if (summaryPurchase.ValuePrice.HasValue && summaryPurchase.ValuePrice != 0m)
-                    summaryPurchase.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryPurchase.ValuePrice.Value) / summaryPurchase.ValuePrice.Value, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+                    summaryPurchase.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryPurchase.ValuePrice.Value) / summaryPurchase.ValuePrice.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
                 else
                     summaryPurchase.PercentPrice = 0m;
                 if (quantity.HasValue && summaryBeginningYear.ValuePrice.HasValue && quantity.Value != 0m && summaryBeginningYear.ExchangeValue.HasValue) {
