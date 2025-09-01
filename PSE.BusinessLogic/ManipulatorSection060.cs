@@ -44,7 +44,7 @@ namespace PSE.BusinessLogic
                         {                                                        
                             investment = new InvestmentCurrency()
                             {
-                                Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
+                                Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataCur1_55.HasValue).Sum(sum => sum.ProRataCur1_55).Value, 2),
                                 Currency = currency.Key,
                                 PercentAsset = 0,
                                 MarketValueReportingCurrency = Math.Round(currency.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),

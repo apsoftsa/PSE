@@ -87,7 +87,7 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.Quote_48),
                                                 ValueDate = AssignRequiredString(posItem.QuoteDate_49),
                                                 ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
@@ -95,12 +95,12 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryBeginningYear = new SummaryBeginningYear()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.BuyPriceAverage_87),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                             };
                                             summaryPurchase = new SummaryPurchase()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             shortTermFund.TotalMarketValueReportingCurrency = shortTermFund.CapitalMarketValueReportingCurrency + shortTermFund.InterestMarketValueReportingCurrency;
@@ -208,19 +208,19 @@ namespace PSE.BusinessLogic
                                             };
                                             summaryTo = new SummaryTo()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.Quote_48),
                                                 ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
                                             };
                                             summaryBeginningYear = new SummaryBeginningYear()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceAverage_87),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.BuyPriceAverage_87),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateAverage_88)
                                             };
                                             summaryPurchase = new SummaryPurchase()
                                             {
-                                                ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
+                                                ValuePrice = AssignRequiredCurrencyDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);

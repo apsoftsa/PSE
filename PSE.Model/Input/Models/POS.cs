@@ -318,9 +318,9 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(55)]
-        public string ProRataCur1_55 { get; set; }
+        public decimal? ProRataCur1_55 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
@@ -639,7 +639,7 @@ namespace PSE.Model.Input.Models
             MaturityPrice_52 = string.Empty;
             BuyPriceHistoric_53 = null;
             PriceWarning_54 = false;
-            ProRataCur1_55 = string.Empty;
+            ProRataCur1_55 = null;
             ProRataBase_56 = null;
             ProRataEuro_57 = string.Empty;
             ProRataCountry_58 = string.Empty;

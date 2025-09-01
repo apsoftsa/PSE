@@ -74,9 +74,9 @@ namespace PSE.BusinessLogic.Common
                 else
                     summaryPurchase.PercentPrice = 0m;
                 if (quantity.HasValue && summaryBeginningYear.ValuePrice.HasValue && quantity.Value != 0m && summaryBeginningYear.ExchangeValue.HasValue) {
-                    summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value), DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+                    summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
                     if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
-                        summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value), DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+                        summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
                 }
             }
         }       
@@ -115,6 +115,10 @@ namespace PSE.BusinessLogic.Common
             if (value1.HasValue) total += value1.Value;
             if (value2.HasValue) total += value2.Value;
             return total;
+        }
+
+        protected decimal AssignRequiredCurrencyDecimal(decimal? value) { 
+            return value.HasValue ? Math.Round(value.Value, DEFAULT_CURRENCY_DECIMAL_DIGITS) : decimal.Zero; 
         }
 
         protected long AssignRequiredLong(long? value) { return value.HasValue ? value.Value : 0; }
