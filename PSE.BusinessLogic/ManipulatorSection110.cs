@@ -83,7 +83,7 @@ namespace PSE.BusinessLogic
                                                     ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
-                                                CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                                CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                                 investmentDetail.SummaryTo.Add(summaryTo);
                                                 investmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                                 investmentDetail.SummaryPurchase.Add(summaryPurchase);
@@ -121,7 +121,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             investmentDetail.SummaryTo.Add(summaryTo);
                                             investmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             investmentDetail.SummaryPurchase.Add(summaryPurchase);
@@ -161,7 +161,7 @@ namespace PSE.BusinessLogic
                                             ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                             ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                         };
-                                        CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                        CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                         bondInvestmentDetail.SummaryTo.Add(summaryTo);
                                         bondInvestmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                         bondInvestmentDetail.SummaryPurchase.Add(summaryPurchase);
@@ -196,7 +196,7 @@ namespace PSE.BusinessLogic
                                             ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                             ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                         };
-                                        CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                        CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                         investmentDetail.SummaryTo.Add(summaryTo);
                                         investmentDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                         investmentDetail.SummaryPurchase.Add(summaryPurchase);

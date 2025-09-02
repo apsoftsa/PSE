@@ -59,7 +59,7 @@ namespace PSE.BusinessLogic.Common
         public abstract IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null);
         public virtual string GetObjectNameDestination(IInputRecord inputRecord) { return string.Empty; }
 
-        protected void CalculateSummaries(ISummaryTo summaryTo, ISummaryBeginningYear summaryBeginningYear, ISummaryPurchase summaryPurchase, string quoteType, IEnumerable<CUR>? curItems, string currency, decimal? quantity)
+        protected void CalculateSummaries(string currencyOfReference, ISummaryTo summaryTo, ISummaryBeginningYear summaryBeginningYear, ISummaryPurchase summaryPurchase, string quoteType, IEnumerable<CUR>? curItems, string currency, decimal? quantity)
         {
             if (summaryTo.ValuePrice.HasValue)
             {
@@ -74,9 +74,15 @@ namespace PSE.BusinessLogic.Common
                 else
                     summaryPurchase.PercentPrice = 0m;
                 if (quantity.HasValue && summaryBeginningYear.ValuePrice.HasValue && quantity.Value != 0m && summaryBeginningYear.ExchangeValue.HasValue) {
-                    summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
-                    if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
-                        summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
+                    if (currencyOfReference.Equals(CURRENCY_BASE, StringComparison.InvariantCultureIgnoreCase)) {
+                        summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
+                        if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
+                            summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
+                    } else {
+                        summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote / exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote / summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
+                        if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
+                            summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote / exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote / summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
+                    }
                 }
             }
         }       

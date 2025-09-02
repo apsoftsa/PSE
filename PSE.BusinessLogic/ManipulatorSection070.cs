@@ -104,7 +104,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             shortTermFund.TotalMarketValueReportingCurrency = shortTermFund.CapitalMarketValueReportingCurrency + shortTermFund.InterestMarketValueReportingCurrency;
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             shortTermFund.SummaryTo.Add(summaryTo);
                                             shortTermFund.SummaryBeginningYear.Add(summaryBeginningYear);
                                             shortTermFund.SummaryPurchase.Add(summaryPurchase);
@@ -223,7 +223,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             liquidityCurrencyDerivativeProduct.SummaryTo.Add(summaryTo);
                                             liquidityCurrencyDerivativeProduct.SummaryBeginningYear.Add(summaryBeginningYear);
                                             liquidityCurrencyDerivativeProduct.SummaryPurchase.Add(summaryPurchase);

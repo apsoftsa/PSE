@@ -119,8 +119,6 @@ namespace PSE.BusinessLogic
                             PercentInvestmentT = null
                         };
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
-                        // ????
-                        //TotalAssets = AssignRequiredDecimals(sumAccrued, totalSum);                        
                         TotalAssets = totalSum;
                     }
                     // Take only 'informative positions' if exists

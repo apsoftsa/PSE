@@ -79,7 +79,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             metalDetail.SummaryTo.Add(summaryTo);
                                             metalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             metalDetail.SummaryPurchase.Add(summaryPurchase);
@@ -110,7 +110,7 @@ namespace PSE.BusinessLogic
                                                 ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             metalDetail.SummaryTo.Add(summaryTo);
                                             metalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                             metalDetail.SummaryPurchase.Add(summaryPurchase);
@@ -182,7 +182,7 @@ namespace PSE.BusinessLogic
                                             ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                             ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                         };
-                                        CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                        CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                         derivateMetalDetail.SummaryTo.Add(summaryTo);
                                         derivateMetalDetail.SummaryBeginningYear.Add(summaryBeginningYear);
                                         derivateMetalDetail.SummaryPurchase.Add(summaryPurchase);

@@ -90,7 +90,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondLessThan1.TotalMarketValueReportingCurrency = bondLessThan1.CapitalMarketValueReportingCurrency + bondLessThan1.InterestMarketValueReportingCurrency;
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondLessThan1.SummaryTo.Add(summaryTo);
                                             bondLessThan1.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan1.SummaryPurchase.Add(summaryPurchase);
@@ -143,7 +143,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondLessThan5.TotalMarketValueReportingCurrency = bondLessThan5.CapitalMarketValueReportingCurrency + bondLessThan5.InterestMarketValueReportingCurrency;
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondLessThan5.SummaryTo.Add(summaryTo);
                                             bondLessThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondLessThan5.SummaryPurchase.Add(summaryPurchase);
@@ -188,7 +188,7 @@ namespace PSE.BusinessLogic
                                                     ValuePrice = AssignRequiredDecimal(posItem.BuyPriceHistoric_53),
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
-                                                CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                                CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                                 bondFunds.SummaryTo.Add(summaryTo);
                                                 bondFunds.SummaryBeginningYear.Add(summaryBeginningYear);
                                                 bondFunds.SummaryPurchase.Add(summaryPurchase);
@@ -228,7 +228,7 @@ namespace PSE.BusinessLogic
                                                     ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                                 };
                                                 bondMajorThan5.TotalMarketValueReportingCurrency = bondMajorThan5.CapitalMarketValueReportingCurrency + bondMajorThan5.InterestMarketValueReportingCurrency;
-                                                CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                                CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                                 bondMajorThan5.SummaryTo.Add(summaryTo);
                                                 bondMajorThan5.SummaryBeginningYear.Add(summaryBeginningYear);
                                                 bondMajorThan5.SummaryPurchase.Add(summaryPurchase);
@@ -282,7 +282,7 @@ namespace PSE.BusinessLogic
                                                 ExchangeValue = AssignRequiredDecimal(posItem.BuyExchangeRateHistoric_66)
                                             };
                                             bondConvAndWarrants.TotalMarketValueReportingCurrency = bondConvAndWarrants.CapitalMarketValueReportingCurrency + bondConvAndWarrants.InterestMarketValueReportingCurrency;
-                                            CalculateSummaries(summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
+                                            CalculateSummaries(ideItem.Currency_19, summaryTo, summaryBeginningYear, summaryPurchase, posItem.QuoteType_51, curItems, posItem.Currency1_17, posItem.Quantity_28);
                                             bondConvAndWarrants.SummaryTo.Add(summaryTo);
                                             bondConvAndWarrants.SummaryBeginningYear.Add(summaryBeginningYear);
                                             bondConvAndWarrants.SummaryPurchase.Add(summaryPurchase);

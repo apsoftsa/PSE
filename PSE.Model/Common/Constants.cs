@@ -13,6 +13,7 @@
         public const string MULTIPLE_BY = "*";
         public const int DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION = 6;
         public const int DEFAULT_CURRENCY_DECIMAL_DIGITS = 2;
+        public const string CURRENCY_BASE = "CHF";
 
         public const string ITALIAN_LANGUAGE_CODE = "I";
         public const string FRENCH_LANGUAGE_CODE = "F";
