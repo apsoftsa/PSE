@@ -53,7 +53,7 @@ namespace PSE.BusinessLogic
                                     {
                                         IShareDetail shareDetail;
                                         IEquityFundDetail equityFundDetail; 
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderBy(ob => ob.NumSecurity_29))
                                         {
                                             if (string.IsNullOrEmpty(posItem.Category_11) == false && posItem.Category_11.Trim().EndsWith("FA")) { // equity funds
                                                 if (sectionContent.SubSection9020 == null)
@@ -124,7 +124,7 @@ namespace PSE.BusinessLogic
                                     }
                                 case PositionClassifications.DERIVATIVE_PRODUCTS_ON_SECURITIES: {
                                     IDerivateDetail derivateDetail;
-                                    foreach (POS posItem in subCategoryItems) {
+                                    foreach (POS posItem in subCategoryItems.OrderBy(ob => ob.NumSecurity_29)) {
                                         if (sectionContent.SubSection9030 == null)
                                             sectionContent.SubSection9030 = new DerivateSubSection("Derivative products on securities");
                                         derivateDetail = new DerivateDetail() {
@@ -134,7 +134,7 @@ namespace PSE.BusinessLogic
                                             Amount = AssignRequiredDecimal(posItem.Quantity_28),
                                             Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
                                             Description2 = AssignRequiredString(posItem.Description1_32),
-                                            Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                            Description3 = AssignRequiredDate(posItem.CallDate_38, _culture),
                                             PercentWeight = CalculatePercentWeight(totalAssets, posItem.Amount1Base_23),
                                         };
                                         summaryTo = new SummaryTo() {

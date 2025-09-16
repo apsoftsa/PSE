@@ -129,7 +129,15 @@ namespace PSE.BusinessLogic.Common
 
         protected long AssignRequiredLong(long? value) { return value.HasValue ? value.Value : 0; }
 
-        protected string AssignRequiredDate(DateTime? value, CultureInfo culture) { return value.HasValue ? value.Value.ToString(DEFAULT_DATE_FORMAT, culture) : ""; }
+        protected string AssignRequiredDate(DateTime? value, CultureInfo culture) { return value.HasValue ? value.Value.ToString(DEFAULT_DATE_FORMAT, culture) : string.Empty; }
+
+        protected string AssignRequiredDate(string value, CultureInfo culture) {
+            if (!(string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value))) {
+                if (DateTime.TryParseExact(value, COMPACT_DATE_FORMAT, CultureInfo.InvariantCulture, DateTimeStyles.None, out var parsedExact)) 
+                    return parsedExact.ToString(DEFAULT_DATE_FORMAT, culture);
+            }
+            return string.Empty;
+        }
 
         protected decimal CalculatePercentWeight(decimal? totalAssests, decimal? marketValue) {
             decimal percentWeight = 0;

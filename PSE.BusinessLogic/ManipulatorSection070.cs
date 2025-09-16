@@ -48,7 +48,7 @@ namespace PSE.BusinessLogic
                                         decimal customerSumAmounts = subCategoryItems.Where(subFlt => subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
                                         customerSumAmounts += subCategoryItems.Where(subFlt => subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
                                         sectionContent.SubSection7000 = new SubSection7000Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
                                             currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
@@ -72,7 +72,7 @@ namespace PSE.BusinessLogic
                                         ISummaryBeginningYear summaryBeginningYear;
                                         ISummaryPurchase summaryPurchase;
                                         sectionContent.SubSection7010 = new SubSection7010Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
                                             shortTermFund = new LiquidityShortTermFund()
                                             {
@@ -88,7 +88,7 @@ namespace PSE.BusinessLogic
                                             summaryTo = new SummaryTo()
                                             {
                                                 ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
-                                                ValueDate = AssignRequiredString(posItem.QuoteDate_49),
+                                                ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                                 ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == shortTermFund.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                 PercentPrice = 0m,
                                                 ProfitLossNotRealizedValue = 0m
@@ -117,7 +117,7 @@ namespace PSE.BusinessLogic
                                     {
                                         ILiquidityFiduciaryInvestmentTemporaryDeposit liquidityFiduciaryInvestmentTemporaryDeposit;
                                         sectionContent.SubSection7020 = new SubSection7020Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
                                             liquidityFiduciaryInvestmentTemporaryDeposit = new LiquidityFiduciaryInvestmentTemporaryDeposit()
                                             {
@@ -140,7 +140,7 @@ namespace PSE.BusinessLogic
                                     {
                                         ILiquidityFiduciaryInvestmentTemporaryDeposit liquidityFiduciaryInvestmentTemporaryDeposit;
                                         sectionContent.SubSection7030 = new SubSection7030Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
                                             liquidityFiduciaryInvestmentTemporaryDeposit = new LiquidityFiduciaryInvestmentTemporaryDeposit()
                                             {
@@ -164,7 +164,7 @@ namespace PSE.BusinessLogic
                                         decimal amount1, amount2;
                                         ILiquidityForwardExchangeOperation liquidityForwardExchangeOperation;
                                         sectionContent.SubSection7040 = new SubSection7040Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
                                             if (!decimal.TryParse(posItem.Amount1Request_90, out amount1)) amount1 = 0m;
                                             if (!decimal.TryParse(posItem.Amount2Request_91, out amount2)) amount2 = 0m;
@@ -193,14 +193,14 @@ namespace PSE.BusinessLogic
                                         ISummaryPurchase summaryPurchase;
                                         string currency;
                                         sectionContent.SubSection7050 = new SubSection7050Content();
-                                        foreach (POS posItem in subCategoryItems)
+                                        foreach (POS posItem in subCategoryItems.OrderBy(ob => ob.NumSecurity_29))
                                         {
                                             currency = AssignRequiredString(posItem.Currency1_17);
                                             liquidityCurrencyDerivativeProduct = new LiquidityCurrencyDerivativeProduct()
                                             {
                                                 Description1 = AssignRequiredLong(posItem.NumSecurity_29).ToString(),
                                                 Description2 = AssignRequiredString(posItem.Description1_32),
-                                                Description3 = AssignRequiredDate(posItem.CallaDate_38, _culture),
+                                                Description3 = AssignRequiredDate(posItem.CallDate_38, _culture),
                                                 Amount = AssignRequiredDecimal(posItem.Quantity_28),                                                
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 Strike = AssignRequiredString(posItem.Strike_67),                                                

@@ -217,7 +217,7 @@ namespace PSE.Model.Input.Models
         [FieldOptional]
         [FieldConverter(ConverterKind.Date, "yyyyMMdd")]
         [FieldOrder(38)]
-        public DateTime? CallaDate_38 { get; set; }
+        public DateTime? CallDate_38 { get; set; }
 
         [FieldFixedLength(1)]
         [FieldOptional]
@@ -622,7 +622,7 @@ namespace PSE.Model.Input.Models
             CouponText_35 = string.Empty;
             MaturityDate_36 = null;
             Callable_37 = false;
-            CallaDate_38 = null;
+            CallDate_38 = null;
             OnCall_39 = false;
             AmortizationDate_40 = null;
             ConversionDateStart_41 = null;
@@ -722,7 +722,7 @@ namespace PSE.Model.Input.Models
             CouponText_35 = source.CouponText_35;
             MaturityDate_36 = source.MaturityDate_36;
             Callable_37 = source.Callable_37;
-            CallaDate_38 = source.CallaDate_38;
+            CallDate_38 = source.CallDate_38;
             OnCall_39 = source.OnCall_39;
             AmortizationDate_40 = source.AmortizationDate_40;
             ConversionDateStart_41 = source.ConversionDateStart_41;

@@ -79,19 +79,29 @@ namespace PSE.BusinessLogic
                                     if (perItem.SecOut_13.HasValue)
                                         secOut = perItem.SecOut_13.Value;
                                     output.Content.SubSection1010 = new SubSection1010Content();
-                                    output.Content.SubSection1010.Name = $"Managment report {startDate} – {endDate}";
+                                    output.Content.SubSection1010.Name = $"Management report {startDate} – {endDate}";
                                     currAsstExtr = new AssetExtract() {
                                         Entry = "Portfolio Value " + startDate,
                                         MarketValueReportingCurrency = startValue,
-                                        AssetType = "Contributions",
-                                        MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashIn + secIn)
+                                        //AssetType = "Contributions",
+                                        //MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashIn + secIn)
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Contributions",
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(cashIn + secIn)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     currAsstExtr = new AssetExtract() {
                                         Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
                                         MarketValueReportingCurrency = startValue,
-                                        AssetType = "Withdrawals",
-                                        MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashOut + secOut)
+                                        //AssetType = "Withdrawals",
+                                        //MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashOut + secOut)
+                                    };
+                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    currAsstExtr = new AssetExtract() {
+                                        Entry = "Withdrawals",
+                                        MarketValueReportingCurrency = AssignRequiredDecimal(cashOut + secOut)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     portfolioValueRectified = startValue + cashIn + secIn + cashOut + secOut;

@@ -100,8 +100,26 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        }                        
-                        else if (e.SectionName == nameof(Section170) && e.PropertyName == nameof(ShareByCountry.Country))
+                        } else if ((e.SectionName == nameof(Section080) || e.SectionName == nameof(Section110)) && (e.PropertyName == nameof(BondDetail.Coupon) || e.PropertyName == nameof(BondInvestmentDetail.Coupon))) {
+                            if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey)) {
+                                string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = languageToCheck switch {
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextE,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextT,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextF,
+                                    _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextI,
+                                };
+                                if (!string.IsNullOrEmpty(e.PropertyValue)) {
+                                    e.PropertyValue = e.PropertyValue.Trim();
+                                    if (e.PropertyValue.Length > 3)
+                                        e.PropertyValue = e.PropertyValue[..3];
+                                } else
+                                    e.PropertyValue = "";
+                            }
+                        } else if (e.SectionName == nameof(Section170) && e.PropertyName == nameof(ShareByCountry.Country))
                         {
                             if (e.PropertyKey.Length > 0 && context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L006" && flt.Col6 == e.PropertyKey))
                             {
