@@ -83,20 +83,11 @@ namespace PSE.BusinessLogic
                                     currAsstExtr = new AssetExtract() {
                                         Entry = "Portfolio Value " + startDate,
                                         MarketValueReportingCurrency = startValue,
-                                        //AssetType = "Contributions",
-                                        //MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashIn + secIn)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     currAsstExtr = new AssetExtract() {
                                         Entry = "Contributions",
                                         MarketValueReportingCurrency = AssignRequiredDecimal(cashIn + secIn)
-                                    };
-                                    output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
-                                    currAsstExtr = new AssetExtract() {
-                                        Entry = "Portfolio Value " + ((DateTime)perItem.StartDate_6).ToString(DEFAULT_DATE_FORMAT, _culture),
-                                        MarketValueReportingCurrency = startValue,
-                                        //AssetType = "Withdrawals",
-                                        //MarketValueReportingCurrencyContr = AssignRequiredDecimal(cashOut + secOut)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
                                     currAsstExtr = new AssetExtract() {
