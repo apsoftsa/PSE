@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -17,7 +18,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection160, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section160 output = new()
@@ -31,6 +32,7 @@ namespace PSE.BusinessLogic
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
                 IShareEconomicSector econSector;                
                 ISection160Content sectionContent;
+                string cultureCode;
                 string sectorDescr;
                 decimal totalSum, totalPerc, currPerc;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), Model.Common.Constants.ITALIAN_LANGUAGE_CODE } };
@@ -40,6 +42,7 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     sectionContent = new Section160Content();
                     sectionContent.SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector"); 
                     totalSum = 0;
@@ -83,7 +86,7 @@ namespace PSE.BusinessLogic
                     }
                     sectionContent.SubSection16000.Content.Add(new ShareEconomicSector() {
                         MarketValueReportingCurrency = totalSum,
-                        Sector = "TOTAL SHARES",
+                        Sector = dictionaryService.GetTranslation("total_shares_upper", cultureCode),
                         PercentShares = 100.0m
                     });
                     foreach (var sector in sectionContent.SubSection16000.Content)

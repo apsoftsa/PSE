@@ -1,9 +1,10 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
@@ -56,7 +57,7 @@ namespace PSE.BusinessLogic.Common
                 _culture = culture;
         }        
 
-        public abstract IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null);
+        public abstract IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null);
         public virtual string GetObjectNameDestination(IInputRecord inputRecord) { return string.Empty; }
 
         protected void CalculateSummaries(string currencyOfReference, ISummaryTo summaryTo, ISummaryBeginningYear summaryBeginningYear, ISummaryPurchase summaryPurchase, string quoteType, IEnumerable<CUR>? curItems, string currency, decimal? quantity)

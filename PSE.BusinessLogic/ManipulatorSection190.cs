@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
@@ -18,7 +19,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection190(CultureInfo? culture = null) : base(ManipolationTypes.AsSection190, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {            
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section190 output = new()
@@ -29,6 +30,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
+                string cultureCode;
                 ISection190Content sectionContent;
                 IReportsTransferredToAdministration acctAndDepReportTrans;
                 IReportsNotTransferredToAdministration acctAndDepReportNotTrans;
@@ -40,6 +42,7 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     sectionContent = new Section190Content();                    
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())

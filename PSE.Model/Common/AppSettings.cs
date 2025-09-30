@@ -7,10 +7,13 @@
         public string DecoderStringConnection { get; set; }
         public bool DecoderEnabled { get; set; }
 
+        public string DictionariesPath { get; set; }    
+
         public AppSettings()
         {
             DecoderStringConnection = string.Empty;
             DecoderEnabled = false;
+            DictionariesPath = string.Empty;    
         }
 
     }

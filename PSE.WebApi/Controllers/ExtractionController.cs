@@ -1,16 +1,14 @@
 ﻿#define ALLOW_ANONYMOUS_NO
 
-using Microsoft.AspNetCore.Mvc;
-#if ALLOW_ANONYMOUS
-using Microsoft.AspNetCore.Authorization;
-#endif
-using Newtonsoft.Json;
-using PSE.Model.Common;
-using PSE.WebApi.ApplicationLogic;
-using PSE.Model.Exchange;
 using System.Diagnostics;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json;
+using PSE.Dictionary;
+using PSE.Model.Common;
+using PSE.Model.Exchange;
+using PSE.WebApi.ApplicationLogic;
 
 namespace PSE.WebApi.Controllers
 {
@@ -23,9 +21,12 @@ namespace PSE.WebApi.Controllers
     public class ExtractionController : Controller
     {
 
-        public ExtractionController(AppSettings appSettings) 
+        private readonly IPSEDictionaryService _dictionaryService;
+
+        public ExtractionController(AppSettings appSettings, IPSEDictionaryService dictionaryService) 
         { 
             ExtractionManager.Initialize(appSettings);
+            _dictionaryService = dictionaryService; 
         }
 
         [AllowAnonymous]
@@ -44,7 +45,7 @@ namespace PSE.WebApi.Controllers
             {
                 string outputJson = string.Empty;
                 var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                OutputContent outCont = ExtractionManager.ExtractFiles(fileContentList);
+                OutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
                 if (outCont != null && outCont.JsonGenerated != string.Empty)
                     return Ok(JsonConvert.SerializeObject(outCont));
                 else

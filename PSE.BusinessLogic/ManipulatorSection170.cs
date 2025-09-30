@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic {
@@ -15,7 +16,7 @@ namespace PSE.BusinessLogic {
 
         public ManipulatorSection170(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection170, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null) {
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null) {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section170 output = new() {
                 SectionId = sectionDest.SectionId,
@@ -26,6 +27,7 @@ namespace PSE.BusinessLogic {
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
                 IShareByCountry countryItem;
                 ISection170Content sectionContent;
+                string cultureCode;
                 string tmpValue;
                 decimal totalSum;
                 List<IShareByCountry> continentCountries;
@@ -39,6 +41,7 @@ namespace PSE.BusinessLogic {
                     totalSum = 0;
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     sectionContent = new Section170Content();
                     sectionContent.SubSection17000 = new SubSection17000("Shares by nation");
                     sectionContent.SubSection17010 = new SubSection17010("Shares by nations chart");

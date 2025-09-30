@@ -1,6 +1,4 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Common;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
@@ -8,6 +6,9 @@ using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
@@ -17,7 +18,7 @@ namespace PSE.BusinessLogic {
 
         public ManipulatorSection200(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection200, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null) {
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null) {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section200 output = new() {
                 SectionId = sectionDest.SectionId,
@@ -31,6 +32,7 @@ namespace PSE.BusinessLogic {
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio;
                 ExternalCodifyRequestEventArgs extEventArgsService;
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
+                string cultureCode;
                 string categoryDescr;
                 string prevCategory;
                 string currCategory;
@@ -40,6 +42,7 @@ namespace PSE.BusinessLogic {
                 foreach (IDE ideItem in ideItems) {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.EsgProfile), ideItem.Mandate_11, propertyParams);
                     OnExternalCodifyRequest(extEventArgsService);
                     if (!extEventArgsService.Cancel) {
@@ -86,19 +89,19 @@ namespace PSE.BusinessLogic {
                                 }
                                 decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
                                 endExtractInvestment = new EndExtractInvestment() {
-                                    AssetClass = "TOTAL INVESTMENTS",
+                                    AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value, 2),
                                     PercentInvestment = 100.0m
                                 };
                                 output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
-                                    AssetClass = "ACCRUED INTEREST",
+                                    AssetClass = dictionaryService.GetTranslation("accrued_interest_upper", cultureCode),
                                     MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                                     PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m
                                 };
                                 output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
-                                    AssetClass = "TOTAL ASSETS",
+                                    AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
                                     PercentInvestment = null
                                 };

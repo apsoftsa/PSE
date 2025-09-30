@@ -1,12 +1,13 @@
 ﻿using System.Xml.Serialization;
-using PSE.Model.Events;
-using PSE.Model.Input.Models;
-using PSE.Model.Input.Interfaces;
-using PSE.Model.Output;
-using PSE.Model.Output.Models;
-using PSE.Model.Output.Interfaces;
 using PSE.BusinessLogic;
 using PSE.BusinessLogic.Calculations;
+using PSE.Dictionary;
+using PSE.Model.Events;
+using PSE.Model.Input.Interfaces;
+using PSE.Model.Input.Models;
+using PSE.Model.Output;
+using PSE.Model.Output.Interfaces;
+using PSE.Model.Output.Models;
 using static PSE.BusinessLogic.Common.ManipulatorOperatingRules;
 using static PSE.Model.Common.Enumerations;
 
@@ -303,28 +304,28 @@ namespace PSE.Builder
             }
         }
 
-        private IOutputModel? ManipulateInputData(IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
+        private IOutputModel? ManipulateInputData(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
             IOutputModel? output = manipolationType switch
             {
-                ManipolationTypes.AsHeader => _manHeader.Manipulate(extractedData),
-                ManipolationTypes.AsSection000 => _manSect000.Manipulate(extractedData),
-                ManipolationTypes.AsSection010 => _manSect010.Manipulate(extractedData),
-                ManipolationTypes.AsSection020 => _manSect020.Manipulate(extractedData),
-                ManipolationTypes.AsSection040 => _manSect040.Manipulate(extractedData),
-                ManipolationTypes.AsSection060 => _manSect060.Manipulate(extractedData),
-                ManipolationTypes.AsSection070 => _manSect070.Manipulate(extractedData, _manSect040.TotalAssets),
-                ManipolationTypes.AsSection080 => _manSect080.Manipulate(extractedData, _manSect040.TotalAssets),
-                ManipolationTypes.AsSection090 => _manSect090.Manipulate(extractedData, _manSect040.TotalAssets),
-                ManipolationTypes.AsSection100 => _manSect100.Manipulate(extractedData, _manSect040.TotalAssets),
-                ManipolationTypes.AsSection110 => _manSect110.Manipulate(extractedData, _manSect040.TotalAssets),
-                ManipolationTypes.AsSection130 => _manSect130.Manipulate(extractedData),
-                ManipolationTypes.AsSection150 => _manSect150.Manipulate(extractedData),
-                ManipolationTypes.AsSection160 => _manSect160.Manipulate(extractedData),
-                ManipolationTypes.AsSection170 => _manSect170.Manipulate(extractedData),                
-                ManipolationTypes.AsSection190 => _manSect190.Manipulate(extractedData),
-                ManipolationTypes.AsSection200 => _manSect200.Manipulate(extractedData),
-                ManipolationTypes.AsFooter => _manFooter.Manipulate(extractedData),
+                ManipolationTypes.AsHeader => _manHeader.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection000 => _manSect000.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection010 => _manSect010.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection020 => _manSect020.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection040 => _manSect040.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection060 => _manSect060.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection070 => _manSect070.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection080 => _manSect080.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection090 => _manSect090.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection100 => _manSect100.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection110 => _manSect110.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
+                ManipolationTypes.AsSection130 => _manSect130.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection150 => _manSect150.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection160 => _manSect160.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection170 => _manSect170.Manipulate(dictionaryService, extractedData),                
+                ManipolationTypes.AsSection190 => _manSect190.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection200 => _manSect200.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsFooter => _manFooter.Manipulate(dictionaryService, extractedData),
                 _ => null,
             };
             return output;
@@ -350,7 +351,7 @@ namespace PSE.Builder
             return serializedData ?? string.Empty;
         }
 
-        public IBuiltData Build(IList<IInputRecord> extractedData, BuildFormats formatToBuild)
+        public IBuiltData Build(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, BuildFormats formatToBuild)
         {
             IBuiltData buildData = new BuiltData();
             IList<IOutputModel> sections = new List<IOutputModel>();
@@ -362,7 +363,7 @@ namespace PSE.Builder
                     CheckInputData(buildData, extractedData, manipolationType, isMandatory, formatToBuild);
                     if (buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
                     {
-                        IOutputModel? output = ManipulateInputData(extractedData, manipolationType);
+                        IOutputModel? output = ManipulateInputData(dictionaryService, extractedData, manipolationType);
                         if (output != null)
                             sections.Add(output);
                         else

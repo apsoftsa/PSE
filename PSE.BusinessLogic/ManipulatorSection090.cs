@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Calculations;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
+using PSE.BusinessLogic.Calculations;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -22,7 +23,7 @@ namespace PSE.BusinessLogic
             _calcShares = new SharesCalculation(calcSettings);
         }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section090 output = new()

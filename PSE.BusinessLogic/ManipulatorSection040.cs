@@ -1,12 +1,13 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -17,7 +18,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection040(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection040, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section040 output = new()
@@ -28,6 +29,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
+                string cultureCode;
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
                 IInvestmentAsset investmentAsset;                
                 ISection040Content sectionContent;
@@ -38,6 +40,7 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18); 
                     sectionContent = new Section040Content();
                     // Exclude 'informative positions'
                     IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != ((int)PositionClassifications.INFORMATION_POSITIONS).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
@@ -93,7 +96,7 @@ namespace PSE.BusinessLogic
                         }
                         decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
                         investmentAsset = new InvestmentAsset() {
-                            AssetClass = "TOTAL INVESTMENTS",
+                            AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
                             MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
                             PercentInvestmentT = 100.0m,
                             MarketValueReportingCurrency = null,
@@ -102,8 +105,8 @@ namespace PSE.BusinessLogic
                         };                            
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
                         investmentAsset = new InvestmentAsset() {
-                            AssetClass = "TOTAL INVESTMENTS",
-                            TypeInvestment = "Accrued Interest",
+                            AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
+                            TypeInvestment = dictionaryService.GetTranslation("accrued_interest_upper", cultureCode),
                             MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                             PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m,
                             MarketValueReportingCurrencyT = null,
@@ -111,7 +114,7 @@ namespace PSE.BusinessLogic
                         };
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
                         investmentAsset = new InvestmentAsset() {
-                            AssetClass = "TOTAL ASSETS",
+                            AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
                             MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
                             TypeInvestment = null,                                
                             PercentInvestment = null,

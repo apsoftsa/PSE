@@ -1,14 +1,15 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
-using PSE.Model.Common;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Constants;
+using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
 {
@@ -16,9 +17,9 @@ namespace PSE.BusinessLogic
     public class ManipulatorSection010 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection010(CultureInfo? culture = null) : base(Enumerations.ManipolationTypes.AsSection010, culture) { }
+        public ManipulatorSection010(CultureInfo? culture = null) : base(ManipolationTypes.AsSection010, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section010 output = new()
@@ -29,6 +30,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(PER)))
             {
+                string cultureCode;
                 IKeyInformation currKeyInf;
                 IAssetExtract currAsstExtr;
                 IDividendInterest currDivInt;
@@ -41,6 +43,7 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     if (perItems.Any(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2))
                     {
                         // it is necessary to take only the PER item having the property Type_5 value smallest (!!!!)

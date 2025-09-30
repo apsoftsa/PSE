@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using PSE.Dictionary;
 using PSE.WebApi.ApplicationSettings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,11 @@ builder.Services.AddAuthorization(options =>
 {
     // By default, all incoming requests will be authorized according to the default policy.
     options.FallbackPolicy = options.DefaultPolicy;
+});
+
+builder.Services.AddSingleton<IPSEDictionaryService>(sp => {
+    var logger = sp.GetRequiredService<ILogger<PSEDictionaryService>>();
+    return new PSEDictionaryService(appSettings.DictionariesPath, logger);
 });
 
 var app = builder.Build();

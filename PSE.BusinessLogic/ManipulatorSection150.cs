@@ -1,11 +1,12 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -16,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection150(CultureInfo? culture = null) : base(new List<PositionClassifications>() { PositionClassifications.MORTGAGE_LOANS, PositionClassifications.POSSIBLE_COMMITMENTS }, ManipolationTypes.AsSection150, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section150 output = new()

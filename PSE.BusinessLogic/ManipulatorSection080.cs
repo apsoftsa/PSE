@@ -1,13 +1,14 @@
-﻿using PSE.BusinessLogic.Calculations;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
+﻿using System.Globalization;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
-using System.Globalization;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
+using PSE.BusinessLogic.Calculations;
 using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
@@ -24,7 +25,7 @@ namespace PSE.BusinessLogic
             _calcBonds = new BondsCalculation(calcSettings);
         }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section080 output = new()
@@ -35,6 +36,7 @@ namespace PSE.BusinessLogic
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
+                string cultureCode;
                 ISection080Content sectionContent;
                 ExternalCodifyRequestEventArgs extEventArgsOperation;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
@@ -44,6 +46,7 @@ namespace PSE.BusinessLogic
                 {
                     if (ManipulatorOperatingRules.CheckInputLanguage(ideItem.Language_18))
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     sectionContent = new Section080Content();
                     IEnumerable<IGrouping<string, POS>> posItemsGroupBySubCat = extractedData.Where(flt => flt.AlreadyUsed == false && flt.RecordType == nameof(POS)).OfType<POS>().Where(fltSubCat => fltSubCat.CustomerNumber_2 == ideItem.CustomerNumber_2 && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, fltSubCat.SubCat4_15)).GroupBy(gb => gb.SubCat4_15).OrderBy(ob => ob.Key);
                     if (posItemsGroupBySubCat != null && posItemsGroupBySubCat.Any())

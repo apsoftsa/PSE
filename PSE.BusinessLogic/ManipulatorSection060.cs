@@ -1,11 +1,12 @@
 ﻿using System.Globalization;
-using PSE.BusinessLogic.Common;
-using PSE.BusinessLogic.Interfaces;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Interfaces;
 using PSE.Model.Output.Models;
 using PSE.Model.SupportTables;
+using PSE.Dictionary;
+using PSE.BusinessLogic.Common;
+using PSE.BusinessLogic.Interfaces;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -16,7 +17,7 @@ namespace PSE.BusinessLogic
 
         public ManipulatorSection060(CultureInfo? culture = null) : base(PositionClassifications.UNKNOWN, ManipolationTypes.AsSection060, culture) { }
 
-        public override IOutputModel Manipulate(IList<IInputRecord> extractedData, decimal? totalAssets = null)
+        public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             Section060 output = new()
@@ -26,7 +27,8 @@ namespace PSE.BusinessLogic
                 SectionName = sectionDest.SectionContent
             };
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
-            {                
+            {
+                string cultureCode;
                 ISection060Content sectionContent;
                 IInvestmentCurrency investment;
                 IEnumerable<CUR> curItems;
@@ -35,6 +37,7 @@ namespace PSE.BusinessLogic
                 foreach (IDE ideItem in ideItems)
                 {
                     sectionContent = new Section060Content();
+                    cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     curItems = extractedData.Where(flt => flt.RecordType == nameof(CUR)).OfType<CUR>().Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2);
                     IEnumerable<IGrouping<string, POS>> groupByCurrency = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.Currency1_17).OrderBy(ob => ob.Key);
                     if (groupByCurrency != null && groupByCurrency.Any())
@@ -64,7 +67,7 @@ namespace PSE.BusinessLogic
                             investment = new InvestmentCurrency()
                             {
                                 Amount = null,
-                                Currency = "Total",
+                                Currency = dictionaryService.GetTranslation("total", cultureCode), 
                                 MarketValueReportingCurrency = Math.Round(totalAmount, 2),
                                 PercentAsset = 100m,
                                 Exchange = null

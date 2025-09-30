@@ -1,9 +1,10 @@
 ﻿using System.Text;
+using PSE.Dictionary;
+using PSE.Model.Common;
 using PSE.Model.Events;
+using PSE.Model.Exchange;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
-using PSE.Model.Exchange;
-using PSE.Model.Common;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.WebApi.ApplicationLogic
@@ -61,7 +62,7 @@ namespace PSE.WebApi.ApplicationLogic
             };
         }
 
-        public static OutputContent ExtractFiles(IList<InputContent> files)
+        public static OutputContent ExtractFiles(IPSEDictionaryService dictionaryService, IList<InputContent> files)
         {
             string tmpNodeKey;
             IExtractedData extrData;
@@ -105,7 +106,7 @@ namespace PSE.WebApi.ApplicationLogic
             }
             if (allExtractedItems.Any())
             {
-                IBuiltData builtData = _builder.Build(allExtractedItems, BuildFormats.Json);                
+                IBuiltData builtData = _builder.Build(dictionaryService, allExtractedItems, BuildFormats.Json);                
                 if (builtData.BuildingLog.BuildingStart != null)
                     _outCont?.Logs?.Add(new OutputLog("building", "Date /time built start: " + ((DateTime)builtData.BuildingLog.BuildingStart).ToString("dd/MM/yyyy") + " " + ((DateTime)builtData.BuildingLog.BuildingStart).ToString("HH:mm:ss")));
                 if (builtData.BuildingLog.BuildingEnd != null)
