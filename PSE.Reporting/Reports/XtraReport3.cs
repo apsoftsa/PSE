@@ -5,8 +5,8 @@ using System.ComponentModel;
 using System.Drawing;
 
 namespace PSE.Reporting.Reports {
-    public partial class XtraReportTestBis : DevExpress.XtraReports.UI.XtraReport {
-        public XtraReportTestBis() {
+    public partial class XtraReport3 : DevExpress.XtraReports.UI.XtraReport {
+        public XtraReport3() {
             InitializeComponent();
         }
     }
