@@ -5,8 +5,11 @@ namespace PSE.Reporting.Reports {
 
     public partial class ReportPSE : DevExpress.XtraReports.UI.XtraReport {
 
+        private bool _haseSection80CaptionVisible;
+
         public ReportPSE() {
-            InitializeComponent();            
+            InitializeComponent();
+            _haseSection80CaptionVisible = false;
         }
 
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
@@ -15,6 +18,14 @@ namespace PSE.Reporting.Reports {
             if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%",""), out double value))
                 toHidden = value == 0;
             label.Visible = !toHidden;
+        }
+
+        private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_haseSection80CaptionVisible == false && label.Visible)
+                _haseSection80CaptionVisible = true;
+            else
+                label.Visible = false;
         }
 
         private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
