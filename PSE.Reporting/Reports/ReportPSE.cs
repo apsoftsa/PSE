@@ -5,11 +5,15 @@ namespace PSE.Reporting.Reports {
 
     public partial class ReportPSE : DevExpress.XtraReports.UI.XtraReport {
 
-        private bool _haseSection80CaptionVisible;
+        private string _currentAssetClassSection4000;
+        private bool _hasSection80CaptionVisible;
+        private bool _needResetRow;
 
         public ReportPSE() {
-            InitializeComponent();
-            _haseSection80CaptionVisible = false;
+            InitializeComponent();            
+            _currentAssetClassSection4000 = string.Empty;
+            _hasSection80CaptionVisible = false;
+            _needResetRow = false;
         }
 
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
@@ -19,11 +23,40 @@ namespace PSE.Reporting.Reports {
                 toHidden = value == 0;
             label.Visible = !toHidden;
         }
+      
+        private void assetClassSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel currLabel = (XRLabel)sender;
+            if (string.IsNullOrEmpty(_currentAssetClassSection4000) || currLabel.Text != _currentAssetClassSection4000) {               
+                _currentAssetClassSection4000 = currLabel.Text;
+                _needResetRow = false;
+            } else if (currLabel.Text == _currentAssetClassSection4000) {
+                currLabel.Text = null;
+                _needResetRow = true;
+            }
+        }
+
+        private void marketValueReportingCurrencyTSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            if(_needResetRow) {
+                XRLabel currLabel = (XRLabel)sender;
+                currLabel.Text = "";
+            }            
+        }
+
+        private void percentInvestmentTSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_needResetRow) {
+                XRLabel currLabel = (XRLabel)sender;
+                currLabel.Text = "";
+            }
+        }
+        private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {
+            this.DetailReport4000.HeightF = 0;
+            this.PerformLayout();
+        }
 
         private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
-            if (_haseSection80CaptionVisible == false && label.Visible)
-                _haseSection80CaptionVisible = true;
+            if (_hasSection80CaptionVisible == false && label.Visible)
+                _hasSection80CaptionVisible = true;
             else
                 label.Visible = false;
         }
@@ -47,8 +80,8 @@ namespace PSE.Reporting.Reports {
                 this.valoreMercatoSection6000.StyleName = "gridContentStyleRightAlignBold";
                 this.section6000LineGrid.Visible = false;
             }
-        }
-      
+        }      
+       
     }
 
 }

@@ -24,6 +24,10 @@
       <Folder Include="Images\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
+    </ItemGroup>
+
     <ProjectExtensions><VisualStudio><UserProperties TemplateFeatures="NETCORE" /></VisualStudio></ProjectExtensions>
 
 </Project>
