@@ -7,12 +7,14 @@ namespace PSE.Reporting.Reports {
 
         private string _currentAssetClassSection4000;
         private bool _hasSection80CaptionVisible;
+        private bool _section80NeedPageBreakAtTheEnd;
         private bool _needResetRow;
 
         public ReportPSE() {
             InitializeComponent();            
             _currentAssetClassSection4000 = string.Empty;
             _hasSection80CaptionVisible = false;
+            _section80NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
         }
 
@@ -68,9 +70,10 @@ namespace PSE.Reporting.Reports {
 
         private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
-            if (_hasSection80CaptionVisible == false && label.Visible)
+            if (_hasSection80CaptionVisible == false && label.Visible) {
                 _hasSection80CaptionVisible = true;
-            else
+                _section80NeedPageBreakAtTheEnd = true;
+            } else
                 label.Visible = false;
         }       
 
@@ -80,8 +83,24 @@ namespace PSE.Reporting.Reports {
                 this.valoreMercatoSection6000.StyleName = "gridContentStyleRightAlignBold";
                 this.section6000LineGrid.Visible = false;
             }
-        }      
-       
+        }
+
+        private void GroupHeaderBandSection16000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd) {
+                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                _section80NeedPageBreakAtTheEnd = false;
+            }
+        }
+
+        private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
+            var value = ((XRLabel)sender).Value;
+            if ((double)value == 100) {
+                this.sector16000.StyleName = "gridContentStyleBold";
+                this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
+                this.section16000LineGrid.Visible = false;
+            }
+        }
+
     }
 
 }
