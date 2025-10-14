@@ -23,7 +23,20 @@ namespace PSE.Reporting.Reports {
                 toHidden = value == 0;
             label.Visible = !toHidden;
         }
-      
+
+        private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
+            string customerLanguage = ((XRLabel)sender).Text;
+            if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
+                customerLanguage = "E";
+            customerLanguage = customerLanguage.Trim().ToUpper() switch {
+                "E" => "en-CH",
+                "F" => "fr-CH",
+                "G" => "de-CH",
+                _ => "it-CH",
+            };
+            this.ApplyLocalization(customerLanguage);
+        }
+
         private void assetClassSection4000_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel currLabel = (XRLabel)sender;
             if (string.IsNullOrEmpty(_currentAssetClassSection4000) || currLabel.Text != _currentAssetClassSection4000) {               
@@ -59,20 +72,7 @@ namespace PSE.Reporting.Reports {
                 _hasSection80CaptionVisible = true;
             else
                 label.Visible = false;
-        }
-
-        private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
-            string customerLanguage = ((XRLabel)sender).Text;
-            if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
-                customerLanguage = "E";
-            customerLanguage = customerLanguage.Trim().ToUpper() switch {
-                "E" => "en-CH",
-                "F" => "fr-CH",
-                "G" => "de-CH",
-                _ => "it-CH",
-            };
-            this.ApplyLocalization(customerLanguage);
-        }
+        }       
 
         private void divisaSection6000_BeforePrint(object sender, CancelEventArgs e) {
             if (((XRLabel)sender).Text.Length > 3) { // it is not a currency code...
