@@ -26,6 +26,13 @@ namespace PSE.Reporting.Reports {
             label.Visible = !toHidden;
         }
 
+        private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd) {
+                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                _section80NeedPageBreakAtTheEnd = false;
+            }
+        }
+
         private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
             string customerLanguage = ((XRLabel)sender).Text;
             if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
@@ -83,14 +90,7 @@ namespace PSE.Reporting.Reports {
                 this.valoreMercatoSection6000.StyleName = "gridContentStyleRightAlignBold";
                 this.section6000LineGrid.Visible = false;
             }
-        }
-
-        private void GroupHeaderBandSection16000_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd) {
-                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                _section80NeedPageBreakAtTheEnd = false;
-            }
-        }
+        }       
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
             var value = ((XRLabel)sender).Value;
@@ -99,14 +99,7 @@ namespace PSE.Reporting.Reports {
                 this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
                 this.section16000LineGrid.Visible = false;
             }
-        }
-
-        private void GroupHeaderBandSection17000_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd) {
-                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                _section80NeedPageBreakAtTheEnd = false;
-            }
-        }
+        }       
 
     }
 
