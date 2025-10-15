@@ -549,6 +549,9 @@
             DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel3 = new DevExpress.XtraCharts.PieSeriesLabel();
             DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel4 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView4 = new DevExpress.XtraCharts.PieSeriesView();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.jsonDataSourcePSE = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
@@ -1003,19 +1006,18 @@
             this.labelEntrateUsciteSection2000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelPerformanceSection2000 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeaderBandSection2010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLine28 = new DevExpress.XtraReports.UI.XRLine();
             this.chartSection2010 = new DevExpress.XtraReports.UI.XRChart();
             this.xrLine25 = new DevExpress.XtraReports.UI.XRLine();
             this.labelSubHeaderSection2010 = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection160 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailReport16000 = new DevExpress.XtraReports.UI.DetailBand();
-            this.GroupHeaderBandSection16000 = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.section16000LineGrid = new DevExpress.XtraReports.UI.XRLine();
-            this.sector16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.marketValue16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
             this.percentShares16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupHeaderBandSection16010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.chartSection16010 = new DevExpress.XtraReports.UI.XRChart();
+            this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
+            this.marketValue16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.sector16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.section16000LineGrid = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupHeaderBandSection16000 = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.labelAzioniSection16000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelValoreMercatoSection16000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelSettoreSection16000 = new DevExpress.XtraReports.UI.XRLabel();
@@ -1023,8 +1025,29 @@
             this.labelSubHeaderSection16000 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine27 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine26 = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupHeaderBandSection16010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.chartSection16010 = new DevExpress.XtraReports.UI.XRChart();
             this.verticalSeparatorLine = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.xrLine28 = new DevExpress.XtraReports.UI.XRLine();
+            this.DetailReportSection170 = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.DetailSection17000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.GroupHeaderBandSection17000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLine29 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelSubHeaderSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelHeaderSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelNazioneSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelAzioniSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine30 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DetailReportSubSection170 = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.DetailSubSection17000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel16 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel17 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel19 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection17010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.chartSection17010 = new DevExpress.XtraReports.UI.XRChart();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
@@ -1042,6 +1065,10 @@
             ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSection17010)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -6078,6 +6105,18 @@
             this.GroupHeaderBandSection2010.Name = "GroupHeaderBandSection2010";
             this.GroupHeaderBandSection2010.PrintAcrossBands = true;
             // 
+            // xrLine28
+            // 
+            this.xrLine28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.xrLine28.BorderColor = System.Drawing.Color.Empty;
+            this.xrLine28.Dpi = 254F;
+            this.xrLine28.ForeColor = System.Drawing.Color.Empty;
+            this.xrLine28.Name = "xrLine28";
+            this.xrLine28.StyleName = "verticalSeparatorLine";
+            this.xrLine28.StylePriority.UseBackColor = false;
+            this.xrLine28.StylePriority.UseBorderColor = false;
+            this.xrLine28.StylePriority.UseForeColor = false;
+            // 
             // chartSection2010
             // 
             this.chartSection2010.AppearanceNameSerializable = "Light";
@@ -6158,6 +6197,52 @@
             this.DetailReport16000.HierarchyPrintOptions.Indent = 50.8F;
             this.DetailReport16000.Name = "DetailReport16000";
             // 
+            // percentShares16000
+            // 
+            this.percentShares16000.Dpi = 254F;
+            this.percentShares16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
+            this.percentShares16000.Multiline = true;
+            this.percentShares16000.Name = "percentShares16000";
+            this.percentShares16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.percentShares16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.percentShares16000_BeforePrint);
+            // 
+            // xrLabel14
+            // 
+            this.xrLabel14.Dpi = 254F;
+            this.xrLabel14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
+            this.xrLabel14.Multiline = true;
+            this.xrLabel14.Name = "xrLabel14";
+            this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel14.StyleName = "gridContentStyleRightAlignBold";
+            // 
+            // marketValue16000
+            // 
+            this.marketValue16000.Dpi = 254F;
+            this.marketValue16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
+            this.marketValue16000.Multiline = true;
+            this.marketValue16000.Name = "marketValue16000";
+            this.marketValue16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.marketValue16000.StyleName = "gridContentStyleRightAlign";
+            // 
+            // sector16000
+            // 
+            this.sector16000.Dpi = 254F;
+            this.sector16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[sector]")});
+            this.sector16000.Multiline = true;
+            this.sector16000.Name = "sector16000";
+            this.sector16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.sector16000.StyleName = "gridContentStyle";
+            // 
+            // section16000LineGrid
+            // 
+            this.section16000LineGrid.Dpi = 254F;
+            this.section16000LineGrid.Name = "section16000LineGrid";
+            this.section16000LineGrid.StyleName = "gridRowLineStyle";
+            // 
             // GroupHeaderBandSection16000
             // 
             this.GroupHeaderBandSection16000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -6171,90 +6256,6 @@
             this.GroupHeaderBandSection16000.Dpi = 254F;
             this.GroupHeaderBandSection16000.Name = "GroupHeaderBandSection16000";
             this.GroupHeaderBandSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.GroupHeaderBandSection16000_BeforePrint);
-            // 
-            // section16000LineGrid
-            // 
-            this.section16000LineGrid.Dpi = 254F;
-            this.section16000LineGrid.Name = "section16000LineGrid";
-            this.section16000LineGrid.StyleName = "gridRowLineStyle";
-            // 
-            // sector16000
-            // 
-            this.sector16000.Dpi = 254F;
-            this.sector16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[sector]")});
-            this.sector16000.Multiline = true;
-            this.sector16000.Name = "sector16000";
-            this.sector16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.sector16000.StyleName = "gridContentStyle";
-            // 
-            // marketValue16000
-            // 
-            this.marketValue16000.Dpi = 254F;
-            this.marketValue16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
-            this.marketValue16000.Multiline = true;
-            this.marketValue16000.Name = "marketValue16000";
-            this.marketValue16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.marketValue16000.StyleName = "gridContentStyleRightAlign";
-            // 
-            // xrLabel14
-            // 
-            this.xrLabel14.Dpi = 254F;
-            this.xrLabel14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
-            this.xrLabel14.Multiline = true;
-            this.xrLabel14.Name = "xrLabel14";
-            this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel14.StyleName = "gridContentStyleRightAlignBold";
-            // 
-            // percentShares16000
-            // 
-            this.percentShares16000.Dpi = 254F;
-            this.percentShares16000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
-            this.percentShares16000.Multiline = true;
-            this.percentShares16000.Name = "percentShares16000";
-            this.percentShares16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.percentShares16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.percentShares16000_BeforePrint);
-            // 
-            // GroupHeaderBandSection16010
-            // 
-            this.GroupHeaderBandSection16010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.chartSection16010});
-            this.GroupHeaderBandSection16010.Dpi = 254F;
-            this.GroupHeaderBandSection16010.Name = "GroupHeaderBandSection16010";
-            this.GroupHeaderBandSection16010.PrintAcrossBands = true;
-            // 
-            // chartSection16010
-            // 
-            this.chartSection16010.AppearanceNameSerializable = "Light";
-            this.chartSection16010.AutoLayout = true;
-            this.chartSection16010.BorderColor = System.Drawing.Color.Black;
-            this.chartSection16010.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.chartSection16010.Dpi = 254F;
-            this.chartSection16010.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
-            this.chartSection16010.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
-            this.chartSection16010.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            this.chartSection16010.Name = "chartSection16010";
-            this.chartSection16010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
-            this.chartSection16010.PaletteBaseColorNumber = 4;
-            this.chartSection16010.PaletteName = "Blue Warm";
-            series4.ArgumentDataMember = "section160.content.subSection16010.content.sector";
-            series4.FilterString = "[section160.content.subSection16010.content.percentShares] < 100";
-            pieSeriesLabel3.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 9F, DevExpress.Drawing.DXFontStyle.Bold);
-            pieSeriesLabel3.DXTextAlignment = DevExpress.Drawing.DXStringAlignment.Near;
-            pieSeriesLabel3.MaxLineCount = 1;
-            pieSeriesLabel3.MaxWidth = 180;
-            pieSeriesLabel3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            series4.Label = pieSeriesLabel3;
-            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-            series4.Name = "SeriesData";
-            series4.SeriesID = 1;
-            series4.ValueDataMembersSerializable = "section160.content.subSection16010.content.percentShares";
-            series4.View = pieSeriesView3;
-            this.chartSection16010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series4};
             // 
             // labelAzioniSection16000
             // 
@@ -6314,22 +6315,263 @@
             this.xrLine26.StyleName = "headerFooterLineStyle";
             this.xrLine26.StylePriority.UseBorderWidth = false;
             // 
+            // GroupHeaderBandSection16010
+            // 
+            this.GroupHeaderBandSection16010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.chartSection16010});
+            this.GroupHeaderBandSection16010.Dpi = 254F;
+            this.GroupHeaderBandSection16010.Name = "GroupHeaderBandSection16010";
+            this.GroupHeaderBandSection16010.PrintAcrossBands = true;
+            // 
+            // chartSection16010
+            // 
+            this.chartSection16010.AppearanceNameSerializable = "Light";
+            this.chartSection16010.AutoLayout = true;
+            this.chartSection16010.BorderColor = System.Drawing.Color.Black;
+            this.chartSection16010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection16010.Dpi = 254F;
+            this.chartSection16010.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
+            this.chartSection16010.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
+            this.chartSection16010.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartSection16010.Name = "chartSection16010";
+            this.chartSection16010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
+            this.chartSection16010.PaletteBaseColorNumber = 4;
+            this.chartSection16010.PaletteName = "Blue Warm";
+            series4.ArgumentDataMember = "section160.content.subSection16010.content.sector";
+            series4.FilterString = "[section160.content.subSection16010.content.percentShares] < 100";
+            pieSeriesLabel3.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            pieSeriesLabel3.DXTextAlignment = DevExpress.Drawing.DXStringAlignment.Near;
+            pieSeriesLabel3.MaxLineCount = 1;
+            pieSeriesLabel3.MaxWidth = 180;
+            pieSeriesLabel3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series4.Label = pieSeriesLabel3;
+            series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series4.Name = "SeriesData";
+            series4.SeriesID = 1;
+            series4.ValueDataMembersSerializable = "section160.content.subSection16010.content.percentShares";
+            series4.View = pieSeriesView3;
+            this.chartSection16010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series4};
+            // 
             // verticalSeparatorLine
             // 
             this.verticalSeparatorLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.verticalSeparatorLine.Name = "verticalSeparatorLine";
             // 
-            // xrLine28
+            // DetailReportSection170
             // 
-            this.xrLine28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.xrLine28.BorderColor = System.Drawing.Color.Empty;
-            this.xrLine28.Dpi = 254F;
-            this.xrLine28.ForeColor = System.Drawing.Color.Empty;
-            this.xrLine28.Name = "xrLine28";
-            this.xrLine28.StyleName = "verticalSeparatorLine";
-            this.xrLine28.StylePriority.UseBackColor = false;
-            this.xrLine28.StylePriority.UseBorderColor = false;
-            this.xrLine28.StylePriority.UseForeColor = false;
+            this.DetailReportSection170.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.DetailSection17000,
+            this.GroupHeaderBandSection17000,
+            this.DetailReportSubSection170,
+            this.GroupHeaderBandSection17010});
+            this.DetailReportSection170.DataMember = "section170.content.subSection17000.content";
+            this.DetailReportSection170.DataSource = this.jsonDataSourcePSE;
+            this.DetailReportSection170.Dpi = 254F;
+            this.DetailReportSection170.Level = 10;
+            this.DetailReportSection170.Name = "DetailReportSection170";
+            this.DetailReportSection170.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.DetailReportSection170.ReportPrintOptions.PrintOnEmptyDataSource = false;
+            // 
+            // DetailSection17000
+            // 
+            this.DetailSection17000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel15,
+            this.xrLabel13,
+            this.xrLabel12});
+            this.DetailSection17000.Dpi = 254F;
+            this.DetailSection17000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection17000.Name = "DetailSection17000";
+            // 
+            // GroupHeaderBandSection17000
+            // 
+            this.GroupHeaderBandSection17000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine30,
+            this.xrLine29,
+            this.labelSubHeaderSection17000,
+            this.labelHeaderSection17000,
+            this.labelNazioneSection17000,
+            this.labelValoreMercatoSection17000,
+            this.labelAzioniSection17000});
+            this.GroupHeaderBandSection17000.Dpi = 254F;
+            this.GroupHeaderBandSection17000.Name = "GroupHeaderBandSection17000";
+            this.GroupHeaderBandSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.GroupHeaderBandSection17000_BeforePrint);
+            // 
+            // xrLine29
+            // 
+            this.xrLine29.BorderWidth = 1F;
+            this.xrLine29.Dpi = 254F;
+            this.xrLine29.LineWidth = 2F;
+            this.xrLine29.Name = "xrLine29";
+            this.xrLine29.StyleName = "headerFooterLineStyle";
+            this.xrLine29.StylePriority.UseBorderWidth = false;
+            // 
+            // labelSubHeaderSection17000
+            // 
+            this.labelSubHeaderSection17000.Dpi = 254F;
+            this.labelSubHeaderSection17000.Multiline = true;
+            this.labelSubHeaderSection17000.Name = "labelSubHeaderSection17000";
+            this.labelSubHeaderSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection17000.StyleName = "sectionSubHeader";
+            // 
+            // labelHeaderSection17000
+            // 
+            this.labelHeaderSection17000.Dpi = 254F;
+            this.labelHeaderSection17000.Multiline = true;
+            this.labelHeaderSection17000.Name = "labelHeaderSection17000";
+            this.labelHeaderSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection17000.StyleName = "sectionHeader";
+            // 
+            // labelNazioneSection17000
+            // 
+            this.labelNazioneSection17000.Dpi = 254F;
+            this.labelNazioneSection17000.Multiline = true;
+            this.labelNazioneSection17000.Name = "labelNazioneSection17000";
+            this.labelNazioneSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelNazioneSection17000.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelValoreMercatoSection17000
+            // 
+            this.labelValoreMercatoSection17000.Dpi = 254F;
+            this.labelValoreMercatoSection17000.Multiline = true;
+            this.labelValoreMercatoSection17000.Name = "labelValoreMercatoSection17000";
+            this.labelValoreMercatoSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection17000.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelAzioniSection17000
+            // 
+            this.labelAzioniSection17000.Dpi = 254F;
+            this.labelAzioniSection17000.Multiline = true;
+            this.labelAzioniSection17000.Name = "labelAzioniSection17000";
+            this.labelAzioniSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelAzioniSection17000.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // xrLine30
+            // 
+            this.xrLine30.BorderWidth = 1F;
+            this.xrLine30.Dpi = 254F;
+            this.xrLine30.LineWidth = 2F;
+            this.xrLine30.Name = "xrLine30";
+            this.xrLine30.StyleName = "headerFooterLineStyle";
+            this.xrLine30.StylePriority.UseBorderWidth = false;
+            // 
+            // xrLabel12
+            // 
+            this.xrLabel12.Dpi = 254F;
+            this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[nation]")});
+            this.xrLabel12.Multiline = true;
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel12.StyleName = "gridContentStyleBold";
+            // 
+            // xrLabel13
+            // 
+            this.xrLabel13.Dpi = 254F;
+            this.xrLabel13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
+            this.xrLabel13.Multiline = true;
+            this.xrLabel13.Name = "xrLabel13";
+            this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel13.StyleName = "gridContentStyleRightAlignBold";
+            // 
+            // xrLabel15
+            // 
+            this.xrLabel15.Dpi = 254F;
+            this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
+            this.xrLabel15.Multiline = true;
+            this.xrLabel15.Name = "xrLabel15";
+            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel15.StyleName = "gridContentStyleRightAlignBold";
+            // 
+            // DetailReportSubSection170
+            // 
+            this.DetailReportSubSection170.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.DetailSubSection17000});
+            this.DetailReportSubSection170.DataMember = "section170.content.subSection17000.content.content";
+            this.DetailReportSubSection170.DataSource = this.jsonDataSourcePSE;
+            this.DetailReportSubSection170.Dpi = 254F;
+            this.DetailReportSubSection170.Level = 0;
+            this.DetailReportSubSection170.Name = "DetailReportSubSection170";
+            // 
+            // DetailSubSection17000
+            // 
+            this.DetailSubSection17000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel19,
+            this.xrLabel17,
+            this.xrLabel16});
+            this.DetailSubSection17000.Dpi = 254F;
+            this.DetailSubSection17000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSubSection17000.Name = "DetailSubSection17000";
+            // 
+            // xrLabel16
+            // 
+            this.xrLabel16.Dpi = 254F;
+            this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[country]")});
+            this.xrLabel16.Multiline = true;
+            this.xrLabel16.Name = "xrLabel16";
+            this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel16.StyleName = "gridContentStyleWithBackColor";
+            // 
+            // xrLabel17
+            // 
+            this.xrLabel17.Dpi = 254F;
+            this.xrLabel17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
+            this.xrLabel17.Multiline = true;
+            this.xrLabel17.Name = "xrLabel17";
+            this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel17.StyleName = "gridContentStyleRightAlignWithBackColor";
+            // 
+            // xrLabel19
+            // 
+            this.xrLabel19.Dpi = 254F;
+            this.xrLabel19.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
+            this.xrLabel19.Multiline = true;
+            this.xrLabel19.Name = "xrLabel19";
+            this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel19.StyleName = "gridContentStyleRightAlignWithBackColor";
+            // 
+            // GroupHeaderBandSection17010
+            // 
+            this.GroupHeaderBandSection17010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.chartSection17010});
+            this.GroupHeaderBandSection17010.Dpi = 254F;
+            this.GroupHeaderBandSection17010.Level = 1;
+            this.GroupHeaderBandSection17010.Name = "GroupHeaderBandSection17010";
+            this.GroupHeaderBandSection17010.PrintAcrossBands = true;
+            // 
+            // chartSection17010
+            // 
+            this.chartSection17010.AppearanceNameSerializable = "Light";
+            this.chartSection17010.AutoLayout = true;
+            this.chartSection17010.BorderColor = System.Drawing.Color.Black;
+            this.chartSection17010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection17010.Dpi = 254F;
+            this.chartSection17010.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
+            this.chartSection17010.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Bottom;
+            this.chartSection17010.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartSection17010.Name = "chartSection17010";
+            this.chartSection17010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
+            this.chartSection17010.PaletteBaseColorNumber = 4;
+            this.chartSection17010.PaletteName = "Blue Warm";
+            series5.ArgumentDataMember = "section170.content.subSection17010.content.nation";
+            pieSeriesLabel4.DXFont = new DevExpress.Drawing.DXFont("Tahoma", 9F, DevExpress.Drawing.DXFontStyle.Bold);
+            pieSeriesLabel4.DXTextAlignment = DevExpress.Drawing.DXStringAlignment.Near;
+            pieSeriesLabel4.MaxLineCount = 1;
+            pieSeriesLabel4.MaxWidth = 180;
+            pieSeriesLabel4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series5.Label = pieSeriesLabel4;
+            series5.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series5.Name = "SeriesData";
+            series5.SeriesID = 1;
+            series5.ValueDataMembersSerializable = "section170.content.subSection17010.content.percentShares";
+            series5.View = pieSeriesView4;
+            this.chartSection17010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series5};
             // 
             // ReportPSE
             // 
@@ -6349,7 +6591,8 @@
             this.DetailReportSection8040,
             this.DetailReportSection4000,
             this.DetailReportSection2000,
-            this.DetailReportSection160});
+            this.DetailReportSection160,
+            this.DetailReportSection170});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.jsonDataSourcePSE});
             this.DataSource = this.jsonDataSourcePSE;
@@ -6370,6 +6613,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1251.959F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "Series.1.Label.TextPattern", "{V}% {A} "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "SizeF", new System.Drawing.SizeF(1517.04F, 824.8401F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1251.959F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "Series.1.Label.TextPattern", "{V}% {A} "),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "SizeF", new System.Drawing.SizeF(1517.04F, 824.8401F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.896F, 216.5083F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "SizeF", new System.Drawing.SizeF(1407.771F, 846.6666F)),
@@ -6387,6 +6633,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport16000, "Default", "HeightF", 95F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport2000, "Default", "HeightF", 95F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport4000, "Default", "HeightF", 195.7781F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection17000, "Default", "HeightF", 80F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection6000, "Default", "HeightF", 95.00002F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection7000, "Default", "HeightF", 71.13754F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection8000, "Default", "HeightF", 234F),
@@ -6394,12 +6641,15 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection8020, "Default", "HeightF", 234F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection8030, "Default", "HeightF", 234F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection8040, "Default", "HeightF", 234F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSubSection17000, "Default", "HeightF", 60F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.divisaSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 12.87333F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.divisaSection6000, "Default", "SizeF", new System.Drawing.SizeF(254F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.divisaSection6000, "Default", "Text", "divisaSection6000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection8000, "Default", "HeightF", 100F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection16000, "Default", "HeightF", 260F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection16010, "Default", "HeightF", 849.84F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection17000, "Default", "HeightF", 260F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection17010, "Default", "HeightF", 824.8401F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection2000, "Default", "HeightF", 259.9919F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection2010, "Default", "HeightF", 1075.954F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection4000, "Default", "HeightF", 260F),
@@ -6457,6 +6707,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1017.999F, 187.5531F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection16000, "Default", "SizeF", new System.Drawing.SizeF(167.9589F, 66.14648F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection16000, "Default", "Text", "(%) Azioni"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1017.999F, 187.5531F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection17000, "Default", "SizeF", new System.Drawing.SizeF(167.9589F, 66.14648F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAzioniSection17000, "Default", "Text", "(%) Azioni"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(591.7911F, 187.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "SizeF", new System.Drawing.SizeF(223.1257F, 66.14648F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "Text", "Cambio"),
@@ -6560,6 +6813,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection16000, "Default", "SizeF", new System.Drawing.SizeF(1185.958F, 76.9408F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection16000, "Default", "Text", "AZIONI SUDDIVISE PER SETTORE ECONOMICO"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection17000, "Default", "SizeF", new System.Drawing.SizeF(1185.958F, 76.9408F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection17000, "Default", "Text", "AZIONI SUDDIVISE PER NAZIONE"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection2000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection2000, "Default", "SizeF", new System.Drawing.SizeF(907.5212F, 76.9408F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection2000, "Default", "Text", "EVOLUZIONE PERFORMANCE"),
@@ -6645,6 +6901,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiSection8030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2188.815F, 79.45284F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiSection8030, "Default", "SizeF", new System.Drawing.SizeF(127.5632F, 58.42015F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiSection8030, "Default", "Text", "Interessi"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 187.5531F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "SizeF", new System.Drawing.SizeF(683.8752F, 66.14648F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "Text", "Nazione"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section8000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1516.19F, 154F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section8000, "Default", "SizeF", new System.Drawing.SizeF(76.72925F, 67.10814F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section8000, "Default", "Text", "(%)"),
@@ -6811,6 +7070,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125.0001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection16000, "Default", "SizeF", new System.Drawing.SizeF(1185.958F, 50.48244F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection16000, "Default", "Text", "Azioni per Settore Economico"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125.0001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection17000, "Default", "SizeF", new System.Drawing.SizeF(1185.958F, 50.48244F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection17000, "Default", "Text", "Azioni per Nazione"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2000, "Default", "SizeF", new System.Drawing.SizeF(898.1467F, 50.48244F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2000, "Default", "Text", "Storico Evoluzione Performance (EUR)"),
@@ -6921,6 +7183,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(683.8748F, 187.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection16000, "Default", "SizeF", new System.Drawing.SizeF(333.5849F, 66.14648F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection16000, "Default", "Text", "Valore Mercato (EUR)"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(683.8748F, 187.5535F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection17000, "Default", "SizeF", new System.Drawing.SizeF(333.5849F, 66.14648F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection17000, "Default", "Text", "Valore Mercato (EUR)"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(857.2503F, 187.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection4000, "Default", "SizeF", new System.Drawing.SizeF(394.7082F, 66.14648F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection4000, "Default", "Text", "Valore di Mercato (EUR)"),
@@ -7129,6 +7394,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel119, "Default", "SizeF", new System.Drawing.SizeF(120F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel119, "Default", "Text", "xrLabel38"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel119, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 11.58069F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel12, "Default", "SizeF", new System.Drawing.SizeF(683.8752F, 58.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel12, "Default", "Text", "xrLabel12"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel120, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.896F, 10.75257F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel120, "Default", "SizeF", new System.Drawing.SizeF(120F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel120, "Default", "Text", "xrLabel37"),
@@ -7163,6 +7431,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel129, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 79.45251F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel129, "Default", "SizeF", new System.Drawing.SizeF(1044.417F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel129, "Default", "Text", "xrLabel27"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(683.8752F, 11.58069F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel13, "Default", "SizeF", new System.Drawing.SizeF(333.5842F, 58.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel13, "Default", "Text", "xrLabel13"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel13, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel130, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 10.75257F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel130, "Default", "SizeF", new System.Drawing.SizeF(342.8333F, 58.41999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel130, "Default", "Text", "xrLabel11"),
@@ -7237,6 +7509,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel149, "Default", "SizeF", new System.Drawing.SizeF(174.8104F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel149, "Default", "Text", "xrLabel50"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel149, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel15, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1017.999F, 11.58069F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel15, "Default", "SizeF", new System.Drawing.SizeF(170.9592F, 58.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel15, "Default", "Text", "xrLabel15"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel15, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel150, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1877.71F, 79.45284F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel150, "Default", "SizeF", new System.Drawing.SizeF(170F, 58.42001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel150, "Default", "Text", "xrLabel51"),
@@ -7273,6 +7549,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel159, "Default", "SizeF", new System.Drawing.SizeF(195.4365F, 58.42001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel159, "Default", "Text", "xrLabel60"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel159, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(64.68726F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel16, "Default", "SizeF", new System.Drawing.SizeF(619.1877F, 60F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel16, "Default", "Text", "xrLabel16"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel160, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2512.5F, 10.7529F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel160, "Default", "SizeF", new System.Drawing.SizeF(114.52F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel160, "Default", "Text", "xrLabel61"),
@@ -7312,6 +7591,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel169, "Default", "SizeF", new System.Drawing.SizeF(119.9998F, 58.42001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel169, "Default", "Text", "xrLabel47"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel169, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel17, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(683.8752F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel17, "Default", "SizeF", new System.Drawing.SizeF(333.58F, 60F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel17, "Default", "Text", "xrLabel17"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel17, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel170, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1595.92F, 79.45284F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel170, "Default", "SizeF", new System.Drawing.SizeF(149.9999F, 58.42003F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel170, "Default", "Text", "xrLabel46"),
@@ -7368,6 +7651,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel189, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 10.75257F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel189, "Default", "SizeF", new System.Drawing.SizeF(649.1889F, 58.41999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel189, "Default", "Text", "xrLabel11"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel19, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1017.999F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel19, "Default", "SizeF", new System.Drawing.SizeF(170.96F, 60F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel19, "Default", "Text", "xrLabel19"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel19, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2531.188F, 13.58004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel2, "Default", "SizeF", new System.Drawing.SizeF(218.8125F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel2, "Default", "Text", "xrLabel2"),
@@ -7706,8 +7993,12 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine27, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1315F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine28, "Default", "SizeF", new System.Drawing.SizeF(5.291504F, 950.9539F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2615F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine29, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 253.7F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine3, "Default", "SizeF", new System.Drawing.SizeF(1528.397F, 5.291656F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 253.7003F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine30, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291672F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2618F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine4, "Default", "SizeF", new System.Drawing.SizeF(1528.397F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 81.2617F)),
@@ -7772,6 +8063,10 @@
             ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection16010)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSection17010)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -8255,5 +8550,25 @@
         private DevExpress.XtraReports.UI.XRChart chartSection16010;
         private DevExpress.XtraReports.UI.XRControlStyle verticalSeparatorLine;
         private DevExpress.XtraReports.UI.XRLine xrLine28;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReportSection170;
+        private DevExpress.XtraReports.UI.DetailBand DetailSection17000;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection17000;
+        private DevExpress.XtraReports.UI.XRLine xrLine29;
+        private DevExpress.XtraReports.UI.XRLabel labelSubHeaderSection17000;
+        private DevExpress.XtraReports.UI.XRLabel labelHeaderSection17000;
+        private DevExpress.XtraReports.UI.XRLabel labelNazioneSection17000;
+        private DevExpress.XtraReports.UI.XRLabel labelValoreMercatoSection17000;
+        private DevExpress.XtraReports.UI.XRLabel labelAzioniSection17000;
+        private DevExpress.XtraReports.UI.XRLine xrLine30;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel13;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReportSubSection170;
+        private DevExpress.XtraReports.UI.DetailBand DetailSubSection17000;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel19;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel17;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel16;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection17010;
+        private DevExpress.XtraReports.UI.XRChart chartSection17010;
     }
 }

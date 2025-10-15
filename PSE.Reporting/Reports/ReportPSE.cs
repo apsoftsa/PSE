@@ -101,6 +101,13 @@ namespace PSE.Reporting.Reports {
             }
         }
 
+        private void GroupHeaderBandSection17000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd) {
+                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                _section80NeedPageBreakAtTheEnd = false;
+            }
+        }
+
     }
 
 }

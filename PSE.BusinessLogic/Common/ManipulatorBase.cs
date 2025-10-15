@@ -79,7 +79,7 @@ namespace PSE.BusinessLogic.Common
                         summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
                         if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
                             summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote * exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
-                    } else {
+                    } else if (summaryBeginningYear.ExchangeValue.Value != 0) {
                         summaryBeginningYear.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote / exchangeRate) - (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote / summaryBeginningYear.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
                         if (summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ValuePrice.HasValue)
                             summaryPurchase.ProfitLossNotRealizedValue = Math.Round((summaryTo.ValuePrice.Value * quantity.Value / quote / exchangeRate) - (summaryPurchase.ValuePrice.Value * quantity.Value / quote / summaryPurchase.ExchangeValue.Value), DEFAULT_CURRENCY_DECIMAL_DIGITS);
