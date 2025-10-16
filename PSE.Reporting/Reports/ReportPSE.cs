@@ -3,18 +3,22 @@ using DevExpress.XtraReports.UI;
 
 namespace PSE.Reporting.Reports {
 
-    public partial class ReportPSE : DevExpress.XtraReports.UI.XtraReport {
+    public partial class ReportPSE : XtraReport {
 
         private string _currentAssetClassSection4000;
         private bool _hasSection80CaptionVisible;
+        private bool _hasSection90CaptionVisible;
         private bool _section80NeedPageBreakAtTheEnd;
+        private bool _section90NeedPageBreakAtTheEnd;
         private bool _needResetRow;
 
         public ReportPSE() {
             InitializeComponent();            
             _currentAssetClassSection4000 = string.Empty;
             _hasSection80CaptionVisible = false;
+            _hasSection90CaptionVisible = false;    
             _section80NeedPageBreakAtTheEnd = false;
+            _section90NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
         }
 
@@ -26,10 +30,23 @@ namespace PSE.Reporting.Reports {
             label.Visible = !toHidden;
         }
 
-        private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd) {
+        private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                _section80NeedPageBreakAtTheEnd = false;
+                if (_section80NeedPageBreakAtTheEnd)
+                    _section80NeedPageBreakAtTheEnd = false;
+                if (_section90NeedPageBreakAtTheEnd)
+                    _section90NeedPageBreakAtTheEnd = false;
+            }
+        }
+
+        private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                if (_section80NeedPageBreakAtTheEnd)
+                    _section80NeedPageBreakAtTheEnd = false;
+                if (_section90NeedPageBreakAtTheEnd)
+                    _section90NeedPageBreakAtTheEnd = false;
             }
         }
 
@@ -82,7 +99,16 @@ namespace PSE.Reporting.Reports {
                 _section80NeedPageBreakAtTheEnd = true;
             } else
                 label.Visible = false;
-        }       
+        }
+
+        private void checkSection90CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_hasSection90CaptionVisible == false && label.Visible) {
+                _hasSection90CaptionVisible = true;
+                _section90NeedPageBreakAtTheEnd = true;
+            } else
+                label.Visible = false;
+        }
 
         private void divisaSection6000_BeforePrint(object sender, CancelEventArgs e) {
             if (((XRLabel)sender).Text.Length > 3) { // it is not a currency code...
