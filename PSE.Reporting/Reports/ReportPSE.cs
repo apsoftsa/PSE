@@ -12,6 +12,13 @@ namespace PSE.Reporting.Reports {
         private bool _section90NeedPageBreakAtTheEnd;
         private bool _needResetRow;
 
+        private void ManageSectionVisibilityFlags() {
+            if (_section80NeedPageBreakAtTheEnd)
+                _section80NeedPageBreakAtTheEnd = false;
+            if (_section90NeedPageBreakAtTheEnd)
+                _section90NeedPageBreakAtTheEnd = false;
+        }
+
         public ReportPSE() {
             InitializeComponent();            
             _currentAssetClassSection4000 = string.Empty;
@@ -33,20 +40,21 @@ namespace PSE.Reporting.Reports {
         private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                if (_section80NeedPageBreakAtTheEnd)
-                    _section80NeedPageBreakAtTheEnd = false;
-                if (_section90NeedPageBreakAtTheEnd)
-                    _section90NeedPageBreakAtTheEnd = false;
+                ManageSectionVisibilityFlags();
             }
         }
 
         private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                if (_section80NeedPageBreakAtTheEnd)
-                    _section80NeedPageBreakAtTheEnd = false;
-                if (_section90NeedPageBreakAtTheEnd)
-                    _section90NeedPageBreakAtTheEnd = false;
+                ManageSectionVisibilityFlags();
+            }
+        }
+
+        private void pageBreakBeforeBand_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
+                ((DetailReportBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSectionVisibilityFlags();
             }
         }
 
