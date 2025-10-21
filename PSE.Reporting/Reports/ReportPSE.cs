@@ -5,12 +5,14 @@ namespace PSE.Reporting.Reports {
 
     public partial class ReportPSE : XtraReport {
 
+        private string _currencyToApply;
         private string _currentAssetClassSection4000;
         private bool _hasSection80CaptionVisible;
         private bool _hasSection90CaptionVisible;
         private bool _section80NeedPageBreakAtTheEnd;
         private bool _section90NeedPageBreakAtTheEnd;
         private bool _needResetRow;
+        int _rowCount;
 
         private void ManageSectionVisibilityFlags() {
             if (_section80NeedPageBreakAtTheEnd)
@@ -20,13 +22,15 @@ namespace PSE.Reporting.Reports {
         }
 
         public ReportPSE() {
-            InitializeComponent();            
+            InitializeComponent();
+            _currencyToApply = "?";
             _currentAssetClassSection4000 = string.Empty;
             _hasSection80CaptionVisible = false;
             _hasSection90CaptionVisible = false;    
             _section80NeedPageBreakAtTheEnd = false;
             _section90NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
+            _rowCount = 0;
         }
 
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
@@ -35,6 +39,11 @@ namespace PSE.Reporting.Reports {
             if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%",""), out double value))
                 toHidden = value == 0;
             label.Visible = !toHidden;
+        }
+
+        private void applyCurrency_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            label.Text = label.Text.Replace("{0}", _currencyToApply);
         }
 
         private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
@@ -71,22 +80,76 @@ namespace PSE.Reporting.Reports {
             this.ApplyLocalization(customerLanguage);
         }
 
-        private void assetClassSection4000_BeforePrint(object sender, CancelEventArgs e) {
+        private void currencyToApply_BeforePrint(object sender, CancelEventArgs e) {
+            _currencyToApply = ((XRLabel)sender).Text;
+        }
+
+        private void ContentReportHeaderNumeroCliente_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void ContentReportHeaderStatoAl_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderStatoAl.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void ContentReportHeaderPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderPortafoglio.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void ContentReportHeaderConsulente_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderConsulente.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void contentHeaderRow1_BeforePrint(object sender, CancelEventArgs e) {
+            string tmpText = ((XRLabel)sender).Text;
+            tmpText = tmpText.Replace("{0}", this.labelHeaderStatoAl.Text);
+            tmpText = tmpText.Replace("{1}", this.labelHeaderValutazioneIn.Text + " " + _currencyToApply);
+            ((XRLabel)sender).Text = tmpText;
+        }
+
+        private void contentHeaderRow2_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.labelHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void DetailReportSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }        
+
+        private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {            
+            this.DetailReport4000.HeightF = 0;
+            this.PerformLayout();
+        }
+
+        private void assetClassSection4000Fake_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel currLabel = (XRLabel)sender;
-            if (string.IsNullOrEmpty(_currentAssetClassSection4000) || currLabel.Text != _currentAssetClassSection4000) {               
+            if (string.IsNullOrEmpty(_currentAssetClassSection4000) || currLabel.Text != _currentAssetClassSection4000) {
                 _currentAssetClassSection4000 = currLabel.Text;
                 _needResetRow = false;
             } else if (currLabel.Text == _currentAssetClassSection4000) {
-                currLabel.Text = null;
                 _needResetRow = true;
             }
         }
 
-        private void marketValueReportingCurrencyTSection4000_BeforePrint(object sender, CancelEventArgs e) {
-            if(_needResetRow) {
-                XRLabel currLabel = (XRLabel)sender;
+        private void lineUpperSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLine)sender).Visible = _needResetRow == false && this.DetailReportSection4000.CurrentRowIndex > 0;
+            if (((XRLine)sender).Visible && this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
+                ((XRLine)sender).StyleName = "headerFooterLineStyle";
+        }
+
+        private void assetClassSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel currLabel = (XRLabel)sender;
+            if (_needResetRow)
                 currLabel.Text = "";
-            }            
+            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
+                currLabel.StyleName = "gridContentStyleBoldItalic";
+        }
+
+        private void marketValueReportingCurrencyTSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel currLabel = (XRLabel)sender;
+            if (_needResetRow) 
+                currLabel.Text = "";
+            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
+                currLabel.StyleName = "gridContentStyleRightAlignBoldItalic";
         }
 
         private void percentInvestmentTSection4000_BeforePrint(object sender, CancelEventArgs e) {
@@ -94,11 +157,7 @@ namespace PSE.Reporting.Reports {
                 XRLabel currLabel = (XRLabel)sender;
                 currLabel.Text = "";
             }
-        }
-        private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {
-            this.DetailReport4000.HeightF = 0;
-            this.PerformLayout();
-        }
+        }      
 
         private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
@@ -118,21 +177,67 @@ namespace PSE.Reporting.Reports {
                 label.Visible = false;
         }
 
+        private void DetailReportSection6000_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }
+
         private void divisaSection6000_BeforePrint(object sender, CancelEventArgs e) {
-            if (((XRLabel)sender).Text.Length > 3) { // it is not a currency code...
+            if (this.DetailReportSection6000.CurrentRowIndex == _rowCount - 1) {
                 ((XRLabel)sender).StyleName = "gridContentStyleBold";
                 this.valoreMercatoSection6000.StyleName = "gridContentStyleRightAlignBold";
                 this.section6000LineGrid.Visible = false;
             }
-        }       
+        }
+
+        private void DetailReportSection160_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }
+
+        private void DetailReport16000_BeforePrint(object sender, CancelEventArgs e) {
+            this.DetailReport16000.HeightF = 0;
+            this.PerformLayout();
+        }
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
-            var value = ((XRLabel)sender).Value;
-            if ((double)value == 100) {
+            if (this.DetailReportSection160.CurrentRowIndex == _rowCount - 1) {
                 this.sector16000.StyleName = "gridContentStyleBold";
                 this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
-                this.section16000LineGrid.Visible = false;
+                this.section16000LineGridUpper.Visible = true;
+                this.section16000LineGridDown.Visible = true;
+            }else {
+                this.section16000LineGridUpper.Visible = false;
+                this.section16000LineGridDown.Visible = false;
             }
+        }
+
+        private void DetailReportSubSection200_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }
+
+        private void contentTipoClasseSection20020_BeforePrint(object sender, CancelEventArgs e) {
+            if (this.DetailReportSubSection200.CurrentRowIndex >= _rowCount - 2) {
+                ((XRLabel)sender).StyleName = "gridContentStyleBoldItalic";
+            }
+        }
+
+        private void contentValoreMercatoSection20020_BeforePrint(object sender, CancelEventArgs e) {
+            if (this.DetailReportSubSection200.CurrentRowIndex >= _rowCount - 3) {
+                ((XRLabel)sender).StyleName = "gridContentStyleRightAlignBoldItalic";
+            }
+        }
+
+        private void contentInvestimentiSection20020_BeforePrint(object sender, CancelEventArgs e) {
+            if (this.DetailReportSubSection200.CurrentRowIndex >= _rowCount - 3) {
+                ((XRLabel)sender).StyleName = "gridContentStyleRightAlignBoldItalic";
+            }
+        }
+
+        private void DetailReportSection170_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }
+
+        private void section17000LineGridUpper_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLine)sender).Visible = this.DetailReportSection170.CurrentRowIndex > 0;
         }       
 
     }
