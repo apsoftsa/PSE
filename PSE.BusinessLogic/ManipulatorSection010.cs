@@ -32,8 +32,6 @@ namespace PSE.BusinessLogic
             {
                 string cultureCode;
                 IKeyInformation currKeyInf;
-                IAssetExtract currAsstExtr;
-                IDividendInterest currDivInt;
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio;
                 ExternalCodifyRequestEventArgs extEventArgsService;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
@@ -81,8 +79,21 @@ namespace PSE.BusinessLogic
                                         secIn = perItem.SecIn_12.Value;
                                     if (perItem.SecOut_13.HasValue)
                                         secOut = perItem.SecOut_13.Value;
+                                    portfolioValueRectified = startValue + cashIn + secIn + cashOut + secOut;
                                     output.Content.SubSection1010 = new SubSection1010Content();
                                     output.Content.SubSection1010.Name = $"Management report {startDate} – {endDate}";
+                                    output.Content.SubSection1010.ManagementReportFromDate = startDate;
+                                    output.Content.SubSection1010.ManagementReportToDate = endDate;
+                                    output.Content.SubSection1010.PortfolioValueDate = startDate;
+                                    output.Content.SubSection1010.PortfolioValueReportingCurrency = startValue;
+                                    output.Content.SubSection1010.ContributionsValueReportingCurrency = AssignRequiredDecimal(cashIn + secIn);
+                                    output.Content.SubSection1010.WithdrawalsValueReportingCurrency = AssignRequiredDecimal(cashOut + secOut);
+                                    output.Content.SubSection1010.PortfolioValueRectifiedReportingCurrency = AssignRequiredDecimal(portfolioValueRectified);
+                                    output.Content.SubSection1010.PortfolioValueDate2 = endDate;
+                                    output.Content.SubSection1010.PortfolioValueReportingCurrency2 = AssignRequiredDecimal(endValue);
+                                    output.Content.SubSection1010.PluslessValueReportingCurrency = AssignRequiredDecimal(endValue - portfolioValueRectified);
+                                    output.Content.SubSection1010.PercentWightedPerformance = AssignRequiredDecimal(perItem.TWR_14);
+                                    /*
                                     currAsstExtr = new AssetExtract() {
                                         Entry = "Portfolio Value " + startDate,
                                         MarketValueReportingCurrency = startValue,
@@ -119,6 +130,7 @@ namespace PSE.BusinessLogic
                                         MarketValueReportingCurrency = AssignRequiredDecimal(perItem.TWR_14)
                                     };
                                     output.Content.SubSection1010.Content.Add(new AssetExtract(currAsstExtr));
+                                    */
                                 }
                                 decimal interest, realEquity, realCurr, nonRealEquity, nonRealCurrency;
                                 interest = perItem.Interest_15.HasValue ? perItem.Interest_15.Value : 0;
@@ -127,6 +139,17 @@ namespace PSE.BusinessLogic
                                 nonRealEquity = perItem.PlNonRealEquity_18.HasValue ? perItem.PlNonRealEquity_18.Value : 0;
                                 nonRealCurrency = perItem.PlNonRealCurrency_19.HasValue ? perItem.PlNonRealCurrency_19.Value : 0;
                                 output.Content.SubSection1011 = new SubSection1011Content();
+                                output.Content.SubSection1011.Name = "Dividend and interest";
+                                output.Content.SubSection1011.DividendAndInterestValueReportingCurrency = AssignRequiredDecimal(interest);
+                                output.Content.SubSection1011.RealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(realEquity + realCurr);
+                                output.Content.SubSection1011.OngoingRealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(realEquity);
+                                output.Content.SubSection1011.OnCurrencyRealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(realCurr);
+                                output.Content.SubSection1011.NotRealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(nonRealEquity + nonRealCurrency);
+                                output.Content.SubSection1011.OngoingNotRealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(nonRealEquity);
+                                output.Content.SubSection1011.OnCurrencyNotRealizedGainLossesValueReportingCurrency = AssignRequiredDecimal(nonRealCurrency);
+                                output.Content.SubSection1011.PlusLessValueReportingCurrency = AssignRequiredDecimal(interest + realEquity + realCurr +
+                                                                    nonRealEquity + nonRealCurrency);
+                                /*
                                 currDivInt = new DividendInterest() {
                                     Entry = "Dividend and interest",
                                     MarketValueReportingCurrency = AssignRequiredDecimal(interest),
@@ -168,6 +191,7 @@ namespace PSE.BusinessLogic
                                                                     nonRealEquity + nonRealCurrency)
                                 };
                                 output.Content.SubSection1011.Content.Add(new DividendInterest(currDivInt));
+                                */
                             }
                         }
                     }

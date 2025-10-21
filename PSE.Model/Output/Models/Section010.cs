@@ -40,91 +40,6 @@ namespace PSE.Model.Output.Models
 
     }
 
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class AssetExtract : IAssetExtract
-    {
-
-        public string Entry { get; set; }
-
-        public decimal? MarketValueReportingCurrency { get; set; }
-
-        [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
-        public string? AssetType { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrencyContr { get; set; }
-
-
-        public AssetExtract()
-        {
-            Entry = string.Empty;  
-            AssetType = null;   
-            MarketValueReportingCurrency = 0;
-            MarketValueReportingCurrencyContr = null;
-        }
-
-        public AssetExtract(IAssetExtract source)
-        {
-            Entry = source.Entry;
-            AssetType = source.AssetType;
-            MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-            MarketValueReportingCurrencyContr = source.MarketValueReportingCurrencyContr;
-        }
-
-    }
-
-    [Serializable]
-    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class DividendInterest : IDividendInterest
-    {
-
-        public string Entry { get; set; }
-
-        public decimal MarketValueReportingCurrencyT { get; set; }
-
-        [JsonProperty(propertyName: "type", NullValueHandling = NullValueHandling.Ignore)]
-        public string? AssetType { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public decimal? MarketValueReportingCurrency { get; set; }
-
-
-        public DividendInterest()
-        {
-            Entry = string.Empty;
-            AssetType = null;
-            MarketValueReportingCurrencyT = 0;
-            MarketValueReportingCurrency = null;
-        }
-
-        public DividendInterest(IDividendInterest source)
-        {
-            Entry = source.Entry;
-            AssetType = source.AssetType;
-            MarketValueReportingCurrencyT = source.MarketValueReportingCurrencyT;
-            MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-        }
-
-    }
-
-    public class FooterInformation : IFooterInformation
-    {
-
-        public string Note { get; set; }
-
-        public FooterInformation()
-        {
-            Note = string.Empty;
-        }
-
-        public FooterInformation(IFooterInformation source)
-        {
-            Note = source.Note;
-        }
-
-    }
-
     public class SubSection1000Content : ISubSection1000Content
     {
 
@@ -151,63 +66,97 @@ namespace PSE.Model.Output.Models
 
     }
 
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class SubSection1010Content : ISubSection1010Content
     {
 
         public string Name { get; set; }
-
-        public IList<IAssetExtract> Content { get; set; }
+        public string ManagementReportFromDate { get; set; }
+        public string ManagementReportToDate { get; set; }
+        public string PortfolioValueDate { get; set; }
+        public decimal? PortfolioValueReportingCurrency { get; set; }
+        public decimal? ContributionsValueReportingCurrency { get; set; }
+        public decimal? WithdrawalsValueReportingCurrency { get; set; }
+        public decimal? PortfolioValueRectifiedReportingCurrency { get; set; }
+        public string PortfolioValueDate2 { get; set; }
+        public decimal? PortfolioValueReportingCurrency2 { get; set; }
+        public decimal? PluslessValueReportingCurrency { get; set; }
+        public decimal? PercentWightedPerformance { get; set; }
 
         public SubSection1010Content()
         {
-            Name = "";
-            Content = new List<IAssetExtract>();
+            Name = string.Empty;
+            ManagementReportFromDate = string.Empty;
+            ManagementReportToDate = string.Empty;
+            PortfolioValueDate = string.Empty;
+            PortfolioValueReportingCurrency = null;
+            ContributionsValueReportingCurrency = null;
+            WithdrawalsValueReportingCurrency = null;
+            PortfolioValueRectifiedReportingCurrency = null;
+            PortfolioValueDate2 = string.Empty;
+            PortfolioValueReportingCurrency2 = null;
+            PluslessValueReportingCurrency = null;
+            PercentWightedPerformance = null;   
         }
 
         public SubSection1010Content(ISubSection1010Content source)
         {
             Name = source.Name;
-            Content = new List<IAssetExtract>();
-            if (source.Content != null && source.Content.Any())
-            {
-                foreach (var item in source.Content)
-                    Content.Add(new AssetExtract(item));
-            }
+            ManagementReportFromDate = source.ManagementReportFromDate;
+            ManagementReportToDate = source.ManagementReportToDate;
+            PortfolioValueDate = source.PortfolioValueDate;
+            PortfolioValueReportingCurrency = source.PortfolioValueReportingCurrency;
+            ContributionsValueReportingCurrency = source.ContributionsValueReportingCurrency;
+            WithdrawalsValueReportingCurrency = source.WithdrawalsValueReportingCurrency;
+            PortfolioValueRectifiedReportingCurrency = source.PortfolioValueRectifiedReportingCurrency;
+            PortfolioValueDate2 = source.PortfolioValueDate2;
+            PortfolioValueReportingCurrency2 = source.PortfolioValueReportingCurrency2;
+            PluslessValueReportingCurrency = source.PluslessValueReportingCurrency;
+            PercentWightedPerformance = source.PercentWightedPerformance;
         }
 
     }
 
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class SubSection1011Content : ISubSection1011Content
     {
 
         public string Name { get; set; }
-
-        public IList<IDividendInterest> Content { get; set; }
-
-        public IList<IFooterInformation> Notes { get; set; }
+        public decimal? DividendAndInterestValueReportingCurrency { get; set; }
+        public decimal? RealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? OngoingRealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? OnCurrencyRealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? NotRealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? OngoingNotRealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? OnCurrencyNotRealizedGainLossesValueReportingCurrency { get; set; }
+        public decimal? PlusLessValueReportingCurrency { get; set; }
 
         public SubSection1011Content()
         {
             Name = "";
-            Content = new List<IDividendInterest>();
-            Notes = new List<IFooterInformation>();
+            DividendAndInterestValueReportingCurrency = null;
+            RealizedGainLossesValueReportingCurrency = null;
+            OngoingRealizedGainLossesValueReportingCurrency = null;
+            OnCurrencyRealizedGainLossesValueReportingCurrency = null;
+            NotRealizedGainLossesValueReportingCurrency = null;
+            OngoingNotRealizedGainLossesValueReportingCurrency = null;
+            OnCurrencyNotRealizedGainLossesValueReportingCurrency = null;
+            PlusLessValueReportingCurrency = null;
         }
 
         public SubSection1011Content(ISubSection1011Content source)
         {
             Name = source.Name;
-            Content = new List<IDividendInterest>();
-            Notes = new List<IFooterInformation>();
-            if (source.Content != null && source.Content.Any())
-            {
-                foreach (var item in source.Content)
-                    Content.Add(new DividendInterest(item));
-            }
-            if (source.Notes != null && source.Notes.Any())
-            {
-                foreach (var item in source.Notes)
-                    Notes.Add(new FooterInformation(item));
-            }
+            DividendAndInterestValueReportingCurrency = source.DividendAndInterestValueReportingCurrency;
+            RealizedGainLossesValueReportingCurrency = source.RealizedGainLossesValueReportingCurrency;
+            OngoingRealizedGainLossesValueReportingCurrency = source.OngoingRealizedGainLossesValueReportingCurrency;
+            OnCurrencyRealizedGainLossesValueReportingCurrency = source.OnCurrencyRealizedGainLossesValueReportingCurrency;
+            NotRealizedGainLossesValueReportingCurrency = source.NotRealizedGainLossesValueReportingCurrency;
+            OngoingNotRealizedGainLossesValueReportingCurrency = source.OngoingNotRealizedGainLossesValueReportingCurrency;
+            OnCurrencyNotRealizedGainLossesValueReportingCurrency = source.OnCurrencyNotRealizedGainLossesValueReportingCurrency;
+            PlusLessValueReportingCurrency = source.PlusLessValueReportingCurrency;
         }
 
     }

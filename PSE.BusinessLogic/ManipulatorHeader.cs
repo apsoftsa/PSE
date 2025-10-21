@@ -22,11 +22,15 @@ namespace PSE.BusinessLogic
         {
             IDE? ideItem = null;
             string customerName = string.Empty; 
+            string language  = "?";
+            string currency = "???";
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
             {
                 ideItem = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().FirstOrDefault();
                 customerName = ideItem!.CustomerNameShort_5.Replace(" ", "_");
+                language = ideItem.Language_18;
+                currency = ideItem.Currency_19;
             }
             IHeaderContent headerContent = new HeaderContent()
             {
@@ -35,7 +39,9 @@ namespace PSE.BusinessLogic
                 SectionName = sectionDest.SectionContent,
                 ReferenceString1 = ideItem != null ? ideItem.CustomerId_6 : string.Empty,
                 ReferenceString2 = customerName,
-                ReferenceString3 = ideItem != null && ideItem.Date_15 != null ? ideItem.Date_15.Value.ToString(COMPACT_DATE_FORMAT, _culture) : string.Empty
+                ReferenceString3 = ideItem != null && ideItem.Date_15 != null ? ideItem.Date_15.Value.ToString(COMPACT_DATE_FORMAT, _culture) : string.Empty,
+                ReferenceString9 = currency,
+                ReferenceString10 = language
             };
             return headerContent;
         }

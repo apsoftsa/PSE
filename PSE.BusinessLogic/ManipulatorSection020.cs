@@ -33,7 +33,7 @@ namespace PSE.BusinessLogic
                 IPerformanceEvolutionChart chartEvo;
                 ISection020Content sectionContent;
                 decimal tmpInpOut;
-                string tmpPeriod;
+                string tmpPeriod, tmpPeriodChart;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 IEnumerable<PER> perItems = extractedData.Where(flt => flt.RecordType == nameof(PER)).OfType<PER>();
                 foreach (IDE ideItem in ideItems)
@@ -49,15 +49,19 @@ namespace PSE.BusinessLogic
                                 && perItem.StartDate_6.Value.Year == perItem.EndDate_7.Value.Year
                                 && perItem.StartDate_6.Value.Month == 1 && perItem.EndDate_7.Value.Month == 12
                                 && perItem.StartDate_6.Value.Day == 1 && perItem.EndDate_7.Value.Day == 31)
-                                tmpPeriod = perItem.StartDate_6.Value.Year.ToString();
-                            else if (perItem.StartDate_6.HasValue && perItem.EndDate_7.HasValue)
+                                tmpPeriod = tmpPeriodChart = perItem.StartDate_6.Value.Year.ToString();
+                            else if (perItem.StartDate_6.HasValue && perItem.EndDate_7.HasValue) {
                                 tmpPeriod = perItem.StartDate_6.Value.ToString(DEFAULT_DATE_FORMAT, _culture) + "-" + perItem.EndDate_7.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
-                            else if (perItem.StartDate_6.HasValue)
-                                tmpPeriod = perItem.StartDate_6.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
+                                if (perItem.StartDate_6.Value.Year == perItem.EndDate_7.Value.Year)
+                                    tmpPeriodChart = perItem.StartDate_6.Value.Year.ToString();
+                                else
+                                    tmpPeriodChart = tmpPeriod;
+                            } else if (perItem.StartDate_6.HasValue)
+                                tmpPeriod = tmpPeriodChart = perItem.StartDate_6.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
                             else if (perItem.EndDate_7.HasValue)
-                                tmpPeriod = perItem.EndDate_7.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
+                                tmpPeriod = tmpPeriodChart = perItem.EndDate_7.Value.ToString(DEFAULT_DATE_FORMAT, _culture);
                             else
-                                tmpPeriod = string.Empty;
+                                tmpPeriod = tmpPeriodChart = string.Empty;
                             tmpInpOut = perItem.CashIn_10.HasValue ? perItem.CashIn_10.Value : 0;
                             tmpInpOut += perItem.CashOut_11.HasValue ? perItem.CashOut_11.Value : 0;
                             tmpInpOut += perItem.SecIn_12.HasValue ? perItem.SecIn_12.Value : 0;
@@ -73,7 +77,7 @@ namespace PSE.BusinessLogic
                             sectionContent.SubSection2000.Content.Add(historyEvo);
                             chartEvo = new PerformanceEvolutionChart()
                             {
-                                Period = tmpPeriod,
+                                Period = tmpPeriodChart,
                                 PercentPerformance = AssignRequiredDecimal(perItem.TWR_14)
                             };                            
                             sectionContent.SubSection2010.Content.Add(chartEvo);

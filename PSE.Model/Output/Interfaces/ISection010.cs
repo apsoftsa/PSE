@@ -14,40 +14,7 @@
 
         string EsgProfile { get; set; }
 
-    }
-
-    public interface IAssetExtract
-    {
-
-        string Entry { get; set; }
-
-        decimal? MarketValueReportingCurrency { get; set; }
-
-        string? AssetType { get; set; }
-
-        decimal? MarketValueReportingCurrencyContr { get; set; }
-
-    }
-
-    public interface IDividendInterest
-    {
-
-        string Entry { get; set; }
-
-        decimal MarketValueReportingCurrencyT { get; set; }
-
-        string? AssetType { get; set; }
-
-        decimal? MarketValueReportingCurrency { get; set; }
-
-    }
-
-    public interface IFooterInformation
-    {
-
-        string Note { get; set; }
-
-    }
+    }           
 
     public interface ISubSection1000Content
     {
@@ -63,7 +30,27 @@
 
         string Name { get; set; }
 
-        IList<IAssetExtract> Content { get; set; }
+        string ManagementReportFromDate { get; set; }   
+
+        string ManagementReportToDate { get; set; } 
+
+        string PortfolioValueDate { get; set; } 
+
+        decimal? PortfolioValueReportingCurrency { get; set; }   
+
+        decimal? ContributionsValueReportingCurrency { get; set; }   
+
+        decimal? WithdrawalsValueReportingCurrency { get; set; } 
+
+        decimal? PortfolioValueRectifiedReportingCurrency { get; set; }  
+
+        string PortfolioValueDate2 { get; set; }    
+
+        decimal? PortfolioValueReportingCurrency2 { get; set; }  
+
+        decimal? PluslessValueReportingCurrency { get; set; }    
+
+        decimal? PercentWightedPerformance {  get; set; }    
 
     }
 
@@ -72,9 +59,21 @@
 
         string Name { get; set; }
 
-        IList<IDividendInterest> Content { get; set; }
+        decimal? DividendAndInterestValueReportingCurrency { get; set; } 
 
-        IList<IFooterInformation> Notes { get; set; }
+        decimal? RealizedGainLossesValueReportingCurrency { get; set; }  
+
+        decimal? OngoingRealizedGainLossesValueReportingCurrency { get; set; }
+
+        decimal? OnCurrencyRealizedGainLossesValueReportingCurrency { get; set; }
+
+        decimal? NotRealizedGainLossesValueReportingCurrency { get; set; }
+
+        decimal? OngoingNotRealizedGainLossesValueReportingCurrency { get; set; }
+
+        decimal? OnCurrencyNotRealizedGainLossesValueReportingCurrency { get; set; } 
+
+        decimal? PlusLessValueReportingCurrency { get; set; }    
 
     }
 

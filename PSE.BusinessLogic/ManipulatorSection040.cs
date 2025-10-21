@@ -115,10 +115,12 @@ namespace PSE.BusinessLogic
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
                         investmentAsset = new InvestmentAsset() {
                             AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
-                            MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
+                            //MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
+                            MarketValueReportingCurrency = null,
                             TypeInvestment = null,                                
                             PercentInvestment = null,
-                            MarketValueReportingCurrencyT = null,
+                            //MarketValueReportingCurrencyT = null,
+                            MarketValueReportingCurrencyT = Math.Round(totalSum.Value + sumAccrued, 2),
                             PercentInvestmentT = null
                         };
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
