@@ -21,6 +21,8 @@ namespace PSE.Model.Output.Models
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? Exchange { get; set; }
+
+        public string Class {  get; set; }  
         
         public InvestmentCurrency()
         {
@@ -29,6 +31,7 @@ namespace PSE.Model.Output.Models
             this.MarketValueReportingCurrency = 0;
             this.Exchange = null;
             this.PercentAsset = 0;
+            this.Class = string.Empty;  
         }
 
         public InvestmentCurrency(IInvestmentCurrency source)
@@ -38,6 +41,7 @@ namespace PSE.Model.Output.Models
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             this.Exchange = source.Exchange;
             this.PercentAsset = source.PercentAsset;
+            this.Class = source.Class;  
         }
 
     }

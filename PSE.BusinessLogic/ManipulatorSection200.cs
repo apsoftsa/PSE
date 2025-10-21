@@ -76,7 +76,8 @@ namespace PSE.BusinessLogic {
                                     }
                                     endExtractInvestment = new EndExtractInvestment() {
                                         MarketValueReportingCurrency = Math.Round(category.Sum(sum => sum.Amount1Base_23).Value, 2),
-                                        AssetClass = categoryDescr
+                                        AssetClass = categoryDescr,
+                                        Class = CLASS_ENTRY
                                     };
                                     output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 }
@@ -90,18 +91,21 @@ namespace PSE.BusinessLogic {
                                 decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
                                 endExtractInvestment = new EndExtractInvestment() {
                                     AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
+                                    Class = CLASS_TOTAL,
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value, 2),
                                     PercentInvestment = 100.0m
                                 };
                                 output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
                                     AssetClass = dictionaryService.GetTranslation("accrued_interest_upper", cultureCode),
+                                    Class = CLASS_ENTRY,
                                     MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                                     PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m
                                 };
                                 output.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
                                     AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
+                                    Class = CLASS_TOTAL,    
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
                                     PercentInvestment = null
                                 };

@@ -6,6 +6,8 @@
 
         string AssetClass { get; set; }
 
+        string Class { get; set; }
+
         decimal? MarketValueReportingCurrencyT { get; set; }
 
         decimal? PercentInvestmentT { get; set; }

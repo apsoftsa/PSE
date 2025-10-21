@@ -7,6 +7,7 @@ using PSE.Model.SupportTables;
 using PSE.Dictionary;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -61,6 +62,7 @@ namespace PSE.BusinessLogic
                             sectionContent.SubSection6010 = new SubSection6010Content();
                             foreach (IInvestmentCurrency invToUpgrd in sectionContent.SubSection6000.Content)
                             {
+                                invToUpgrd.Class = CLASS_ENTRY;
                                 invToUpgrd.PercentAsset = Math.Round(invToUpgrd.MarketValueReportingCurrency.Value / totalAmount * 100m, 2);
                                 sectionContent.SubSection6010.Content.Add(new ChartInvestmentCurrency() { Currency = invToUpgrd.Currency, PercentAsset = invToUpgrd.PercentAsset });
                             }
@@ -69,6 +71,7 @@ namespace PSE.BusinessLogic
                                 Amount = null,
                                 Currency = dictionaryService.GetTranslation("total", cultureCode), 
                                 MarketValueReportingCurrency = Math.Round(totalAmount, 2),
+                                Class = CLASS_TOTAL,
                                 PercentAsset = 100m,
                                 Exchange = null
                             };

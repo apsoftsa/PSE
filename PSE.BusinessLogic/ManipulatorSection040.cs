@@ -8,6 +8,7 @@ using PSE.Model.SupportTables;
 using PSE.Dictionary;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -71,6 +72,7 @@ namespace PSE.BusinessLogic
                                 {
                                     MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
                                     AssetClass = categoryDescr,
+                                    Class = CLASS_ENTRY,
                                     TypeInvestment = extEventArgsAdvisor.PropertyValue,
                                     MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
                                 };
@@ -97,8 +99,9 @@ namespace PSE.BusinessLogic
                         decimal sumAccrued = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.ProRataBase_56 != null).Sum(sum => sum.ProRataBase_56.Value);
                         investmentAsset = new InvestmentAsset() {
                             AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
+                            Class = CLASS_TOTAL,
                             MarketValueReportingCurrencyT = Math.Round(totalSum.Value, 2),
-                            PercentInvestmentT = 100.0m,
+                            PercentInvestmentT = 100.0m,                            
                             MarketValueReportingCurrency = null,
                             PercentInvestment = null,
                             TypeInvestment = null
@@ -106,6 +109,7 @@ namespace PSE.BusinessLogic
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
                         investmentAsset = new InvestmentAsset() {
                             AssetClass = dictionaryService.GetTranslation("total_investments_upper", cultureCode),
+                            Class = CLASS_ENTRY,
                             TypeInvestment = dictionaryService.GetTranslation("accrued_interest_upper", cultureCode),
                             MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                             PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m,
@@ -115,12 +119,13 @@ namespace PSE.BusinessLogic
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
                         investmentAsset = new InvestmentAsset() {
                             AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
-                            //MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
-                            MarketValueReportingCurrency = null,
+                            Class = CLASS_TOTAL,
+                            MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
+                            //MarketValueReportingCurrency = null,
                             TypeInvestment = null,                                
                             PercentInvestment = null,
-                            //MarketValueReportingCurrencyT = null,
-                            MarketValueReportingCurrencyT = Math.Round(totalSum.Value + sumAccrued, 2),
+                            MarketValueReportingCurrencyT = null,
+                            //MarketValueReportingCurrencyT = Math.Round(totalSum.Value + sumAccrued, 2),
                             PercentInvestmentT = null
                         };
                         sectionContent.SubSection4000.Content.Add(investmentAsset);
@@ -154,6 +159,7 @@ namespace PSE.BusinessLogic
                                 {
                                     MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
                                     AssetClass = categoryDescr,
+                                    Class = CLASS_ENTRY,
                                     TypeInvestment = extEventArgsAdvisor.PropertyValue,
                                     MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
                                 };

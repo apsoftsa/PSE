@@ -15,6 +15,9 @@
         public const int DEFAULT_CURRENCY_DECIMAL_DIGITS = 2;
         public const string CURRENCY_BASE = "CHF";
 
+        public const string CLASS_ENTRY = "Entry";
+        public const string CLASS_TOTAL = "Total";
+
         public const string ITALIAN_LANGUAGE_CODE = "I";
         public const string FRENCH_LANGUAGE_CODE = "F";
         public const string GERMAN_LANGUAGE_CODE = "T";

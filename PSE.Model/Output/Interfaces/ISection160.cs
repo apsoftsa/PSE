@@ -6,6 +6,8 @@
 
         string Sector { get; set; }
 
+        string Class { get; set; }
+
         decimal? MarketValueReportingCurrency { get; set; }
 
         decimal? PercentShares { get; set; }
@@ -16,6 +18,8 @@
     {
 
         string Sector { get; set; }
+
+        string Class { get; set; }
 
         decimal? PercentShares { get; set; }
 

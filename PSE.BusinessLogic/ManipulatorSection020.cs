@@ -42,6 +42,7 @@ namespace PSE.BusinessLogic
                     {
                         sectionContent = new Section020Content();
                         sectionContent.SubSection2000 = new SubSection2000Content();
+                        sectionContent.SubSection2000.PerformanceCalculationCurrency = ideItem.Currency_19;
                         sectionContent.SubSection2010 = new SubSection2010Content();
                         foreach (PER perItem in perItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).OrderByDescending(ob => ob.StartDate_6))
                         {

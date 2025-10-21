@@ -30,6 +30,8 @@
 
         string Name { get; set; }
 
+        string PerformanceCalculationCurrency { get; set; } 
+
         IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
     }

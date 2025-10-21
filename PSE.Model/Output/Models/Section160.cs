@@ -12,6 +12,8 @@ namespace PSE.Model.Output.Models
 
         public string Sector { get; set; }
 
+        public string Class { get; set; }
+
         public decimal? MarketValueReportingCurrency { get; set; }
 
         public decimal? PercentShares { get; set; }
@@ -19,6 +21,7 @@ namespace PSE.Model.Output.Models
         public ShareEconomicSector()
         {
             Sector = string.Empty;
+            Class = string.Empty;
             MarketValueReportingCurrency = 0;
             PercentShares = 0;
         }
@@ -26,6 +29,7 @@ namespace PSE.Model.Output.Models
         public ShareEconomicSector(IShareEconomicSector source)
         {
             Sector = source.Sector;
+            Class = source.Class;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
             PercentShares = source.PercentShares;
         }
@@ -39,17 +43,21 @@ namespace PSE.Model.Output.Models
 
         public string Sector { get; set; }
 
+        public string Class { get; set; }
+
         public decimal? PercentShares { get; set; }
 
         public ShareEconomicSectorChart()
         {
             Sector = string.Empty;
+            Class = string.Empty;   
             PercentShares = 0;
         }
 
         public ShareEconomicSectorChart(IShareEconomicSectorChart source)
         {
             Sector = source.Sector;
+            Class = source.Class;   
             PercentShares = source.PercentShares;
         }
 

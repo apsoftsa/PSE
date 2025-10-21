@@ -8,6 +8,7 @@ using PSE.Model.SupportTables;
 using PSE.Dictionary;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic
@@ -58,6 +59,7 @@ namespace PSE.BusinessLogic
                         {
                             MarketValueReportingCurrency = Math.Round(economicalSector.Sum(sum => sum.Amount1Base_23).Value, 2),
                             Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
+                            Class = CLASS_ENTRY,
                             PercentShares = 0
                         };
                         totalSum += Math.Abs(econSector.MarketValueReportingCurrency.Value);
@@ -87,11 +89,12 @@ namespace PSE.BusinessLogic
                     sectionContent.SubSection16000.Content.Add(new ShareEconomicSector() {
                         MarketValueReportingCurrency = totalSum,
                         Sector = dictionaryService.GetTranslation("total_shares_upper", cultureCode),
+                        Class = CLASS_TOTAL,
                         PercentShares = 100.0m
                     });
                     foreach (var sector in sectionContent.SubSection16000.Content)
                     {
-                        sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares });
+                        sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares, Class = sector.Class });
                     }
                     output.Content = new Section160Content(sectionContent);
                 }

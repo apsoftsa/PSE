@@ -12,6 +12,7 @@
     public interface IEndExtractInvestment
     {
         string AssetClass { get; set; }
+        string Class { get; set; }  
         decimal? MarketValueReportingCurrency { get; set; }
         decimal? PercentInvestment { get; set; }
     }

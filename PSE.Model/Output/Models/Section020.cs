@@ -68,17 +68,21 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
+        public string PerformanceCalculationCurrency { get; set; }
+
         public IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
         public SubSection2000Content()
         {
             Name = "Performance Evolution History (CHF)";
+            PerformanceCalculationCurrency = string.Empty;
             Content = new List<IPerformanceEvolutionHistoryCHF>();
         }
 
         public SubSection2000Content(ISubSection2000Content source)
         {
             Name = source.Name;
+            PerformanceCalculationCurrency= source.PerformanceCalculationCurrency;  
             Content = new List<IPerformanceEvolutionHistoryCHF>();
             if (source.Content != null && source.Content.Any())
             {

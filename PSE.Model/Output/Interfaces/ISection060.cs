@@ -14,6 +14,8 @@
 
         decimal? PercentAsset { get; set; }
 
+        string Class {  get; set; } 
+
     }
 
     public interface IChartInvestmentCurrency
