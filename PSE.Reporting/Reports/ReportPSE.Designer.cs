@@ -582,7 +582,7 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.jsonDataSourcePSE = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.xrPageInfo = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.PageNumberInfo = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrLineFooterPage = new DevExpress.XtraReports.UI.XRLine();
             this.headerFooterLineStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.pageInfoStyle = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -1336,6 +1336,22 @@
             this.labelPerc2Section9010 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelPerc1Section9010 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine70 = new DevExpress.XtraReports.UI.XRLine();
+            this.PageFooterLabelDirezioneGenerale = new DevExpress.XtraReports.UI.XRLabel();
+            this.pageFooterLabelBold = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.pageFooterLabel = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.pageFooterLabelUnderline = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.PageFooterContentDirezioneGenerale = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentFiliali2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentFiliali3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentUfficioRappresentanza = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterLabelUfficioRappresentanza = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentContattiTel = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterLabelContatti = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentContattiEMail = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentContattiFax = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentContattiWebSite = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterLabelFiliali = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooterContentFiliali1 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -1915,20 +1931,33 @@
             // PageFooter
             // 
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPageInfo,
+            this.PageFooterLabelFiliali,
+            this.PageFooterContentFiliali1,
+            this.PageFooterContentContattiFax,
+            this.PageFooterContentContattiWebSite,
+            this.PageFooterContentContattiEMail,
+            this.PageFooterContentContattiTel,
+            this.PageFooterLabelContatti,
+            this.PageFooterContentUfficioRappresentanza,
+            this.PageFooterLabelUfficioRappresentanza,
+            this.PageFooterContentFiliali3,
+            this.PageFooterContentFiliali2,
+            this.PageFooterContentDirezioneGenerale,
+            this.PageFooterLabelDirezioneGenerale,
+            this.PageNumberInfo,
             this.xrLineFooterPage});
             this.PageFooter.Dpi = 254F;
             this.PageFooter.Name = "PageFooter";
-            this.PageFooter.PrintOn = DevExpress.XtraReports.UI.PrintOnPages.NotWithReportFooter;
+            this.PageFooter.PrintOn = ((DevExpress.XtraReports.UI.PrintOnPages)((DevExpress.XtraReports.UI.PrintOnPages.NotWithReportHeader | DevExpress.XtraReports.UI.PrintOnPages.NotWithReportFooter)));
             // 
-            // xrPageInfo
+            // PageNumberInfo
             // 
-            this.xrPageInfo.Dpi = 254F;
-            this.xrPageInfo.Name = "xrPageInfo";
-            this.xrPageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrPageInfo.StyleName = "pageInfoStyle";
-            this.xrPageInfo.StylePriority.UseTextAlignment = false;
-            this.xrPageInfo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.PageNumberInfo.Dpi = 254F;
+            this.PageNumberInfo.Name = "PageNumberInfo";
+            this.PageNumberInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageNumberInfo.StyleName = "pageInfoStyle";
+            this.PageNumberInfo.StylePriority.UseTextAlignment = false;
+            this.PageNumberInfo.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLineFooterPage
             // 
@@ -1946,8 +1975,8 @@
             // 
             // pageInfoStyle
             // 
-            this.pageInfoStyle.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.pageInfoStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(91)))), ((int)(((byte)(82)))));
+            this.pageInfoStyle.Font = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.pageInfoStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.pageInfoStyle.Name = "pageInfoStyle";
             this.pageInfoStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
@@ -9510,6 +9539,140 @@
             this.xrLine70.StyleName = "headerFooterLineStyle";
             this.xrLine70.StylePriority.UseBorderWidth = false;
             // 
+            // PageFooterLabelDirezioneGenerale
+            // 
+            this.PageFooterLabelDirezioneGenerale.CanGrow = false;
+            this.PageFooterLabelDirezioneGenerale.CanShrink = true;
+            this.PageFooterLabelDirezioneGenerale.Dpi = 254F;
+            this.PageFooterLabelDirezioneGenerale.Multiline = true;
+            this.PageFooterLabelDirezioneGenerale.Name = "PageFooterLabelDirezioneGenerale";
+            this.PageFooterLabelDirezioneGenerale.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterLabelDirezioneGenerale.StyleName = "pageFooterLabelBold";
+            // 
+            // pageFooterLabelBold
+            // 
+            this.pageFooterLabelBold.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.pageFooterLabelBold.BorderWidth = 0F;
+            this.pageFooterLabelBold.Font = new DevExpress.Drawing.DXFont("Arial", 6F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.pageFooterLabelBold.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.pageFooterLabelBold.Name = "pageFooterLabelBold";
+            this.pageFooterLabelBold.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 6, 0, 0, 254F);
+            this.pageFooterLabelBold.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            // 
+            // pageFooterLabel
+            // 
+            this.pageFooterLabel.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.pageFooterLabel.BorderWidth = 0F;
+            this.pageFooterLabel.Font = new DevExpress.Drawing.DXFont("Arial", 6F);
+            this.pageFooterLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.pageFooterLabel.Name = "pageFooterLabel";
+            this.pageFooterLabel.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 6, 0, 0, 254F);
+            this.pageFooterLabel.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // pageFooterLabelUnderline
+            // 
+            this.pageFooterLabelUnderline.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.pageFooterLabelUnderline.BorderWidth = 0F;
+            this.pageFooterLabelUnderline.Font = new DevExpress.Drawing.DXFont("Arial", 6F, DevExpress.Drawing.DXFontStyle.Underline);
+            this.pageFooterLabelUnderline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.pageFooterLabelUnderline.Name = "pageFooterLabelUnderline";
+            this.pageFooterLabelUnderline.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 6, 0, 0, 254F);
+            this.pageFooterLabelUnderline.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // PageFooterContentDirezioneGenerale
+            // 
+            this.PageFooterContentDirezioneGenerale.Dpi = 254F;
+            this.PageFooterContentDirezioneGenerale.Name = "PageFooterContentDirezioneGenerale";
+            this.PageFooterContentDirezioneGenerale.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentDirezioneGenerale.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterContentFiliali2
+            // 
+            this.PageFooterContentFiliali2.Dpi = 254F;
+            this.PageFooterContentFiliali2.Multiline = true;
+            this.PageFooterContentFiliali2.Name = "PageFooterContentFiliali2";
+            this.PageFooterContentFiliali2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentFiliali2.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterContentFiliali3
+            // 
+            this.PageFooterContentFiliali3.Dpi = 254F;
+            this.PageFooterContentFiliali3.Multiline = true;
+            this.PageFooterContentFiliali3.Name = "PageFooterContentFiliali3";
+            this.PageFooterContentFiliali3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentFiliali3.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterContentUfficioRappresentanza
+            // 
+            this.PageFooterContentUfficioRappresentanza.Dpi = 254F;
+            this.PageFooterContentUfficioRappresentanza.Multiline = true;
+            this.PageFooterContentUfficioRappresentanza.Name = "PageFooterContentUfficioRappresentanza";
+            this.PageFooterContentUfficioRappresentanza.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentUfficioRappresentanza.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterLabelUfficioRappresentanza
+            // 
+            this.PageFooterLabelUfficioRappresentanza.CanGrow = false;
+            this.PageFooterLabelUfficioRappresentanza.CanShrink = true;
+            this.PageFooterLabelUfficioRappresentanza.Dpi = 254F;
+            this.PageFooterLabelUfficioRappresentanza.Name = "PageFooterLabelUfficioRappresentanza";
+            this.PageFooterLabelUfficioRappresentanza.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterLabelUfficioRappresentanza.StyleName = "pageFooterLabelBold";
+            // 
+            // PageFooterContentContattiTel
+            // 
+            this.PageFooterContentContattiTel.Dpi = 254F;
+            this.PageFooterContentContattiTel.Name = "PageFooterContentContattiTel";
+            this.PageFooterContentContattiTel.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentContattiTel.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterLabelContatti
+            // 
+            this.PageFooterLabelContatti.Dpi = 254F;
+            this.PageFooterLabelContatti.Name = "PageFooterLabelContatti";
+            this.PageFooterLabelContatti.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterLabelContatti.StyleName = "pageFooterLabelBold";
+            // 
+            // PageFooterContentContattiEMail
+            // 
+            this.PageFooterContentContattiEMail.Dpi = 254F;
+            this.PageFooterContentContattiEMail.Name = "PageFooterContentContattiEMail";
+            this.PageFooterContentContattiEMail.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentContattiEMail.StyleName = "pageFooterLabelUnderline";
+            // 
+            // PageFooterContentContattiFax
+            // 
+            this.PageFooterContentContattiFax.Dpi = 254F;
+            this.PageFooterContentContattiFax.Name = "PageFooterContentContattiFax";
+            this.PageFooterContentContattiFax.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentContattiFax.StyleName = "pageFooterLabel";
+            // 
+            // PageFooterContentContattiWebSite
+            // 
+            this.PageFooterContentContattiWebSite.Dpi = 254F;
+            this.PageFooterContentContattiWebSite.Name = "PageFooterContentContattiWebSite";
+            this.PageFooterContentContattiWebSite.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentContattiWebSite.StyleName = "pageFooterLabelUnderline";
+            // 
+            // PageFooterLabelFiliali
+            // 
+            this.PageFooterLabelFiliali.CanGrow = false;
+            this.PageFooterLabelFiliali.CanShrink = true;
+            this.PageFooterLabelFiliali.Dpi = 254F;
+            this.PageFooterLabelFiliali.Name = "PageFooterLabelFiliali";
+            this.PageFooterLabelFiliali.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterLabelFiliali.StyleName = "pageFooterLabelBold";
+            // 
+            // PageFooterContentFiliali1
+            // 
+            this.PageFooterContentFiliali1.CanGrow = false;
+            this.PageFooterContentFiliali1.CanShrink = true;
+            this.PageFooterContentFiliali1.Dpi = 254F;
+            this.PageFooterContentFiliali1.Multiline = true;
+            this.PageFooterContentFiliali1.Name = "PageFooterContentFiliali1";
+            this.PageFooterContentFiliali1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageFooterContentFiliali1.StyleName = "pageFooterLabel";
+            // 
             // ReportPSE
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -10703,9 +10866,53 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValueReportingCurrencyTSection4000, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValueReportingCurrencyTSection4000, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PageBreakNotes, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1517.84F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooter, "Default", "HeightF", 117.4127F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooter, "Default", "HeightF", 112F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiEMail, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1765.19F, 82.39882F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiEMail, "Default", "SizeF", new System.Drawing.SizeF(291.73F, 28F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiEMail, "Default", "Text", "info@bancasempione.ch"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiFax, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2164.39F, 56F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiFax, "Default", "SizeF", new System.Drawing.SizeF(291.73F, 26F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiFax, "Default", "Text", "Fax +41 (0) 91 910 71 60"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiTel, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1764.79F, 55.9988F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiTel, "Default", "SizeF", new System.Drawing.SizeF(291.73F, 26F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiTel, "Default", "Text", "Tel. + 41 (0) 91 910 71 11"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiWebSite, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2164.79F, 82.4F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiWebSite, "Default", "SizeF", new System.Drawing.SizeF(291.73F, 28F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentContattiWebSite, "Default", "Text", "www.bancasempione.ch"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentDirezioneGenerale, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(5.04039F, 75.00059F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentDirezioneGenerale, "Default", "SizeF", new System.Drawing.SizeF(337.79F, 33.9994F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentDirezioneGenerale, "Default", "Text", "Via Pietro Peri 5, CH-6900 Lugano"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(440.1702F, 55.9986F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali1, "Default", "SizeF", new System.Drawing.SizeF(209.71F, 53.00132F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali1, "Default", "Text", "Viale Stazione 8a, CH-6500 Bellinzona"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(739.7901F, 55.9988F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali2, "Default", "SizeF", new System.Drawing.SizeF(205.67F, 53.00132F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali2, "Default", "Text", "Piazza Boffalora 4,  CH-6830 Chiasso"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1044.42F, 55.9988F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali3, "Default", "SizeF", new System.Drawing.SizeF(260.7419F, 53.00132F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentFiliali3, "Default", "Text", "Via della Stazione 9,         CH-6600 Locarno-Muralto"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentUfficioRappresentanza, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1399.499F, 55.99864F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentUfficioRappresentanza, "Default", "SizeF", new System.Drawing.SizeF(209.71F, 53.00132F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterContentUfficioRappresentanza, "Default", "Text", "Bahnhofstrasse 65, CH-8001 Zurigo"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelContatti, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1764.79F, 25F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelContatti, "Default", "SizeF", new System.Drawing.SizeF(209.71F, 30F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelContatti, "Default", "Text", "Contatti:"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelDirezioneGenerale, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1F, 25F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelDirezioneGenerale, "Default", "SizeF", new System.Drawing.SizeF(341.83F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelDirezioneGenerale, "Default", "Text", "Banca del Sempione – Direzione Generale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelFiliali, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(440.17F, 25F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelFiliali, "Default", "SizeF", new System.Drawing.SizeF(209.71F, 30F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelFiliali, "Default", "Text", "Filiali:"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelUfficioRappresentanza, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1399.5F, 25F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelUfficioRappresentanza, "Default", "SizeF", new System.Drawing.SizeF(270.495F, 30F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageFooterLabelUfficioRappresentanza, "Default", "Text", "Ufficio di Rappresentanza:"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PageHeader, "Default", "HeightF", 210F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PageHeader, "en-CH", "HeightF", 210F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageNumberInfo, "it-CH", "Bookmark", "Pagina {0} di {1}."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageNumberInfo, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2481.878F, 25.00106F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageNumberInfo, "Default", "SizeF", new System.Drawing.SizeF(274.792F, 86.39896F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageNumberInfo, "Default", "TextFormatString", "Pagina {0} di {1}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PageNumberInfo, "en-CH", "TextFormatString", "Page {0} of {1}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.753789F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage1, "Default", "SizeF", new System.Drawing.SizeF(2764.87F, 1508F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0.1899916F, 1534.999F)),
@@ -11686,11 +11893,6 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLineFooterPage, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLineHeaderPage, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 173.2292F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLineHeaderPage, "Default", "SizeF", new System.Drawing.SizeF(2770F, 11.77077F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPageInfo, "it-CH", "Bookmark", "Pagina {0} di {1}."),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPageInfo, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2357.521F, 22.01351F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPageInfo, "Default", "SizeF", new System.Drawing.SizeF(399.146F, 58.42001F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPageInfo, "Default", "TextFormatString", "Pagina {0} di {1}"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPageInfo, "en-CH", "TextFormatString", "Page {0} of {1}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPictureBox1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrPictureBox1, "Default", "SizeF", new System.Drawing.SizeF(507.15F, 146.6042F))});
             this.PageHeight = 2100;
@@ -11734,7 +11936,10 @@
             this.reportLabelStyleBoldItalic,
             this.gridColumnHeaderCenterStyle,
             this.gridRowLineThinStyle,
-            this.gridContentStyleCenter});
+            this.gridContentStyleCenter,
+            this.pageFooterLabelBold,
+            this.pageFooterLabel,
+            this.pageFooterLabelUnderline});
             this.Version = "24.2";
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
@@ -11778,7 +11983,7 @@
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.XRLine xrLineFooterPage;
         private DevExpress.XtraReports.UI.XRControlStyle headerFooterLineStyle;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo;
+        private DevExpress.XtraReports.UI.XRPageInfo PageNumberInfo;
         private DevExpress.XtraReports.UI.XRControlStyle pageInfoStyle;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.XRLine xrLineHeaderPage;
@@ -12531,5 +12736,21 @@
         private DevExpress.XtraReports.UI.XRLabel labelPerc2Section9010;
         private DevExpress.XtraReports.UI.XRLabel labelPerc1Section9010;
         private DevExpress.XtraReports.UI.XRLine xrLine70;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterLabelDirezioneGenerale;
+        private DevExpress.XtraReports.UI.XRControlStyle pageFooterLabelBold;
+        private DevExpress.XtraReports.UI.XRControlStyle pageFooterLabel;
+        private DevExpress.XtraReports.UI.XRControlStyle pageFooterLabelUnderline;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentDirezioneGenerale;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentUfficioRappresentanza;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterLabelUfficioRappresentanza;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentFiliali3;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentFiliali2;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentContattiEMail;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentContattiTel;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterLabelContatti;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentContattiFax;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentContattiWebSite;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterLabelFiliali;
+        private DevExpress.XtraReports.UI.XRLabel PageFooterContentFiliali1;
     }
 }
