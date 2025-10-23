@@ -84,6 +84,10 @@ namespace PSE.Reporting.Reports {
             _currencyToApply = ((XRLabel)sender).Text;
         }
 
+        private void ContentReportHeaderCliente_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderCliente.Text, " ", ((XRLabel)sender).Text);
+        }
+
         private void ContentReportHeaderNumeroCliente_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
         }
@@ -109,6 +113,20 @@ namespace PSE.Reporting.Reports {
 
         private void contentHeaderRow2_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = string.Concat(this.labelHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void LabelRendicontoGestioneSection1000_BeforePrint(object sender, CancelEventArgs e) {
+            string tmpText = ((XRLabel)sender).Text;
+            tmpText = tmpText.Replace("{0}", this.ContentManagementReportFromDate.Text).Replace("{1}", this.ContentManagementReportToDate.Text);
+            ((XRLabel)sender).Text = tmpText;
+        }
+
+        private void LabelSection1000ValorePortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = ((XRLabel)sender).Text.Replace("{0}", this.ContentManagementReportPortfolioDate1.Text);
+        }
+
+        private void LabelSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLabel)sender).Text = ((XRLabel)sender).Text.Replace("{0}", this.ContentManagementReportPortfolioDate2.Text);
         }
 
         private void DetailReportSection4000_BeforePrint(object sender, CancelEventArgs e) {
@@ -140,7 +158,7 @@ namespace PSE.Reporting.Reports {
             XRLabel currLabel = (XRLabel)sender;
             if (_needResetRow)
                 currLabel.Text = "";
-            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
+            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1) 
                 currLabel.StyleName = "gridContentStyleBoldItalic";
         }
 
@@ -157,7 +175,11 @@ namespace PSE.Reporting.Reports {
                 XRLabel currLabel = (XRLabel)sender;
                 currLabel.Text = "";
             }
-        }      
+        }
+
+        private void lineMiddleSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLine)sender).Visible = this.classSection4000.Text != "Total";
+        }
 
         private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
@@ -200,15 +222,36 @@ namespace PSE.Reporting.Reports {
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
             if (this.DetailReportSection160.CurrentRowIndex == _rowCount - 1) {
+                this.section16000LineGridUpper.StyleName = "headerFooterLineStyle";
+                this.section16000LineGridUpper.LineWidth = 2;
                 this.sector16000.StyleName = "gridContentStyleBold";
                 this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
-                this.section16000LineGridUpper.Visible = true;
-                this.section16000LineGridDown.Visible = true;
-            }else {
-                this.section16000LineGridUpper.Visible = false;
-                this.section16000LineGridDown.Visible = false;
+                this.percentShares16000Fake.StyleName = "gridContentStyleRightAlignBold";
+                this.percentShares16000Fake.TextFormatString = "{0:0}%";
+            } else {
+                this.section16000LineGridUpper.StyleName = "gridRowLineStyle";
+                this.section16000LineGridUpper.LineWidth = 1;
+                this.sector16000.StyleName = "gridContentStyle";
+                this.marketValue16000.StyleName = "gridContentStyleRightAlign";
+                this.percentShares16000Fake.StyleName = "gridContentStyleRightAlign";
+                this.percentShares16000Fake.TextFormatString = "{0:0.00}%";
             }
+            this.section16000LineGridUpper.Visible = this.DetailReportSection160.CurrentRowIndex > 0;
+            this.section16000LineGridDown.Visible = this.DetailReportSection160.CurrentRowIndex == _rowCount - 1;
         }
+
+        private void section17000LineGridUpper_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLine)sender).Visible = this.DetailReportSection170.CurrentRowIndex > 0;
+        }
+
+        private void DetailReportSubSection170_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+        }
+
+        private void subSection17000LineGridDown_BeforePrint(object sender, CancelEventArgs e) {
+            ((XRLine)sender).Visible = this.DetailReportSubSection170.CurrentRowIndex < _rowCount - 1;
+        }
+
 
         private void DetailReportSubSection200_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
@@ -231,14 +274,6 @@ namespace PSE.Reporting.Reports {
                 ((XRLabel)sender).StyleName = "gridContentStyleRightAlignBoldItalic";
             }
         }
-
-        private void DetailReportSection170_BeforePrint(object sender, CancelEventArgs e) {
-            _rowCount = ((DetailReportBand)sender).RowCount;
-        }
-
-        private void section17000LineGridUpper_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLine)sender).Visible = this.DetailReportSection170.CurrentRowIndex > 0;
-        }       
 
     }
 
