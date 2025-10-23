@@ -41,6 +41,20 @@ namespace PSE.Reporting.Reports {
             label.Visible = !toHidden;
         }
 
+        private void checkIfCambioNotMeaningful_BeforePrint(object sender, CancelEventArgs e) {
+            if (double.TryParse(((XRLabel)sender).Text, out double exchange) && exchange == 1.0d) 
+                ((XRLabel)sender).Text = "-";
+        }
+
+        private void hiddenIfCambioNotMeaningful_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            bool toHidden = false;
+            if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%", ""), out double value))
+                toHidden = value == 0;
+            if (toHidden)
+                ((XRLabel)sender).Text = "-";
+        }
+
         private void applyCurrency_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             label.Text = label.Text.Replace("{0}", _currencyToApply);
@@ -274,7 +288,7 @@ namespace PSE.Reporting.Reports {
                 ((XRLabel)sender).StyleName = "gridContentStyleRightAlignBoldItalic";
             }
         }
-
+        
     }
 
 }
