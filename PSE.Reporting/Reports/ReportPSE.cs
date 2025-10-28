@@ -7,12 +7,19 @@ namespace PSE.Reporting.Reports {
 
         private string _currencyToApply;
         private string _currentAssetClassSection4000;
+        private bool _hasSection70CaptionVisible;
         private bool _hasSection80CaptionVisible;
         private bool _hasSection90CaptionVisible;
+        private bool _section70NeedPageBreakAtTheEnd;
         private bool _section80NeedPageBreakAtTheEnd;
         private bool _section90NeedPageBreakAtTheEnd;
         private bool _needResetRow;
         int _rowCount;
+
+        private void ManageSection70VisibilityFlags() {
+            if (_section70NeedPageBreakAtTheEnd)
+                _section70NeedPageBreakAtTheEnd = false;
+        }
 
         private void ManageSection80VisibilityFlags() {
             if (_section80NeedPageBreakAtTheEnd)
@@ -28,8 +35,10 @@ namespace PSE.Reporting.Reports {
             InitializeComponent();
             _currencyToApply = "?";
             _currentAssetClassSection4000 = string.Empty;
+            _hasSection70CaptionVisible = false;
             _hasSection80CaptionVisible = false;
-            _hasSection90CaptionVisible = false;    
+            _hasSection90CaptionVisible = false;
+            _section70NeedPageBreakAtTheEnd = false;
             _section80NeedPageBreakAtTheEnd = false;
             _section90NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
@@ -63,39 +72,42 @@ namespace PSE.Reporting.Reports {
             label.Text = label.Text.Replace("{0}", _currencyToApply);
         }
 
-        private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
-                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                ManageSection80VisibilityFlags();
-                ManageSection90VisibilityFlags();
-            }
-        }
-
-        private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
-                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                ManageSection80VisibilityFlags();
-                ManageSection90VisibilityFlags();
-            }
-        }
-
         private void pageBreakBeforeGroupHeaderSection80_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section70NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection70VisibilityFlags();
+            }
+        }
+
+        private void pageBreakBeforeGroupHeaderSection90_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd) {
                 ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
                 ManageSection80VisibilityFlags();
             }
         }
 
-        private void pageBreakBeforeGroupHeaderSection90_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section90NeedPageBreakAtTheEnd) {
-                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+        private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
+                ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection70VisibilityFlags();
+                ManageSection80VisibilityFlags();
                 ManageSection90VisibilityFlags();
             }
         }
 
+        private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection70VisibilityFlags();
+                ManageSection80VisibilityFlags();
+                ManageSection90VisibilityFlags();
+            }
+        }
+      
         private void pageBreakBeforeBand_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((DetailReportBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection70VisibilityFlags();
                 ManageSection80VisibilityFlags();
                 ManageSection90VisibilityFlags();
             }
@@ -147,6 +159,22 @@ namespace PSE.Reporting.Reports {
 
         private void contentHeaderRow2_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = string.Concat(this.labelHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
+        }
+
+        private void BDSLogoPageHeader_PrintOnPage(object sender, PrintOnPageEventArgs e) {
+            ((XRPictureBox)sender).Visible = e.PageIndex != e.PageCount - 1;
+        }
+
+        private void contentHeaderRow1_PrintOnPage(object sender, PrintOnPageEventArgs e) {
+            ((XRLabel)sender).Visible = e.PageIndex > 0 && e.PageIndex != e.PageCount - 1;
+        }
+
+        private void contentHeaderRow2_PrintOnPage(object sender, PrintOnPageEventArgs e) {
+            ((XRLabel)sender).Visible = e.PageIndex > 0 && e.PageIndex != e.PageCount - 1;
+        }
+
+        private void linePageHeader_PrintOnPage(object sender, PrintOnPageEventArgs e) {
+            ((XRLine)sender).Visible = e.PageIndex > 0 && e.PageIndex != e.PageCount - 1;
         }
 
         private void LabelRendicontoGestioneSection1000_BeforePrint(object sender, CancelEventArgs e) {
@@ -213,6 +241,15 @@ namespace PSE.Reporting.Reports {
 
         private void lineMiddleSection4000_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLine)sender).Visible = this.classSection4000.Text != "Total";
+        }
+
+        private void checkSection70CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_hasSection70CaptionVisible == false && label.Visible) {
+                _hasSection70CaptionVisible = true;
+                _section70NeedPageBreakAtTheEnd = true;
+            } else
+                label.Visible = false;
         }
 
         private void checkSection80CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
@@ -308,7 +345,11 @@ namespace PSE.Reporting.Reports {
                 ((XRLabel)sender).StyleName = "gridContentStyleRightAlignBoldItalic";
             }
         }
-        
+
+        private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
+            ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
+        }        
+
     }
 
 }
