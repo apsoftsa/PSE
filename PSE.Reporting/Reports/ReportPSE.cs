@@ -14,9 +14,12 @@ namespace PSE.Reporting.Reports {
         private bool _needResetRow;
         int _rowCount;
 
-        private void ManageSectionVisibilityFlags() {
+        private void ManageSection80VisibilityFlags() {
             if (_section80NeedPageBreakAtTheEnd)
                 _section80NeedPageBreakAtTheEnd = false;
+        }
+
+        private void ManageSection90VisibilityFlags() {
             if (_section90NeedPageBreakAtTheEnd)
                 _section90NeedPageBreakAtTheEnd = false;
         }
@@ -63,21 +66,38 @@ namespace PSE.Reporting.Reports {
         private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                ManageSectionVisibilityFlags();
+                ManageSection80VisibilityFlags();
+                ManageSection90VisibilityFlags();
             }
         }
 
         private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
-                ManageSectionVisibilityFlags();
+                ManageSection80VisibilityFlags();
+                ManageSection90VisibilityFlags();
+            }
+        }
+
+        private void pageBreakBeforeGroupHeaderSection80_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section80NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection80VisibilityFlags();
+            }
+        }
+
+        private void pageBreakBeforeGroupHeaderSection90_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section90NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection90VisibilityFlags();
             }
         }
 
         private void pageBreakBeforeBand_BeforePrint(object sender, CancelEventArgs e) {
             if (_section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd) {
                 ((DetailReportBand)sender).PageBreak = PageBreak.BeforeBand;
-                ManageSectionVisibilityFlags();
+                ManageSection80VisibilityFlags();
+                ManageSection90VisibilityFlags();
             }
         }
 
