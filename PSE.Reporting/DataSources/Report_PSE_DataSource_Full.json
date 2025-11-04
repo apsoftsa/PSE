@@ -1,0 +1,4071 @@
+{
+  "header": [
+    {
+      "requestUUID": "",
+      "referenceString1": "1077681",
+      "referenceString2": "77681_STIGE",
+      "referenceString3": "20250403",
+      "referenceString4": "",
+      "referenceString5": "",
+      "referenceString6": "",
+      "referenceString7": "",
+      "referenceString8": "",
+      "referenceString9": "CHF",
+      "referenceString10": "I"
+    }
+  ],
+  "section0": {
+    "name": "Cover",
+    "content": {
+      "assetStatement": [
+        {
+          "customer": "77681 STIGE",
+          "customerID": "1077681",
+          "settled": [
+            {
+              "date": "03.04.2025",
+              "time": "16:47"
+            }
+          ],
+          "portfolio": "CHF - DINAMICO MGP PLUS",
+          "advisory": "WALTER ATHOS (MGP)"
+        }
+      ]
+    }
+  },
+  "section10": {
+    "name": "Portfolio Details",
+    "content": {
+      "subSection1000": {
+        "name": "Key Information",
+        "content": [
+          {
+            "customer": "77681 STIGE",
+            "customerID": "1077681",
+            "portfolio": "CHF - DINAMICO MGP PLUS",
+            "riskProfile": 0,
+            "esgProfile": "MAND. DI GEST. PERSONALIZZATO"
+          }
+        ]
+      },
+      "subSection1010": {
+        "name": "Management report 01.01.2025 – 02.04.2025",
+        "managementReportFromDate": "01.01.2025",
+        "managementReportToDate": "02.04.2025",
+        "portfolioValueDate": "01.01.2025",
+        "portfolioValueReportingCurrency": 2895237.13,
+        "contributionsValueReportingCurrency": 0.0,
+        "withdrawalsValueReportingCurrency": -54.05,
+        "portfolioValueRectifiedReportingCurrency": 2895183.08,
+        "portfolioValueDate2": "02.04.2025",
+        "portfolioValueReportingCurrency2": 2962577.82,
+        "pluslessValueReportingCurrency": 67394.74,
+        "percentWightedPerformance": 2.32
+      },
+      "subSection1011": {
+        "name": "Dividend and interest",
+        "dividendAndInterestValueReportingCurrency": 8332.18,
+        "realizedGainLossesValueReportingCurrency": 3539.29,
+        "ongoingRealizedGainLossesValueReportingCurrency": 5061.74,
+        "onCurrencyRealizedGainLossesValueReportingCurrency": -1522.45,
+        "notRealizedGainLossesValueReportingCurrency": 55523.27,
+        "ongoingNotRealizedGainLossesValueReportingCurrency": 67739.87,
+        "onCurrencyNotRealizedGainLossesValueReportingCurrency": -12216.60,
+        "plusLessValueReportingCurrency": 67394.74
+      }
+    }
+  },
+  "section20": {
+    "name": "Performance Evolution",
+    "content": {
+      "subSection2000": {
+        "name": "Performance Evolution History (CHF)",
+        "performanceCalculationCurrency": "CHF",
+        "content": [
+          {
+            "period": "01.01.2025-02.04.2025",
+            "initialAmount": 2895237.13,
+            "finalAmount": 2962577.82,
+            "inputsOutputs": -54.05,
+            "percentPerformance": 2.32
+          },
+          {
+            "period": "2024",
+            "initialAmount": 2491400.93,
+            "finalAmount": 2895237.13,
+            "inputsOutputs": 285870.75,
+            "percentPerformance": 4.21
+          },
+          {
+            "period": "2023",
+            "initialAmount": 2946652.73,
+            "finalAmount": 2491400.93,
+            "inputsOutputs": -572642.80,
+            "percentPerformance": 4.26
+          },
+          {
+            "period": "2022",
+            "initialAmount": 3869143.21,
+            "finalAmount": 2946652.73,
+            "inputsOutputs": -277622.70,
+            "percentPerformance": -17.39
+          },
+          {
+            "period": "2021",
+            "initialAmount": 4333006.30,
+            "finalAmount": 3869143.21,
+            "inputsOutputs": -559769.25,
+            "percentPerformance": 2.36
+          },
+          {
+            "period": "2020",
+            "initialAmount": 4582114.74,
+            "finalAmount": 4333006.30,
+            "inputsOutputs": -308292.60,
+            "percentPerformance": 1.79
+          }
+        ]
+      },
+      "subSection2010": {
+        "name": "Performance Evolution Chart",
+        "content": [
+          {
+            "period": "2025",
+            "percentPerformance": 2.32
+          },
+          {
+            "period": "2024",
+            "percentPerformance": 4.21
+          },
+          {
+            "period": "2023",
+            "percentPerformance": 4.26
+          },
+          {
+            "period": "2022",
+            "percentPerformance": -17.39
+          },
+          {
+            "period": "2021",
+            "percentPerformance": 2.36
+          },
+          {
+            "period": "2020",
+            "percentPerformance": 1.79
+          }
+        ]
+      }
+    }
+  },
+  "section40": {
+    "name": "Breakdown by type of investment",
+    "content": {
+      "subSection4000": {
+        "name": "Investments",
+        "content": [
+          {
+            "assetClass": "LIQUIDITA'",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 148278.71,
+            "percentInvestmentT": 5.04,
+            "typeInvestment": "CONTI",
+            "marketValueReportingCurrency": 148278.71,
+            "percentInvestment": 5.04
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 1551619.20,
+            "percentInvestmentT": 52.79,
+            "typeInvestment": "OBBLIGAZIONI CON SCADENZA <= 1 ANNO",
+            "marketValueReportingCurrency": 202096.60,
+            "percentInvestment": 6.88
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 1551619.20,
+            "percentInvestmentT": 52.79,
+            "typeInvestment": "OBBLIGAZIONI CON SCADENZA <= 5 ANNI",
+            "marketValueReportingCurrency": 396520.00,
+            "percentInvestment": 13.49
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 1551619.20,
+            "percentInvestmentT": 52.79,
+            "typeInvestment": "OBBLIGAZIONI CON SCADENZA > 5 ANNI, FONDI OBBLIGAZIONARI",
+            "marketValueReportingCurrency": 953002.60,
+            "percentInvestment": 32.42
+          },
+          {
+            "assetClass": "BENI REALI",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 765406.45,
+            "percentInvestmentT": 26.04,
+            "typeInvestment": "AZIONI, FONDI AZIONARI",
+            "marketValueReportingCurrency": 765406.45,
+            "percentInvestment": 26.04
+          },
+          {
+            "assetClass": "ALTRI TIPI DI INVESTIMENTO",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 474220.25,
+            "percentInvestmentT": 16.13,
+            "typeInvestment": "FONDI MISTI",
+            "marketValueReportingCurrency": 411355.45,
+            "percentInvestment": 13.99
+          },
+          {
+            "assetClass": "ALTRI TIPI DI INVESTIMENTO",
+            "class": "Entry",
+            "marketValueReportingCurrencyT": 474220.25,
+            "percentInvestmentT": 16.13,
+            "typeInvestment": "PRODOTTI ALTERNATIVI, DIVERSI",
+            "marketValueReportingCurrency": 62864.80,
+            "percentInvestment": 2.14
+          },
+          {
+            "assetClass": "TOTALE INVESTIMENTI",
+            "class": "Total",
+            "marketValueReportingCurrencyT": 2939524.61,
+            "percentInvestmentT": 100.0
+          },
+          {
+            "assetClass": "TOTALE INVESTIMENTI",
+            "class": "Entry",
+            "typeInvestment": "INTERESSI MATURATI",
+            "marketValueReportingCurrency": 7675.64,
+            "percentInvestment": 0.26
+          },
+          {
+            "assetClass": "TOTALI PATRIMONIO",
+            "class": "Total",
+            "marketValueReportingCurrencyT": 2947200.25
+          }
+        ]
+      },
+      "subSection4010": {
+        "name": "Asset class chart",
+        "content": [
+          {
+            "assetClass": "LIQUIDITA'",
+            "percentInvestment": 5.04
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "percentInvestment": 52.79
+          },
+          {
+            "assetClass": "BENI REALI",
+            "percentInvestment": 26.04
+          },
+          {
+            "assetClass": "ALTRI TIPI DI INVESTIMENTO",
+            "percentInvestment": 16.13
+          }
+        ]
+      }
+    }
+  },
+  "section60": {
+    "name": "Breakdown by currency",
+    "content": {
+      "subSection6000": {
+        "name": "Investments",
+        "content": [
+          {
+            "currency": "CHF",
+            "marketValueReportingCurrency": 2328477.30,
+            "percentAsset": 79.01,
+            "amount": 2328477.30,
+            "exchange": 1.000000,
+            "class": "Entry"
+          },
+          {
+            "currency": "EUR",
+            "marketValueReportingCurrency": 18261.25,
+            "percentAsset": 0.62,
+            "amount": 19196.80,
+            "exchange": 0.951265,
+            "class": "Entry"
+          },
+          {
+            "currency": "GBP",
+            "marketValueReportingCurrency": 47731.25,
+            "percentAsset": 1.62,
+            "amount": 42348.69,
+            "exchange": 1.127100,
+            "class": "Entry"
+          },
+          {
+            "currency": "USD",
+            "marketValueReportingCurrency": 552730.45,
+            "percentAsset": 18.75,
+            "amount": 645222.87,
+            "exchange": 0.856650,
+            "class": "Entry"
+          },
+          {
+            "currency": "Totale",
+            "marketValueReportingCurrency": 2947200.25,
+            "percentAsset": 100.0,
+            "class": "Total"
+          }
+        ]
+      },
+      "subSection6010": {
+        "name": "Chart by currency",
+        "content": [
+          {
+            "currency": "CHF",
+            "percentAsset": 79.01
+          },
+          {
+            "currency": "EUR",
+            "percentAsset": 0.62
+          },
+          {
+            "currency": "GBP",
+            "percentAsset": 1.62
+          },
+          {
+            "currency": "USD",
+            "percentAsset": 18.75
+          }
+        ]
+      }
+    }
+  },
+  "section70": {
+    "name": "Liquidity",
+    "content": {
+      "subSection7000": {
+        "name": "Accounts",
+        "content": [
+          {
+            "description": "C/C CHF 1077681AD",
+            "iban": "CH98086660001077681AD",
+            "currentBalance": 146926.160,
+            "marketValueReportingCurrency": 146926.16,
+            "percentWeight": 4.985279
+          },
+          {
+            "description": "C/C USD 1077681A5",
+            "iban": "CH49086660001077681A5",
+            "currentBalance": 1578.860,
+            "marketValueReportingCurrency": 1352.55,
+            "percentWeight": 0.045893
+          }
+        ]
+      },	
+	  "subSection7010": {
+        "name": "Short-term funds",
+        "content": [
+          {
+            "description1": "BASE LOW DURATION D BASE INV SICAV",
+            "description2": "LU0156763020",
+            "quantity": 4000.000,
+            "currency": "EUR",
+            "summaryTo": [
+              {
+                "valueDate": "08.10.2025",
+                "valuePrice": 116.800000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 114.850000,
+                "percentPrice": 1.697867,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 7800.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 112.700400,
+                "percentPrice": 3.637609,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 16398.40,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 467200.00,
+            "interestMarketValueReportingCurrency": 0.0,
+            "totalMarketValueReportingCurrency": 467200.00,
+            "percentWeight": 5.389048
+          },
+          {
+            "description1": "BASE LOW DURATION BASE INV SICAV",
+            "description2": "LU0633776355",
+            "quantity": 3300.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "08.10.2025",
+                "valuePrice": 99.570000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.932295,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.710000,
+                "percentPrice": -0.140407,
+                "exchangeValue": 0.942334,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 3264.42,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 104.470000,
+                "percentPrice": -4.690342,
+                "exchangeValue": 1.055657,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 25868.34,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 352443.04,
+            "interestMarketValueReportingCurrency": 0.0,
+            "totalMarketValueReportingCurrency": 352443.04,
+            "percentWeight": 4.065352
+          }
+        ]
+      },
+	  "subSection7020": {
+        "name": "Fiduciary investments",
+        "content": [
+          {
+            "description1": "USD 1134951AE",
+            "description2": "",
+            "percentRate": 0.15,
+            "correspondent": "INTESA SANPAOLO, LUX",
+            "openingDate": "25.03.2020",
+            "expirationDate": "20.11.2024",
+            "currentBalance": 355000.000,
+            "marketValueReportingCurrency": 299203.24,
+            "accruedInterestReportingCurrency": 613.37,
+            "percentWeight": 8.2
+          }
+        ]
+      },	 
+      "subSection7030": {
+        "name": "Temporary deposits",
+        "content": [
+          {
+            "description1": "EUR 1136558B5",
+            "description2": "",
+            "percentRate": 0.0,
+            "correspondent": "VINCOLATO",
+            "openingDate": "10.10.2025",
+            "expirationDate": "10.11.2025",
+            "currentBalance": 4000000.000,
+            "marketValueReportingCurrency": 4000000.00,
+            "accruedInterestReportingCurrency": 0.0,
+            "percentWeight": 46.139113
+          },
+          {
+            "description1": "USD 1136558B4",
+            "description2": "",
+            "percentRate": 0.0,
+            "correspondent": "VINCOLATO",
+            "openingDate": "10.10.2025",
+            "expirationDate": "10.11.2025",
+            "currentBalance": 700000.000,
+            "marketValueReportingCurrency": 605135.88,
+            "accruedInterestReportingCurrency": 0.0,
+            "percentWeight": 6.980108
+          }
+        ]
+      },	 
+	  "subSection7040": {
+        "name": "Forward exchange operations (profit/loss)",
+        "content": [
+          {
+            "currency1": "XAU",
+            "currencyValue": 150.00,
+            "exchangeRate": 3678.500000,
+            "exchangeValue": -551775.00,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 3998.598003,
+            "profitLoss": 38678.40,
+            "percentWeight": 0.419361
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": 5000.00,
+            "exchangeRate": 41.750000,
+            "exchangeValue": -208750.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": 34980.85,
+            "percentWeight": 0.379271
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": 5000.00,
+            "exchangeRate": 46.740000,
+            "exchangeValue": -233700.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": 14999.80,
+            "percentWeight": 0.162631
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": 5000.00,
+            "exchangeRate": 45.985000,
+            "exchangeValue": -229925.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": 18023.00,
+            "percentWeight": 0.195410
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": 50.00,
+            "exchangeRate": 3679.000000,
+            "exchangeValue": -183950.00,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 3998.598003,
+            "profitLoss": 12872.65,
+            "percentWeight": 0.139568
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -2000.00,
+            "exchangeRate": 51.000000,
+            "exchangeValue": 102000.00,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 50.190769,
+            "profitLoss": 1303.75,
+            "percentWeight": 0.014136
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -2500.00,
+            "exchangeRate": 48.670000,
+            "exchangeValue": 121675.00,
+            "currency2": "USD",
+            "expirationDate": "21.10.2025",
+            "currentRate": 50.241865,
+            "profitLoss": -3162.35,
+            "percentWeight": -0.034287
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -2500.00,
+            "exchangeRate": 48.670000,
+            "exchangeValue": 121675.00,
+            "currency2": "USD",
+            "expirationDate": "21.10.2025",
+            "currentRate": 50.241865,
+            "profitLoss": -3162.35,
+            "percentWeight": -0.034287
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -50.00,
+            "exchangeRate": 3704.000000,
+            "exchangeValue": 185200.00,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 3998.598003,
+            "profitLoss": -11865.70,
+            "percentWeight": -0.128651
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -5000.00,
+            "exchangeRate": 43.500000,
+            "exchangeValue": 217500.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": -27973.45,
+            "percentWeight": -0.303295
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -5000.00,
+            "exchangeRate": 48.500000,
+            "exchangeValue": 242500.00,
+            "currency2": "USD",
+            "expirationDate": "21.10.2025",
+            "currentRate": 50.241865,
+            "profitLoss": -7008.70,
+            "percentWeight": -0.075990
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -5000.00,
+            "exchangeRate": 42.840000,
+            "exchangeValue": 214200.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": -30616.25,
+            "percentWeight": -0.331949
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -5000.00,
+            "exchangeRate": 46.900000,
+            "exchangeValue": 234500.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": -14359.15,
+            "percentWeight": -0.155685
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -5000.00,
+            "exchangeRate": 46.065000,
+            "exchangeValue": 230325.00,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": -17702.65,
+            "percentWeight": -0.191936
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -70.00,
+            "exchangeRate": 3868.000000,
+            "exchangeValue": 270760.00,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 3998.598003,
+            "profitLoss": -7364.25,
+            "percentWeight": -0.079845
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -75.00,
+            "exchangeRate": 3722.500000,
+            "exchangeValue": 279187.50,
+            "currency2": "USD",
+            "expirationDate": "14.10.2025",
+            "currentRate": 3998.598003,
+            "profitLoss": -16680.90,
+            "percentWeight": -0.180858
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -75.00,
+            "exchangeRate": 3424.000000,
+            "exchangeValue": 256800.00,
+            "currency2": "USD",
+            "expirationDate": "19.05.2026",
+            "currentRate": 4095.822602,
+            "profitLoss": -39625.70,
+            "percentWeight": -0.429631
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -100.00,
+            "exchangeRate": 3404.500000,
+            "exchangeValue": 340450.00,
+            "currency2": "USD",
+            "expirationDate": "07.04.2026",
+            "currentRate": 4077.411947,
+            "profitLoss": -53158.85,
+            "percentWeight": -0.576361
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -100.00,
+            "exchangeRate": 3417.700000,
+            "exchangeValue": 341770.00,
+            "currency2": "USD",
+            "expirationDate": "17.02.2026",
+            "currentRate": 4056.131399,
+            "profitLoss": -50699.60,
+            "percentWeight": -0.549697
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -100.00,
+            "exchangeRate": 3425.000000,
+            "exchangeValue": 342500.00,
+            "currency2": "USD",
+            "expirationDate": "15.04.2026",
+            "currentRate": 4080.911067,
+            "profitLoss": -51771.40,
+            "percentWeight": -0.561318
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -150.00,
+            "exchangeRate": 3031.500000,
+            "exchangeValue": 454725.00,
+            "currency2": "USD",
+            "expirationDate": "17.02.2026",
+            "currentRate": 4056.131399,
+            "profitLoss": -122053.15,
+            "percentWeight": -1.323330
+          },
+          {
+            "currency1": "XAG",
+            "currencyValue": -15000.00,
+            "exchangeRate": 46.402500,
+            "exchangeValue": 696037.50,
+            "currency2": "USD",
+            "expirationDate": "03.12.2025",
+            "currentRate": 50.486004,
+            "profitLoss": -49053.65,
+            "percentWeight": -0.531851
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -200.00,
+            "exchangeRate": 2954.900000,
+            "exchangeValue": 590980.00,
+            "currency2": "USD",
+            "expirationDate": "13.02.2026",
+            "currentRate": 4054.374443,
+            "profitLoss": -174700.20,
+            "percentWeight": -1.894142
+          },
+          {
+            "currency1": "XAU",
+            "currencyValue": -350.00,
+            "exchangeRate": 3381.000000,
+            "exchangeValue": 1183350.00,
+            "currency2": "USD",
+            "expirationDate": "24.03.2026",
+            "currentRate": 4071.377934,
+            "profitLoss": -191168.20,
+            "percentWeight": -2.072692
+          }
+        ]
+      },	    
+      "subSection7050": {
+        "name": "Currency derivative products",
+        "content": [
+          {
+            "description1": "779977000181",
+            "description2": "CALL EUR/CHF OTC",
+			"description3": "Esercitabile il 23.08.2021",
+            "amount": -180000.00,
+            "strike": "1.120",
+            "summaryTo": [
+              {
+                "valueDate": "23.01.2024",
+                "valuePrice": 0.002,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.0727,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.003,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 0.0,
+            "percentWeight": 0.0
+          },
+		  {
+            "description1": "779977000181",
+            "description2": "CALL EUR/CHF OTC",
+			"description3": "Esercitabile il 23.08.2021",
+            "amount": 180000.00,
+            "strike": "1.075",
+            "summaryTo": [
+              {
+                "valueDate": "23.01.2024",
+                "valuePrice": 0.004,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.0727,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.003,
+                "percentPrice": 45.32,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 756.03,
+            "percentWeight": 0.08
+          }
+        ]
+      }
+	}
+  },
+  "section80": {
+    "name": "Bonds",
+    "content": {
+      "subSection8000": {
+        "name": "Bonds with maturity <= 1 year",
+        "content": [
+          {
+            "description1": "FF GROUP FIN LUX II",
+            "description2": "02.11.2017 / 02.11.2021",
+            "description3": "38551805 / CH0385518052",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "N/A",
+            "percentRate": 0.0,
+            "coupon": "",
+            "duration": 0.0,
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 2.790000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 1.910000,
+                "percentPrice": 46.073298,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 880.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.015000,
+                "percentPrice": -97.210418,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -97225.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 2790.00,
+            "interestMarketValueReportingCurrency": 0.0,
+            "totalMarketValueReportingCurrency": 2790.00,
+            "percentYTD": 0.0,
+            "percentWeight": 0.094666
+          },
+          {
+            "description1": "RZD CAPITAL",
+            "description2": "03.10.2019 / 03.10.2025",
+            "description3": "41904161 / CH0419041618",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "N/A",
+            "percentRate": 0.0,
+            "coupon": "",
+            "duration": 0.0,
+            "summaryTo": [
+              {
+                "valueDate": "21.03.2025",
+                "valuePrice": 13.250000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 11.250000,
+                "percentPrice": 17.777778,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 2000.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": -86.7500,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -86750.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 13250.00,
+            "interestMarketValueReportingCurrency": 0.0,
+            "totalMarketValueReportingCurrency": 13250.00,
+            "percentYTD": 0.0,
+            "percentWeight": 0.449579
+          },
+          {
+            "description1": "USA",
+            "description2": "15.06.2022 / 15.06.2025",
+            "description3": "119384171 / US91282CEU18",
+            "nominalAmount": 100000.000,
+            "currency": "USD",
+            "spRating": "N/A",
+            "percentRate": 2.875000,
+            "coupon": "SEM 15.06",
+            "duration": 0.20,
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 99.710000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.410000,
+                "percentPrice": 0.301781,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -4604.15,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 98.586970,
+                "percentPrice": 1.139126,
+                "exchangeValue": 0.877216,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1065.50,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 85416.60,
+            "interestMarketValueReportingCurrency": 735.50,
+            "totalMarketValueReportingCurrency": 86152.10,
+            "percentYTD": 4.2,
+            "percentWeight": 2.898229
+          },
+          {
+            "description1": "CORNER BANCA",
+            "description2": "14.07.2023 / 14.07.2025",
+            "description3": "127626974 / CH1276269748",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "N/A",
+            "percentRate": 3.000000,
+            "coupon": "ANN 14.07",
+            "duration": 0.28,
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 100.640000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 101.180000,
+                "percentPrice": -0.533702,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -540.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 101.553000,
+                "percentPrice": -0.899038,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -913.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100640.00,
+            "interestMarketValueReportingCurrency": 2158.33,
+            "totalMarketValueReportingCurrency": 102798.33,
+            "percentYTD": 0.6,
+            "percentWeight": 3.414766
+          }
+        ]
+      },
+      "subSection8010": {
+        "name": "Bonds with maturity <= 5 year",
+        "content": [
+          {
+            "description1": "BLACK SEA TR DEV BK",
+            "description2": "15.12.2021 / 15.03.2027",
+            "description3": "114826623 / CH1148266237",
+            "nominalAmount": 200000.000,
+            "currency": "CHF",
+            "spRating": "BBB",
+            "percentRate": 0.350000,
+            "coupon": "ANN 15.03",
+            "duration": 1.95,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 98.350000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 97.898990,
+                "percentPrice": 0.460689,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 902.02,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 97.898990,
+                "percentPrice": 0.460689,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 902.02,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 196700.00,
+            "interestMarketValueReportingCurrency": 35.00,
+            "totalMarketValueReportingCurrency": 196735.00,
+            "percentYTD": 1.2,
+            "percentWeight": 6.674131
+          },
+          {
+            "description1": "ANDEAN DEVELOP CORP",
+            "description2": "24.02.2022 / 24.02.2027",
+            "description3": "115152623 / CH1151526238",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "AA",
+            "percentRate": 0.450000,
+            "coupon": "ANN 24.02",
+            "duration": 1.89,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 99.400000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.600000,
+                "percentPrice": -0.200803,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -200.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 95.957000,
+                "percentPrice": 3.588065,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 3443.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 99400.00,
+            "interestMarketValueReportingCurrency": 48.75,
+            "totalMarketValueReportingCurrency": 99448.75,
+            "percentYTD": 0.7,
+            "percentWeight": 3.372692
+          },
+          {
+            "description1": "FIRST ABU DHABI BK",
+            "description2": "14.04.2022 / 14.04.2026",
+            "description3": "118171361 / CH1181713616",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "AA-",
+            "percentRate": 1.062500,
+            "coupon": "ANN 14.04",
+            "duration": 1.03,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.420000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 100.580000,
+                "percentPrice": -0.159077,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -160.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 99.196000,
+                "percentPrice": 1.233921,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1224.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100420.00,
+            "interestMarketValueReportingCurrency": 1030.03,
+            "totalMarketValueReportingCurrency": 101450.03,
+            "percentYTD": 0.6,
+            "percentWeight": 3.407302
+          }
+        ]
+      },
+      "subSection8020": {
+        "name": "Bonds with maturity > 5 year",
+        "content": [
+          {
+            "description1": "RAIFFEISEN SVIZZERA",
+            "description2": "16.10.2020 / 31.12.2099",
+            "description3": "56651149 / CH0566511496",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "BBB",
+            "percentRate": 2.000000,
+            "coupon": "ANN 16.04",
+            "duration": 39.31,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.250000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.795000,
+                "percentPrice": 0.455935,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 455.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": 0.2500,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 250.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100250.00,
+            "interestMarketValueReportingCurrency": 1927.77,
+            "totalMarketValueReportingCurrency": 102177.77,
+            "percentYTD": 1.9,
+            "percentWeight": 3.401533
+          },
+          {
+            "description1": "HELVETIA",
+            "description2": "26.11.2020 / 31.12.2099",
+            "description3": "57913295 / CH0579132959",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "A-",
+            "percentRate": 1.750000,
+            "coupon": "ANN 26.05",
+            "duration": 42.27,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.900000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 101.420000,
+                "percentPrice": -0.512719,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -520.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": 0.900,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 900.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100900.00,
+            "interestMarketValueReportingCurrency": 1492.36,
+            "totalMarketValueReportingCurrency": 102392.36,
+            "percentYTD": 1.7,
+            "percentWeight": 3.423588
+          },
+          {
+            "description1": "USA (PF  1.01254)",
+            "description2": "15.07.2024 / 15.07.2034",
+            "description3": "136576879 / US91282CLE92",
+            "nominalAmount": 30000.000,
+            "currency": "USD",
+            "spRating": "N/A",
+            "percentRate": 1.875000,
+            "coupon": "SEM 15.07",
+            "duration": 8.56,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.800000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.555280,
+                "percentPrice": 1.250280,
+                "exchangeValue": 0.881550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -423.79,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 99.555280,
+                "percentPrice": 1.250280,
+                "exchangeValue": 0.881550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -423.79,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 26229.95,
+            "interestMarketValueReportingCurrency": 104.25,
+            "totalMarketValueReportingCurrency": 26334.20,
+            "percentYTD": 1.7,
+            "percentWeight": 0.889996
+          },
+          {
+            "description1": "VERISIGN",
+            "description2": "11.03.2025 / 01.06.2032",
+            "description3": "142896310 / US92343EAQ52",
+            "nominalAmount": 50000.000,
+            "currency": "USD",
+            "spRating": "BBB",
+            "percentRate": 5.250000,
+            "coupon": "SEM 01.06",
+            "duration": 6.05,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 101.010000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 43265.15,
+            "interestMarketValueReportingCurrency": 143.65,
+            "totalMarketValueReportingCurrency": 43408.80,
+            "percentYTD": 5.1,
+            "percentWeight": 1.468008
+          },
+		  {
+            "description1": "VERISIGN_FAKE",
+            "description2": "11.03.2025 / 01.06.2032",
+            "description3": "142896310 / US92343EAQ52",
+            "nominalAmount": 50000.000,
+            "currency": "USD",
+            "spRating": "BBB",
+            "percentRate": 5.250000,
+            "coupon": "SEM 01.06",
+            "duration": 6.05,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 101.010000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 43265.15,
+            "interestMarketValueReportingCurrency": 143.65,
+            "totalMarketValueReportingCurrency": 43408.80,
+            "percentYTD": 5.1,
+            "percentWeight": 1.468008
+          }
+        ]
+      },	  	 
+	  "subSection8030": {
+        "name": "Convertible bonds, bonds with warrants",
+        "content": [
+          {
+            "description1": "RAIFFEISEN SVIZZERA",
+            "description2": "16.10.2020 / 31.12.2099",
+            "description3": "56651149 / CH0566511496",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "BBB",
+            "percentRate": 2.000000,
+            "coupon": "ANN 16.04",
+            "duration": 39.31,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.250000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.795000,
+                "percentPrice": 0.455935,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 455.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": 0.2500,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 250.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100250.00,
+            "interestMarketValueReportingCurrency": 1927.77,
+            "totalMarketValueReportingCurrency": 102177.77,
+            "percentYTD": 1.9,
+            "percentWeight": 3.401533
+          },
+          {
+            "description1": "HELVETIA",
+            "description2": "26.11.2020 / 31.12.2099",
+            "description3": "57913295 / CH0579132959",
+            "nominalAmount": 100000.000,
+            "currency": "CHF",
+            "spRating": "A-",
+            "percentRate": 1.750000,
+            "coupon": "ANN 26.05",
+            "duration": 42.27,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.900000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 101.420000,
+                "percentPrice": -0.512719,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -520.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": 0.900,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 900.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 100900.00,
+            "interestMarketValueReportingCurrency": 1492.36,
+            "totalMarketValueReportingCurrency": 102392.36,
+            "percentYTD": 1.7,
+            "percentWeight": 3.423588
+          },
+          {
+            "description1": "USA (PF  1.01254)",
+            "description2": "15.07.2024 / 15.07.2034",
+            "description3": "136576879 / US91282CLE92",
+            "nominalAmount": 30000.000,
+            "currency": "USD",
+            "spRating": "N/A",
+            "percentRate": 1.875000,
+            "coupon": "SEM 15.07",
+            "duration": 8.56,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.800000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.555280,
+                "percentPrice": 1.250280,
+                "exchangeValue": 0.881550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -423.79,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 99.555280,
+                "percentPrice": 1.250280,
+                "exchangeValue": 0.881550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -423.79,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 26229.95,
+            "interestMarketValueReportingCurrency": 104.25,
+            "totalMarketValueReportingCurrency": 26334.20,
+            "percentYTD": 1.7,
+            "percentWeight": 0.889996
+          },
+          {
+            "description1": "VERISIGN",
+            "description2": "11.03.2025 / 01.06.2032",
+            "description3": "142896310 / US92343EAQ52",
+            "nominalAmount": 50000.000,
+            "currency": "USD",
+            "spRating": "BBB",
+            "percentRate": 5.250000,
+            "coupon": "SEM 01.06",
+            "duration": 6.05,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 101.010000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.332000,
+                "percentPrice": 0.675756,
+                "exchangeValue": 0.876800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -720.44,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 43265.15,
+            "interestMarketValueReportingCurrency": 143.65,
+            "totalMarketValueReportingCurrency": 43408.80,
+            "percentYTD": 5.1,
+            "percentWeight": 1.468008
+          }
+        ]
+      },	  
+      "subSection8040": {
+        "name": "Bond funds",
+        "content": [
+          {
+            "description1": "BASE INV SICAV",
+            "description2": "BASE BONDS VALUE",
+            "description3": "19949624 / LU0852938181",
+            "quantity": 1710.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 152.660000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 144.130000,
+                "percentPrice": 5.918268,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 14586.30,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 126.382930,
+                "percentPrice": 20.791629,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 44933.79,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 261048.60,
+            "totalMarketValueReportingCurrency": 261048.60,
+            "percentWeight": 8.857511
+          },
+          {
+            "description1": "EPSILON FUND",
+            "description2": "EPSILON EM BD TR I7",
+            "description3": "33622701 / LU1446768233",
+            "quantity": 1145.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 90.020000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 88.260000,
+                "percentPrice": 1.994108,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 2015.20,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 101.851220,
+                "percentPrice": -11.616179,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -13546.75,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 103072.90,
+            "totalMarketValueReportingCurrency": 103072.90,
+            "percentWeight": 3.497316
+          },
+          {
+            "description1": "BASE INV SICAV",
+            "description2": "BASE FLEX LOW RE I",
+            "description3": "38383671 / LU1690384901",
+            "quantity": 1800.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 121.370000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 118.990000,
+                "percentPrice": 2.000168,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4284.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 110.445410,
+                "percentPrice": 9.891393,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 19664.26,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 218466.00,
+            "totalMarketValueReportingCurrency": 218466.00,
+            "percentWeight": 7.412662
+          },
+          {
+            "description1": "BASE INV SICAV",
+            "description2": "BASE GL FIX INCO I",
+            "description3": "47652257 / LU1991261998",
+            "quantity": 1000.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 99.770000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 99.161400,
+                "percentPrice": 0.613747,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 608.60,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 98.373300,
+                "percentPrice": 1.419796,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1396.70,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 99770.00,
+            "totalMarketValueReportingCurrency": 99770.00,
+            "percentWeight": 3.385247
+          }
+        ]
+      }
+    }
+  },
+  "section90": {
+    "name": "Shares",
+    "content": {
+      "subSection9010": {
+        "name": "Shares",
+        "content": [
+          {
+            "description1": "WARTECK INVEST N",
+            "description2": "261948 / CH0002619481",
+            "amount": 18.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 1935.000000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 1915.000000,
+                "percentPrice": 1.044386,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 360.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1672.011110,
+                "percentPrice": 15.728896,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4733.80,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 34830.00,
+            "percentWeight": 1.181800
+          },
+          {
+            "description1": "SWISSCOM SA NOM.",
+            "description2": "874251 / CH0008742519",
+            "amount": 57.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 513.500000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 504.500000,
+                "percentPrice": 1.783944,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 513.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 517.220170,
+                "percentPrice": -0.719262,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -212.05,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 29269.50,
+            "percentWeight": 0.993129
+          },
+          {
+            "description1": "ADVANCED MICRO D RG",
+            "description2": "903491 / US0079031078",
+            "amount": 290.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 102.960000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 120.790000,
+                "percentPrice": -14.761156,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -6142.40,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 186.957820,
+                "percentPrice": -44.928755,
+                "exchangeValue": 0.892491,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -22810.67,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 25578.20,
+            "percentWeight": 0.867881
+          },
+          {
+            "description1": "ROCHE HLDG G",
+            "description2": "1203204 / CH0012032048",
+            "amount": 200.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 286.800000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 255.500000,
+                "percentPrice": 12.250489,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 6260.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 258.330750,
+                "percentPrice": 11.020465,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 5693.85,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 57360.00,
+            "percentWeight": 1.946254
+          },
+          {
+            "description1": "ADECCO N",
+            "description2": "1213860 / CH0012138605",
+            "amount": 1000.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 26.460000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 22.119000,
+                "percentPrice": 19.625661,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4341.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 26.793860,
+                "percentPrice": -1.246032,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -333.86,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 26460.00,
+            "percentWeight": 0.897801
+          },
+          {
+            "description1": "NESTLE N",
+            "description2": "3886335 / CH0038863350",
+            "amount": 500.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 89.800000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 74.572200,
+                "percentPrice": 20.420210,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 7613.90,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 92.828140,
+                "percentPrice": -3.262093,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1514.07,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 44900.00,
+            "percentWeight": 1.523480
+          },
+          {
+            "description1": "DOLLAR GENERAL R",
+            "description2": "10715003 / US2566771059",
+            "amount": 225.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 90.200000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 75.820000,
+                "percentPrice": 18.965972,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1937.48,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 141.832440,
+                "percentPrice": -36.403830,
+                "exchangeValue": 0.914750,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -11806.06,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 17385.70,
+            "percentWeight": 0.589906
+          },
+          {
+            "description1": "GLENCORE R",
+            "description2": "12964057 / JE00B4T3BW64",
+            "amount": 6210.000,
+            "currency": "GBP",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.829500,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.127100,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 3.534000,
+                "percentPrice": -19.934918,
+                "exchangeValue": 1.135250,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5109.86,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 4.074480,
+                "percentPrice": -30.555556,
+                "exchangeValue": 1.108500,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -8243.35,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 19804.50,
+            "percentWeight": 0.671977
+          },
+          {
+            "description1": "TRIPADVISOR",
+            "description2": "14491714 / US8969452015",
+            "amount": 1300.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 14.310000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 14.770000,
+                "percentPrice": -3.114421,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1451.21,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 40.607220,
+                "percentPrice": -64.759961,
+                "exchangeValue": 0.905500,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -31864.53,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 15936.25,
+            "percentWeight": 0.540725
+          },
+          {
+            "description1": "EASYJET R",
+            "description2": "14862522 / GB00B7KR2P84",
+            "amount": 5500.000,
+            "currency": "GBP",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 4.505000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.127100,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 5.600000,
+                "percentPrice": -19.553571,
+                "exchangeValue": 1.135250,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -7038.98,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 5.355150,
+                "percentPrice": -15.875372,
+                "exchangeValue": 1.206963,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -7622.35,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 27926.75,
+            "percentWeight": 0.947569
+          },
+          {
+            "description1": "APPIAN A R",
+            "description2": "36603446 / US03782L1017",
+            "amount": 600.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 29.480000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 32.980000,
+                "percentPrice": -10.612492,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -2766.60,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 97.416850,
+                "percentPrice": -69.738295,
+                "exchangeValue": 0.920083,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -38626.53,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 15152.45,
+            "percentWeight": 0.514130
+          },
+          {
+            "description1": "ZOOM COMM RG A",
+            "description2": "47101896 / US98980L1017",
+            "amount": 798.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 75.040000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 81.610000,
+                "percentPrice": -8.050484,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -7675.90,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 357.999830,
+                "percentPrice": -79.039096,
+                "exchangeValue": 0.903117,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -206708.11,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 51297.90,
+            "percentWeight": 1.740564
+          }
+        ]
+      },
+      "subSection9020": {
+        "name": "Equity Funds",
+        "content": [
+          {
+            "description1": "ISHARES ETF (CH)",
+            "description2": "ISHS SMIM ETF CHF A",
+            "description3": "1985280 / CH0019852802",
+            "amount": 230.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 283.150000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 274.550000,
+                "percentPrice": 3.132398,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1978.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 282.546520,
+                "percentPrice": 0.213586,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 138.80,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 65124.50,
+            "totalMarketValueReportingCurrency": 65124.50,
+            "percentWeight": 2.209707
+          },
+          {
+            "description1": "ISHARES III",
+            "description2": "ISH CORE MSCI WORLD",
+            "description3": "10608388 / IE00B4L5Y983",
+            "amount": 250.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 106.710000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 108.330000,
+                "percentPrice": -1.495431,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1671.28,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 102.900240,
+                "percentPrice": 3.702382,
+                "exchangeValue": 0.882150,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 159.92,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 22853.30,
+            "totalMarketValueReportingCurrency": 22853.30,
+            "percentWeight": 0.775424
+          },
+          {
+            "description1": "XTRACKERS SICAV",
+            "description2": "XTRA CSI3OO SWAP 1C",
+            "description3": "18841290 / LU0779800910",
+            "amount": 1850.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 15.080000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 15.082500,
+                "percentPrice": -0.016576,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1368.40,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 16.331780,
+                "percentPrice": -7.664688,
+                "exchangeValue": 0.853800,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1897.71,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 23898.85,
+            "totalMarketValueReportingCurrency": 23898.85,
+            "percentWeight": 0.810900
+          },
+          {
+            "description1": "ISHARES ETF (CH)",
+            "description2": "ISH SWISS DIV ETF A",
+            "description3": "23793563 / CH0237935637",
+            "amount": 350.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 176.660000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 161.107000,
+                "percentPrice": 9.653833,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 5443.55,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 163.432280,
+                "percentPrice": 8.093701,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4629.70,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 61831.00,
+            "totalMarketValueReportingCurrency": 61831.00,
+            "percentWeight": 2.097957
+          },
+          {
+            "description1": "ISHARES ETF (CH)",
+            "description2": "ISHS CORE SPI CHF A",
+            "description3": "23793565 / CH0237935652",
+            "amount": 640.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 149.600000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 138.920000,
+                "percentPrice": 7.687878,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 6835.20,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 140.497100,
+                "percentPrice": 6.479066,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 5825.86,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 95744.00,
+            "totalMarketValueReportingCurrency": 95744.00,
+            "percentWeight": 3.248643
+          },
+          {
+            "description1": "LAZARD GL ACTIVE",
+            "description2": "LAZ LIST INFR EQ AH",
+            "description3": "28045602 / IE00BVXCGX46",
+            "amount": 1807.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 16.077700,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 14.999900,
+                "percentPrice": 7.185381,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1947.58,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 15.764360,
+                "percentPrice": 1.987648,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 566.21,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 29052.40,
+            "totalMarketValueReportingCurrency": 29052.40,
+            "percentWeight": 0.985763
+          },
+          {
+            "description1": "NINETY ONE GL STRAT",
+            "description2": "NINE ALL CHIN EQ IC",
+            "description3": "28299142 / LU1235249262",
+            "amount": 1330.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 28.390000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 25.360000,
+                "percentPrice": 11.947950,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1802.88,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 24.359960,
+                "percentPrice": 16.543705,
+                "exchangeValue": 0.904750,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 3033.22,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 32346.00,
+            "totalMarketValueReportingCurrency": 32346.00,
+            "percentWeight": 1.097516
+          },
+          {
+            "description1": "INVESCO MARKETS",
+            "description2": "INV BLOOMBERG COMM",
+            "description3": "34400611 / IE00BD6FTQ80",
+            "amount": 1000.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 25.183750,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 23.022500,
+                "percentPrice": 9.387556,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 725.63,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 27.203390,
+                "percentPrice": -7.424222,
+                "exchangeValue": 0.962900,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -4620.48,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 21573.65,
+            "totalMarketValueReportingCurrency": 21573.65,
+            "percentWeight": 0.732005
+          },
+          {
+            "description1": "PACER US CASH COWS",
+            "description2": "PACER US CASH C 100",
+            "description3": "35050342 / US69374H8815",
+            "amount": 1000.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 54.960000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 57.387920,
+                "percentPrice": -4.230716,
+                "exchangeValue": 0.905967,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -4910.08,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 59.784510,
+                "percentPrice": -8.069833,
+                "exchangeValue": 0.894175,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -6376.33,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 47081.50,
+            "totalMarketValueReportingCurrency": 47081.50,
+            "percentWeight": 1.597499
+          }
+        ]
+      },	  
+	  "subSection9030": {
+        "name": "Derivative products on securities",
+        "content": [
+          {
+            "description1": "63053880",
+            "description2": "GLD P A 300 SEP26",
+            "description3": "18.09.2026",
+            "amount": 5.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.780000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 4.500000,
+                "percentPrice": -38.222222,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 1201.09,
+            "totalMarketValueReportingCurrency": 1201.09,
+            "percentWeight": 0.045969
+          },
+          {
+            "description1": "63493012",
+            "description2": "RITM P A 12 OCT25",
+            "description3": "17.10.2025",
+            "amount": 0.0,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 1.250000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.460000,
+                "percentPrice": 171.739130,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 0.0,
+            "totalMarketValueReportingCurrency": 0.0,
+            "percentWeight": 0.0
+          },
+          {
+            "description1": "77160546",
+            "description2": "HYG P A 73 JAN26",
+            "description3": "16.01.2026",
+            "amount": 16.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.170000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.000000,
+                "percentPrice": -83.00,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 235.03,
+            "totalMarketValueReportingCurrency": 235.03,
+            "percentWeight": 0.008995
+          },
+          {
+            "description1": "81009619",
+            "description2": "SPY P A 600 DEC26",
+            "description3": "18.12.2026",
+            "amount": 1.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 24.370000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 41.660000,
+                "percentPrice": -41.502640,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 2105.80,
+            "totalMarketValueReportingCurrency": 2105.80,
+            "percentWeight": 0.080594
+          },
+          {
+            "description1": "90366620",
+            "description2": "URA P A 24 JAN27",
+            "description3": "15.01.2027",
+            "amount": 16.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.700000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.900000,
+                "percentPrice": -22.222222,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 967.79,
+            "totalMarketValueReportingCurrency": 967.79,
+            "percentWeight": 0.037040
+          },
+          {
+            "description1": "90366620",
+            "description2": "URA P A 24 JAN27",
+            "description3": "15.01.2027",
+            "amount": 17.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.700000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.950000,
+                "percentPrice": -64.102564,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 1028.27,
+            "totalMarketValueReportingCurrency": 1028.27,
+            "percentWeight": 0.039354
+          },
+          {
+            "description1": "90373166",
+            "description2": "SLV P A 31 JAN27",
+            "description3": "15.01.2027",
+            "amount": 26.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.680000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.150000,
+                "percentPrice": -40.869565,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 1527.72,
+            "totalMarketValueReportingCurrency": 1527.72,
+            "percentWeight": 0.058469
+          },
+          {
+            "description1": "90381060",
+            "description2": "NLY P A 13 JAN27",
+            "description3": "15.01.2027",
+            "amount": 15.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.400000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.850000,
+                "percentPrice": -52.941176,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 518.46,
+            "totalMarketValueReportingCurrency": 518.46,
+            "percentWeight": 0.019843
+          },
+          {
+            "description1": "91208729",
+            "description2": "QQQ P A 600 JAN27",
+            "description3": "15.01.2027",
+            "amount": 1.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 46.450000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 45.250000,
+                "percentPrice": 2.651934,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 4013.73,
+            "totalMarketValueReportingCurrency": 4013.73,
+            "percentWeight": 0.153615
+          },
+          {
+            "description1": "91329821",
+            "description2": "RSP P A 120 JAN27",
+            "description3": "15.01.2027",
+            "amount": 10.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.650000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 3.500000,
+                "percentPrice": -24.285714,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 2289.85,
+            "totalMarketValueReportingCurrency": 2289.85,
+            "percentWeight": 0.087638
+          },
+          {
+            "description1": "96266317",
+            "description2": "SLV P A 24.5 JAN26",
+            "description3": "16.01.2026",
+            "amount": 19.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.020000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.240000,
+                "percentPrice": -98.387097,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 32.84,
+            "totalMarketValueReportingCurrency": 32.84,
+            "percentWeight": 0.001257
+          },
+          {
+            "description1": "96295284",
+            "description2": "NLY P A 21 OCT25",
+            "description3": "17.10.2025",
+            "amount": -7.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.320000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.630000,
+                "percentPrice": -49.206349,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": -193.56,
+            "totalMarketValueReportingCurrency": -193.56,
+            "percentWeight": -0.007408
+          },
+          {
+            "description1": "97049435",
+            "description2": "GLD P A 275 MAR26",
+            "description3": "20.03.2026",
+            "amount": 5.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.550000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 8.650000,
+                "percentPrice": -93.641618,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 237.63,
+            "totalMarketValueReportingCurrency": 237.63,
+            "percentWeight": 0.009095
+          },
+          {
+            "description1": "97049435",
+            "description2": "GLD P A 275 MAR26",
+            "description3": "20.03.2026",
+            "amount": 2.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.550000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 4.950000,
+                "percentPrice": -88.888889,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 95.05,
+            "totalMarketValueReportingCurrency": 95.05,
+            "percentWeight": 0.003638
+          },
+          {
+            "description1": "97370863",
+            "description2": "HYG P A 72 MAR26",
+            "description3": "20.03.2026",
+            "amount": 9.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.280000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.970000,
+                "percentPrice": -71.134021,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 217.75,
+            "totalMarketValueReportingCurrency": 217.75,
+            "percentWeight": 0.008334
+          },
+          {
+            "description1": "97426537",
+            "description2": "RITM P A 11 NOV25",
+            "description3": "21.11.2025",
+            "amount": -12.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.410000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.400000,
+                "percentPrice": 2.500,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": -425.14,
+            "totalMarketValueReportingCurrency": -425.14,
+            "percentWeight": -0.016271
+          },
+          {
+            "description1": "99286848",
+            "description2": "SLV P A 27.5 JUN26",
+            "description3": "18.06.2026",
+            "amount": 19.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.120000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.950000,
+                "percentPrice": -87.368421,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 197.01,
+            "totalMarketValueReportingCurrency": 197.01,
+            "percentWeight": 0.007540
+          },
+          {
+            "description1": "99910746",
+            "description2": "RITM P A 8 SEP26",
+            "description3": "18.09.2026",
+            "amount": 26.000,
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.200000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.157280,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.430000,
+                "percentPrice": -53.488372,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 449.33,
+            "totalMarketValueReportingCurrency": 449.33,
+            "percentWeight": 0.017197
+          }
+        ]
+      }    	 	 
+    }
+  },
+  "section110": {
+    "name": "Others investments",
+    "content": {
+      "subSection11000": {
+        "name": "Mix funds",
+        "content": [
+          {
+            "amount": 300.000,
+            "description1": "SWISSCANTO GOLD ETF",
+            "description2": "SWI GOLD ETF EA CHF",
+            "description3": "13910159 / CH0139101593",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 818.100000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 701.400000,
+                "percentPrice": 16.638152,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 35010.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 517.880000,
+                "percentPrice": 57.970959,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 90066.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 245430.00,
+            "totalMarketValueReportingCurrency": 245430.00,
+            "percentWeight": 8.327564
+          },
+          {
+            "amount": 430.000,
+            "description1": "MAN FUNDS VI",
+            "description2": "MAN AHL TARG RISK I",
+            "description3": "26215678 / IE00BRJT7H22",
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 211.140000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 208.570000,
+                "percentPrice": 1.232200,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3438.92,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 176.014680,
+                "percentPrice": 19.955904,
+                "exchangeValue": 0.937050,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 6853.57,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 77775.45,
+            "totalMarketValueReportingCurrency": 77775.45,
+            "percentWeight": 2.638960
+          },
+          {
+            "amount": 1000.000,
+            "description1": "BASE INV SICAV",
+            "description2": "BASE MUL AS CAP APP",
+            "description3": "36153504 / LU1590086572",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 88.150000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 87.850000,
+                "percentPrice": 0.341491,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 300.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.686170,
+                "percentPrice": -12.450737,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -12536.17,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 88150.00,
+            "totalMarketValueReportingCurrency": 88150.00,
+            "percentWeight": 2.990974
+          }
+        ]
+      },
+      "subSection11010": {
+        "name": "Alternative Products – Different",
+        "content": [
+          {
+            "nominalAmount": 1675.000,
+            "percentRate": 0.0,
+            "coupon": "",
+            "interestMarketValueReportingCurrency": 0.0,
+            "description1": "WISDOMTREE METAL",
+            "description2": "XAG/WISDOMTREE",
+            "description3": "3069089 / JE00B1VS3333",
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 31.085000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 30.196470,
+                "percentPrice": 2.942496,
+                "exchangeValue": 0.903950,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1117.45,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 30.196470,
+                "percentPrice": 2.942496,
+                "exchangeValue": 0.903950,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -1117.45,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 44603.55,
+            "totalMarketValueReportingCurrency": 44603.55,
+            "percentWeight": 1.513421
+          },
+          {
+            "nominalAmount": 28000.000,
+            "percentRate": 13.668000,
+            "coupon": "MEN 29.04",
+            "interestMarketValueReportingCurrency": 0.0,
+            "description1": "LEONTEQ GUERNSEY",
+            "description2": "24.05.2024 / 24.11.2025",
+            "description3": "134997818 / CH1349978184",
+            "currency": "EUR",
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 68.560000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.951265,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 89.900000,
+                "percentPrice": -23.737486,
+                "exchangeValue": 0.942550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5464.62,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.000000,
+                "percentPrice": -31.4400,
+                "exchangeValue": 0.983750,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -9283.76,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 18261.25,
+            "totalMarketValueReportingCurrency": 18261.25,
+            "percentWeight": 0.619613
+          }
+        ]
+      }
+    }
+  },
+  "section130": {
+    "name": "Pending orders",
+    "content": {
+      "subSection13000": {
+        "name": "Stock orders",
+        "content": [
+          {
+            "order": 0.0,
+            "orderValue": 141608459,
+            "description": "3.625 DT TELEKOM 45",
+            "operation": "ACQUISTO",
+            "amount": 50000.000,
+            "currency": "EUR",
+            "limitStopLoss": 95.400000,
+            "price": 95.090000,
+            "expirationDate": "07.11.2025"
+          }
+        ]
+      }
+    }
+  },
+  "section160": {
+    "name": "Shares subdivided by economic sector",
+    "content": {
+      "subSection16000": {
+        "name": "Shares by economic sector",
+        "content": [
+          {
+            "sector": "FONDI D'INVESTIMENTO E ISTITUTO",
+            "class": "Entry",
+            "marketValueReportingCurrency": 399505.20,
+            "percentShares": 52.20
+          },
+          {
+            "sector": "ELETTRONICA E SEMICONDUTTORI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 25578.20,
+            "percentShares": 3.34
+          },
+          {
+            "sector": "INTERNET, SOFTWARE & IT",
+            "class": "Entry",
+            "marketValueReportingCurrency": 31088.70,
+            "percentShares": 4.06
+          },
+          {
+            "sector": "SOCIETA' IMMOBILIARI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 34830.00,
+            "percentShares": 4.55
+          },
+          {
+            "sector": "ALIMENTARI E BIBITE NON ALCOOLICHE",
+            "class": "Entry",
+            "marketValueReportingCurrency": 44900.00,
+            "percentShares": 5.87
+          },
+          {
+            "sector": "FARMACIE E COSMETICI E PRODOTTI MEDICI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 57360.00,
+            "percentShares": 7.49
+          },
+          {
+            "sector": "COMMERCIO AL DETTAGLIO GRANDI MAGAZZINI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 17385.70,
+            "percentShares": 2.27
+          },
+          {
+            "sector": "CASE DI COMMERCI DIVERSI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 19804.50,
+            "percentShares": 2.59
+          },
+          {
+            "sector": "TRAFFICO E TRASPORTI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 27926.75,
+            "percentShares": 3.65
+          },
+          {
+            "sector": "TELECOMUNICAZIONI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 80567.40,
+            "percentShares": 10.53
+          },
+          {
+            "sector": "SERVIZI DIVERSI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 26460.00,
+            "percentShares": 3.45
+          },
+          {
+            "sector": "TOTALE AZIONI",
+            "class": "Total",
+            "marketValueReportingCurrency": 765406.45,
+            "percentShares": 100.0
+          }
+        ]
+      },
+      "subSection16010": {
+        "name": "Shares subdivision by economic sector chart",
+        "content": [
+          {
+            "sector": "FONDI D'INVESTIMENTO E ISTITUTO",
+            "class": "Entry",
+            "percentShares": 52.20
+          },
+          {
+            "sector": "ELETTRONICA E SEMICONDUTTORI",
+            "class": "Entry",
+            "percentShares": 3.34
+          },
+          {
+            "sector": "INTERNET, SOFTWARE & IT",
+            "class": "Entry",
+            "percentShares": 4.06
+          },
+          {
+            "sector": "SOCIETA' IMMOBILIARI",
+            "class": "Entry",
+            "percentShares": 4.55
+          },
+          {
+            "sector": "ALIMENTARI E BIBITE NON ALCOOLICHE",
+            "class": "Entry",
+            "percentShares": 5.87
+          },
+          {
+            "sector": "FARMACIE E COSMETICI E PRODOTTI MEDICI",
+            "class": "Entry",
+            "percentShares": 7.49
+          },
+          {
+            "sector": "COMMERCIO AL DETTAGLIO GRANDI MAGAZZINI",
+            "class": "Entry",
+            "percentShares": 2.27
+          },
+          {
+            "sector": "CASE DI COMMERCI DIVERSI",
+            "class": "Entry",
+            "percentShares": 2.59
+          },
+          {
+            "sector": "TRAFFICO E TRASPORTI",
+            "class": "Entry",
+            "percentShares": 3.65
+          },
+          {
+            "sector": "TELECOMUNICAZIONI",
+            "class": "Entry",
+            "percentShares": 10.53
+          },
+          {
+            "sector": "SERVIZI DIVERSI",
+            "class": "Entry",
+            "percentShares": 3.45
+          },
+          {
+            "sector": "TOTALE AZIONI",
+            "class": "Total",
+            "percentShares": 100.0
+          }
+        ]
+      }
+    }
+  },
+  "section170": {
+    "name": "Shares by nations",
+    "content": {
+      "subSection17000": {
+        "name": "Shares by nation",
+        "content": [
+          {
+            "nation": "EUROPA",
+            "content": [
+              {
+                "country": "SVIZZERA",
+                "marketValueReportingCurrency": 415519.00,
+                "percentShares": 54.29
+              },
+              {
+                "country": "GRAN BRETAGNA",
+                "marketValueReportingCurrency": 27926.75,
+                "percentShares": 3.65
+              },
+              {
+                "country": "ISOLA DI JERSEY",
+                "marketValueReportingCurrency": 19804.50,
+                "percentShares": 2.59
+              },
+              {
+                "country": "IRLANDA",
+                "marketValueReportingCurrency": 73479.35,
+                "percentShares": 9.60
+              },
+              {
+                "country": "LUSSEMBURGO",
+                "marketValueReportingCurrency": 56244.85,
+                "percentShares": 7.35
+              }
+            ],
+            "marketValueReportingCurrency": 592974.45,
+            "percentShares": 77.48
+          },
+          {
+            "nation": "AMERICA",
+            "content": [
+              {
+                "country": "STATI UNITI D'AMERICA",
+                "marketValueReportingCurrency": 172432.00,
+                "percentShares": 22.53
+              }
+            ],
+            "marketValueReportingCurrency": 172432.00,
+            "percentShares": 22.53
+          }
+        ]
+      },
+      "subSection17010": {
+        "name": "Shares by nations chart",
+        "content": [
+          {
+            "nation": "EUROPA",
+            "percentShares": 77.48
+          },
+          {
+            "nation": "AMERICA",
+            "percentShares": 22.53
+          }
+        ]
+      }
+    }
+  },
+  "section190": {
+    "name": "Accounts and deposit detected",
+    "content": {
+	  "subSection19000": {
+        "name": "Reports not transferred to administration",
+        "content": [
+          {
+            "totalAssetsNotTransferred": "",
+            "totalNotTransferredMarketValueReportingCurrency": 0.0,
+            "totalAsset": "",
+            "totalMarketValueReportingCurrency": -3628249.48,
+            "objects": [
+              {
+                "object": "1136558A7",
+                "description": "CONTO",
+                "addressBook": "LINEA DI CREDITO NO: 1007806",
+                "currency": "EUR",
+                "currentBalance": 0.0,
+                "marketValueReportingCurrency": 0.0
+              },
+              {
+                "object": "1136558AV",
+                "description": "IPOTECA",
+                "addressBook": "MUTUO IPOTECARIO",
+                "currency": "CHF",
+                "currentBalance": -1000000.00,
+                "marketValueReportingCurrency": -1072621.50
+              },
+              {
+                "object": "1136558AQ",
+                "description": "IPOTECA",
+                "addressBook": "MUTUO IPOTECARIO",
+                "currency": "CHF",
+                "currentBalance": -1000000.00,
+                "marketValueReportingCurrency": -1072621.50
+              },
+              {
+                "object": "1136558B9",
+                "description": "CONTO",
+                "addressBook": "LINEA DI CREDITO NO: 1008818",
+                "currency": "CHF",
+                "currentBalance": -1382600.00,
+                "marketValueReportingCurrency": -1483006.48
+              }
+            ]
+          }
+        ]
+      },
+	  "subSection19010": {
+        "name": "Reports transferred to administration",
+        "content": [
+          {
+            "totalAsset": "",
+            "totalAddressBook": "",
+            "totalMarketValueReportingCurrency": 10152440.61,
+            "totalAssetsNotTransferred": "",
+            "totalNotTransferredMarketValueReportingCurrency": 0.0,
+            "objects": [
+              {
+                "object": "1136558A1",
+                "description": "CONTO",
+                "addressBook": "",
+                "currency": "EUR",
+                "currentBalance": 51449.29,
+                "marketValueReportingCurrency": 51449.29
+              },
+              {
+                "object": "1136558A2",
+                "description": "CONTO",
+                "addressBook": "",
+                "currency": "CHF",
+                "currentBalance": 538998.70,
+                "marketValueReportingCurrency": 578141.59
+              },
+              {
+                "object": "1136558A8",
+                "description": "CONTO",
+                "addressBook": "",
+                "currency": "USD",
+                "currentBalance": 141925.79,
+                "marketValueReportingCurrency": 122691.98
+              },
+              {
+                "object": "1136558A3",
+                "description": "CONTO METALLO",
+                "addressBook": "",
+                "currency": "GGR",
+                "currentBalance": 0.0,
+                "marketValueReportingCurrency": 0.0
+              },
+              {
+                "object": "113655801",
+                "description": "DOSSIER TITOLI",
+                "addressBook": "",
+                "currency": "CHF",
+                "currentBalance": 4470376.50,
+                "marketValueReportingCurrency": 4795021.87
+              },
+              {
+                "object": "1136558AT",
+                "description": "CONTO",
+                "addressBook": "",
+                "currency": "JPY",
+                "currentBalance": 0.0,
+                "marketValueReportingCurrency": 0.0
+              },
+              {
+                "object": "1136558B4",
+                "description": "VINCOLATO",
+                "addressBook": "VINCOLATO",
+                "currency": "USD",
+                "currentBalance": 700000.00,
+                "marketValueReportingCurrency": 605135.88
+              },
+              {
+                "object": "1136558B5",
+                "description": "VINCOLATO",
+                "addressBook": "VINCOLATO",
+                "currency": "EUR",
+                "currentBalance": 4000000.00,
+                "marketValueReportingCurrency": 4000000.00
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "section200": {
+    "name": "End extract",
+    "content": {
+      "subSection20000": {
+        "name": "",
+        "content": [
+          {
+            "customer": "77681 STIGE",
+            "customerID": "1077681",
+            "portfolio": "CHF - DINAMICO MGP PLUS",
+            "riskProfile": 0,
+            "esgProfile": "MAND. DI GEST. PERSONALIZZATO"
+          }
+        ]
+      },
+      "subSection20010": {
+        "name": "Investments",
+        "content": [
+          {
+            "assetClass": "LIQUIDITA'",
+            "class": "Entry",
+            "marketValueReportingCurrency": 148278.71,
+            "percentInvestment": 5.04
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 1551619.20,
+            "percentInvestment": 52.78
+          },
+          {
+            "assetClass": "BENI REALI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 765406.45,
+            "percentInvestment": 26.04
+          },
+          {
+            "assetClass": "ALTRI TIPI DI INVESTIMENTO",
+            "class": "Entry",
+            "marketValueReportingCurrency": 474220.25,
+            "percentInvestment": 16.13
+          },
+          {
+            "assetClass": "TOTALE INVESTIMENTI",
+            "class": "Total",
+            "marketValueReportingCurrency": 2939524.61,
+            "percentInvestment": 100.0
+          },
+          {
+            "assetClass": "INTERESSI MATURATI",
+            "class": "Entry",
+            "marketValueReportingCurrency": 7675.64,
+            "percentInvestment": 0.26
+          },
+          {
+            "assetClass": "TOTALI PATRIMONIO",
+            "class": "Total",
+            "marketValueReportingCurrency": 2947200.25
+          }
+        ]
+      },
+      "subSection20020": {
+        "name": "Investments chart",
+        "content": [
+          {
+            "assetClass": "LIQUIDITA'",
+            "percentInvestment": 5.04
+          },
+          {
+            "assetClass": "BENI NOMINALI",
+            "percentInvestment": 52.78
+          },
+          {
+            "assetClass": "BENI REALI",
+            "percentInvestment": 26.04
+          },
+          {
+            "assetClass": "ALTRI TIPI DI INVESTIMENTO",
+            "percentInvestment": 16.13
+          }
+        ]
+      }
+    }
+  },
+  "footer": [
+    {
+      "bankAddress": ""
+    }
+  ]
+}
