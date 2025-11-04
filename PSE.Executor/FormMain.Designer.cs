@@ -26,8 +26,7 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             buttonBrowseSourceFiles = new Button();
             openFileDialog = new OpenFileDialog();
@@ -40,15 +39,20 @@
             tabPageOutput = new TabPage();
             buttonCopy = new Button();
             textBoxJson = new TextBox();
-            pictureBoxLogo = new PictureBox();
+            groupBoxExtractionOption = new GroupBox();
+            checkBoxGenerateJson = new CheckBox();
+            radioButtonDocx = new RadioButton();
+            radioButtonPdf = new RadioButton();
+            checkBoxGenerateFile = new CheckBox();
             tabControl.SuspendLayout();
             tabPageLog.SuspendLayout();
             tabPageOutput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            groupBoxExtractionOption.SuspendLayout();
             SuspendLayout();
             // 
             // buttonBrowseSourceFiles
             // 
+            buttonBrowseSourceFiles.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonBrowseSourceFiles.Location = new Point(481, 123);
             buttonBrowseSourceFiles.Name = "buttonBrowseSourceFiles";
             buttonBrowseSourceFiles.Size = new Size(75, 23);
@@ -67,6 +71,7 @@
             // 
             // listViewSourceFiles
             // 
+            listViewSourceFiles.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listViewSourceFiles.FullRowSelect = true;
             listViewSourceFiles.Location = new Point(12, 33);
             listViewSourceFiles.Name = "listViewSourceFiles";
@@ -77,7 +82,7 @@
             // 
             // labelSourceFiles
             // 
-            labelSourceFiles.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelSourceFiles.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             labelSourceFiles.Location = new Point(12, 9);
             labelSourceFiles.Name = "labelSourceFiles";
             labelSourceFiles.Size = new Size(463, 21);
@@ -87,6 +92,7 @@
             // 
             // buttonExtraction
             // 
+            buttonExtraction.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonExtraction.Enabled = false;
             buttonExtraction.Location = new Point(562, 123);
             buttonExtraction.Name = "buttonExtraction";
@@ -164,25 +170,74 @@
             textBoxJson.Size = new Size(663, 228);
             textBoxJson.TabIndex = 0;
             // 
-            // pictureBoxLogo
+            // groupBoxExtractionOption
             // 
-            pictureBoxLogo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBoxLogo.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxLogo.Image = Properties.Resources.LogoApsoft;
-            pictureBoxLogo.Location = new Point(606, 12);
-            pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(106, 62);
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxLogo.TabIndex = 6;
-            pictureBoxLogo.TabStop = false;
-            pictureBoxLogo.Visible = false;
+            groupBoxExtractionOption.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBoxExtractionOption.Controls.Add(checkBoxGenerateJson);
+            groupBoxExtractionOption.Controls.Add(radioButtonDocx);
+            groupBoxExtractionOption.Controls.Add(radioButtonPdf);
+            groupBoxExtractionOption.Controls.Add(checkBoxGenerateFile);
+            groupBoxExtractionOption.Location = new Point(562, 12);
+            groupBoxExtractionOption.Name = "groupBoxExtractionOption";
+            groupBoxExtractionOption.Size = new Size(149, 105);
+            groupBoxExtractionOption.TabIndex = 8;
+            groupBoxExtractionOption.TabStop = false;
+            groupBoxExtractionOption.Text = "Extraction options:";
+            // 
+            // checkBoxGenerateJson
+            // 
+            checkBoxGenerateJson.AutoSize = true;
+            checkBoxGenerateJson.Checked = true;
+            checkBoxGenerateJson.CheckState = CheckState.Checked;
+            checkBoxGenerateJson.Location = new Point(6, 26);
+            checkBoxGenerateJson.Name = "checkBoxGenerateJson";
+            checkBoxGenerateJson.Size = new Size(98, 19);
+            checkBoxGenerateJson.TabIndex = 11;
+            checkBoxGenerateJson.Text = "Generate json";
+            checkBoxGenerateJson.UseVisualStyleBackColor = true;
+            checkBoxGenerateJson.CheckedChanged += checkBoxGenerateJson_CheckedChanged;
+            // 
+            // radioButtonDocx
+            // 
+            radioButtonDocx.AutoSize = true;
+            radioButtonDocx.Enabled = false;
+            radioButtonDocx.Location = new Point(68, 80);
+            radioButtonDocx.Name = "radioButtonDocx";
+            radioButtonDocx.Size = new Size(53, 19);
+            radioButtonDocx.TabIndex = 10;
+            radioButtonDocx.Text = ".docx";
+            radioButtonDocx.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPdf
+            // 
+            radioButtonPdf.AutoSize = true;
+            radioButtonPdf.Checked = true;
+            radioButtonPdf.Enabled = false;
+            radioButtonPdf.Location = new Point(7, 80);
+            radioButtonPdf.Name = "radioButtonPdf";
+            radioButtonPdf.Size = new Size(46, 19);
+            radioButtonPdf.TabIndex = 9;
+            radioButtonPdf.TabStop = true;
+            radioButtonPdf.Text = ".pdf";
+            radioButtonPdf.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGenerateFile
+            // 
+            checkBoxGenerateFile.AutoSize = true;
+            checkBoxGenerateFile.Location = new Point(6, 55);
+            checkBoxGenerateFile.Name = "checkBoxGenerateFile";
+            checkBoxGenerateFile.Size = new Size(92, 19);
+            checkBoxGenerateFile.TabIndex = 8;
+            checkBoxGenerateFile.Text = "Generate file";
+            checkBoxGenerateFile.UseVisualStyleBackColor = true;
+            checkBoxGenerateFile.CheckedChanged += checkBoxGenerateFile_CheckedChanged;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(723, 450);
-            Controls.Add(pictureBoxLogo);
+            Controls.Add(groupBoxExtractionOption);
             Controls.Add(tabControl);
             Controls.Add(buttonExtraction);
             Controls.Add(labelSourceFiles);
@@ -196,7 +251,8 @@
             tabPageLog.ResumeLayout(false);
             tabPageOutput.ResumeLayout(false);
             tabPageOutput.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            groupBoxExtractionOption.ResumeLayout(false);
+            groupBoxExtractionOption.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -212,7 +268,11 @@
         private TabPage tabPageOutput;
         private TextBox textBoxJson;
         private TreeView treeViewLog;
-        private PictureBox pictureBoxLogo;
         private Button buttonCopy;
+        private GroupBox groupBoxExtractionOption;
+        private RadioButton radioButtonDocx;
+        private RadioButton radioButtonPdf;
+        private CheckBox checkBoxGenerateFile;
+        private CheckBox checkBoxGenerateJson;
     }
 }

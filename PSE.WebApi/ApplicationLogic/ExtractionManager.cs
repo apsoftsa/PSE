@@ -62,7 +62,7 @@ namespace PSE.WebApi.ApplicationLogic
             };
         }
 
-        public static OutputContent ExtractFiles(IPSEDictionaryService dictionaryService, IList<InputContent> files)
+        public static IOutputContent ExtractFiles(IPSEDictionaryService dictionaryService, IList<InputContent> files)
         {
             string tmpNodeKey;
             IExtractedData extrData;
