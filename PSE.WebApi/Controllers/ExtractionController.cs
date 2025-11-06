@@ -5,12 +5,12 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Newtonsoft.Json;
-using DevExpress.DataAccess.Json;
 using PSE.Dictionary;
 using PSE.Model.Common;
 using PSE.Model.Exchange;
 using PSE.Reporting.Reports;
 using PSE.WebApi.ApplicationLogic;
+using PSE.WebApi.ApplicationSettings;
 
 namespace PSE.WebApi.Controllers
 {
@@ -45,12 +45,8 @@ namespace PSE.WebApi.Controllers
         private static async Task<MemoryStream?> GenerateReport(IOutputContent outCont, string outputFileName, string fileType) {
             MemoryStream? ms = null;
             if (outCont != null && outCont.JsonGenerated != string.Empty) {
-                var jsonDs = new JsonDataSource { JsonSource = new CustomJsonSource(outCont.JsonGenerated) };
-                await jsonDs.FillAsync();
-                ReportPSE report = new() {
-                    DataSource = jsonDs,
-                    RequestParameters = false
-                };
+                ReportPSE report = new();
+                ReportConfigurator.FixJsonConnections(report, outCont.JsonGenerated);
                 ms = new MemoryStream();
                 if (fileType == "docx")
                     await report.ExportToDocxAsync(ms);
@@ -61,36 +57,44 @@ namespace PSE.WebApi.Controllers
         }
 
         private async Task<ActionResult<OutputContent>> BuildJsonAndFile([FromForm] List<IFormFile> files, string fileType) {
-            if (files != null && files.Any()) {
-                var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
-                if (outCont != null && outCont.JsonGenerated != string.Empty) {
-                    string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
-                    using var ms = await GenerateReport(outCont, outputFileName, fileType);
-                    OutputContentWithFile outContWithFile = new(outCont) {
-                        FileName = outputFileName,
-                        FileContent = ms.ToArray()
-                    };
-                    return Ok(JsonConvert.SerializeObject(outContWithFile));
+            try {
+                if (files != null && files.Any()) {
+                    var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
+                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                    if (outCont != null && outCont.JsonGenerated != string.Empty) {
+                        string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
+                        using var ms = await GenerateReport(outCont, outputFileName, fileType);
+                        OutputContentWithFile outContWithFile = new(outCont) {
+                            FileName = outputFileName,
+                            FileContent = ms.ToArray()
+                        };
+                        return Ok(JsonConvert.SerializeObject(outContWithFile));
+                    } else
+                        return BadRequest();
                 } else
-                    return BadRequest();
-            } else
-                return NotFound();
+                    return NotFound();
+            } catch (Exception ex) {
+                return BadRequest(ex.Message);  
+            }
         }
 
         private async Task<IActionResult> BuildOnlyFile([FromForm] List<IFormFile> files, string fileType) {
-            if (files != null && files.Any()) {
-                var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
-                if (outCont != null && outCont.JsonGenerated != string.Empty) {
-                    string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
-                    using var ms = await GenerateReport(outCont, outputFileName, fileType);
-                    string fileTypeMime = fileType == "pdf" ? "application/pdf" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-                    return File(ms.ToArray(), fileTypeMime, outputFileName);
+            try {
+                if (files != null && files.Any()) {
+                    var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
+                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                    if (outCont != null && outCont.JsonGenerated != string.Empty) {
+                        string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
+                        using var ms = await GenerateReport(outCont, outputFileName, fileType);
+                        string fileTypeMime = fileType == "pdf" ? "application/pdf" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                        return File(ms.ToArray(), fileTypeMime, outputFileName);
+                    } else
+                        return BadRequest();
                 } else
-                    return BadRequest();
-            } else
-                return NotFound();
+                    return NotFound();
+            } catch (Exception ex) {
+                return BadRequest(ex.Message);
+            }
         }
 
         [AllowAnonymous]

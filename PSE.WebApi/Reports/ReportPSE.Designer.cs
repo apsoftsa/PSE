@@ -1873,6 +1873,8 @@
             this.xrLabel338 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel337 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeaderBandSection19010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.gridHeaderLine = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.pageHeaderFooterLine = new DevExpress.XtraReports.UI.XRControlStyle();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -1925,8 +1927,7 @@
             this.linePageHeader.Dpi = 254F;
             this.linePageHeader.LineWidth = 2F;
             this.linePageHeader.Name = "linePageHeader";
-            this.linePageHeader.StyleName = "headerFooterLineStyle";
-            this.linePageHeader.StylePriority.UseBorderWidth = false;
+            this.linePageHeader.StyleName = "pageHeaderFooterLine";
             this.linePageHeader.PrintOnPage += new DevExpress.XtraReports.UI.PrintOnPageEventHandler(this.linePageHeader_PrintOnPage);
             // 
             // contentHeaderRow1
@@ -2018,8 +2019,7 @@
             this.xrLineFooterPage.Dpi = 254F;
             this.xrLineFooterPage.LineWidth = 2F;
             this.xrLineFooterPage.Name = "xrLineFooterPage";
-            this.xrLineFooterPage.StyleName = "headerFooterLineStyle";
-            this.xrLineFooterPage.StylePriority.UseBorderWidth = false;
+            this.xrLineFooterPage.StyleName = "pageHeaderFooterLine";
             // 
             // PageNumberInfo
             // 
@@ -2835,7 +2835,7 @@
             // 
             // headerFooterLineStyle
             // 
-            this.headerFooterLineStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.headerFooterLineStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.headerFooterLineStyle.Name = "headerFooterLineStyle";
             // 
             // pageInfoStyle
@@ -2992,7 +2992,7 @@
             this.xrLine2.Dpi = 254F;
             this.xrLine2.LineWidth = 2F;
             this.xrLine2.Name = "xrLine2";
-            this.xrLine2.StyleName = "headerFooterLineStyle";
+            this.xrLine2.StyleName = "gridHeaderLine";
             this.xrLine2.StylePriority.UseBorderWidth = false;
             // 
             // xrLine1
@@ -3001,7 +3001,7 @@
             this.xrLine1.Dpi = 254F;
             this.xrLine1.LineWidth = 2F;
             this.xrLine1.Name = "xrLine1";
-            this.xrLine1.StyleName = "headerFooterLineStyle";
+            this.xrLine1.StyleName = "gridHeaderLine";
             this.xrLine1.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle7000
@@ -3207,7 +3207,7 @@
             this.xrLine3.Dpi = 254F;
             this.xrLine3.LineWidth = 2F;
             this.xrLine3.Name = "xrLine3";
-            this.xrLine3.StyleName = "headerFooterLineStyle";
+            this.xrLine3.StyleName = "gridHeaderLine";
             this.xrLine3.StylePriority.UseBorderWidth = false;
             // 
             // xrLine4
@@ -3216,7 +3216,7 @@
             this.xrLine4.Dpi = 254F;
             this.xrLine4.LineWidth = 2F;
             this.xrLine4.Name = "xrLine4";
-            this.xrLine4.StyleName = "headerFooterLineStyle";
+            this.xrLine4.StyleName = "gridHeaderLine";
             // 
             // labelSubHeaderSection6000
             // 
@@ -3290,6 +3290,8 @@
             this.chartSection6010.AutoLayout = true;
             this.chartSection6010.BorderColor = System.Drawing.Color.Black;
             this.chartSection6010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection6010.DataMember = "section60.content.subSection6010.content";
+            this.chartSection6010.DataSource = this.jsonDataSourcePSE;
             simpleDiagram1.LabelsResolveOverlappingMinIndent = 10;
             this.chartSection6010.Diagram = simpleDiagram1;
             this.chartSection6010.Dpi = 254F;
@@ -3311,7 +3313,8 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series1.ArgumentDataMember = "section60.content.subSection6010.content.currency";
+            series1.ArgumentDataMember = "currency";
+            series1.FilterString = "[percentAsset] > 0";
             doughnutSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             doughnutSeriesLabel1.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
             doughnutSeriesLabel1.LineLength = 30;
@@ -3322,7 +3325,7 @@
             series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series1.Name = "SeriesData";
             series1.SeriesID = 1;
-            series1.ValueDataMembersSerializable = "section60.content.subSection6010.content.percentAsset";
+            series1.ValueDataMembersSerializable = "percentAsset";
             doughnutSeriesView1.HoleRadiusPercent = 50;
             series1.View = doughnutSeriesView1;
             this.chartSection6010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -3372,7 +3375,7 @@
             this.TableOfContentsReport.Dpi = 254F;
             this.TableOfContentsReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.TableOfContentsReport.LevelDefault.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.TableOfContentsReport.LevelDefault.Height = 70F;
+            this.TableOfContentsReport.LevelDefault.Height = 90F;
             this.TableOfContentsReport.LevelDefault.LeaderSymbol = ' ';
             this.TableOfContentsReport.LevelDefault.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 192, 0, 10, 254F);
             this.TableOfContentsReport.LevelTitle.Height = 160F;
@@ -4010,7 +4013,7 @@
             this.xrLine35.Dpi = 254F;
             this.xrLine35.LineWidth = 2F;
             this.xrLine35.Name = "xrLine35";
-            this.xrLine35.StyleName = "headerFooterLineStyle";
+            this.xrLine35.StyleName = "gridHeaderLine";
             this.xrLine35.StylePriority.UseBorderWidth = false;
             // 
             // labelPerc1Section8000
@@ -4148,7 +4151,7 @@
             this.xrLine6.Dpi = 254F;
             this.xrLine6.LineWidth = 2F;
             this.xrLine6.Name = "xrLine6";
-            this.xrLine6.StyleName = "headerFooterLineStyle";
+            this.xrLine6.StyleName = "gridHeaderLine";
             this.xrLine6.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection8000
@@ -4703,7 +4706,7 @@
             this.xrLine9.Dpi = 254F;
             this.xrLine9.LineWidth = 2F;
             this.xrLine9.Name = "xrLine9";
-            this.xrLine9.StyleName = "headerFooterLineStyle";
+            this.xrLine9.StyleName = "gridHeaderLine";
             this.xrLine9.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPErdNoRealSection8010
@@ -4841,7 +4844,7 @@
             this.xrLine13.Dpi = 254F;
             this.xrLine13.LineWidth = 2F;
             this.xrLine13.Name = "xrLine13";
-            this.xrLine13.StyleName = "headerFooterLineStyle";
+            this.xrLine13.StyleName = "gridHeaderLine";
             this.xrLine13.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle8010
@@ -5378,7 +5381,7 @@
             this.xrLine15.Dpi = 254F;
             this.xrLine15.LineWidth = 2F;
             this.xrLine15.Name = "xrLine15";
-            this.xrLine15.StyleName = "headerFooterLineStyle";
+            this.xrLine15.StyleName = "gridHeaderLine";
             this.xrLine15.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPErdNoRealSection8020
@@ -5516,7 +5519,7 @@
             this.xrLine66.Dpi = 254F;
             this.xrLine66.LineWidth = 2F;
             this.xrLine66.Name = "xrLine66";
-            this.xrLine66.StyleName = "headerFooterLineStyle";
+            this.xrLine66.StyleName = "gridHeaderLine";
             this.xrLine66.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle8020
@@ -6044,7 +6047,7 @@
             this.xrLine67.Dpi = 254F;
             this.xrLine67.LineWidth = 2F;
             this.xrLine67.Name = "xrLine67";
-            this.xrLine67.StyleName = "headerFooterLineStyle";
+            this.xrLine67.StyleName = "gridHeaderLine";
             this.xrLine67.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPErdNoRealSection8030
@@ -6182,7 +6185,7 @@
             this.xrLine68.Dpi = 254F;
             this.xrLine68.LineWidth = 2F;
             this.xrLine68.Name = "xrLine68";
-            this.xrLine68.StyleName = "headerFooterLineStyle";
+            this.xrLine68.StyleName = "gridHeaderLine";
             this.xrLine68.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle8030
@@ -6621,7 +6624,7 @@
             this.xrLine18.Dpi = 254F;
             this.xrLine18.LineWidth = 2F;
             this.xrLine18.Name = "xrLine18";
-            this.xrLine18.StyleName = "headerFooterLineStyle";
+            this.xrLine18.StyleName = "gridHeaderLine";
             this.xrLine18.StylePriority.UseBorderWidth = false;
             // 
             // labelPerc1Section8040
@@ -6719,7 +6722,7 @@
             this.xrLine69.Dpi = 254F;
             this.xrLine69.LineWidth = 2F;
             this.xrLine69.Name = "xrLine69";
-            this.xrLine69.StyleName = "headerFooterLineStyle";
+            this.xrLine69.StyleName = "gridHeaderLine";
             this.xrLine69.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection8040
@@ -6970,7 +6973,7 @@
             this.xrLine20.Dpi = 254F;
             this.xrLine20.LineWidth = 2F;
             this.xrLine20.Name = "xrLine20";
-            this.xrLine20.StyleName = "headerFooterLineStyle";
+            this.xrLine20.StyleName = "gridHeaderLine";
             this.xrLine20.StylePriority.UseBorderWidth = false;
             // 
             // xrLine21
@@ -6979,7 +6982,7 @@
             this.xrLine21.Dpi = 254F;
             this.xrLine21.LineWidth = 2F;
             this.xrLine21.Name = "xrLine21";
-            this.xrLine21.StyleName = "headerFooterLineStyle";
+            this.xrLine21.StyleName = "gridHeaderLine";
             this.xrLine21.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSection4010
@@ -6997,6 +7000,8 @@
             this.chartSection4010.AutoLayout = true;
             this.chartSection4010.BorderColor = System.Drawing.Color.Black;
             this.chartSection4010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection4010.DataMember = "section40.content.subSection4010.content";
+            this.chartSection4010.DataSource = this.jsonDataSourcePSE;
             simpleDiagram2.LabelsResolveOverlappingMinIndent = 10;
             this.chartSection4010.Diagram = simpleDiagram2;
             this.chartSection4010.Dpi = 254F;
@@ -7020,7 +7025,8 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series2.ArgumentDataMember = "section40.content.subSection4010.content.assetClass";
+            series2.ArgumentDataMember = "assetClass";
+            series2.FilterString = "[percentInvestment] > 0";
             doughnutSeriesLabel2.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(129)))), ((int)(((byte)(189)))));
             doughnutSeriesLabel2.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             doughnutSeriesLabel2.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
@@ -7035,7 +7041,7 @@
             series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series2.Name = "SeriesData";
             series2.SeriesID = 1;
-            series2.ValueDataMembersSerializable = "section40.content.subSection4010.content.percentInvestment";
+            series2.ValueDataMembersSerializable = "percentInvestment";
             doughnutSeriesView2.HoleRadiusPercent = 50;
             series2.View = doughnutSeriesView2;
             this.chartSection4010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -7051,8 +7057,9 @@
             // xrLine24
             // 
             this.xrLine24.Dpi = 254F;
+            this.xrLine24.ForeColor = System.Drawing.Color.Silver;
             this.xrLine24.Name = "xrLine24";
-            this.xrLine24.StyleName = "headerFooterLineStyle";
+            this.xrLine24.StylePriority.UseForeColor = false;
             // 
             // DetailReportSection2000
             // 
@@ -7174,7 +7181,7 @@
             this.xrLine22.Dpi = 254F;
             this.xrLine22.LineWidth = 2F;
             this.xrLine22.Name = "xrLine22";
-            this.xrLine22.StyleName = "headerFooterLineStyle";
+            this.xrLine22.StyleName = "gridHeaderLine";
             this.xrLine22.StylePriority.UseBorderWidth = false;
             // 
             // xrLine23
@@ -7183,7 +7190,7 @@
             this.xrLine23.Dpi = 254F;
             this.xrLine23.LineWidth = 2F;
             this.xrLine23.Name = "xrLine23";
-            this.xrLine23.StyleName = "headerFooterLineStyle";
+            this.xrLine23.StyleName = "gridHeaderLine";
             this.xrLine23.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection2000
@@ -7252,7 +7259,10 @@
             // 
             this.chartSection2010.BorderColor = System.Drawing.Color.Black;
             this.chartSection2010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection2010.DataMember = "section20.content.subSection2010.content";
+            this.chartSection2010.DataSource = this.jsonDataSourcePSE;
             xyDiagram1.AxisX.Alignment = DevExpress.XtraCharts.AxisAlignment.Zero;
+            xyDiagram1.AxisX.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F);
             xyDiagram1.AxisX.Label.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Empty;
             xyDiagram1.AxisX.Label.MaxLineCount = 2;
             xyDiagram1.AxisX.Label.MaxWidth = 68;
@@ -7265,6 +7275,7 @@
             xyDiagram1.AxisY.GridLines.Color = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             xyDiagram1.AxisY.GridLines.LineStyle.DashStyle = DevExpress.XtraCharts.DashStyle.Dash;
             xyDiagram1.AxisY.GridLines.Visible = false;
+            xyDiagram1.AxisY.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F);
             xyDiagram1.AxisY.Label.TextPattern = "{0:0.00}%";
             xyDiagram1.AxisY.Tickmarks.MinorVisible = false;
             xyDiagram1.AxisY.Tickmarks.Visible = false;
@@ -7294,7 +7305,7 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series3.ArgumentDataMember = "section20.content.subSection2010.content.period";
+            series3.ArgumentDataMember = "period";
             sideBySideBarSeriesLabel1.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             sideBySideBarSeriesLabel1.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
@@ -7306,7 +7317,7 @@
             series3.Name = "SeriesData";
             series3.SeriesID = 1;
             series3.ShowInLegend = false;
-            series3.ValueDataMembersSerializable = "section20.content.subSection2010.content.percentPerformance";
+            series3.ValueDataMembersSerializable = "percentPerformance";
             sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             sideBySideBarSeriesView1.ColorEach = true;
             sideBySideBarSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid;
@@ -7320,7 +7331,6 @@
             this.xrLine25.Dpi = 254F;
             this.xrLine25.LineWidth = 2F;
             this.xrLine25.Name = "xrLine25";
-            this.xrLine25.StyleName = "headerFooterLineStyle";
             this.xrLine25.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection2010
@@ -7365,7 +7375,7 @@
             this.section16000LineGridUpper.Dpi = 254F;
             this.section16000LineGridUpper.LineWidth = 2F;
             this.section16000LineGridUpper.Name = "section16000LineGridUpper";
-            this.section16000LineGridUpper.StyleName = "headerFooterLineStyle";
+            this.section16000LineGridUpper.StyleName = "gridHeaderLine";
             // 
             // percentShares16000
             // 
@@ -7412,7 +7422,7 @@
             this.section16000LineGridDown.Dpi = 254F;
             this.section16000LineGridDown.LineWidth = 2F;
             this.section16000LineGridDown.Name = "section16000LineGridDown";
-            this.section16000LineGridDown.StyleName = "headerFooterLineStyle";
+            this.section16000LineGridDown.StyleName = "gridHeaderLine";
             // 
             // GroupHeaderBandSection16000
             // 
@@ -7475,7 +7485,7 @@
             this.xrLine27.Dpi = 254F;
             this.xrLine27.LineWidth = 2F;
             this.xrLine27.Name = "xrLine27";
-            this.xrLine27.StyleName = "headerFooterLineStyle";
+            this.xrLine27.StyleName = "gridHeaderLine";
             this.xrLine27.StylePriority.UseBorderWidth = false;
             // 
             // xrLine26
@@ -7484,7 +7494,7 @@
             this.xrLine26.Dpi = 254F;
             this.xrLine26.LineWidth = 2F;
             this.xrLine26.Name = "xrLine26";
-            this.xrLine26.StyleName = "headerFooterLineStyle";
+            this.xrLine26.StyleName = "gridHeaderLine";
             this.xrLine26.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSection16010
@@ -7501,6 +7511,8 @@
             this.chartSection16010.AutoLayout = true;
             this.chartSection16010.BorderColor = System.Drawing.Color.Black;
             this.chartSection16010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection16010.DataMember = "section160.content.subSection16010.content";
+            this.chartSection16010.DataSource = this.jsonDataSourcePSE;
             simpleDiagram3.LabelsResolveOverlappingMinIndent = 10;
             this.chartSection16010.Diagram = simpleDiagram3;
             this.chartSection16010.Dpi = 254F;
@@ -7524,8 +7536,8 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series4.ArgumentDataMember = "section160.content.subSection16010.content.sector";
-            series4.FilterString = "[section160.content.subSection16010.content.percentShares] < 100";
+            series4.ArgumentDataMember = "sector";
+            series4.FilterString = "[percentShares] > 0 And [percentShares] < 100";
             doughnutSeriesLabel3.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             doughnutSeriesLabel3.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
             doughnutSeriesLabel3.DXTextAlignment = DevExpress.Drawing.DXStringAlignment.Near;
@@ -7538,7 +7550,7 @@
             series4.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series4.Name = "SeriesData";
             series4.SeriesID = 1;
-            series4.ValueDataMembersSerializable = "section160.content.subSection16010.content.percentShares";
+            series4.ValueDataMembersSerializable = "percentShares";
             doughnutSeriesView3.HoleRadiusPercent = 50;
             series4.View = doughnutSeriesView3;
             this.chartSection16010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -7546,7 +7558,7 @@
             // 
             // verticalSeparatorLine
             // 
-            this.verticalSeparatorLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.verticalSeparatorLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.verticalSeparatorLine.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.verticalSeparatorLine.Name = "verticalSeparatorLine";
             // 
@@ -7642,7 +7654,7 @@
             this.xrLine30.Dpi = 254F;
             this.xrLine30.LineWidth = 2F;
             this.xrLine30.Name = "xrLine30";
-            this.xrLine30.StyleName = "headerFooterLineStyle";
+            this.xrLine30.StyleName = "gridHeaderLine";
             this.xrLine30.StylePriority.UseBorderWidth = false;
             // 
             // xrLine29
@@ -7651,7 +7663,7 @@
             this.xrLine29.Dpi = 254F;
             this.xrLine29.LineWidth = 2F;
             this.xrLine29.Name = "xrLine29";
-            this.xrLine29.StyleName = "headerFooterLineStyle";
+            this.xrLine29.StyleName = "gridHeaderLine";
             this.xrLine29.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection17000
@@ -7769,6 +7781,8 @@
             this.chartSection17010.AutoLayout = true;
             this.chartSection17010.BorderColor = System.Drawing.Color.Black;
             this.chartSection17010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection17010.DataMember = "section170.content.subSection17010.content";
+            this.chartSection17010.DataSource = this.jsonDataSourcePSE;
             simpleDiagram4.LabelsResolveOverlappingMinIndent = 10;
             this.chartSection17010.Diagram = simpleDiagram4;
             this.chartSection17010.Dpi = 254F;
@@ -7792,7 +7806,8 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series5.ArgumentDataMember = "section170.content.subSection17010.content.nation";
+            series5.ArgumentDataMember = "nation";
+            series5.FilterString = "[percentShares] > 0";
             doughnutSeriesLabel4.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             doughnutSeriesLabel4.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
             doughnutSeriesLabel4.DXTextAlignment = DevExpress.Drawing.DXStringAlignment.Near;
@@ -7805,7 +7820,7 @@
             series5.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series5.Name = "SeriesData";
             series5.SeriesID = 1;
-            series5.ValueDataMembersSerializable = "section170.content.subSection17010.content.percentShares";
+            series5.ValueDataMembersSerializable = "percentShares";
             doughnutSeriesView4.HoleRadiusPercent = 50;
             series5.View = doughnutSeriesView4;
             this.chartSection17010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -8071,6 +8086,8 @@
             this.chartSection20010.AutoLayout = true;
             this.chartSection20010.BorderColor = System.Drawing.Color.Black;
             this.chartSection20010.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection20010.DataMember = "section200.content.subSection20010.content";
+            this.chartSection20010.DataSource = this.jsonDataSourcePSE;
             simpleDiagram5.LabelsResolveOverlappingMinIndent = 10;
             this.chartSection20010.Diagram = simpleDiagram5;
             this.chartSection20010.Dpi = 254F;
@@ -8092,7 +8109,8 @@
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(174)))), ((int)(((byte)(184)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151))))), System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(129)))), ((int)(((byte)(151)))))),
                 new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))))}));
-            series6.ArgumentDataMember = "section200.content.subSection20020.content.assetClass";
+            series6.ArgumentDataMember = "assetClass";
+            series6.FilterString = "[percentInvestment] > 0";
             doughnutSeriesLabel5.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             doughnutSeriesLabel5.DXFont = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
             doughnutSeriesLabel5.LineLength = 30;
@@ -8103,7 +8121,7 @@
             series6.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
             series6.Name = "SeriesData";
             series6.SeriesID = 1;
-            series6.ValueDataMembersSerializable = "section200.content.subSection20020.content.percentInvestment";
+            series6.ValueDataMembersSerializable = "percentInvestment";
             doughnutSeriesView5.HoleRadiusPercent = 50;
             series6.View = doughnutSeriesView5;
             this.chartSection20010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -8177,7 +8195,7 @@
             this.xrLine32.Dpi = 254F;
             this.xrLine32.LineWidth = 2F;
             this.xrLine32.Name = "xrLine32";
-            this.xrLine32.StyleName = "headerFooterLineStyle";
+            this.xrLine32.StyleName = "gridHeaderLine";
             this.xrLine32.StylePriority.UseBorderWidth = false;
             // 
             // xrLine33
@@ -8186,7 +8204,7 @@
             this.xrLine33.Dpi = 254F;
             this.xrLine33.LineWidth = 2F;
             this.xrLine33.Name = "xrLine33";
-            this.xrLine33.StyleName = "headerFooterLineStyle";
+            this.xrLine33.StyleName = "gridHeaderLine";
             this.xrLine33.StylePriority.UseBorderWidth = false;
             // 
             // GroupFooterSection20020
@@ -8281,7 +8299,7 @@
             // reportLabelHeader
             // 
             this.reportLabelHeader.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.reportLabelHeader.Font = new DevExpress.Drawing.DXFont("Tahoma", 11F);
+            this.reportLabelHeader.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.reportLabelHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.reportLabelHeader.Name = "reportLabelHeader";
             this.reportLabelHeader.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 10, 0, 0, 254F);
@@ -8290,7 +8308,7 @@
             // reportContentHeader
             // 
             this.reportContentHeader.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.reportContentHeader.Font = new DevExpress.Drawing.DXFont("Tahoma", 11F);
+            this.reportContentHeader.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.reportContentHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.reportContentHeader.Name = "reportContentHeader";
             this.reportContentHeader.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 0, 0, 0, 254F);
@@ -8716,7 +8734,7 @@
             this.xrLine49.Dpi = 254F;
             this.xrLine49.LineWidth = 2F;
             this.xrLine49.Name = "xrLine49";
-            this.xrLine49.StyleName = "headerFooterLineStyle";
+            this.xrLine49.StyleName = "gridHeaderLine";
             this.xrLine49.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPErdNoRealSection9010
@@ -8814,7 +8832,7 @@
             this.xrLine70.Dpi = 254F;
             this.xrLine70.LineWidth = 2F;
             this.xrLine70.Name = "xrLine70";
-            this.xrLine70.StyleName = "headerFooterLineStyle";
+            this.xrLine70.StyleName = "gridHeaderLine";
             this.xrLine70.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle9010
@@ -10263,7 +10281,7 @@
             this.xrLine62.Dpi = 254F;
             this.xrLine62.LineWidth = 2F;
             this.xrLine62.Name = "xrLine62";
-            this.xrLine62.StyleName = "headerFooterLineStyle";
+            this.xrLine62.StyleName = "gridHeaderLine";
             this.xrLine62.StylePriority.UseBorderWidth = false;
             // 
             // xrLine61
@@ -10272,7 +10290,7 @@
             this.xrLine61.Dpi = 254F;
             this.xrLine61.LineWidth = 2F;
             this.xrLine61.Name = "xrLine61";
-            this.xrLine61.StyleName = "headerFooterLineStyle";
+            this.xrLine61.StyleName = "gridHeaderLine";
             this.xrLine61.StylePriority.UseBorderWidth = false;
             // 
             // xrLine60
@@ -10318,7 +10336,7 @@
             this.xrLine59.Dpi = 254F;
             this.xrLine59.LineWidth = 2F;
             this.xrLine59.Name = "xrLine59";
-            this.xrLine59.StyleName = "headerFooterLineStyle";
+            this.xrLine59.StyleName = "gridHeaderLine";
             this.xrLine59.StylePriority.UseBorderWidth = false;
             // 
             // reportLabelStyleRightAlign
@@ -10814,7 +10832,7 @@
             this.xrLine71.Dpi = 254F;
             this.xrLine71.LineWidth = 2F;
             this.xrLine71.Name = "xrLine71";
-            this.xrLine71.StyleName = "headerFooterLineStyle";
+            this.xrLine71.StyleName = "gridHeaderLine";
             this.xrLine71.StylePriority.UseBorderWidth = false;
             // 
             // labelPerc1Section9020
@@ -10912,7 +10930,7 @@
             this.xrLine72.Dpi = 254F;
             this.xrLine72.LineWidth = 2F;
             this.xrLine72.Name = "xrLine72";
-            this.xrLine72.StyleName = "headerFooterLineStyle";
+            this.xrLine72.StyleName = "gridHeaderLine";
             this.xrLine72.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection9020
@@ -11372,7 +11390,7 @@
             this.xrLine74.Dpi = 254F;
             this.xrLine74.LineWidth = 2F;
             this.xrLine74.Name = "xrLine74";
-            this.xrLine74.StyleName = "headerFooterLineStyle";
+            this.xrLine74.StyleName = "gridHeaderLine";
             this.xrLine74.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPErdNoRealSection9030
@@ -11470,7 +11488,7 @@
             this.xrLine75.Dpi = 254F;
             this.xrLine75.LineWidth = 2F;
             this.xrLine75.Name = "xrLine75";
-            this.xrLine75.StyleName = "headerFooterLineStyle";
+            this.xrLine75.StyleName = "gridHeaderLine";
             this.xrLine75.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle9030
@@ -11513,6 +11531,7 @@
             this.tablerOfContentsStyle.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
             this.tablerOfContentsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.tablerOfContentsStyle.Name = "tablerOfContentsStyle";
+            this.tablerOfContentsStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.tablerOfContentsStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // DetailReportSection7040
@@ -11675,7 +11694,7 @@
             this.xrLine77.Dpi = 254F;
             this.xrLine77.LineWidth = 2F;
             this.xrLine77.Name = "xrLine77";
-            this.xrLine77.StyleName = "headerFooterLineStyle";
+            this.xrLine77.StyleName = "gridHeaderLine";
             this.xrLine77.StylePriority.UseBorderWidth = false;
             // 
             // xrLine78
@@ -11684,7 +11703,7 @@
             this.xrLine78.Dpi = 254F;
             this.xrLine78.LineWidth = 2F;
             this.xrLine78.Name = "xrLine78";
-            this.xrLine78.StyleName = "headerFooterLineStyle";
+            this.xrLine78.StyleName = "gridHeaderLine";
             this.xrLine78.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection7040
@@ -12009,7 +12028,7 @@
             this.xrLine80.Dpi = 254F;
             this.xrLine80.LineWidth = 2F;
             this.xrLine80.Name = "xrLine80";
-            this.xrLine80.StyleName = "headerFooterLineStyle";
+            this.xrLine80.StyleName = "gridHeaderLine";
             this.xrLine80.StylePriority.UseBorderWidth = false;
             // 
             // xrLine81
@@ -12018,7 +12037,7 @@
             this.xrLine81.Dpi = 254F;
             this.xrLine81.LineWidth = 2F;
             this.xrLine81.Name = "xrLine81";
-            this.xrLine81.StyleName = "headerFooterLineStyle";
+            this.xrLine81.StyleName = "gridHeaderLine";
             this.xrLine81.StylePriority.UseBorderWidth = false;
             // 
             // labelTassoSection7030
@@ -12233,7 +12252,7 @@
             this.xrLine82.Dpi = 254F;
             this.xrLine82.LineWidth = 2F;
             this.xrLine82.Name = "xrLine82";
-            this.xrLine82.StyleName = "headerFooterLineStyle";
+            this.xrLine82.StyleName = "gridHeaderLine";
             this.xrLine82.StylePriority.UseBorderWidth = false;
             // 
             // xrLine83
@@ -12242,7 +12261,7 @@
             this.xrLine83.Dpi = 254F;
             this.xrLine83.LineWidth = 2F;
             this.xrLine83.Name = "xrLine83";
-            this.xrLine83.StyleName = "headerFooterLineStyle";
+            this.xrLine83.StyleName = "gridHeaderLine";
             this.xrLine83.StylePriority.UseBorderWidth = false;
             // 
             // labelSubHeaderSection7020
@@ -12741,7 +12760,7 @@
             this.xrLine84.Dpi = 254F;
             this.xrLine84.LineWidth = 2F;
             this.xrLine84.Name = "xrLine84";
-            this.xrLine84.StyleName = "headerFooterLineStyle";
+            this.xrLine84.StyleName = "gridHeaderLine";
             this.xrLine84.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPerdNoRealSection7050
@@ -12839,7 +12858,7 @@
             this.xrLine85.Dpi = 254F;
             this.xrLine85.LineWidth = 2F;
             this.xrLine85.Name = "xrLine85";
-            this.xrLine85.StyleName = "headerFooterLineStyle";
+            this.xrLine85.StyleName = "gridHeaderLine";
             this.xrLine85.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle7050
@@ -13312,7 +13331,7 @@
             this.xrLine87.Dpi = 254F;
             this.xrLine87.LineWidth = 2F;
             this.xrLine87.Name = "xrLine87";
-            this.xrLine87.StyleName = "headerFooterLineStyle";
+            this.xrLine87.StyleName = "gridHeaderLine";
             this.xrLine87.StylePriority.UseBorderWidth = false;
             // 
             // labelProfPerdNoRealSection7010
@@ -13410,7 +13429,7 @@
             this.xrLine88.Dpi = 254F;
             this.xrLine88.LineWidth = 2F;
             this.xrLine88.Name = "xrLine88";
-            this.xrLine88.StyleName = "headerFooterLineStyle";
+            this.xrLine88.StyleName = "gridHeaderLine";
             this.xrLine88.StylePriority.UseBorderWidth = false;
             // 
             // GroupHeaderBandSectionTitle7010
@@ -13635,7 +13654,7 @@
             this.xrLine90.Dpi = 254F;
             this.xrLine90.LineWidth = 2F;
             this.xrLine90.Name = "xrLine90";
-            this.xrLine90.StyleName = "headerFooterLineStyle";
+            this.xrLine90.StyleName = "gridHeaderLine";
             this.xrLine90.StylePriority.UseBorderWidth = false;
             // 
             // xrLine91
@@ -13644,7 +13663,7 @@
             this.xrLine91.Dpi = 254F;
             this.xrLine91.LineWidth = 2F;
             this.xrLine91.Name = "xrLine91";
-            this.xrLine91.StyleName = "headerFooterLineStyle";
+            this.xrLine91.StyleName = "gridHeaderLine";
             this.xrLine91.StylePriority.UseBorderWidth = false;
             // 
             // labelOrdineSection1300
@@ -13812,7 +13831,7 @@
             this.xrLine93.Dpi = 254F;
             this.xrLine93.LineWidth = 2F;
             this.xrLine93.Name = "xrLine93";
-            this.xrLine93.StyleName = "headerFooterLineStyle";
+            this.xrLine93.StyleName = "gridHeaderLine";
             this.xrLine93.StylePriority.UseBorderWidth = false;
             // 
             // xrLine94
@@ -13821,7 +13840,7 @@
             this.xrLine94.Dpi = 254F;
             this.xrLine94.LineWidth = 2F;
             this.xrLine94.Name = "xrLine94";
-            this.xrLine94.StyleName = "headerFooterLineStyle";
+            this.xrLine94.StyleName = "gridHeaderLine";
             this.xrLine94.StylePriority.UseBorderWidth = false;
             // 
             // DetailReportSubSection190Objects
@@ -13950,7 +13969,7 @@
             this.xrLine96.Dpi = 254F;
             this.xrLine96.LineWidth = 2F;
             this.xrLine96.Name = "xrLine96";
-            this.xrLine96.StyleName = "headerFooterLineStyle";
+            this.xrLine96.StyleName = "gridHeaderLine";
             this.xrLine96.StylePriority.UseBorderWidth = false;
             // 
             // xrLine95
@@ -13959,7 +13978,7 @@
             this.xrLine95.Dpi = 254F;
             this.xrLine95.LineWidth = 2F;
             this.xrLine95.Name = "xrLine95";
-            this.xrLine95.StyleName = "headerFooterLineStyle";
+            this.xrLine95.StyleName = "gridHeaderLine";
             this.xrLine95.StylePriority.UseBorderWidth = false;
             // 
             // xrLabel338
@@ -13988,6 +14007,20 @@
             this.GroupHeaderBandSection19010.Level = 1;
             this.GroupHeaderBandSection19010.Name = "GroupHeaderBandSection19010";
             this.GroupHeaderBandSection19010.PrintAcrossBands = true;
+            // 
+            // gridHeaderLine
+            // 
+            this.gridHeaderLine.BackColor = System.Drawing.Color.Transparent;
+            this.gridHeaderLine.BorderColor = System.Drawing.Color.Transparent;
+            this.gridHeaderLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gridHeaderLine.Name = "gridHeaderLine";
+            // 
+            // pageHeaderFooterLine
+            // 
+            this.pageHeaderFooterLine.BackColor = System.Drawing.Color.Transparent;
+            this.pageHeaderFooterLine.BorderColor = System.Drawing.Color.Transparent;
+            this.pageHeaderFooterLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.pageHeaderFooterLine.Name = "pageHeaderFooterLine";
             // 
             // ReportPSE
             // 
@@ -15221,34 +15254,34 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfittoPerditaSection7040, "Default", "Text", "Profitto/Perdita ({0})"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7010, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7010, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7010, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7050, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7050, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7050, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPerdNoRealSection7050, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8000, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8000, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8000, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8010, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8010, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8010, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8020, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8020, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8020, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8030, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8030, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8030, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8040, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8040, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8040, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection8040, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9010, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9010, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9010, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9020, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9020, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9020, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 93.5417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9030, "Default", "SizeF", new System.Drawing.SizeF(174.8097F, 76.45834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9030, "Default", "Text", "Prof./Perd. No Real."),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9030, "Default", "Text", "Prof./Perd. Non Real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1520F, 195F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "SizeF", new System.Drawing.SizeF(197.5491F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "Text", "Quantità"),
@@ -15317,8 +15350,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelRubricaSection19000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(420.8542F, 192.5412F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelRubricaSection19000, "Default", "SizeF", new System.Drawing.SizeF(365.8963F, 74.46883F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelRubricaSection19000, "Default", "Text", "Rubrica"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection19000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(916.9589F, 190.5516F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection19000, "Default", "SizeF", new System.Drawing.SizeF(224.9999F, 76.46004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection19000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(916.9589F, 190.5517F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection19000, "Default", "SizeF", new System.Drawing.SizeF(224.9973F, 76.46007F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection19000, "Default", "Text", "Saldo Attuale"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection7000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1656.52F, 94.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection7000, "Default", "SizeF", new System.Drawing.SizeF(400F, 50F)),
@@ -15354,8 +15387,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateInCorso, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1646.031F, 674.0001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateInCorso, "Default", "SizeF", new System.Drawing.SizeF(502.0553F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateInCorso, "Default", "Text", "di cui in corso"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateSuDivisa, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1641.55F, 774.0001F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateSuDivisa, "Default", "SizeF", new System.Drawing.SizeF(502.054F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateSuDivisa, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1646.031F, 774.0002F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateSuDivisa, "Default", "SizeF", new System.Drawing.SizeF(497.573F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeNonRealizzateSuDivisa, "Default", "Text", "di cui su divisa"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeRealizzate, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1448.94F, 263F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelSection1000UtilePerditeRealizzate, "Default", "SizeF", new System.Drawing.SizeF(903.19F, 58.41998F)),
@@ -15701,7 +15734,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.pictureBollo, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2598.251F, 305.9736F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.pictureBollo, "Default", "SizeF", new System.Drawing.SizeF(158.75F, 158.75F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ReportFooter, "Default", "HeightF", 900.2046F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.ReportHeader, "Default", "HeightF", 1698.979F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.ReportHeader, "Default", "HeightF", 1718.979F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "Font", new DevExpress.Drawing.DXFont("Arial", 9.75F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "Margins", new DevExpress.Drawing.DXMargins(100F, 100F, 300F, 172F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "PaperKind", DevExpress.Drawing.Printing.DXPaperKind.A4),
@@ -17286,7 +17319,6 @@
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 25F;
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
-            this.headerFooterLineStyle,
             this.pageInfoStyle,
             this.gridContentStyle,
             this.gridColumnHeaderStyle,
@@ -17326,7 +17358,9 @@
             this.pageFooterLabelBold,
             this.pageFooterLabel,
             this.pageFooterLabelUnderline,
-            this.tablerOfContentsStyle});
+            this.tablerOfContentsStyle,
+            this.gridHeaderLine,
+            this.pageHeaderFooterLine});
             this.Version = "24.2";
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
@@ -18495,5 +18529,7 @@
         private DevExpress.XtraReports.UI.XRLabel labelTotaleNonConferitoSection19000;
         private DevExpress.XtraReports.UI.XRLine xrLine96;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection19010;
+        private DevExpress.XtraReports.UI.XRControlStyle gridHeaderLine;
+        private DevExpress.XtraReports.UI.XRControlStyle pageHeaderFooterLine;
     }
 }
