@@ -2933,6 +2933,7 @@
             this.xrLine2,
             this.xrLine1});
             this.GroupHeaderBandSection7000.Dpi = 254F;
+            this.GroupHeaderBandSection7000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7000.KeepTogether = true;
             this.GroupHeaderBandSection7000.Name = "GroupHeaderBandSection7000";
             this.GroupHeaderBandSection7000.RepeatEveryPage = true;
@@ -3199,6 +3200,8 @@
             this.labelValoreMercatoSection6000,
             this.labelPercPesoSection6000});
             this.GroupHeaderBandSection6000.Dpi = 254F;
+            this.GroupHeaderBandSection6000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection6000.KeepTogether = true;
             this.GroupHeaderBandSection6000.Name = "GroupHeaderBandSection6000";
             // 
             // xrLine3
@@ -3280,6 +3283,8 @@
             this.GroupHeaderBandSection6010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.chartSection6010});
             this.GroupHeaderBandSection6010.Dpi = 254F;
+            this.GroupHeaderBandSection6010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection6010.KeepTogether = true;
             this.GroupHeaderBandSection6010.Level = 1;
             this.GroupHeaderBandSection6010.Name = "GroupHeaderBandSection6010";
             this.GroupHeaderBandSection6010.PrintAcrossBands = true;
@@ -4003,6 +4008,7 @@
             this.xrLine6,
             this.labelSubHeaderSection8000});
             this.GroupHeaderBandSection8000.Dpi = 254F;
+            this.GroupHeaderBandSection8000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection8000.KeepTogether = true;
             this.GroupHeaderBandSection8000.Name = "GroupHeaderBandSection8000";
             this.GroupHeaderBandSection8000.RepeatEveryPage = true;
@@ -4688,6 +4694,7 @@
             this.labelPerc1Section8010,
             this.xrLine13});
             this.GroupHeaderBandSection8010.Dpi = 254F;
+            this.GroupHeaderBandSection8010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection8010.KeepTogether = true;
             this.GroupHeaderBandSection8010.Name = "GroupHeaderBandSection8010";
             this.GroupHeaderBandSection8010.RepeatEveryPage = true;
@@ -5363,6 +5370,7 @@
             this.labelPerc1Section8020,
             this.xrLine66});
             this.GroupHeaderBandSection8020.Dpi = 254F;
+            this.GroupHeaderBandSection8020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection8020.KeepTogether = true;
             this.GroupHeaderBandSection8020.Name = "GroupHeaderBandSection8020";
             this.GroupHeaderBandSection8020.RepeatEveryPage = true;
@@ -6029,6 +6037,7 @@
             this.labelPerc1Section8030,
             this.xrLine68});
             this.GroupHeaderBandSection8030.Dpi = 254F;
+            this.GroupHeaderBandSection8030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection8030.KeepTogether = true;
             this.GroupHeaderBandSection8030.Name = "GroupHeaderBandSection8030";
             this.GroupHeaderBandSection8030.RepeatEveryPage = true;
@@ -6614,6 +6623,7 @@
             this.xrLine69,
             this.labelSubHeaderSection8040});
             this.GroupHeaderBandSection8040.Dpi = 254F;
+            this.GroupHeaderBandSection8040.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection8040.KeepTogether = true;
             this.GroupHeaderBandSection8040.Name = "GroupHeaderBandSection8040";
             this.GroupHeaderBandSection8040.RepeatEveryPage = true;
@@ -6799,6 +6809,7 @@
             this.assetClassSection4000});
             this.DetailReport4000.Dpi = 254F;
             this.DetailReport4000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailReport4000.KeepTogether = true;
             this.DetailReport4000.Name = "DetailReport4000";
             this.DetailReport4000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReport4000_BeforePrint);
             // 
@@ -6924,6 +6935,8 @@
             this.xrLine20,
             this.xrLine21});
             this.GroupHeaderBandSection4000.Dpi = 254F;
+            this.GroupHeaderBandSection4000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection4000.KeepTogether = true;
             this.GroupHeaderBandSection4000.Name = "GroupHeaderBandSection4000";
             // 
             // labelPercInvestimentiSection4000
@@ -6990,6 +7003,8 @@
             this.GroupHeaderBandSection4010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.chartSection4010});
             this.GroupHeaderBandSection4010.Dpi = 254F;
+            this.GroupHeaderBandSection4010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection4010.KeepTogether = true;
             this.GroupHeaderBandSection4010.Level = 1;
             this.GroupHeaderBandSection4010.Name = "GroupHeaderBandSection4010";
             this.GroupHeaderBandSection4010.PrintAcrossBands = true;
@@ -7157,6 +7172,8 @@
             this.labelEntrateUsciteSection2000,
             this.labelPerformanceSection2000});
             this.GroupHeaderBandSection2000.Dpi = 254F;
+            this.GroupHeaderBandSection2000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection2000.KeepTogether = true;
             this.GroupHeaderBandSection2000.Name = "GroupHeaderBandSection2000";
             // 
             // labelImportoInizialeSection2000
@@ -7242,6 +7259,8 @@
             this.xrLine25,
             this.labelSubHeaderSection2010});
             this.GroupHeaderBandSection2010.Dpi = 254F;
+            this.GroupHeaderBandSection2010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection2010.KeepTogether = true;
             this.GroupHeaderBandSection2010.Level = 1;
             this.GroupHeaderBandSection2010.Name = "GroupHeaderBandSection2010";
             this.GroupHeaderBandSection2010.PrintAcrossBands = true;
@@ -7367,6 +7386,7 @@
             this.section16000LineGridDown});
             this.DetailReport16000.Dpi = 254F;
             this.DetailReport16000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailReport16000.KeepTogether = true;
             this.DetailReport16000.Name = "DetailReport16000";
             this.DetailReport16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReport16000_BeforePrint);
             // 
@@ -7435,6 +7455,7 @@
             this.xrLine27,
             this.xrLine26});
             this.GroupHeaderBandSection16000.Dpi = 254F;
+            this.GroupHeaderBandSection16000.KeepTogether = true;
             this.GroupHeaderBandSection16000.Name = "GroupHeaderBandSection16000";
             this.GroupHeaderBandSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeReportHeader_BeforePrint);
             // 
@@ -7502,6 +7523,8 @@
             this.GroupHeaderBandSection16010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.chartSection16010});
             this.GroupHeaderBandSection16010.Dpi = 254F;
+            this.GroupHeaderBandSection16010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection16010.KeepTogether = true;
             this.GroupHeaderBandSection16010.Name = "GroupHeaderBandSection16010";
             this.GroupHeaderBandSection16010.PrintAcrossBands = true;
             // 
@@ -7587,6 +7610,7 @@
             this.xrLabel12});
             this.DetailSection17000.Dpi = 254F;
             this.DetailSection17000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection17000.KeepTogether = true;
             this.DetailSection17000.Name = "DetailSection17000";
             // 
             // section17000LineGridDown
@@ -7645,6 +7669,8 @@
             this.labelValoreMercatoSection17000,
             this.labelAzioniSection17000});
             this.GroupHeaderBandSection17000.Dpi = 254F;
+            this.GroupHeaderBandSection17000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection17000.KeepTogether = true;
             this.GroupHeaderBandSection17000.Name = "GroupHeaderBandSection17000";
             this.GroupHeaderBandSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
             // 
@@ -7727,6 +7753,7 @@
             this.xrLabel16});
             this.DetailSubSection17000.Dpi = 254F;
             this.DetailSubSection17000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSubSection17000.KeepTogether = true;
             this.DetailSubSection17000.Name = "DetailSubSection17000";
             // 
             // subSection17000LineGridDown
@@ -7771,6 +7798,8 @@
             this.GroupHeaderBandSection17010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.chartSection17010});
             this.GroupHeaderBandSection17010.Dpi = 254F;
+            this.GroupHeaderBandSection17010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection17010.KeepTogether = true;
             this.GroupHeaderBandSection17010.Level = 1;
             this.GroupHeaderBandSection17010.Name = "GroupHeaderBandSection17010";
             this.GroupHeaderBandSection17010.PrintAcrossBands = true;
@@ -7931,6 +7960,8 @@
             this.xrLabel21,
             this.chartSection20010});
             this.GroupHeaderBandSection20000.Dpi = 254F;
+            this.GroupHeaderBandSection20000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection20000.KeepTogether = true;
             this.GroupHeaderBandSection20000.Level = 1;
             this.GroupHeaderBandSection20000.Name = "GroupHeaderBandSection20000";
             this.GroupHeaderBandSection20000.PrintAcrossBands = true;
@@ -8132,6 +8163,8 @@
             this.GroupHeaderSection20000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.labelHeaderSection20000});
             this.GroupHeaderSection20000.Dpi = 254F;
+            this.GroupHeaderSection20000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderSection20000.KeepTogether = true;
             this.GroupHeaderSection20000.Level = 2;
             this.GroupHeaderSection20000.Name = "GroupHeaderSection20000";
             this.GroupHeaderSection20000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
@@ -8154,6 +8187,8 @@
             this.xrLine32,
             this.xrLine33});
             this.GroupHeaderSection20020.Dpi = 254F;
+            this.GroupHeaderSection20020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderSection20020.KeepTogether = true;
             this.GroupHeaderSection20020.Name = "GroupHeaderSection20020";
             // 
             // labelInvestimentiSection20020
@@ -8217,6 +8252,8 @@
             this.LabelData,
             this.pictureBollo});
             this.GroupFooterSection20020.Dpi = 254F;
+            this.GroupFooterSection20020.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterSection20020.KeepTogether = true;
             this.GroupFooterSection20020.Name = "GroupFooterSection20020";
             // 
             // LabelInfo1
@@ -8291,7 +8328,7 @@
             // 
             // reportSubTitle
             // 
-            this.reportSubTitle.Font = new DevExpress.Drawing.DXFont("Tahoma", 13F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.reportSubTitle.Font = new DevExpress.Drawing.DXFont("Arial", 13F, DevExpress.Drawing.DXFontStyle.Bold);
             this.reportSubTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
             this.reportSubTitle.Name = "reportSubTitle";
             this.reportSubTitle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -8716,6 +8753,7 @@
             this.labelPerc1Section9010,
             this.xrLine70});
             this.GroupHeaderBandSection9010.Dpi = 254F;
+            this.GroupHeaderBandSection9010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection9010.KeepTogether = true;
             this.GroupHeaderBandSection9010.Name = "GroupHeaderBandSection9010";
             this.GroupHeaderBandSection9010.RepeatEveryPage = true;
@@ -10822,6 +10860,7 @@
             this.xrLine72,
             this.labelSubHeaderSection9020});
             this.GroupHeaderBandSection9020.Dpi = 254F;
+            this.GroupHeaderBandSection9020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection9020.KeepTogether = true;
             this.GroupHeaderBandSection9020.Name = "GroupHeaderBandSection9020";
             this.GroupHeaderBandSection9020.RepeatEveryPage = true;
@@ -11372,6 +11411,7 @@
             this.labelPerc1Section9030,
             this.xrLine75});
             this.GroupHeaderBandSection9030.Dpi = 254F;
+            this.GroupHeaderBandSection9030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection9030.KeepTogether = true;
             this.GroupHeaderBandSection9030.Name = "GroupHeaderBandSection9030";
             this.GroupHeaderBandSection9030.RepeatEveryPage = true;
@@ -11668,6 +11708,7 @@
             this.labelProfittoPerditaSection7040,
             this.labelPesoSection7040});
             this.GroupHeaderBandSection7040.Dpi = 254F;
+            this.GroupHeaderBandSection7040.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7040.KeepTogether = true;
             this.GroupHeaderBandSection7040.Name = "GroupHeaderBandSection7040";
             this.GroupHeaderBandSection7040.RepeatEveryPage = true;
@@ -11952,6 +11993,7 @@
             this.labelTassoSection7030,
             this.labelDataAperturaSection7030});
             this.GroupHeaderBandSection7030.Dpi = 254F;
+            this.GroupHeaderBandSection7030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7030.KeepTogether = true;
             this.GroupHeaderBandSection7030.Name = "GroupHeaderBandSection7030";
             this.GroupHeaderBandSection7030.RepeatEveryPage = true;
@@ -12226,6 +12268,7 @@
             this.labelCorrispondenteSection7020,
             this.labelInteressiMaturatiSection7020});
             this.GroupHeaderBandSection7020.Dpi = 254F;
+            this.GroupHeaderBandSection7020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7020.KeepTogether = true;
             this.GroupHeaderBandSection7020.Name = "GroupHeaderBandSection7020";
             this.GroupHeaderBandSection7020.RepeatEveryPage = true;
@@ -12413,6 +12456,7 @@
             this.xrLabel326});
             this.DetailSection7050.Dpi = 254F;
             this.DetailSection7050.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection7050.KeepTogether = true;
             this.DetailSection7050.Name = "DetailSection7050";
             // 
             // xrLabel279
@@ -12742,6 +12786,7 @@
             this.labelPerc1Section7050,
             this.xrLine85});
             this.GroupHeaderBandSection7050.Dpi = 254F;
+            this.GroupHeaderBandSection7050.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7050.KeepTogether = true;
             this.GroupHeaderBandSection7050.Name = "GroupHeaderBandSection7050";
             this.GroupHeaderBandSection7050.RepeatEveryPage = true;
@@ -12948,6 +12993,7 @@
             this.xrLabel334});
             this.DetailSection7010.Dpi = 254F;
             this.DetailSection7010.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection7010.KeepTogether = true;
             this.DetailSection7010.Name = "DetailSection7010";
             // 
             // xrLabel286
@@ -13313,6 +13359,7 @@
             this.labelPerc1Section7010,
             this.xrLine88});
             this.GroupHeaderBandSection7010.Dpi = 254F;
+            this.GroupHeaderBandSection7010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection7010.KeepTogether = true;
             this.GroupHeaderBandSection7010.Name = "GroupHeaderBandSection7010";
             this.GroupHeaderBandSection7010.RepeatEveryPage = true;
@@ -13613,6 +13660,8 @@
             this.labelHeaderSection13000,
             this.labelSubHeaderSection13000});
             this.GroupHeaderBandSection13000.Dpi = 254F;
+            this.GroupHeaderBandSection13000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection13000.KeepTogether = true;
             this.GroupHeaderBandSection13000.Name = "GroupHeaderBandSection13000";
             this.GroupHeaderBandSection13000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
             // 
@@ -13757,6 +13806,7 @@
             this.xrLine93,
             this.xrLine94});
             this.GroupHeaderBandSection19000.Dpi = 254F;
+            this.GroupHeaderBandSection19000.KeepTogether = true;
             this.GroupHeaderBandSection19000.Name = "GroupHeaderBandSection19000";
             this.GroupHeaderBandSection19000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
             // 
@@ -13865,6 +13915,7 @@
             this.xrLabel287});
             this.Detail19000Objects.Dpi = 254F;
             this.Detail19000Objects.HierarchyPrintOptions.Indent = 50.8F;
+            this.Detail19000Objects.KeepTogether = true;
             this.Detail19000Objects.Name = "Detail19000Objects";
             // 
             // lineSeparator19000
@@ -13945,6 +13996,7 @@
             this.xrLabel338,
             this.xrLabel337});
             this.GroupFooterBandSection19000.Dpi = 254F;
+            this.GroupFooterBandSection19000.KeepTogether = true;
             this.GroupFooterBandSection19000.Name = "GroupFooterBandSection19000";
             // 
             // labelTotalePatrimonioSection19000
@@ -14227,7 +14279,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.Detail19000, "Default", "HeightF", 0F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.Detail19000Objects, "Default", "HeightF", 71.69F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailFooter, "Default", "HeightF", 2742.519F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport1000, "Default", "HeightF", 335.6258F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport1000, "Default", "HeightF", 305F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport16000, "Default", "HeightF", 74.29166F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport2000, "Default", "HeightF", 120.8414F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport4000, "Default", "HeightF", 131.1667F),
@@ -14893,8 +14945,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.77F, 570F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "Text", "Profitto/Perdita non realizzata "),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1752.996F, 570.0001F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "SizeF", new System.Drawing.SizeF(931.7621F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1755.996F, 570.0014F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "SizeF", new System.Drawing.SizeF(928.762F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "Text", "Bank Identifier Code"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.77F, 645F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
@@ -14959,8 +15011,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 136F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "Text", "Contributo netto"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 864.2162F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(4.470348E-08F, 864.2163F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "SizeF", new System.Drawing.SizeF(407.4584F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "Text", "Scala di rating"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.563797F, 1016.564F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
@@ -15004,8 +15056,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 755.6888F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "Text", "Definizioni"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 830F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 826.48F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 61.9411F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "Text", "SWIFT"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 905F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
@@ -15629,7 +15681,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.languageToApply, "Default", "Visible", false),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineMiddleSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(5F, 66F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineMiddleSection4000, "Default", "SizeF", new System.Drawing.SizeF(1523.399F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.linePageHeader, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 263.2292F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.linePageHeader, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 326F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.linePageHeader, "Default", "SizeF", new System.Drawing.SizeF(2770F, 11.77077F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.linePageHeader, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineSeparator19000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(3.000463F, 63.39923F)),
@@ -15736,7 +15788,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ReportFooter, "Default", "HeightF", 900.2046F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ReportHeader, "Default", "HeightF", 1718.979F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "Font", new DevExpress.Drawing.DXFont("Arial", 9.75F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "Margins", new DevExpress.Drawing.DXMargins(100F, 100F, 300F, 172F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "Margins", new DevExpress.Drawing.DXMargins(100F, 100F, 340F, 172F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this, "Default", "PaperKind", DevExpress.Drawing.Printing.DXPaperKind.A4),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.saldoAttualeSection7000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1656.52F, 4F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.saldoAttualeSection7000, "Default", "SizeF", new System.Drawing.SizeF(396.0005F, 50F)),
@@ -15793,7 +15845,7 @@
                     "          Pagina"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.TableOfContentsReport, "Default", "LevelTitle.TextAlignment", DevExpress.XtraPrinting.TextAlignment.MiddleLeft),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.TableOfContentsReport, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1468.979F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.TopMargin, "Default", "HeightF", 300F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.TopMargin, "Default", "HeightF", 340F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(48.81243F, 71.16666F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "SizeF", new System.Drawing.SizeF(879.8754F, 59.99999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "Text", "typeInvestmentSection4000"),
