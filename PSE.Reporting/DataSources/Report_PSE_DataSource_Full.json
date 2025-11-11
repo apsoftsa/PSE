@@ -240,7 +240,7 @@
             "percentInvestment": 0.26
           },
           {
-            "assetClass": "TOTALI PATRIMONIO",
+            "assetClass": "TOTALE PATRIMONIO",
             "class": "Total",
             "marketValueReportingCurrencyT": 2947200.25
           }
@@ -4034,7 +4034,7 @@
             "percentInvestment": 0.26
           },
           {
-            "assetClass": "TOTALI PATRIMONIO",
+            "assetClass": "TOTALE PATRIMONIO",
             "class": "Total",
             "marketValueReportingCurrency": 2947200.25
           }

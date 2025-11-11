@@ -1,9 +1,15 @@
-﻿using System.ComponentModel;
+﻿using System.Drawing;
+using System.ComponentModel;
+using DevExpress.XtraCharts;
 using DevExpress.XtraReports.UI;
 
 namespace PSE.Reporting.Reports {
 
     public partial class ReportPSE : XtraReport {
+
+        private const int MAX_ITEMS_SHORT_PALETTE = 8;
+        private const string PALETTE_FULL_NAME = "BDSPaletteFull";
+        private const string PALETTE_SHORT_NAME = "BDSPaletteShort";
 
         private string _currencyToApply;
         private string _currentAssetClassSection4000;
@@ -15,6 +21,11 @@ namespace PSE.Reporting.Reports {
         private bool _section90NeedPageBreakAtTheEnd;
         private bool _needResetRow;
         int _rowCount;
+        int _currentChartPointsCount;        
+        int _currentPointIndex;
+        string _currentChartPointAlphaCode;
+        int _currentGridChartPointIndex;
+        string _currentGridChartPointAlphaCode;
 
         private void ManageSection70VisibilityFlags() {
             if (_section70NeedPageBreakAtTheEnd)
@@ -31,6 +42,43 @@ namespace PSE.Reporting.Reports {
                 _section90NeedPageBreakAtTheEnd = false;
         }
 
+        private static string GetNextLabelAlphaCode(string current) {
+            if (string.IsNullOrEmpty(current)) {
+                return "A";
+            }
+            char letter = current[0];
+            string numberPart = "";
+            for (int i = 1; i < current.Length; i++) {
+                if (char.IsDigit(current[i]))
+                    numberPart += current[i];
+            }
+            int number = string.IsNullOrEmpty(numberPart) ? 0 : int.Parse(numberPart);
+            if (letter == 'Z') {
+                letter = 'A';
+                number++;
+            } else {
+                letter++;
+            }
+            return number == 0 ? letter.ToString() : $"{letter}{number}";
+        }
+
+        private static int GetChartSeriesPointsCount(XRChart chart) {
+            int pointsCount = 0;
+            if (chart.Series != null && chart.Series.Count > 0 && chart.Series.First().ActualPoints != null)
+                pointsCount = chart.Series.First().ActualPoints.Where(f => f.NumericalValue > 0).Count();
+            return pointsCount;
+        }
+
+        private static Color GetChartSeriesPointColorToApply(XRChart chart, int pointsCount, int pointIndex) {
+            Color colorToApply = Color.Transparent; // default
+            if (chart.PaletteRepository != null) {
+                Palette paletteToUse = chart.PaletteRepository[pointsCount > MAX_ITEMS_SHORT_PALETTE ? PALETTE_FULL_NAME : PALETTE_SHORT_NAME];
+                int paletteIndex = pointIndex % paletteToUse.Count;
+                colorToApply = paletteToUse[paletteIndex].Color;
+            }
+            return colorToApply;
+        }
+
         public ReportPSE() {
             InitializeComponent();
             _currencyToApply = "?";
@@ -44,6 +92,24 @@ namespace PSE.Reporting.Reports {
             _needResetRow = false;
             _rowCount = 0;
         }
+
+        private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
+            string customerLanguage = ((XRLabel)sender).Text;
+            if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
+                customerLanguage = "E";
+            customerLanguage = customerLanguage.Trim().ToUpper() switch {
+                "E" => "en-CH",
+                "F" => "fr-CH",
+                "G" => "de-CH",
+                _ => "it-CH",
+            };
+            this.ApplyLocalization(customerLanguage);
+        }
+
+        private void currencyToApply_BeforePrint(object sender, CancelEventArgs e) {
+            _currencyToApply = ((XRLabel)sender).Text;
+        }
+
 
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
@@ -113,41 +179,31 @@ namespace PSE.Reporting.Reports {
             }
         }
 
-        private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
-            string customerLanguage = ((XRLabel)sender).Text;
-            if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
-                customerLanguage = "E";
-            customerLanguage = customerLanguage.Trim().ToUpper() switch {
-                "E" => "en-CH",
-                "F" => "fr-CH",
-                "G" => "de-CH",
-                _ => "it-CH",
-            };
-            this.ApplyLocalization(customerLanguage);
+        private void chartDoughnut_BeforePrint(object sender, CancelEventArgs e) {
+            _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
+            _currentPointIndex = 0;
         }
 
-        private void currencyToApply_BeforePrint(object sender, CancelEventArgs e) {
-            _currencyToApply = ((XRLabel)sender).Text;
+        private void chartDoughnut_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
+            if (_currentChartPointsCount > 0) {                
+                e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
+                _currentPointIndex++;
+            }
         }
 
-        private void ContentReportHeaderCliente_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderCliente.Text, " ", ((XRLabel)sender).Text);
+        private void chartDoughnutWithLabelAlphaCode_BeforePrint(object sender, CancelEventArgs e) {
+            _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
+            _currentPointIndex = 0;
+            _currentChartPointAlphaCode = string.Empty;
         }
 
-        private void ContentReportHeaderNumeroCliente_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderNumeroCliente.Text, " ", ((XRLabel)sender).Text);
-        }
-
-        private void ContentReportHeaderStatoAl_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderStatoAl.Text, " ", ((XRLabel)sender).Text);
-        }
-
-        private void ContentReportHeaderPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderPortafoglio.Text, " ", ((XRLabel)sender).Text);
-        }
-
-        private void ContentReportHeaderConsulente_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLabel)sender).Text = string.Concat(this.LabelReportHeaderConsulente.Text, " ", ((XRLabel)sender).Text);
+        private void chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith(object sender, CustomDrawSeriesPointEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                _currentChartPointAlphaCode = GetNextLabelAlphaCode(_currentChartPointAlphaCode);
+                e.LabelText += " (" + _currentChartPointAlphaCode + ")";
+                e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
+                _currentPointIndex++;
+            }
         }
 
         private void contentHeaderRow1_BeforePrint(object sender, CancelEventArgs e) {
@@ -272,6 +328,36 @@ namespace PSE.Reporting.Reports {
 
         private void DetailReportSection6000_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+        }
+
+        private void bookmarkChartPercPesoSection6000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.BackColor = Color.White;
+                label.ForeColor = Color.White;
+                if (double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0 && value < 100) {
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.ForeColor = label.BackColor;
+                        _currentGridChartPointIndex++;
+                    } 
+                }
+            }
+        }
+
+        private void bookmarkChartPercAlphaCodeSharesSection16000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.Visible = false;
+                if (double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0 && value < 100) {
+                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                        label.Visible = true;
+                    } 
+                }
+            }
         }
 
         private void divisaSection6000_BeforePrint(object sender, CancelEventArgs e) {
@@ -284,11 +370,29 @@ namespace PSE.Reporting.Reports {
 
         private void DetailReportSection160_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+            _currentGridChartPointAlphaCode = string.Empty;
         }
 
         private void DetailReport16000_BeforePrint(object sender, CancelEventArgs e) {
             this.DetailReport16000.HeightF = 0;
             this.PerformLayout();
+        }
+
+        private void bookmarkChartPercSharesSection16000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                if (double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0 && value < 100) {
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.ForeColor = label.BackColor;
+                        _currentGridChartPointIndex++;
+                    } else {
+                        label.BackColor = Color.White;
+                        label.ForeColor = Color.White;
+                    }
+                }
+            }
         }
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
@@ -349,7 +453,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-
+       
     }
 
 }

@@ -23,7 +23,9 @@ namespace PSE.Reporting.Reports {
         int _rowCount;
         int _currentChartPointsCount;        
         int _currentPointIndex;
+        string _currentChartPointAlphaCode;
         int _currentGridChartPointIndex;
+        string _currentGridChartPointAlphaCode;
 
         private void ManageSection70VisibilityFlags() {
             if (_section70NeedPageBreakAtTheEnd)
@@ -38,6 +40,26 @@ namespace PSE.Reporting.Reports {
         private void ManageSection90VisibilityFlags() {
             if (_section90NeedPageBreakAtTheEnd)
                 _section90NeedPageBreakAtTheEnd = false;
+        }
+
+        private static string GetNextLabelAlphaCode(string current) {
+            if (string.IsNullOrEmpty(current)) {
+                return "A";
+            }
+            char letter = current[0];
+            string numberPart = "";
+            for (int i = 1; i < current.Length; i++) {
+                if (char.IsDigit(current[i]))
+                    numberPart += current[i];
+            }
+            int number = string.IsNullOrEmpty(numberPart) ? 0 : int.Parse(numberPart);
+            if (letter == 'Z') {
+                letter = 'A';
+                number++;
+            } else {
+                letter++;
+            }
+            return number == 0 ? letter.ToString() : $"{letter}{number}";
         }
 
         private static int GetChartSeriesPointsCount(XRChart chart) {
@@ -163,12 +185,27 @@ namespace PSE.Reporting.Reports {
         }
 
         private void chartDoughnut_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
-            if (_currentChartPointsCount > 0) {
+            if (_currentChartPointsCount > 0) {                
                 e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
                 _currentPointIndex++;
             }
         }
-       
+
+        private void chartDoughnutWithLabelAlphaCode_BeforePrint(object sender, CancelEventArgs e) {
+            _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
+            _currentPointIndex = 0;
+            _currentChartPointAlphaCode = string.Empty;
+        }
+
+        private void chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith(object sender, CustomDrawSeriesPointEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                _currentChartPointAlphaCode = GetNextLabelAlphaCode(_currentChartPointAlphaCode);
+                e.LabelText += " (" + _currentChartPointAlphaCode + ")";
+                e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
+                _currentPointIndex++;
+            }
+        }
+
         private void contentHeaderRow1_BeforePrint(object sender, CancelEventArgs e) {
             string tmpText = ((XRLabel)sender).Text;
             tmpText = tmpText.Replace("{0}", this.labelHeaderStatoAl.Text);
@@ -297,15 +334,28 @@ namespace PSE.Reporting.Reports {
         private void bookmarkChartPercPesoSection6000_BeforePrint(object sender, CancelEventArgs e) {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
+                label.BackColor = Color.White;
+                label.ForeColor = Color.White;
                 if (double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0 && value < 100) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
                         _currentGridChartPointIndex++;
-                    } else {
-                        label.BackColor = Color.White;
-                        label.ForeColor = Color.White;
-                    }
+                    } 
+                }
+            }
+        }
+
+        private void bookmarkChartPercAlphaCodeSharesSection16000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.Visible = false;
+                if (double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0 && value < 100) {
+                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                        label.Visible = true;
+                    } 
                 }
             }
         }
@@ -320,11 +370,29 @@ namespace PSE.Reporting.Reports {
 
         private void DetailReportSection160_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+            _currentGridChartPointAlphaCode = string.Empty;
         }
 
         private void DetailReport16000_BeforePrint(object sender, CancelEventArgs e) {
             this.DetailReport16000.HeightF = 0;
             this.PerformLayout();
+        }
+
+        private void bookmarkChartPercSharesSection16000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                if (double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0 && value < 100) {
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.ForeColor = label.BackColor;
+                        _currentGridChartPointIndex++;
+                    } else {
+                        label.BackColor = Color.White;
+                        label.ForeColor = Color.White;
+                    }
+                }
+            }
         }
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
