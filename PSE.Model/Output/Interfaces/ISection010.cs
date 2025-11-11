@@ -52,6 +52,8 @@
 
         decimal? PercentWightedPerformance {  get; set; }    
 
+        decimal? PatrimonialFluctuation { get; set; }   
+
     }
 
     public interface ISubSection1011Content

@@ -60,7 +60,8 @@
         "portfolioValueDate2": "02.04.2025",
         "portfolioValueReportingCurrency2": 2962577.82,
         "pluslessValueReportingCurrency": 67394.74,
-        "percentWightedPerformance": 2.32
+        "percentWightedPerformance": 2.32,
+        "patrimonialFluctuation": -15377.57
       },
       "subSection1011": {
         "name": "Dividend and interest",

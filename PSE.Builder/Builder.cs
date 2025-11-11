@@ -37,7 +37,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection200 _manSect200;
         private readonly ManipulatorFooter _manFooter;
 
-        private readonly List<(ManipolationTypes manipolationType, bool isMandatory)> _manipolationTypesToManage;
+        private readonly List<(ManipolationTypes manipolationType, bool isMandatory, int sequence)> _manipolationTypesToManage;
 
         public delegate void ExternalCodifyEventHandler(object sender, ExternalCodifyRequestEventArgs e);
         public event ExternalCodifyEventHandler? ExternalCodifyRequest;
@@ -86,26 +86,26 @@ namespace PSE.Builder
             _manSect200.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manFooter = new();
             _manFooter.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory)>()
+            _manipolationTypesToManage = new List<(ManipolationTypes manipolationType, bool isMandatory, int sequence)>()
             {
-                ( ManipolationTypes.AsHeader, true ),
-                ( ManipolationTypes.AsSection000, true ),
-                ( ManipolationTypes.AsSection010, true ),
-                ( ManipolationTypes.AsSection020, true ),
-                ( ManipolationTypes.AsSection040, false ),
-                ( ManipolationTypes.AsSection060, false ),
-                ( ManipolationTypes.AsSection070, false ),
-                ( ManipolationTypes.AsSection080, false ),
-                ( ManipolationTypes.AsSection090, false ),
-                ( ManipolationTypes.AsSection110, false ),
-                ( ManipolationTypes.AsSection100, false ),
-                ( ManipolationTypes.AsSection150, false ),
-                ( ManipolationTypes.AsSection160, false ),
-                ( ManipolationTypes.AsSection170, false ),
-                ( ManipolationTypes.AsSection130, false ),
-                ( ManipolationTypes.AsSection190, false ),
-                ( ManipolationTypes.AsSection200, false ),
-                ( ManipolationTypes.AsFooter, true )
+                ( ManipolationTypes.AsHeader, true, 0),
+                ( ManipolationTypes.AsSection000, true, 1),
+                ( ManipolationTypes.AsSection010, true, 3),
+                ( ManipolationTypes.AsSection020, true , 4),
+                ( ManipolationTypes.AsSection040, false, 2),
+                ( ManipolationTypes.AsSection060, false, 5),
+                ( ManipolationTypes.AsSection070, false, 6),
+                ( ManipolationTypes.AsSection080, false, 7),
+                ( ManipolationTypes.AsSection090, false, 8),
+                ( ManipolationTypes.AsSection110, false, 9),
+                ( ManipolationTypes.AsSection100, false, 10),
+                ( ManipolationTypes.AsSection150, false, 11),
+                ( ManipolationTypes.AsSection160, false, 12),
+                ( ManipolationTypes.AsSection170, false, 13),
+                ( ManipolationTypes.AsSection130, false, 14),
+                ( ManipolationTypes.AsSection190, false, 15),
+                ( ManipolationTypes.AsSection200, false, 16),
+                ( ManipolationTypes.AsFooter, true, 17)
             };
         }
 
@@ -263,7 +263,7 @@ namespace PSE.Builder
                                 break;
                             case ManipolationTypes.AsFooter:
                                 {
-                                    if (extractedData.Any()) // !!!! temporaneo, manca analisi
+                                    if (extractedData.Any()) 
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
                                     {
@@ -310,7 +310,7 @@ namespace PSE.Builder
             {
                 ManipolationTypes.AsHeader => _manHeader.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection000 => _manSect000.Manipulate(dictionaryService, extractedData),
-                ManipolationTypes.AsSection010 => _manSect010.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection010 => _manSect010.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection020 => _manSect020.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection040 => _manSect040.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection060 => _manSect060.Manipulate(dictionaryService, extractedData),
@@ -358,7 +358,7 @@ namespace PSE.Builder
             try
             {
                 buildData.BuildingLog.BuildingStart = DateTime.Now;
-                foreach ((ManipolationTypes manipolationType, bool isMandatory) in _manipolationTypesToManage.OrderBy( ob => ob.manipolationType))
+                foreach ((ManipolationTypes manipolationType, bool isMandatory, int sequence) in _manipolationTypesToManage.OrderBy( ob => ob.sequence))
                 {
                     CheckInputData(buildData, extractedData, manipolationType, isMandatory, formatToBuild);
                     if (buildData.BuildingLog.Outcome == BuildingOutcomes.Success)

@@ -83,6 +83,7 @@ namespace PSE.Model.Output.Models
         public decimal? PortfolioValueReportingCurrency2 { get; set; }
         public decimal? PluslessValueReportingCurrency { get; set; }
         public decimal? PercentWightedPerformance { get; set; }
+        public decimal? PatrimonialFluctuation { get; set; }
 
         public SubSection1010Content()
         {
@@ -98,6 +99,7 @@ namespace PSE.Model.Output.Models
             PortfolioValueReportingCurrency2 = null;
             PluslessValueReportingCurrency = null;
             PercentWightedPerformance = null;   
+            PatrimonialFluctuation = null;
         }
 
         public SubSection1010Content(ISubSection1010Content source)
@@ -114,6 +116,7 @@ namespace PSE.Model.Output.Models
             PortfolioValueReportingCurrency2 = source.PortfolioValueReportingCurrency2;
             PluslessValueReportingCurrency = source.PluslessValueReportingCurrency;
             PercentWightedPerformance = source.PercentWightedPerformance;
+            PatrimonialFluctuation = source.PatrimonialFluctuation;
         }
 
     }
