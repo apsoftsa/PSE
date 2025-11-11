@@ -1,5 +1,4 @@
-<Palette Name="BDSPalette" ScaleMode="Extrapolate">
-  <PaletteEntry Color="#212C57" Color2="#212C57" />
+<Palette Name="BDSPaletteBarFull" ScaleMode="Extrapolate">
   <PaletteEntry Color="#8F8164" Color2="#8F8164" />
   <PaletteEntry Color="#A69A83" Color2="#A69A83" />
   <PaletteEntry Color="#BDB1A5" Color2="#BDB1A5" />

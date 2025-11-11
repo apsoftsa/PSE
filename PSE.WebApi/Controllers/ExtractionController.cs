@@ -106,6 +106,21 @@ namespace PSE.WebApi.Controllers
             return Ok(fvi.FileVersion);
         }
 
+        // Old method, only for compatibility with the previous versions of the client .exe
+        [HttpPost("Build")]
+        public ActionResult<OutputContent> Build([FromForm] List<IFormFile> files) {
+            if (files != null && files.Any()) {
+                string outputJson = string.Empty;
+                var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
+                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                if (outCont != null && outCont.JsonGenerated != string.Empty)
+                    return Ok(JsonConvert.SerializeObject(outCont));
+                else
+                    return BadRequest();
+            } else
+                return NotFound();
+        }
+
         [HttpPost("BuildOnlyJson")]
         public ActionResult<OutputContent> BuildOnlyJson([FromForm] List<IFormFile> files)
         {
