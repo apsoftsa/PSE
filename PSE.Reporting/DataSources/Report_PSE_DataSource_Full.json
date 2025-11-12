@@ -360,8 +360,8 @@
             "percentWeight": 0.045893
           }
         ]
-      },	
-	  "subSection7010": {
+      },
+      "subSection7010": {
         "name": "Short-term funds",
         "content": [
           {
@@ -448,7 +448,7 @@
           }
         ]
       },
-	  "subSection7020": {
+      "subSection7020": {
         "name": "Fiduciary investments",
         "content": [
           {
@@ -464,7 +464,7 @@
             "percentWeight": 8.2
           }
         ]
-      },	 
+      },
       "subSection7030": {
         "name": "Temporary deposits",
         "content": [
@@ -493,8 +493,8 @@
             "percentWeight": 6.980108
           }
         ]
-      },	 
-	  "subSection7040": {
+      },
+      "subSection7040": {
         "name": "Forward exchange operations (profit/loss)",
         "content": [
           {
@@ -762,14 +762,14 @@
             "percentWeight": -2.072692
           }
         ]
-      },	    
+      },
       "subSection7050": {
         "name": "Currency derivative products",
         "content": [
           {
             "description1": "779977000181",
             "description2": "CALL EUR/CHF OTC",
-			"description3": "Esercitabile il 23.08.2021",
+            "description3": "Esercitabile il 23.08.2021",
             "amount": -180000.00,
             "strike": "1.120",
             "summaryTo": [
@@ -806,10 +806,10 @@
             "marketValueReportingCurrency": 0.0,
             "percentWeight": 0.0
           },
-		  {
+          {
             "description1": "779977000181",
             "description2": "CALL EUR/CHF OTC",
-			"description3": "Esercitabile il 23.08.2021",
+            "description3": "Esercitabile il 23.08.2021",
             "amount": 180000.00,
             "strike": "1.075",
             "summaryTo": [
@@ -848,7 +848,7 @@
           }
         ]
       }
-	}
+    }
   },
   "section80": {
     "name": "Bonds",
@@ -1383,7 +1383,7 @@
             "percentYTD": 5.1,
             "percentWeight": 1.468008
           },
-		  {
+          {
             "description1": "VERISIGN_FAKE",
             "description2": "11.03.2025 / 01.06.2032",
             "description3": "142896310 / US92343EAQ52",
@@ -1431,8 +1431,8 @@
             "percentWeight": 1.468008
           }
         ]
-      },	  	 
-	  "subSection8030": {
+      },
+      "subSection8030": {
         "name": "Convertible bonds, bonds with warrants",
         "content": [
           {
@@ -1624,7 +1624,7 @@
             "percentWeight": 1.468008
           }
         ]
-      },	  
+      },
       "subSection8040": {
         "name": "Bond funds",
         "content": [
@@ -2645,8 +2645,8 @@
             "percentWeight": 1.597499
           }
         ]
-      },	  
-	  "subSection9030": {
+      },
+      "subSection9030": {
         "name": "Derivative products on securities",
         "content": [
           {
@@ -3388,7 +3388,7 @@
             "percentWeight": 0.017197
           }
         ]
-      }    	 	 
+      }
     }
   },
   "section110": {
@@ -3855,7 +3855,7 @@
   "section190": {
     "name": "Accounts and deposit detected",
     "content": {
-	  "subSection19000": {
+      "subSection19000": {
         "name": "Reports not transferred to administration",
         "content": [
           {
@@ -3900,7 +3900,7 @@
           }
         ]
       },
-	  "subSection19010": {
+      "subSection19010": {
         "name": "Reports transferred to administration",
         "content": [
           {
@@ -3913,7 +3913,7 @@
               {
                 "object": "1136558A1",
                 "description": "CONTO",
-                "addressBook": "",
+                "addressBook": "PROVA1",
                 "currency": "EUR",
                 "currentBalance": 51449.29,
                 "marketValueReportingCurrency": 51449.29
@@ -3921,7 +3921,7 @@
               {
                 "object": "1136558A2",
                 "description": "CONTO",
-                "addressBook": "",
+                "addressBook": "PROVA2",
                 "currency": "CHF",
                 "currentBalance": 538998.70,
                 "marketValueReportingCurrency": 578141.59

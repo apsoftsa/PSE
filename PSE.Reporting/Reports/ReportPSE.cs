@@ -110,7 +110,6 @@ namespace PSE.Reporting.Reports {
             _currencyToApply = ((XRLabel)sender).Text;
         }
 
-
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             bool toHidden = false;
@@ -231,7 +230,7 @@ namespace PSE.Reporting.Reports {
 
         private void linePageHeader_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRLine)sender).Visible = e.PageIndex > 0 && e.PageIndex != e.PageCount - 1;
-        }
+        }       
 
         private void LabelRendicontoGestioneSection1000_BeforePrint(object sender, CancelEventArgs e) {
             string tmpText = ((XRLabel)sender).Text;
@@ -245,6 +244,27 @@ namespace PSE.Reporting.Reports {
 
         private void LabelSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = ((XRLabel)sender).Text.Replace("{0}", this.ContentManagementReportPortfolioDate2.Text);
+        }
+
+        private void ContentSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            bool toHidden = false;
+            if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%", ""), out double value))
+                toHidden = value == 0;
+            label.Visible = !toHidden;
+            if (label.Visible && this.contentPatrimonialFluctuation.Value != null && double.TryParse(this.contentPatrimonialFluctuation.Value.ToString(), out double valuePF) && valuePF != 0)
+                label.Text += "*";
+        }
+
+        private void labelOscillazionePatrimoniale_BeforePrint(object sender, CancelEventArgs e) {
+            if (this.contentPatrimonialFluctuation.Value != null && double.TryParse(this.contentPatrimonialFluctuation.Value.ToString(), out double value) && value != 0) {
+                string tmpText = ((XRLabel)sender).Text;
+                tmpText = tmpText.Replace("{1}", this.contentPatrimonialFluctuation.Text).Replace("{0}", _currencyToApply).Replace("{2}", this.ContentManagementReportPortfolioDate2.Text);
+                ((XRLabel)sender).Visible = true;
+                ((XRLabel)sender).Text = tmpText;
+            }
+            else
+                ((XRLabel)sender).Visible = false;  
         }
 
         private void DetailReportSection4000_BeforePrint(object sender, CancelEventArgs e) {
@@ -427,6 +447,130 @@ namespace PSE.Reporting.Reports {
             ((XRLine)sender).Visible = this.DetailReportSubSection170.CurrentRowIndex < _rowCount - 1;
         }
 
+        private void Detail19010Objects_BeforePrint(object sender, CancelEventArgs e) {
+            this.Detail19010Objects.HeightF = 0;
+            this.Detail19010Objects.PerformLayout();
+        }
+
+        private void DetailReportSubSection19000_BeforePrint(object sender, CancelEventArgs e) {
+            int count = this.DetailReportSubSection19000.RowCount;
+            this.panelSection19000HeaderContainer.Visible = count > 0;
+            this.panelSection19000FooterContainer.Visible = count > 0;
+            this.lineSeparator19000.Visible = count > 0;
+            this.labelHeaderSection19000.Visible = !(count == 0 && this.DetailReportSubSection19010.RowCount == 0);
+            if (!this.labelHeaderSection19000.Visible) {
+                this.DetailReportSubSection19000.HeightF = 0;
+                this.DetailReportSubSection19000.PerformLayout();
+            }
+        }
+
+        private void DetailReportSubSection190Objects_BeforePrint(object sender, CancelEventArgs e) {
+            if (this.DetailReportSubSection19010.RowCount > 0 || (this.DetailReportSubSection19010.RowCount == 0 && this.DetailReportSubSection19000.RowCount == 0))
+                this.DetailReportSubSection190Objects.ReportPrintOptions.PrintOnEmptyDataSource = false;
+        }
+
+        private void DetailReportSubSection19010_BeforePrint(object sender, CancelEventArgs e) {
+            int count = this.DetailReportSubSection19010.RowCount;
+            if (count > 0) {
+                XRTableRow row;
+                XRTableCell cellObject, cellDescription, cellAddressBook, cellCurrency, cellCurrentBalance, cellMarketValueReportingCurrency;
+                this.xrTableSection19010Objects.Visible = true;
+                this.panelSection19010HeaderContainer.Visible = true;
+                this.panelSection19010FooterContainer.Visible = true;
+                this.xrTableSection19010Objects.BeginInit();
+                this.xrTableSection19010Objects.HeightF = this.xrTableRowSection19010Objects.HeightF * count;
+                this.xrTableSection19010Objects.CanShrink = false;
+                for (int i = 1; i < count; i++) {
+                    row = new XRTableRow {
+                        CanShrink = false,
+                        HeightF = this.xrTableRowSection19010Objects.HeightF,
+                        BorderColor = this.xrTableRowSection19010Objects.BorderColor,
+                        Borders = i < count - 1 ? this.xrTableRowSection19010Objects.Borders : DevExpress.XtraPrinting.BorderSide.None
+                    };
+                    cellObject = new XRTableCell {                        
+                        CanGrow = this.xrTableCellObject.CanGrow,
+                        CanShrink = this.xrTableCellObject.CanShrink,
+                        Multiline = this.xrTableCellObject.Multiline,
+                        Name = this.xrTableCellObject.Name + i.ToString(),
+                        StyleName = this.xrTableCellObject.StyleName,
+                        WidthF = this.xrTableCellObject.WidthF
+                    };
+                    cellDescription = new XRTableCell {
+                        CanGrow = this.xrTableCellDescription.CanGrow,
+                        CanShrink = this.xrTableCellDescription.CanShrink,
+                        Multiline = this.xrTableCellDescription.Multiline,
+                        Name = this.xrTableCellDescription.Name + i.ToString(),
+                        StyleName = this.xrTableCellDescription.StyleName,
+                        WidthF = this.xrTableCellDescription.WidthF
+                    };
+                    cellAddressBook = new XRTableCell {
+                        CanGrow = this.xrTableCellAddressBook.CanGrow,
+                        CanShrink = this.xrTableCellAddressBook.CanShrink,
+                        Multiline = this.xrTableCellAddressBook.Multiline,
+                        Name = this.xrTableCellAddressBook.Name + i.ToString(),
+                        StyleName = this.xrTableCellAddressBook.StyleName,
+                        WidthF = this.xrTableCellAddressBook.WidthF
+                    };
+                    cellCurrency = new XRTableCell {
+                        CanGrow = this.xrTableCellCurrency.CanGrow,
+                        CanShrink = this.xrTableCellCurrency.CanShrink,
+                        Multiline = this.xrTableCellCurrency.Multiline,
+                        Name = this.xrTableCellCurrency.Name + i.ToString(),
+                        StyleName = this.xrTableCellCurrency.StyleName,
+                        WidthF = this.xrTableCellCurrency.WidthF
+                    };
+                    cellCurrentBalance = new XRTableCell {
+                        CanGrow = this.xrTableCellCurrentBalance.CanGrow,
+                        CanShrink = this.xrTableCellCurrentBalance.CanShrink,
+                        Multiline = this.xrTableCellCurrentBalance.Multiline,
+                        Name = this.xrTableCellCurrentBalance.Name + i.ToString(),
+                        StyleName = this.xrTableCellCurrentBalance.StyleName,
+                        TextFormatString = this.xrTableCellCurrentBalance.TextFormatString,
+                        WidthF = this.xrTableCellCurrentBalance.WidthF
+                    };
+                    cellMarketValueReportingCurrency = new XRTableCell {
+                        CanGrow = this.xrTableCellMarketValueReportingCurrency.CanGrow,
+                        CanShrink = this.xrTableCellMarketValueReportingCurrency.CanShrink,
+                        Multiline = this.xrTableCellMarketValueReportingCurrency.Multiline,
+                        Name = this.xrTableCellMarketValueReportingCurrency.Name + i.ToString(),
+                        StyleName = this.xrTableCellMarketValueReportingCurrency.StyleName,
+                        TextFormatString = this.xrTableCellMarketValueReportingCurrency.TextFormatString,
+                        WidthF = this.xrTableCellMarketValueReportingCurrency.WidthF
+                    };
+                    row.Cells.AddRange([
+                        cellObject,
+                        cellDescription,
+                        cellAddressBook,
+                        cellCurrency,
+                        cellCurrentBalance,
+                        cellMarketValueReportingCurrency]);
+                    row.Dpi = 254F;
+                    row.Name = "xrTableRow" + i.ToString() + "Section19010Objects";
+                    row.StylePriority.UseBorderColor = false;
+                    row.StylePriority.UseBorders = false;                    
+                    this.xrTableSection19010Objects.Rows.Add(row);                    
+                }
+                this.panelSection19010FooterContainer.TopF = this.xrTableSection19010Objects.TopF + this.xrTableSection19010Objects.HeightF;
+                this.xrTableSection19010Objects.EndInit();
+                this.xrTableSection19010Objects.PerformLayout();
+            } else {
+                this.xrTableSection19010Objects.Visible = false;
+                this.panelSection19010HeaderContainer.Visible = false;  
+                this.panelSection19010FooterContainer.Visible = false;                
+            }
+        }
+
+        private void ContentDetail19010Object_BeforePrint(object sender, CancelEventArgs e) {
+            int index = this.DetailReportSubSection19010.CurrentRowIndex;
+            if (this.xrTableSection19010Objects.Rows.Count > index) {
+                this.xrTableSection19010Objects.Rows[index].Cells[0].Text = this.ContentDetail19010Object.Text;
+                this.xrTableSection19010Objects.Rows[index].Cells[1].Text = this.ContentDetail19010Description.Text;
+                this.xrTableSection19010Objects.Rows[index].Cells[2].Text = this.ContentDetail19010AddressBook.Text;
+                this.xrTableSection19010Objects.Rows[index].Cells[3].Text = this.ContentDetail19010Currency.Text;
+                this.xrTableSection19010Objects.Rows[index].Cells[4].Text = (string.IsNullOrEmpty(this.ContentDetail19010CurrentBalance.Text) == false && double.TryParse(this.ContentDetail19010CurrentBalance.Text, out double valueCB) && valueCB != 0) ? this.ContentDetail19010CurrentBalance.Text : string.Empty;
+                this.xrTableSection19010Objects.Rows[index].Cells[5].Text = (string.IsNullOrEmpty(this.ContentDetail19010MarketValue.Text) == false && double.TryParse(this.ContentDetail19010MarketValue.Text, out double valueMV) && valueMV != 0) ? this.ContentDetail19010MarketValue.Text : string.Empty;
+            }
+        }       
 
         private void DetailReportSubSection200_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
