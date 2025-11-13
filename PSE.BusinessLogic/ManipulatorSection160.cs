@@ -88,7 +88,7 @@ namespace PSE.BusinessLogic
                             Class = CLASS_TOTAL,
                             PercentShares = 100.0m
                         });
-                        foreach (var sector in sectionContent.SubSection16000.Content) {
+                        foreach (var sector in sectionContent.SubSection16000.Content.Where(f => f.Class != CLASS_TOTAL)) {
                             sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares, Class = sector.Class });
                         }
                     }

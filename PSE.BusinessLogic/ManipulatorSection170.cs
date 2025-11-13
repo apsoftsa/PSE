@@ -8,6 +8,7 @@ using PSE.Model.SupportTables;
 using PSE.Dictionary;
 using PSE.BusinessLogic.Common;
 using PSE.BusinessLogic.Interfaces;
+using static PSE.Model.Common.Constants;
 using static PSE.Model.Common.Enumerations;
 
 namespace PSE.BusinessLogic {
@@ -84,6 +85,9 @@ namespace PSE.BusinessLogic {
                                 country.PercentShares = country.MarketValueReportingCurrency.HasValue ? Math.Round(country.MarketValueReportingCurrency.Value * 100.0m / totalSum, 2) : 0;
                             }
                         }
+                        decimal tmpPerc, tmpMarketValue;
+                        decimal totalMarketValue = 0;
+                        decimal totalPerc = 0;
                         foreach (KeyValuePair<string, List<IShareByCountry>> continentCountryItems in continentsCountryItems) {                            
                             continentCountries = new List<IShareByCountry>();
                             foreach (var continentCountry in continentCountryItems.Value) {
@@ -93,18 +97,39 @@ namespace PSE.BusinessLogic {
                                     PercentShares = continentCountry.PercentShares
                                 });
                             }
+                            tmpMarketValue = continentCountryItems.Value.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency.Value);
+                            tmpPerc = continentCountryItems.Value.Where(f => f.PercentShares.HasValue).Sum(s => s.PercentShares.Value);
                             sectionContent.SubSection17000.Content.Add(new ShareByNation() { 
                                 Nation = continentsDescription[continentCountryItems.Key],
+                                Class = CLASS_ENTRY,
                                 Content = new List<IShareByCountry>(continentCountries),
                                 MarketValueReportingCurrency = continentCountryItems.Value.Sum(s => s.MarketValueReportingCurrency),
-                                PercentShares = continentCountryItems.Value.Sum(s => s.PercentShares),
-                            });
+                                PercentShares = tmpPerc
+                            });                            
                             sectionContent.SubSection17010.Content.Add(new ShareByNationChart() {
                                 Nation = continentsDescription[continentCountryItems.Key],
-                                PercentShares = continentCountryItems.Value.Sum(s => s.PercentShares)
+                                PercentShares = tmpPerc
                             });
-
+                            totalPerc += tmpPerc;
+                            totalMarketValue += tmpMarketValue; 
                         }
+                        if (totalPerc != 100.0m) {
+                            tmpPerc = sectionContent.SubSection17000.Content.Last().PercentShares.Value;
+                            if (totalPerc > 100.0m)
+                                tmpPerc = tmpPerc - (totalPerc - 100.0m);
+                            else if (totalPerc < 100.0m)
+                                tmpPerc = tmpPerc + (100.0m - totalPerc);
+                            sectionContent.SubSection17000.Content.Last().PercentShares = tmpPerc;
+                            sectionContent.SubSection17010.Content.Last().PercentShares = tmpPerc;
+                            totalPerc = 100.0m;
+                        }
+                        sectionContent.SubSection17000.Content.Add(new ShareByNation() {
+                            Nation = dictionaryService.GetTranslation("total_shares_upper", cultureCode),
+                            Class = CLASS_TOTAL,
+                            Content = null,
+                            MarketValueReportingCurrency = totalMarketValue,
+                            PercentShares = totalPerc
+                        });
                     }
                     output.Content = new Section170Content(sectionContent);
                 }

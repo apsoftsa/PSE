@@ -3614,6 +3614,262 @@
             "percentWeight": 0.619613
           }
         ]
+      },
+      "subSection11020": {
+        "name": "Derivative Products – Futures",
+        "content": [
+          {
+            "amount": 300.000,
+            "description1": "SWISSCANTO GOLD ETF",
+            "description2": "SWI GOLD ETF EA CHF",
+            "description3": "13910159 / CH0139101593",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 818.100000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 701.400000,
+                "percentPrice": 16.638152,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 35010.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 517.880000,
+                "percentPrice": 57.970959,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 90066.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 245430.00,
+            "totalMarketValueReportingCurrency": 245430.00,
+            "percentWeight": 8.327564
+          },
+          {
+            "amount": 430.000,
+            "description1": "MAN FUNDS VI",
+            "description2": "MAN AHL TARG RISK I",
+            "description3": "26215678 / IE00BRJT7H22",
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 211.140000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 208.570000,
+                "percentPrice": 1.232200,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3438.92,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 176.014680,
+                "percentPrice": 19.955904,
+                "exchangeValue": 0.937050,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 6853.57,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 77775.45,
+            "totalMarketValueReportingCurrency": 77775.45,
+            "percentWeight": 2.638960
+          },
+          {
+            "amount": 1000.000,
+            "description1": "BASE INV SICAV",
+            "description2": "BASE MUL AS CAP APP",
+            "description3": "36153504 / LU1590086572",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 88.150000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 87.850000,
+                "percentPrice": 0.341491,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 300.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.686170,
+                "percentPrice": -12.450737,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -12536.17,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 88150.00,
+            "totalMarketValueReportingCurrency": 88150.00,
+            "percentWeight": 2.990974
+          }
+        ]
+      },
+      "subSection11030": {
+        "name": "Real estate investments – Real estate funds",
+        "content": [
+          {
+            "amount": 300.000,
+            "description1": "SWISSCANTO GOLD ETF",
+            "description2": "SWI GOLD ETF EA CHF",
+            "description3": "13910159 / CH0139101593",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 818.100000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 701.400000,
+                "percentPrice": 16.638152,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 35010.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 517.880000,
+                "percentPrice": 57.970959,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 90066.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 245430.00,
+            "totalMarketValueReportingCurrency": 245430.00,
+            "percentWeight": 8.327564
+          },
+          {
+            "amount": 430.000,
+            "description1": "MAN FUNDS VI",
+            "description2": "MAN AHL TARG RISK I",
+            "description3": "26215678 / IE00BRJT7H22",
+            "currency": "USD",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 211.140000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.856650,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 208.570000,
+                "percentPrice": 1.232200,
+                "exchangeValue": 0.905550,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3438.92,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 176.014680,
+                "percentPrice": 19.955904,
+                "exchangeValue": 0.937050,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 6853.57,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 77775.45,
+            "totalMarketValueReportingCurrency": 77775.45,
+            "percentWeight": 2.638960
+          },
+          {
+            "amount": 1000.000,
+            "description1": "BASE INV SICAV",
+            "description2": "BASE MUL AS CAP APP",
+            "description3": "36153504 / LU1590086572",
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 88.150000,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 87.850000,
+                "percentPrice": 0.341491,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 300.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 100.686170,
+                "percentPrice": -12.450737,
+                "exchangeValue": 1.000000,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -12536.17,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 88150.00,
+            "totalMarketValueReportingCurrency": 88150.00,
+            "percentWeight": 2.990974
+          }
+        ]
       }
     }
   },
@@ -3775,12 +4031,7 @@
             "sector": "SERVIZI DIVERSI",
             "class": "Entry",
             "percentShares": 3.45
-          },
-          {
-            "sector": "TOTALE AZIONI",
-            "class": "Total",
-            "percentShares": 100.0
-          }
+          }          
         ]
       }
     }
@@ -3793,6 +4044,7 @@
         "content": [
           {
             "nation": "EUROPA",
+            "class": "Entry",
             "content": [
               {
                 "country": "SVIZZERA",
@@ -3825,6 +4077,7 @@
           },
           {
             "nation": "AMERICA",
+            "class": "Entry",
             "content": [
               {
                 "country": "STATI UNITI D'AMERICA",
@@ -3833,7 +4086,14 @@
               }
             ],
             "marketValueReportingCurrency": 172432.00,
-            "percentShares": 22.53
+            "percentShares": 22.52
+          },
+          {
+            "nation": "TOTALE AZIONI",
+            "class": "Total",
+            "content": [],
+            "marketValueReportingCurrency": 765406.45,
+            "percentShares": 100.0
           }
         ]
       },
@@ -3846,7 +4106,7 @@
           },
           {
             "nation": "AMERICA",
-            "percentShares": 22.53
+            "percentShares": 22.52
           }
         ]
       }

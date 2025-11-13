@@ -38,6 +38,8 @@ namespace PSE.Model.Output.Models
 
         public string Nation { get; set; }
 
+        public string Class { get; set; }
+
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public IList<IShareByCountry>? Content { get; set; }
 
@@ -48,6 +50,7 @@ namespace PSE.Model.Output.Models
         public ShareByNation()
         {
             Nation = string.Empty;
+            Class = string.Empty;   
             Content = new List<IShareByCountry>();
             MarketValueReportingCurrency = 0;
             PercentShares = 0;
@@ -56,6 +59,7 @@ namespace PSE.Model.Output.Models
         public ShareByNation(IShareByNation source)
         {
             Nation = source.Nation;
+            Class = source.Class;
             Content = new List<IShareByCountry>();
             if (source.Content != null && source.Content.Any())
             {

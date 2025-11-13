@@ -10,6 +10,7 @@
     public interface IShareByNation
     {
         string Nation { get; set; }
+        string Class { get; set; }
         IList<IShareByCountry>? Content { get; set; }
         decimal? MarketValueReportingCurrency { get; set; }
         decimal? PercentShares { get; set; }
