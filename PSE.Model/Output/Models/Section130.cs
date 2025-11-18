@@ -10,7 +10,7 @@ namespace PSE.Model.Output.Models
     public class StockOrder : IStockOrder
     {
 
-        public decimal? Order { get; set; }
+        public string Order { get; set; }
 
         public long? OrderValue { get; set; }
 
@@ -30,7 +30,7 @@ namespace PSE.Model.Output.Models
 
         public StockOrder()
         {
-            Order = 0;
+            Order = string.Empty;
             OrderValue = 0;
             Description = string.Empty;
             Operation = string.Empty;   

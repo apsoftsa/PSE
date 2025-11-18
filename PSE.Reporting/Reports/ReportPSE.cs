@@ -315,7 +315,7 @@ namespace PSE.Reporting.Reports {
         private void lineUpperSection4000_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLine)sender).Visible = _needResetRow == false && this.DetailReportSection4000.CurrentRowIndex > 0;
             if (((XRLine)sender).Visible && this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
-                ((XRLine)sender).StyleName = "headerFooterLineStyle";
+                ((XRLine)sender).StyleName = "gridHeaderLine";
         }
 
         private void assetClassSection4000_BeforePrint(object sender, CancelEventArgs e) {
@@ -451,8 +451,8 @@ namespace PSE.Reporting.Reports {
 
         private void percentShares16000_BeforePrint(object sender, CancelEventArgs e) {
             if (this.DetailReportSection160.CurrentRowIndex == _rowCount - 1) {
-                this.section16000LineGridUpper.StyleName = "headerFooterLineStyle";
-                this.section16000LineGridUpper.LineWidth = 2;
+                this.section16000LineGridUpper.StyleName = "gridHeaderLine";
+                this.section16000LineGridUpper.LineWidth = 1;
                 this.sector16000.StyleName = "gridContentStyleBold";
                 this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
                 this.percentShares16000Fake.StyleName = "gridContentStyleRightAlignBold";
@@ -618,6 +618,14 @@ namespace PSE.Reporting.Reports {
                 this.xrTableSection19010Objects.Rows[index].Cells[3].Text = this.ContentDetail19010Currency.Text;
                 this.xrTableSection19010Objects.Rows[index].Cells[4].Text = (string.IsNullOrEmpty(this.ContentDetail19010CurrentBalance.Text) == false && double.TryParse(this.ContentDetail19010CurrentBalance.Text, out double valueCB) && valueCB != 0) ? this.ContentDetail19010CurrentBalance.Text : string.Empty;
                 this.xrTableSection19010Objects.Rows[index].Cells[5].Text = (string.IsNullOrEmpty(this.ContentDetail19010MarketValue.Text) == false && double.TryParse(this.ContentDetail19010MarketValue.Text, out double valueMV) && valueMV != 0) ? this.ContentDetail19010MarketValue.Text : string.Empty;
+                if (this.DetailReportSubSection19010.RowCount == 1) {
+                    this.xrTableSection19010Objects.Rows[index].Cells[0].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                    this.xrTableSection19010Objects.Rows[index].Cells[1].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                    this.xrTableSection19010Objects.Rows[index].Cells[2].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                    this.xrTableSection19010Objects.Rows[index].Cells[3].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                    this.xrTableSection19010Objects.Rows[index].Cells[4].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                    this.xrTableSection19010Objects.Rows[index].Cells[5].Borders = DevExpress.XtraPrinting.BorderSide.None;
+                }
             }
         }       
 

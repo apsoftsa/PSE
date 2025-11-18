@@ -88,7 +88,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IInvestmentCurrency>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.Class).ThenByDescending(tb => tb.MarketValueReportingCurrency))
                     Content.Add(new InvestmentCurrency(item));
             }
         }
@@ -114,7 +114,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IChartInvestmentCurrency>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentAsset))
                     Content.Add(new ChartInvestmentCurrency(item));
             }
         }

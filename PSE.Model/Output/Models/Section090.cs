@@ -172,7 +172,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareDetail>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.Description1))
                     Content.Add(new ShareDetail(item));
             }
         }
@@ -198,7 +198,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IEquityFundDetail>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.CapitalMarketValueReportingCurrency))
                     Content.Add(new EquityFundDetail(item));
             }
         }
@@ -224,7 +224,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IDerivateDetail>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.CapitalMarketValueReportingCurrency))
                     Content.Add(new DerivateDetail(item));
             }
         }
@@ -244,12 +244,7 @@ namespace PSE.Model.Output.Models
         public IDerivateSubSection? SubSection9030 { get; set; }
 
         public Section090Content()
-        {
-            /*
-            SubSection9010 = new ShareSubSection("Shares");
-            SubSection9020 = new EquityFundSubSection("Equity Funds");
-            SubSection9030 = new DerivateSubSection("Derivative products on securities");
-            */
+        {           
             SubSection9010 = null;
             SubSection9020 = null;
             SubSection9030 = null;

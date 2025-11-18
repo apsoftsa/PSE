@@ -220,7 +220,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IBondFundDetail>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.CapitalMarketValueReportingCurrency))
                     Content.Add(new BondFundDetail(item));
             }
         }
@@ -246,14 +246,7 @@ namespace PSE.Model.Output.Models
         public IFundSubSection? SubSection8040 { get; set; }
 
         public Section080Content()
-        {
-            /*
-            SubSection8000 = new BondSubSection("Bonds with maturity <= 1 year");
-            SubSection8010 = new BondSubSection("Bonds with maturity <= 5 year");
-            SubSection8020 = new BondSubSection("Bonds with maturity > 5 year");
-            SubSection8030 = new BondSubSection("Convertible bonds, bonds with warrants");
-            SubSection8040 = new FundSubSection("Bond funds");
-            */
+        {            
             SubSection8000 = null;
             SubSection8010 = null;
             SubSection8020 = null;

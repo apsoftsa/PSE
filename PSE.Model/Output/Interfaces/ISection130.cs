@@ -4,7 +4,7 @@
     public interface IStockOrder
     {
 
-        decimal? Order { get; set; }
+        string Order { get; set; }
 
         long? OrderValue { get; set; }
 

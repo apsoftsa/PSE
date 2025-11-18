@@ -63,7 +63,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareByCountry>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.MarketValueReportingCurrency))
                     Content.Add(new ShareByCountry(item));
             }
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
@@ -89,7 +89,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareByNation>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.Class).ThenByDescending(tb => tb.MarketValueReportingCurrency))
                     Content.Add(new ShareByNation(item));
             }
         }
@@ -131,7 +131,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareByNationChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentShares))
                     Content.Add(new ShareByNationChart(item));
             }
         }

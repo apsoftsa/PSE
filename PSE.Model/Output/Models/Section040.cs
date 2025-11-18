@@ -95,7 +95,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IInvestmentAsset>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.Class).ThenByDescending(tb => tb.MarketValueReportingCurrencyT))
                     Content.Add(new InvestmentAsset(item));
             }
         }
@@ -121,7 +121,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IAssetClassChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
                     Content.Add(new AssetClassChart(item));
             }
         }

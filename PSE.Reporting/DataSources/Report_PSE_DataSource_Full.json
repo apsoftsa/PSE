@@ -3880,7 +3880,7 @@
         "name": "Stock orders",
         "content": [
           {
-            "order": 0.0,
+            "order": "AA0718479",
             "orderValue": 141608459,
             "description": "3.625 DT TELEKOM 45",
             "operation": "ACQUISTO",

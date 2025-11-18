@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
+using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {
@@ -138,7 +139,9 @@ namespace PSE.Model.Output.Models
             Content = new List<IEndExtractInvestment>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.Where(f => f.Class == CLASS_ENTRY).OrderByDescending(ob => ob.MarketValueReportingCurrency))
+                    Content.Add(new EndExtractInvestment(item));
+                foreach (var item in source.Content.Where(f => f.Class == CLASS_TOTAL).OrderBy(ob => ob.MarketValueReportingCurrency))
                     Content.Add(new EndExtractInvestment(item));
             }
         }
@@ -163,7 +166,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IEndExtractInvestmentChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
                     Content.Add(new EndExtractInvestmentChart(item));
             }
         }
@@ -184,10 +187,7 @@ namespace PSE.Model.Output.Models
         public ISubSection20020? SubSection20020 { get; set; }
 
         public Section200Content()
-        {
-            //SubSection20000 = new SubSection20000(string.Empty);
-            //SubSection20010 = new SubSection20010("Investments");
-            //SubSection20020 = new SubSection20020("Investments chart");
+        {           
             SubSection20000 = null;
             SubSection20010 = null;
             SubSection20020 = null;

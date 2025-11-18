@@ -82,7 +82,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareEconomicSector>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.Class).ThenByDescending(tb => tb.MarketValueReportingCurrency))
                     Content.Add(new ShareEconomicSector(item));
             }
         }
@@ -108,7 +108,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareEconomicSectorChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentShares))
                     Content.Add(new ShareEconomicSectorChart(item));
             }
         }

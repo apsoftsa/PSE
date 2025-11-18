@@ -121,7 +121,7 @@ namespace PSE.Model.Output.Models
             Objects = new List<IObjectReportsTransferredToAdministration>();
             if (source.Objects != null && source.Objects.Any())
             {
-                foreach (var item in source.Objects)
+                foreach (var item in source.Objects.OrderByDescending(ob => ob.MarketValueReportingCurrency))
                     Objects.Add(new ObjectReportsTransferredToAdministration(item));
             }
         }
@@ -161,7 +161,7 @@ namespace PSE.Model.Output.Models
             Objects = new List<IObjectReportsNotTransferredToAdministration>();
             if (source.Objects != null && source.Objects.Any())
             {
-                foreach (var item in source.Objects)
+                foreach (var item in source.Objects.OrderByDescending(ob => ob.MarketValueReportingCurrency))
                     Objects.Add(new ObjectReportsNotTransferredToAdministration(item));
             }
         }

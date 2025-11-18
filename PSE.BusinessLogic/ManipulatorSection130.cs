@@ -51,10 +51,9 @@ namespace PSE.BusinessLogic
                             OnExternalCodifyRequest(extEventArgsOperation);
                             if (!extEventArgsOperation.Cancel)
                             {
-
                                 stockOrder = new StockOrder()
                                 {
-                                    Order = decimal.TryParse(ordItem.Reference_8, out decimal order) ? order : 0,
+                                    Order = ordItem.Reference_8,
                                     Operation = extEventArgsOperation.PropertyValue,
                                     ExpirationDate = ordItem.Limit_Date_End_11 != null ? ordItem.Limit_Date_End_11.Value.ToString(DEFAULT_DATE_FORMAT, _culture) : "",
                                     Amount = ordItem.Quantity_13.HasValue ? ordItem.Quantity_13.Value :  0,

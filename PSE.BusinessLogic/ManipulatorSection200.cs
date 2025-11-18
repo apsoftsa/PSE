@@ -20,7 +20,7 @@ namespace PSE.BusinessLogic {
 
         public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null) {
             SectionBinding sectionDest = ManipulatorOperatingRules.GetDestinationSection(this);
-            Section200 output = new() {
+            Section200 tmpOutput = new() {
                 SectionId = sectionDest.SectionId,
                 SectionCode = sectionDest.SectionCode,
                 SectionName = sectionDest.SectionContent
@@ -56,14 +56,14 @@ namespace PSE.BusinessLogic {
                                 EsgProfile = AssignRequiredString(extEventArgsService.PropertyValue),
                                 RiskProfile = 0 // ??
                             };
-                            output.Content.SubSection20000 = new SubSection20000("");
-                            output.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));
+                            tmpOutput.Content.SubSection20000 = new SubSection20000("");
+                            tmpOutput.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));
                             IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != ((int)PositionClassifications.INFORMATION_POSITIONS).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
                             if (groupByCategory != null && groupByCategory.Any()) {
                                 categoryDescr = string.Empty;
                                 prevCategory = string.Empty;
                                 currCategory = string.Empty;
-                                output.Content.SubSection20010 = new SubSection20010("Investments");
+                                tmpOutput.Content.SubSection20010 = new SubSection20010("Investments");
                                 foreach (IGrouping<string, POS> category in groupByCategory) {
                                     currCategory = category.First().SubCat3_14;
                                     if (currCategory != prevCategory) {
@@ -79,12 +79,12 @@ namespace PSE.BusinessLogic {
                                         AssetClass = categoryDescr,
                                         Class = CLASS_ENTRY
                                     };
-                                    output.Content.SubSection20010.Content.Add(endExtractInvestment);
+                                    tmpOutput.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 }
-                                decimal? totalSum = output.Content.SubSection20010.Content.Sum(sum => sum.MarketValueReportingCurrency);
+                                decimal? totalSum = tmpOutput.Content.SubSection20010.Content.Sum(sum => sum.MarketValueReportingCurrency);
                                 if (!totalSum.HasValue)
                                     totalSum = decimal.Zero;
-                                foreach (IEndExtractInvestment assetToUpgrd in output.Content.SubSection20010.Content) {
+                                foreach (IEndExtractInvestment assetToUpgrd in tmpOutput.Content.SubSection20010.Content) {
 
                                     assetToUpgrd.PercentInvestment = totalSum != 0 ? Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2) : 0m;
                                 }
@@ -95,25 +95,25 @@ namespace PSE.BusinessLogic {
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value, 2),
                                     PercentInvestment = 100.0m
                                 };
-                                output.Content.SubSection20010.Content.Add(endExtractInvestment);
+                                tmpOutput.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
                                     AssetClass = dictionaryService.GetTranslation("accrued_interest_upper", cultureCode),
-                                    Class = CLASS_ENTRY,
+                                    Class = CLASS_TOTAL,
                                     MarketValueReportingCurrency = Math.Round(sumAccrued, 2),
                                     PercentInvestment = totalSum != 0 ? Math.Round(sumAccrued / totalSum.Value * 100m, 2) : 0m
                                 };
-                                output.Content.SubSection20010.Content.Add(endExtractInvestment);
+                                tmpOutput.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 endExtractInvestment = new EndExtractInvestment() {
                                     AssetClass = dictionaryService.GetTranslation("total_assets_upper", cultureCode),
                                     Class = CLASS_TOTAL,    
                                     MarketValueReportingCurrency = Math.Round(totalSum.Value + sumAccrued, 2),
                                     PercentInvestment = null
                                 };
-                                output.Content.SubSection20010.Content.Add(endExtractInvestment);
+                                tmpOutput.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 categoryDescr = string.Empty;
                                 prevCategory = string.Empty;
                                 currCategory = string.Empty;
-                                output.Content.SubSection20020 = new SubSection20020("Investments chart");
+                                tmpOutput.Content.SubSection20020 = new SubSection20020("Investments chart");
                                 foreach (IGrouping<string, POS> subCategory in groupByCategory) {
                                     currCategory = subCategory.First().SubCat3_14;
                                     if (currCategory != prevCategory) {
@@ -128,14 +128,14 @@ namespace PSE.BusinessLogic {
                                         AssetClass = categoryDescr,
                                         PercentInvestment = totalSum != 0 ? Math.Round(subCategory.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value) / totalSum.Value * 100m, 2) : 0m
                                     };
-                                    output.Content.SubSection20020.Content.Add(endExtractInvestmentChart);
+                                    tmpOutput.Content.SubSection20020.Content.Add(endExtractInvestmentChart);
                                 }
                             }
                         }
                     }
                 }
             }            
-            return output;
+            return new Section200(tmpOutput);
         }
 
     }

@@ -337,7 +337,7 @@ namespace PSE.Model.Output.Models
             Content = new List<ILiquidityForwardExchangeOperation>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderByDescending(ob => ob.ProfitLoss))
                     Content.Add(new LiquidityForwardExchangeOperation(item));
             }
         }
