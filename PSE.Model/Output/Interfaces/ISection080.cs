@@ -19,6 +19,7 @@ public interface IBondDetail
     decimal? TotalMarketValueReportingCurrency { get; set; }
     decimal? PercentYTD { get; set; }
     decimal? PercentWeight { get; set; }
+    DateTime? IssueDate { get; set; }
 }
 
 public interface IBondFundDetail

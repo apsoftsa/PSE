@@ -197,6 +197,7 @@ namespace PSE.BusinessLogic
                                         };
                                         summaryTo = new SummaryTo() {                                                
                                             ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                            ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                             PercentPrice = 0m,
                                             ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == investmentDetail.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                             ProfitLossNotRealizedValue = 0m

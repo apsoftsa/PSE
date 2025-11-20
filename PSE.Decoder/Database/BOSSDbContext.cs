@@ -7,6 +7,7 @@ namespace PSE.Decoder.Database
     internal class BOSSDbContext : DbContext
     {
 
+        public DbSet<TmpAdaAnagr> AdaAnagr { get; set; }
         public DbSet<TmpAdaAuIde> AdaAuIde { get; set; }
         public DbSet<TmpTabelle> Tabelle { get; set; }
 

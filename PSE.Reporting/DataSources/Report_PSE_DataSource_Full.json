@@ -43,7 +43,7 @@
             "customer": "77681 STIGE",
             "customerID": "1077681",
             "portfolio": "CHF - DINAMICO MGP PLUS",
-            "riskProfile": 0,
+            "riskProfile": 5,
             "esgProfile": "MAND. DI GEST. PERSONALIZZATO"
           }
         ]
@@ -4250,7 +4250,7 @@
             "customer": "77681 STIGE",
             "customerID": "1077681",
             "portfolio": "CHF - DINAMICO MGP PLUS",
-            "riskProfile": 0,
+            "riskProfile": 5,
             "esgProfile": "MAND. DI GEST. PERSONALIZZATO"
           }
         ]
@@ -4290,7 +4290,7 @@
           },
           {
             "assetClass": "INTERESSI MATURATI",
-            "class": "Entry",
+            "class": "Total",
             "marketValueReportingCurrency": 7675.64,
             "percentInvestment": 0.26
           },

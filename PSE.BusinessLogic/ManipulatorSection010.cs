@@ -34,6 +34,7 @@ namespace PSE.BusinessLogic
                 IKeyInformation currKeyInf;
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio;
                 ExternalCodifyRequestEventArgs extEventArgsService;
+                ExternalCodifyRequestEventArgs extEventArgsRiskProfile;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 List<PER> perItems = extractedData.Where(flt => flt.RecordType == nameof(PER)).OfType<PER>().ToList();
@@ -53,15 +54,19 @@ namespace PSE.BusinessLogic
                             extEventArgsService = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.EsgProfile), ideItem.Mandate_11, propertyParams);
                             OnExternalCodifyRequest(extEventArgsService);
                             if (!extEventArgsService.Cancel) {
-                                currKeyInf = new KeyInformation() {
-                                    CustomerID = AssignRequiredString(ideItem.CustomerId_6),
-                                    Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
-                                    Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
-                                    RiskProfile = 0, // ??
-                                    EsgProfile = extEventArgsService.PropertyValue
-                                };
-                                output.Content.SubSection1000 = new SubSection1000Content();
-                                output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
+                                extEventArgsRiskProfile = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.RiskProfile), ideItem.CustomerId_6);
+                                OnExternalCodifyRequest(extEventArgsRiskProfile);
+                                if (!extEventArgsRiskProfile.Cancel) {
+                                    currKeyInf = new KeyInformation() {
+                                        CustomerID = AssignRequiredString(ideItem.CustomerId_6),
+                                        Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
+                                        Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
+                                        RiskProfile = int.Parse(extEventArgsRiskProfile.PropertyValue),
+                                        EsgProfile = extEventArgsService.PropertyValue
+                                    };
+                                    output.Content.SubSection1000 = new SubSection1000Content();
+                                    output.Content.SubSection1000.Content.Add(new KeyInformation(currKeyInf));
+                                }
                                 if (perItem.StartValue_8 != null && perItem.StartDate_6 != null && perItem.EndDate_7 != null) {
                                     string startDate = AssignRequiredDate(perItem.StartDate_6.Value, _culture);
                                     string endDate = AssignRequiredDate(perItem.EndDate_7.Value, _culture);

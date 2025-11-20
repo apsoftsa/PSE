@@ -1292,6 +1292,8 @@
             this.verticalSeparatorLine = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailReportSection170 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection17000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.bookmarkChartPercAlphaCodeSharesSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bookmarkChartPercSharesSection17000 = new DevExpress.XtraReports.UI.XRLabel();
             this.section17000LineGridDown = new DevExpress.XtraReports.UI.XRLine();
             this.section17000LineGridUpper = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2203,8 +2205,10 @@
             this.reportContentStyleBoldRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
             this.reportContentStyleRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
             this.reportContentStyleItalicRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.bookmarkChartPercSharesSection17000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.bookmarkChartPercAlphaCodeSharesSection17000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bookmarkChartPercInvSection20020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bookmarkChartPercAlphaCodeInvSection20020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bookmarkChartPercAlphaCodeInvSection4000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bookmarkChartPercInvSection4000 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -7213,6 +7217,8 @@
             // DetailReport4000
             // 
             this.DetailReport4000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.bookmarkChartPercAlphaCodeInvSection4000,
+            this.bookmarkChartPercInvSection4000,
             this.classSection4000,
             this.lineMiddleSection4000,
             this.assetClassSection4000Fake,
@@ -7489,8 +7495,8 @@
             series2.View = doughnutSeriesView2;
             this.chartSection4010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series2};
-            this.chartSection4010.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartDoughnut_CustomDrawSeriesPoint);
-            this.chartSection4010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartDoughnut_BeforePrint);
+            this.chartSection4010.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith);
+            this.chartSection4010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartDoughnutWithLabelAlphaCode_BeforePrint);
             // 
             // GroupFooter1
             // 
@@ -8100,6 +8106,38 @@
             this.DetailSection17000.Name = "DetailSection17000";
             this.DetailSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailSection17000_BeforePrint);
             // 
+            // bookmarkChartPercAlphaCodeSharesSection17000
+            // 
+            this.bookmarkChartPercAlphaCodeSharesSection17000.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.CanGrow = false;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.Dpi = 254F;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]")});
+            this.bookmarkChartPercAlphaCodeSharesSection17000.Multiline = true;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.Name = "bookmarkChartPercAlphaCodeSharesSection17000";
+            this.bookmarkChartPercAlphaCodeSharesSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercAlphaCodeSharesSection17000.StyleName = "gridBookmarkChartElementAlphaCode";
+            this.bookmarkChartPercAlphaCodeSharesSection17000.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercAlphaCodeSharesSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercAlphaCodeSharesSection17000_BeforePrint);
+            // 
+            // bookmarkChartPercSharesSection17000
+            // 
+            this.bookmarkChartPercSharesSection17000.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercSharesSection17000.CanGrow = false;
+            this.bookmarkChartPercSharesSection17000.Dpi = 254F;
+            this.bookmarkChartPercSharesSection17000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
+            this.bookmarkChartPercSharesSection17000.Multiline = true;
+            this.bookmarkChartPercSharesSection17000.Name = "bookmarkChartPercSharesSection17000";
+            this.bookmarkChartPercSharesSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercSharesSection17000.StyleName = "gridBookmarkChartElement";
+            this.bookmarkChartPercSharesSection17000.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercSharesSection17000.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercSharesSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercSharesSection17000_BeforePrint);
+            // 
             // section17000LineGridDown
             // 
             this.section17000LineGridDown.BorderWidth = 0F;
@@ -8398,6 +8436,8 @@
             // DetailSection20020
             // 
             this.DetailSection20020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.bookmarkChartPercInvSection20020,
+            this.bookmarkChartPercAlphaCodeInvSection20020,
             this.xrLine34,
             this.contentInvestimentiSection20020,
             this.contentValoreMercatoSection20020,
@@ -8487,58 +8527,79 @@
             // labelESGProfile7
             // 
             this.labelESGProfile7.Dpi = 254F;
+            this.labelESGProfile7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile7.Multiline = true;
             this.labelESGProfile7.Name = "labelESGProfile7";
             this.labelESGProfile7.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile7.StyleName = "labelESGProfile";
+            this.labelESGProfile7.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile6
             // 
             this.labelESGProfile6.Dpi = 254F;
+            this.labelESGProfile6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile6.Multiline = true;
             this.labelESGProfile6.Name = "labelESGProfile6";
             this.labelESGProfile6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile6.StyleName = "labelESGProfile";
+            this.labelESGProfile6.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile5
             // 
             this.labelESGProfile5.Dpi = 254F;
+            this.labelESGProfile5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile5.Multiline = true;
             this.labelESGProfile5.Name = "labelESGProfile5";
             this.labelESGProfile5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile5.StyleName = "labelESGProfile";
+            this.labelESGProfile5.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile4
             // 
             this.labelESGProfile4.Dpi = 254F;
+            this.labelESGProfile4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile4.Multiline = true;
             this.labelESGProfile4.Name = "labelESGProfile4";
             this.labelESGProfile4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile4.StyleName = "labelESGProfile";
+            this.labelESGProfile4.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile3
             // 
             this.labelESGProfile3.Dpi = 254F;
+            this.labelESGProfile3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile3.Multiline = true;
             this.labelESGProfile3.Name = "labelESGProfile3";
             this.labelESGProfile3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile3.StyleName = "labelESGProfile";
+            this.labelESGProfile3.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile2
             // 
             this.labelESGProfile2.Dpi = 254F;
+            this.labelESGProfile2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile2.Multiline = true;
             this.labelESGProfile2.Name = "labelESGProfile2";
             this.labelESGProfile2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile2.StyleName = "labelESGProfile";
+            this.labelESGProfile2.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // labelESGProfile1
             // 
             this.labelESGProfile1.Dpi = 254F;
+            this.labelESGProfile1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section200].[content].[subSection20000].[content].[riskProfile]\n")});
             this.labelESGProfile1.Multiline = true;
             this.labelESGProfile1.Name = "labelESGProfile1";
             this.labelESGProfile1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelESGProfile1.StyleName = "labelESGProfile";
+            this.labelESGProfile1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileKeyInformation_BeforePrint);
             // 
             // LabelESGProfilo
             // 
@@ -8676,8 +8737,8 @@
             series6.View = doughnutSeriesView5;
             this.chartSection20010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series6};
-            this.chartSection20010.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartDoughnut_CustomDrawSeriesPoint);
-            this.chartSection20010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartDoughnut_BeforePrint);
+            this.chartSection20010.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith);
+            this.chartSection20010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartDoughnutWithLabelAlphaCode_BeforePrint);
             // 
             // GroupHeaderSection20000
             // 
@@ -10290,58 +10351,79 @@
             // LabelESGProfileDettPortafoglio1
             // 
             this.LabelESGProfileDettPortafoglio1.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio1.Multiline = true;
             this.LabelESGProfileDettPortafoglio1.Name = "LabelESGProfileDettPortafoglio1";
             this.LabelESGProfileDettPortafoglio1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio1.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio2
             // 
             this.LabelESGProfileDettPortafoglio2.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio2.Multiline = true;
             this.LabelESGProfileDettPortafoglio2.Name = "LabelESGProfileDettPortafoglio2";
             this.LabelESGProfileDettPortafoglio2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio2.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio2.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio3
             // 
             this.LabelESGProfileDettPortafoglio3.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio3.Multiline = true;
             this.LabelESGProfileDettPortafoglio3.Name = "LabelESGProfileDettPortafoglio3";
             this.LabelESGProfileDettPortafoglio3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio3.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio3.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio4
             // 
             this.LabelESGProfileDettPortafoglio4.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio4.Multiline = true;
             this.LabelESGProfileDettPortafoglio4.Name = "LabelESGProfileDettPortafoglio4";
             this.LabelESGProfileDettPortafoglio4.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio4.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio4.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio5
             // 
             this.LabelESGProfileDettPortafoglio5.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio5.Multiline = true;
             this.LabelESGProfileDettPortafoglio5.Name = "LabelESGProfileDettPortafoglio5";
             this.LabelESGProfileDettPortafoglio5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio5.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio5.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio6
             // 
             this.LabelESGProfileDettPortafoglio6.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]\n")});
             this.LabelESGProfileDettPortafoglio6.Multiline = true;
             this.LabelESGProfileDettPortafoglio6.Name = "LabelESGProfileDettPortafoglio6";
             this.LabelESGProfileDettPortafoglio6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio6.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio6.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelESGProfileDettPortafoglio7
             // 
             this.LabelESGProfileDettPortafoglio7.Dpi = 254F;
+            this.LabelESGProfileDettPortafoglio7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[riskProfile]")});
             this.LabelESGProfileDettPortafoglio7.Multiline = true;
             this.LabelESGProfileDettPortafoglio7.Name = "LabelESGProfileDettPortafoglio7";
             this.LabelESGProfileDettPortafoglio7.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelESGProfileDettPortafoglio7.StyleName = "labelESGProfile";
+            this.LabelESGProfileDettPortafoglio7.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.labelESGProfileDettPortafoglio_BeforePrint);
             // 
             // LabelRischioProfiloDettPortafoglio
             // 
@@ -17220,37 +17302,69 @@
             this.reportContentStyleItalicRightAlign.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 254F);
             this.reportContentStyleItalicRightAlign.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
-            // bookmarkChartPercSharesSection17000
+            // bookmarkChartPercInvSection20020
             // 
-            this.bookmarkChartPercSharesSection17000.BackColor = System.Drawing.Color.White;
-            this.bookmarkChartPercSharesSection17000.CanGrow = false;
-            this.bookmarkChartPercSharesSection17000.Dpi = 254F;
-            this.bookmarkChartPercSharesSection17000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.bookmarkChartPercInvSection20020.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercInvSection20020.CanGrow = false;
+            this.bookmarkChartPercInvSection20020.Dpi = 254F;
+            this.bookmarkChartPercInvSection20020.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]")});
-            this.bookmarkChartPercSharesSection17000.Multiline = true;
-            this.bookmarkChartPercSharesSection17000.Name = "bookmarkChartPercSharesSection17000";
-            this.bookmarkChartPercSharesSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.bookmarkChartPercSharesSection17000.StyleName = "gridBookmarkChartElement";
-            this.bookmarkChartPercSharesSection17000.StylePriority.UseBackColor = false;
-            this.bookmarkChartPercSharesSection17000.StylePriority.UseForeColor = false;
-            this.bookmarkChartPercSharesSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercSharesSection17000_BeforePrint);
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentInvestment]")});
+            this.bookmarkChartPercInvSection20020.Multiline = true;
+            this.bookmarkChartPercInvSection20020.Name = "bookmarkChartPercInvSection20020";
+            this.bookmarkChartPercInvSection20020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercInvSection20020.StyleName = "gridBookmarkChartElement";
+            this.bookmarkChartPercInvSection20020.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercInvSection20020.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercInvSection20020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercInvSection20020_BeforePrint);
             // 
-            // bookmarkChartPercAlphaCodeSharesSection17000
+            // bookmarkChartPercAlphaCodeInvSection20020
             // 
-            this.bookmarkChartPercAlphaCodeSharesSection17000.BackColor = System.Drawing.Color.White;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.CanGrow = false;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.Dpi = 254F;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentShares]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]")});
-            this.bookmarkChartPercAlphaCodeSharesSection17000.Multiline = true;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.Name = "bookmarkChartPercAlphaCodeSharesSection17000";
-            this.bookmarkChartPercAlphaCodeSharesSection17000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.bookmarkChartPercAlphaCodeSharesSection17000.StyleName = "gridBookmarkChartElementAlphaCode";
-            this.bookmarkChartPercAlphaCodeSharesSection17000.StylePriority.UseBackColor = false;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.StylePriority.UseForeColor = false;
-            this.bookmarkChartPercAlphaCodeSharesSection17000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercAlphaCodeSharesSection17000_BeforePrint);
+            this.bookmarkChartPercAlphaCodeInvSection20020.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercAlphaCodeInvSection20020.CanGrow = false;
+            this.bookmarkChartPercAlphaCodeInvSection20020.Dpi = 254F;
+            this.bookmarkChartPercAlphaCodeInvSection20020.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentInvestment]")});
+            this.bookmarkChartPercAlphaCodeInvSection20020.Multiline = true;
+            this.bookmarkChartPercAlphaCodeInvSection20020.Name = "bookmarkChartPercAlphaCodeInvSection20020";
+            this.bookmarkChartPercAlphaCodeInvSection20020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercAlphaCodeInvSection20020.StyleName = "gridBookmarkChartElementAlphaCode";
+            this.bookmarkChartPercAlphaCodeInvSection20020.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercAlphaCodeInvSection20020.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercAlphaCodeInvSection20020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercAlphaCodeInvSection20020_BeforePrint);
+            // 
+            // bookmarkChartPercAlphaCodeInvSection4000
+            // 
+            this.bookmarkChartPercAlphaCodeInvSection4000.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercAlphaCodeInvSection4000.CanGrow = false;
+            this.bookmarkChartPercAlphaCodeInvSection4000.Dpi = 254F;
+            this.bookmarkChartPercAlphaCodeInvSection4000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentInvestmentT]")});
+            this.bookmarkChartPercAlphaCodeInvSection4000.Multiline = true;
+            this.bookmarkChartPercAlphaCodeInvSection4000.Name = "bookmarkChartPercAlphaCodeInvSection4000";
+            this.bookmarkChartPercAlphaCodeInvSection4000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercAlphaCodeInvSection4000.StyleName = "gridBookmarkChartElementAlphaCode";
+            this.bookmarkChartPercAlphaCodeInvSection4000.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercAlphaCodeInvSection4000.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercAlphaCodeInvSection4000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercAlphaCodeInvSection4000_BeforePrint);
+            // 
+            // bookmarkChartPercInvSection4000
+            // 
+            this.bookmarkChartPercInvSection4000.BackColor = System.Drawing.Color.White;
+            this.bookmarkChartPercInvSection4000.CanGrow = false;
+            this.bookmarkChartPercInvSection4000.Dpi = 254F;
+            this.bookmarkChartPercInvSection4000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentInvestmentT]")});
+            this.bookmarkChartPercInvSection4000.Multiline = true;
+            this.bookmarkChartPercInvSection4000.Name = "bookmarkChartPercInvSection4000";
+            this.bookmarkChartPercInvSection4000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkChartPercInvSection4000.StyleName = "gridBookmarkChartElement";
+            this.bookmarkChartPercInvSection4000.StylePriority.UseBackColor = false;
+            this.bookmarkChartPercInvSection4000.StylePriority.UseForeColor = false;
+            this.bookmarkChartPercInvSection4000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkChartPercInvSection4000_BeforePrint);
             // 
             // ReportPSE
             // 
@@ -17296,8 +17410,8 @@
             this.Dpi = 254F;
             this.Landscape = true;
             this.LocalizationItems.AddRange(new DevExpress.XtraReports.Localization.LocalizationItem[] {
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(5.000018F, 5.999913F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "SizeF", new System.Drawing.SizeF(923.6878F, 60F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(129.1225F, 5.999634F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "SizeF", new System.Drawing.SizeF(799.5654F, 60.00001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "Text", "assetClassSection4000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.assetClassSection4000Fake, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
@@ -17309,14 +17423,30 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.BDSLogoPageHeader, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.BDSLogoReportFooter, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1160.92F, 690F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.BDSLogoReportFooter, "Default", "SizeF", new System.Drawing.SizeF(465F, 150F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1409.841F, 4.578532F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection20020, "Default", "SizeF", new System.Drawing.SizeF(69.0791F, 58.42093F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection20020, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection20020, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(60.04333F, 7.580287F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection4000, "Default", "SizeF", new System.Drawing.SizeF(69.0791F, 58.41972F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection4000, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeInvSection4000, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(61.0008F, 13.58057F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection16000, "Default", "SizeF", new System.Drawing.SizeF(73.93652F, 50.00001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection16000, "Default", "Text", "percPatrimonioSection6000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection16000, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(60F, 6.58F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection17000, "Default", "SizeF", new System.Drawing.SizeF(58.06152F, 55.99965F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection17000, "Default", "SizeF", new System.Drawing.SizeF(58.06F, 54F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection17000, "Default", "Text", "percPatrimonioSection6000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercAlphaCodeSharesSection17000, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1354.84F, 9F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection20020, "Default", "SizeF", new System.Drawing.SizeF(50F, 50.00001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection20020, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection20020, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(5.04F, 11F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection4000, "Default", "SizeF", new System.Drawing.SizeF(50F, 50.00001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection4000, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercInvSection4000, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercPesoSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(10F, 4.87F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercPesoSection6000, "Default", "SizeF", new System.Drawing.SizeF(50F, 50.00001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercPesoSection6000, "Default", "Text", "percPatrimonioSection6000"),
@@ -17341,13 +17471,13 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "SizeF", new System.Drawing.SizeF(1517.04F, 811.611F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection20010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0.1895879F, 534.7503F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection20010, "Default", "Series.1.Label.TextPattern", "{A}: {V}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection20010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection20010, "Default", "SizeF", new System.Drawing.SizeF(1289.396F, 877.8166F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.896F, 216.5083F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "SizeF", new System.Drawing.SizeF(1407.771F, 846.6666F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1556.292F, 106.1794F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "Series.1.Label.TextPattern", "{V}% {A} "),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "Series.1.Label.TextPattern", "{V}% "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "SizeF", new System.Drawing.SizeF(1203.709F, 995.8206F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection6010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1576.041F, 122F)),
@@ -17495,8 +17625,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentSection1000ValorePortafoglioRettificato, "Default", "SizeF", new System.Drawing.SizeF(401.6253F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentSection1000ValorePortafoglioRettificato, "Default", "Text", "ContentSection1000ValorePortafoglioRettificato"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentSection1000ValorePortafoglioRettificato, "Default", "TextFormatString", "{0:N2}"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentTipoClasseSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.9F, 4.5794F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentTipoClasseSection20020, "Default", "SizeF", new System.Drawing.SizeF(794.7034F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentTipoClasseSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1478.92F, 4.578532F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentTipoClasseSection20020, "Default", "SizeF", new System.Drawing.SizeF(664.6832F, 58.42001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentTipoClasseSection20020, "Default", "Text", "contentTipoClasseSection20020"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentValoreMercatoSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2143.604F, 4.5794F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentValoreMercatoSection20020, "Default", "SizeF", new System.Drawing.SizeF(354.917F, 58.42F)),
@@ -17517,7 +17647,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport1000, "Default", "HeightF", 269.5202F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport16000, "Default", "HeightF", 74.29166F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport2000, "Default", "HeightF", 120.8414F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport4000, "Default", "HeightF", 131.1667F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport4000, "Default", "HeightF", 131.1668F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11000, "Default", "HeightF", 160F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11010, "Default", "HeightF", 160F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11020, "Default", "HeightF", 160F),
@@ -18846,7 +18976,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfilo, "Default", "SizeF", new System.Drawing.SizeF(431.2708F, 58.41995F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfilo, "Default", "Text", "Profilo di rischio"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfiloDettPortafoglio, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1332.307F, 20.25022F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfiloDettPortafoglio, "Default", "SizeF", new System.Drawing.SizeF(431.2708F, 58.41996F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfiloDettPortafoglio, "Default", "SizeF", new System.Drawing.SizeF(431.2712F, 58.41996F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelRischioProfiloDettPortafoglio, "Default", "Text", "Profilo di rischio"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelRubricaSection19000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(405.0841F, 97.24956F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelRubricaSection19000, "Default", "SizeF", new System.Drawing.SizeF(334.7063F, 74.46883F)),
@@ -19365,8 +19495,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.TableOfContentsReport, "Default", "LevelTitle.TextAlignment", DevExpress.XtraPrinting.TextAlignment.MiddleLeft),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.TableOfContentsReport, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1468.979F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.TopMargin, "Default", "HeightF", 340F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(48.81243F, 71.16666F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "SizeF", new System.Drawing.SizeF(879.8754F, 59.99999F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(129.1225F, 71.16685F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "SizeF", new System.Drawing.SizeF(799.5654F, 59.99999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "Text", "typeInvestmentSection4000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.typeInvestmentSection4000, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.valoreMercatoSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(814.9212F, 4.873245F)),
@@ -22832,5 +22962,9 @@
         private DevExpress.XtraReports.UI.XRControlStyle reportContentStyleItalicRightAlign;
         private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercSharesSection17000;
         private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercAlphaCodeSharesSection17000;
+        private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercInvSection20020;
+        private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercAlphaCodeInvSection20020;
+        private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercAlphaCodeInvSection4000;
+        private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercInvSection4000;
     }
 }

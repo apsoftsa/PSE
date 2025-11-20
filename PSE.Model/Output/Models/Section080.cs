@@ -43,7 +43,10 @@ namespace PSE.Model.Output.Models
         public decimal? PercentYTD { get; set; }
 
         public decimal? PercentWeight { get; set; }
-       
+
+        [JsonIgnore]
+        public DateTime? IssueDate { get; set; }
+
         public BondDetail()
         {
             Description1 = string.Empty;
@@ -63,6 +66,7 @@ namespace PSE.Model.Output.Models
             TotalMarketValueReportingCurrency = 0;
             PercentYTD = 0;
             PercentWeight = 0;
+            IssueDate = null;
         }
 
         public BondDetail(IBondDetail source)
@@ -99,6 +103,7 @@ namespace PSE.Model.Output.Models
             TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
             PercentYTD = source.PercentYTD;
             PercentWeight = source.PercentWeight;
+            IssueDate = source.IssueDate;   
         }
     }
 
@@ -194,7 +199,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IBondDetail>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content)
+                foreach (var item in source.Content.OrderBy(ob => ob.IssueDate))
                     Content.Add(new BondDetail(item));
             }
         }

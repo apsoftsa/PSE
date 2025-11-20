@@ -293,8 +293,18 @@ namespace PSE.Reporting.Reports {
                 ((XRLabel)sender).Visible = false;  
         }
 
+        private void labelESGProfileDettPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel labelESGProfile = (XRLabel)sender;    
+            if (labelESGProfile.Tag != null && labelESGProfile.Tag.ToString() == labelESGProfile.Text)
+                labelESGProfile.StyleName = "labelESGProfileSelected";
+            else
+                labelESGProfile.StyleName = "labelESGProfile";
+        }
+
         private void DetailReportSection4000_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+            _currentGridChartPointAlphaCode = string.Empty;
         }        
 
         private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {            
@@ -343,6 +353,34 @@ namespace PSE.Reporting.Reports {
 
         private void lineMiddleSection4000_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLine)sender).Visible = this.classSection4000.Text != "Total";
+        }
+
+        private void bookmarkChartPercInvSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_needResetRow == false && _currentChartPointsCount > 0) {
+                label.BackColor = Color.White;
+                label.ForeColor = Color.White;
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                    label.BackColor = GetChartSeriesPointColorToApply(this.chartSection4010, _currentChartPointsCount, _currentGridChartPointIndex);
+                    label.ForeColor = label.BackColor;
+                    label.Visible = true;
+                    _currentGridChartPointIndex++;
+                }
+            } else
+                label.Visible = false;
+        }
+
+        private void bookmarkChartPercAlphaCodeInvSection4000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_needResetRow == false && _currentChartPointsCount > 0) {
+                label.Visible = false;
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                    _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                    label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                    label.Visible = true;
+                }
+            } else
+                label.Visible = false;
         }
 
         private void checkSection70CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
@@ -395,6 +433,7 @@ namespace PSE.Reporting.Reports {
                     if (value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
+                        label.Visible = true;
                         _currentGridChartPointIndex++;
                     } 
                 }
@@ -443,6 +482,7 @@ namespace PSE.Reporting.Reports {
                     if (label.Tag != null && label.Tag.ToString() == "Entry" && value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
+                        label.Visible = true;
                         _currentGridChartPointIndex++;                   
                     }
                 }
@@ -469,6 +509,17 @@ namespace PSE.Reporting.Reports {
             this.section16000LineGridDown.Visible = this.DetailReportSection160.CurrentRowIndex == _rowCount - 1;
         }
 
+        private void DetailReportSection170_BeforePrint(object sender, CancelEventArgs e) {
+            _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+            _currentGridChartPointAlphaCode = string.Empty;
+        }
+
+        private void DetailSection17000_BeforePrint(object sender, CancelEventArgs e) {
+            this.DetailSection17000.HeightF = 0;
+            this.DetailSection17000.PerformLayout();
+        }
+
         private void section17000LineGridUpper_BeforePrint(object sender, CancelEventArgs e) {
             XRLine line = (XRLine)sender;
             line.Visible = this.DetailReportSection170.CurrentRowIndex > 0;
@@ -488,13 +539,48 @@ namespace PSE.Reporting.Reports {
                 line.StyleName = "gridRowLineStyle";
         }
 
+        private void bookmarkChartPercSharesSection17000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.BackColor = Color.White;
+                label.ForeColor = Color.White;
+                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0) {
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection17010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.ForeColor = label.BackColor;
+                        label.Visible = true;
+                        _currentGridChartPointIndex++;
+                    }
+                }
+            }
+        }
+
+        private void bookmarkChartPercAlphaCodeSharesSection17000_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.Visible = false;
+                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0) {
+                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                        label.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void DetailSubSection17000_BeforePrint(object sender, CancelEventArgs e) {
+            this.DetailSubSection17000.HeightF = 0;
+            this.DetailSubSection17000.PerformLayout();
+        }
+
         private void DetailReportSubSection170_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
         }
 
         private void subSection17000LineGridDown_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLine)sender).Visible = this.DetailReportSubSection170.CurrentRowIndex < _rowCount - 1;
-        }
+        }            
 
         private void Detail19010Objects_BeforePrint(object sender, CancelEventArgs e) {
             this.Detail19010Objects.HeightF = 0;
@@ -631,6 +717,46 @@ namespace PSE.Reporting.Reports {
 
         private void DetailReportSubSection200_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
+            _currentGridChartPointIndex = 0;
+            _currentGridChartPointAlphaCode = string.Empty;
+        }
+
+        private void bookmarkChartPercInvSection20020_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.BackColor = Color.White;
+                label.ForeColor = Color.White;
+                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0) {
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection20010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.ForeColor = label.BackColor;
+                        label.Visible = true;
+                        _currentGridChartPointIndex++;
+                    }
+                }
+            }
+        }
+
+        private void bookmarkChartPercAlphaCodeInvSection20020_BeforePrint(object sender, CancelEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                XRLabel label = (XRLabel)sender;
+                label.Visible = false;
+                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                    if (value > 0) {
+                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                        label.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void labelESGProfileKeyInformation_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel labelESGProfile = (XRLabel)sender;
+            if (labelESGProfile.Tag != null && labelESGProfile.Tag.ToString() == labelESGProfile.Text)
+                labelESGProfile.StyleName = "labelESGProfileSelected";
+            else
+                labelESGProfile.StyleName = "labelESGProfile";
         }
 
         private void contentTipoClasseSection20020_BeforePrint(object sender, CancelEventArgs e) {
@@ -654,7 +780,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-        
+
     }
 
 }

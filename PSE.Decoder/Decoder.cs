@@ -83,7 +83,15 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L066" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        }
+                        } 
+                        else if ((e.SectionName == nameof(Section010) || e.SectionName == nameof(Section200)) && e.PropertyName == nameof(KeyInformation.RiskProfile)) {
+                            e.PropertyValue = "0";                            
+                            if (context.AdaAnagr.AsNoTracking().Any(flt => flt.AnNumIde == e.PropertyKey && string.IsNullOrEmpty(flt.AnRiskPr) == false)) {
+                                string tmpRiskProfile = context.AdaAnagr.AsNoTracking().First(flt => flt.AnNumIde == e.PropertyKey).AnRiskPr;
+                                if(int.TryParse(tmpRiskProfile, out int riskPrf))
+                                    e.PropertyValue = riskPrf.ToString();
+                            }
+                        }                         
                         else if ((e.SectionName == nameof(Section040) || e.SectionName == nameof(Section200)) && (e.PropertyName == nameof(InvestmentAsset.AssetClass) || e.PropertyName == nameof(InvestmentAsset.TypeInvestment)))
                         {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey))

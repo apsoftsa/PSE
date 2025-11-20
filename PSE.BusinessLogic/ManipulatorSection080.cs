@@ -72,6 +72,7 @@ namespace PSE.BusinessLogic
                                                     Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description1_32), AssignRequiredString(posItem.Description2_33)]),
                                                     Description2 = BuildComposedDescription([AssignRequiredDate(posItem.IssueDate_46, _culture), AssignRequiredDate(posItem.MaturityDate_36, _culture)]),
                                                     Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                    IssueDate = posItem.IssueDate_46,
                                                     Coupon = GetCoupon(extEventArgsOperation.PropertyValue, AssignRequiredString(posItem.CouponText_35)),
                                                     PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                     CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
@@ -126,6 +127,7 @@ namespace PSE.BusinessLogic
                                                     Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description1_32), AssignRequiredString(posItem.Description2_33)]),
                                                     Description2 = BuildComposedDescription([AssignRequiredDate(posItem.IssueDate_46, _culture), AssignRequiredDate(posItem.MaturityDate_36, _culture)]),
                                                     Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                    IssueDate = posItem.IssueDate_46,
                                                     Coupon = GetCoupon(extEventArgsOperation.PropertyValue, AssignRequiredString(posItem.CouponText_35)),
                                                     PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                     CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
@@ -138,6 +140,7 @@ namespace PSE.BusinessLogic
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                    ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                                     ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondLessThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
@@ -185,6 +188,7 @@ namespace PSE.BusinessLogic
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                    ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                                     ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondFunds.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m
@@ -215,6 +219,7 @@ namespace PSE.BusinessLogic
                                                         Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description1_32), AssignRequiredString(posItem.Description2_33)]),
                                                         Description2 = BuildComposedDescription([AssignRequiredDate(posItem.IssueDate_46, _culture), AssignRequiredDate(posItem.MaturityDate_36, _culture)]),
                                                         Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                        IssueDate = posItem.IssueDate_46,
                                                         Coupon = GetCoupon(extEventArgsOperation.PropertyValue, AssignRequiredString(posItem.CouponText_35)),
                                                         PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                         CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
@@ -227,6 +232,7 @@ namespace PSE.BusinessLogic
                                                     };
                                                     summaryTo = new SummaryTo() {
                                                         ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                        ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                                         ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondMajorThan5.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                         PercentPrice = 0m,
                                                         ProfitLossNotRealizedValue = 0m
@@ -269,6 +275,7 @@ namespace PSE.BusinessLogic
                                                     Description1 = BuildComposedDescription([AssignRequiredString(posItem.Description1_32), AssignRequiredString(posItem.Description2_33)]),
                                                     Description2 = BuildComposedDescription([AssignRequiredDate(posItem.IssueDate_46, _culture), AssignRequiredDate(posItem.MaturityDate_36, _culture)]),
                                                     Description3 = BuildComposedDescription([AssignRequiredLong(posItem.NumSecurity_29).ToString(), AssignRequiredString(posItem.IsinIban_85)]),
+                                                    IssueDate = posItem.IssueDate_46,
                                                     Coupon = GetCoupon(extEventArgsOperation.PropertyValue, AssignRequiredString(posItem.CouponText_35)),
                                                     PercentRate = AssignRequiredDecimal(posItem.InterestRate_47),
                                                     CapitalMarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
@@ -281,6 +288,7 @@ namespace PSE.BusinessLogic
                                                 };
                                                 summaryTo = new SummaryTo() {
                                                     ValuePrice = AssignRequiredDecimal(posItem.Quote_48),
+                                                    ValueDate = AssignRequiredDate(posItem.QuoteDate_49, _culture),
                                                     ExchangeValue = (curItems != null && curItems.Any(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6 != null)) ? curItems.First(flt => flt.CustomerNumber_2 == posItem.CustomerNumber_2 && flt.Currency_5 == bondConvAndWarrants.Currency && flt.Rate_6.HasValue).Rate_6.Value : 0,
                                                     PercentPrice = 0m,
                                                     ProfitLossNotRealizedValue = 0m

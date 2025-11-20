@@ -32,6 +32,7 @@ namespace PSE.BusinessLogic {
                 ExternalCodifyRequestEventArgs extEventArgsPortfolio;
                 ExternalCodifyRequestEventArgs extEventArgsService;
                 ExternalCodifyRequestEventArgs extEventArgsAdvisor;
+                ExternalCodifyRequestEventArgs extEventArgsRiskProfile;
                 string cultureCode;
                 string categoryDescr;
                 string prevCategory;
@@ -49,15 +50,20 @@ namespace PSE.BusinessLogic {
                         extEventArgsPortfolio = new ExternalCodifyRequestEventArgs(nameof(Section200), nameof(EndExtractCustomer.Portfolio), ideItem.ModelCode_21, propertyParams);
                         OnExternalCodifyRequest(extEventArgsPortfolio);
                         if (!extEventArgsPortfolio.Cancel) {
-                            endExtractCustomer = new EndExtractCustomer() {
-                                CustomerID = AssignRequiredString(ideItem.CustomerId_6),
-                                Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
-                                Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
-                                EsgProfile = AssignRequiredString(extEventArgsService.PropertyValue),
-                                RiskProfile = 0 // ??
-                            };
-                            tmpOutput.Content.SubSection20000 = new SubSection20000("");
-                            tmpOutput.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));
+                            extEventArgsRiskProfile = new ExternalCodifyRequestEventArgs(nameof(Section010), nameof(KeyInformation.RiskProfile), ideItem.CustomerId_6);
+                            OnExternalCodifyRequest(extEventArgsRiskProfile);
+                            if (!extEventArgsRiskProfile.Cancel) {
+
+                                endExtractCustomer = new EndExtractCustomer() {
+                                    CustomerID = AssignRequiredString(ideItem.CustomerId_6),
+                                    Customer = AssignRequiredString(ideItem.CustomerNameShort_5),
+                                    Portfolio = AssignRequiredString(extEventArgsPortfolio.PropertyValue),
+                                    EsgProfile = AssignRequiredString(extEventArgsService.PropertyValue),
+                                    RiskProfile = int.Parse(extEventArgsRiskProfile.PropertyValue)
+                                };
+                                tmpOutput.Content.SubSection20000 = new SubSection20000("");
+                                tmpOutput.Content.SubSection20000.Content.Add(new EndExtractCustomer(endExtractCustomer));
+                            }
                             IEnumerable<IGrouping<string, POS>> groupByCategory = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.SubCat3_14 != ((int)PositionClassifications.INFORMATION_POSITIONS).ToString()).GroupBy(gb => gb.SubCat3_14).OrderBy(ob => ob.Key);
                             if (groupByCategory != null && groupByCategory.Any()) {
                                 categoryDescr = string.Empty;
