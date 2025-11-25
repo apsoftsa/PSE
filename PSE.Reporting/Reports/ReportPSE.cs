@@ -7,7 +7,7 @@ namespace PSE.Reporting.Reports {
 
     public partial class ReportPSE : XtraReport {
 
-        private const int MAX_ITEMS_SHORT_PALETTE = 8;
+        private const int MAX_ITEMS_SHORT_PALETTE = 9;
         private const string PALETTE_FULL_NAME = "BDSPaletteFull";
         private const string PALETTE_SHORT_NAME = "BDSPaletteShort";
 
@@ -496,14 +496,12 @@ namespace PSE.Reporting.Reports {
                 this.sector16000.StyleName = "gridContentStyleBold";
                 this.marketValue16000.StyleName = "gridContentStyleRightAlignBold";
                 this.percentShares16000Fake.StyleName = "gridContentStyleRightAlignBold";
-                this.percentShares16000Fake.TextFormatString = "{0:0}%";
             } else {
                 this.section16000LineGridUpper.StyleName = "gridRowLineStyle";
                 this.section16000LineGridUpper.LineWidth = 1;
                 this.sector16000.StyleName = "gridContentStyle";
                 this.marketValue16000.StyleName = "gridContentStyleRightAlign";
                 this.percentShares16000Fake.StyleName = "gridContentStyleRightAlign";
-                this.percentShares16000Fake.TextFormatString = "{0:0.00}%";
             }
             this.section16000LineGridUpper.Visible = this.DetailReportSection160.CurrentRowIndex > 0;
             this.section16000LineGridDown.Visible = this.DetailReportSection160.CurrentRowIndex == _rowCount - 1;

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.Dictionary", "PSE.Dicti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.Reporting", "PSE.Reporting\PSE.Reporting.csproj", "{6B481F64-1CBB-DC94-9CD1-8A443DA512DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSE.FamConnector", "PSE.FamConnector\PSE.FamConnector.csproj", "{D8A0F269-EB6B-4021-9261-4633F48F1142}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{6B481F64-1CBB-DC94-9CD1-8A443DA512DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B481F64-1CBB-DC94-9CD1-8A443DA512DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B481F64-1CBB-DC94-9CD1-8A443DA512DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A0F269-EB6B-4021-9261-4633F48F1142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A0F269-EB6B-4021-9261-4633F48F1142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A0F269-EB6B-4021-9261-4633F48F1142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A0F269-EB6B-4021-9261-4633F48F1142}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{4B4FA57E-A11D-48BC-B6FA-EEB36E2755A9} = {EFF1F844-ADC6-496F-8296-9124539AA0CA}
 		{47B9B79F-E2E4-438F-87CD-21669A1905B9} = {C94C5988-5FFB-46A7-AFC7-CF142EC84644}
 		{6B481F64-1CBB-DC94-9CD1-8A443DA512DD} = {EFF1F844-ADC6-496F-8296-9124539AA0CA}
+		{D8A0F269-EB6B-4021-9261-4633F48F1142} = {C94C5988-5FFB-46A7-AFC7-CF142EC84644}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37642602-C062-4708-8508-8BD6669992EE}

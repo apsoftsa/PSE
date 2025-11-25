@@ -139,10 +139,14 @@ namespace PSE.Model.Output.Models
             Content = new List<IEndExtractInvestment>();
             if (source.Content != null && source.Content.Any())
             {
+                foreach (var item in source.Content)
+                    Content.Add(new EndExtractInvestment(item));
+                /*
                 foreach (var item in source.Content.Where(f => f.Class == CLASS_ENTRY).OrderByDescending(ob => ob.MarketValueReportingCurrency))
                     Content.Add(new EndExtractInvestment(item));
                 foreach (var item in source.Content.Where(f => f.Class == CLASS_TOTAL).OrderBy(ob => ob.MarketValueReportingCurrency))
                     Content.Add(new EndExtractInvestment(item));
+                */
             }
         }
     }
@@ -166,7 +170,8 @@ namespace PSE.Model.Output.Models
             Content = new List<IEndExtractInvestmentChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
+                //foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
+                foreach (var item in source.Content)
                     Content.Add(new EndExtractInvestmentChart(item));
             }
         }

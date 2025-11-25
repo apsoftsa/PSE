@@ -2,6 +2,7 @@
 using PSE.BusinessLogic;
 using PSE.BusinessLogic.Calculations;
 using PSE.Dictionary;
+using PSE.FamConnector.Multiline;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Input.Models;
@@ -22,6 +23,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection000 _manSect000;
         private readonly ManipulatorSection010 _manSect010;
         private readonly ManipulatorSection020 _manSect020;
+        private readonly ManipulatorSection030 _manSect030;
         private readonly ManipulatorSection040 _manSect040;
         private readonly ManipulatorSection060 _manSect060;
         private readonly ManipulatorSection070 _manSect070;
@@ -58,6 +60,8 @@ namespace PSE.Builder
             _manSect010.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect020 = new();
             _manSect020.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect030 = new();
+            _manSect030.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect040 = new();
             _manSect040.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect060 = new();
@@ -92,20 +96,21 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection000, true, 1),
                 ( ManipolationTypes.AsSection010, true, 3),
                 ( ManipolationTypes.AsSection020, true , 4),
+                ( ManipolationTypes.AsSection030, true , 5),
                 ( ManipolationTypes.AsSection040, false, 2),
-                ( ManipolationTypes.AsSection060, false, 5),
-                ( ManipolationTypes.AsSection070, false, 6),
-                ( ManipolationTypes.AsSection080, false, 7),
-                ( ManipolationTypes.AsSection090, false, 8),
-                ( ManipolationTypes.AsSection110, false, 9),
-                ( ManipolationTypes.AsSection100, false, 10),
-                ( ManipolationTypes.AsSection150, false, 11),
-                ( ManipolationTypes.AsSection160, false, 12),
-                ( ManipolationTypes.AsSection170, false, 13),
-                ( ManipolationTypes.AsSection130, false, 14),
-                ( ManipolationTypes.AsSection190, false, 15),
-                ( ManipolationTypes.AsSection200, false, 16),
-                ( ManipolationTypes.AsFooter, true, 17)
+                ( ManipolationTypes.AsSection060, false, 6),
+                ( ManipolationTypes.AsSection070, false, 7),
+                ( ManipolationTypes.AsSection080, false, 8),
+                ( ManipolationTypes.AsSection090, false, 9),
+                ( ManipolationTypes.AsSection110, false, 11),
+                ( ManipolationTypes.AsSection100, false, 12),
+                ( ManipolationTypes.AsSection150, false, 13),
+                ( ManipolationTypes.AsSection160, false, 14),
+                ( ManipolationTypes.AsSection170, false, 15),
+                ( ManipolationTypes.AsSection130, false, 16),
+                ( ManipolationTypes.AsSection190, false, 17),
+                ( ManipolationTypes.AsSection200, false, 18),
+                ( ManipolationTypes.AsFooter, true, 19)
             };
         }
 
@@ -134,7 +139,7 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection000:
-                                {
+                            case ManipolationTypes.AsSection030: {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
@@ -304,7 +309,7 @@ namespace PSE.Builder
             }
         }
 
-        private IOutputModel? ManipulateInputData(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
+        private IOutputModel? ManipulateInputData(IPSEDictionaryService dictionaryService, IMultilineReader multilineReader, IList<IInputRecord> extractedData, ManipolationTypes manipolationType)
         {
             IOutputModel? output = manipolationType switch
             {
@@ -312,6 +317,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection000 => _manSect000.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection010 => _manSect010.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection020 => _manSect020.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection030 => _manSect030.Manipulate(dictionaryService, multilineReader, extractedData),
                 ManipolationTypes.AsSection040 => _manSect040.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection060 => _manSect060.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection070 => _manSect070.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
@@ -351,7 +357,7 @@ namespace PSE.Builder
             return serializedData ?? string.Empty;
         }
 
-        public IBuiltData Build(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, BuildFormats formatToBuild)
+        public IBuiltData Build(IPSEDictionaryService dictionaryService, IMultilineReader multilineReader, IList<IInputRecord> extractedData, BuildFormats formatToBuild)
         {
             IBuiltData buildData = new BuiltData();
             IList<IOutputModel> sections = new List<IOutputModel>();
@@ -363,7 +369,7 @@ namespace PSE.Builder
                     CheckInputData(buildData, extractedData, manipolationType, isMandatory, formatToBuild);
                     if (buildData.BuildingLog.Outcome == BuildingOutcomes.Success)
                     {
-                        IOutputModel? output = ManipulateInputData(dictionaryService, extractedData, manipolationType);
+                        IOutputModel? output = ManipulateInputData(dictionaryService, multilineReader, extractedData, manipolationType);
                         if (output != null)
                             sections.Add(output);
                         else

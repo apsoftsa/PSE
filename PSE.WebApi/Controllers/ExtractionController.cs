@@ -9,6 +9,7 @@ using PSE.Dictionary;
 using PSE.Model.Common;
 using PSE.Model.Exchange;
 using PSE.Reporting.Reports;
+using PSE.FamConnector.Multiline;
 using PSE.WebApi.ApplicationLogic;
 using PSE.WebApi.ApplicationSettings;
 
@@ -23,11 +24,13 @@ namespace PSE.WebApi.Controllers
     public class ExtractionController : Controller
     {
 
+        private readonly IMultilineReader _multilineReader;
         private readonly IPSEDictionaryService _dictionaryService;
 
-        public ExtractionController(AppSettings appSettings, IPSEDictionaryService dictionaryService) 
+        public ExtractionController(AppSettings appSettings, IMultilineReader multilineReader, IPSEDictionaryService dictionaryService) 
         { 
             ExtractionManager.Initialize(appSettings);
+            _multilineReader = multilineReader; 
             _dictionaryService = dictionaryService; 
         }
 
@@ -60,7 +63,7 @@ namespace PSE.WebApi.Controllers
             try {
                 if (files != null && files.Any()) {
                     var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, _multilineReader, fileContentList);
                     if (outCont != null && outCont.JsonGenerated != string.Empty) {
                         string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
                         using var ms = await GenerateReport(outCont, outputFileName, fileType);
@@ -82,7 +85,7 @@ namespace PSE.WebApi.Controllers
             try {
                 if (files != null && files.Any()) {
                     var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                    IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, _multilineReader, fileContentList);
                     if (outCont != null && outCont.JsonGenerated != string.Empty) {
                         string outputFileName = GenerateFileName(fileContentList.First().FileName, fileType);
                         using var ms = await GenerateReport(outCont, outputFileName, fileType);
@@ -112,7 +115,7 @@ namespace PSE.WebApi.Controllers
             if (files != null && files.Any()) {
                 string outputJson = string.Empty;
                 var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
+                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, _multilineReader, fileContentList);
                 if (outCont != null && outCont.JsonGenerated != string.Empty)
                     return Ok(JsonConvert.SerializeObject(outCont));
                 else
@@ -127,10 +130,10 @@ namespace PSE.WebApi.Controllers
             if (files != null && files.Any())
             {
                 var fileContentList = files.Select(ExtractionManager.ReadFile).ToList();
-                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, fileContentList);
-                if (outCont != null && outCont.JsonGenerated != string.Empty)
+                IOutputContent outCont = ExtractionManager.ExtractFiles(_dictionaryService, _multilineReader, fileContentList);
+                if (outCont != null && outCont.JsonGenerated != string.Empty) {
                     return Ok(JsonConvert.SerializeObject(outCont));
-                else
+                } else
                     return BadRequest();
             }
             else

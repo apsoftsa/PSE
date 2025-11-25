@@ -34,6 +34,7 @@ namespace PSE.WebApi.ApplicationSettings
                 DecoderStringConnection = configuration.GetSection("DecoderSettings:ConnectionString").Get<string>(),
                 DecoderEnabled = configuration.GetSection("DecoderSettings:Enabled").Get<bool>(),
                 DictionariesPath = configuration.GetSection("DictionarySettings:Path").Get<string>(),
+                FamUrl = configuration.GetSection("Fam:Url").Get<string>(),
             };
             return appSettings;
         }

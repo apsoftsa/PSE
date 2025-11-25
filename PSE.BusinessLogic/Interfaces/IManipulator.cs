@@ -1,4 +1,5 @@
 ﻿using PSE.Dictionary;
+using PSE.FamConnector.Multiline;
 using PSE.Model.Events;
 using PSE.Model.Input.Interfaces;
 using PSE.Model.Output.Interfaces;
@@ -22,6 +23,12 @@ namespace PSE.BusinessLogic.Interfaces
         IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null);
 
         string GetObjectNameDestination(IInputRecord inputRecord);
+
+    }
+
+    public interface IMultilineManipulator : IManipulator {
+
+        IOutputModel? Manipulate(IPSEDictionaryService dictionaryService, IMultilineReader multilineReader, IList<IInputRecord> extractedData, decimal? totalAssets = null);
 
     }
 

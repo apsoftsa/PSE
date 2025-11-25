@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using PSE.Dictionary;
+using PSE.FamConnector.Multiline;
 using PSE.WebApi.ApplicationSettings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,8 +26,13 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddSingleton<IPSEDictionaryService>(sp => {
-    var logger = sp.GetRequiredService<ILogger<PSEDictionaryService>>();
-    return new PSEDictionaryService(appSettings.DictionariesPath, logger);
+    var dictLogger = sp.GetRequiredService<ILogger<PSEDictionaryService>>();
+    return new PSEDictionaryService(appSettings.DictionariesPath, dictLogger);
+});
+
+builder.Services.AddSingleton<IMultilineReader>(sp => {
+    var famLogger = sp.GetRequiredService<ILogger<MultilineReader>>();
+    return new MultilineReader(appSettings.FamUrl, famLogger);
 });
 
 var app = builder.Build();

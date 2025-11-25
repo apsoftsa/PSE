@@ -34,6 +34,8 @@ namespace PSE.Model.Output.Interfaces
 
         decimal? PercentNetContribution { get; set; }
 
+        string Class {  get; set; } 
+
     }
 
     public interface ILineAllocationEvolutionChartModelLine
@@ -42,9 +44,7 @@ namespace PSE.Model.Output.Interfaces
         string ModelLine { get; set; }
 
         decimal? PercentNetContribution { get; set; }
-
-        string Period { get; set; }
-
+        
     }
 
     public interface ILineAllocationEvolutionChart

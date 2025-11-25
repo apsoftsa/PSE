@@ -137,6 +137,7 @@ namespace PSE.BusinessLogic.Common
                 new SectionBinding(ManipolationTypes.AsSection000, "section0", "Cover"),
                 new SectionBinding(ManipolationTypes.AsSection010, "section10", "Portfolio Details"),
                 new SectionBinding(ManipolationTypes.AsSection020, "section20", "Performance Evolution"),
+                new SectionBinding(ManipolationTypes.AsSection030, "section30", "Multiline"),
                 new SectionBinding(ManipolationTypes.AsSection040, "section40", "Breakdown by type of investment"),
                 new SectionBinding(ManipolationTypes.AsSection060, "section60", "Breakdown by currency"),
                 new SectionBinding(ManipolationTypes.AsSection070, "section70", "Liquidity", new List<PositionClassifications>() { PositionClassifications.ACCOUNT , PositionClassifications.SHORT_TERM_FUND, PositionClassifications.FIDUCIARY_INVESTMENTS, PositionClassifications.TEMPORARY_DEPOSITS, PositionClassifications.FORWARD_EXCHANGE_TRANSACTIONS, PositionClassifications.CURRENCY_DERIVATIVE_PRODUCTS }),

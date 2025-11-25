@@ -158,6 +158,152 @@
       }
     }
   },
+  "section30": {
+    "name": "Multiline",
+    "content": {
+      "keyInformation": [
+        {
+          "period": "05.02.2025 - 16.07.2025",
+          "assetsTo": [
+            {
+              "valueDate": "16.07.2025",
+              "valueAsset": 2958838.32
+            }
+          ],
+          "currency": "EUR",
+          "percentPerformance": -1.37
+        }
+      ],
+      "subSection3000": {
+        "name": "Line Performance analysis",
+        "content": [
+          {
+            "modelLine": "AZIONARIO SVIZZERA",
+            "currency": "EUR",
+            "percentNetContribution": -0.57,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "BREVE TERMINE USD",
+            "currency": "USD",
+            "percentNetContribution": -0.12,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "AZIONARIO GLOBALE",
+            "currency": "EUR",
+            "percentNetContribution": -0.28,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "BILANCIATO",
+            "currency": "EUR",
+            "percentNetContribution": -0.12,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "BREVE TERMINE EUR",
+            "currency": "EUR",
+            "percentNetContribution": -0.33,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "BREVE TERMINE CHF",
+            "currency": "CHF",
+            "percentNetContribution": 0.01,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "TOTAL RETURN USD",
+            "currency": "USD",
+            "percentNetContribution": 0.61,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "OBBLIGAZIONARIO EUR",
+            "currency": "EUR",
+            "percentNetContribution": -0.98,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "BILANCIATA INTELLIGENZA ARTIFICIALE",
+            "currency": "EUR",
+            "percentNetContribution": 0.42,
+            "class": "Entry"
+          },
+          {
+            "modelLine": "Total",
+            "currency": "",
+            "percentNetContribution": -1.36,
+            "class": "Total"
+          }
+        ]
+      },
+      "subSection3010": {
+        "name": "Line allocation evolution chart",
+        "content": [
+          {
+            "period": "05.02.2025",
+            "modelLines": [
+              {
+                "modelLine": "AZIONARIO SVIZZERA",
+                "percentNetContribution": 10.00
+              },
+              {
+                "modelLine": "BREVE TERMINE USD",
+                "percentNetContribution": 15.00
+              },
+              {
+                "modelLine": "AZIONARIO GLOBALE",
+                "percentNetContribution": 15.00
+              },
+              {
+                "modelLine": "BILANCIATO",
+                "percentNetContribution": 20.00
+              },
+              {
+                "modelLine": "BREVE TERMINE EUR",
+                "percentNetContribution": 25.00
+              },
+              {
+                "modelLine": "BREVE TERMINE CHF",
+                "percentNetContribution": 15.00
+              }
+            ]
+          },
+          {
+            "period": "07.02.2025",
+            "modelLines": [
+              {
+                "modelLine": "AZIONARIO SVIZZERA",
+                "percentNetContribution": 10.00
+              },
+              {
+                "modelLine": "TOTAL RETURN USD",
+                "percentNetContribution": 15.00
+              },
+              {
+                "modelLine": "BREVE TERMINE EUR",
+                "percentNetContribution": 15.00
+              },
+              {
+                "modelLine": "AZIONARIO GLOBALE",
+                "percentNetContribution": 15.00
+              },
+              {
+                "modelLine": "OBBLIGAZIONARIO EUR",
+                "percentNetContribution": 25.00
+              },
+              {
+                "modelLine": "BILANCIATA INTELLIGENZA ARTIFICIALE",
+                "percentNetContribution": 20.00
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
   "section40": {
     "name": "Breakdown by type of investment",
     "content": {
@@ -4031,7 +4177,7 @@
             "sector": "SERVIZI DIVERSI",
             "class": "Entry",
             "percentShares": 3.45
-          }          
+          }
         ]
       }
     }

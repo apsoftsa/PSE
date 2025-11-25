@@ -76,12 +76,14 @@ namespace PSE.Model.Output.Models
         public string Currency { get; set; }
 
         public decimal? PercentNetContribution { get; set; }
+        public string Class {  get; set; }  
 
         public LinePerformanceAnalysis()
         {
             ModelLine = string.Empty;
             Currency = string.Empty;
             PercentNetContribution = 0;
+            Class = string.Empty;   
         }
 
         public LinePerformanceAnalysis(ILinePerformanceAnalysis source)
@@ -89,6 +91,7 @@ namespace PSE.Model.Output.Models
             ModelLine = source.ModelLine;
             Currency = source.Currency;
             PercentNetContribution = source.PercentNetContribution;
+            Class = source.Class;
         }
 
     }
@@ -104,21 +107,16 @@ namespace PSE.Model.Output.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public decimal? PercentNetContribution { get; set; }
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Period { get; set; }
-
         public LineAllocationEvolutionChartModelLine()
         {
             ModelLine = string.Empty;
             PercentNetContribution = 0;
-            Period = string.Empty;  
         }
 
         public LineAllocationEvolutionChartModelLine(ILineAllocationEvolutionChartModelLine source)
         {
             ModelLine = source.ModelLine;
             PercentNetContribution = source.PercentNetContribution;
-            Period = source.Period;
         }
 
     }
@@ -223,8 +221,8 @@ namespace PSE.Model.Output.Models
         public Section030Content()
         {
             KeyInformation = new List<IMultilineKeyInformation>();
-            SubSection3000 = null;
-            SubSection3010 = null;
+            SubSection3000 = new SubSection3000Content();
+            SubSection3010 = new SubSection3010Content();
         }
 
         public Section030Content(ISection030Content source)

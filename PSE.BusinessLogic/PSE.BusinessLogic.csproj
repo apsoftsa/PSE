@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PSE.Dictionary\PSE.Dictionary.csproj" />
+    <ProjectReference Include="..\PSE.FamConnector\PSE.FamConnector.csproj" />
     <ProjectReference Include="..\PSE.Model\PSE.Model.csproj" />
   </ItemGroup>
 
