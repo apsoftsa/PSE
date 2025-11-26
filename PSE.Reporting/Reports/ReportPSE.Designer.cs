@@ -118,699 +118,707 @@
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode91 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode92 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentNetContribution", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode93 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode94 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection3010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode95 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode96 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode97 = new DevExpress.DataAccess.Json.JsonSchemaNode("period", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode98 = new DevExpress.DataAccess.Json.JsonSchemaNode("modelLines", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode99 = new DevExpress.DataAccess.Json.JsonSchemaNode("modelLine", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode100 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentNetContribution", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode101 = new DevExpress.DataAccess.Json.JsonSchemaNode("section40", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode102 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode103 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode104 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection4000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode105 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode106 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode107 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode108 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode109 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrencyT", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode110 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestmentT", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode111 = new DevExpress.DataAccess.Json.JsonSchemaNode("typeInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode112 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode113 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode114 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection4010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode115 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode116 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode117 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode118 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode119 = new DevExpress.DataAccess.Json.JsonSchemaNode("section60", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode120 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode121 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode122 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection6000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode94 = new DevExpress.DataAccess.Json.JsonSchemaNode("elementIndex", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode95 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection3010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode96 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode97 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode98 = new DevExpress.DataAccess.Json.JsonSchemaNode("period", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode99 = new DevExpress.DataAccess.Json.JsonSchemaNode("modelLines", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode100 = new DevExpress.DataAccess.Json.JsonSchemaNode("modelLine", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode101 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentNetContribution", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode102 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection3020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode103 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode104 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode105 = new DevExpress.DataAccess.Json.JsonSchemaNode("period", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode106 = new DevExpress.DataAccess.Json.JsonSchemaNode("modelLine", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode107 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentNetContribution", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode108 = new DevExpress.DataAccess.Json.JsonSchemaNode("elementIndex", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode109 = new DevExpress.DataAccess.Json.JsonSchemaNode("section40", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode110 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode111 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode112 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection4000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode113 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode114 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode115 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode116 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode117 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrencyT", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode118 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestmentT", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode119 = new DevExpress.DataAccess.Json.JsonSchemaNode("typeInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode120 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode121 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode122 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection4010", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode123 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode124 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode125 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode126 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode127 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode128 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode129 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode130 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode131 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection6010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode132 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode133 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode134 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode125 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode126 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode127 = new DevExpress.DataAccess.Json.JsonSchemaNode("section60", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode128 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode129 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode130 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection6000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode131 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode132 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode133 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode134 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode135 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode136 = new DevExpress.DataAccess.Json.JsonSchemaNode("section70", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode137 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode138 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode139 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode136 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode137 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode138 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode139 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection6010", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode140 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode141 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode142 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode143 = new DevExpress.DataAccess.Json.JsonSchemaNode("iban", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode144 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode145 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode146 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode147 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode142 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode143 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode144 = new DevExpress.DataAccess.Json.JsonSchemaNode("section70", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode145 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode146 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode147 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7000", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode148 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode149 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode150 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode151 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode152 = new DevExpress.DataAccess.Json.JsonSchemaNode("quantity", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode153 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode154 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode155 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode156 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode157 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode158 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode159 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode160 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode161 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode162 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode163 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode164 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode165 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode166 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode167 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode168 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode169 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode170 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode171 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode172 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode173 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode174 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode175 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode176 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode177 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode178 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode179 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode180 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7020", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode181 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode182 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode183 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode184 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode185 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode186 = new DevExpress.DataAccess.Json.JsonSchemaNode("correspondent", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode187 = new DevExpress.DataAccess.Json.JsonSchemaNode("openingDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode188 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode189 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode190 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode191 = new DevExpress.DataAccess.Json.JsonSchemaNode("accruedInterestReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode192 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode193 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7030", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode194 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode195 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode196 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode197 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode198 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode199 = new DevExpress.DataAccess.Json.JsonSchemaNode("correspondent", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode200 = new DevExpress.DataAccess.Json.JsonSchemaNode("openingDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode201 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode202 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode203 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode204 = new DevExpress.DataAccess.Json.JsonSchemaNode("accruedInterestReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode205 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode206 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7040", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode207 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode208 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode209 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode210 = new DevExpress.DataAccess.Json.JsonSchemaNode("currencyValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode211 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode212 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode213 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode214 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode215 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode216 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLoss", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode217 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode218 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7050", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode219 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode220 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode221 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode222 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode223 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode224 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode225 = new DevExpress.DataAccess.Json.JsonSchemaNode("strike", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode226 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode227 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode228 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode229 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode230 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode231 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode232 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode233 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode234 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode235 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode236 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode237 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode238 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode239 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode240 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode241 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode242 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode243 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode244 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode245 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode246 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode247 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode248 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode249 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode250 = new DevExpress.DataAccess.Json.JsonSchemaNode("section80", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode251 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode252 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode253 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode254 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode255 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode256 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode257 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode258 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode259 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode260 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode261 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode262 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode263 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode264 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode265 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode266 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode267 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode268 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode269 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode270 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode271 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode272 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode273 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode274 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode275 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode276 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode277 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode278 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode279 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode280 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode281 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode282 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode283 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode284 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode285 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode286 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode287 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode288 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode289 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode290 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode291 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode292 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode293 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode294 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode295 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode296 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode297 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode298 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode299 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode300 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode301 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode302 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode303 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode304 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode305 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode306 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode307 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode308 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode309 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode310 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode311 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode312 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode313 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode314 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode315 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode316 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode317 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode318 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode319 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode320 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode321 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode322 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode323 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode324 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode325 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode326 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode327 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode328 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode329 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode330 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode331 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8020", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode332 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode333 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode334 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode335 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode336 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode337 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode338 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode339 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode340 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode341 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode342 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode343 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode344 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode345 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode346 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode347 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode348 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode349 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode350 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode351 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode352 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode353 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode354 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode355 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode356 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode357 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode358 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode359 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode360 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode361 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode362 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode363 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode364 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode365 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode366 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode367 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode368 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode369 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode370 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8030", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode371 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode372 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode373 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode374 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode375 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode376 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode377 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode378 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode379 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode380 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode381 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode382 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode383 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode384 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode385 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode386 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode387 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode388 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode389 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode390 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode391 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode392 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode393 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode394 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode395 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode396 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode397 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode398 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode399 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode400 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode401 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode402 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode403 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode404 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode405 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode406 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode407 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode408 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode409 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8040", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode410 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode411 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode412 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode413 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode414 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode415 = new DevExpress.DataAccess.Json.JsonSchemaNode("quantity", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode416 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode417 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode418 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode419 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode420 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode421 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode422 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode423 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode424 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode425 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode426 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode427 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode428 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode429 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode430 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode431 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode432 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode433 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode434 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode435 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode436 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode437 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode438 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode439 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode440 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode441 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode442 = new DevExpress.DataAccess.Json.JsonSchemaNode("section90", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode443 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode444 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode445 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode446 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode447 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode448 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode449 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode450 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode451 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode452 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode453 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode454 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode455 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode456 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode457 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode458 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode459 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode460 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode461 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode462 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode463 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode464 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode465 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode466 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode467 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode468 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode469 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode470 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode471 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode472 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode473 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode474 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode475 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode476 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9020", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode477 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode478 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode479 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode480 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode481 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode482 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode483 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode484 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode485 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode486 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode487 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode488 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode489 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode490 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode491 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode492 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode493 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode494 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode495 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode496 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode497 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode498 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode499 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode500 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode501 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode502 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode503 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode504 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode505 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode506 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode507 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode508 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode509 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9030", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode510 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode511 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode512 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode513 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode514 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode515 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode516 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode517 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode518 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode519 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode520 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode521 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode522 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode523 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode524 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode525 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode526 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode527 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode528 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode529 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode530 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode531 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode532 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode533 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode534 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode535 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode536 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode537 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode538 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode539 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode540 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode541 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode542 = new DevExpress.DataAccess.Json.JsonSchemaNode("section110", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode543 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode544 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode545 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode546 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode547 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode548 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode549 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode550 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode551 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode552 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode553 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode554 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode555 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode556 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode557 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode558 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode559 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode560 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode561 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode562 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode563 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode564 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode565 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode566 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode567 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode568 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode569 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode570 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode571 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode572 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode573 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode574 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode575 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode576 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode577 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode578 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode579 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode580 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode581 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode582 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode583 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode584 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode585 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode586 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode587 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode588 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode589 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode590 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode591 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode592 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode593 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode594 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode595 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode596 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode597 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode598 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode599 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode600 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode601 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode602 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode603 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode604 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode605 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode606 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode607 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode608 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode609 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode610 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode611 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode612 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode613 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode614 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11020", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode615 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode616 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode617 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode618 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode619 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode620 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode621 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode622 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode623 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode624 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode625 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode626 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode627 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode628 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode629 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode630 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode631 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode632 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode633 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode634 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode635 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode636 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode637 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode638 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode639 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode640 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode641 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode642 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode643 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode644 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode645 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode646 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode647 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11030", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode648 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode649 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode650 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode651 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode652 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode653 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode654 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode655 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode656 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode657 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode658 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode659 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode660 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode661 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode662 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode663 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode664 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode665 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode666 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode667 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode668 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode669 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode670 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode671 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode672 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode673 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode674 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode675 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode676 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode677 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode678 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode679 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode680 = new DevExpress.DataAccess.Json.JsonSchemaNode("section130", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode681 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode682 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode683 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection13000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode684 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode685 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode686 = new DevExpress.DataAccess.Json.JsonSchemaNode("order", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode687 = new DevExpress.DataAccess.Json.JsonSchemaNode("orderValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode688 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode689 = new DevExpress.DataAccess.Json.JsonSchemaNode("operation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode690 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode691 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode692 = new DevExpress.DataAccess.Json.JsonSchemaNode("limitStopLoss", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode693 = new DevExpress.DataAccess.Json.JsonSchemaNode("price", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode694 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode695 = new DevExpress.DataAccess.Json.JsonSchemaNode("section160", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode696 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode697 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode698 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection16000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode699 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode700 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode701 = new DevExpress.DataAccess.Json.JsonSchemaNode("sector", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode702 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode703 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode704 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode705 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection16010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode706 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode707 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode708 = new DevExpress.DataAccess.Json.JsonSchemaNode("sector", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode709 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode710 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode711 = new DevExpress.DataAccess.Json.JsonSchemaNode("section170", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode712 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode713 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode714 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection17000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode715 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode716 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode717 = new DevExpress.DataAccess.Json.JsonSchemaNode("nation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode718 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode719 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode720 = new DevExpress.DataAccess.Json.JsonSchemaNode("country", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode721 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode722 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode723 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode724 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode725 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection17010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode726 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode150 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode151 = new DevExpress.DataAccess.Json.JsonSchemaNode("iban", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode152 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode153 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode154 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode155 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode156 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode157 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode158 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode159 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode160 = new DevExpress.DataAccess.Json.JsonSchemaNode("quantity", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode161 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode162 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode163 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode164 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode165 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode166 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode167 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode168 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode169 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode170 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode171 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode172 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode173 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode174 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode175 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode176 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode177 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode178 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode179 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode180 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode181 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode182 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode183 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode184 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode185 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode186 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode187 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode188 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode189 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode190 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode191 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode192 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode193 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode194 = new DevExpress.DataAccess.Json.JsonSchemaNode("correspondent", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode195 = new DevExpress.DataAccess.Json.JsonSchemaNode("openingDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode196 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode197 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode198 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode199 = new DevExpress.DataAccess.Json.JsonSchemaNode("accruedInterestReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode200 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode201 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7030", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode202 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode203 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode204 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode205 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode206 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode207 = new DevExpress.DataAccess.Json.JsonSchemaNode("correspondent", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode208 = new DevExpress.DataAccess.Json.JsonSchemaNode("openingDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode209 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode210 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode211 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode212 = new DevExpress.DataAccess.Json.JsonSchemaNode("accruedInterestReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode213 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode214 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7040", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode215 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode216 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode217 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode218 = new DevExpress.DataAccess.Json.JsonSchemaNode("currencyValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode219 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode220 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode221 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode222 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode223 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode224 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLoss", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode225 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode226 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection7050", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode227 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode228 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode229 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode230 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode231 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode232 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode233 = new DevExpress.DataAccess.Json.JsonSchemaNode("strike", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode234 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode235 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode236 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode237 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode238 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode239 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode240 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode241 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode242 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode243 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode244 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode245 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode246 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode247 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode248 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode249 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode250 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode251 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode252 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode253 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode254 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode255 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode256 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode257 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode258 = new DevExpress.DataAccess.Json.JsonSchemaNode("section80", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode259 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode260 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode261 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode262 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode263 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode264 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode265 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode266 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode267 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode268 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode269 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode270 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode271 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode272 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode273 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode274 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode275 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode276 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode277 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode278 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode279 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode280 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode281 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode282 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode283 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode284 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode285 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode286 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode287 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode288 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode289 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode290 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode291 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode292 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode293 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode294 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode295 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode296 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode297 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode298 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode299 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode300 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode301 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode302 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode303 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode304 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode305 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode306 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode307 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode308 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode309 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode310 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode311 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode312 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode313 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode314 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode315 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode316 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode317 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode318 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode319 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode320 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode321 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode322 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode323 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode324 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode325 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode326 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode327 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode328 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode329 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode330 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode331 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode332 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode333 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode334 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode335 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode336 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode337 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode338 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode339 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode340 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode341 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode342 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode343 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode344 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode345 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode346 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode347 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode348 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode349 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode350 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode351 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode352 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode353 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode354 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode355 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode356 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode357 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode358 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode359 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode360 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode361 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode362 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode363 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode364 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode365 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode366 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode367 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode368 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode369 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode370 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode371 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode372 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode373 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode374 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode375 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode376 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode377 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode378 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8030", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode379 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode380 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode381 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode382 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode383 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode384 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode385 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode386 = new DevExpress.DataAccess.Json.JsonSchemaNode("spRating", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode387 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode388 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode389 = new DevExpress.DataAccess.Json.JsonSchemaNode("duration", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode390 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode391 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode392 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode393 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode394 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode395 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode396 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode397 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode398 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode399 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode400 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode401 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode402 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode403 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode404 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode405 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode406 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode407 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode408 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode409 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode410 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode411 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode412 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode413 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode414 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode415 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentYTD", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode416 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode417 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection8040", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode418 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode419 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode420 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode421 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode422 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode423 = new DevExpress.DataAccess.Json.JsonSchemaNode("quantity", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode424 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode425 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode426 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode427 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode428 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode429 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode430 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode431 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode432 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode433 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode434 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode435 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode436 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode437 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode438 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode439 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode440 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode441 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode442 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode443 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode444 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode445 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode446 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode447 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode448 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode449 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode450 = new DevExpress.DataAccess.Json.JsonSchemaNode("section90", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode451 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode452 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode453 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode454 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode455 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode456 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode457 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode458 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode459 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode460 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode461 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode462 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode463 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode464 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode465 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode466 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode467 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode468 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode469 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode470 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode471 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode472 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode473 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode474 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode475 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode476 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode477 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode478 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode479 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode480 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode481 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode482 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode483 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode484 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode485 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode486 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode487 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode488 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode489 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode490 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode491 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode492 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode493 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode494 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode495 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode496 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode497 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode498 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode499 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode500 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode501 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode502 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode503 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode504 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode505 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode506 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode507 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode508 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode509 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode510 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode511 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode512 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode513 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode514 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode515 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode516 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode517 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection9030", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode518 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode519 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode520 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode521 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode522 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode523 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode524 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode525 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode526 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode527 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode528 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode529 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode530 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode531 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode532 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode533 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode534 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode535 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode536 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode537 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode538 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode539 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode540 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode541 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode542 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode543 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode544 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode545 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode546 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode547 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode548 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode549 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode550 = new DevExpress.DataAccess.Json.JsonSchemaNode("section110", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode551 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode552 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode553 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode554 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode555 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode556 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode557 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode558 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode559 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode560 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode561 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode562 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode563 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode564 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode565 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode566 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode567 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode568 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode569 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode570 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode571 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode572 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode573 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode574 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode575 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode576 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode577 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode578 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode579 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode580 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode581 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode582 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode583 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode584 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode585 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode586 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode587 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode588 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode589 = new DevExpress.DataAccess.Json.JsonSchemaNode("nominalAmount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode590 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentRate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode591 = new DevExpress.DataAccess.Json.JsonSchemaNode("coupon", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode592 = new DevExpress.DataAccess.Json.JsonSchemaNode("interestMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode593 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode594 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode595 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode596 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode597 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode598 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode599 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode600 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode601 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode602 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode603 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode604 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode605 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode606 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode607 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode608 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode609 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode610 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode611 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode612 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode613 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode614 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode615 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode616 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode617 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode618 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode619 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode620 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode621 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode622 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode623 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode624 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode625 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode626 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode627 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode628 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode629 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode630 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode631 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode632 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode633 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode634 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode635 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode636 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode637 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode638 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode639 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode640 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode641 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode642 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode643 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode644 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode645 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode646 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode647 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode648 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode649 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode650 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode651 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode652 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode653 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode654 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode655 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection11030", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode656 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode657 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode658 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode659 = new DevExpress.DataAccess.Json.JsonSchemaNode("description1", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode660 = new DevExpress.DataAccess.Json.JsonSchemaNode("description2", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode661 = new DevExpress.DataAccess.Json.JsonSchemaNode("description3", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode662 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode663 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryTo", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode664 = new DevExpress.DataAccess.Json.JsonSchemaNode("valueDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode665 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode666 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode667 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode668 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode669 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode670 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode671 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryBeginningYear", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode672 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode673 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode674 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode675 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode676 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode677 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode678 = new DevExpress.DataAccess.Json.JsonSchemaNode("summaryPurchase", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode679 = new DevExpress.DataAccess.Json.JsonSchemaNode("valuePrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode680 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentPrice", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode681 = new DevExpress.DataAccess.Json.JsonSchemaNode("exchangeValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode682 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentExchange", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode683 = new DevExpress.DataAccess.Json.JsonSchemaNode("profitLossNotRealizedValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode684 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentProfitLossN", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode685 = new DevExpress.DataAccess.Json.JsonSchemaNode("capitalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode686 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode687 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentWeight", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode688 = new DevExpress.DataAccess.Json.JsonSchemaNode("section130", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode689 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode690 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode691 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection13000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode692 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode693 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode694 = new DevExpress.DataAccess.Json.JsonSchemaNode("order", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode695 = new DevExpress.DataAccess.Json.JsonSchemaNode("orderValue", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode696 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode697 = new DevExpress.DataAccess.Json.JsonSchemaNode("operation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode698 = new DevExpress.DataAccess.Json.JsonSchemaNode("amount", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode699 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode700 = new DevExpress.DataAccess.Json.JsonSchemaNode("limitStopLoss", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode701 = new DevExpress.DataAccess.Json.JsonSchemaNode("price", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode702 = new DevExpress.DataAccess.Json.JsonSchemaNode("expirationDate", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode703 = new DevExpress.DataAccess.Json.JsonSchemaNode("section160", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode704 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode705 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode706 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection16000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode707 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode708 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode709 = new DevExpress.DataAccess.Json.JsonSchemaNode("sector", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode710 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode711 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode712 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode713 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection16010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode714 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode715 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode716 = new DevExpress.DataAccess.Json.JsonSchemaNode("sector", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode717 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode718 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode719 = new DevExpress.DataAccess.Json.JsonSchemaNode("section170", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode720 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode721 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode722 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection17000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode723 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode724 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode725 = new DevExpress.DataAccess.Json.JsonSchemaNode("nation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode726 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode727 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode728 = new DevExpress.DataAccess.Json.JsonSchemaNode("nation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode729 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode730 = new DevExpress.DataAccess.Json.JsonSchemaNode("section190", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode731 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode732 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode733 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection19000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode728 = new DevExpress.DataAccess.Json.JsonSchemaNode("country", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode729 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode730 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode731 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode732 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode733 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection17010", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode734 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode735 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode736 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAssetsNotTransferred", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode737 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalNotTransferredMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode738 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode739 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode740 = new DevExpress.DataAccess.Json.JsonSchemaNode("objects", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode741 = new DevExpress.DataAccess.Json.JsonSchemaNode("object", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode742 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode743 = new DevExpress.DataAccess.Json.JsonSchemaNode("addressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode744 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode745 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode746 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode747 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection19010", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode748 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode749 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode750 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode751 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAddressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode752 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode753 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAssetsNotTransferred", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode754 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalNotTransferredMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode755 = new DevExpress.DataAccess.Json.JsonSchemaNode("objects", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode756 = new DevExpress.DataAccess.Json.JsonSchemaNode("object", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode757 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode758 = new DevExpress.DataAccess.Json.JsonSchemaNode("addressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode759 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode760 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode761 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode762 = new DevExpress.DataAccess.Json.JsonSchemaNode("section200", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode763 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode764 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode765 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20000", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode766 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode767 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode768 = new DevExpress.DataAccess.Json.JsonSchemaNode("customer", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode769 = new DevExpress.DataAccess.Json.JsonSchemaNode("customerID", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode770 = new DevExpress.DataAccess.Json.JsonSchemaNode("portfolio", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode771 = new DevExpress.DataAccess.Json.JsonSchemaNode("riskProfile", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode772 = new DevExpress.DataAccess.Json.JsonSchemaNode("esgProfile", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode773 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode736 = new DevExpress.DataAccess.Json.JsonSchemaNode("nation", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode737 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentShares", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode738 = new DevExpress.DataAccess.Json.JsonSchemaNode("section190", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode739 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode740 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode741 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection19000", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode742 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode743 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode744 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAssetsNotTransferred", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode745 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalNotTransferredMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode746 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode747 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode748 = new DevExpress.DataAccess.Json.JsonSchemaNode("objects", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode749 = new DevExpress.DataAccess.Json.JsonSchemaNode("object", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode750 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode751 = new DevExpress.DataAccess.Json.JsonSchemaNode("addressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode752 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode753 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode754 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode755 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection19010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode756 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode757 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode758 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAsset", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode759 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAddressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode760 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode761 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalAssetsNotTransferred", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode762 = new DevExpress.DataAccess.Json.JsonSchemaNode("totalNotTransferredMarketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode763 = new DevExpress.DataAccess.Json.JsonSchemaNode("objects", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode764 = new DevExpress.DataAccess.Json.JsonSchemaNode("object", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode765 = new DevExpress.DataAccess.Json.JsonSchemaNode("description", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode766 = new DevExpress.DataAccess.Json.JsonSchemaNode("addressBook", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode767 = new DevExpress.DataAccess.Json.JsonSchemaNode("currency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode768 = new DevExpress.DataAccess.Json.JsonSchemaNode("currentBalance", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode769 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode770 = new DevExpress.DataAccess.Json.JsonSchemaNode("section200", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode771 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode772 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode773 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20000", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode774 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode775 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode776 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode777 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode778 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode779 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode780 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20020", true);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode781 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode782 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode783 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode784 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode785 = new DevExpress.DataAccess.Json.JsonSchemaNode("footer", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
-            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode786 = new DevExpress.DataAccess.Json.JsonSchemaNode("bankAddress", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode776 = new DevExpress.DataAccess.Json.JsonSchemaNode("customer", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode777 = new DevExpress.DataAccess.Json.JsonSchemaNode("customerID", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode778 = new DevExpress.DataAccess.Json.JsonSchemaNode("portfolio", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode779 = new DevExpress.DataAccess.Json.JsonSchemaNode("riskProfile", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode780 = new DevExpress.DataAccess.Json.JsonSchemaNode("esgProfile", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode781 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20010", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode782 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode783 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode784 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode785 = new DevExpress.DataAccess.Json.JsonSchemaNode("class", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode786 = new DevExpress.DataAccess.Json.JsonSchemaNode("marketValueReportingCurrency", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode787 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode788 = new DevExpress.DataAccess.Json.JsonSchemaNode("subSection20020", true);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode789 = new DevExpress.DataAccess.Json.JsonSchemaNode("name", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode790 = new DevExpress.DataAccess.Json.JsonSchemaNode("content", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode791 = new DevExpress.DataAccess.Json.JsonSchemaNode("assetClass", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode792 = new DevExpress.DataAccess.Json.JsonSchemaNode("percentInvestment", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode793 = new DevExpress.DataAccess.Json.JsonSchemaNode("footer", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
+            DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode794 = new DevExpress.DataAccess.Json.JsonSchemaNode("bankAddress", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(string));
             DevExpress.XtraCharts.SimpleDiagram simpleDiagram1 = new DevExpress.XtraCharts.SimpleDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel1 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
@@ -835,6 +843,10 @@
             DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel5 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
             DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView5 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series7 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.StackedBarSeriesLabel stackedBarSeriesLabel1 = new DevExpress.XtraCharts.StackedBarSeriesLabel();
+            DevExpress.XtraCharts.StackedBarSeriesView stackedBarSeriesView1 = new DevExpress.XtraCharts.StackedBarSeriesView();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.linePageHeader = new DevExpress.XtraReports.UI.XRLine();
             this.contentHeaderRow1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -1291,7 +1303,7 @@
             this.labelEntrateUsciteSection2000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelPerformanceSection2000 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeaderBandSection2010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel381 = new DevExpress.XtraReports.UI.XRLabel();
+            this.verticalLineEvoluzionePerformance = new DevExpress.XtraReports.UI.XRLabel();
             this.chartSection2010 = new DevExpress.XtraReports.UI.XRChart();
             this.xrLine25 = new DevExpress.XtraReports.UI.XRLine();
             this.labelSubHeaderSection2010 = new DevExpress.XtraReports.UI.XRLabel();
@@ -1563,7 +1575,7 @@
             this.LabelPortafoglioDettPortafoglio = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel20 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooterBandSection1000 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.xrLabel372 = new DevExpress.XtraReports.UI.XRLabel();
+            this.verticalLineDettagliPortafoglio = new DevExpress.XtraReports.UI.XRLabel();
             this.contentPatrimonialFluctuation = new DevExpress.XtraReports.UI.XRLabel();
             this.labelOscillazionePatrimoniale = new DevExpress.XtraReports.UI.XRLabel();
             this.ContentSection1000PlusMinusValenza2 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2233,6 +2245,35 @@
             this.reportContentStyleBoldRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
             this.reportContentStyleRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
             this.reportContentStyleItalicRightAlign = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.DetailReport = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.DetailReport3000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.contentModelloSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.contentDivisaSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.contentContributoNettoSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine113 = new DevExpress.XtraReports.UI.XRLine();
+            this.bookmarkModelloSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection3000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelDivisaSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelContributoNettoSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelModelloSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelSubHeaderSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine31 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine60 = new DevExpress.XtraReports.UI.XRLine();
+            this.LabelPatrimonioInfChiaveMultilinea = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelPerformanceInfChiaveMultilinea = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelMonetaInfChiaveMultilinea = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelPeriodoInfChiaveMultilinea = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel439 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel433 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel405 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel404 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine28 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelSubHeaderKeyInformationSection30 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelHeaderSection3000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection3010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.chartSection3020 = new DevExpress.XtraReports.UI.XRChart();
+            this.xrLine114 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelSubHeaderSection3010 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -2264,6 +2305,11 @@
             ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTableSection19010Objects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSection3020)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // TopMargin
@@ -2577,710 +2623,718 @@
             jsonSchemaNode89.Nodes.Add(jsonSchemaNode91);
             jsonSchemaNode89.Nodes.Add(jsonSchemaNode92);
             jsonSchemaNode89.Nodes.Add(jsonSchemaNode93);
+            jsonSchemaNode89.Nodes.Add(jsonSchemaNode94);
             jsonSchemaNode87.Nodes.Add(jsonSchemaNode88);
             jsonSchemaNode87.Nodes.Add(jsonSchemaNode89);
-            jsonSchemaNode98.Nodes.Add(jsonSchemaNode99);
-            jsonSchemaNode98.Nodes.Add(jsonSchemaNode100);
-            jsonSchemaNode96.Nodes.Add(jsonSchemaNode97);
-            jsonSchemaNode96.Nodes.Add(jsonSchemaNode98);
-            jsonSchemaNode94.Nodes.Add(jsonSchemaNode95);
-            jsonSchemaNode94.Nodes.Add(jsonSchemaNode96);
-            jsonSchemaNode79.Nodes.Add(jsonSchemaNode80);
-            jsonSchemaNode79.Nodes.Add(jsonSchemaNode87);
-            jsonSchemaNode79.Nodes.Add(jsonSchemaNode94);
-            jsonSchemaNode77.Nodes.Add(jsonSchemaNode78);
-            jsonSchemaNode77.Nodes.Add(jsonSchemaNode79);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode107);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode108);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode109);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode110);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode111);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode112);
-            jsonSchemaNode106.Nodes.Add(jsonSchemaNode113);
+            jsonSchemaNode99.Nodes.Add(jsonSchemaNode100);
+            jsonSchemaNode99.Nodes.Add(jsonSchemaNode101);
+            jsonSchemaNode97.Nodes.Add(jsonSchemaNode98);
+            jsonSchemaNode97.Nodes.Add(jsonSchemaNode99);
+            jsonSchemaNode95.Nodes.Add(jsonSchemaNode96);
+            jsonSchemaNode95.Nodes.Add(jsonSchemaNode97);
             jsonSchemaNode104.Nodes.Add(jsonSchemaNode105);
             jsonSchemaNode104.Nodes.Add(jsonSchemaNode106);
-            jsonSchemaNode116.Nodes.Add(jsonSchemaNode117);
-            jsonSchemaNode116.Nodes.Add(jsonSchemaNode118);
+            jsonSchemaNode104.Nodes.Add(jsonSchemaNode107);
+            jsonSchemaNode104.Nodes.Add(jsonSchemaNode108);
+            jsonSchemaNode102.Nodes.Add(jsonSchemaNode103);
+            jsonSchemaNode102.Nodes.Add(jsonSchemaNode104);
+            jsonSchemaNode79.Nodes.Add(jsonSchemaNode80);
+            jsonSchemaNode79.Nodes.Add(jsonSchemaNode87);
+            jsonSchemaNode79.Nodes.Add(jsonSchemaNode95);
+            jsonSchemaNode79.Nodes.Add(jsonSchemaNode102);
+            jsonSchemaNode77.Nodes.Add(jsonSchemaNode78);
+            jsonSchemaNode77.Nodes.Add(jsonSchemaNode79);
             jsonSchemaNode114.Nodes.Add(jsonSchemaNode115);
             jsonSchemaNode114.Nodes.Add(jsonSchemaNode116);
-            jsonSchemaNode103.Nodes.Add(jsonSchemaNode104);
-            jsonSchemaNode103.Nodes.Add(jsonSchemaNode114);
-            jsonSchemaNode101.Nodes.Add(jsonSchemaNode102);
-            jsonSchemaNode101.Nodes.Add(jsonSchemaNode103);
+            jsonSchemaNode114.Nodes.Add(jsonSchemaNode117);
+            jsonSchemaNode114.Nodes.Add(jsonSchemaNode118);
+            jsonSchemaNode114.Nodes.Add(jsonSchemaNode119);
+            jsonSchemaNode114.Nodes.Add(jsonSchemaNode120);
+            jsonSchemaNode114.Nodes.Add(jsonSchemaNode121);
+            jsonSchemaNode112.Nodes.Add(jsonSchemaNode113);
+            jsonSchemaNode112.Nodes.Add(jsonSchemaNode114);
             jsonSchemaNode124.Nodes.Add(jsonSchemaNode125);
             jsonSchemaNode124.Nodes.Add(jsonSchemaNode126);
-            jsonSchemaNode124.Nodes.Add(jsonSchemaNode127);
-            jsonSchemaNode124.Nodes.Add(jsonSchemaNode128);
-            jsonSchemaNode124.Nodes.Add(jsonSchemaNode129);
-            jsonSchemaNode124.Nodes.Add(jsonSchemaNode130);
             jsonSchemaNode122.Nodes.Add(jsonSchemaNode123);
             jsonSchemaNode122.Nodes.Add(jsonSchemaNode124);
-            jsonSchemaNode133.Nodes.Add(jsonSchemaNode134);
-            jsonSchemaNode133.Nodes.Add(jsonSchemaNode135);
-            jsonSchemaNode131.Nodes.Add(jsonSchemaNode132);
-            jsonSchemaNode131.Nodes.Add(jsonSchemaNode133);
-            jsonSchemaNode121.Nodes.Add(jsonSchemaNode122);
-            jsonSchemaNode121.Nodes.Add(jsonSchemaNode131);
-            jsonSchemaNode119.Nodes.Add(jsonSchemaNode120);
-            jsonSchemaNode119.Nodes.Add(jsonSchemaNode121);
+            jsonSchemaNode111.Nodes.Add(jsonSchemaNode112);
+            jsonSchemaNode111.Nodes.Add(jsonSchemaNode122);
+            jsonSchemaNode109.Nodes.Add(jsonSchemaNode110);
+            jsonSchemaNode109.Nodes.Add(jsonSchemaNode111);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode133);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode134);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode135);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode136);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode137);
+            jsonSchemaNode132.Nodes.Add(jsonSchemaNode138);
+            jsonSchemaNode130.Nodes.Add(jsonSchemaNode131);
+            jsonSchemaNode130.Nodes.Add(jsonSchemaNode132);
             jsonSchemaNode141.Nodes.Add(jsonSchemaNode142);
             jsonSchemaNode141.Nodes.Add(jsonSchemaNode143);
-            jsonSchemaNode141.Nodes.Add(jsonSchemaNode144);
-            jsonSchemaNode141.Nodes.Add(jsonSchemaNode145);
-            jsonSchemaNode141.Nodes.Add(jsonSchemaNode146);
             jsonSchemaNode139.Nodes.Add(jsonSchemaNode140);
             jsonSchemaNode139.Nodes.Add(jsonSchemaNode141);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode155);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode156);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode157);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode158);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode159);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode160);
-            jsonSchemaNode154.Nodes.Add(jsonSchemaNode161);
+            jsonSchemaNode129.Nodes.Add(jsonSchemaNode130);
+            jsonSchemaNode129.Nodes.Add(jsonSchemaNode139);
+            jsonSchemaNode127.Nodes.Add(jsonSchemaNode128);
+            jsonSchemaNode127.Nodes.Add(jsonSchemaNode129);
+            jsonSchemaNode149.Nodes.Add(jsonSchemaNode150);
+            jsonSchemaNode149.Nodes.Add(jsonSchemaNode151);
+            jsonSchemaNode149.Nodes.Add(jsonSchemaNode152);
+            jsonSchemaNode149.Nodes.Add(jsonSchemaNode153);
+            jsonSchemaNode149.Nodes.Add(jsonSchemaNode154);
+            jsonSchemaNode147.Nodes.Add(jsonSchemaNode148);
+            jsonSchemaNode147.Nodes.Add(jsonSchemaNode149);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode163);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode164);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode165);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode166);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode167);
             jsonSchemaNode162.Nodes.Add(jsonSchemaNode168);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode170);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode171);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode172);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode173);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode174);
-            jsonSchemaNode169.Nodes.Add(jsonSchemaNode175);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode150);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode151);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode152);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode153);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode154);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode162);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode169);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode176);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode177);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode178);
-            jsonSchemaNode149.Nodes.Add(jsonSchemaNode179);
-            jsonSchemaNode147.Nodes.Add(jsonSchemaNode148);
-            jsonSchemaNode147.Nodes.Add(jsonSchemaNode149);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode183);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode184);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode185);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode186);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode187);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode188);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode189);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode190);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode191);
-            jsonSchemaNode182.Nodes.Add(jsonSchemaNode192);
-            jsonSchemaNode180.Nodes.Add(jsonSchemaNode181);
-            jsonSchemaNode180.Nodes.Add(jsonSchemaNode182);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode196);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode197);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode198);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode199);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode200);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode201);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode202);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode203);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode204);
-            jsonSchemaNode195.Nodes.Add(jsonSchemaNode205);
-            jsonSchemaNode193.Nodes.Add(jsonSchemaNode194);
-            jsonSchemaNode193.Nodes.Add(jsonSchemaNode195);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode209);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode210);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode211);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode212);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode213);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode214);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode215);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode216);
-            jsonSchemaNode208.Nodes.Add(jsonSchemaNode217);
-            jsonSchemaNode206.Nodes.Add(jsonSchemaNode207);
-            jsonSchemaNode206.Nodes.Add(jsonSchemaNode208);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode227);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode228);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode229);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode230);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode231);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode232);
-            jsonSchemaNode226.Nodes.Add(jsonSchemaNode233);
+            jsonSchemaNode162.Nodes.Add(jsonSchemaNode169);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode171);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode172);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode173);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode174);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode175);
+            jsonSchemaNode170.Nodes.Add(jsonSchemaNode176);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode178);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode179);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode180);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode181);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode182);
+            jsonSchemaNode177.Nodes.Add(jsonSchemaNode183);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode158);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode159);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode160);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode161);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode162);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode170);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode177);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode184);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode185);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode186);
+            jsonSchemaNode157.Nodes.Add(jsonSchemaNode187);
+            jsonSchemaNode155.Nodes.Add(jsonSchemaNode156);
+            jsonSchemaNode155.Nodes.Add(jsonSchemaNode157);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode191);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode192);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode193);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode194);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode195);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode196);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode197);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode198);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode199);
+            jsonSchemaNode190.Nodes.Add(jsonSchemaNode200);
+            jsonSchemaNode188.Nodes.Add(jsonSchemaNode189);
+            jsonSchemaNode188.Nodes.Add(jsonSchemaNode190);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode204);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode205);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode206);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode207);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode208);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode209);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode210);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode211);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode212);
+            jsonSchemaNode203.Nodes.Add(jsonSchemaNode213);
+            jsonSchemaNode201.Nodes.Add(jsonSchemaNode202);
+            jsonSchemaNode201.Nodes.Add(jsonSchemaNode203);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode217);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode218);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode219);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode220);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode221);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode222);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode223);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode224);
+            jsonSchemaNode216.Nodes.Add(jsonSchemaNode225);
+            jsonSchemaNode214.Nodes.Add(jsonSchemaNode215);
+            jsonSchemaNode214.Nodes.Add(jsonSchemaNode216);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode235);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode236);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode237);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode238);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode239);
             jsonSchemaNode234.Nodes.Add(jsonSchemaNode240);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode242);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode243);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode244);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode245);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode246);
-            jsonSchemaNode241.Nodes.Add(jsonSchemaNode247);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode221);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode222);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode223);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode224);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode225);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode226);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode234);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode241);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode248);
-            jsonSchemaNode220.Nodes.Add(jsonSchemaNode249);
-            jsonSchemaNode218.Nodes.Add(jsonSchemaNode219);
-            jsonSchemaNode218.Nodes.Add(jsonSchemaNode220);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode139);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode147);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode180);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode193);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode206);
-            jsonSchemaNode138.Nodes.Add(jsonSchemaNode218);
-            jsonSchemaNode136.Nodes.Add(jsonSchemaNode137);
-            jsonSchemaNode136.Nodes.Add(jsonSchemaNode138);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode266);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode267);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode268);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode269);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode270);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode271);
-            jsonSchemaNode265.Nodes.Add(jsonSchemaNode272);
+            jsonSchemaNode234.Nodes.Add(jsonSchemaNode241);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode243);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode244);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode245);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode246);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode247);
+            jsonSchemaNode242.Nodes.Add(jsonSchemaNode248);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode250);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode251);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode252);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode253);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode254);
+            jsonSchemaNode249.Nodes.Add(jsonSchemaNode255);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode229);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode230);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode231);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode232);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode233);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode234);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode242);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode249);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode256);
+            jsonSchemaNode228.Nodes.Add(jsonSchemaNode257);
+            jsonSchemaNode226.Nodes.Add(jsonSchemaNode227);
+            jsonSchemaNode226.Nodes.Add(jsonSchemaNode228);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode147);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode155);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode188);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode201);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode214);
+            jsonSchemaNode146.Nodes.Add(jsonSchemaNode226);
+            jsonSchemaNode144.Nodes.Add(jsonSchemaNode145);
+            jsonSchemaNode144.Nodes.Add(jsonSchemaNode146);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode274);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode275);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode276);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode277);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode278);
             jsonSchemaNode273.Nodes.Add(jsonSchemaNode279);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode281);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode282);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode283);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode284);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode285);
-            jsonSchemaNode280.Nodes.Add(jsonSchemaNode286);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode256);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode257);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode258);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode259);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode260);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode261);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode262);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode263);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode264);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode265);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode273);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode280);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode287);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode288);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode289);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode290);
-            jsonSchemaNode255.Nodes.Add(jsonSchemaNode291);
-            jsonSchemaNode253.Nodes.Add(jsonSchemaNode254);
-            jsonSchemaNode253.Nodes.Add(jsonSchemaNode255);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode305);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode306);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode307);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode308);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode309);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode310);
-            jsonSchemaNode304.Nodes.Add(jsonSchemaNode311);
+            jsonSchemaNode273.Nodes.Add(jsonSchemaNode280);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode282);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode283);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode284);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode285);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode286);
+            jsonSchemaNode281.Nodes.Add(jsonSchemaNode287);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode289);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode290);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode291);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode292);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode293);
+            jsonSchemaNode288.Nodes.Add(jsonSchemaNode294);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode264);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode265);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode266);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode267);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode268);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode269);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode270);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode271);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode272);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode273);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode281);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode288);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode295);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode296);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode297);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode298);
+            jsonSchemaNode263.Nodes.Add(jsonSchemaNode299);
+            jsonSchemaNode261.Nodes.Add(jsonSchemaNode262);
+            jsonSchemaNode261.Nodes.Add(jsonSchemaNode263);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode313);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode314);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode315);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode316);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode317);
             jsonSchemaNode312.Nodes.Add(jsonSchemaNode318);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode320);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode321);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode322);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode323);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode324);
-            jsonSchemaNode319.Nodes.Add(jsonSchemaNode325);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode295);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode296);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode297);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode298);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode299);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode300);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode301);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode302);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode303);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode304);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode312);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode319);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode326);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode327);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode328);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode329);
-            jsonSchemaNode294.Nodes.Add(jsonSchemaNode330);
-            jsonSchemaNode292.Nodes.Add(jsonSchemaNode293);
-            jsonSchemaNode292.Nodes.Add(jsonSchemaNode294);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode344);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode345);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode346);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode347);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode348);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode349);
-            jsonSchemaNode343.Nodes.Add(jsonSchemaNode350);
+            jsonSchemaNode312.Nodes.Add(jsonSchemaNode319);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode321);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode322);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode323);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode324);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode325);
+            jsonSchemaNode320.Nodes.Add(jsonSchemaNode326);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode328);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode329);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode330);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode331);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode332);
+            jsonSchemaNode327.Nodes.Add(jsonSchemaNode333);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode303);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode304);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode305);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode306);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode307);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode308);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode309);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode310);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode311);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode312);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode320);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode327);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode334);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode335);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode336);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode337);
+            jsonSchemaNode302.Nodes.Add(jsonSchemaNode338);
+            jsonSchemaNode300.Nodes.Add(jsonSchemaNode301);
+            jsonSchemaNode300.Nodes.Add(jsonSchemaNode302);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode352);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode353);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode354);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode355);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode356);
             jsonSchemaNode351.Nodes.Add(jsonSchemaNode357);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode359);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode360);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode361);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode362);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode363);
-            jsonSchemaNode358.Nodes.Add(jsonSchemaNode364);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode334);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode335);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode336);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode337);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode338);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode339);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode340);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode341);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode342);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode343);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode351);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode358);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode365);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode366);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode367);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode368);
-            jsonSchemaNode333.Nodes.Add(jsonSchemaNode369);
-            jsonSchemaNode331.Nodes.Add(jsonSchemaNode332);
-            jsonSchemaNode331.Nodes.Add(jsonSchemaNode333);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode383);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode384);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode385);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode386);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode387);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode388);
-            jsonSchemaNode382.Nodes.Add(jsonSchemaNode389);
+            jsonSchemaNode351.Nodes.Add(jsonSchemaNode358);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode360);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode361);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode362);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode363);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode364);
+            jsonSchemaNode359.Nodes.Add(jsonSchemaNode365);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode367);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode368);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode369);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode370);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode371);
+            jsonSchemaNode366.Nodes.Add(jsonSchemaNode372);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode342);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode343);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode344);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode345);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode346);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode347);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode348);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode349);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode350);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode351);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode359);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode366);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode373);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode374);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode375);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode376);
+            jsonSchemaNode341.Nodes.Add(jsonSchemaNode377);
+            jsonSchemaNode339.Nodes.Add(jsonSchemaNode340);
+            jsonSchemaNode339.Nodes.Add(jsonSchemaNode341);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode391);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode392);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode393);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode394);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode395);
             jsonSchemaNode390.Nodes.Add(jsonSchemaNode396);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode398);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode399);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode400);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode401);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode402);
-            jsonSchemaNode397.Nodes.Add(jsonSchemaNode403);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode373);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode374);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode375);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode376);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode377);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode378);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode379);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode380);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode381);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode382);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode390);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode397);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode404);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode405);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode406);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode407);
-            jsonSchemaNode372.Nodes.Add(jsonSchemaNode408);
-            jsonSchemaNode370.Nodes.Add(jsonSchemaNode371);
-            jsonSchemaNode370.Nodes.Add(jsonSchemaNode372);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode418);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode419);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode420);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode421);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode422);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode423);
-            jsonSchemaNode417.Nodes.Add(jsonSchemaNode424);
+            jsonSchemaNode390.Nodes.Add(jsonSchemaNode397);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode399);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode400);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode401);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode402);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode403);
+            jsonSchemaNode398.Nodes.Add(jsonSchemaNode404);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode406);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode407);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode408);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode409);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode410);
+            jsonSchemaNode405.Nodes.Add(jsonSchemaNode411);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode381);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode382);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode383);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode384);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode385);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode386);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode387);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode388);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode389);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode390);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode398);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode405);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode412);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode413);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode414);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode415);
+            jsonSchemaNode380.Nodes.Add(jsonSchemaNode416);
+            jsonSchemaNode378.Nodes.Add(jsonSchemaNode379);
+            jsonSchemaNode378.Nodes.Add(jsonSchemaNode380);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode426);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode427);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode428);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode429);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode430);
             jsonSchemaNode425.Nodes.Add(jsonSchemaNode431);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode433);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode434);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode435);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode436);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode437);
-            jsonSchemaNode432.Nodes.Add(jsonSchemaNode438);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode412);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode413);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode414);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode415);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode416);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode417);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode425);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode432);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode439);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode440);
-            jsonSchemaNode411.Nodes.Add(jsonSchemaNode441);
-            jsonSchemaNode409.Nodes.Add(jsonSchemaNode410);
-            jsonSchemaNode409.Nodes.Add(jsonSchemaNode411);
-            jsonSchemaNode252.Nodes.Add(jsonSchemaNode253);
-            jsonSchemaNode252.Nodes.Add(jsonSchemaNode292);
-            jsonSchemaNode252.Nodes.Add(jsonSchemaNode331);
-            jsonSchemaNode252.Nodes.Add(jsonSchemaNode370);
-            jsonSchemaNode252.Nodes.Add(jsonSchemaNode409);
-            jsonSchemaNode250.Nodes.Add(jsonSchemaNode251);
-            jsonSchemaNode250.Nodes.Add(jsonSchemaNode252);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode453);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode454);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode455);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode456);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode457);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode458);
-            jsonSchemaNode452.Nodes.Add(jsonSchemaNode459);
+            jsonSchemaNode425.Nodes.Add(jsonSchemaNode432);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode434);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode435);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode436);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode437);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode438);
+            jsonSchemaNode433.Nodes.Add(jsonSchemaNode439);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode441);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode442);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode443);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode444);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode445);
+            jsonSchemaNode440.Nodes.Add(jsonSchemaNode446);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode420);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode421);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode422);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode423);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode424);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode425);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode433);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode440);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode447);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode448);
+            jsonSchemaNode419.Nodes.Add(jsonSchemaNode449);
+            jsonSchemaNode417.Nodes.Add(jsonSchemaNode418);
+            jsonSchemaNode417.Nodes.Add(jsonSchemaNode419);
+            jsonSchemaNode260.Nodes.Add(jsonSchemaNode261);
+            jsonSchemaNode260.Nodes.Add(jsonSchemaNode300);
+            jsonSchemaNode260.Nodes.Add(jsonSchemaNode339);
+            jsonSchemaNode260.Nodes.Add(jsonSchemaNode378);
+            jsonSchemaNode260.Nodes.Add(jsonSchemaNode417);
+            jsonSchemaNode258.Nodes.Add(jsonSchemaNode259);
+            jsonSchemaNode258.Nodes.Add(jsonSchemaNode260);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode461);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode462);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode463);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode464);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode465);
             jsonSchemaNode460.Nodes.Add(jsonSchemaNode466);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode468);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode469);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode470);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode471);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode472);
-            jsonSchemaNode467.Nodes.Add(jsonSchemaNode473);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode448);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode449);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode450);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode451);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode452);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode460);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode467);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode474);
-            jsonSchemaNode447.Nodes.Add(jsonSchemaNode475);
-            jsonSchemaNode445.Nodes.Add(jsonSchemaNode446);
-            jsonSchemaNode445.Nodes.Add(jsonSchemaNode447);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode485);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode486);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode487);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode488);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode489);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode490);
-            jsonSchemaNode484.Nodes.Add(jsonSchemaNode491);
+            jsonSchemaNode460.Nodes.Add(jsonSchemaNode467);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode469);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode470);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode471);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode472);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode473);
+            jsonSchemaNode468.Nodes.Add(jsonSchemaNode474);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode476);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode477);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode478);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode479);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode480);
+            jsonSchemaNode475.Nodes.Add(jsonSchemaNode481);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode456);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode457);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode458);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode459);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode460);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode468);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode475);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode482);
+            jsonSchemaNode455.Nodes.Add(jsonSchemaNode483);
+            jsonSchemaNode453.Nodes.Add(jsonSchemaNode454);
+            jsonSchemaNode453.Nodes.Add(jsonSchemaNode455);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode493);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode494);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode495);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode496);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode497);
             jsonSchemaNode492.Nodes.Add(jsonSchemaNode498);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode500);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode501);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode502);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode503);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode504);
-            jsonSchemaNode499.Nodes.Add(jsonSchemaNode505);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode479);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode480);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode481);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode482);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode483);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode484);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode492);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode499);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode506);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode507);
-            jsonSchemaNode478.Nodes.Add(jsonSchemaNode508);
-            jsonSchemaNode476.Nodes.Add(jsonSchemaNode477);
-            jsonSchemaNode476.Nodes.Add(jsonSchemaNode478);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode518);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode519);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode520);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode521);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode522);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode523);
-            jsonSchemaNode517.Nodes.Add(jsonSchemaNode524);
+            jsonSchemaNode492.Nodes.Add(jsonSchemaNode499);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode501);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode502);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode503);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode504);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode505);
+            jsonSchemaNode500.Nodes.Add(jsonSchemaNode506);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode508);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode509);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode510);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode511);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode512);
+            jsonSchemaNode507.Nodes.Add(jsonSchemaNode513);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode487);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode488);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode489);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode490);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode491);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode492);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode500);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode507);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode514);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode515);
+            jsonSchemaNode486.Nodes.Add(jsonSchemaNode516);
+            jsonSchemaNode484.Nodes.Add(jsonSchemaNode485);
+            jsonSchemaNode484.Nodes.Add(jsonSchemaNode486);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode526);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode527);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode528);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode529);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode530);
             jsonSchemaNode525.Nodes.Add(jsonSchemaNode531);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode533);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode534);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode535);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode536);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode537);
-            jsonSchemaNode532.Nodes.Add(jsonSchemaNode538);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode512);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode513);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode514);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode515);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode516);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode517);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode525);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode532);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode539);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode540);
-            jsonSchemaNode511.Nodes.Add(jsonSchemaNode541);
-            jsonSchemaNode509.Nodes.Add(jsonSchemaNode510);
-            jsonSchemaNode509.Nodes.Add(jsonSchemaNode511);
-            jsonSchemaNode444.Nodes.Add(jsonSchemaNode445);
-            jsonSchemaNode444.Nodes.Add(jsonSchemaNode476);
-            jsonSchemaNode444.Nodes.Add(jsonSchemaNode509);
-            jsonSchemaNode442.Nodes.Add(jsonSchemaNode443);
-            jsonSchemaNode442.Nodes.Add(jsonSchemaNode444);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode554);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode555);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode556);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode557);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode558);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode559);
-            jsonSchemaNode553.Nodes.Add(jsonSchemaNode560);
+            jsonSchemaNode525.Nodes.Add(jsonSchemaNode532);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode534);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode535);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode536);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode537);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode538);
+            jsonSchemaNode533.Nodes.Add(jsonSchemaNode539);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode541);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode542);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode543);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode544);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode545);
+            jsonSchemaNode540.Nodes.Add(jsonSchemaNode546);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode520);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode521);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode522);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode523);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode524);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode525);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode533);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode540);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode547);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode548);
+            jsonSchemaNode519.Nodes.Add(jsonSchemaNode549);
+            jsonSchemaNode517.Nodes.Add(jsonSchemaNode518);
+            jsonSchemaNode517.Nodes.Add(jsonSchemaNode519);
+            jsonSchemaNode452.Nodes.Add(jsonSchemaNode453);
+            jsonSchemaNode452.Nodes.Add(jsonSchemaNode484);
+            jsonSchemaNode452.Nodes.Add(jsonSchemaNode517);
+            jsonSchemaNode450.Nodes.Add(jsonSchemaNode451);
+            jsonSchemaNode450.Nodes.Add(jsonSchemaNode452);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode562);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode563);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode564);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode565);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode566);
             jsonSchemaNode561.Nodes.Add(jsonSchemaNode567);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode569);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode570);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode571);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode572);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode573);
-            jsonSchemaNode568.Nodes.Add(jsonSchemaNode574);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode548);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode549);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode550);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode551);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode552);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode553);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode561);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode568);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode575);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode576);
-            jsonSchemaNode547.Nodes.Add(jsonSchemaNode577);
-            jsonSchemaNode545.Nodes.Add(jsonSchemaNode546);
-            jsonSchemaNode545.Nodes.Add(jsonSchemaNode547);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode590);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode591);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode592);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode593);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode594);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode595);
-            jsonSchemaNode589.Nodes.Add(jsonSchemaNode596);
+            jsonSchemaNode561.Nodes.Add(jsonSchemaNode568);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode570);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode571);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode572);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode573);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode574);
+            jsonSchemaNode569.Nodes.Add(jsonSchemaNode575);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode577);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode578);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode579);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode580);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode581);
+            jsonSchemaNode576.Nodes.Add(jsonSchemaNode582);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode556);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode557);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode558);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode559);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode560);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode561);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode569);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode576);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode583);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode584);
+            jsonSchemaNode555.Nodes.Add(jsonSchemaNode585);
+            jsonSchemaNode553.Nodes.Add(jsonSchemaNode554);
+            jsonSchemaNode553.Nodes.Add(jsonSchemaNode555);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode598);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode599);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode600);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode601);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode602);
             jsonSchemaNode597.Nodes.Add(jsonSchemaNode603);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode605);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode606);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode607);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode608);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode609);
-            jsonSchemaNode604.Nodes.Add(jsonSchemaNode610);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode581);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode582);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode583);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode584);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode585);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode586);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode587);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode588);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode589);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode597);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode604);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode611);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode612);
-            jsonSchemaNode580.Nodes.Add(jsonSchemaNode613);
-            jsonSchemaNode578.Nodes.Add(jsonSchemaNode579);
-            jsonSchemaNode578.Nodes.Add(jsonSchemaNode580);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode623);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode624);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode625);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode626);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode627);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode628);
-            jsonSchemaNode622.Nodes.Add(jsonSchemaNode629);
+            jsonSchemaNode597.Nodes.Add(jsonSchemaNode604);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode606);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode607);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode608);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode609);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode610);
+            jsonSchemaNode605.Nodes.Add(jsonSchemaNode611);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode613);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode614);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode615);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode616);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode617);
+            jsonSchemaNode612.Nodes.Add(jsonSchemaNode618);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode589);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode590);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode591);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode592);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode593);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode594);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode595);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode596);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode597);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode605);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode612);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode619);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode620);
+            jsonSchemaNode588.Nodes.Add(jsonSchemaNode621);
+            jsonSchemaNode586.Nodes.Add(jsonSchemaNode587);
+            jsonSchemaNode586.Nodes.Add(jsonSchemaNode588);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode631);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode632);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode633);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode634);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode635);
             jsonSchemaNode630.Nodes.Add(jsonSchemaNode636);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode638);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode639);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode640);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode641);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode642);
-            jsonSchemaNode637.Nodes.Add(jsonSchemaNode643);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode617);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode618);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode619);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode620);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode621);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode622);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode630);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode637);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode644);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode645);
-            jsonSchemaNode616.Nodes.Add(jsonSchemaNode646);
-            jsonSchemaNode614.Nodes.Add(jsonSchemaNode615);
-            jsonSchemaNode614.Nodes.Add(jsonSchemaNode616);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode656);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode657);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode658);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode659);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode660);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode661);
-            jsonSchemaNode655.Nodes.Add(jsonSchemaNode662);
+            jsonSchemaNode630.Nodes.Add(jsonSchemaNode637);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode639);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode640);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode641);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode642);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode643);
+            jsonSchemaNode638.Nodes.Add(jsonSchemaNode644);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode646);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode647);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode648);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode649);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode650);
+            jsonSchemaNode645.Nodes.Add(jsonSchemaNode651);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode625);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode626);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode627);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode628);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode629);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode630);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode638);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode645);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode652);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode653);
+            jsonSchemaNode624.Nodes.Add(jsonSchemaNode654);
+            jsonSchemaNode622.Nodes.Add(jsonSchemaNode623);
+            jsonSchemaNode622.Nodes.Add(jsonSchemaNode624);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode664);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode665);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode666);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode667);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode668);
             jsonSchemaNode663.Nodes.Add(jsonSchemaNode669);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode671);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode672);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode673);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode674);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode675);
-            jsonSchemaNode670.Nodes.Add(jsonSchemaNode676);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode650);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode651);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode652);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode653);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode654);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode655);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode663);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode670);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode677);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode678);
-            jsonSchemaNode649.Nodes.Add(jsonSchemaNode679);
-            jsonSchemaNode647.Nodes.Add(jsonSchemaNode648);
-            jsonSchemaNode647.Nodes.Add(jsonSchemaNode649);
-            jsonSchemaNode544.Nodes.Add(jsonSchemaNode545);
-            jsonSchemaNode544.Nodes.Add(jsonSchemaNode578);
-            jsonSchemaNode544.Nodes.Add(jsonSchemaNode614);
-            jsonSchemaNode544.Nodes.Add(jsonSchemaNode647);
-            jsonSchemaNode542.Nodes.Add(jsonSchemaNode543);
-            jsonSchemaNode542.Nodes.Add(jsonSchemaNode544);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode686);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode687);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode688);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode689);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode690);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode691);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode692);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode693);
-            jsonSchemaNode685.Nodes.Add(jsonSchemaNode694);
-            jsonSchemaNode683.Nodes.Add(jsonSchemaNode684);
-            jsonSchemaNode683.Nodes.Add(jsonSchemaNode685);
-            jsonSchemaNode682.Nodes.Add(jsonSchemaNode683);
-            jsonSchemaNode680.Nodes.Add(jsonSchemaNode681);
-            jsonSchemaNode680.Nodes.Add(jsonSchemaNode682);
-            jsonSchemaNode700.Nodes.Add(jsonSchemaNode701);
-            jsonSchemaNode700.Nodes.Add(jsonSchemaNode702);
-            jsonSchemaNode700.Nodes.Add(jsonSchemaNode703);
-            jsonSchemaNode700.Nodes.Add(jsonSchemaNode704);
-            jsonSchemaNode698.Nodes.Add(jsonSchemaNode699);
-            jsonSchemaNode698.Nodes.Add(jsonSchemaNode700);
-            jsonSchemaNode707.Nodes.Add(jsonSchemaNode708);
-            jsonSchemaNode707.Nodes.Add(jsonSchemaNode709);
-            jsonSchemaNode707.Nodes.Add(jsonSchemaNode710);
+            jsonSchemaNode663.Nodes.Add(jsonSchemaNode670);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode672);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode673);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode674);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode675);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode676);
+            jsonSchemaNode671.Nodes.Add(jsonSchemaNode677);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode679);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode680);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode681);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode682);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode683);
+            jsonSchemaNode678.Nodes.Add(jsonSchemaNode684);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode658);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode659);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode660);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode661);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode662);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode663);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode671);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode678);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode685);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode686);
+            jsonSchemaNode657.Nodes.Add(jsonSchemaNode687);
+            jsonSchemaNode655.Nodes.Add(jsonSchemaNode656);
+            jsonSchemaNode655.Nodes.Add(jsonSchemaNode657);
+            jsonSchemaNode552.Nodes.Add(jsonSchemaNode553);
+            jsonSchemaNode552.Nodes.Add(jsonSchemaNode586);
+            jsonSchemaNode552.Nodes.Add(jsonSchemaNode622);
+            jsonSchemaNode552.Nodes.Add(jsonSchemaNode655);
+            jsonSchemaNode550.Nodes.Add(jsonSchemaNode551);
+            jsonSchemaNode550.Nodes.Add(jsonSchemaNode552);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode694);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode695);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode696);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode697);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode698);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode699);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode700);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode701);
+            jsonSchemaNode693.Nodes.Add(jsonSchemaNode702);
+            jsonSchemaNode691.Nodes.Add(jsonSchemaNode692);
+            jsonSchemaNode691.Nodes.Add(jsonSchemaNode693);
+            jsonSchemaNode690.Nodes.Add(jsonSchemaNode691);
+            jsonSchemaNode688.Nodes.Add(jsonSchemaNode689);
+            jsonSchemaNode688.Nodes.Add(jsonSchemaNode690);
+            jsonSchemaNode708.Nodes.Add(jsonSchemaNode709);
+            jsonSchemaNode708.Nodes.Add(jsonSchemaNode710);
+            jsonSchemaNode708.Nodes.Add(jsonSchemaNode711);
+            jsonSchemaNode708.Nodes.Add(jsonSchemaNode712);
+            jsonSchemaNode706.Nodes.Add(jsonSchemaNode707);
+            jsonSchemaNode706.Nodes.Add(jsonSchemaNode708);
+            jsonSchemaNode715.Nodes.Add(jsonSchemaNode716);
+            jsonSchemaNode715.Nodes.Add(jsonSchemaNode717);
+            jsonSchemaNode715.Nodes.Add(jsonSchemaNode718);
+            jsonSchemaNode713.Nodes.Add(jsonSchemaNode714);
+            jsonSchemaNode713.Nodes.Add(jsonSchemaNode715);
             jsonSchemaNode705.Nodes.Add(jsonSchemaNode706);
-            jsonSchemaNode705.Nodes.Add(jsonSchemaNode707);
-            jsonSchemaNode697.Nodes.Add(jsonSchemaNode698);
-            jsonSchemaNode697.Nodes.Add(jsonSchemaNode705);
-            jsonSchemaNode695.Nodes.Add(jsonSchemaNode696);
-            jsonSchemaNode695.Nodes.Add(jsonSchemaNode697);
-            jsonSchemaNode719.Nodes.Add(jsonSchemaNode720);
-            jsonSchemaNode719.Nodes.Add(jsonSchemaNode721);
-            jsonSchemaNode719.Nodes.Add(jsonSchemaNode722);
-            jsonSchemaNode716.Nodes.Add(jsonSchemaNode717);
-            jsonSchemaNode716.Nodes.Add(jsonSchemaNode718);
-            jsonSchemaNode716.Nodes.Add(jsonSchemaNode719);
-            jsonSchemaNode716.Nodes.Add(jsonSchemaNode723);
-            jsonSchemaNode716.Nodes.Add(jsonSchemaNode724);
-            jsonSchemaNode714.Nodes.Add(jsonSchemaNode715);
-            jsonSchemaNode714.Nodes.Add(jsonSchemaNode716);
+            jsonSchemaNode705.Nodes.Add(jsonSchemaNode713);
+            jsonSchemaNode703.Nodes.Add(jsonSchemaNode704);
+            jsonSchemaNode703.Nodes.Add(jsonSchemaNode705);
             jsonSchemaNode727.Nodes.Add(jsonSchemaNode728);
             jsonSchemaNode727.Nodes.Add(jsonSchemaNode729);
-            jsonSchemaNode725.Nodes.Add(jsonSchemaNode726);
-            jsonSchemaNode725.Nodes.Add(jsonSchemaNode727);
-            jsonSchemaNode713.Nodes.Add(jsonSchemaNode714);
-            jsonSchemaNode713.Nodes.Add(jsonSchemaNode725);
-            jsonSchemaNode711.Nodes.Add(jsonSchemaNode712);
-            jsonSchemaNode711.Nodes.Add(jsonSchemaNode713);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode741);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode742);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode743);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode744);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode745);
-            jsonSchemaNode740.Nodes.Add(jsonSchemaNode746);
+            jsonSchemaNode727.Nodes.Add(jsonSchemaNode730);
+            jsonSchemaNode724.Nodes.Add(jsonSchemaNode725);
+            jsonSchemaNode724.Nodes.Add(jsonSchemaNode726);
+            jsonSchemaNode724.Nodes.Add(jsonSchemaNode727);
+            jsonSchemaNode724.Nodes.Add(jsonSchemaNode731);
+            jsonSchemaNode724.Nodes.Add(jsonSchemaNode732);
+            jsonSchemaNode722.Nodes.Add(jsonSchemaNode723);
+            jsonSchemaNode722.Nodes.Add(jsonSchemaNode724);
             jsonSchemaNode735.Nodes.Add(jsonSchemaNode736);
             jsonSchemaNode735.Nodes.Add(jsonSchemaNode737);
-            jsonSchemaNode735.Nodes.Add(jsonSchemaNode738);
-            jsonSchemaNode735.Nodes.Add(jsonSchemaNode739);
-            jsonSchemaNode735.Nodes.Add(jsonSchemaNode740);
             jsonSchemaNode733.Nodes.Add(jsonSchemaNode734);
             jsonSchemaNode733.Nodes.Add(jsonSchemaNode735);
+            jsonSchemaNode721.Nodes.Add(jsonSchemaNode722);
+            jsonSchemaNode721.Nodes.Add(jsonSchemaNode733);
+            jsonSchemaNode719.Nodes.Add(jsonSchemaNode720);
+            jsonSchemaNode719.Nodes.Add(jsonSchemaNode721);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode749);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode750);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode751);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode752);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode753);
+            jsonSchemaNode748.Nodes.Add(jsonSchemaNode754);
+            jsonSchemaNode743.Nodes.Add(jsonSchemaNode744);
+            jsonSchemaNode743.Nodes.Add(jsonSchemaNode745);
+            jsonSchemaNode743.Nodes.Add(jsonSchemaNode746);
+            jsonSchemaNode743.Nodes.Add(jsonSchemaNode747);
+            jsonSchemaNode743.Nodes.Add(jsonSchemaNode748);
+            jsonSchemaNode741.Nodes.Add(jsonSchemaNode742);
+            jsonSchemaNode741.Nodes.Add(jsonSchemaNode743);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode764);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode765);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode766);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode767);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode768);
+            jsonSchemaNode763.Nodes.Add(jsonSchemaNode769);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode758);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode759);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode760);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode761);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode762);
+            jsonSchemaNode757.Nodes.Add(jsonSchemaNode763);
             jsonSchemaNode755.Nodes.Add(jsonSchemaNode756);
             jsonSchemaNode755.Nodes.Add(jsonSchemaNode757);
-            jsonSchemaNode755.Nodes.Add(jsonSchemaNode758);
-            jsonSchemaNode755.Nodes.Add(jsonSchemaNode759);
-            jsonSchemaNode755.Nodes.Add(jsonSchemaNode760);
-            jsonSchemaNode755.Nodes.Add(jsonSchemaNode761);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode750);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode751);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode752);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode753);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode754);
-            jsonSchemaNode749.Nodes.Add(jsonSchemaNode755);
-            jsonSchemaNode747.Nodes.Add(jsonSchemaNode748);
-            jsonSchemaNode747.Nodes.Add(jsonSchemaNode749);
-            jsonSchemaNode732.Nodes.Add(jsonSchemaNode733);
-            jsonSchemaNode732.Nodes.Add(jsonSchemaNode747);
-            jsonSchemaNode730.Nodes.Add(jsonSchemaNode731);
-            jsonSchemaNode730.Nodes.Add(jsonSchemaNode732);
-            jsonSchemaNode767.Nodes.Add(jsonSchemaNode768);
-            jsonSchemaNode767.Nodes.Add(jsonSchemaNode769);
-            jsonSchemaNode767.Nodes.Add(jsonSchemaNode770);
-            jsonSchemaNode767.Nodes.Add(jsonSchemaNode771);
-            jsonSchemaNode767.Nodes.Add(jsonSchemaNode772);
-            jsonSchemaNode765.Nodes.Add(jsonSchemaNode766);
-            jsonSchemaNode765.Nodes.Add(jsonSchemaNode767);
+            jsonSchemaNode740.Nodes.Add(jsonSchemaNode741);
+            jsonSchemaNode740.Nodes.Add(jsonSchemaNode755);
+            jsonSchemaNode738.Nodes.Add(jsonSchemaNode739);
+            jsonSchemaNode738.Nodes.Add(jsonSchemaNode740);
             jsonSchemaNode775.Nodes.Add(jsonSchemaNode776);
             jsonSchemaNode775.Nodes.Add(jsonSchemaNode777);
             jsonSchemaNode775.Nodes.Add(jsonSchemaNode778);
             jsonSchemaNode775.Nodes.Add(jsonSchemaNode779);
+            jsonSchemaNode775.Nodes.Add(jsonSchemaNode780);
             jsonSchemaNode773.Nodes.Add(jsonSchemaNode774);
             jsonSchemaNode773.Nodes.Add(jsonSchemaNode775);
-            jsonSchemaNode782.Nodes.Add(jsonSchemaNode783);
-            jsonSchemaNode782.Nodes.Add(jsonSchemaNode784);
-            jsonSchemaNode780.Nodes.Add(jsonSchemaNode781);
-            jsonSchemaNode780.Nodes.Add(jsonSchemaNode782);
-            jsonSchemaNode764.Nodes.Add(jsonSchemaNode765);
-            jsonSchemaNode764.Nodes.Add(jsonSchemaNode773);
-            jsonSchemaNode764.Nodes.Add(jsonSchemaNode780);
-            jsonSchemaNode762.Nodes.Add(jsonSchemaNode763);
-            jsonSchemaNode762.Nodes.Add(jsonSchemaNode764);
-            jsonSchemaNode785.Nodes.Add(jsonSchemaNode786);
+            jsonSchemaNode783.Nodes.Add(jsonSchemaNode784);
+            jsonSchemaNode783.Nodes.Add(jsonSchemaNode785);
+            jsonSchemaNode783.Nodes.Add(jsonSchemaNode786);
+            jsonSchemaNode783.Nodes.Add(jsonSchemaNode787);
+            jsonSchemaNode781.Nodes.Add(jsonSchemaNode782);
+            jsonSchemaNode781.Nodes.Add(jsonSchemaNode783);
+            jsonSchemaNode790.Nodes.Add(jsonSchemaNode791);
+            jsonSchemaNode790.Nodes.Add(jsonSchemaNode792);
+            jsonSchemaNode788.Nodes.Add(jsonSchemaNode789);
+            jsonSchemaNode788.Nodes.Add(jsonSchemaNode790);
+            jsonSchemaNode772.Nodes.Add(jsonSchemaNode773);
+            jsonSchemaNode772.Nodes.Add(jsonSchemaNode781);
+            jsonSchemaNode772.Nodes.Add(jsonSchemaNode788);
+            jsonSchemaNode770.Nodes.Add(jsonSchemaNode771);
+            jsonSchemaNode770.Nodes.Add(jsonSchemaNode772);
+            jsonSchemaNode793.Nodes.Add(jsonSchemaNode794);
             jsonSchemaNode1.Nodes.Add(jsonSchemaNode2);
             jsonSchemaNode1.Nodes.Add(jsonSchemaNode14);
             jsonSchemaNode1.Nodes.Add(jsonSchemaNode25);
             jsonSchemaNode1.Nodes.Add(jsonSchemaNode60);
             jsonSchemaNode1.Nodes.Add(jsonSchemaNode77);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode101);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode119);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode136);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode250);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode442);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode542);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode680);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode695);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode711);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode730);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode762);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode785);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode109);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode127);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode144);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode258);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode450);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode550);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode688);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode703);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode719);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode738);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode770);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode793);
             this.jsonDataSourcePSE.Schema = jsonSchemaNode1;
             // 
             // headerFooterLineStyle
@@ -3305,7 +3359,7 @@
             this.DetailReportSection7000.DataMember = "section70.content.subSection7000.content";
             this.DetailReportSection7000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7000.Dpi = 254F;
-            this.DetailReportSection7000.Level = 4;
+            this.DetailReportSection7000.Level = 5;
             this.DetailReportSection7000.Name = "DetailReportSection7000";
             this.DetailReportSection7000.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -3559,7 +3613,7 @@
             this.DetailReportSection6000.DataMember = "section60.content.subSection6000.content";
             this.DetailReportSection6000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection6000.Dpi = 254F;
-            this.DetailReportSection6000.Level = 3;
+            this.DetailReportSection6000.Level = 4;
             this.DetailReportSection6000.Name = "DetailReportSection6000";
             this.DetailReportSection6000.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection6000.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -4012,7 +4066,7 @@
             this.DetailReportSection8000.DataMember = "section80.content.subSection8000.content";
             this.DetailReportSection8000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection8000.Dpi = 254F;
-            this.DetailReportSection8000.Level = 10;
+            this.DetailReportSection8000.Level = 11;
             this.DetailReportSection8000.Name = "DetailReportSection8000";
             this.DetailReportSection8000.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -4698,7 +4752,7 @@
             this.DetailReportSection8010.DataMember = "section80.content.subSection8010.content";
             this.DetailReportSection8010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection8010.Dpi = 254F;
-            this.DetailReportSection8010.Level = 11;
+            this.DetailReportSection8010.Level = 12;
             this.DetailReportSection8010.Name = "DetailReportSection8010";
             this.DetailReportSection8010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -5373,7 +5427,7 @@
             this.DetailReportSection8020.DataMember = "section80.content.subSection8020.content";
             this.DetailReportSection8020.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection8020.Dpi = 254F;
-            this.DetailReportSection8020.Level = 12;
+            this.DetailReportSection8020.Level = 13;
             this.DetailReportSection8020.Name = "DetailReportSection8020";
             this.DetailReportSection8020.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -6044,7 +6098,7 @@
             this.DetailReportSection8030.DataMember = "section80.content.subSection8030.content";
             this.DetailReportSection8030.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection8030.Dpi = 254F;
-            this.DetailReportSection8030.Level = 13;
+            this.DetailReportSection8030.Level = 14;
             this.DetailReportSection8030.Name = "DetailReportSection8030";
             this.DetailReportSection8030.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -6712,7 +6766,7 @@
             this.DetailReportSection8040.DataMember = "section80.content.subSection8040.content";
             this.DetailReportSection8040.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection8040.Dpi = 254F;
-            this.DetailReportSection8040.Level = 14;
+            this.DetailReportSection8040.Level = 15;
             this.DetailReportSection8040.Name = "DetailReportSection8040";
             this.DetailReportSection8040.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -7259,7 +7313,7 @@
             this.DetailReportSection4000.DataMember = "section40.content.subSection4000.content";
             this.DetailReportSection4000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection4000.Dpi = 254F;
-            this.DetailReportSection4000.Level = 2;
+            this.DetailReportSection4000.Level = 3;
             this.DetailReportSection4000.Name = "DetailReportSection4000";
             this.DetailReportSection4000.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection4000.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -7778,7 +7832,7 @@
             // GroupHeaderBandSection2010
             // 
             this.GroupHeaderBandSection2010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel381,
+            this.verticalLineEvoluzionePerformance,
             this.chartSection2010,
             this.xrLine25,
             this.labelSubHeaderSection2010});
@@ -7789,16 +7843,16 @@
             this.GroupHeaderBandSection2010.Name = "GroupHeaderBandSection2010";
             this.GroupHeaderBandSection2010.PrintAcrossBands = true;
             // 
-            // xrLabel381
+            // verticalLineEvoluzionePerformance
             // 
-            this.xrLabel381.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.xrLabel381.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrLabel381.CanGrow = false;
-            this.xrLabel381.Dpi = 254F;
-            this.xrLabel381.Multiline = true;
-            this.xrLabel381.Name = "xrLabel381";
-            this.xrLabel381.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel381.StyleName = "verticalSeparatorLine";
+            this.verticalLineEvoluzionePerformance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.verticalLineEvoluzionePerformance.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.verticalLineEvoluzionePerformance.CanGrow = false;
+            this.verticalLineEvoluzionePerformance.Dpi = 254F;
+            this.verticalLineEvoluzionePerformance.Multiline = true;
+            this.verticalLineEvoluzionePerformance.Name = "verticalLineEvoluzionePerformance";
+            this.verticalLineEvoluzionePerformance.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.verticalLineEvoluzionePerformance.StyleName = "verticalSeparatorLine";
             // 
             // chartSection2010
             // 
@@ -7896,7 +7950,7 @@
             this.DetailReportSection160.DataMember = "section160.content.subSection16000.content";
             this.DetailReportSection160.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection160.Dpi = 254F;
-            this.DetailReportSection160.Level = 23;
+            this.DetailReportSection160.Level = 24;
             this.DetailReportSection160.Name = "DetailReportSection160";
             this.DetailReportSection160.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection160.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -8173,7 +8227,7 @@
             this.DetailReportSection170.DataMember = "section170.content.subSection17000.content";
             this.DetailReportSection170.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection170.Dpi = 254F;
-            this.DetailReportSection170.Level = 24;
+            this.DetailReportSection170.Level = 25;
             this.DetailReportSection170.Name = "DetailReportSection170";
             this.DetailReportSection170.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection170.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -8519,7 +8573,7 @@
             this.DetailReportSubSection200.DataMember = "section200.content.subSection20010.content";
             this.DetailReportSubSection200.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection200.Dpi = 254F;
-            this.DetailReportSubSection200.Level = 27;
+            this.DetailReportSubSection200.Level = 28;
             this.DetailReportSubSection200.Name = "DetailReportSubSection200";
             this.DetailReportSubSection200.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSubSection200.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -9117,7 +9171,7 @@
             this.DetailReportSection9010.DataMember = "section90.content.subSection9010.content";
             this.DetailReportSection9010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection9010.Dpi = 254F;
-            this.DetailReportSection9010.Level = 15;
+            this.DetailReportSection9010.Level = 16;
             this.DetailReportSection9010.Name = "DetailReportSection9010";
             this.DetailReportSection9010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -9624,7 +9678,7 @@
             this.DetailReportFooter.DataMember = "footer";
             this.DetailReportFooter.DataSource = this.jsonDataSourcePSE;
             this.DetailReportFooter.Dpi = 254F;
-            this.DetailReportFooter.Level = 28;
+            this.DetailReportFooter.Level = 29;
             this.DetailReportFooter.Name = "DetailReportFooter";
             this.DetailReportFooter.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportFooter.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeBand_BeforePrint);
@@ -10625,7 +10679,7 @@
             // GroupFooterBandSection1000
             // 
             this.GroupFooterBandSection1000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel372,
+            this.verticalLineDettagliPortafoglio,
             this.contentPatrimonialFluctuation,
             this.labelOscillazionePatrimoniale,
             this.ContentSection1000PlusMinusValenza2,
@@ -10673,16 +10727,16 @@
             this.GroupFooterBandSection1000.KeepTogether = true;
             this.GroupFooterBandSection1000.Name = "GroupFooterBandSection1000";
             // 
-            // xrLabel372
+            // verticalLineDettagliPortafoglio
             // 
-            this.xrLabel372.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.xrLabel372.Borders = DevExpress.XtraPrinting.BorderSide.Right;
-            this.xrLabel372.CanGrow = false;
-            this.xrLabel372.Dpi = 254F;
-            this.xrLabel372.Multiline = true;
-            this.xrLabel372.Name = "xrLabel372";
-            this.xrLabel372.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel372.StyleName = "verticalSeparatorLine";
+            this.verticalLineDettagliPortafoglio.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.verticalLineDettagliPortafoglio.Borders = DevExpress.XtraPrinting.BorderSide.Right;
+            this.verticalLineDettagliPortafoglio.CanGrow = false;
+            this.verticalLineDettagliPortafoglio.Dpi = 254F;
+            this.verticalLineDettagliPortafoglio.Multiline = true;
+            this.verticalLineDettagliPortafoglio.Name = "verticalLineDettagliPortafoglio";
+            this.verticalLineDettagliPortafoglio.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.verticalLineDettagliPortafoglio.StyleName = "verticalSeparatorLine";
             // 
             // contentPatrimonialFluctuation
             // 
@@ -11219,7 +11273,7 @@
             this.DetailReportSection9020.DataMember = "section90.content.subSection9020.content";
             this.DetailReportSection9020.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection9020.Dpi = 254F;
-            this.DetailReportSection9020.Level = 16;
+            this.DetailReportSection9020.Level = 17;
             this.DetailReportSection9020.Name = "DetailReportSection9020";
             this.DetailReportSection9020.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -11771,7 +11825,7 @@
             this.DetailReportSection9030.DataMember = "section90.content.subSection9030.content";
             this.DetailReportSection9030.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection9030.Dpi = 254F;
-            this.DetailReportSection9030.Level = 17;
+            this.DetailReportSection9030.Level = 18;
             this.DetailReportSection9030.Name = "DetailReportSection9030";
             this.DetailReportSection9030.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -12331,7 +12385,7 @@
             this.DetailReportSection7040.DataMember = "section70.content.subSection7040.content";
             this.DetailReportSection7040.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7040.Dpi = 254F;
-            this.DetailReportSection7040.Level = 8;
+            this.DetailReportSection7040.Level = 9;
             this.DetailReportSection7040.Name = "DetailReportSection7040";
             this.DetailReportSection7040.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -12612,7 +12666,7 @@
             this.DetailReportSection7030.DataMember = "section70.content.subSection7030.content";
             this.DetailReportSection7030.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7030.Dpi = 254F;
-            this.DetailReportSection7030.Level = 7;
+            this.DetailReportSection7030.Level = 8;
             this.DetailReportSection7030.Name = "DetailReportSection7030";
             this.DetailReportSection7030.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -12885,7 +12939,7 @@
             this.DetailReportSection7020.DataMember = "section70.content.subSection7020.content";
             this.DetailReportSection7020.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7020.Dpi = 254F;
-            this.DetailReportSection7020.Level = 6;
+            this.DetailReportSection7020.Level = 7;
             this.DetailReportSection7020.Name = "DetailReportSection7020";
             this.DetailReportSection7020.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -13158,7 +13212,7 @@
             this.DetailReportSection7050.DataMember = "section70.content.subSection7050.content";
             this.DetailReportSection7050.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7050.Dpi = 254F;
-            this.DetailReportSection7050.Level = 9;
+            this.DetailReportSection7050.Level = 10;
             this.DetailReportSection7050.Name = "DetailReportSection7050";
             this.DetailReportSection7050.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -13681,7 +13735,7 @@
             this.DetailReportSection7010.DataMember = "section70.content.subSection7010.content";
             this.DetailReportSection7010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection7010.Dpi = 254F;
-            this.DetailReportSection7010.Level = 5;
+            this.DetailReportSection7010.Level = 6;
             this.DetailReportSection7010.Name = "DetailReportSection7010";
             this.DetailReportSection7010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -14242,7 +14296,7 @@
             this.DetailReportSection13000.DataMember = "section130.content.subSection13000.content";
             this.DetailReportSection13000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection13000.Dpi = 254F;
-            this.DetailReportSection13000.Level = 22;
+            this.DetailReportSection13000.Level = 23;
             this.DetailReportSection13000.Name = "DetailReportSection13000";
             this.DetailReportSection13000.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection13000.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -14501,7 +14555,7 @@
             this.DetailReportSubSection19000.DataMember = "section190.content.subSection19000.content";
             this.DetailReportSubSection19000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection19000.Dpi = 254F;
-            this.DetailReportSubSection19000.Level = 26;
+            this.DetailReportSubSection19000.Level = 27;
             this.DetailReportSubSection19000.Name = "DetailReportSubSection19000";
             this.DetailReportSubSection19000.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSubSection19000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReportSubSection19000_BeforePrint);
@@ -15061,7 +15115,7 @@
             this.DetailReportSubSection19010.DataMember = "section190.content.subSection19010.content.objects";
             this.DetailReportSubSection19010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection19010.Dpi = 254F;
-            this.DetailReportSubSection19010.Level = 25;
+            this.DetailReportSubSection19010.Level = 26;
             this.DetailReportSubSection19010.Name = "DetailReportSubSection19010";
             this.DetailReportSubSection19010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             this.DetailReportSubSection19010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReportSubSection19010_BeforePrint);
@@ -15145,7 +15199,7 @@
             this.DetailReportSection11000.DataMember = "section110.content.subSection11000.content";
             this.DetailReportSection11000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection11000.Dpi = 254F;
-            this.DetailReportSection11000.Level = 18;
+            this.DetailReportSection11000.Level = 19;
             this.DetailReportSection11000.Name = "DetailReportSection11000";
             this.DetailReportSection11000.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -15695,7 +15749,7 @@
             this.DetailReportSection11010.DataMember = "section110.content.subSection11010.content";
             this.DetailReportSection11010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection11010.Dpi = 254F;
-            this.DetailReportSection11010.Level = 19;
+            this.DetailReportSection11010.Level = 20;
             this.DetailReportSection11010.Name = "DetailReportSection11010";
             this.DetailReportSection11010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -16309,7 +16363,7 @@
             this.DetailReportSection11020.DataMember = "section110.content.subSection11020.content";
             this.DetailReportSection11020.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection11020.Dpi = 254F;
-            this.DetailReportSection11020.Level = 20;
+            this.DetailReportSection11020.Level = 21;
             this.DetailReportSection11020.Name = "DetailReportSection11020";
             this.DetailReportSection11020.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -16862,7 +16916,7 @@
             this.DetailReportSection11030.DataMember = "section110.content.subSection11030.content";
             this.DetailReportSection11030.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection11030.Dpi = 254F;
-            this.DetailReportSection11030.Level = 21;
+            this.DetailReportSection11030.Level = 22;
             this.DetailReportSection11030.Name = "DetailReportSection11030";
             this.DetailReportSection11030.ReportPrintOptions.PrintOnEmptyDataSource = false;
             // 
@@ -17429,6 +17483,355 @@
             this.reportContentStyleItalicRightAlign.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 254F);
             this.reportContentStyleItalicRightAlign.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
+            // DetailReport
+            // 
+            this.DetailReport.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.DetailReport3000,
+            this.GroupHeaderBandSection3000,
+            this.GroupHeaderBandSection3010});
+            this.DetailReport.DataMember = "section30.content.subSection3000.content";
+            this.DetailReport.DataSource = this.jsonDataSourcePSE;
+            this.DetailReport.Dpi = 254F;
+            this.DetailReport.Level = 2;
+            this.DetailReport.Name = "DetailReport";
+            this.DetailReport.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.DetailReport.ReportPrintOptions.PrintOnEmptyDataSource = false;
+            // 
+            // DetailReport3000
+            // 
+            this.DetailReport3000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.contentModelloSection3000,
+            this.contentDivisaSection3000,
+            this.contentContributoNettoSection3000,
+            this.xrLine113,
+            this.bookmarkModelloSection3000});
+            this.DetailReport3000.Dpi = 254F;
+            this.DetailReport3000.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailReport3000.Name = "DetailReport3000";
+            // 
+            // contentModelloSection3000
+            // 
+            this.contentModelloSection3000.Dpi = 254F;
+            this.contentModelloSection3000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[modelLine]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]")});
+            this.contentModelloSection3000.Multiline = true;
+            this.contentModelloSection3000.Name = "contentModelloSection3000";
+            this.contentModelloSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.contentModelloSection3000.StyleName = "gridContentStyle";
+            this.contentModelloSection3000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.contentSection3000_BeforePrint);
+            // 
+            // contentDivisaSection3000
+            // 
+            this.contentDivisaSection3000.Dpi = 254F;
+            this.contentDivisaSection3000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currency]")});
+            this.contentDivisaSection3000.Multiline = true;
+            this.contentDivisaSection3000.Name = "contentDivisaSection3000";
+            this.contentDivisaSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.contentDivisaSection3000.StyleName = "gridContentStyle";
+            this.contentDivisaSection3000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // contentContributoNettoSection3000
+            // 
+            this.contentContributoNettoSection3000.Dpi = 254F;
+            this.contentContributoNettoSection3000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentNetContribution]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[class]")});
+            this.contentContributoNettoSection3000.Multiline = true;
+            this.contentContributoNettoSection3000.Name = "contentContributoNettoSection3000";
+            this.contentContributoNettoSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.contentContributoNettoSection3000.StyleName = "gridContentStyleRightAlignBold";
+            this.contentContributoNettoSection3000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.contentContributoNettoSection3000_BeforePrint);
+            // 
+            // xrLine113
+            // 
+            this.xrLine113.Dpi = 254F;
+            this.xrLine113.Name = "xrLine113";
+            this.xrLine113.StyleName = "gridRowLineStyle";
+            // 
+            // bookmarkModelloSection3000
+            // 
+            this.bookmarkModelloSection3000.BackColor = System.Drawing.Color.White;
+            this.bookmarkModelloSection3000.CanGrow = false;
+            this.bookmarkModelloSection3000.Dpi = 254F;
+            this.bookmarkModelloSection3000.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[elementIndex]")});
+            this.bookmarkModelloSection3000.Multiline = true;
+            this.bookmarkModelloSection3000.Name = "bookmarkModelloSection3000";
+            this.bookmarkModelloSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.bookmarkModelloSection3000.StyleName = "gridBookmarkChartElement";
+            this.bookmarkModelloSection3000.StylePriority.UseBackColor = false;
+            this.bookmarkModelloSection3000.StylePriority.UseForeColor = false;
+            this.bookmarkModelloSection3000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.bookmarkModelloSection3000_BeforePrint);
+            // 
+            // GroupHeaderBandSection3000
+            // 
+            this.GroupHeaderBandSection3000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelDivisaSection3000,
+            this.labelContributoNettoSection3000,
+            this.labelModelloSection3000,
+            this.labelSubHeaderSection3000,
+            this.xrLine31,
+            this.xrLine60,
+            this.LabelPatrimonioInfChiaveMultilinea,
+            this.LabelPerformanceInfChiaveMultilinea,
+            this.LabelMonetaInfChiaveMultilinea,
+            this.LabelPeriodoInfChiaveMultilinea,
+            this.xrLabel439,
+            this.xrLabel433,
+            this.xrLabel405,
+            this.xrLabel404,
+            this.xrLine28,
+            this.labelSubHeaderKeyInformationSection30,
+            this.labelHeaderSection3000});
+            this.GroupHeaderBandSection3000.Dpi = 254F;
+            this.GroupHeaderBandSection3000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection3000.KeepTogether = true;
+            this.GroupHeaderBandSection3000.Name = "GroupHeaderBandSection3000";
+            this.GroupHeaderBandSection3000.RepeatEveryPage = true;
+            // 
+            // labelDivisaSection3000
+            // 
+            this.labelDivisaSection3000.Dpi = 254F;
+            this.labelDivisaSection3000.Multiline = true;
+            this.labelDivisaSection3000.Name = "labelDivisaSection3000";
+            this.labelDivisaSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDivisaSection3000.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelContributoNettoSection3000
+            // 
+            this.labelContributoNettoSection3000.Dpi = 254F;
+            this.labelContributoNettoSection3000.Multiline = true;
+            this.labelContributoNettoSection3000.Name = "labelContributoNettoSection3000";
+            this.labelContributoNettoSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelContributoNettoSection3000.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelModelloSection3000
+            // 
+            this.labelModelloSection3000.Dpi = 254F;
+            this.labelModelloSection3000.Multiline = true;
+            this.labelModelloSection3000.Name = "labelModelloSection3000";
+            this.labelModelloSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelModelloSection3000.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelSubHeaderSection3000
+            // 
+            this.labelSubHeaderSection3000.Dpi = 254F;
+            this.labelSubHeaderSection3000.Multiline = true;
+            this.labelSubHeaderSection3000.Name = "labelSubHeaderSection3000";
+            this.labelSubHeaderSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection3000.StyleName = "sectionSubHeader";
+            // 
+            // xrLine31
+            // 
+            this.xrLine31.BorderWidth = 0F;
+            this.xrLine31.Dpi = 254F;
+            this.xrLine31.Name = "xrLine31";
+            this.xrLine31.StyleName = "gridHeaderLine";
+            this.xrLine31.StylePriority.UseBorderWidth = false;
+            // 
+            // xrLine60
+            // 
+            this.xrLine60.BorderWidth = 0F;
+            this.xrLine60.Dpi = 254F;
+            this.xrLine60.Name = "xrLine60";
+            this.xrLine60.StyleName = "gridHeaderLine";
+            this.xrLine60.StylePriority.UseBorderWidth = false;
+            // 
+            // LabelPatrimonioInfChiaveMultilinea
+            // 
+            this.LabelPatrimonioInfChiaveMultilinea.Dpi = 254F;
+            this.LabelPatrimonioInfChiaveMultilinea.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[section30].[content].[keyInformation].[assetsTo].[valueDate]")});
+            this.LabelPatrimonioInfChiaveMultilinea.Multiline = true;
+            this.LabelPatrimonioInfChiaveMultilinea.Name = "LabelPatrimonioInfChiaveMultilinea";
+            this.LabelPatrimonioInfChiaveMultilinea.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelPatrimonioInfChiaveMultilinea.StyleName = "reportLabelStyle";
+            this.LabelPatrimonioInfChiaveMultilinea.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.LabelPatrimonioInfChiaveMultilinea_BeforePrint);
+            // 
+            // LabelPerformanceInfChiaveMultilinea
+            // 
+            this.LabelPerformanceInfChiaveMultilinea.Dpi = 254F;
+            this.LabelPerformanceInfChiaveMultilinea.Multiline = true;
+            this.LabelPerformanceInfChiaveMultilinea.Name = "LabelPerformanceInfChiaveMultilinea";
+            this.LabelPerformanceInfChiaveMultilinea.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelPerformanceInfChiaveMultilinea.StyleName = "reportLabelStyle";
+            // 
+            // LabelMonetaInfChiaveMultilinea
+            // 
+            this.LabelMonetaInfChiaveMultilinea.Dpi = 254F;
+            this.LabelMonetaInfChiaveMultilinea.Multiline = true;
+            this.LabelMonetaInfChiaveMultilinea.Name = "LabelMonetaInfChiaveMultilinea";
+            this.LabelMonetaInfChiaveMultilinea.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelMonetaInfChiaveMultilinea.StyleName = "reportLabelStyle";
+            this.LabelMonetaInfChiaveMultilinea.StylePriority.UseTextAlignment = false;
+            this.LabelMonetaInfChiaveMultilinea.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // LabelPeriodoInfChiaveMultilinea
+            // 
+            this.LabelPeriodoInfChiaveMultilinea.Dpi = 254F;
+            this.LabelPeriodoInfChiaveMultilinea.Multiline = true;
+            this.LabelPeriodoInfChiaveMultilinea.Name = "LabelPeriodoInfChiaveMultilinea";
+            this.LabelPeriodoInfChiaveMultilinea.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelPeriodoInfChiaveMultilinea.StyleName = "reportLabelStyle";
+            // 
+            // xrLabel439
+            // 
+            this.xrLabel439.Dpi = 254F;
+            this.xrLabel439.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[section30].[content].[keyInformation].[assetsTo].[valueAsset]\n")});
+            this.xrLabel439.Multiline = true;
+            this.xrLabel439.Name = "xrLabel439";
+            this.xrLabel439.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel439.StyleName = "reportContentStyleBold";
+            // 
+            // xrLabel433
+            // 
+            this.xrLabel433.Dpi = 254F;
+            this.xrLabel433.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[section30].[content].[keyInformation].[percentPerformance]")});
+            this.xrLabel433.Multiline = true;
+            this.xrLabel433.Name = "xrLabel433";
+            this.xrLabel433.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel433.StyleName = "reportContentStyleBold";
+            // 
+            // xrLabel405
+            // 
+            this.xrLabel405.Dpi = 254F;
+            this.xrLabel405.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[section30].[content].[keyInformation].[currency]\n")});
+            this.xrLabel405.Multiline = true;
+            this.xrLabel405.Name = "xrLabel405";
+            this.xrLabel405.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel405.StyleName = "reportContentStyleBold";
+            // 
+            // xrLabel404
+            // 
+            this.xrLabel404.Dpi = 254F;
+            this.xrLabel404.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[section30].[content].[keyInformation].[period]")});
+            this.xrLabel404.Multiline = true;
+            this.xrLabel404.Name = "xrLabel404";
+            this.xrLabel404.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel404.StyleName = "reportContentStyleBold";
+            // 
+            // xrLine28
+            // 
+            this.xrLine28.BorderWidth = 0F;
+            this.xrLine28.Dpi = 254F;
+            this.xrLine28.Name = "xrLine28";
+            this.xrLine28.StyleName = "gridHeaderLine";
+            this.xrLine28.StylePriority.UseBorderWidth = false;
+            // 
+            // labelSubHeaderKeyInformationSection30
+            // 
+            this.labelSubHeaderKeyInformationSection30.Dpi = 254F;
+            this.labelSubHeaderKeyInformationSection30.Multiline = true;
+            this.labelSubHeaderKeyInformationSection30.Name = "labelSubHeaderKeyInformationSection30";
+            this.labelSubHeaderKeyInformationSection30.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderKeyInformationSection30.StyleName = "sectionSubHeader";
+            // 
+            // labelHeaderSection3000
+            // 
+            this.labelHeaderSection3000.Dpi = 254F;
+            this.labelHeaderSection3000.Multiline = true;
+            this.labelHeaderSection3000.Name = "labelHeaderSection3000";
+            this.labelHeaderSection3000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection3000.StyleName = "sectionHeader";
+            // 
+            // GroupHeaderBandSection3010
+            // 
+            this.GroupHeaderBandSection3010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.chartSection3020,
+            this.xrLine114,
+            this.labelSubHeaderSection3010});
+            this.GroupHeaderBandSection3010.Dpi = 254F;
+            this.GroupHeaderBandSection3010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSection3010.KeepTogether = true;
+            this.GroupHeaderBandSection3010.Level = 1;
+            this.GroupHeaderBandSection3010.Name = "GroupHeaderBandSection3010";
+            this.GroupHeaderBandSection3010.PrintAcrossBands = true;
+            // 
+            // chartSection3020
+            // 
+            this.chartSection3020.BorderColor = System.Drawing.Color.Black;
+            this.chartSection3020.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.chartSection3020.DataMember = "section30.content.subSection3020.content";
+            this.chartSection3020.DataSource = this.jsonDataSourcePSE;
+            xyDiagram2.AxisX.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F);
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.GridLines.Visible = false;
+            xyDiagram2.AxisY.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F);
+            xyDiagram2.AxisY.Label.TextPattern = "{0}%";
+            xyDiagram2.AxisY.MinorCount = 1;
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisualRange.Auto = false;
+            xyDiagram2.AxisY.VisualRange.AutoSideMargins = false;
+            xyDiagram2.AxisY.VisualRange.EndSideMargin = 0D;
+            xyDiagram2.AxisY.VisualRange.MaxValueSerializable = "100";
+            xyDiagram2.AxisY.VisualRange.MinValueSerializable = "0";
+            xyDiagram2.AxisY.VisualRange.StartSideMargin = 0D;
+            xyDiagram2.AxisY.WholeRange.Auto = false;
+            xyDiagram2.AxisY.WholeRange.AutoSideMargins = false;
+            xyDiagram2.AxisY.WholeRange.EndSideMargin = 0D;
+            xyDiagram2.AxisY.WholeRange.MaxValueSerializable = "100";
+            xyDiagram2.AxisY.WholeRange.MinValueSerializable = "0";
+            xyDiagram2.AxisY.WholeRange.StartSideMargin = 0D;
+            xyDiagram2.DefaultPane.BorderVisible = false;
+            xyDiagram2.DefaultPane.EnableAxisXScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xyDiagram2.DefaultPane.EnableAxisXZooming = DevExpress.Utils.DefaultBoolean.False;
+            xyDiagram2.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
+            xyDiagram2.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
+            this.chartSection3020.Diagram = xyDiagram2;
+            this.chartSection3020.Dpi = 254F;
+            this.chartSection3020.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartSection3020.Name = "chartSection3020";
+            this.chartSection3020.PaletteName = "BDSPaletteFull";
+            this.chartSection3020.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(129)))), ((int)(((byte)(100))))), System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(129)))), ((int)(((byte)(100)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121))))), System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(86)))), ((int)(((byte)(121)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(185)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(129)))), ((int)(((byte)(154))))), System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(129)))), ((int)(((byte)(154)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(179)))), ((int)(((byte)(162))))), System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(179)))), ((int)(((byte)(162)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(202)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(202)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(171)))), ((int)(((byte)(188))))), System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(171)))), ((int)(((byte)(188)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(205)))), ((int)(((byte)(193))))), System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(205)))), ((int)(((byte)(193)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(220)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(213)))), ((int)(((byte)(221))))), System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(213)))), ((int)(((byte)(221)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(230)))), ((int)(((byte)(224))))), System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(230)))), ((int)(((byte)(224)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(237)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(237)))), ((int)(((byte)(255))))))}));
+            stackedBarSeriesLabel1.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
+            stackedBarSeriesLabel1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Empty;
+            series7.Label = stackedBarSeriesLabel1;
+            series7.Name = "SeriesTest";
+            series7.SeriesID = 0;
+            stackedBarSeriesView1.BarWidth = 0.2D;
+            series7.View = stackedBarSeriesView1;
+            this.chartSection3020.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series7};
+            this.chartSection3020.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartSection3020_CustomDrawSeriesPoint);
+            this.chartSection3020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartSection3020_BeforePrint);
+            // 
+            // xrLine114
+            // 
+            this.xrLine114.BorderWidth = 0F;
+            this.xrLine114.Dpi = 254F;
+            this.xrLine114.Name = "xrLine114";
+            this.xrLine114.StyleName = "gridHeaderLine";
+            this.xrLine114.StylePriority.UseBorderWidth = false;
+            // 
+            // labelSubHeaderSection3010
+            // 
+            this.labelSubHeaderSection3010.Dpi = 254F;
+            this.labelSubHeaderSection3010.Multiline = true;
+            this.labelSubHeaderSection3010.Name = "labelSubHeaderSection3010";
+            this.labelSubHeaderSection3010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection3010.StyleName = "sectionSubHeader";
+            // 
             // ReportPSE
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -17466,7 +17869,8 @@
             this.DetailReportSection11000,
             this.DetailReportSection11010,
             this.DetailReportSection11020,
-            this.DetailReportSection11030});
+            this.DetailReportSection11030,
+            this.DetailReport});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.jsonDataSourcePSE});
             this.DataSource = this.jsonDataSourcePSE;
@@ -17522,6 +17926,11 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercSharesSection17000, "Default", "SizeF", new System.Drawing.SizeF(50F, 50.00001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercSharesSection17000, "Default", "Text", "percPatrimonioSection6000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkChartPercSharesSection17000, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkModelloSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(10F, 4.87F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkModelloSection3000, "Default", "SizeF", new System.Drawing.SizeF(50F, 50.00001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkModelloSection3000, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkModelloSection3000, "Default", "TextFormatString", "{0:0.00}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.bookmarkModelloSection3000, "Default", "Visible", true),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.BottomMargin, "Default", "HeightF", 172F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.cambioSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(591.7911F, 4.87325F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.cambioSection6000, "Default", "SizeF", new System.Drawing.SizeF(223.13F, 50F)),
@@ -17539,6 +17948,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.896F, 216.5083F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection2010, "Default", "SizeF", new System.Drawing.SizeF(1407.771F, 846.6666F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection3020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.9F, 542.28F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection3020, "Default", "SizeF", new System.Drawing.SizeF(1407.77F, 900F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1556.292F, 106.1794F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "Series.1.Label.TextPattern", "{V}% "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection4010, "Default", "SizeF", new System.Drawing.SizeF(1203.709F, 995.8206F)),
@@ -17550,6 +17961,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.classSection4000, "Default", "SizeF", new System.Drawing.SizeF(42.97156F, 34.60742F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.classSection4000, "Default", "Text", "classSection4000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.classSection4000, "Default", "Visible", false),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentContributoNettoSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(857.2503F, 4.873087F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentContributoNettoSection3000, "Default", "SizeF", new System.Drawing.SizeF(287.7086F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentContributoNettoSection3000, "Default", "Text", "percPatrimonioSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentContributoNettoSection3000, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010AddressBook, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1771.75F, 25.00106F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010AddressBook, "Default", "SizeF", new System.Drawing.SizeF(334.7067F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010AddressBook, "Default", "Text", "ContentDetail19010AddressBook"),
@@ -17576,6 +17991,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010Object, "Default", "SizeF", new System.Drawing.SizeF(207.2412F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010Object, "Default", "Text", "ContentDetail19010Object"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentDetail19010Object, "Default", "Visible", false),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentDivisaSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(710.7903F, 4.873087F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentDivisaSection3000, "Default", "SizeF", new System.Drawing.SizeF(146.4601F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentDivisaSection3000, "Default", "Text", "importoSection6000"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentDivisaSection3000, "Default", "TextFormatString", ""),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentHeaderRow1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2097.333F, 103.5799F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentHeaderRow1, "Default", "SizeF", new System.Drawing.SizeF(670.2917F, 58.41999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentHeaderRow1, "Default", "Text", "contentHeaderRow1"),
@@ -17608,6 +18027,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentManagementReportToDate, "Default", "Text", "ContentManagementReportToDate"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentManagementReportToDate, "Default", "TextFormatString", "{0:dd.MM.yyyy}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.ContentManagementReportToDate, "Default", "Visible", false),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentModelloSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(84.66666F, 4.873087F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentModelloSection3000, "Default", "SizeF", new System.Drawing.SizeF(626.1236F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contentModelloSection3000, "Default", "Text", "divisaSection6000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentPatrimonialFluctuation, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1126.96F, 0.1599547F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentPatrimonialFluctuation, "Default", "SizeF", new System.Drawing.SizeF(254F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentPatrimonialFluctuation, "Default", "Text", "contentPatrimonialFluctuation"),
@@ -17710,6 +18132,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport1000, "Default", "HeightF", 269.5202F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport16000, "Default", "HeightF", 74.29166F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport2000, "Default", "HeightF", 120.8414F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport3000, "Default", "HeightF", 66.00015F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport4000, "Default", "HeightF", 131.1668F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11000, "Default", "HeightF", 160F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11010, "Default", "HeightF", 160F),
@@ -17761,6 +18184,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection2000, "Default", "HeightF", 251.4217F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection20000, "Default", "HeightF", 1430.294F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection2010, "Default", "HeightF", 1075.954F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection3000, "Default", "HeightF", 588.9376F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection3010, "Default", "HeightF", 1459.482F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection4000, "Default", "HeightF", 250.2917F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection4010, "Default", "HeightF", 1102F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection6000, "Default", "HeightF", 252F),
@@ -17999,6 +18424,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContiSection7000, "Default", "SizeF", new System.Drawing.SizeF(918.38F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContiSection7000, "Default", "Text", "Conti"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContiSection7000, "en-CH", "Text", "Accounts"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContributoNettoSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(857.2503F, 530.1995F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContributoNettoSection3000, "Default", "SizeF", new System.Drawing.SizeF(287.7086F, 50.00006F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelContributoNettoSection3000, "Default", "Text", "Contributo netto"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCorrispondenteSection7020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(697.62F, 94.55F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCorrispondenteSection7020, "Default", "SizeF", new System.Drawing.SizeF(500F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCorrispondenteSection7020, "Default", "Text", "Corrispondente"),
@@ -18104,6 +18532,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection19010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(739.9797F, 95.26003F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection19010, "Default", "SizeF", new System.Drawing.SizeF(136.0202F, 76.45836F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection19010, "Default", "Text", "Divisa"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(710.7903F, 530.1995F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection3000, "Default", "SizeF", new System.Drawing.SizeF(146.4601F, 50.00006F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection3000, "Default", "Text", "Divisa"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(10.00004F, 191.5536F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection6000, "Default", "SizeF", new System.Drawing.SizeF(254.8501F, 49.99998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDivisaSection6000, "Default", "Text", "Divisa"),
@@ -18259,6 +18690,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection20000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection20000, "Default", "SizeF", new System.Drawing.SizeF(907.5212F, 76.9408F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection20000, "Default", "Text", "FINE ESTRATTO"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection3000, "Default", "Bookmark", "Multilinea"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection3000, "Default", "SizeF", new System.Drawing.SizeF(898.147F, 76.9408F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection3000, "Default", "Text", "MULTILINEA"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection4000, "Default", "Bookmark", "Ripartizione per asset class"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection4000, "Default", "SizeF", new System.Drawing.SizeF(907.5212F, 76.9408F)),
@@ -18442,12 +18877,18 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labellnizioAnnoSection11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1060.77F, 51.45F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labellnizioAnnoSection11000, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labellnizioAnnoSection11000, "Default", "Text", "Inizio anno"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelModelloSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.749832F, 530.1994F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelModelloSection3000, "Default", "SizeF", new System.Drawing.SizeF(708.0405F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelModelloSection3000, "Default", "Text", "Modello"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta1Section7040, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 94.55366F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta1Section7040, "Default", "SizeF", new System.Drawing.SizeF(608.81F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta1Section7040, "Default", "Text", "Moneta 1"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta2Section7040, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1217.625F, 94.55366F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta2Section7040, "Default", "SizeF", new System.Drawing.SizeF(310.77F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelMoneta2Section7040, "Default", "Text", "Moneta 2"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelMonetaInfChiaveMultilinea, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1315F, 202.8018F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelMonetaInfChiaveMultilinea, "Default", "SizeF", new System.Drawing.SizeF(345.6443F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelMonetaInfChiaveMultilinea, "Default", "Text", "Moneta"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 191.5529F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "SizeF", new System.Drawing.SizeF(629.7895F, 50.00002F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelNazioneSection17000, "Default", "Text", "Nazioni"),
@@ -18680,6 +19121,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelOscillazionePatrimoniale, "Default", "SizeF", new System.Drawing.SizeF(1376.51F, 30F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelOscillazionePatrimoniale, "Default", "Text", "*L’importo non comprende l’oscillazione patrimoniale di {0} {1} avvenuta dopo il " +
                     "{2} e non ancora analizzata"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPatrimonioInfChiaveMultilinea, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 282.4685F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPatrimonioInfChiaveMultilinea, "Default", "SizeF", new System.Drawing.SizeF(405.0841F, 58.42007F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPatrimonioInfChiaveMultilinea, "Default", "Text", "Patrimonio al {0}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1478.92F, 93.54145F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section11000, "Default", "SizeF", new System.Drawing.SizeF(114.8296F, 76.45835F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc1Section11000, "Default", "Text", "(%)"),
@@ -18810,9 +19254,15 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "Default", "SizeF", new System.Drawing.SizeF(313.48F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "Default", "Text", "(%) del patrimonio"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "en-CH", "Text", "(%) Asset"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPerformanceInfChiaveMultilinea, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1315F, 282.4685F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPerformanceInfChiaveMultilinea, "Default", "SizeF", new System.Drawing.SizeF(345.6443F, 58.42007F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPerformanceInfChiaveMultilinea, "Default", "Text", "Performance"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerformanceSection2000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1050.19F, 191.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerformanceSection2000, "Default", "SizeF", new System.Drawing.SizeF(239.4F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerformanceSection2000, "Default", "Text", "Performance"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPeriodoInfChiaveMultilinea, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0.1892649F, 202.8018F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPeriodoInfChiaveMultilinea, "Default", "SizeF", new System.Drawing.SizeF(404.8949F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelPeriodoInfChiaveMultilinea, "Default", "Text", "Periodo"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPeriodoSection2000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 191.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPeriodoSection2000, "Default", "SizeF", new System.Drawing.SizeF(299.9998F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPeriodoSection2000, "Default", "Text", "Periodo"),
@@ -19120,6 +19570,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelStrikeSection7050, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(872.4203F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelStrikeSection7050, "Default", "SizeF", new System.Drawing.SizeF(171.9996F, 76.45835F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelStrikeSection7050, "Default", "Text", "Strike"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderKeyInformationSection30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125.0001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderKeyInformationSection30, "Default", "SizeF", new System.Drawing.SizeF(898.147F, 50.48244F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderKeyInformationSection30, "Default", "Text", "Informazioni chiave"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection1000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection1000, "Default", "SizeF", new System.Drawing.SizeF(898.1467F, 50.48244F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection1000, "Default", "Text", "Informazioni chiave"),
@@ -19159,6 +19612,12 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1351.896F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2010, "Default", "SizeF", new System.Drawing.SizeF(855.1713F, 50.48244F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection2010, "Default", "Text", "Grafico evoluzione performance"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.749832F, 463.646F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3000, "Default", "SizeF", new System.Drawing.SizeF(898.1467F, 50.48244F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3000, "Default", "Text", "Analisi performance linee"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1305F, 463.65F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3010, "Default", "SizeF", new System.Drawing.SizeF(1465F, 50.48245F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection3010, "Default", "Text", "Evoluzione allocazione linee"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection4000, "Default", "SizeF", new System.Drawing.SizeF(431.2708F, 50.48246F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection4000, "Default", "Text", "Investimenti"),
@@ -19570,6 +20029,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.valoreMercatoSection7000, "Default", "SizeF", new System.Drawing.SizeF(400F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.valoreMercatoSection7000, "Default", "Text", "valoreMercatoSection7000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.valoreMercatoSection7000, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.verticalLineDettagliPortafoglio, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1370F, 130.56F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.verticalLineDettagliPortafoglio, "Default", "SizeF", new System.Drawing.SizeF(16F, 900F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.verticalLineEvoluzionePerformance, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1305F, 125F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.verticalLineEvoluzionePerformance, "Default", "SizeF", new System.Drawing.SizeF(16F, 950.9498F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2316.38F, 100.5404F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel1, "Default", "SizeF", new System.Drawing.SizeF(258.7251F, 48.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel1, "Default", "Text", "xrLabel1"),
@@ -20718,8 +21181,6 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel371, "Default", "SizeF", new System.Drawing.SizeF(193.8967F, 48.41999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel371, "Default", "Text", "xrLabel62"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel371, "Default", "TextFormatString", "{0:0.00}%"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel372, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1370F, 130.56F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel372, "Default", "SizeF", new System.Drawing.SizeF(16F, 900F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel373, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2316.38F, 100.5404F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel373, "Default", "SizeF", new System.Drawing.SizeF(256.4905F, 48.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel373, "Default", "Text", "xrLabel60"),
@@ -20753,8 +21214,6 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel380, "Default", "SizeF", new System.Drawing.SizeF(257.73F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel380, "Default", "Text", "xrLabel2"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel380, "Default", "TextFormatString", "{0:N2}"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel381, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1305F, 125F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel381, "Default", "SizeF", new System.Drawing.SizeF(16F, 950.9498F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel382, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 2.75257F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel382, "Default", "SizeF", new System.Drawing.SizeF(694.17F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel382, "Default", "Text", "xrLabel11"),
@@ -20850,6 +21309,12 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel402, "Default", "Text", "xrLabel30"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel403, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1305F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel403, "Default", "SizeF", new System.Drawing.SizeF(16F, 1420F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel404, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(405.0844F, 202.8018F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel404, "Default", "SizeF", new System.Drawing.SizeF(599.6459F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel404, "Default", "Text", "xrLabel404"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel405, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1660.644F, 202.8018F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel405, "Default", "SizeF", new System.Drawing.SizeF(266.1058F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel405, "Default", "Text", "xrLabel405"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel406, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(573.7902F, 2.753062F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel406, "Default", "SizeF", new System.Drawing.SizeF(135.7695F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel406, "Default", "Text", "xrLabel30"),
@@ -20965,6 +21430,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel432, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 100.54F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel432, "Default", "SizeF", new System.Drawing.SizeF(1050.19F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel432, "Default", "Text", "xrLabel27"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel433, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1660.644F, 282.4685F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel433, "Default", "SizeF", new System.Drawing.SizeF(266.1052F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel433, "Default", "Text", "xrLabel433"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel433, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel434, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2319.38F, 100.54F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel434, "Default", "SizeF", new System.Drawing.SizeF(257.73F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel434, "Default", "Text", "xrLabel2"),
@@ -20978,6 +21447,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel438, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(918.3761F, 2.753062F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel438, "Default", "SizeF", new System.Drawing.SizeF(131.81F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel438, "Default", "Text", "xrLabel30"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel439, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(405.0844F, 282.4685F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel439, "Default", "SizeF", new System.Drawing.SizeF(599.6459F, 58.42007F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel439, "Default", "Text", "xrLabel439"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel439, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel44, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1758.75F, 2.75F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel44, "Default", "SizeF", new System.Drawing.SizeF(120F, 48F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel44, "Default", "Text", "xrLabel44"),
@@ -21333,6 +21806,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine111, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine112, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine112, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine113, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 61.00015F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine113, "Default", "SizeF", new System.Drawing.SizeF(1144.959F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine114, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1305F, 520.91F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine114, "Default", "SizeF", new System.Drawing.SizeF(1463.94F, 5.291748F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine12, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 84.24999F)),
@@ -21367,12 +21844,16 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine26, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291672F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine27, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2615F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine27, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291687F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 185.16F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine28, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2615F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine29, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 245F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine3, "Default", "SizeF", new System.Drawing.SizeF(1528.397F, 5.291656F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 245F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine30, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291672F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine31, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.749832F, 520.9075F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine31, "Default", "SizeF", new System.Drawing.SizeF(1142.209F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine32, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.896F, 158.2617F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine32, "Default", "SizeF", new System.Drawing.SizeF(1421.104F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine33, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1348.9F, 225.0005F)),
@@ -21435,6 +21916,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine59, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine6, "Default", "SizeF", new System.Drawing.SizeF(2770F, 7.000214F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine60, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.749832F, 583.6459F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine60, "Default", "SizeF", new System.Drawing.SizeF(1142.209F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine61, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1448.94F, 120F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine61, "Default", "SizeF", new System.Drawing.SizeF(1320F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine62, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 120F)),
@@ -21624,6 +22107,11 @@
             ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection20010)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTableSection19010Objects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSection3020)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -22214,7 +22702,6 @@
         private DevExpress.XtraReports.UI.XRLine xrLine59;
         private DevExpress.XtraReports.UI.XRLabel xrLabel154;
         private DevExpress.XtraReports.UI.XRLabel xrLabel135;
-        private DevExpress.XtraReports.UI.XRLabel LabelNomeClienteDettPortafoglio;
         private DevExpress.XtraReports.UI.XRLabel LabelNumeroClienteDettPortafoglio;
         private DevExpress.XtraReports.UI.XRLabel LabelPortafoglioDettPortafoglio;
         private DevExpress.XtraReports.UI.XRLabel xrLabel215;
@@ -23017,8 +23504,8 @@
         private DevExpress.XtraReports.UI.XRLine xrLine112;
         private DevExpress.XtraReports.UI.XRLabel xrLabel462;
         private DevExpress.XtraReports.UI.XRLabel xrLabel463;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel372;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel381;
+        private DevExpress.XtraReports.UI.XRLabel verticalLineDettagliPortafoglio;
+        private DevExpress.XtraReports.UI.XRLabel verticalLineEvoluzionePerformance;
         private DevExpress.XtraReports.UI.XRLabel xrLabel403;
         private DevExpress.XtraReports.UI.XRControlStyle reportContentStyleBoldRightAlign;
         private DevExpress.XtraReports.UI.XRControlStyle reportContentStyleRightAlign;
@@ -23029,5 +23516,35 @@
         private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercAlphaCodeInvSection20020;
         private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercAlphaCodeInvSection4000;
         private DevExpress.XtraReports.UI.XRLabel bookmarkChartPercInvSection4000;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReport;
+        private DevExpress.XtraReports.UI.DetailBand DetailReport3000;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection3000;
+        private DevExpress.XtraReports.UI.XRLine xrLine28;
+        private DevExpress.XtraReports.UI.XRLabel labelSubHeaderKeyInformationSection30;
+        private DevExpress.XtraReports.UI.XRLabel labelHeaderSection3000;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel439;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel433;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel405;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel404;
+        private DevExpress.XtraReports.UI.XRLabel LabelNomeClienteDettPortafoglio;
+        private DevExpress.XtraReports.UI.XRLabel LabelPerformanceInfChiaveMultilinea;
+        private DevExpress.XtraReports.UI.XRLabel LabelMonetaInfChiaveMultilinea;
+        private DevExpress.XtraReports.UI.XRLabel LabelPeriodoInfChiaveMultilinea;
+        private DevExpress.XtraReports.UI.XRLabel LabelPatrimonioInfChiaveMultilinea;
+        private DevExpress.XtraReports.UI.XRLabel labelContributoNettoSection3000;
+        private DevExpress.XtraReports.UI.XRLabel labelModelloSection3000;
+        private DevExpress.XtraReports.UI.XRLabel labelSubHeaderSection3000;
+        private DevExpress.XtraReports.UI.XRLine xrLine31;
+        private DevExpress.XtraReports.UI.XRLine xrLine60;
+        private DevExpress.XtraReports.UI.XRLabel contentModelloSection3000;
+        private DevExpress.XtraReports.UI.XRLabel contentDivisaSection3000;
+        private DevExpress.XtraReports.UI.XRLabel contentContributoNettoSection3000;
+        private DevExpress.XtraReports.UI.XRLine xrLine113;
+        private DevExpress.XtraReports.UI.XRLabel bookmarkModelloSection3000;
+        private DevExpress.XtraReports.UI.XRLabel labelDivisaSection3000;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection3010;
+        private DevExpress.XtraReports.UI.XRLine xrLine114;
+        private DevExpress.XtraReports.UI.XRLabel labelSubHeaderSection3010;
+        private DevExpress.XtraReports.UI.XRChart chartSection3020;
     }
 }

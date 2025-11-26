@@ -34,7 +34,9 @@ namespace PSE.Model.Output.Interfaces
 
         decimal? PercentNetContribution { get; set; }
 
-        string Class {  get; set; } 
+        string Class {  get; set; }
+
+        int ElementIndex { get; set; }
 
     }
 
@@ -56,6 +58,18 @@ namespace PSE.Model.Output.Interfaces
 
     }
 
+    public interface ILineAllocationEvolutionChartFlat {
+
+        string Period { get; set; }
+
+        string ModelLine { get; set; }
+
+        decimal? PercentNetContribution { get; set; }
+
+        int ElementIndex { get; set; }  
+
+    }
+
     public interface ISubSection3000Content
     {
 
@@ -74,6 +88,14 @@ namespace PSE.Model.Output.Interfaces
 
     }
 
+    public interface ISubSection3020Content {
+
+        string Name { get; set; }
+
+        IList<ILineAllocationEvolutionChartFlat> Content { get; set; }
+
+    }
+
     public interface ISection030Content
     {
 
@@ -81,7 +103,9 @@ namespace PSE.Model.Output.Interfaces
 
         ISubSection3000Content? SubSection3000 { get; set; }
 
-        ISubSection3010Content? SubSection3010 { get; set; }      
+        ISubSection3010Content? SubSection3010 { get; set; }
+
+        ISubSection3020Content? SubSection3020 { get; set; }
 
     }
 

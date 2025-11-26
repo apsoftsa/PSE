@@ -181,60 +181,69 @@
             "modelLine": "AZIONARIO SVIZZERA",
             "currency": "EUR",
             "percentNetContribution": -0.57,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 1
           },
           {
             "modelLine": "BREVE TERMINE USD",
             "currency": "USD",
             "percentNetContribution": -0.12,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 2
           },
           {
             "modelLine": "AZIONARIO GLOBALE",
             "currency": "EUR",
             "percentNetContribution": -0.28,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 3
           },
           {
             "modelLine": "BILANCIATO",
             "currency": "EUR",
             "percentNetContribution": -0.12,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 4
           },
           {
             "modelLine": "BREVE TERMINE EUR",
             "currency": "EUR",
             "percentNetContribution": -0.33,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 5
           },
           {
             "modelLine": "BREVE TERMINE CHF",
             "currency": "CHF",
             "percentNetContribution": 0.01,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 6
           },
           {
             "modelLine": "TOTAL RETURN USD",
             "currency": "USD",
             "percentNetContribution": 0.61,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 7
           },
           {
             "modelLine": "OBBLIGAZIONARIO EUR",
             "currency": "EUR",
             "percentNetContribution": -0.98,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 8
           },
           {
             "modelLine": "BILANCIATA INTELLIGENZA ARTIFICIALE",
             "currency": "EUR",
             "percentNetContribution": 0.42,
-            "class": "Entry"
+            "class": "Entry",
+            "elementIndex": 9
           },
           {
-            "modelLine": "Total",
+            "modelLine": "Totale",
             "currency": "",
-            "percentNetContribution": -1.36,
+            "percentNetContribution": -1.37,
             "class": "Total"
           }
         ]
@@ -299,6 +308,83 @@
                 "percentNetContribution": 20.00
               }
             ]
+          }
+        ]
+      },
+      "subSection3020": {
+        "name": "Line allocation evolution chart flat",
+        "content": [
+          {
+            "period": "05.02.2025",
+            "modelLine": "AZIONARIO SVIZZERA",
+            "percentNetContribution": 10.00,
+            "elementIndex": 1
+          },
+          {
+            "period": "05.02.2025",
+            "modelLine": "BREVE TERMINE USD",
+            "percentNetContribution": 15.00,
+            "elementIndex": 2
+          },
+          {
+            "period": "05.02.2025",
+            "modelLine": "AZIONARIO GLOBALE",
+            "percentNetContribution": 15.00,
+            "elementIndex": 3
+          },
+          {
+            "period": "05.02.2025",
+            "modelLine": "BILANCIATO",
+            "percentNetContribution": 20.00,
+            "elementIndex": 4
+          },
+          {
+            "period": "05.02.2025",
+            "modelLine": "BREVE TERMINE EUR",
+            "percentNetContribution": 25.00,
+            "elementIndex": 5
+          },
+          {
+            "period": "05.02.2025",
+            "modelLine": "BREVE TERMINE CHF",
+            "percentNetContribution": 15.00,
+            "elementIndex": 6
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "AZIONARIO SVIZZERA",
+            "percentNetContribution": 10.00,
+            "elementIndex": 1
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "TOTAL RETURN USD",
+            "percentNetContribution": 15.00,
+            "elementIndex": 7
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "BREVE TERMINE EUR",
+            "percentNetContribution": 15.00,
+            "elementIndex": 5
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "AZIONARIO GLOBALE",
+            "percentNetContribution": 15.00,
+            "elementIndex": 3
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "OBBLIGAZIONARIO EUR",
+            "percentNetContribution": 25.00,
+            "elementIndex": 8
+          },
+          {
+            "period": "07.02.2025",
+            "modelLine": "BILANCIATA INTELLIGENZA ARTIFICIALE",
+            "percentNetContribution": 20.00,
+            "elementIndex": 9
           }
         ]
       }

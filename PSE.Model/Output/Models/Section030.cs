@@ -39,7 +39,7 @@ namespace PSE.Model.Output.Models
 
         public string Currency { get; set; }
 
-        public decimal? PercentPerformance { get; set; }
+        public decimal? PercentPerformance { get; set; }        
 
         public MultilineKeyInformation()
         {
@@ -76,14 +76,18 @@ namespace PSE.Model.Output.Models
         public string Currency { get; set; }
 
         public decimal? PercentNetContribution { get; set; }
-        public string Class {  get; set; }  
+
+        public string Class {  get; set; }
+
+        public int ElementIndex { get; set; }
 
         public LinePerformanceAnalysis()
         {
             ModelLine = string.Empty;
             Currency = string.Empty;
             PercentNetContribution = 0;
-            Class = string.Empty;   
+            Class = string.Empty;  
+            ElementIndex = 0;   
         }
 
         public LinePerformanceAnalysis(ILinePerformanceAnalysis source)
@@ -92,6 +96,7 @@ namespace PSE.Model.Output.Models
             Currency = source.Currency;
             PercentNetContribution = source.PercentNetContribution;
             Class = source.Class;
+            ElementIndex= source.ElementIndex;  
         }
 
     }
@@ -153,6 +158,38 @@ namespace PSE.Model.Output.Models
 
     }
 
+    [Serializable]
+    [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
+    public class LineAllocationEvolutionChartFlat : ILineAllocationEvolutionChartFlat {
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string Period { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string ModelLine { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public decimal? PercentNetContribution { get; set; }
+
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int ElementIndex { get; set; }
+
+        public LineAllocationEvolutionChartFlat() {
+            Period = string.Empty;
+            ModelLine = string.Empty;   
+            PercentNetContribution = 0;
+            ElementIndex = 0;            
+        }
+
+        public LineAllocationEvolutionChartFlat(ILineAllocationEvolutionChartFlat source) {
+            Period = source.Period;
+            ModelLine = source.ModelLine;
+            PercentNetContribution = source.PercentNetContribution;
+            ElementIndex = source.ElementIndex;
+        }
+
+    }
+
     public class SubSection3000Content : ISubSection3000Content
     {
 
@@ -205,6 +242,28 @@ namespace PSE.Model.Output.Models
 
     }
 
+    public class SubSection3020Content : ISubSection3020Content {
+
+        public string Name { get; set; }
+
+        public IList<ILineAllocationEvolutionChartFlat> Content { get; set; }
+
+        public SubSection3020Content() {
+            Name = "Line allocation evolution chart flat";
+            Content = new List<ILineAllocationEvolutionChartFlat>();
+        }
+
+        public SubSection3020Content(ISubSection3020Content source) {
+            Name = source.Name;
+            Content = new List<ILineAllocationEvolutionChartFlat>();
+            if (source.Content != null && source.Content.Any()) {
+                foreach (var item in source.Content)
+                    Content.Add(new LineAllocationEvolutionChartFlat(item));
+            }
+        }
+
+    }
+
     [Serializable]
     [JsonObject(ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Section030Content : ISection030Content
@@ -218,11 +277,15 @@ namespace PSE.Model.Output.Models
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public ISubSection3010Content? SubSection3010 { get; set; }
 
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public ISubSection3020Content? SubSection3020 { get; set; }
+
         public Section030Content()
         {
             KeyInformation = new List<IMultilineKeyInformation>();
             SubSection3000 = new SubSection3000Content();
             SubSection3010 = new SubSection3010Content();
+            SubSection3020 = new SubSection3020Content();
         }
 
         public Section030Content(ISection030Content source)
@@ -235,6 +298,7 @@ namespace PSE.Model.Output.Models
             }
             SubSection3000 = (source.SubSection3000 != null) ? new SubSection3000Content(source.SubSection3000) : null;
             SubSection3010 = (source.SubSection3010 != null) ? new SubSection3010Content(source.SubSection3010) : null;
+            SubSection3020 = (source.SubSection3020 != null) ? new SubSection3020Content(source.SubSection3020) : null;
         }
 
     }

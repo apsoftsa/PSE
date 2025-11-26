@@ -25,12 +25,11 @@ namespace PSE.BusinessLogic {
                 ISection030Content sectionContent;
                 IList<ILineAllocationEvolutionChartModelLine> modelLines;
                 string cultureCode;
-                decimal totalPercContribution;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
-                    new PseReportRequest(ideItems.Select(sel => sel.CustomerId_6).Distinct().ToList()))).Result;
                 //PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
-                //   new PseReportRequest(new List<string>() { "1140041" }))).Result;
+                //    new PseReportRequest(ideItems.Select(sel => sel.CustomerId_6).Distinct().ToList()))).Result;
+                PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
+                   new PseReportRequest(new List<string>() { "1140041" }))).Result;
                 if (multilines != null && multilines.ReportList != null && multilines.ReportList.Count > 0) {
                     output = new() {
                         SectionId = sectionDest.SectionId,
@@ -39,8 +38,8 @@ namespace PSE.BusinessLogic {
                     };
                     sectionContent = new Section030Content();
                     foreach (PseReportData multilineItem in multilines.ReportList) {
-                        cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItems.FirstOrDefault(f => f.CustomerId_6 == multilineItem.InfoRelazione.Numide.ToString()).Language_18);
-                        //cultureCode = "I";
+                        //cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItems.FirstOrDefault(f => f.CustomerId_6 == multilineItem.InfoRelazione.Numide.ToString()).Language_18);
+                        cultureCode = "I";
                         sectionContent.KeyInformation.Add(new MultilineKeyInformation {
                             Currency = multilineItem.InfoRelazione.Moneta,
                             PercentPerformance = AssignRequiredCurrencyDecimal(multilineItem.InfoRelazione.Performance),
@@ -54,20 +53,23 @@ namespace PSE.BusinessLogic {
                                 ValueAsset = AssignRequiredCurrencyDecimal(multilineItem.InfoRelazione.Portafoglio)
                             }]
                         });
-                        totalPercContribution = 0;
-                        foreach (PseReportDataContributoPerformance contrPerfItem in multilineItem.ContributiPerformance) {
-                            totalPercContribution += AssignRequiredCurrencyDecimal(contrPerfItem.ContribuzioneNetta);
+                        int elementIdex = 1;
+                        Dictionary<Guid, int> keyAndIndex = new Dictionary<Guid, int>();
+                        foreach (PseReportDataContributoPerformance contrPerfItem in multilineItem.ContributiPerformance) {                            
                             sectionContent.SubSection3000.Content.Add(new LinePerformanceAnalysis() { 
                                 Currency = contrPerfItem.DivisaModello, 
                                 ModelLine = contrPerfItem.NomeModello, 
                                 PercentNetContribution = AssignRequiredCurrencyDecimal(contrPerfItem.ContribuzioneNetta),
-                                Class = CLASS_ENTRY
+                                Class = CLASS_ENTRY,
+                                ElementIndex = elementIdex, 
                             });
+                            keyAndIndex.Add(contrPerfItem.Id, elementIdex);
+                            elementIdex++;
                         }
                         sectionContent.SubSection3000.Content.Add(new LinePerformanceAnalysis() {
                             Currency = string.Empty,
                             ModelLine = dictionaryService.GetTranslation("total", cultureCode),
-                            PercentNetContribution = totalPercContribution,
+                            PercentNetContribution = AssignRequiredCurrencyDecimal(multilineItem.InfoRelazione.Performance),
                             Class = CLASS_TOTAL
                         });
                         foreach (PseReportDataComposizioneMultilinea compMultilineItem in multilineItem.ComposizioniMultilinea) {
@@ -77,12 +79,18 @@ namespace PSE.BusinessLogic {
                                     ModelLine = multilineItem.ContributiPerformance.FirstOrDefault(f => f.Id == compItem.Id).NomeModello, 
                                     PercentNetContribution = AssignRequiredCurrencyDecimal(compItem.Peso) 
                                 });
+                                sectionContent.SubSection3020.Content.Add(new LineAllocationEvolutionChartFlat() {
+                                    Period = AssignRequiredDate(compMultilineItem.StartDate, _culture),
+                                    ModelLine = multilineItem.ContributiPerformance.FirstOrDefault(f => f.Id == compItem.Id).NomeModello,
+                                    ElementIndex = keyAndIndex[compItem.Id],  
+                                    PercentNetContribution = AssignRequiredCurrencyDecimal(compItem.Peso)
+                                });
                             }
                             sectionContent.SubSection3010.Content.Add(new LineAllocationEvolutionChart() {
                                  Period = AssignRequiredDate(compMultilineItem.StartDate, _culture),
                                  ModelLines = [.. modelLines]
-                            });
-                        }                        
+                            });                            
+                        }  
                     }
                     output.Content = new Section030Content(sectionContent);
                 }
