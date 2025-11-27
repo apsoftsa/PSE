@@ -7866,7 +7866,6 @@
             xyDiagram1.AxisX.Label.MaxLineCount = 2;
             xyDiagram1.AxisX.Label.MaxWidth = 68;
             xyDiagram1.AxisX.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            xyDiagram1.AxisX.LabelPosition = DevExpress.XtraCharts.AxisLabelPosition.Inside;
             xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram1.AxisX.Tickmarks.Visible = false;
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;

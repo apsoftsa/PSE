@@ -10,6 +10,8 @@ namespace PSE.Reporting.Reports {
         private const int MAX_ITEMS_SHORT_PALETTE = 9;
         private const string PALETTE_FULL_NAME = "BDSPaletteFull";
         private const string PALETTE_SHORT_NAME = "BDSPaletteShort";
+        private const string CLASS_ITEM_ENTRY = "Entry";
+        private const string CLASS_ITEM_TOTAL = "Total";
 
         private string _currencyToApply;
         private string _currentAssetClassSection4000;
@@ -301,6 +303,51 @@ namespace PSE.Reporting.Reports {
                 labelESGProfile.StyleName = "labelESGProfile";
         }
 
+        private void chartSection3020_BeforePrint(object sender, CancelEventArgs e) {
+            XRChart chart = (XRChart)sender;
+            chart.Series.Clear();
+            chart.DataMember = "section30.content.subSection3020.content";
+            chart.SeriesTemplate.ChangeView(ViewType.StackedBar);
+            chart.SeriesTemplate.SeriesDataMember = "ElementIndex";
+            chart.SeriesTemplate.SetDataMembers("Period", "PercentNetContribution");
+            chart.SeriesTemplate.Label.BackColor = Color.Transparent;
+            chart.SeriesTemplate.Label.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            chart.SeriesTemplate.Label.TextColor = Color.White;
+            chart.SeriesTemplate.Label.TextPattern = "{V}%";
+            chart.SeriesTemplate.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
+        }
+
+        private void chartSection3020_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
+            XRChart chart = (XRChart)sender;
+            if (int.TryParse(e.Series.Name, out int currElementIndex) && currElementIndex > 0)
+                e.SeriesDrawOptions.Color = chart.PaletteRepository[chart.PaletteName][currElementIndex - 1].Color;
+        }
+
+        private void LabelPatrimonioInfChiaveMultilinea_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            label.Text = label.Tag != null ? label.Text.Replace("{0}", label.Tag.ToString()) : label.Text.Replace("{0}", "").Trim();
+        }
+
+        private void contentSection3000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            label.StyleName = label.Tag != null && label.Tag.ToString() == CLASS_ITEM_TOTAL ? "gridContentStyleBold" : "gridContentStyle";
+        }
+
+        private void contentContributoNettoSection3000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            label.StyleName = label.Tag != null && label.Tag.ToString() == CLASS_ITEM_TOTAL ? "gridContentStyleRightAlignBold" : "gridContentStyleRightAlign";
+        }
+
+        private void bookmarkModelloSection3000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (label.Tag != null && label.Tag.ToString() != CLASS_ITEM_TOTAL && int.TryParse(label.Tag.ToString(), out int currElementIndex) && currElementIndex > 0) {
+                label.Visible = true;
+                label.ForeColor = Color.Transparent;
+                label.BackColor = this.chartSection3020.PaletteRepository[this.chartSection3020.PaletteName][currElementIndex - 1].Color;
+            } else
+                label.Visible = false;
+        }
+
         private void DetailReportSection4000_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
             _currentGridChartPointIndex = 0;
@@ -352,7 +399,7 @@ namespace PSE.Reporting.Reports {
         }
 
         private void lineMiddleSection4000_BeforePrint(object sender, CancelEventArgs e) {
-            ((XRLine)sender).Visible = this.classSection4000.Text != "Total";
+            ((XRLine)sender).Visible = this.classSection4000.Text != CLASS_ITEM_TOTAL;
         }
 
         private void bookmarkChartPercInvSection4000_BeforePrint(object sender, CancelEventArgs e) {
@@ -360,7 +407,7 @@ namespace PSE.Reporting.Reports {
             if (_needResetRow == false && _currentChartPointsCount > 0) {
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Value != null && label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
                     label.BackColor = GetChartSeriesPointColorToApply(this.chartSection4010, _currentChartPointsCount, _currentGridChartPointIndex);
                     label.ForeColor = label.BackColor;
                     label.Visible = true;
@@ -374,7 +421,7 @@ namespace PSE.Reporting.Reports {
             XRLabel label = (XRLabel)sender;
             if (_needResetRow == false && _currentChartPointsCount > 0) {
                 label.Visible = false;
-                if (label.Value != null && label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
                     _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                     label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
                     label.Visible = true;
@@ -429,7 +476,7 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
@@ -444,7 +491,7 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                         label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
@@ -479,7 +526,7 @@ namespace PSE.Reporting.Reports {
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
                 if (double.TryParse(label.Value.ToString(), out double value)) {
-                    if (label.Tag != null && label.Tag.ToString() == "Entry" && value > 0) {
+                    if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
                         label.Visible = true;
@@ -522,7 +569,7 @@ namespace PSE.Reporting.Reports {
             XRLine line = (XRLine)sender;
             line.Visible = this.DetailReportSection170.CurrentRowIndex > 0;
             if (line.Visible) {
-                if (line.Tag != null && line.Tag.ToString() == "Total")
+                if (line.Tag != null && line.Tag.ToString() == CLASS_ITEM_TOTAL)
                     line.StyleName = "gridHeaderLine";
                 else
                     line.StyleName = "gridRowLineStyle";
@@ -531,7 +578,7 @@ namespace PSE.Reporting.Reports {
 
         private void section17000LineGridDown_BeforePrint(object sender, CancelEventArgs e) {
             XRLine line = (XRLine)sender;
-            if (line.Tag != null && line.Tag.ToString() == "Total")
+            if (line.Tag != null && line.Tag.ToString() == CLASS_ITEM_TOTAL)
                 line.StyleName = "gridHeaderLine";
             else
                 line.StyleName = "gridRowLineStyle";
@@ -542,7 +589,7 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection17010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
@@ -557,7 +604,7 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                         label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
@@ -724,7 +771,7 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection20010, _currentChartPointsCount, _currentGridChartPointIndex);
                         label.ForeColor = label.BackColor;
@@ -739,7 +786,7 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == "Entry" && double.TryParse(label.Value.ToString(), out double value)) {
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
                     if (value > 0) {
                         _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                         label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";

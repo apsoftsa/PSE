@@ -26,10 +26,10 @@ namespace PSE.BusinessLogic {
                 IList<ILineAllocationEvolutionChartModelLine> modelLines;
                 string cultureCode;
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
-                //PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
-                //    new PseReportRequest(ideItems.Select(sel => sel.CustomerId_6).Distinct().ToList()))).Result;
                 PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
-                   new PseReportRequest(new List<string>() { "1140041" }))).Result;
+                    new PseReportRequest(ideItems.Select(sel => sel.CustomerId_6).Distinct().ToList()))).Result;
+                //PseReportResult? multilines = Task.Run(() => multilineReader.GetCustomersMultiline(
+                //   new PseReportRequest(new List<string>() { "1140041" }))).Result;
                 if (multilines != null && multilines.ReportList != null && multilines.ReportList.Count > 0) {
                     output = new() {
                         SectionId = sectionDest.SectionId,
@@ -38,8 +38,8 @@ namespace PSE.BusinessLogic {
                     };
                     sectionContent = new Section030Content();
                     foreach (PseReportData multilineItem in multilines.ReportList) {
-                        //cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItems.FirstOrDefault(f => f.CustomerId_6 == multilineItem.InfoRelazione.Numide.ToString()).Language_18);
-                        cultureCode = "I";
+                        cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItems.FirstOrDefault(f => f.CustomerId_6 == multilineItem.InfoRelazione.Numide.ToString()).Language_18);
+                        //cultureCode = "I";
                         sectionContent.KeyInformation.Add(new MultilineKeyInformation {
                             Currency = multilineItem.InfoRelazione.Moneta,
                             PercentPerformance = AssignRequiredCurrencyDecimal(multilineItem.InfoRelazione.Performance),

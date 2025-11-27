@@ -17,7 +17,17 @@ namespace PSE.FamConnector.Multiline {
 
         public async Task<PseReportResult?> GetCustomersMultiline(PseReportRequest request) {
             try {
-                return await _famApiClient.SendMultilineRequestAsync(request);
+
+                _logger.LogInformation($"Request multilines data for customers: '{string.Join(',',request.NumIdeList)}'");
+                PseReportResult? response = await _famApiClient.SendMultilineRequestAsync(request);
+                if (response != null && response.ReportList != null) {
+                    if (response.ReportList.Count > 0)
+                        _logger.LogInformation($"Multilines found: {response.ReportList.Count}");
+                    else
+                        _logger.LogInformation("None multiline found!");
+                } else
+                    _logger.LogWarning("Impossible to detect any multiline.");
+                return response;
             } catch (Exception ex) {
                 _logger.LogError($"The following error is occurred during the GetCustomersMultiline execution: '{ex.Message}'");
                 return null;
