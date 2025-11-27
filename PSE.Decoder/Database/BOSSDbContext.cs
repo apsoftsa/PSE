@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PSE.Decoder.Database.Model;
+using PSE.Model.BOSS;
 
 namespace PSE.Decoder.Database
 {
@@ -7,6 +7,7 @@ namespace PSE.Decoder.Database
     internal class BOSSDbContext : DbContext
     {
 
+        public DbSet<TmpAdordlat> AdOrdLat { get; set; }
         public DbSet<TmpAdaAnagr> AdaAnagr { get; set; }
         public DbSet<TmpAdaAuIde> AdaAuIde { get; set; }
         public DbSet<TmpTabelle> Tabelle { get; set; }

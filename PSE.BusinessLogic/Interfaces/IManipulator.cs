@@ -9,11 +9,13 @@ namespace PSE.BusinessLogic.Interfaces
 {
 
     public delegate void ExternalCodifyEventHandler(object sender, ExternalCodifyRequestEventArgs e);
+    public delegate void ExternalCodifiesEventHandler(object sender, ExternalCodifiesRequestEventArgs e);
 
     public interface IManipulator
     {
 
         event ExternalCodifyEventHandler? ExternalCodifyRequest;
+        event ExternalCodifiesEventHandler? ExternalCodifiesRequest;
 
         decimal? TotalAssets { get; }  
 

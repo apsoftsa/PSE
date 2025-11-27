@@ -40,6 +40,7 @@ namespace PSE.Model.Common
             AsSection110 = 110,
             AsSection100 = 100,
             AsSection130 = 130,
+            AsSection140 = 140,
             AsSection150 = 150,
             AsSection160 = 160,
             AsSection170 = 170,            

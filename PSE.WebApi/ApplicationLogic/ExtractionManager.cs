@@ -30,6 +30,9 @@ namespace PSE.WebApi.ApplicationLogic
         {
             _decoder?.Decode(e);
         }
+        private static void BuilderExternalCodifiesRequestManagement(object sender, ExternalCodifiesRequestEventArgs e) {
+            _decoder.Decode(e); 
+        }
 
         private static string ReadContent(IFormFile file)
         {
@@ -47,8 +50,9 @@ namespace PSE.WebApi.ApplicationLogic
             _decoder.ExternalCodifyErrorOccurred += DecoderExternalCodifyErrorOccurredManagement;
             _builder = new Builder.Builder();
             _builder.ExternalCodifyRequest += BuilderExternalCodifyRequestManagement;
+            _builder.ExternalCodifiesRequest += BuilderExternalCodifiesRequestManagement;
             _outCont = null;
-        }
+        }       
 
         public static InputContent ReadFile(IFormFile file)
         {

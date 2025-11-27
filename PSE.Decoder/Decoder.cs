@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using PSE.Decoder.Database;
+using PSE.Model.BOSS;
 using PSE.Model.Events;
 using PSE.Model.Common;
 using PSE.Model.Input.Models;
 using PSE.Model.Output.Models;
+using PSE.Decoder.Database;
 
 namespace PSE.Decoder
 {
@@ -17,6 +18,7 @@ namespace PSE.Decoder
         private readonly ServiceProvider? _serviceProvider;        
 
         public event ExternalCodifyErrorOccurredEventHandler? ExternalCodifyErrorOccurred;
+        public event ExternalCodifiesErrorOccurredEventHandler? ExternalCodifiesErrorOccurred;
 
         public Decoder(AppSettings appSettings)
         {
@@ -240,12 +242,50 @@ namespace PSE.Decoder
             return decoded;
         }
 
+        public bool Decode(ExternalCodifiesRequestEventArgs e) {
+            bool decoded = false;
+            try {
+                if (_serviceProvider != null && e != null && string.IsNullOrEmpty(e.PropertyKey) == false) {
+                    e.PropertyValues = [];
+                    BOSSDbContext? context = _serviceProvider.GetService<BOSSDbContext>();
+                    if (context != null) {
+                        if (e.SectionName == nameof(Section140) && e.PropertyName == "customerId" && string.IsNullOrEmpty(e.PropertyKey) == false) {
+                            if (context.AdOrdLat.Any(flt => flt.OrdPagLat == "59" && flt.LegRapLat1!.Substring(4,7) == e.PropertyKey)) {
+                                List<TmpAdordlat> itemsFound = context.AdOrdLat.Where(flt => flt.OrdPagLat == "59" && flt.LegRapLat1!.Substring(4, 7) == e.PropertyKey).ToList();
+                                TmpAdordlat itemFound;
+                                Dictionary<string, object> rowValues;
+                                for (int i = 0; i < itemsFound.Count(); i++) {
+                                    itemFound = itemsFound[i];
+                                    rowValues = [];
+                                    rowValues.Add(nameof(TmpAdordlat.UniImpLat10), itemFound.UniImpLat10);
+                                    rowValues.Add(nameof(TmpAdordlat.DatFinLat), itemFound.DatFinLat);
+                                    rowValues.Add(nameof(TmpAdordlat.OpeStoLat), itemFound.OpeStoLat);
+                                    rowValues.Add(nameof(TmpAdordlat.Cod010Lat), itemFound.Cod010Lat);
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat1), itemFound.ImpImpLat1);
+                                    // 6 ????
+                                    rowValues.Add(nameof(TmpAdordlat.ValUniLat4), itemFound.ValUniLat4);
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat10), itemFound.ImpImpLat10);
+                                    // 9 ????
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat4), itemFound.ImpImpLat4);
+                                    e.PropertyValues.Add(i, rowValues);
+                                }
+                                decoded = true;
+                            }
+                        }
+                    }
+                }
+            } catch (Exception ex) {
+                throw new Exception(ex.Message);
+            }
+            return decoded; 
+        }
+
         public void Dispose()
         {
             if (_serviceProvider != null)
                 _serviceProvider.Dispose();
         }
-
+       
     }
 
 }

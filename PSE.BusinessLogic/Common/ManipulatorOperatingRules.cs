@@ -149,6 +149,7 @@ namespace PSE.BusinessLogic.Common
                 new SectionBinding(ManipolationTypes.AsSection160, "section160", "Shares subdivided by economic sector"),
                 new SectionBinding(ManipolationTypes.AsSection170, "section170", "Shares by nations"),
                 new SectionBinding(ManipolationTypes.AsSection130, "section130", "Pending orders"),
+                new SectionBinding(ManipolationTypes.AsSection140, "section140", "Funds accumulation plan"),
                 new SectionBinding(ManipolationTypes.AsSection190, "section190", "Accounts and deposit detected", new List<PositionClassifications>() { PositionClassifications.ACCOUNT }),
                 new SectionBinding(ManipolationTypes.AsSection200, "section200", "End extract"),
                 new SectionBinding(ManipolationTypes.AsFooter, "footer", "Footers"),

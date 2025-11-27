@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace PSE.Decoder.Database.Model
-{
+namespace PSE.Model.BOSS {
 
     [Table("TmpADAAUIDE")]
     [Keyless]
-    internal class TmpAdaAuIde
+    public class TmpAdaAuIde
     {
 
         [Column("CODE")]

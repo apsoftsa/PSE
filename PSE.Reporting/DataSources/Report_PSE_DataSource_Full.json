@@ -4126,6 +4126,52 @@
       }
     }
   },
+  "section140": {
+    "name": "Funds accumulation plan",
+    "content": {
+      "subSection14000": {
+        "name": "Funds accumulation plan",
+        "content": [
+          {
+            "expirationDate": "01-09-2025",
+            "description1": "999999011227",
+            "description2": "?",
+            "payments": [
+              {
+                "frequency": "Mensile",
+                "currency": "CHF",
+                "amount": 201.0,
+                "executed": 202.8
+              }
+            ],
+            "averagePurchasePrice": 135.834993,
+            "sharesPurchased": 4.421,
+            "exchange": 0.993,
+            "marketValueReportingCurrency": 601.45,
+            "percentWeigth": 0.067013
+          },
+          {
+            "expirationDate": "21-12-2024",
+            "description1": "999999015036",
+            "description2": "?",
+            "payments": [
+              {
+                "frequency": "Annuale",
+                "currency": "EUR",
+                "amount": 202.0,
+                "executed": 207.9
+              }
+            ],
+            "averagePurchasePrice": 146.453606,
+            "sharesPurchased": 4.106,
+            "exchange": 1.0,
+            "marketValueReportingCurrency": 602.25,
+            "percentWeigth": 0.037062
+          }
+        ]
+      }
+    }
+  },
   "section160": {
     "name": "Shares subdivided by economic sector",
     "content": {

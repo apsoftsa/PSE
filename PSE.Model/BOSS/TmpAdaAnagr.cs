@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace PSE.Decoder.Database.Model {
+namespace PSE.Model.BOSS {
 
     [Table("TmpADAANAGR")]
     [Keyless]
-    internal class TmpAdaAnagr {
+    public class TmpAdaAnagr {
 
         [Column("ANNUMIDE")]
         public string? AnNumIde { get; set; }

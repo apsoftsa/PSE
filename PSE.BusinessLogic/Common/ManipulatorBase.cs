@@ -21,10 +21,15 @@ namespace PSE.BusinessLogic.Common
         public decimal? TotalAssets { get; protected set; } = null;
 
         public event ExternalCodifyEventHandler? ExternalCodifyRequest;
+        public event ExternalCodifiesEventHandler? ExternalCodifiesRequest;
 
         protected virtual void OnExternalCodifyRequest(ExternalCodifyRequestEventArgs e)
         {
             ExternalCodifyRequest?.Invoke(this, e);
+        }
+
+        protected virtual void OnExternalCodifiesRequest(ExternalCodifiesRequestEventArgs e) {
+            ExternalCodifiesRequest?.Invoke(this, e);
         }
 
         protected ManipulatorBase(ManipolationTypes sectionDestination, CultureInfo? culture = null)

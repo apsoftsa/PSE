@@ -35,6 +35,7 @@ namespace PSE.Builder
         private readonly ManipulatorSection160 _manSect160;
         private readonly ManipulatorSection170 _manSect170;
         private readonly ManipulatorSection130 _manSect130;
+        private readonly ManipulatorSection140 _manSect140;
         private readonly ManipulatorSection190 _manSect190;
         private readonly ManipulatorSection200 _manSect200;
         private readonly ManipulatorFooter _manFooter;
@@ -42,11 +43,17 @@ namespace PSE.Builder
         private readonly List<(ManipolationTypes manipolationType, bool isMandatory, int sequence)> _manipolationTypesToManage;
 
         public delegate void ExternalCodifyEventHandler(object sender, ExternalCodifyRequestEventArgs e);
+        public delegate void ExternalCodifiesEventHandler(object sender, ExternalCodifiesRequestEventArgs e);
         public event ExternalCodifyEventHandler? ExternalCodifyRequest;
+        public event ExternalCodifiesEventHandler? ExternalCodifiesRequest;
 
         private void ExternalCodifyRequestManagement(object sender, ExternalCodifyRequestEventArgs e)
         {
             ExternalCodifyRequest?.Invoke(sender, e);
+        }
+
+        private void ExternalCodifiesRequestManagement(object sender, ExternalCodifiesRequestEventArgs e) {
+            ExternalCodifiesRequest?.Invoke(sender, e);
         }
 
         public Builder()
@@ -76,14 +83,17 @@ namespace PSE.Builder
             _manSect110.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect100 = new();
             _manSect100.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect130 = new();
+            _manSect130.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect140 = new();
+            _manSect140.ExternalCodifyRequest += ExternalCodifyRequestManagement;
+            _manSect140.ExternalCodifiesRequest += ExternalCodifiesRequestManagement;
             _manSect150 = new();
             _manSect150.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect160 = new();
             _manSect160.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect170 = new();
             _manSect170.ExternalCodifyRequest += ExternalCodifyRequestManagement;
-            _manSect130 = new();
-            _manSect130.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect190 = new();
             _manSect190.ExternalCodifyRequest += ExternalCodifyRequestManagement;
             _manSect200 = new();
@@ -102,12 +112,13 @@ namespace PSE.Builder
                 ( ManipolationTypes.AsSection070, false, 7),
                 ( ManipolationTypes.AsSection080, false, 8),
                 ( ManipolationTypes.AsSection090, false, 9),
+                ( ManipolationTypes.AsSection100, false, 10),
                 ( ManipolationTypes.AsSection110, false, 11),
-                ( ManipolationTypes.AsSection100, false, 12),
-                ( ManipolationTypes.AsSection150, false, 13),
-                ( ManipolationTypes.AsSection160, false, 14),
-                ( ManipolationTypes.AsSection170, false, 15),
-                ( ManipolationTypes.AsSection130, false, 16),
+                ( ManipolationTypes.AsSection130, false, 12),
+                ( ManipolationTypes.AsSection140, false, 13),
+                ( ManipolationTypes.AsSection150, false, 14),
+                ( ManipolationTypes.AsSection160, false, 15),
+                ( ManipolationTypes.AsSection170, false, 16),
                 ( ManipolationTypes.AsSection190, false, 17),
                 ( ManipolationTypes.AsSection200, false, 18),
                 ( ManipolationTypes.AsFooter, true, 19)
@@ -139,7 +150,8 @@ namespace PSE.Builder
                                 }
                                 break;
                             case ManipolationTypes.AsSection000:
-                            case ManipolationTypes.AsSection030: {
+                            case ManipolationTypes.AsSection030:
+                            case ManipolationTypes.AsSection140: {
                                     if (extractedData.Any(flt => flt.RecordType == nameof(IDE)))
                                         buildData.BuildingLog.Outcome = BuildingOutcomes.Success;
                                     else if (isMandatory)
@@ -326,6 +338,7 @@ namespace PSE.Builder
                 ManipolationTypes.AsSection100 => _manSect100.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection110 => _manSect110.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection130 => _manSect130.Manipulate(dictionaryService, extractedData),
+                ManipolationTypes.AsSection140 => _manSect140.Manipulate(dictionaryService, extractedData, _manSect040.TotalAssets),
                 ManipolationTypes.AsSection150 => _manSect150.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection160 => _manSect160.Manipulate(dictionaryService, extractedData),
                 ManipolationTypes.AsSection170 => _manSect170.Manipulate(dictionaryService, extractedData),                
