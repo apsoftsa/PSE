@@ -196,12 +196,7 @@ namespace PSE.Model.Output.Models
         public ISubSection12020? SubSection12020 { get; set; }
 
         public Section120Content()
-        {
-            /*
-            SubSection12000 = new SubSection12000("Mortgage and construction loans");
-            SubSection12010 = new SubSection12010("Current account advances");
-            SubSection12020 = new SubSection12020("Fixed Advances");
-            */
+        {           
             SubSection12000 = null;
             SubSection12010 = null;
             SubSection12020 = null;

@@ -3623,6 +3623,1432 @@
       }
     }
   },
+
+  "section100": {
+    "name": "Metals",
+    "content": {
+      "subSection10000": {
+        "name": "Metals accounts",
+        "content": [
+          {
+            "account": "GGR / 2133901AO",
+            "currentBalance": 15551.860,
+            "marketValueReportingCurrency": 887621.75,
+            "percentWeight": 10.800300
+          },
+          {
+            "account": "SGR / 2133901AV",
+            "currentBalance": 1244139.170,
+            "marketValueReportingCurrency": 811339.45,
+            "percentWeight": 9.872121
+          },
+          {
+            "account": "PTG / 2133901B4",
+            "currentBalance": 15551.740,
+            "marketValueReportingCurrency": 489879.80,
+            "percentWeight": 5.960702
+          },
+          {
+            "account": "PDG / 2133901B8",
+            "currentBalance": 0.0,
+            "marketValueReportingCurrency": 0.0,
+            "percentWeight": 0.0
+          }
+        ]
+      },
+      "subSection10010": {
+        "name": "Metals funds",
+        "content": [
+          {
+            "description1": "SWISSCAN PH GOLD A 107996301",
+            "description2": "SWISS C PR MET P",
+            "quantity": 10,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "23.01.24",
+                "valuePrice": 1705.2,
+                "percentPrice": 0,
+                "exchangeValue": 0,
+                "percentExchange": 0,
+                "profitLossNotRealizedValue": 0,
+                "percentProfitLossN": 0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0,
+                "percentPrice": 0,
+                "exchangeValue": 0,
+                "percentExchange": 0,
+                "profitLossNotRealizedValue": 0,
+                "percentProfitLossN": 0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1563.9,
+                "percentPrice": 9.04,
+                "exchangeValue": 0,
+                "percentExchange": 0,
+                "profitLossNotRealizedValue": 0,
+                "percentProfitLossN": 0
+              }
+            ],
+            "capitalmarketValueReportingCurrency": 15666.55,
+            "totalmarketValueReportingCurrency": 15666.55,
+            "percentWeigth": 5.41
+          }
+        ]
+      },
+      "subSection10020": {
+        "name": "Physical metals",
+        "content": [
+          {
+            "description1": "LINGOTTI ORO",
+            "description2": "L ORO 100 GR 999.9",
+            "quantity": 15.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 8865.700000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.950360,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 7649.100000,
+                "percentPrice": 15.905139,
+                "exchangeValue": 0.942334,
+                "percentExchange": 0.851715,
+                "profitLossNotRealizedValue": 18173.93,
+                "percentProfitLossN": 16.81
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 2425.000000,
+                "percentPrice": 265.595876,
+                "exchangeValue": 1.072516,
+                "percentExchange": -11.389667,
+                "profitLossNotRealizedValue": 106016.13,
+                "percentProfitLossN": 271.75
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 139931.70,
+            "totalMarketValueReportingCurrency": 139931.70,
+            "percentWeight": 8.611291
+          },
+          {
+            "description1": "MONETE ORO SUDAFRIC",
+            "description2": "KRUEGERRAND 1 OZ",
+            "quantity": 10.000,
+            "currency": "CHF",
+            "summaryTo": [
+              {
+                "valueDate": "02.04.2025",
+                "valuePrice": 2772.500000,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.950360,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 2389.000000,
+                "percentPrice": 16.052742,
+                "exchangeValue": 0.942334,
+                "percentExchange": 0.851715,
+                "profitLossNotRealizedValue": 3821.21,
+                "percentProfitLossN": 16.97
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 1.612786,
+                "percentExchange": -41.073397,
+                "profitLossNotRealizedValue": 29173.16,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "capitalMarketValueReportingCurrency": 29173.15,
+            "totalMarketValueReportingCurrency": 29173.15,
+            "percentWeight": 1.795294
+          }
+        ]
+      },
+      "subSection10030": {
+        "name": "Derivative Products on Metals",
+        "content": [
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "07.04.2023",
+            "amount": -400.000,
+            "strike": 1950.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 22.517050,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -8308.34,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 152.250000,
+                "percentPrice": -85.210476,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -8308.34,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -8308.35,
+            "percentWeight": -0.101039
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "03.07.2023",
+            "amount": -200.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 131.850100,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -24325.02,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 103.500000,
+                "percentPrice": 27.391401,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -24325.02,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -24325.05,
+            "percentWeight": -0.295822
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "03.07.2023",
+            "amount": -500.000,
+            "strike": 2000.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 47.940980,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -22111.58,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 65.000000,
+                "percentPrice": -26.244646,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -22111.58,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -22111.60,
+            "percentWeight": -0.268904
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "04.07.2023",
+            "amount": -500.000,
+            "strike": 2000.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 48.360560,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -22305.10,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 63.000000,
+                "percentPrice": -23.237206,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -22305.10,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -22305.10,
+            "percentWeight": -0.271257
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "19.06.2023",
+            "amount": 300.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 125.636833,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 34768.11,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 76.000000,
+                "percentPrice": 65.311622,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 34768.11,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 34768.15,
+            "percentWeight": 0.422822
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "07.07.2023",
+            "amount": 400.000,
+            "strike": 1875.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 116.463700,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 42972.78,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 55.000000,
+                "percentPrice": 111.752182,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 42972.78,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 42972.80,
+            "percentWeight": 0.522601
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "07.07.2023",
+            "amount": 200.000,
+            "strike": 1900.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 100.267200,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18498.30,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 48.000000,
+                "percentPrice": 108.8900,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18498.30,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 18498.30,
+            "percentWeight": 0.224961
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "11.07.2023",
+            "amount": 200.000,
+            "strike": 1900.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 101.704300,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18763.43,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 52.000000,
+                "percentPrice": 95.585192,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18763.43,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 18763.45,
+            "percentWeight": 0.228186
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "12.04.2023",
+            "amount": 1000.000,
+            "strike": 1900.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 54.482570,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 50257.45,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 17.000000,
+                "percentPrice": 220.485706,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 50257.45,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 50257.45,
+            "percentWeight": 0.611191
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "19.06.2023",
+            "amount": 300.000,
+            "strike": 1900.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 91.481600,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 25316.16,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 85.000000,
+                "percentPrice": 7.625412,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 25316.16,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 25316.15,
+            "percentWeight": 0.307875
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "11.07.2023",
+            "amount": 400.000,
+            "strike": 2000.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 51.282525,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18922.23,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 60.000000,
+                "percentPrice": -14.529125,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 18922.23,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 18922.25,
+            "percentWeight": 0.230117
+          },
+          {
+            "description1": "779977001001",
+            "description2": "CALL XAU/USD OTC",
+            "description3": "25.10.2023",
+            "amount": -275.000,
+            "strike": 1675.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 316.732727,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -80346.78,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 141.800000,
+                "percentPrice": 123.365816,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -80346.78,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -80346.80,
+            "percentWeight": -0.977113
+          },
+          {
+            "description1": "779977001003",
+            "description2": "CALL XAG/USD OTC",
+            "description3": "26.04.2023",
+            "amount": 20000.000,
+            "strike": 24.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.229113,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4226.91,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.370000,
+                "percentPrice": -83.276423,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 4226.91,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 4226.90,
+            "percentWeight": 0.051404
+          },
+          {
+            "description1": "779977001003",
+            "description2": "CALL XAG/USD OTC",
+            "description3": "22.01.2024",
+            "amount": -10000.000,
+            "strike": 25.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 1.606112,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -14815.58,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 2.820000,
+                "percentPrice": -43.045674,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -14815.58,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -14815.60,
+            "percentWeight": -0.180175
+          },
+          {
+            "description1": "779977001003",
+            "description2": "CALL XAG/USD OTC",
+            "description3": "23.06.2023",
+            "amount": -60000.000,
+            "strike": 22.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 1.422532,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -78732.88,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.780000,
+                "percentPrice": -20.082472,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -78732.88,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -78732.95,
+            "percentWeight": -0.957487
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "24.11.2023",
+            "amount": -600.000,
+            "strike": 1600.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 4.469150,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -2473.54,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 30.250000,
+                "percentPrice": -85.225950,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -2473.54,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -2473.55,
+            "percentWeight": -0.030081
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "29.11.2023",
+            "amount": -800.000,
+            "strike": 1650.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 8.042800,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5935.26,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 38.000000,
+                "percentPrice": -78.834737,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5935.26,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -5935.25,
+            "percentWeight": -0.072180
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "15.09.2023",
+            "amount": -350.000,
+            "strike": 1600.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.043914,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -659.89,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 55.850000,
+                "percentPrice": -96.340351,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -659.89,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -659.90,
+            "percentWeight": -0.008025
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "23.03.2023",
+            "amount": -300.000,
+            "strike": 1600.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 41.350000,
+                "percentPrice": -100.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.00,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 0.0,
+            "percentWeight": 0.0
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "04.07.2023",
+            "amount": 400.000,
+            "strike": 1700.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.897400,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1069.08,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 82.500000,
+                "percentPrice": -96.48800,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 1069.08,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": 1069.10,
+            "percentWeight": 0.013002
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "07.07.2023",
+            "amount": -600.000,
+            "strike": 1800.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 13.177516,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -7293.36,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 31.000000,
+                "percentPrice": -57.491884,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -7293.36,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -7293.35,
+            "percentWeight": -0.088696
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "07.07.2023",
+            "amount": -400.000,
+            "strike": 1775.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 9.505125,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3507.20,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 22.250000,
+                "percentPrice": -57.280337,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3507.20,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -3507.20,
+            "percentWeight": -0.042652
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "29.09.2023",
+            "amount": -1000.000,
+            "strike": 1600.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 2.481880,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -2289.41,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 49.000000,
+                "percentPrice": -94.934939,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -2289.41,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -2289.40,
+            "percentWeight": -0.027842
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "11.07.2023",
+            "amount": -250.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 24.436520,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5635.37,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 45.400000,
+                "percentPrice": -46.175066,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -5635.37,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -5635.35,
+            "percentWeight": -0.068533
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "12.04.2023",
+            "amount": -850.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 5.025423,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3940.35,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 21.175000,
+                "percentPrice": -76.267188,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -3940.35,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -3940.35,
+            "percentWeight": -0.047919
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "19.06.2023",
+            "amount": -500.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 20.528620,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -9468.31,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 54.200000,
+                "percentPrice": -62.124317,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -9468.31,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -9468.30,
+            "percentWeight": -0.115146
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "11.07.2023",
+            "amount": -500.000,
+            "strike": 1850.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 24.436500,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -11270.72,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 47.700000,
+                "percentPrice": -48.770440,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -11270.72,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -11270.75,
+            "percentWeight": -0.137066
+          },
+          {
+            "description1": "779977002001",
+            "description2": "PUT XAU/USD OTC",
+            "description3": "27.10.2023",
+            "amount": -900.000,
+            "strike": 1500.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.831211,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -690.08,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 38.890000,
+                "percentPrice": -97.862661,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -690.08,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -690.10,
+            "percentWeight": -0.008392
+          },
+          {
+            "description1": "779977002003",
+            "description2": "PUT  XAG/USD OTC",
+            "description3": "18.04.2023",
+            "amount": -30000.000,
+            "strike": 23.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 1.304796,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -36108.27,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.746500,
+                "percentPrice": 74.788480,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -36108.27,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -36108.30,
+            "percentWeight": -0.439120
+          },
+          {
+            "description1": "779977002003",
+            "description2": "PUT  XAG/USD OTC",
+            "description3": "08.05.2023",
+            "amount": -20000.000,
+            "strike": 18.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.019877,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -366.71,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 0.640000,
+                "percentPrice": -96.894219,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -366.71,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -366.70,
+            "percentWeight": -0.004460
+          },
+          {
+            "description1": "779977002003",
+            "description2": "PUT  XAG/USD OTC",
+            "description3": "08.11.2023",
+            "amount": -40000.000,
+            "strike": 18.000000,
+            "summaryTo": [
+              {
+                "valueDate": "",
+                "valuePrice": 0.370629,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.922450,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": 0.0,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryBeginningYear": [
+              {
+                "valuePrice": 0.0,
+                "percentPrice": 0.0,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -13675.47,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "summaryPurchase": [
+              {
+                "valuePrice": 1.000000,
+                "percentPrice": -62.937100,
+                "exchangeValue": 0.0,
+                "percentExchange": 0.0,
+                "profitLossNotRealizedValue": -13675.47,
+                "percentProfitLossN": 0.0
+              }
+            ],
+            "marketValueReportingCurrency": -13675.50,
+            "percentWeight": -0.166310
+          }
+        ]
+      },
+      "subSection10040": {
+        "name": "Forward metal operations (profit/loss)",
+        "content": [
+          {
+            "currency1": "USD",
+            "currencyValue": -15000,
+            "exchange": 92.05,
+            "exchangeValue": 1380750,
+            "currency2": "XAU",
+            "expirationDate": "15.09.2021",
+            "currentRate": 87.09777,
+            "profitLoss": 853.43,
+            "percentWeigth": 0.29
+          }
+        ]
+      }
+    }
+  },
   "section110": {
     "name": "Others investments",
     "content": {
@@ -4100,6 +5526,82 @@
             "capitalMarketValueReportingCurrency": 88150.00,
             "totalMarketValueReportingCurrency": 88150.00,
             "percentWeight": 2.990974
+          }
+        ]
+      }
+    }
+  },
+  "section120": {
+    "name": "Financing Solutions",
+    "content": {
+      "subSection12000": {
+        "name": "Mortgage and construction loans",
+        "content": [
+          {
+            "description1": "CHF 1130750AH",
+            "description2": "Mortgage loan",
+            "percentRate": 0,
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -170000,
+            "exchange": 0,
+            "marketValueReportingCurrency": -170000,
+            "accruedInterestReportingCurrency": 0
+          },
+          {
+            "description1": "CHF 1130750AK",
+            "description2": "Mortgage loan",
+            "percentRate": 0,
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -300000,
+            "exchange": 0,
+            "marketValueReportingCurrency": -300000,
+            "accruedInterestReportingCurrency": 0
+          },
+          {
+            "description1": "CHF 1130750AE",
+            "description2": "Mortgage loan",
+            "percentRate": 0,
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -300000,
+            "exchange": 0,
+            "marketValueReportingCurrency": -300000,
+            "accruedInterestReportingCurrency": 0
+          }
+        ]
+      },
+      "subSection12010": {
+        "name": "Current account advances",
+        "content": [
+          {
+            "description1": "CHF XXXXX",
+            "description2": "Lombard credit",
+            "percentRate": 0,
+            "advanceValue": 0,
+            "quantityUsed": 0,
+            "quantityAvailable": 0,
+            "openingDate": "",
+            "exchange": 0,
+            "marketValueReportingCurrency": 50000
+          }
+        ]
+      },
+      "subSection12020": {
+        "name": "Fixed Advances",
+        "content": [
+          {
+            "description1": "EUR 1137114AD",
+            "description2": "",
+            "percentRate": 0,
+            "openingDate": "29.01.2024",
+            "expirationDate": "29.04.2024",
+            "currentBalance": -100000,
+            "exchange": 0,
+            "marketValueReportingCurrency": -100000,
+            "accruedInterestReportingCurrency": -1075,
+            "percentWeigth": 8.2
           }
         ]
       }
