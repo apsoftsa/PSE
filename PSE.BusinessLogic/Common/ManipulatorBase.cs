@@ -63,13 +63,16 @@ namespace PSE.BusinessLogic.Common
         }        
 
         public abstract IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null);
+
         public virtual string GetObjectNameDestination(IInputRecord inputRecord) { return string.Empty; }
 
         protected void CalculateSummaries(string currencyOfReference, ISummaryTo summaryTo, ISummaryBeginningYear summaryBeginningYear, ISummaryPurchase summaryPurchase, string quoteType, IEnumerable<CUR>? curItems, string currency, decimal? quantity)
         {
+            decimal quote = string.IsNullOrEmpty(quoteType) == false && quoteType == "%" ? 100.0m : 1.0m;
+            summaryTo.PercentExchange = 0;
+            summaryTo.PercentProfitLossN = 0;   
             if (summaryTo.ValuePrice.HasValue)
-            {
-                decimal quote = string.IsNullOrEmpty(quoteType) == false && quoteType == "%" ? 100.0m : 1.0m;
+            {                
                 decimal exchangeRate = curItems != null && curItems.Any(f => f.Currency_5 == currency && f.Rate_6.HasValue) ? curItems.First(f => f.Currency_5 == currency && f.Rate_6.HasValue).Rate_6.Value : 0;
                 if (summaryBeginningYear.ValuePrice.HasValue && summaryBeginningYear.ValuePrice != 0m)
                     summaryBeginningYear.PercentPrice = Math.Round((summaryTo.ValuePrice.Value - summaryBeginningYear.ValuePrice.Value) / summaryBeginningYear.ValuePrice.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
@@ -91,7 +94,22 @@ namespace PSE.BusinessLogic.Common
                     }
                 }
             }
-        }       
+            if (summaryTo.ExchangeValue.HasValue && summaryBeginningYear.ExchangeValue.HasValue && summaryBeginningYear.ExchangeValue.Value > 0)
+                summaryBeginningYear.PercentExchange = Math.Round((summaryTo.ExchangeValue.Value - summaryBeginningYear.ExchangeValue.Value) / summaryBeginningYear.ExchangeValue.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+            if (summaryTo.ExchangeValue.HasValue && summaryPurchase.ExchangeValue.HasValue && summaryPurchase.ExchangeValue.Value > 0)
+                summaryPurchase.PercentExchange = Math.Round((summaryTo.ExchangeValue.Value - summaryPurchase.ExchangeValue.Value) / summaryPurchase.ExchangeValue.Value * 100m, DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION);
+            if (summaryBeginningYear.ProfitLossNotRealizedValue.HasValue && summaryBeginningYear.ValuePrice.HasValue && quantity.HasValue && quote > 0 && summaryBeginningYear.ExchangeValue.HasValue) {
+                decimal temp = (summaryBeginningYear.ValuePrice.Value * quantity.Value / quote * summaryBeginningYear.ExchangeValue.Value);
+                if (temp != 0)
+                    summaryBeginningYear.PercentProfitLossN = Math.Round(summaryBeginningYear.ProfitLossNotRealizedValue.Value / temp * 100m, DEFAULT_CURRENCY_DECIMAL_DIGITS);
+            }
+            if (summaryPurchase.ProfitLossNotRealizedValue.HasValue && summaryPurchase.ValuePrice.HasValue && quantity.HasValue && quote > 0 && summaryPurchase.ExchangeValue.HasValue) {
+                decimal temp = (summaryPurchase.ValuePrice.Value * quantity.Value / quote * summaryPurchase.ExchangeValue.Value);
+                if (temp != 0)
+                    summaryPurchase.PercentProfitLossN = Math.Round(summaryPurchase.ProfitLossNotRealizedValue.Value / temp * 100m, DEFAULT_CURRENCY_DECIMAL_DIGITS);
+            }
+        }
+
         protected string GetCoupon(string couponFreq, string couponText)
         {
             string coupon = couponFreq.Trim();            

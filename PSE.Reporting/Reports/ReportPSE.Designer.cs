@@ -7930,11 +7930,14 @@
             this.chartSection2010.DataMember = "section20.content.subSection2010.content";
             this.chartSection2010.DataSource = this.jsonDataSourcePSE;
             xyDiagram1.AxisX.Alignment = DevExpress.XtraCharts.AxisAlignment.Zero;
+            xyDiagram1.AxisX.Label.Alignment = DevExpress.XtraCharts.AxisLabelAlignment.Center;
             xyDiagram1.AxisX.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F);
+            xyDiagram1.AxisX.Label.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.Label.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Empty;
             xyDiagram1.AxisX.Label.MaxLineCount = 2;
             xyDiagram1.AxisX.Label.MaxWidth = 68;
             xyDiagram1.AxisX.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            xyDiagram1.AxisX.LabelPosition = DevExpress.XtraCharts.AxisLabelPosition.Inside;
             xyDiagram1.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram1.AxisX.Tickmarks.Visible = false;
             xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
@@ -18088,6 +18091,7 @@
             this.GroupHeaderBandSection14000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
             this.GroupHeaderBandSection14000.KeepTogether = true;
             this.GroupHeaderBandSection14000.Name = "GroupHeaderBandSection14000";
+            this.GroupHeaderBandSection14000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
             // 
             // labelCambioSection1400
             // 
@@ -21994,7 +21998,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel465, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1354.09F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel465, "Default", "SizeF", new System.Drawing.SizeF(252.9109F, 99.99955F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel465, "Default", "Text", "xrLabel465"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel465, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel465, "Default", "TextFormatString", "{0:N0}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel466, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1607.001F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel466, "Default", "SizeF", new System.Drawing.SizeF(269.0891F, 99.99951F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel466, "Default", "Text", "xrLabel466"),

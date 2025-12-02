@@ -110,7 +110,7 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        } else if ((e.SectionName == nameof(Section080) || e.SectionName == nameof(Section110)) && (e.PropertyName == nameof(BondDetail.Coupon) || e.PropertyName == nameof(BondInvestmentDetail.Coupon))) {
+                        } else if ((e.SectionName == nameof(Section080) || e.SectionName == nameof(Section110) || e.SectionName == nameof(Section140)) && (e.PropertyName == nameof(BondDetail.Coupon) || e.PropertyName == nameof(BondInvestmentDetail.Coupon) || e.PropertyName == nameof(TmpAdordlat.OpeStoLat))) {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey)) {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -124,8 +124,10 @@ namespace PSE.Decoder
                                 };
                                 if (!string.IsNullOrEmpty(e.PropertyValue)) {
                                     e.PropertyValue = e.PropertyValue.Trim();
-                                    if (e.PropertyValue.Length > 3)
-                                        e.PropertyValue = e.PropertyValue[..3];
+                                    if (e.PropertyName != nameof(TmpAdordlat.OpeStoLat)) {
+                                        if (e.PropertyValue.Length > 3)
+                                            e.PropertyValue = e.PropertyValue[..3];
+                                    }
                                 } else
                                     e.PropertyValue = "";
                             }
@@ -250,24 +252,47 @@ namespace PSE.Decoder
                     BOSSDbContext? context = _serviceProvider.GetService<BOSSDbContext>();
                     if (context != null) {
                         if (e.SectionName == nameof(Section140) && e.PropertyName == "customerId" && string.IsNullOrEmpty(e.PropertyKey) == false) {
-                            if (context.AdOrdLat.Any(flt => flt.OrdPagLat == "59" && flt.LegRapLat1!.Substring(4,7) == e.PropertyKey)) {
-                                List<TmpAdordlat> itemsFound = context.AdOrdLat.Where(flt => flt.OrdPagLat == "59" && flt.LegRapLat1!.Substring(4, 7) == e.PropertyKey).ToList();
-                                TmpAdordlat itemFound;
+                            if (context.AdOrdLat.Any(flt => flt.OrdPagLat!.Trim() == "59" && flt.LegRapLat1!.Trim().Substring(4, 7) == e.PropertyKey)) {
+                                var items = from ordLat in context.AdOrdLat.AsNoTracking() 
+                                            join adAnaNatVal in context.AdAnaNatVal.AsNoTracking() 
+                                            on ordLat.UniImpLat10!.Trim() equals adAnaNatVal.NumValAnt!.Trim() + ("000000" + adAnaNatVal.ComValAnt!.Trim()).Substring(("000000" + adAnaNatVal.ComValAnt!.Trim()).Length - 6)
+                                            into adAnaNatValGroup from adAnaNatVal in adAnaNatValGroup.DefaultIfEmpty()    
+                                            join adAnaSoc in context.AdAnaSoc.AsNoTracking() 
+                                            on adAnaNatVal.NumSocAnt!.Trim() equals adAnaSoc.NumSocSoc!.Trim()
+                                            into adAnaSocGroup from adAnaSoc in adAnaSocGroup.DefaultIfEmpty()
+                                            where ordLat.OrdPagLat!.Trim() == "59" && ordLat.LegRapLat1!.Trim().Substring(4, 7) == e.PropertyKey
+                                            select new { 
+                                                ordLat.UniImpLat10,
+                                                ordLat.DatFinLat,
+                                                ordLat.OpeStoLat,
+                                                ordLat.Cod010Lat,
+                                                ordLat.ImpImpLat1,
+                                                ordLat.Cod030Lat,
+                                                ordLat.ValUniLat4,
+                                                ordLat.ImpImpLat10,
+                                                ordLat.ImpImpLat4,
+                                                adAnaNatVal.NumTlkAnt,
+                                                adAnaNatVal.NrisinAnt,
+                                                adAnaSoc.TesAbbSoc
+                                            };
                                 Dictionary<string, object> rowValues;
-                                for (int i = 0; i < itemsFound.Count(); i++) {
-                                    itemFound = itemsFound[i];
+                                int i = 0;
+                                foreach(var item in items) {
                                     rowValues = [];
-                                    rowValues.Add(nameof(TmpAdordlat.UniImpLat10), itemFound.UniImpLat10);
-                                    rowValues.Add(nameof(TmpAdordlat.DatFinLat), itemFound.DatFinLat);
-                                    rowValues.Add(nameof(TmpAdordlat.OpeStoLat), itemFound.OpeStoLat);
-                                    rowValues.Add(nameof(TmpAdordlat.Cod010Lat), itemFound.Cod010Lat);
-                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat1), itemFound.ImpImpLat1);
-                                    // 6 ????
-                                    rowValues.Add(nameof(TmpAdordlat.ValUniLat4), itemFound.ValUniLat4);
-                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat10), itemFound.ImpImpLat10);
-                                    // 9 ????
-                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat4), itemFound.ImpImpLat4);
+                                    rowValues.Add(nameof(TmpAdordlat.UniImpLat10), item.UniImpLat10);
+                                    rowValues.Add(nameof(TmpAdordlat.DatFinLat), item.DatFinLat);
+                                    rowValues.Add(nameof(TmpAdordlat.OpeStoLat), item.OpeStoLat);
+                                    rowValues.Add(nameof(TmpAdordlat.Cod010Lat), item.Cod010Lat);
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat1), item.ImpImpLat1);
+                                    rowValues.Add(nameof(TmpAdordlat.Cod030Lat), item.Cod030Lat);
+                                    rowValues.Add(nameof(TmpAdordlat.ValUniLat4), item.ValUniLat4);
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat10), item.ImpImpLat10);
+                                    rowValues.Add(nameof(TmpAdordlat.ImpImpLat4), item.ImpImpLat4);
+                                    rowValues.Add(nameof(TmpAdanatval.NumTlkAnt), item.NumTlkAnt);
+                                    rowValues.Add(nameof(TmpAdanatval.NrisinAnt), item.NrisinAnt);
+                                    rowValues.Add(nameof(TmpAdanasoc.TesAbbSoc), item.TesAbbSoc);
                                     e.PropertyValues.Add(i, rowValues);
+                                    i++;
                                 }
                                 decoded = true;
                             }
@@ -277,8 +302,8 @@ namespace PSE.Decoder
             } catch (Exception ex) {
                 throw new Exception(ex.Message);
             }
-            return decoded; 
-        }
+            return decoded;
+        }      
 
         public void Dispose()
         {

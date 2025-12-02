@@ -27,7 +27,8 @@ namespace PSE.BusinessLogic {
                 ISection140Content sectionContent;
                 IFundAccumulationPlan fundAccumulationPlan;
                 IFundAccumulationPlanPayment fundAccumulationPlanPayment;
-                ExternalCodifiesRequestEventArgs extEventArgsOperation;
+                ExternalCodifiesRequestEventArgs extEventsArgsOperation;
+                ExternalCodifyRequestEventArgs extEventArgsAdvisor;
                 Dictionary<string, object> propertyParams = new Dictionary<string, object>() { { nameof(IDE.Language_18), ITALIAN_LANGUAGE_CODE } };
                 List<IDE> ideItems = extractedData.Where(flt => flt.RecordType == nameof(IDE)).OfType<IDE>().ToList();
                 foreach (IDE ideItem in ideItems) {
@@ -35,21 +36,29 @@ namespace PSE.BusinessLogic {
                         propertyParams[nameof(IDE.Language_18)] = ideItem.Language_18;
                     cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     // !!!! tmp
-                    extEventArgsOperation = new ExternalCodifiesRequestEventArgs(nameof(Section140), "customerId", ideItem.CustomerId_6, propertyParams);
-                    //extEventArgsOperation = new ExternalCodifiesRequestEventArgs(nameof(Section140), "customerId", "4139936", propertyParams);
-                    OnExternalCodifiesRequest(extEventArgsOperation);
-                    if (!extEventArgsOperation.Cancel) {
-                        if (extEventArgsOperation.PropertyValues != null && extEventArgsOperation.PropertyValues.Any()) {
+                    extEventsArgsOperation = new ExternalCodifiesRequestEventArgs(nameof(Section140), "customerId", ideItem.CustomerId_6, propertyParams);
+                    //extEventsArgsOperation = new ExternalCodifiesRequestEventArgs(nameof(Section140), "customerId", "4139936", propertyParams);
+                    OnExternalCodifiesRequest(extEventsArgsOperation);
+                    if (!extEventsArgsOperation.Cancel) {
+                        if (extEventsArgsOperation.PropertyValues != null && extEventsArgsOperation.PropertyValues.Any()) {
                             sectionContent = new Section140Content();
-                            foreach (var fundFoundProperties in extEventArgsOperation.PropertyValues.Values) {
+                            foreach (var fundFoundProperties in extEventsArgsOperation.PropertyValues.Values) {
                                 fundAccumulationPlan = new FundAccumulationPlan();
                                 fundAccumulationPlanPayment = new FundAccumulationPlanPayment();    
-                                foreach (KeyValuePair<string, object?> fundProperty in fundFoundProperties.Where(f => f.Value != null)) {
+                                foreach (KeyValuePair<string, object?> fundProperty in fundFoundProperties.Where(f => f.Value != null)) {                                    
                                     switch (fundProperty.Key) {
-                                        case nameof(TmpAdordlat.UniImpLat10): {
+                                        case nameof(TmpAdanasoc.TesAbbSoc): {
+                                                if (fundProperty.Value != null)
+                                                    fundAccumulationPlan.Description1 = fundProperty.Value.ToString().Trim();
+                                            }
+                                            break;
+                                        case nameof(TmpAdanatval.NumTlkAnt):
+                                        case nameof(TmpAdanatval.NrisinAnt): {
                                                 if (fundProperty.Value != null) {
-                                                    fundAccumulationPlan.Description1 = fundProperty.Value.ToString(); // not definitive !!!!
-                                                    fundAccumulationPlan.Description2 = "?"; 
+                                                    if (string.IsNullOrEmpty(fundAccumulationPlan.Description1))
+                                                        fundAccumulationPlan.Description2 = fundProperty.Value.ToString().Trim();
+                                                    else
+                                                        fundAccumulationPlan.Description2 += " / " + fundProperty.Value.ToString().Trim();
                                                 }
                                             }
                                             break;
@@ -60,7 +69,10 @@ namespace PSE.BusinessLogic {
                                             break;
                                         case nameof(TmpAdordlat.OpeStoLat): {
                                                 if (fundProperty.Value != null) {
-                                                    fundAccumulationPlanPayment.Frequency = fundProperty.Value.ToString(); // need decoding from key to descr !!!!
+                                                   extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section140), nameof(TmpAdordlat.OpeStoLat), fundProperty.Value.ToString(), propertyParams);
+                                                    OnExternalCodifyRequest(extEventArgsAdvisor);
+                                                    if (!extEventArgsAdvisor.Cancel) 
+                                                        fundAccumulationPlanPayment.Frequency = extEventArgsAdvisor.PropertyValue;
                                                 }
                                             }
                                             break;
@@ -70,9 +82,14 @@ namespace PSE.BusinessLogic {
                                                 }
                                             }
                                             break;
+                                        case nameof(TmpAdordlat.Cod030Lat): {
+                                                if (fundProperty.Value != null && decimal.TryParse(fundProperty.Value.ToString(), CultureInfo.InvariantCulture, out decimal tmpDec))
+                                                    fundAccumulationPlanPayment.Executed = AssignRequiredDecimal(tmpDec);
+                                            }
+                                            break;
                                         case nameof(TmpAdordlat.ImpImpLat1): {
                                                 if (fundProperty.Value != null && decimal.TryParse(fundProperty.Value.ToString(), CultureInfo.InvariantCulture, out decimal tmpDec)) 
-                                                    fundAccumulationPlanPayment.Amount = AssignRequiredDecimal(tmpDec); // need decoding from key to descr !!!!
+                                                    fundAccumulationPlanPayment.Amount = AssignRequiredDecimal(tmpDec); 
                                             }
                                             break;
                                         case nameof(TmpAdordlat.ValUniLat4): {
