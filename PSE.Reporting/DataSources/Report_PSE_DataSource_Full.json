@@ -4172,6 +4172,43 @@
       }
     }
   },
+  "section150": {
+    "name": "Information Position",
+    "content": {
+      "subSection15000": {
+        "name": "Possible commitments",
+        "content": [
+          {
+            "description1": "1133596A2 / EUR / MUTUO IPOTECARIO",
+            "description2": "",
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -452200.00,
+            "marketValueReportingCurrency": -452200.00,
+            "accruedInterestReportingCurrency": 0
+          },
+          {
+            "description1": "1133596A5 / EUR / MUTUO IPOTECARIO",
+            "description2": "",
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -420000.00,
+            "marketValueReportingCurrency": -420000.00,
+            "accruedInterestReportingCurrency": 0
+          },
+          {
+            "description1": "1133596AB / EUR / MUTUO IPOTECARIO",
+            "description2": "",
+            "openingDate": "",
+            "expirationDate": "",
+            "currentBalance": -400000.00,
+            "marketValueReportingCurrency": -400000.00,
+            "accruedInterestReportingCurrency": 0
+          }
+        ]
+      }
+    }
+  },
   "section160": {
     "name": "Shares subdivided by economic sector",
     "content": {

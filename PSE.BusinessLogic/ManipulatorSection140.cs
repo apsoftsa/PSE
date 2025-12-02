@@ -55,7 +55,7 @@ namespace PSE.BusinessLogic {
                                         case nameof(TmpAdanatval.NumTlkAnt):
                                         case nameof(TmpAdanatval.NrisinAnt): {
                                                 if (fundProperty.Value != null) {
-                                                    if (string.IsNullOrEmpty(fundAccumulationPlan.Description1))
+                                                    if (string.IsNullOrEmpty(fundAccumulationPlan.Description2))
                                                         fundAccumulationPlan.Description2 = fundProperty.Value.ToString().Trim();
                                                     else
                                                         fundAccumulationPlan.Description2 += " / " + fundProperty.Value.ToString().Trim();
