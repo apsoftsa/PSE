@@ -30,6 +30,7 @@ namespace PSE.Reporting.Reports {
         string _currentChartPointAlphaCode;
         int _currentGridChartPointIndex;
         string _currentGridChartPointAlphaCode;
+        int _multilinePeriodCount;
 
         private void ManageSection70VisibilityFlags() {
             if (_section70NeedPageBreakAtTheEnd)
@@ -102,6 +103,7 @@ namespace PSE.Reporting.Reports {
             _section110NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
             _rowCount = 0;
+            _multilinePeriodCount = 0;  
         }
 
         private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
@@ -303,6 +305,10 @@ namespace PSE.Reporting.Reports {
                 labelESGProfile.StyleName = "labelESGProfile";
         }
 
+        private void contentMultilinePeriodCount_BeforePrint(object sender, CancelEventArgs e) {
+            _multilinePeriodCount = int.Parse(((XRLabel)sender).Text);
+        }
+
         private void chartSection3020_BeforePrint(object sender, CancelEventArgs e) {
             XRChart chart = (XRChart)sender;
             chart.Series.Clear();
@@ -313,16 +319,28 @@ namespace PSE.Reporting.Reports {
             chart.SeriesTemplate.Label.BackColor = Color.Transparent;
             chart.SeriesTemplate.Label.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             chart.SeriesTemplate.Label.TextColor = Color.White;
-            chart.SeriesTemplate.Label.TextPattern = "{V}%";
+            chart.SeriesTemplate.Label.TextPattern = "{V}%";            
             chart.SeriesTemplate.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
+            StackedBarSeriesView view = (StackedBarSeriesView)chart.SeriesTemplate.View;           
+            if (_multilinePeriodCount < 2)
+                view.BarWidth = 0.3;
+            else if (_multilinePeriodCount < 3)
+                view.BarWidth = 0.6;
+            else if (_multilinePeriodCount < 4)
+                view.BarWidth = 0.7;
+            else if (_multilinePeriodCount < 6)
+                view.BarWidth = 0.8;
+            else
+                view.BarWidth = 0.9;
         }
 
         private void chartSection3020_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
             XRChart chart = (XRChart)sender;
+            int i = e.Series.Points.Select(p => p.Argument).Distinct().Count();
             if (int.TryParse(e.Series.Name, out int currElementIndex) && currElementIndex > 0)
                 e.SeriesDrawOptions.Color = chart.PaletteRepository[chart.PaletteName][currElementIndex - 1].Color;
         }
-
+       
         private void LabelPatrimonioInfChiaveMultilinea_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             label.Text = label.Tag != null ? label.Text.Replace("{0}", label.Tag.ToString()) : label.Text.Replace("{0}", "").Trim();
@@ -839,7 +857,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-        
+      
     }
 
 }

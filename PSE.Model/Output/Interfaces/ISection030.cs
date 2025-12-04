@@ -15,7 +15,9 @@ namespace PSE.Model.Output.Interfaces
     public interface IMultilineKeyInformation
     {
 
-        string Period {  get; set; }    
+        string Period {  get; set; } 
+        
+        int PeriodCount { get; set; }
 
         IList<IMultilineAssetsTo> AssetsTo { get; set; }   
 

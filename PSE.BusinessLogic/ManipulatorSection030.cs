@@ -90,7 +90,8 @@ namespace PSE.BusinessLogic {
                                  Period = AssignRequiredDate(compMultilineItem.StartDate, _culture),
                                  ModelLines = [.. modelLines]
                             });                            
-                        }  
+                        }
+                        sectionContent.KeyInformation.First().PeriodCount = sectionContent.SubSection3010.Content.Count;
                     }
                     output.Content = new Section030Content(sectionContent);
                 }

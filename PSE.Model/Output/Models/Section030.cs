@@ -35,6 +35,8 @@ namespace PSE.Model.Output.Models
 
         public string Period { get; set; }
 
+        public int PeriodCount { get; set; }
+
         public IList<IMultilineAssetsTo> AssetsTo { get; set; }
 
         public string Currency { get; set; }
@@ -44,6 +46,7 @@ namespace PSE.Model.Output.Models
         public MultilineKeyInformation()
         {
             Period = string.Empty;
+            PeriodCount = 0;
             Currency = string.Empty;
             AssetsTo = new List<IMultilineAssetsTo>();  
             PercentPerformance = 0;
@@ -52,6 +55,7 @@ namespace PSE.Model.Output.Models
         public MultilineKeyInformation(IMultilineKeyInformation source)
         {
             Period = source.Period;
+            PeriodCount = source.PeriodCount;   
             Currency = source.Currency;
             AssetsTo = new List<IMultilineAssetsTo>();
             if (source.AssetsTo != null && source.AssetsTo.Any())

@@ -164,6 +164,7 @@
       "keyInformation": [
         {
           "period": "05.02.2025 - 16.07.2025",
+          "periodCount": 2,
           "assetsTo": [
             {
               "valueDate": "16.07.2025",
