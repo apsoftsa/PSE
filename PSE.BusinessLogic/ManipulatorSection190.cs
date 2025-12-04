@@ -32,6 +32,7 @@ namespace PSE.BusinessLogic
             {
                 string cultureCode;
                 decimal totalAsset;
+                int notTransferedCount;
                 ISection190Content sectionContent;
                 IReportsTransferredToAdministration acctAndDepReportTrans;
                 IReportsNotTransferredToAdministration acctAndDepReportNotTrans;
@@ -47,6 +48,7 @@ namespace PSE.BusinessLogic
                     sectionContent = new Section190Content();                    
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
                     totalAsset = 0;
+                    notTransferedCount = 0;
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())
                     {
                         sectionContent.SubSection19000 = new SubSection19000("Reports not transferred to administration");
@@ -74,6 +76,7 @@ namespace PSE.BusinessLogic
                         }
                         acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency = acctAndDepReportNotTrans.Objects.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency);
                         totalAsset = acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency.Value;
+                        notTransferedCount = acctAndDepReportNotTrans.Objects.Count;                        
                         sectionContent.SubSection19000.Content.Add(acctAndDepReportNotTrans);                        
                     }
                     IEnumerable<IGrouping<string, POS>> relationshipesTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 == "00001").GroupBy(gb => gb.HostPositionReference_6);
@@ -85,6 +88,7 @@ namespace PSE.BusinessLogic
                         acctAndDepReportTrans.TotalAssetsNotTransferred = ""; 
                         acctAndDepReportTrans.TotalMarketValueReportingCurrency = 0; 
                         acctAndDepReportTrans.TotalNotTransferredMarketValueReportingCurrency = 0; 
+                        acctAndDepReportTrans.NotTransferedCount = notTransferedCount.ToString(); 
                         foreach (IGrouping<string, POS> relationshipTransferedToAdminItem in relationshipesTransferedToAdmin)
                         {
                             extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(ObjectReportsTransferredToAdministration.Description), relationshipTransferedToAdminItem.First().HostPositionType_5, propertyParams);

@@ -31,6 +31,7 @@ namespace PSE.Reporting.Reports {
         int _currentGridChartPointIndex;
         string _currentGridChartPointAlphaCode;
         int _multilinePeriodCount;
+        bool _hasNotTransfered;
 
         private void ManageSection70VisibilityFlags() {
             if (_section70NeedPageBreakAtTheEnd)
@@ -102,6 +103,7 @@ namespace PSE.Reporting.Reports {
             _section90NeedPageBreakAtTheEnd = false;
             _section110NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
+            _hasNotTransfered = false;
             _rowCount = 0;
             _multilinePeriodCount = 0;  
         }
@@ -681,6 +683,29 @@ namespace PSE.Reporting.Reports {
                 this.DetailReportSubSection190Objects.ReportPrintOptions.PrintOnEmptyDataSource = false;
         }
 
+        private void contentNotTransferedCount_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            _hasNotTransfered = string.IsNullOrEmpty(label.Text) == false && int.TryParse(label.Text, out int count) && count > 0;
+        }
+
+        private void panelSection19010HeaderContainer_BeforePrint(object sender, CancelEventArgs e) {
+            if (!_hasNotTransfered) {
+                ((XRPanel)sender).LocationF = new PointF(0, ((XRPanel)sender).LocationF.Y);
+            }
+        }
+
+        private void xrTableSection19010Objects_BeforePrint(object sender, CancelEventArgs e) {
+            if (!_hasNotTransfered) {
+                ((XRTable)sender).LocationF = new PointF(0, ((XRTable)sender).LocationF.Y);
+            }
+        }
+
+        private void panelSection19010FooterContainer_BeforePrint(object sender, CancelEventArgs e) {
+            if (!_hasNotTransfered) {
+                ((XRPanel)sender).LocationF = new PointF(0, ((XRPanel)sender).LocationF.Y);
+            }
+        }
+
         private void DetailReportSubSection19010_BeforePrint(object sender, CancelEventArgs e) {
             int count = this.DetailReportSubSection19010.RowCount;
             if (count > 0) {
@@ -856,8 +881,8 @@ namespace PSE.Reporting.Reports {
 
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
-        }
-      
+        }       
+
     }
 
 }

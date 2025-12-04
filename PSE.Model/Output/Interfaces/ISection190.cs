@@ -29,7 +29,9 @@
 
         string TotalAssetsNotTransferred { get; set; }
 
-        decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }               
+        decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }    
+        
+        string NotTransferedCount { get; set; } 
 
         List<IObjectReportsTransferredToAdministration> Objects { get; set; }
 

@@ -99,6 +99,8 @@ namespace PSE.Model.Output.Models
 
         public decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }
 
+        public string NotTransferedCount { get; set; }  
+
         public List<IObjectReportsTransferredToAdministration> Objects { get; set; }
 
         public ReportsTransferredToAdministration()
@@ -108,6 +110,7 @@ namespace PSE.Model.Output.Models
             TotalAssetsNotTransferred = string.Empty;   
             TotalMarketValueReportingCurrency = 0;
             TotalNotTransferredMarketValueReportingCurrency = 0;
+            NotTransferedCount = "0";   
             Objects = new List<IObjectReportsTransferredToAdministration>();
         }
 
@@ -118,6 +121,7 @@ namespace PSE.Model.Output.Models
             TotalAssetsNotTransferred = source.TotalAssetsNotTransferred;
             TotalMarketValueReportingCurrency = source.TotalMarketValueReportingCurrency;
             TotalNotTransferredMarketValueReportingCurrency = source.TotalNotTransferredMarketValueReportingCurrency;
+            NotTransferedCount = source.NotTransferedCount;
             Objects = new List<IObjectReportsTransferredToAdministration>();
             if (source.Objects != null && source.Objects.Any())
             {
