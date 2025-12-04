@@ -528,15 +528,15 @@ namespace PSE.Model.Input.Models
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(90)]
-        public string Amount1Request_90 { get; set; }
+        public decimal? Amount1Request_90 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
-        [FieldTrim(TrimMode.Both)]
+        [FieldConverter(ConverterKind.Decimal, ".")]
         [FieldOrder(91)]
-        public string Amount2Request_91 { get; set; }
+        public decimal? Amount2Request_91 { get; set; }
 
         [FieldFixedLength(17)]
         [FieldOptional]
@@ -674,8 +674,8 @@ namespace PSE.Model.Input.Models
             BuyPriceAverage_87 = null;
             BuyExchangeRateAverage_88 = null;
             InverseExchangeRate_89 = string.Empty;
-            Amount1Request_90 = string.Empty;
-            Amount2Request_91 = string.Empty;
+            Amount1Request_90 = null;
+            Amount2Request_91 = null;
             ProRataRequest_92 = string.Empty;
             ConversionBDesc_93 = string.Empty;
             ConversionCDesc_94 = string.Empty;

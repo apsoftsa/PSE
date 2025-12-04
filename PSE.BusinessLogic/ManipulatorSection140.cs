@@ -52,19 +52,29 @@ namespace PSE.BusinessLogic {
                                                     fundAccumulationPlan.Description1 = fundProperty.Value.ToString().Trim();
                                             }
                                             break;
+                                        case nameof(TmpAdanatval.TesAbbAnt): {
+                                                if (fundProperty.Value != null)
+                                                    fundAccumulationPlan.Description2 = fundProperty.Value.ToString().Trim();
+                                            }
+                                            break;
                                         case nameof(TmpAdanatval.NumTlkAnt):
                                         case nameof(TmpAdanatval.NrisinAnt): {
                                                 if (fundProperty.Value != null) {
-                                                    if (string.IsNullOrEmpty(fundAccumulationPlan.Description2))
-                                                        fundAccumulationPlan.Description2 = fundProperty.Value.ToString().Trim();
+                                                    if (string.IsNullOrEmpty(fundAccumulationPlan.Description3))
+                                                        fundAccumulationPlan.Description3 = fundProperty.Value.ToString().Trim();
                                                     else
-                                                        fundAccumulationPlan.Description2 += " / " + fundProperty.Value.ToString().Trim();
+                                                        fundAccumulationPlan.Description3 += " / " + fundProperty.Value.ToString().Trim();
                                                 }
                                             }
                                             break;
                                         case nameof(TmpAdordlat.DatFinLat): {
                                                 if (fundProperty.Value != null && DateTime.TryParse(fundProperty.Value.ToString(), out DateTime tmpDate)) 
                                                     fundAccumulationPlan.ExpirationDate = AssignRequiredDate(tmpDate, _culture);
+                                            }
+                                            break;
+                                        case nameof(TmpAdordlat.DatEseLat): {
+                                                if (fundProperty.Value != null && DateTime.TryParse(fundProperty.Value.ToString(), out DateTime tmpDate))
+                                                    fundAccumulationPlan.FirstExecutionDate = AssignRequiredDate(tmpDate, _culture);
                                             }
                                             break;
                                         case nameof(TmpAdordlat.OpeStoLat): {
@@ -110,7 +120,6 @@ namespace PSE.BusinessLogic {
                                     }
                                 }
                                 fundAccumulationPlan.Payments.Add(fundAccumulationPlanPayment);
-                                fundAccumulationPlan.PercentWeigth = CalculatePercentWeight(totalAssets, fundAccumulationPlan.MarketValueReportingCurrency);
                                 sectionContent.SubSection14000.Content.Add(fundAccumulationPlan);
                             }
                             output = new() {

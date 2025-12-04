@@ -31,6 +31,7 @@ namespace PSE.BusinessLogic
             if (extractedData.Any(flt => flt.RecordType == nameof(IDE)) && extractedData.Any(flt => flt.RecordType == nameof(POS)))
             {
                 string cultureCode;
+                decimal totalAsset;
                 ISection190Content sectionContent;
                 IReportsTransferredToAdministration acctAndDepReportTrans;
                 IReportsNotTransferredToAdministration acctAndDepReportNotTrans;
@@ -45,14 +46,15 @@ namespace PSE.BusinessLogic
                     cultureCode = dictionaryService.GetCultureCodeFromLanguage(ideItem.Language_18);
                     sectionContent = new Section190Content();                    
                     IEnumerable<IGrouping<string, POS>> relationshipesNonTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 != "00001").GroupBy(gb => gb.HostPositionReference_6);
+                    totalAsset = 0;
                     if (relationshipesNonTransferedToAdmin != null && relationshipesNonTransferedToAdmin.Any())
                     {
                         sectionContent.SubSection19000 = new SubSection19000("Reports not transferred to administration");
                         acctAndDepReportNotTrans = new ReportsNotTransferredToAdministration();
-                        acctAndDepReportNotTrans.TotalAsset = ""; // ??
-                        acctAndDepReportNotTrans.TotalAssetsNotTransferred = ""; // ??
+                        acctAndDepReportNotTrans.TotalAsset = 0; 
+                        acctAndDepReportNotTrans.TotalAssetsNotTransferred = ""; 
                         acctAndDepReportNotTrans.TotalMarketValueReportingCurrency = 0; 
-                        acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency = 0; // ??
+                        acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency = 0; 
                         foreach (IGrouping<string, POS> relationshipNonTransferedToAdminItem in relationshipesNonTransferedToAdmin)
                         {
                             extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(ObjectReportsNotTransferredToAdministration.Description), relationshipNonTransferedToAdminItem.First().HostPositionType_5, propertyParams);
@@ -70,7 +72,8 @@ namespace PSE.BusinessLogic
                                 });                                
                             }
                         }
-                        acctAndDepReportNotTrans.TotalMarketValueReportingCurrency = acctAndDepReportNotTrans.Objects.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency);
+                        acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency = acctAndDepReportNotTrans.Objects.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency);
+                        totalAsset = acctAndDepReportNotTrans.TotalNotTransferredMarketValueReportingCurrency.Value;
                         sectionContent.SubSection19000.Content.Add(acctAndDepReportNotTrans);                        
                     }
                     IEnumerable<IGrouping<string, POS>> relationshipesTransferedToAdmin = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && flt.PortfolioNumber_4 == "00001").GroupBy(gb => gb.HostPositionReference_6);
@@ -78,10 +81,10 @@ namespace PSE.BusinessLogic
                     {
                         sectionContent.SubSection19010 = new SubSection19010("Reports transferred to administration");
                         acctAndDepReportTrans = new ReportsTransferredToAdministration();
-                        acctAndDepReportTrans.TotalAsset = ""; // ??
-                        acctAndDepReportTrans.TotalAssetsNotTransferred = ""; // ??
+                        acctAndDepReportTrans.TotalAsset = 0; 
+                        acctAndDepReportTrans.TotalAssetsNotTransferred = ""; 
                         acctAndDepReportTrans.TotalMarketValueReportingCurrency = 0; 
-                        acctAndDepReportTrans.TotalNotTransferredMarketValueReportingCurrency = 0; // ??
+                        acctAndDepReportTrans.TotalNotTransferredMarketValueReportingCurrency = 0; 
                         foreach (IGrouping<string, POS> relationshipTransferedToAdminItem in relationshipesTransferedToAdmin)
                         {
                             extEventArgsDescription = new ExternalCodifyRequestEventArgs(nameof(Section190), nameof(ObjectReportsTransferredToAdministration.Description), relationshipTransferedToAdminItem.First().HostPositionType_5, propertyParams);
@@ -100,8 +103,13 @@ namespace PSE.BusinessLogic
                             }
                         }
                         acctAndDepReportTrans.TotalMarketValueReportingCurrency = acctAndDepReportTrans.Objects.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency);
+                        totalAsset += acctAndDepReportTrans.TotalMarketValueReportingCurrency.Value;
                         sectionContent.SubSection19010.Content.Add(acctAndDepReportTrans);
                     }
+                    if (sectionContent.SubSection19000 != null && sectionContent.SubSection19000.Content != null && sectionContent.SubSection19000.Content.Any())
+                        sectionContent.SubSection19000.Content.First().TotalAsset = totalAsset;
+                    if (sectionContent.SubSection19010 != null && sectionContent.SubSection19010.Content != null && sectionContent.SubSection19010.Content.Any())
+                        sectionContent.SubSection19010.Content.First().TotalAsset = totalAsset;
                     output.Content = new Section190Content(sectionContent);                    
                 }
             }

@@ -110,7 +110,7 @@ namespace PSE.Decoder
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "E185" && flt.Code == e.PropertyKey).TextI,
                                 };
                             }
-                        } else if ((e.SectionName == nameof(Section080) || e.SectionName == nameof(Section110) || e.SectionName == nameof(Section140)) && (e.PropertyName == nameof(BondDetail.Coupon) || e.PropertyName == nameof(BondInvestmentDetail.Coupon) || e.PropertyName == nameof(TmpAdordlat.OpeStoLat))) {
+                        } else if ((e.SectionName == nameof(Section080) || e.SectionName == nameof(Section110)) && (e.PropertyName == nameof(BondDetail.Coupon) || e.PropertyName == nameof(BondInvestmentDetail.Coupon))) {
                             if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey)) {
                                 string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
@@ -122,13 +122,26 @@ namespace PSE.Decoder
                                     Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextF,
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextI,
                                 };
-                                if (!string.IsNullOrEmpty(e.PropertyValue)) {
+                                if (!string.IsNullOrEmpty(e.PropertyValue)) 
                                     e.PropertyValue = e.PropertyValue.Trim();
-                                    if (e.PropertyName != nameof(TmpAdordlat.OpeStoLat)) {
-                                        if (e.PropertyValue.Length > 3)
-                                            e.PropertyValue = e.PropertyValue[..3];
-                                    }
-                                } else
+                                else
+                                    e.PropertyValue = "";
+                            }
+                        } else if (e.SectionName == nameof(Section140) && e.PropertyName == nameof(TmpAdordlat.OpeStoLat)) {
+                            if (context.Tabelle.AsNoTracking().Any(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey)) {
+                                string? languageToCheck = Constants.ITALIAN_LANGUAGE_CODE;
+                                if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
+                                    && e.PropertyParams[nameof(IDE.Language_18)] != null)
+                                    languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                e.PropertyValue = languageToCheck switch {
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col15,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col13,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col14,
+                                    _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col12,
+                                };
+                                if (!string.IsNullOrEmpty(e.PropertyValue)) 
+                                    e.PropertyValue = e.PropertyValue.Trim();
+                                else
                                     e.PropertyValue = "";
                             }
                         } else if (e.SectionName == nameof(Section170) && e.PropertyName == nameof(ShareByCountry.Country))
@@ -271,9 +284,11 @@ namespace PSE.Decoder
                                                 ordLat.ValUniLat4,
                                                 ordLat.ImpImpLat10,
                                                 ordLat.ImpImpLat4,
+                                                ordLat.DatEseLat,
+                                                adAnaSoc.TesAbbSoc,
+                                                adAnaNatVal.TesAbbAnt,
                                                 adAnaNatVal.NumTlkAnt,
-                                                adAnaNatVal.NrisinAnt,
-                                                adAnaSoc.TesAbbSoc
+                                                adAnaNatVal.NrisinAnt                                                
                                             };
                                 Dictionary<string, object> rowValues;
                                 int i = 0;
@@ -288,9 +303,11 @@ namespace PSE.Decoder
                                     rowValues.Add(nameof(TmpAdordlat.ValUniLat4), item.ValUniLat4);
                                     rowValues.Add(nameof(TmpAdordlat.ImpImpLat10), item.ImpImpLat10);
                                     rowValues.Add(nameof(TmpAdordlat.ImpImpLat4), item.ImpImpLat4);
-                                    rowValues.Add(nameof(TmpAdanatval.NumTlkAnt), item.NumTlkAnt);
-                                    rowValues.Add(nameof(TmpAdanatval.NrisinAnt), item.NrisinAnt);
+                                    rowValues.Add(nameof(TmpAdordlat.DatEseLat), item.DatEseLat);
                                     rowValues.Add(nameof(TmpAdanasoc.TesAbbSoc), item.TesAbbSoc);
+                                    rowValues.Add(nameof(TmpAdanatval.TesAbbAnt), item.TesAbbAnt);
+                                    rowValues.Add(nameof(TmpAdanatval.NumTlkAnt), item.NumTlkAnt);
+                                    rowValues.Add(nameof(TmpAdanatval.NrisinAnt), item.NrisinAnt);                                    
                                     e.PropertyValues.Add(i, rowValues);
                                     i++;
                                 }

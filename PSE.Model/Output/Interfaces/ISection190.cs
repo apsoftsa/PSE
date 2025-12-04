@@ -21,7 +21,7 @@
     public interface IReportsTransferredToAdministration
     {
 
-        string TotalAsset { get; set; }
+        decimal? TotalAsset { get; set; }
 
         string TotalAddressBook { get; set; }
 
@@ -59,7 +59,7 @@
 
         decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }
 
-        string TotalAsset { get; set; }
+        decimal? TotalAsset { get; set; }
 
         decimal? TotalMarketValueReportingCurrency { get; set; }
 

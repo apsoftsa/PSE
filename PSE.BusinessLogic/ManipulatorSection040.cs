@@ -68,14 +68,32 @@ namespace PSE.BusinessLogic
                             OnExternalCodifyRequest(extEventArgsAdvisor);
                             if (!extEventArgsAdvisor.Cancel)
                             {
-                                investmentAsset = new InvestmentAsset()
-                                {
-                                    MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
-                                    AssetClass = categoryDescr,
-                                    Class = CLASS_ENTRY,
-                                    TypeInvestment = extEventArgsAdvisor.PropertyValue,
-                                    MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
-                                };
+                                if (subCategory.Key == ((int)PositionClassifications.ACCOUNT).ToString() || subCategory.Key == ((int)PositionClassifications.FORWARD_EXCHANGE_TRANSACTIONS).ToString()) {
+                                    decimal? sumCat1 = subCategory.Where(f => f.Amount1Request_90.HasValue).Sum(sum => sum.Amount1Request_90).Value;
+                                    if (!sumCat1.HasValue) sumCat1 = 0;
+                                    decimal? sumCat2 = subCategory.Where(f => f.Amount2Request_91.HasValue).Sum(sum => sum.Amount2Request_91).Value;
+                                    if (!sumCat2.HasValue) sumCat2 = 0;
+                                    decimal? sumSubCat1 = groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Where(f => f.Amount1Request_90.HasValue).Sum(sum => sum.Amount1Request_90).Value;
+                                    if (!sumCat1.HasValue) sumCat1 = 0;
+                                    decimal? sumSubCat2 = groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Where(f => f.Amount2Request_91.HasValue).Sum(sum => sum.Amount2Request_91).Value;
+                                    if (!sumCat2.HasValue) sumCat2 = 0;
+                                    investmentAsset = new InvestmentAsset() {
+                                        
+                                        MarketValueReportingCurrency = Math.Round(sumCat1.Value + sumCat2.Value, 2),
+                                        AssetClass = categoryDescr,
+                                        Class = CLASS_ENTRY,
+                                        TypeInvestment = extEventArgsAdvisor.PropertyValue,
+                                        MarketValueReportingCurrencyT = Math.Round(sumSubCat1.Value + sumSubCat2.Value, 2)
+                                    };
+                                } else {
+                                    investmentAsset = new InvestmentAsset() {
+                                        MarketValueReportingCurrency = Math.Round(subCategory.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                        AssetClass = categoryDescr,
+                                        Class = CLASS_ENTRY,
+                                        TypeInvestment = extEventArgsAdvisor.PropertyValue,
+                                        MarketValueReportingCurrencyT = Math.Round(groupByCategory.First(flt => flt.Key == subCategory.First().SubCat3_14).Sum(sum => sum.Amount1Base_23).Value, 2)
+                                    };
+                                }
                                 sectionContent.SubSection4000.Content.Add(investmentAsset);
                             }                            
                         }
@@ -84,7 +102,6 @@ namespace PSE.BusinessLogic
                         sectionContent.SubSection4010 = new SubSection4010Content();
                         foreach (IInvestmentAsset assetToUpgrd in sectionContent.SubSection4000.Content)
                         {
-
                             assetToUpgrd.PercentInvestment = totalSum != 0 ? Math.Round((assetToUpgrd.MarketValueReportingCurrency / totalSum.Value * 100m).Value, 2) : 0m;
                         }
                         IEnumerable<IGrouping<string, IInvestmentAsset?>> groupByAssetClasses = sectionContent.SubSection4000.Content.GroupBy(gb => gb.AssetClass);

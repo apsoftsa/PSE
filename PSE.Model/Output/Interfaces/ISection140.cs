@@ -21,6 +21,8 @@
 
         string Description2 { get; set; }
 
+        string Description3 { get; set; }
+
         string ExpirationDate { get; set; }
 
         IList<IFundAccumulationPlanPayment> Payments { get; set; }
@@ -29,11 +31,9 @@
        
         decimal? SharesPurchased { get; set; }
 
-        decimal? Exchange { get; set; }
-
         decimal? MarketValueReportingCurrency { get; set; }
 
-        decimal? PercentWeigth { get; set; }
+        string FirstExecutionDate { get; set; }
 
     }
 

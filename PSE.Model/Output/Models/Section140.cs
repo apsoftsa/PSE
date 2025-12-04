@@ -47,28 +47,28 @@ namespace PSE.Model.Output.Models
 
         public string Description2 { get; set; }
 
+        public string Description3 { get; set; }
+
         public IList<IFundAccumulationPlanPayment> Payments { get; set; }
 
         public decimal? AveragePurchasePrice { get; set; }
 
         public decimal? SharesPurchased { get; set; }
 
-        public decimal? Exchange { get; set; }
-
         public decimal? MarketValueReportingCurrency { get; set; }
 
-        public decimal? PercentWeigth { get; set; }
+        public string FirstExecutionDate { get; set; }
 
         public FundAccumulationPlan()
         {
             Description1 = string.Empty;
-            Description2 = string.Empty;    
+            Description2 = string.Empty;
+            Description3 = string.Empty;
             AveragePurchasePrice = 0;   
             SharesPurchased = 0;
-            Exchange = 0;
             MarketValueReportingCurrency = 0;
-            PercentWeigth = 0;  
             ExpirationDate = string.Empty;
+            FirstExecutionDate = string.Empty;  
             Payments = new List<IFundAccumulationPlanPayment>();    
         }
 
@@ -76,12 +76,12 @@ namespace PSE.Model.Output.Models
         {
             Description1 = source.Description1;
             Description2 = source.Description2;
+            Description3 = source.Description3;
             ExpirationDate = source.ExpirationDate;
             AveragePurchasePrice = source.AveragePurchasePrice;
             SharesPurchased = source.SharesPurchased;
-            Exchange = source.Exchange;
             MarketValueReportingCurrency = source.MarketValueReportingCurrency;
-            PercentWeigth = source.PercentWeigth;
+            FirstExecutionDate = source.FirstExecutionDate;
             Payments = new List<IFundAccumulationPlanPayment>();
             if (source.Payments != null && source.Payments.Any())
             {

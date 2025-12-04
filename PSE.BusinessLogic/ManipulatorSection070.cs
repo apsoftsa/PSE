@@ -166,8 +166,8 @@ namespace PSE.BusinessLogic
                                         sectionContent.SubSection7040 = new SubSection7040Content();
                                         foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
                                         {
-                                            if (!decimal.TryParse(posItem.Amount1Request_90, out amount1)) amount1 = 0m;
-                                            if (!decimal.TryParse(posItem.Amount2Request_91, out amount2)) amount2 = 0m;
+                                            amount1 = posItem.Amount1Request_90.HasValue ? posItem.Amount1Request_90.Value : 0m;
+                                            amount2 = posItem.Amount2Request_91.HasValue ? posItem.Amount2Request_91.Value : 0m;
                                             liquidityForwardExchangeOperation = new LiquidityForwardExchangeOperation()
                                             {
                                                 Currency1 = AssignRequiredString(posItem.Currency1_17),

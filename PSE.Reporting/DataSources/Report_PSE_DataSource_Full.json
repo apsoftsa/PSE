@@ -5636,11 +5636,12 @@
         "content": [
           {
             "expirationDate": "",
-            "description2": "19949624 / LU0852938181",
             "description1": "BASE INV SICAV",
+            "description2": "BASE BONDS VALUE",
+            "description3": "19949624 / LU0852938181",
             "payments": [
               {
-                "frequency": "MENSILE",
+                "frequency": "MENS",
                 "currency": "CHF",
                 "amount": 200.0,
                 "executed": 3.0
@@ -5648,17 +5649,17 @@
             ],
             "averagePurchasePrice": 146.453606,
             "sharesPurchased": 4.106,
-            "exchange": 0.0,
             "marketValueReportingCurrency": 602.25,
-            "percentWeigth": 0.020435
+            "firstExecutionDate": "28.02.2025"
           },
           {
             "expirationDate": "",
-            "description2": "11942930 / LU0556301942",
             "description1": "BASE INV SICAV",
+            "description2": "BASE FLEX LOW RE",
+            "description3": "11942930 / LU0556301942",
             "payments": [
               {
-                "frequency": "MENSILE",
+                "frequency": "MENS",
                 "currency": "CHF",
                 "amount": 200.0,
                 "executed": 3.0
@@ -5666,9 +5667,8 @@
             ],
             "averagePurchasePrice": 135.834993,
             "sharesPurchased": 4.421,
-            "exchange": 0.0,
             "marketValueReportingCurrency": 601.45,
-            "percentWeigth": 0.020408
+            "firstExecutionDate": "28.02.2025"
           }
         ]
       }

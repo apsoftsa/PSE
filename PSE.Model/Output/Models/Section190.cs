@@ -89,7 +89,7 @@ namespace PSE.Model.Output.Models
     public class ReportsTransferredToAdministration : IReportsTransferredToAdministration
     {
      
-        public string TotalAsset { get; set; }
+        public decimal? TotalAsset { get; set; }
 
         public string TotalAddressBook { get; set; }       
 
@@ -103,7 +103,7 @@ namespace PSE.Model.Output.Models
 
         public ReportsTransferredToAdministration()
         {
-            TotalAsset = string.Empty;  
+            TotalAsset = 0;  
             TotalAddressBook = string.Empty;    
             TotalAssetsNotTransferred = string.Empty;   
             TotalMarketValueReportingCurrency = 0;
@@ -137,7 +137,7 @@ namespace PSE.Model.Output.Models
 
         public decimal? TotalNotTransferredMarketValueReportingCurrency { get; set; }
 
-        public string TotalAsset { get; set; }
+        public decimal? TotalAsset { get; set; }
 
         public decimal? TotalMarketValueReportingCurrency { get; set; }
 
@@ -145,7 +145,7 @@ namespace PSE.Model.Output.Models
 
         public ReportsNotTransferredToAdministration()
         {
-            TotalAsset = string.Empty;
+            TotalAsset = 0;
             TotalAssetsNotTransferred = string.Empty;
             TotalMarketValueReportingCurrency = 0;
             TotalNotTransferredMarketValueReportingCurrency = 0;
@@ -233,8 +233,6 @@ namespace PSE.Model.Output.Models
 
         public Section190Content()
         {
-            //SubSection19000 = new SubSection19000("Reports not transferred to administration");
-            //SubSection19010 = new SubSection19010("Reports transferred to administration");
             SubSection19000 = null;
             SubSection19010 = null;
         }

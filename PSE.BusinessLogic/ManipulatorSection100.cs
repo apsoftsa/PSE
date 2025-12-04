@@ -140,10 +140,8 @@ namespace PSE.BusinessLogic
                                         decimal amount1, amount2;
                                         sectionContent.SubSection10040 = new ForwardMetalOperationSubSection("Forward metal operations (profit/loss)");
                                         foreach (POS posItem in subCategoryItems) {
-                                            if (!decimal.TryParse(posItem.Amount1Request_90, out amount1))
-                                                amount1 = 0m;
-                                            if (!decimal.TryParse(posItem.Amount2Request_91, out amount2))
-                                                amount2 = 0m;
+                                            amount1 = posItem.Amount1Request_90.HasValue ? posItem.Amount1Request_90.Value : 0m;
+                                            amount2 = posItem.Amount2Request_91.HasValue ? posItem.Amount2Request_91.Value : 0m;
                                             forwardMetalOperation = new ForwardMetalOperation() {
                                                 Currency1 = AssignRequiredString(posItem.Currency1_17),
                                                 Currency2 = AssignRequiredString(posItem.Currency2_18),

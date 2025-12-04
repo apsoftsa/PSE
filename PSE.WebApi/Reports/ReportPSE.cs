@@ -273,15 +273,15 @@ namespace PSE.Reporting.Reports {
         private void LabelSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = ((XRLabel)sender).Text.Replace("{0}", this.ContentManagementReportPortfolioDate2.Text);
         }
-
-        private void ContentSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
+       
+        private void labelAsteriscoOscillazionePatrimoniale_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             bool toHidden = false;
-            if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%", ""), out double value))
+            if (label.Tag != null && double.TryParse(label.Tag.ToString(), out double value))
                 toHidden = value == 0;
             label.Visible = !toHidden;
             if (label.Visible && this.contentPatrimonialFluctuation.Value != null && double.TryParse(this.contentPatrimonialFluctuation.Value.ToString(), out double valuePF) && valuePF != 0)
-                label.Text += "*";
+                label.Text = "*";
         }
 
         private void labelOscillazionePatrimoniale_BeforePrint(object sender, CancelEventArgs e) {
@@ -430,6 +430,14 @@ namespace PSE.Reporting.Reports {
                 label.Visible = false;
         }
 
+        private void ibanSection7000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (string.IsNullOrEmpty(label.Text) == false && label.Text.Trim().Length == 21) {
+                string tmp = label.Text.Trim();
+                label.Text = tmp.Substring(0, 4) + " " + tmp.Substring(4, 4) + " " + tmp.Substring(8, 4) + " " + tmp.Substring(12, 4) + " " + tmp.Substring(16, 4) + " " + tmp.Substring(tmp.Length - 1);
+            }
+        }
+
         private void checkSection70CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             if (_hasSection70CaptionVisible == false && label.Visible) {
@@ -464,6 +472,12 @@ namespace PSE.Reporting.Reports {
                 _section110NeedPageBreakAtTheEnd = true;
             } else
                 label.Visible = false;
+        }
+
+        private void order13000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (string.IsNullOrEmpty(label.Text) == false && label.Text.Length > 3)
+                label.Text = label.Text.Substring(3);
         }
 
         private void DetailReportSection6000_BeforePrint(object sender, CancelEventArgs e) {
@@ -825,7 +839,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-     
+        
     }
 
 }
