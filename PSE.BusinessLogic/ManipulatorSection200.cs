@@ -69,7 +69,7 @@ namespace PSE.BusinessLogic {
                                 categoryDescr = string.Empty;
                                 prevCategory = string.Empty;
                                 currCategory = string.Empty;
-                                tmpOutput.Content.SubSection20010 = new SubSection20010("Investments");
+                                tmpOutput.Content.SubSection20010 = new SubSection20010("Investments");                                
                                 foreach (IGrouping<string, POS> category in groupByCategory) {
                                     currCategory = category.First().SubCat3_14;
                                     if (currCategory != prevCategory) {
@@ -87,6 +87,7 @@ namespace PSE.BusinessLogic {
                                     };
                                     tmpOutput.Content.SubSection20010.Content.Add(endExtractInvestment);
                                 }
+                                tmpOutput.Content.SubSection20010.HasMeaningfulData = !tmpOutput.Content.SubSection20010.Content.Any(f => f.MarketValueReportingCurrency < 0);
                                 decimal? totalSum = tmpOutput.Content.SubSection20010.Content.Sum(sum => sum.MarketValueReportingCurrency);
                                 if (!totalSum.HasValue)
                                     totalSum = decimal.Zero;

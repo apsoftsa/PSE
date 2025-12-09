@@ -32,6 +32,8 @@
 
         string PerformanceCalculationCurrency { get; set; } 
 
+        int PerformancesCount { get; set; }
+
         IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
     }

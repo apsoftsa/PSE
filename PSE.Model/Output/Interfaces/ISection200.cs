@@ -32,6 +32,7 @@
     public interface ISubSection20010
     {
         string Name { get; set; }
+        bool HasMeaningfulData { get; set; }
         IList<IEndExtractInvestment> Content { get; set; }
     }
 

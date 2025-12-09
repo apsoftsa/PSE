@@ -43,7 +43,7 @@ namespace PSE.BusinessLogic
                     IEnumerable<IGrouping<string, POS>> groupByCurrency = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2).GroupBy(gb => gb.Currency1_17).OrderBy(ob => ob.Key);
                     if (groupByCurrency != null && groupByCurrency.Any())
                     {
-                        sectionContent.SubSection6000 = new SubSection6000Content();
+                        sectionContent.SubSection6000 = new SubSection6000Content();                        
                         foreach (IGrouping<string, POS> currency in groupByCurrency)
                         {                                                        
                             investment = new InvestmentCurrency()
@@ -55,7 +55,8 @@ namespace PSE.BusinessLogic
                                 Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
                             };
                             sectionContent.SubSection6000.Content.Add(investment);
-                        }                        
+                        }
+                        sectionContent.SubSection6000.HasMeaningfulData = !sectionContent.SubSection6000.Content.Any(f => f.MarketValueReportingCurrency < 0);
                         decimal totalAmount = sectionContent.SubSection6000.Content.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(sum => sum.MarketValueReportingCurrency.Value);
                         if (totalAmount != 0)
                         {

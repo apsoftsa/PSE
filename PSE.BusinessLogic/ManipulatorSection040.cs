@@ -51,7 +51,7 @@ namespace PSE.BusinessLogic
                         string categoryDescr = string.Empty;
                         string prevCategory = string.Empty;
                         string currCategory = string.Empty;
-                        sectionContent.SubSection4000 = new SubSection4000Content();
+                        sectionContent.SubSection4000 = new SubSection4000Content();                        
                         foreach (IGrouping<string, POS> subCategory in groupBySubCategory)
                         {                            
                             currCategory = subCategory.First().SubCat3_14;
@@ -97,6 +97,7 @@ namespace PSE.BusinessLogic
                                 sectionContent.SubSection4000.Content.Add(investmentAsset);
                             }                            
                         }
+                        sectionContent.SubSection4000.HasMeaningfulData = !sectionContent.SubSection4000.Content.Any(f => f.MarketValueReportingCurrencyT < 0);
                         decimal? totalSum = sectionContent.SubSection4000.Content.Sum(sum => sum.MarketValueReportingCurrency);
                         if(!totalSum.HasValue) totalSum = decimal.Zero;
                         sectionContent.SubSection4010 = new SubSection4010Content();

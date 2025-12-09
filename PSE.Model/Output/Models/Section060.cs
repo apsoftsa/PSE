@@ -74,17 +74,22 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
+        public bool HasMeaningfulData { get; set; }
+
         public IList<IInvestmentCurrency> Content { get; set; }
 
         public SubSection6000Content()
         {
             Name = "Investments";
+            HasMeaningfulData = false;
             Content = new List<IInvestmentCurrency>();
         }
 
         public SubSection6000Content(ISubSection6000Content source)
         {
             Name = source.Name;
+            HasMeaningfulData |= source.HasMeaningfulData;  
             Content = new List<IInvestmentCurrency>();
             if (source.Content != null && source.Content.Any())
             {

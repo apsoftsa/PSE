@@ -81,21 +81,25 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
+        public bool HasMeaningfulData { get; set; }
+
         public IList<IInvestmentAsset> Content { get; set; }
 
         public SubSection4000Content()
         {
             Name = "Investments";
+            HasMeaningfulData = false;
             Content = new List<IInvestmentAsset>();
         }
 
         public SubSection4000Content(ISubSection4000Content source)
         {
             Name = source.Name;
+            HasMeaningfulData |= source.HasMeaningfulData;  
             Content = new List<IInvestmentAsset>();
             if (source.Content != null && source.Content.Any())
-            {
-                //foreach (var item in source.Content.OrderBy(ob => ob.Class).ThenByDescending(tb => tb.MarketValueReportingCurrencyT))
+            {                
                 foreach (var item in source.Content)
                     Content.Add(new InvestmentAsset(item));
             }
@@ -121,8 +125,7 @@ namespace PSE.Model.Output.Models
             Name = source.Name;
             Content = new List<IAssetClassChart>();
             if (source.Content != null && source.Content.Any())
-            {
-                //foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
+            {                
                 foreach (var item in source.Content)
                     Content.Add(new AssetClassChart(item));
             }

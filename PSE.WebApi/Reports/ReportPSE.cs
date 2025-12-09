@@ -1,7 +1,8 @@
-﻿using System.Drawing;
-using System.ComponentModel;
+﻿using DevExpress.Charts.Native;
 using DevExpress.XtraCharts;
 using DevExpress.XtraReports.UI;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace PSE.Reporting.Reports {
 
@@ -31,6 +32,7 @@ namespace PSE.Reporting.Reports {
         int _currentGridChartPointIndex;
         string _currentGridChartPointAlphaCode;
         int _multilinePeriodCount;
+        int _chartBarsCount;
         bool _hasNotTransfered;
 
         private void ManageSection70VisibilityFlags() {
@@ -105,6 +107,7 @@ namespace PSE.Reporting.Reports {
             _needResetRow = false;
             _hasNotTransfered = false;
             _rowCount = 0;
+            _chartBarsCount = 0;
             _multilinePeriodCount = 0;  
         }
 
@@ -236,6 +239,36 @@ namespace PSE.Reporting.Reports {
                 _currentPointIndex++;
             }
         }
+
+        private void detectChartBarsCount_BeforePrint(object sender, CancelEventArgs e) {
+            _chartBarsCount = 0;
+            if (int.TryParse(((XRLabel)sender).Text, out int tmpCount))
+                _chartBarsCount = tmpCount;
+        }
+
+        private void chartBarWidth_BeforePrint(object sender, CancelEventArgs e) {
+            XRChart chart = (XRChart)sender;
+            if (chart.Series != null && chart.Series.Count > 0) {
+                SideBySideBarSeriesView sideBySideBarSeriesView1 = (SideBySideBarSeriesView)chart.Series[0].View;
+                if (_chartBarsCount < 2)
+                    sideBySideBarSeriesView1.BarWidth = 0.3;
+                else if (_chartBarsCount < 3)
+                    sideBySideBarSeriesView1.BarWidth = 0.6;
+                else if (_chartBarsCount < 4)
+                    sideBySideBarSeriesView1.BarWidth = 0.7;
+                else if (_chartBarsCount < 6)
+                    sideBySideBarSeriesView1.BarWidth = 0.8;
+                else
+                    sideBySideBarSeriesView1.BarWidth = 0.9;
+            }
+        }
+
+        private void CheckPortafoglioContent_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (label.Value != null && label.Text.Trim().ToLower().EndsWith("- n/a"))
+                label.Text = label.Text.Trim().Substring(0, label.Text.Trim().Length - 5).Trim();
+        }
+
 
         private void contentHeaderRow1_BeforePrint(object sender, CancelEventArgs e) {
             string tmpText = ((XRLabel)sender).Text;
@@ -881,8 +914,8 @@ namespace PSE.Reporting.Reports {
 
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
-        }       
-
+        }
+       
     }
 
 }

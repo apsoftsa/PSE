@@ -83,6 +83,7 @@ namespace PSE.BusinessLogic
                             };                            
                             sectionContent.SubSection2010.Content.Add(chartEvo);
                         }
+                        sectionContent.SubSection2000.PerformancesCount = sectionContent.SubSection2000.Content.Count;  
                         output.Content = new Section020Content(sectionContent);
                     }
                 }

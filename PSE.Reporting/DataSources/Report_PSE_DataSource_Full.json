@@ -82,6 +82,7 @@
       "subSection2000": {
         "name": "Performance Evolution History (CHF)",
         "performanceCalculationCurrency": "CHF",
+        "performancesCount": 6,
         "content": [
           {
             "period": "01.01.2025-02.04.2025",
@@ -396,6 +397,7 @@
     "content": {
       "subSection4000": {
         "name": "Investments",
+        "hasMeaningfulData": true,
         "content": [
           {
             "assetClass": "LIQUIDITA'",
@@ -508,6 +510,7 @@
     "content": {
       "subSection6000": {
         "name": "Investments",
+        "hasMeaningfulData": true,
         "content": [
           {
             "currency": "CHF",
@@ -6076,6 +6079,7 @@
       },
       "subSection20010": {
         "name": "Investments",
+        "hasMeaningfulData": true,
         "content": [
           {
             "assetClass": "LIQUIDITA'",

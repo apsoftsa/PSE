@@ -118,6 +118,7 @@ namespace PSE.Model.Output.Models
                     Content.Add(new EndExtractCustomer(item));
             }
         }
+
     }
 
     public class SubSection20010 : ISubSection20010
@@ -125,28 +126,27 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
+        public bool HasMeaningfulData { get; set; }
+
         public IList<IEndExtractInvestment> Content { get; set; }
 
         public SubSection20010(string name)
         {
             Name = name;
+            HasMeaningfulData = false;
             Content = new List<IEndExtractInvestment>();
         }
 
         public SubSection20010(ISubSection20010 source)
         {
             Name = source.Name;
+            HasMeaningfulData = source.HasMeaningfulData;
             Content = new List<IEndExtractInvestment>();
             if (source.Content != null && source.Content.Any())
             {
                 foreach (var item in source.Content)
-                    Content.Add(new EndExtractInvestment(item));
-                /*
-                foreach (var item in source.Content.Where(f => f.Class == CLASS_ENTRY).OrderByDescending(ob => ob.MarketValueReportingCurrency))
-                    Content.Add(new EndExtractInvestment(item));
-                foreach (var item in source.Content.Where(f => f.Class == CLASS_TOTAL).OrderBy(ob => ob.MarketValueReportingCurrency))
-                    Content.Add(new EndExtractInvestment(item));
-                */
+                    Content.Add(new EndExtractInvestment(item));               
             }
         }
     }
@@ -170,7 +170,6 @@ namespace PSE.Model.Output.Models
             Content = new List<IEndExtractInvestmentChart>();
             if (source.Content != null && source.Content.Any())
             {
-                //foreach (var item in source.Content.OrderByDescending(ob => ob.PercentInvestment))
                 foreach (var item in source.Content)
                     Content.Add(new EndExtractInvestmentChart(item));
             }

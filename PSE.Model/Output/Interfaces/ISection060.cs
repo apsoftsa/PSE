@@ -32,6 +32,8 @@
 
         string Name { get; set; }
 
+        bool HasMeaningfulData { get; set; }
+
         IList<IInvestmentCurrency> Content { get; set; }
 
     }

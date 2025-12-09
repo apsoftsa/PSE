@@ -116,11 +116,19 @@ namespace PSE.Decoder
                                 if (e.PropertyParams != null && e.PropertyParams.ContainsKey(nameof(IDE.Language_18))
                                     && e.PropertyParams[nameof(IDE.Language_18)] != null)
                                     languageToCheck = e.PropertyParams[nameof(IDE.Language_18)].ToString();
+                                /*
                                 e.PropertyValue = languageToCheck switch {
                                     Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextE,
                                     Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextT,
                                     Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextF,
                                     _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).TextI,
+                                };
+                                */
+                                e.PropertyValue = languageToCheck switch {
+                                    Constants.ENGLISH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col15,
+                                    Constants.GERMAN_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col13,
+                                    Constants.FRENCH_LANGUAGE_CODE => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col14,
+                                    _ => context.Tabelle.AsNoTracking().First(flt => flt.Tab == "L013" && flt.Code == e.PropertyKey).Col12,
                                 };
                                 if (!string.IsNullOrEmpty(e.PropertyValue)) 
                                     e.PropertyValue = e.PropertyValue.Trim();

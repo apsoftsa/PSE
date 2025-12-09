@@ -68,7 +68,10 @@ namespace PSE.Model.Output.Models
 
         public string Name { get; set; }
 
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public string PerformanceCalculationCurrency { get; set; }
+
+        public int PerformancesCount { get; set; }
 
         public IList<IPerformanceEvolutionHistoryCHF> Content { get; set; }
 
@@ -76,6 +79,7 @@ namespace PSE.Model.Output.Models
         {
             Name = "Performance Evolution History (CHF)";
             PerformanceCalculationCurrency = string.Empty;
+            PerformancesCount = 0;  
             Content = new List<IPerformanceEvolutionHistoryCHF>();
         }
 
@@ -83,6 +87,7 @@ namespace PSE.Model.Output.Models
         {
             Name = source.Name;
             PerformanceCalculationCurrency= source.PerformanceCalculationCurrency;  
+            PerformancesCount = source.PerformancesCount;   
             Content = new List<IPerformanceEvolutionHistoryCHF>();
             if (source.Content != null && source.Content.Any())
             {
