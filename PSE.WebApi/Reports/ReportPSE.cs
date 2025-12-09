@@ -1,8 +1,7 @@
-﻿using DevExpress.Charts.Native;
+﻿using System.Drawing;
+using System.ComponentModel;
 using DevExpress.XtraCharts;
 using DevExpress.XtraReports.UI;
-using System.ComponentModel;
-using System.Drawing;
 
 namespace PSE.Reporting.Reports {
 
@@ -19,10 +18,12 @@ namespace PSE.Reporting.Reports {
         private bool _hasSection70CaptionVisible;
         private bool _hasSection80CaptionVisible;
         private bool _hasSection90CaptionVisible;
+        private bool _hasSection100CaptionVisible;
         private bool _hasSection110CaptionVisible;
         private bool _section70NeedPageBreakAtTheEnd;
         private bool _section80NeedPageBreakAtTheEnd;
         private bool _section90NeedPageBreakAtTheEnd;
+        private bool _section100NeedPageBreakAtTheEnd;
         private bool _section110NeedPageBreakAtTheEnd;
         private bool _needResetRow;
         int _rowCount;
@@ -48,6 +49,11 @@ namespace PSE.Reporting.Reports {
         private void ManageSection90VisibilityFlags() {
             if (_section90NeedPageBreakAtTheEnd)
                 _section90NeedPageBreakAtTheEnd = false;
+        }
+
+        private void ManageSection100VisibilityFlags() {
+            if (_section100NeedPageBreakAtTheEnd)
+                _section100NeedPageBreakAtTheEnd = false;
         }
 
         private void ManageSection110VisibilityFlags() {
@@ -99,10 +105,12 @@ namespace PSE.Reporting.Reports {
             _hasSection70CaptionVisible = false;
             _hasSection80CaptionVisible = false;
             _hasSection90CaptionVisible = false;
+            _hasSection100CaptionVisible = false;   
             _hasSection110CaptionVisible = false;   
             _section70NeedPageBreakAtTheEnd = false;
             _section80NeedPageBreakAtTheEnd = false;
             _section90NeedPageBreakAtTheEnd = false;
+            _section100NeedPageBreakAtTheEnd = false;    
             _section110NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
             _hasNotTransfered = false;
@@ -176,35 +184,44 @@ namespace PSE.Reporting.Reports {
             }
         }
 
-        private void pageBreakBeforeGroupHeaderSection110_BeforePrint(object sender, CancelEventArgs e) {
+        private void pageBreakBeforeGroupHeaderSection100_BeforePrint(object sender, CancelEventArgs e) {
             if (_section90NeedPageBreakAtTheEnd) {
                 ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
                 ManageSection90VisibilityFlags();
             }
         }
 
+        private void pageBreakBeforeGroupHeaderSection110_BeforePrint(object sender, CancelEventArgs e) {
+            if (_section100NeedPageBreakAtTheEnd) {
+                ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
+                ManageSection100VisibilityFlags();
+            }
+        }
+
         private void pageBreakBeforeReportHeader_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section100NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
                 ((ReportHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
                 ManageSection70VisibilityFlags();
                 ManageSection80VisibilityFlags();
                 ManageSection90VisibilityFlags();
+                ManageSection100VisibilityFlags();
                 ManageSection110VisibilityFlags();
             }
         }
 
         private void pageBreakBeforeGroupHeader_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section100NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
                 ((GroupHeaderBand)sender).PageBreak = PageBreak.BeforeBand;
                 ManageSection70VisibilityFlags();
                 ManageSection80VisibilityFlags();
                 ManageSection90VisibilityFlags();
+                ManageSection100VisibilityFlags();
                 ManageSection110VisibilityFlags();
             }
         }
       
         private void pageBreakBeforeBand_BeforePrint(object sender, CancelEventArgs e) {
-            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
+            if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section100NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd) {
                 ((DetailReportBand)sender).PageBreak = PageBreak.BeforeBand;
                 ManageSection70VisibilityFlags();
                 ManageSection80VisibilityFlags();
@@ -514,6 +531,15 @@ namespace PSE.Reporting.Reports {
             if (_hasSection90CaptionVisible == false && label.Visible) {
                 _hasSection90CaptionVisible = true;
                 _section90NeedPageBreakAtTheEnd = true;
+            } else
+                label.Visible = false;
+        }
+
+        private void checkSection100CaptionVisibility_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (_hasSection100CaptionVisible == false && label.Visible) {
+                _hasSection100CaptionVisible = true;
+                _section100NeedPageBreakAtTheEnd = true;
             } else
                 label.Visible = false;
         }
