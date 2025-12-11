@@ -1659,27 +1659,33 @@
             this.DetailReportFooter = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailFooter = new DevExpress.XtraReports.UI.DetailBand();
             this.PanelNotesPage1 = new DevExpress.XtraReports.UI.XRPanel();
-            this.xrLine58 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLine57 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLine56 = new DevExpress.XtraReports.UI.XRLine();
+            this.LabelNotesContent39 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesContent37 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesContent35 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesContent38 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesContent36 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesContent34 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine136 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine137 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine138 = new DevExpress.XtraReports.UI.XRLine();
+            this.LabelNotesKey39 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey37 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey35 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey38 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey36 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey34 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine55 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine54 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine53 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine52 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine51 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine48 = new DevExpress.XtraReports.UI.XRLine();
-            this.LabelNotesContent32 = new DevExpress.XtraReports.UI.XRLabel();
-            this.LabelNotesContent31 = new DevExpress.XtraReports.UI.XRLabel();
-            this.LabelNotesContent30 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent29 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent28 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent27 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent26 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent25 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesContent24 = new DevExpress.XtraReports.UI.XRLabel();
-            this.LabelNotesKey33 = new DevExpress.XtraReports.UI.XRLabel();
-            this.LabelNotesKey32 = new DevExpress.XtraReports.UI.XRLabel();
-            this.LabelNotesKey31 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesKey30 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesKey29 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesKey28 = new DevExpress.XtraReports.UI.XRLabel();
@@ -1715,6 +1721,15 @@
             this.labelHeaderNotesPage1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageBreakNotes = new DevExpress.XtraReports.UI.XRPageBreak();
             this.PanelNotesPage2 = new DevExpress.XtraReports.UI.XRPanel();
+            this.LabelNotesContent30 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine56 = new DevExpress.XtraReports.UI.XRLine();
+            this.LabelNotesContent31 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine57 = new DevExpress.XtraReports.UI.XRLine();
+            this.LabelNotesContent32 = new DevExpress.XtraReports.UI.XRLabel();
+            this.LabelNotesKey33 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine58 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine47 = new DevExpress.XtraReports.UI.XRLine();
             this.LabelNotesContent13 = new DevExpress.XtraReports.UI.XRLabel();
             this.LabelNotesKey13 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2526,23 +2541,7 @@
             this.labelDataScadenzaSection1500 = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection10010 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection10010 = new DevExpress.XtraReports.UI.DetailBand();
-            this.GroupFooterBandSection10010 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.section10010Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupHeaderBandSection10010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLine121 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelPerc1Section10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc2Section10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc3Section10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPrezzoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelDescrizioneSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelCambioSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelValoreMercatoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPesoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelQuantitaSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelDivisaSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelProfPerdNonrealSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine122 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelSubHeaderSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine127 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel154 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel468 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel472 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2573,44 +2572,28 @@
             this.labelCapitaleSection10010 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel503 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelTotaleSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterBandSection10010 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section10010Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection10010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLine121 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelPerc1Section10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc2Section10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc3Section10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPrezzoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDescrizioneSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelCambioSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPesoSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelQuantitaSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDivisaSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelProfPerdNonrealSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine122 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelSubHeaderSection10010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSectionTitle10010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection10010 = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection10020 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection10020 = new DevExpress.XtraReports.UI.DetailBand();
-            this.DetailReportSection10030 = new DevExpress.XtraReports.UI.DetailReportBand();
-            this.DetailSection10030 = new DevExpress.XtraReports.UI.DetailBand();
-            this.GroupFooterBandSection10030 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.GroupFooterBandSection10020 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.GroupHeaderBandSection10020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupHeaderBandSection10030 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.section10030Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.section10020Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelSubHeaderSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine123 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelProfPerdNonRealSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelDivisaSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelQuantitaSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPesoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelValoreMercatoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelCambioSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelDescrizioneSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPrezzoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc3Section10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc2Section10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc1Section10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine124 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelSubHeaderSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine125 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelProfPerdNonRealSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelStrikeSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelQuantitaSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPesoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelValoreMercatoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelCambioSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelDescrizioneSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPrezzoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc3Section10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc2Section10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPerc1Section10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine126 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine128 = new DevExpress.XtraReports.UI.XRLine();
             this.labelTotaleSection10020 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel496 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelCapitaleSection10020 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2641,6 +2624,29 @@
             this.xrLabel526 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel527 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel528 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterBandSection10020 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section10020Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection10020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelSubHeaderSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine123 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelProfPerdNonRealSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDivisaSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelQuantitaSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPesoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelCambioSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDescrizioneSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPrezzoSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc3Section10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc2Section10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc1Section10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine124 = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupHeaderBandSectionTitle10020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection10020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DetailReportSection10030 = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.DetailSection10030 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLine129 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel551 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel24 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel497 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel505 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2662,21 +2668,48 @@
             this.xrLabel542 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel543 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel544 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel545 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel546 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel547 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelAcquistoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelInizioAnnoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelAlSection10030 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel548 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel549 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel550 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel551 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine127 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLine128 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLine129 = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupFooterBandSection10030 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section10030Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection10030 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelSubHeaderSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine125 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelProfPerdNonRealSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelStrikeSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelQuantitaSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPesoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelCambioSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDescrizioneSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPrezzoSection10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc3Section10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc2Section10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPerc1Section10030 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine126 = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupHeaderBandSectionTitle10030 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection10030 = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection10040 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection10040 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel567 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel566 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel565 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel564 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel563 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel560 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel559 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel554 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel558 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine132 = new DevExpress.XtraReports.UI.XRLine();
             this.GroupFooterBandSection10040 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.GroupHeaderBandSectionTitle10040 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.section10040Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSectionTitle10040 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelProfittoPerditaSection10040 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelPesoSection10040 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine130 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine131 = new DevExpress.XtraReports.UI.XRLine();
             this.labelSubHeaderSection10040 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2685,25 +2718,16 @@
             this.labelMoneta1Section10040 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelCambioSection10040 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelMoneta2Section10040 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelProfittoPerditaSection10040 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelPesoSection10040 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine132 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel554 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel558 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel559 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel560 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel563 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel564 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel565 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel566 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel567 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection10040 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection10040 = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection10000 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection10000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel556 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel555 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel553 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel552 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine135 = new DevExpress.XtraReports.UI.XRLine();
             this.GroupHeaderBandSection10000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupHeaderBandSectionTitle10000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupFooterBandSection10000 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.section10000Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelHeaderSection10000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelContoSection10000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelSaldoAttualeSection10000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelSubHeaderSection10000 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2711,19 +2735,10 @@
             this.xrLine134 = new DevExpress.XtraReports.UI.XRLine();
             this.labelPesoSection10000 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelValoreMercatoSection10000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine135 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel552 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel553 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel555 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel556 = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupHeaderBandSectionTitle10010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupHeaderBandSectionTitle10020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupHeaderBandSectionTitle10030 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.labelHeaderSection10010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelHeaderSection10020 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelHeaderSection10030 = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupHeaderBandSection10040 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel557 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSectionTitle10000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection10000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterBandSection10000 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section10000Separator = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(simpleDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -9820,7 +9835,7 @@
             this.notesLabelKey.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.notesLabelKey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.notesLabelKey.Name = "notesLabelKey";
-            this.notesLabelKey.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.notesLabelKey.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 254F);
             this.notesLabelKey.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // notesLabelKeyItalic
@@ -9828,7 +9843,7 @@
             this.notesLabelKeyItalic.Font = new DevExpress.Drawing.DXFont("Arial", 8F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
             this.notesLabelKeyItalic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.notesLabelKeyItalic.Name = "notesLabelKeyItalic";
-            this.notesLabelKeyItalic.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.notesLabelKeyItalic.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 0, 0, 0, 254F);
             this.notesLabelKeyItalic.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // panelHeaderGrid
@@ -10378,27 +10393,33 @@
             // PanelNotesPage1
             // 
             this.PanelNotesPage1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine58,
-            this.xrLine57,
-            this.xrLine56,
+            this.LabelNotesContent39,
+            this.LabelNotesContent37,
+            this.LabelNotesContent35,
+            this.LabelNotesContent38,
+            this.LabelNotesContent36,
+            this.LabelNotesContent34,
+            this.xrLine136,
+            this.xrLine137,
+            this.xrLine138,
+            this.LabelNotesKey39,
+            this.LabelNotesKey37,
+            this.LabelNotesKey35,
+            this.LabelNotesKey38,
+            this.LabelNotesKey36,
+            this.LabelNotesKey34,
             this.xrLine55,
             this.xrLine54,
             this.xrLine53,
             this.xrLine52,
             this.xrLine51,
             this.xrLine48,
-            this.LabelNotesContent32,
-            this.LabelNotesContent31,
-            this.LabelNotesContent30,
             this.LabelNotesContent29,
             this.LabelNotesContent28,
             this.LabelNotesContent27,
             this.LabelNotesContent26,
             this.LabelNotesContent25,
             this.LabelNotesContent24,
-            this.LabelNotesKey33,
-            this.LabelNotesKey32,
-            this.LabelNotesKey31,
             this.LabelNotesKey30,
             this.LabelNotesKey29,
             this.LabelNotesKey28,
@@ -10435,23 +10456,119 @@
             this.PanelNotesPage1.Dpi = 254F;
             this.PanelNotesPage1.Name = "PanelNotesPage1";
             // 
-            // xrLine58
+            // LabelNotesContent39
             // 
-            this.xrLine58.Dpi = 254F;
-            this.xrLine58.Name = "xrLine58";
-            this.xrLine58.StyleName = "gridRowLineStyle";
+            this.LabelNotesContent39.Dpi = 254F;
+            this.LabelNotesContent39.Multiline = true;
+            this.LabelNotesContent39.Name = "LabelNotesContent39";
+            this.LabelNotesContent39.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent39.StyleName = "notesLabelContent";
             // 
-            // xrLine57
+            // LabelNotesContent37
             // 
-            this.xrLine57.Dpi = 254F;
-            this.xrLine57.Name = "xrLine57";
-            this.xrLine57.StyleName = "gridRowLineStyle";
+            this.LabelNotesContent37.Dpi = 254F;
+            this.LabelNotesContent37.Multiline = true;
+            this.LabelNotesContent37.Name = "LabelNotesContent37";
+            this.LabelNotesContent37.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent37.StyleName = "notesLabelContent";
             // 
-            // xrLine56
+            // LabelNotesContent35
             // 
-            this.xrLine56.Dpi = 254F;
-            this.xrLine56.Name = "xrLine56";
-            this.xrLine56.StyleName = "gridRowLineStyle";
+            this.LabelNotesContent35.Dpi = 254F;
+            this.LabelNotesContent35.Multiline = true;
+            this.LabelNotesContent35.Name = "LabelNotesContent35";
+            this.LabelNotesContent35.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent35.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesContent38
+            // 
+            this.LabelNotesContent38.Dpi = 254F;
+            this.LabelNotesContent38.Multiline = true;
+            this.LabelNotesContent38.Name = "LabelNotesContent38";
+            this.LabelNotesContent38.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent38.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesContent36
+            // 
+            this.LabelNotesContent36.Dpi = 254F;
+            this.LabelNotesContent36.Multiline = true;
+            this.LabelNotesContent36.Name = "LabelNotesContent36";
+            this.LabelNotesContent36.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent36.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesContent34
+            // 
+            this.LabelNotesContent34.Dpi = 254F;
+            this.LabelNotesContent34.Multiline = true;
+            this.LabelNotesContent34.Name = "LabelNotesContent34";
+            this.LabelNotesContent34.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent34.StyleName = "notesLabelContent";
+            // 
+            // xrLine136
+            // 
+            this.xrLine136.Dpi = 254F;
+            this.xrLine136.Name = "xrLine136";
+            this.xrLine136.StyleName = "gridRowLineStyle";
+            // 
+            // xrLine137
+            // 
+            this.xrLine137.Dpi = 254F;
+            this.xrLine137.Name = "xrLine137";
+            this.xrLine137.StyleName = "gridRowLineStyle";
+            // 
+            // xrLine138
+            // 
+            this.xrLine138.Dpi = 254F;
+            this.xrLine138.Name = "xrLine138";
+            this.xrLine138.StyleName = "gridRowLineStyle";
+            // 
+            // LabelNotesKey39
+            // 
+            this.LabelNotesKey39.Dpi = 254F;
+            this.LabelNotesKey39.Multiline = true;
+            this.LabelNotesKey39.Name = "LabelNotesKey39";
+            this.LabelNotesKey39.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey39.StyleName = "notesLabelKey";
+            // 
+            // LabelNotesKey37
+            // 
+            this.LabelNotesKey37.Dpi = 254F;
+            this.LabelNotesKey37.Multiline = true;
+            this.LabelNotesKey37.Name = "LabelNotesKey37";
+            this.LabelNotesKey37.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey37.StyleName = "notesLabelKey";
+            // 
+            // LabelNotesKey35
+            // 
+            this.LabelNotesKey35.Dpi = 254F;
+            this.LabelNotesKey35.Multiline = true;
+            this.LabelNotesKey35.Name = "LabelNotesKey35";
+            this.LabelNotesKey35.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey35.StyleName = "notesLabelKey";
+            // 
+            // LabelNotesKey38
+            // 
+            this.LabelNotesKey38.Dpi = 254F;
+            this.LabelNotesKey38.Multiline = true;
+            this.LabelNotesKey38.Name = "LabelNotesKey38";
+            this.LabelNotesKey38.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey38.StyleName = "notesLabelKey";
+            // 
+            // LabelNotesKey36
+            // 
+            this.LabelNotesKey36.Dpi = 254F;
+            this.LabelNotesKey36.Multiline = true;
+            this.LabelNotesKey36.Name = "LabelNotesKey36";
+            this.LabelNotesKey36.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey36.StyleName = "notesLabelKey";
+            // 
+            // LabelNotesKey34
+            // 
+            this.LabelNotesKey34.Dpi = 254F;
+            this.LabelNotesKey34.Multiline = true;
+            this.LabelNotesKey34.Name = "LabelNotesKey34";
+            this.LabelNotesKey34.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey34.StyleName = "notesLabelKey";
             // 
             // xrLine55
             // 
@@ -10488,30 +10605,6 @@
             this.xrLine48.Dpi = 254F;
             this.xrLine48.Name = "xrLine48";
             this.xrLine48.StyleName = "gridRowLineStyle";
-            // 
-            // LabelNotesContent32
-            // 
-            this.LabelNotesContent32.Dpi = 254F;
-            this.LabelNotesContent32.Multiline = true;
-            this.LabelNotesContent32.Name = "LabelNotesContent32";
-            this.LabelNotesContent32.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesContent32.StyleName = "notesLabelContent";
-            // 
-            // LabelNotesContent31
-            // 
-            this.LabelNotesContent31.Dpi = 254F;
-            this.LabelNotesContent31.Multiline = true;
-            this.LabelNotesContent31.Name = "LabelNotesContent31";
-            this.LabelNotesContent31.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesContent31.StyleName = "notesLabelContent";
-            // 
-            // LabelNotesContent30
-            // 
-            this.LabelNotesContent30.Dpi = 254F;
-            this.LabelNotesContent30.Multiline = true;
-            this.LabelNotesContent30.Name = "LabelNotesContent30";
-            this.LabelNotesContent30.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesContent30.StyleName = "notesLabelContent";
             // 
             // LabelNotesContent29
             // 
@@ -10560,30 +10653,6 @@
             this.LabelNotesContent24.Name = "LabelNotesContent24";
             this.LabelNotesContent24.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.LabelNotesContent24.StyleName = "notesLabelContent";
-            // 
-            // LabelNotesKey33
-            // 
-            this.LabelNotesKey33.Dpi = 254F;
-            this.LabelNotesKey33.Multiline = true;
-            this.LabelNotesKey33.Name = "LabelNotesKey33";
-            this.LabelNotesKey33.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesKey33.StyleName = "notesLabelKey";
-            // 
-            // LabelNotesKey32
-            // 
-            this.LabelNotesKey32.Dpi = 254F;
-            this.LabelNotesKey32.Multiline = true;
-            this.LabelNotesKey32.Name = "LabelNotesKey32";
-            this.LabelNotesKey32.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesKey32.StyleName = "notesLabelKey";
-            // 
-            // LabelNotesKey31
-            // 
-            this.LabelNotesKey31.Dpi = 254F;
-            this.LabelNotesKey31.Multiline = true;
-            this.LabelNotesKey31.Name = "LabelNotesKey31";
-            this.LabelNotesKey31.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.LabelNotesKey31.StyleName = "notesLabelKey";
             // 
             // LabelNotesKey30
             // 
@@ -10847,6 +10916,15 @@
             // PanelNotesPage2
             // 
             this.PanelNotesPage2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.LabelNotesContent30,
+            this.LabelNotesKey31,
+            this.xrLine56,
+            this.LabelNotesContent31,
+            this.LabelNotesKey32,
+            this.xrLine57,
+            this.LabelNotesContent32,
+            this.LabelNotesKey33,
+            this.xrLine58,
             this.xrLine47,
             this.LabelNotesContent13,
             this.LabelNotesKey13,
@@ -10884,6 +10962,72 @@
             this.labelHeaderNotesPage2});
             this.PanelNotesPage2.Dpi = 254F;
             this.PanelNotesPage2.Name = "PanelNotesPage2";
+            // 
+            // LabelNotesContent30
+            // 
+            this.LabelNotesContent30.Dpi = 254F;
+            this.LabelNotesContent30.Multiline = true;
+            this.LabelNotesContent30.Name = "LabelNotesContent30";
+            this.LabelNotesContent30.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent30.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesKey31
+            // 
+            this.LabelNotesKey31.Dpi = 254F;
+            this.LabelNotesKey31.Multiline = true;
+            this.LabelNotesKey31.Name = "LabelNotesKey31";
+            this.LabelNotesKey31.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey31.StyleName = "notesLabelKey";
+            // 
+            // xrLine56
+            // 
+            this.xrLine56.Dpi = 254F;
+            this.xrLine56.Name = "xrLine56";
+            this.xrLine56.StyleName = "gridRowLineStyle";
+            // 
+            // LabelNotesContent31
+            // 
+            this.LabelNotesContent31.Dpi = 254F;
+            this.LabelNotesContent31.Multiline = true;
+            this.LabelNotesContent31.Name = "LabelNotesContent31";
+            this.LabelNotesContent31.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent31.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesKey32
+            // 
+            this.LabelNotesKey32.Dpi = 254F;
+            this.LabelNotesKey32.Multiline = true;
+            this.LabelNotesKey32.Name = "LabelNotesKey32";
+            this.LabelNotesKey32.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey32.StyleName = "notesLabelKey";
+            // 
+            // xrLine57
+            // 
+            this.xrLine57.Dpi = 254F;
+            this.xrLine57.Name = "xrLine57";
+            this.xrLine57.StyleName = "gridRowLineStyle";
+            // 
+            // LabelNotesContent32
+            // 
+            this.LabelNotesContent32.Dpi = 254F;
+            this.LabelNotesContent32.Multiline = true;
+            this.LabelNotesContent32.Name = "LabelNotesContent32";
+            this.LabelNotesContent32.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesContent32.StyleName = "notesLabelContent";
+            // 
+            // LabelNotesKey33
+            // 
+            this.LabelNotesKey33.Dpi = 254F;
+            this.LabelNotesKey33.Multiline = true;
+            this.LabelNotesKey33.Name = "LabelNotesKey33";
+            this.LabelNotesKey33.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.LabelNotesKey33.StyleName = "notesLabelKey";
+            // 
+            // xrLine58
+            // 
+            this.xrLine58.Dpi = 254F;
+            this.xrLine58.Name = "xrLine58";
+            this.xrLine58.StyleName = "gridRowLineStyle";
             // 
             // xrLine47
             // 
@@ -11691,7 +11835,7 @@
             this.ContentSection1000PerformancePonderata.Multiline = true;
             this.ContentSection1000PerformancePonderata.Name = "ContentSection1000PerformancePonderata";
             this.ContentSection1000PerformancePonderata.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.ContentSection1000PerformancePonderata.StyleName = "reportContentStyleItalicRightAlign";
+            this.ContentSection1000PerformancePonderata.StyleName = "reportContentStyleBoldRightAlign";
             this.ContentSection1000PerformancePonderata.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // ContentManagementReportPortfolioDate2
@@ -19130,157 +19274,11 @@
             this.DetailSection10010.KeepTogether = true;
             this.DetailSection10010.Name = "DetailSection10010";
             // 
-            // GroupFooterBandSection10010
+            // xrLine127
             // 
-            this.GroupFooterBandSection10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.section10010Separator});
-            this.GroupFooterBandSection10010.Dpi = 254F;
-            this.GroupFooterBandSection10010.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
-            this.GroupFooterBandSection10010.Name = "GroupFooterBandSection10010";
-            // 
-            // section10010Separator
-            // 
-            this.section10010Separator.Dpi = 254F;
-            this.section10010Separator.Multiline = true;
-            this.section10010Separator.Name = "section10010Separator";
-            this.section10010Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section10010Separator.StyleName = "sectionSeparator";
-            // 
-            // GroupHeaderBandSection10010
-            // 
-            this.GroupHeaderBandSection10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine121,
-            this.labelPerc1Section10010,
-            this.labelPerc2Section10010,
-            this.labelPerc3Section10010,
-            this.labelPrezzoSection10010,
-            this.labelDescrizioneSection10010,
-            this.labelCambioSection10010,
-            this.labelValoreMercatoSection10010,
-            this.labelPesoSection10010,
-            this.labelQuantitaSection10010,
-            this.labelDivisaSection10010,
-            this.labelProfPerdNonrealSection10010,
-            this.xrLine122,
-            this.labelSubHeaderSection10010});
-            this.GroupHeaderBandSection10010.Dpi = 254F;
-            this.GroupHeaderBandSection10010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
-            this.GroupHeaderBandSection10010.KeepTogether = true;
-            this.GroupHeaderBandSection10010.Name = "GroupHeaderBandSection10010";
-            this.GroupHeaderBandSection10010.RepeatEveryPage = true;
-            // 
-            // xrLine121
-            // 
-            this.xrLine121.BorderWidth = 0F;
-            this.xrLine121.Dpi = 254F;
-            this.xrLine121.Name = "xrLine121";
-            this.xrLine121.StyleName = "gridHeaderLine";
-            this.xrLine121.StylePriority.UseBorderWidth = false;
-            // 
-            // labelPerc1Section10010
-            // 
-            this.labelPerc1Section10010.Dpi = 254F;
-            this.labelPerc1Section10010.Multiline = true;
-            this.labelPerc1Section10010.Name = "labelPerc1Section10010";
-            this.labelPerc1Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc1Section10010.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc2Section10010
-            // 
-            this.labelPerc2Section10010.Dpi = 254F;
-            this.labelPerc2Section10010.Multiline = true;
-            this.labelPerc2Section10010.Name = "labelPerc2Section10010";
-            this.labelPerc2Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc2Section10010.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc3Section10010
-            // 
-            this.labelPerc3Section10010.Dpi = 254F;
-            this.labelPerc3Section10010.Multiline = true;
-            this.labelPerc3Section10010.Name = "labelPerc3Section10010";
-            this.labelPerc3Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc3Section10010.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPrezzoSection10010
-            // 
-            this.labelPrezzoSection10010.Dpi = 254F;
-            this.labelPrezzoSection10010.Multiline = true;
-            this.labelPrezzoSection10010.Name = "labelPrezzoSection10010";
-            this.labelPrezzoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPrezzoSection10010.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelDescrizioneSection10010
-            // 
-            this.labelDescrizioneSection10010.Dpi = 254F;
-            this.labelDescrizioneSection10010.Multiline = true;
-            this.labelDescrizioneSection10010.Name = "labelDescrizioneSection10010";
-            this.labelDescrizioneSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelDescrizioneSection10010.StyleName = "gridColumnHeaderStyle";
-            // 
-            // labelCambioSection10010
-            // 
-            this.labelCambioSection10010.Dpi = 254F;
-            this.labelCambioSection10010.Multiline = true;
-            this.labelCambioSection10010.Name = "labelCambioSection10010";
-            this.labelCambioSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCambioSection10010.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelValoreMercatoSection10010
-            // 
-            this.labelValoreMercatoSection10010.Dpi = 254F;
-            this.labelValoreMercatoSection10010.Multiline = true;
-            this.labelValoreMercatoSection10010.Name = "labelValoreMercatoSection10010";
-            this.labelValoreMercatoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelValoreMercatoSection10010.StyleName = "gridColumnHeaderRightStyle";
-            this.labelValoreMercatoSection10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
-            // 
-            // labelPesoSection10010
-            // 
-            this.labelPesoSection10010.Dpi = 254F;
-            this.labelPesoSection10010.Multiline = true;
-            this.labelPesoSection10010.Name = "labelPesoSection10010";
-            this.labelPesoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPesoSection10010.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelQuantitaSection10010
-            // 
-            this.labelQuantitaSection10010.Dpi = 254F;
-            this.labelQuantitaSection10010.Multiline = true;
-            this.labelQuantitaSection10010.Name = "labelQuantitaSection10010";
-            this.labelQuantitaSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelQuantitaSection10010.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelDivisaSection10010
-            // 
-            this.labelDivisaSection10010.Dpi = 254F;
-            this.labelDivisaSection10010.Multiline = true;
-            this.labelDivisaSection10010.Name = "labelDivisaSection10010";
-            this.labelDivisaSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelDivisaSection10010.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelProfPerdNonrealSection10010
-            // 
-            this.labelProfPerdNonrealSection10010.Dpi = 254F;
-            this.labelProfPerdNonrealSection10010.Multiline = true;
-            this.labelProfPerdNonrealSection10010.Name = "labelProfPerdNonrealSection10010";
-            this.labelProfPerdNonrealSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelProfPerdNonrealSection10010.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // xrLine122
-            // 
-            this.xrLine122.BorderWidth = 0F;
-            this.xrLine122.Dpi = 254F;
-            this.xrLine122.Name = "xrLine122";
-            this.xrLine122.StyleName = "gridHeaderLine";
-            this.xrLine122.StylePriority.UseBorderWidth = false;
-            // 
-            // labelSubHeaderSection10010
-            // 
-            this.labelSubHeaderSection10010.Dpi = 254F;
-            this.labelSubHeaderSection10010.Multiline = true;
-            this.labelSubHeaderSection10010.Name = "labelSubHeaderSection10010";
-            this.labelSubHeaderSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelSubHeaderSection10010.StyleName = "sectionSubHeader";
+            this.xrLine127.Dpi = 254F;
+            this.xrLine127.Name = "xrLine127";
+            this.xrLine127.StyleName = "gridRowLineStyle";
             // 
             // xrLabel154
             // 
@@ -19597,6 +19595,178 @@
             this.labelTotaleSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelTotaleSection10010.StyleName = "gridContentStyleRightAlign";
             // 
+            // GroupFooterBandSection10010
+            // 
+            this.GroupFooterBandSection10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section10010Separator});
+            this.GroupFooterBandSection10010.Dpi = 254F;
+            this.GroupFooterBandSection10010.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection10010.Name = "GroupFooterBandSection10010";
+            // 
+            // section10010Separator
+            // 
+            this.section10010Separator.Dpi = 254F;
+            this.section10010Separator.Multiline = true;
+            this.section10010Separator.Name = "section10010Separator";
+            this.section10010Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section10010Separator.StyleName = "sectionSeparator";
+            // 
+            // GroupHeaderBandSection10010
+            // 
+            this.GroupHeaderBandSection10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine121,
+            this.labelPerc1Section10010,
+            this.labelPerc2Section10010,
+            this.labelPerc3Section10010,
+            this.labelPrezzoSection10010,
+            this.labelDescrizioneSection10010,
+            this.labelCambioSection10010,
+            this.labelValoreMercatoSection10010,
+            this.labelPesoSection10010,
+            this.labelQuantitaSection10010,
+            this.labelDivisaSection10010,
+            this.labelProfPerdNonrealSection10010,
+            this.xrLine122,
+            this.labelSubHeaderSection10010});
+            this.GroupHeaderBandSection10010.Dpi = 254F;
+            this.GroupHeaderBandSection10010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection10010.KeepTogether = true;
+            this.GroupHeaderBandSection10010.Name = "GroupHeaderBandSection10010";
+            this.GroupHeaderBandSection10010.RepeatEveryPage = true;
+            // 
+            // xrLine121
+            // 
+            this.xrLine121.BorderWidth = 0F;
+            this.xrLine121.Dpi = 254F;
+            this.xrLine121.Name = "xrLine121";
+            this.xrLine121.StyleName = "gridHeaderLine";
+            this.xrLine121.StylePriority.UseBorderWidth = false;
+            // 
+            // labelPerc1Section10010
+            // 
+            this.labelPerc1Section10010.Dpi = 254F;
+            this.labelPerc1Section10010.Multiline = true;
+            this.labelPerc1Section10010.Name = "labelPerc1Section10010";
+            this.labelPerc1Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc1Section10010.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc2Section10010
+            // 
+            this.labelPerc2Section10010.Dpi = 254F;
+            this.labelPerc2Section10010.Multiline = true;
+            this.labelPerc2Section10010.Name = "labelPerc2Section10010";
+            this.labelPerc2Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc2Section10010.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc3Section10010
+            // 
+            this.labelPerc3Section10010.Dpi = 254F;
+            this.labelPerc3Section10010.Multiline = true;
+            this.labelPerc3Section10010.Name = "labelPerc3Section10010";
+            this.labelPerc3Section10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc3Section10010.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPrezzoSection10010
+            // 
+            this.labelPrezzoSection10010.Dpi = 254F;
+            this.labelPrezzoSection10010.Multiline = true;
+            this.labelPrezzoSection10010.Name = "labelPrezzoSection10010";
+            this.labelPrezzoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPrezzoSection10010.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelDescrizioneSection10010
+            // 
+            this.labelDescrizioneSection10010.Dpi = 254F;
+            this.labelDescrizioneSection10010.Multiline = true;
+            this.labelDescrizioneSection10010.Name = "labelDescrizioneSection10010";
+            this.labelDescrizioneSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDescrizioneSection10010.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelCambioSection10010
+            // 
+            this.labelCambioSection10010.Dpi = 254F;
+            this.labelCambioSection10010.Multiline = true;
+            this.labelCambioSection10010.Name = "labelCambioSection10010";
+            this.labelCambioSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelCambioSection10010.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelValoreMercatoSection10010
+            // 
+            this.labelValoreMercatoSection10010.Dpi = 254F;
+            this.labelValoreMercatoSection10010.Multiline = true;
+            this.labelValoreMercatoSection10010.Name = "labelValoreMercatoSection10010";
+            this.labelValoreMercatoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection10010.StyleName = "gridColumnHeaderRightStyle";
+            this.labelValoreMercatoSection10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelPesoSection10010
+            // 
+            this.labelPesoSection10010.Dpi = 254F;
+            this.labelPesoSection10010.Multiline = true;
+            this.labelPesoSection10010.Name = "labelPesoSection10010";
+            this.labelPesoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPesoSection10010.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelQuantitaSection10010
+            // 
+            this.labelQuantitaSection10010.Dpi = 254F;
+            this.labelQuantitaSection10010.Multiline = true;
+            this.labelQuantitaSection10010.Name = "labelQuantitaSection10010";
+            this.labelQuantitaSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelQuantitaSection10010.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelDivisaSection10010
+            // 
+            this.labelDivisaSection10010.Dpi = 254F;
+            this.labelDivisaSection10010.Multiline = true;
+            this.labelDivisaSection10010.Name = "labelDivisaSection10010";
+            this.labelDivisaSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDivisaSection10010.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelProfPerdNonrealSection10010
+            // 
+            this.labelProfPerdNonrealSection10010.Dpi = 254F;
+            this.labelProfPerdNonrealSection10010.Multiline = true;
+            this.labelProfPerdNonrealSection10010.Name = "labelProfPerdNonrealSection10010";
+            this.labelProfPerdNonrealSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelProfPerdNonrealSection10010.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // xrLine122
+            // 
+            this.xrLine122.BorderWidth = 0F;
+            this.xrLine122.Dpi = 254F;
+            this.xrLine122.Name = "xrLine122";
+            this.xrLine122.StyleName = "gridHeaderLine";
+            this.xrLine122.StylePriority.UseBorderWidth = false;
+            // 
+            // labelSubHeaderSection10010
+            // 
+            this.labelSubHeaderSection10010.Dpi = 254F;
+            this.labelSubHeaderSection10010.Multiline = true;
+            this.labelSubHeaderSection10010.Name = "labelSubHeaderSection10010";
+            this.labelSubHeaderSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection10010.StyleName = "sectionSubHeader";
+            // 
+            // GroupHeaderBandSectionTitle10010
+            // 
+            this.GroupHeaderBandSectionTitle10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection10010});
+            this.GroupHeaderBandSectionTitle10010.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle10010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle10010.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle10010.Level = 1;
+            this.GroupHeaderBandSectionTitle10010.Name = "GroupHeaderBandSectionTitle10010";
+            this.GroupHeaderBandSectionTitle10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
+            // 
+            // labelHeaderSection10010
+            // 
+            this.labelHeaderSection10010.Dpi = 254F;
+            this.labelHeaderSection10010.Multiline = true;
+            this.labelHeaderSection10010.Name = "labelHeaderSection10010";
+            this.labelHeaderSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection10010.StyleName = "sectionHeader";
+            this.labelHeaderSection10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
+            // 
             // DetailReportSection10020
             // 
             this.DetailReportSection10020.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -19650,360 +19820,11 @@
             this.DetailSection10020.KeepTogether = true;
             this.DetailSection10020.Name = "DetailSection10020";
             // 
-            // DetailReportSection10030
-            // 
-            this.DetailReportSection10030.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.DetailSection10030,
-            this.GroupFooterBandSection10030,
-            this.GroupHeaderBandSection10030,
-            this.GroupHeaderBandSectionTitle10030});
-            this.DetailReportSection10030.DataMember = "section100.content.subSection10030.content";
-            this.DetailReportSection10030.DataSource = this.jsonDataSourcePSE;
-            this.DetailReportSection10030.Dpi = 254F;
-            this.DetailReportSection10030.Level = 22;
-            this.DetailReportSection10030.Name = "DetailReportSection10030";
-            this.DetailReportSection10030.ReportPrintOptions.PrintOnEmptyDataSource = false;
-            // 
-            // DetailSection10030
-            // 
-            this.DetailSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine129,
-            this.xrLabel551,
-            this.xrLabel24,
-            this.xrLabel497,
-            this.xrLabel505,
-            this.xrLabel506,
-            this.xrLabel507,
-            this.xrLabel529,
-            this.xrLabel530,
-            this.xrLabel531,
-            this.xrLabel532,
-            this.xrLabel533,
-            this.xrLabel534,
-            this.xrLabel535,
-            this.xrLabel536,
-            this.xrLabel537,
-            this.xrLabel538,
-            this.xrLabel539,
-            this.xrLabel540,
-            this.xrLabel541,
-            this.xrLabel542,
-            this.xrLabel543,
-            this.xrLabel544,
-            this.xrLabel545,
-            this.xrLabel546,
-            this.xrLabel547,
-            this.xrLabel548,
-            this.xrLabel549,
-            this.xrLabel550});
-            this.DetailSection10030.Dpi = 254F;
-            this.DetailSection10030.HierarchyPrintOptions.Indent = 50.8F;
-            this.DetailSection10030.KeepTogether = true;
-            this.DetailSection10030.Name = "DetailSection10030";
-            // 
-            // GroupFooterBandSection10030
-            // 
-            this.GroupFooterBandSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.section10030Separator});
-            this.GroupFooterBandSection10030.Dpi = 254F;
-            this.GroupFooterBandSection10030.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
-            this.GroupFooterBandSection10030.Name = "GroupFooterBandSection10030";
-            // 
-            // GroupFooterBandSection10020
-            // 
-            this.GroupFooterBandSection10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.section10020Separator});
-            this.GroupFooterBandSection10020.Dpi = 254F;
-            this.GroupFooterBandSection10020.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
-            this.GroupFooterBandSection10020.Name = "GroupFooterBandSection10020";
-            // 
-            // GroupHeaderBandSection10020
-            // 
-            this.GroupHeaderBandSection10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelSubHeaderSection10020,
-            this.xrLine123,
-            this.labelProfPerdNonRealSection10020,
-            this.labelDivisaSection10020,
-            this.labelQuantitaSection10020,
-            this.labelPesoSection10020,
-            this.labelValoreMercatoSection10020,
-            this.labelCambioSection10020,
-            this.labelDescrizioneSection10020,
-            this.labelPrezzoSection10020,
-            this.labelPerc3Section10020,
-            this.labelPerc2Section10020,
-            this.labelPerc1Section10020,
-            this.xrLine124});
-            this.GroupHeaderBandSection10020.Dpi = 254F;
-            this.GroupHeaderBandSection10020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
-            this.GroupHeaderBandSection10020.KeepTogether = true;
-            this.GroupHeaderBandSection10020.Name = "GroupHeaderBandSection10020";
-            this.GroupHeaderBandSection10020.RepeatEveryPage = true;
-            // 
-            // GroupHeaderBandSection10030
-            // 
-            this.GroupHeaderBandSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelSubHeaderSection10030,
-            this.xrLine125,
-            this.labelProfPerdNonRealSection10030,
-            this.labelStrikeSection10030,
-            this.labelQuantitaSection10030,
-            this.labelPesoSection10030,
-            this.labelValoreMercatoSection10030,
-            this.labelCambioSection10030,
-            this.labelDescrizioneSection10030,
-            this.labelPrezzoSection10030,
-            this.labelPerc3Section10030,
-            this.labelPerc2Section10030,
-            this.labelPerc1Section10030,
-            this.xrLine126});
-            this.GroupHeaderBandSection10030.Dpi = 254F;
-            this.GroupHeaderBandSection10030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
-            this.GroupHeaderBandSection10030.KeepTogether = true;
-            this.GroupHeaderBandSection10030.Name = "GroupHeaderBandSection10030";
-            this.GroupHeaderBandSection10030.RepeatEveryPage = true;
-            // 
-            // section10030Separator
-            // 
-            this.section10030Separator.Dpi = 254F;
-            this.section10030Separator.Multiline = true;
-            this.section10030Separator.Name = "section10030Separator";
-            this.section10030Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section10030Separator.StyleName = "sectionSeparator";
-            // 
-            // section10020Separator
-            // 
-            this.section10020Separator.Dpi = 254F;
-            this.section10020Separator.Multiline = true;
-            this.section10020Separator.Name = "section10020Separator";
-            this.section10020Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section10020Separator.StyleName = "sectionSeparator";
-            // 
-            // labelSubHeaderSection10020
-            // 
-            this.labelSubHeaderSection10020.Dpi = 254F;
-            this.labelSubHeaderSection10020.Multiline = true;
-            this.labelSubHeaderSection10020.Name = "labelSubHeaderSection10020";
-            this.labelSubHeaderSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelSubHeaderSection10020.StyleName = "sectionSubHeader";
-            // 
-            // xrLine123
-            // 
-            this.xrLine123.BorderWidth = 0F;
-            this.xrLine123.Dpi = 254F;
-            this.xrLine123.Name = "xrLine123";
-            this.xrLine123.StyleName = "gridHeaderLine";
-            this.xrLine123.StylePriority.UseBorderWidth = false;
-            // 
-            // labelProfPerdNonRealSection10020
-            // 
-            this.labelProfPerdNonRealSection10020.Dpi = 254F;
-            this.labelProfPerdNonRealSection10020.Multiline = true;
-            this.labelProfPerdNonRealSection10020.Name = "labelProfPerdNonRealSection10020";
-            this.labelProfPerdNonRealSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelProfPerdNonRealSection10020.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelDivisaSection10020
-            // 
-            this.labelDivisaSection10020.Dpi = 254F;
-            this.labelDivisaSection10020.Multiline = true;
-            this.labelDivisaSection10020.Name = "labelDivisaSection10020";
-            this.labelDivisaSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelDivisaSection10020.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelQuantitaSection10020
-            // 
-            this.labelQuantitaSection10020.Dpi = 254F;
-            this.labelQuantitaSection10020.Multiline = true;
-            this.labelQuantitaSection10020.Name = "labelQuantitaSection10020";
-            this.labelQuantitaSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelQuantitaSection10020.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelPesoSection10020
-            // 
-            this.labelPesoSection10020.Dpi = 254F;
-            this.labelPesoSection10020.Multiline = true;
-            this.labelPesoSection10020.Name = "labelPesoSection10020";
-            this.labelPesoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPesoSection10020.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelValoreMercatoSection10020
-            // 
-            this.labelValoreMercatoSection10020.Dpi = 254F;
-            this.labelValoreMercatoSection10020.Multiline = true;
-            this.labelValoreMercatoSection10020.Name = "labelValoreMercatoSection10020";
-            this.labelValoreMercatoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelValoreMercatoSection10020.StyleName = "gridColumnHeaderRightStyle";
-            this.labelValoreMercatoSection10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
-            // 
-            // labelCambioSection10020
-            // 
-            this.labelCambioSection10020.Dpi = 254F;
-            this.labelCambioSection10020.Multiline = true;
-            this.labelCambioSection10020.Name = "labelCambioSection10020";
-            this.labelCambioSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCambioSection10020.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelDescrizioneSection10020
-            // 
-            this.labelDescrizioneSection10020.Dpi = 254F;
-            this.labelDescrizioneSection10020.Multiline = true;
-            this.labelDescrizioneSection10020.Name = "labelDescrizioneSection10020";
-            this.labelDescrizioneSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelDescrizioneSection10020.StyleName = "gridColumnHeaderStyle";
-            // 
-            // labelPrezzoSection10020
-            // 
-            this.labelPrezzoSection10020.Dpi = 254F;
-            this.labelPrezzoSection10020.Multiline = true;
-            this.labelPrezzoSection10020.Name = "labelPrezzoSection10020";
-            this.labelPrezzoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPrezzoSection10020.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelPerc3Section10020
-            // 
-            this.labelPerc3Section10020.Dpi = 254F;
-            this.labelPerc3Section10020.Multiline = true;
-            this.labelPerc3Section10020.Name = "labelPerc3Section10020";
-            this.labelPerc3Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc3Section10020.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc2Section10020
-            // 
-            this.labelPerc2Section10020.Dpi = 254F;
-            this.labelPerc2Section10020.Multiline = true;
-            this.labelPerc2Section10020.Name = "labelPerc2Section10020";
-            this.labelPerc2Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc2Section10020.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc1Section10020
-            // 
-            this.labelPerc1Section10020.Dpi = 254F;
-            this.labelPerc1Section10020.Multiline = true;
-            this.labelPerc1Section10020.Name = "labelPerc1Section10020";
-            this.labelPerc1Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc1Section10020.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // xrLine124
-            // 
-            this.xrLine124.BorderWidth = 0F;
-            this.xrLine124.Dpi = 254F;
-            this.xrLine124.Name = "xrLine124";
-            this.xrLine124.StyleName = "gridHeaderLine";
-            this.xrLine124.StylePriority.UseBorderWidth = false;
-            // 
-            // labelSubHeaderSection10030
-            // 
-            this.labelSubHeaderSection10030.Dpi = 254F;
-            this.labelSubHeaderSection10030.Multiline = true;
-            this.labelSubHeaderSection10030.Name = "labelSubHeaderSection10030";
-            this.labelSubHeaderSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelSubHeaderSection10030.StyleName = "sectionSubHeader";
-            // 
-            // xrLine125
-            // 
-            this.xrLine125.BorderWidth = 0F;
-            this.xrLine125.Dpi = 254F;
-            this.xrLine125.Name = "xrLine125";
-            this.xrLine125.StyleName = "gridHeaderLine";
-            this.xrLine125.StylePriority.UseBorderWidth = false;
-            // 
-            // labelProfPerdNonRealSection10030
-            // 
-            this.labelProfPerdNonRealSection10030.Dpi = 254F;
-            this.labelProfPerdNonRealSection10030.Multiline = true;
-            this.labelProfPerdNonRealSection10030.Name = "labelProfPerdNonRealSection10030";
-            this.labelProfPerdNonRealSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelProfPerdNonRealSection10030.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelStrikeSection10030
-            // 
-            this.labelStrikeSection10030.Dpi = 254F;
-            this.labelStrikeSection10030.Multiline = true;
-            this.labelStrikeSection10030.Name = "labelStrikeSection10030";
-            this.labelStrikeSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelStrikeSection10030.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelQuantitaSection10030
-            // 
-            this.labelQuantitaSection10030.Dpi = 254F;
-            this.labelQuantitaSection10030.Multiline = true;
-            this.labelQuantitaSection10030.Name = "labelQuantitaSection10030";
-            this.labelQuantitaSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelQuantitaSection10030.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelPesoSection10030
-            // 
-            this.labelPesoSection10030.Dpi = 254F;
-            this.labelPesoSection10030.Multiline = true;
-            this.labelPesoSection10030.Name = "labelPesoSection10030";
-            this.labelPesoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPesoSection10030.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelValoreMercatoSection10030
-            // 
-            this.labelValoreMercatoSection10030.Dpi = 254F;
-            this.labelValoreMercatoSection10030.Multiline = true;
-            this.labelValoreMercatoSection10030.Name = "labelValoreMercatoSection10030";
-            this.labelValoreMercatoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelValoreMercatoSection10030.StyleName = "gridColumnHeaderRightStyle";
-            this.labelValoreMercatoSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
-            // 
-            // labelCambioSection10030
-            // 
-            this.labelCambioSection10030.Dpi = 254F;
-            this.labelCambioSection10030.Multiline = true;
-            this.labelCambioSection10030.Name = "labelCambioSection10030";
-            this.labelCambioSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCambioSection10030.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelDescrizioneSection10030
-            // 
-            this.labelDescrizioneSection10030.Dpi = 254F;
-            this.labelDescrizioneSection10030.Multiline = true;
-            this.labelDescrizioneSection10030.Name = "labelDescrizioneSection10030";
-            this.labelDescrizioneSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelDescrizioneSection10030.StyleName = "gridColumnHeaderStyle";
-            // 
-            // labelPrezzoSection10030
-            // 
-            this.labelPrezzoSection10030.Dpi = 254F;
-            this.labelPrezzoSection10030.Multiline = true;
-            this.labelPrezzoSection10030.Name = "labelPrezzoSection10030";
-            this.labelPrezzoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPrezzoSection10030.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // labelPerc3Section10030
-            // 
-            this.labelPerc3Section10030.Dpi = 254F;
-            this.labelPerc3Section10030.Multiline = true;
-            this.labelPerc3Section10030.Name = "labelPerc3Section10030";
-            this.labelPerc3Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc3Section10030.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc2Section10030
-            // 
-            this.labelPerc2Section10030.Dpi = 254F;
-            this.labelPerc2Section10030.Multiline = true;
-            this.labelPerc2Section10030.Name = "labelPerc2Section10030";
-            this.labelPerc2Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc2Section10030.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // labelPerc1Section10030
-            // 
-            this.labelPerc1Section10030.Dpi = 254F;
-            this.labelPerc1Section10030.Multiline = true;
-            this.labelPerc1Section10030.Name = "labelPerc1Section10030";
-            this.labelPerc1Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPerc1Section10030.StyleName = "gridColumnHeaderCenterStyle";
-            // 
-            // xrLine126
-            // 
-            this.xrLine126.BorderWidth = 0F;
-            this.xrLine126.Dpi = 254F;
-            this.xrLine126.Name = "xrLine126";
-            this.xrLine126.StyleName = "gridHeaderLine";
-            this.xrLine126.StylePriority.UseBorderWidth = false;
+            // xrLine128
+            // 
+            this.xrLine128.Dpi = 254F;
+            this.xrLine128.Name = "xrLine128";
+            this.xrLine128.StyleName = "gridRowLineStyle";
             // 
             // labelTotaleSection10020
             // 
@@ -20320,6 +20141,245 @@
             this.xrLabel528.StyleName = "gridContentStyleRightAlign";
             this.xrLabel528.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
+            // GroupFooterBandSection10020
+            // 
+            this.GroupFooterBandSection10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section10020Separator});
+            this.GroupFooterBandSection10020.Dpi = 254F;
+            this.GroupFooterBandSection10020.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection10020.Name = "GroupFooterBandSection10020";
+            // 
+            // section10020Separator
+            // 
+            this.section10020Separator.Dpi = 254F;
+            this.section10020Separator.Multiline = true;
+            this.section10020Separator.Name = "section10020Separator";
+            this.section10020Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section10020Separator.StyleName = "sectionSeparator";
+            // 
+            // GroupHeaderBandSection10020
+            // 
+            this.GroupHeaderBandSection10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelSubHeaderSection10020,
+            this.xrLine123,
+            this.labelProfPerdNonRealSection10020,
+            this.labelDivisaSection10020,
+            this.labelQuantitaSection10020,
+            this.labelPesoSection10020,
+            this.labelValoreMercatoSection10020,
+            this.labelCambioSection10020,
+            this.labelDescrizioneSection10020,
+            this.labelPrezzoSection10020,
+            this.labelPerc3Section10020,
+            this.labelPerc2Section10020,
+            this.labelPerc1Section10020,
+            this.xrLine124});
+            this.GroupHeaderBandSection10020.Dpi = 254F;
+            this.GroupHeaderBandSection10020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection10020.KeepTogether = true;
+            this.GroupHeaderBandSection10020.Name = "GroupHeaderBandSection10020";
+            this.GroupHeaderBandSection10020.RepeatEveryPage = true;
+            // 
+            // labelSubHeaderSection10020
+            // 
+            this.labelSubHeaderSection10020.Dpi = 254F;
+            this.labelSubHeaderSection10020.Multiline = true;
+            this.labelSubHeaderSection10020.Name = "labelSubHeaderSection10020";
+            this.labelSubHeaderSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection10020.StyleName = "sectionSubHeader";
+            // 
+            // xrLine123
+            // 
+            this.xrLine123.BorderWidth = 0F;
+            this.xrLine123.Dpi = 254F;
+            this.xrLine123.Name = "xrLine123";
+            this.xrLine123.StyleName = "gridHeaderLine";
+            this.xrLine123.StylePriority.UseBorderWidth = false;
+            // 
+            // labelProfPerdNonRealSection10020
+            // 
+            this.labelProfPerdNonRealSection10020.Dpi = 254F;
+            this.labelProfPerdNonRealSection10020.Multiline = true;
+            this.labelProfPerdNonRealSection10020.Name = "labelProfPerdNonRealSection10020";
+            this.labelProfPerdNonRealSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelProfPerdNonRealSection10020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelDivisaSection10020
+            // 
+            this.labelDivisaSection10020.Dpi = 254F;
+            this.labelDivisaSection10020.Multiline = true;
+            this.labelDivisaSection10020.Name = "labelDivisaSection10020";
+            this.labelDivisaSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDivisaSection10020.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelQuantitaSection10020
+            // 
+            this.labelQuantitaSection10020.Dpi = 254F;
+            this.labelQuantitaSection10020.Multiline = true;
+            this.labelQuantitaSection10020.Name = "labelQuantitaSection10020";
+            this.labelQuantitaSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelQuantitaSection10020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelPesoSection10020
+            // 
+            this.labelPesoSection10020.Dpi = 254F;
+            this.labelPesoSection10020.Multiline = true;
+            this.labelPesoSection10020.Name = "labelPesoSection10020";
+            this.labelPesoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPesoSection10020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelValoreMercatoSection10020
+            // 
+            this.labelValoreMercatoSection10020.Dpi = 254F;
+            this.labelValoreMercatoSection10020.Multiline = true;
+            this.labelValoreMercatoSection10020.Name = "labelValoreMercatoSection10020";
+            this.labelValoreMercatoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection10020.StyleName = "gridColumnHeaderRightStyle";
+            this.labelValoreMercatoSection10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelCambioSection10020
+            // 
+            this.labelCambioSection10020.Dpi = 254F;
+            this.labelCambioSection10020.Multiline = true;
+            this.labelCambioSection10020.Name = "labelCambioSection10020";
+            this.labelCambioSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelCambioSection10020.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelDescrizioneSection10020
+            // 
+            this.labelDescrizioneSection10020.Dpi = 254F;
+            this.labelDescrizioneSection10020.Multiline = true;
+            this.labelDescrizioneSection10020.Name = "labelDescrizioneSection10020";
+            this.labelDescrizioneSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDescrizioneSection10020.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelPrezzoSection10020
+            // 
+            this.labelPrezzoSection10020.Dpi = 254F;
+            this.labelPrezzoSection10020.Multiline = true;
+            this.labelPrezzoSection10020.Name = "labelPrezzoSection10020";
+            this.labelPrezzoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPrezzoSection10020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelPerc3Section10020
+            // 
+            this.labelPerc3Section10020.Dpi = 254F;
+            this.labelPerc3Section10020.Multiline = true;
+            this.labelPerc3Section10020.Name = "labelPerc3Section10020";
+            this.labelPerc3Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc3Section10020.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc2Section10020
+            // 
+            this.labelPerc2Section10020.Dpi = 254F;
+            this.labelPerc2Section10020.Multiline = true;
+            this.labelPerc2Section10020.Name = "labelPerc2Section10020";
+            this.labelPerc2Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc2Section10020.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc1Section10020
+            // 
+            this.labelPerc1Section10020.Dpi = 254F;
+            this.labelPerc1Section10020.Multiline = true;
+            this.labelPerc1Section10020.Name = "labelPerc1Section10020";
+            this.labelPerc1Section10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc1Section10020.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // xrLine124
+            // 
+            this.xrLine124.BorderWidth = 0F;
+            this.xrLine124.Dpi = 254F;
+            this.xrLine124.Name = "xrLine124";
+            this.xrLine124.StyleName = "gridHeaderLine";
+            this.xrLine124.StylePriority.UseBorderWidth = false;
+            // 
+            // GroupHeaderBandSectionTitle10020
+            // 
+            this.GroupHeaderBandSectionTitle10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection10020});
+            this.GroupHeaderBandSectionTitle10020.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle10020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle10020.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle10020.Level = 1;
+            this.GroupHeaderBandSectionTitle10020.Name = "GroupHeaderBandSectionTitle10020";
+            this.GroupHeaderBandSectionTitle10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
+            // 
+            // labelHeaderSection10020
+            // 
+            this.labelHeaderSection10020.Dpi = 254F;
+            this.labelHeaderSection10020.Multiline = true;
+            this.labelHeaderSection10020.Name = "labelHeaderSection10020";
+            this.labelHeaderSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection10020.StyleName = "sectionHeader";
+            this.labelHeaderSection10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
+            // 
+            // DetailReportSection10030
+            // 
+            this.DetailReportSection10030.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.DetailSection10030,
+            this.GroupFooterBandSection10030,
+            this.GroupHeaderBandSection10030,
+            this.GroupHeaderBandSectionTitle10030});
+            this.DetailReportSection10030.DataMember = "section100.content.subSection10030.content";
+            this.DetailReportSection10030.DataSource = this.jsonDataSourcePSE;
+            this.DetailReportSection10030.Dpi = 254F;
+            this.DetailReportSection10030.Level = 22;
+            this.DetailReportSection10030.Name = "DetailReportSection10030";
+            this.DetailReportSection10030.ReportPrintOptions.PrintOnEmptyDataSource = false;
+            // 
+            // DetailSection10030
+            // 
+            this.DetailSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine129,
+            this.xrLabel551,
+            this.xrLabel24,
+            this.xrLabel497,
+            this.xrLabel505,
+            this.xrLabel506,
+            this.xrLabel507,
+            this.xrLabel529,
+            this.xrLabel530,
+            this.xrLabel531,
+            this.xrLabel532,
+            this.xrLabel533,
+            this.xrLabel534,
+            this.xrLabel535,
+            this.xrLabel536,
+            this.xrLabel537,
+            this.xrLabel538,
+            this.xrLabel539,
+            this.xrLabel540,
+            this.xrLabel541,
+            this.xrLabel542,
+            this.xrLabel543,
+            this.xrLabel544,
+            this.labelAcquistoSection10030,
+            this.labelInizioAnnoSection10030,
+            this.labelAlSection10030,
+            this.xrLabel548,
+            this.xrLabel549,
+            this.xrLabel550});
+            this.DetailSection10030.Dpi = 254F;
+            this.DetailSection10030.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection10030.KeepTogether = true;
+            this.DetailSection10030.Name = "DetailSection10030";
+            // 
+            // xrLine129
+            // 
+            this.xrLine129.Dpi = 254F;
+            this.xrLine129.Name = "xrLine129";
+            this.xrLine129.StyleName = "gridRowLineStyle";
+            // 
+            // xrLabel551
+            // 
+            this.xrLabel551.Dpi = 254F;
+            this.xrLabel551.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description3]")});
+            this.xrLabel551.Multiline = true;
+            this.xrLabel551.Name = "xrLabel551";
+            this.xrLabel551.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel551.StyleName = "gridContentStyle";
+            // 
             // xrLabel24
             // 
             this.xrLabel24.Dpi = 254F;
@@ -20551,32 +20611,32 @@
             this.xrLabel544.StyleName = "gridContentStyleRightAlign";
             this.xrLabel544.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
-            // xrLabel545
+            // labelAcquistoSection10030
             // 
-            this.xrLabel545.Dpi = 254F;
-            this.xrLabel545.Multiline = true;
-            this.xrLabel545.Name = "xrLabel545";
-            this.xrLabel545.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel545.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection10030.Dpi = 254F;
+            this.labelAcquistoSection10030.Multiline = true;
+            this.labelAcquistoSection10030.Name = "labelAcquistoSection10030";
+            this.labelAcquistoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelAcquistoSection10030.StyleName = "gridContentStyleRightAlign";
             // 
-            // xrLabel546
+            // labelInizioAnnoSection10030
             // 
-            this.xrLabel546.Dpi = 254F;
-            this.xrLabel546.Multiline = true;
-            this.xrLabel546.Name = "xrLabel546";
-            this.xrLabel546.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel546.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection10030.Dpi = 254F;
+            this.labelInizioAnnoSection10030.Multiline = true;
+            this.labelInizioAnnoSection10030.Name = "labelInizioAnnoSection10030";
+            this.labelInizioAnnoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelInizioAnnoSection10030.StyleName = "gridContentStyleRightAlign";
             // 
-            // xrLabel547
+            // labelAlSection10030
             // 
-            this.xrLabel547.Dpi = 254F;
-            this.xrLabel547.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.labelAlSection10030.Dpi = 254F;
+            this.labelAlSection10030.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Tag", "[summaryTo].[valueDate]")});
-            this.xrLabel547.Multiline = true;
-            this.xrLabel547.Name = "xrLabel547";
-            this.xrLabel547.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel547.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel547.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
+            this.labelAlSection10030.Multiline = true;
+            this.labelAlSection10030.Name = "labelAlSection10030";
+            this.labelAlSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelAlSection10030.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel548
             // 
@@ -20609,33 +20669,177 @@
             this.xrLabel550.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel550.StyleName = "gridContentStyle";
             // 
-            // xrLabel551
+            // GroupFooterBandSection10030
             // 
-            this.xrLabel551.Dpi = 254F;
-            this.xrLabel551.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description3]")});
-            this.xrLabel551.Multiline = true;
-            this.xrLabel551.Name = "xrLabel551";
-            this.xrLabel551.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel551.StyleName = "gridContentStyle";
+            this.GroupFooterBandSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section10030Separator});
+            this.GroupFooterBandSection10030.Dpi = 254F;
+            this.GroupFooterBandSection10030.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection10030.Name = "GroupFooterBandSection10030";
             // 
-            // xrLine127
+            // section10030Separator
             // 
-            this.xrLine127.Dpi = 254F;
-            this.xrLine127.Name = "xrLine127";
-            this.xrLine127.StyleName = "gridRowLineStyle";
+            this.section10030Separator.Dpi = 254F;
+            this.section10030Separator.Multiline = true;
+            this.section10030Separator.Name = "section10030Separator";
+            this.section10030Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section10030Separator.StyleName = "sectionSeparator";
             // 
-            // xrLine128
+            // GroupHeaderBandSection10030
             // 
-            this.xrLine128.Dpi = 254F;
-            this.xrLine128.Name = "xrLine128";
-            this.xrLine128.StyleName = "gridRowLineStyle";
+            this.GroupHeaderBandSection10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelSubHeaderSection10030,
+            this.xrLine125,
+            this.labelProfPerdNonRealSection10030,
+            this.labelStrikeSection10030,
+            this.labelQuantitaSection10030,
+            this.labelPesoSection10030,
+            this.labelValoreMercatoSection10030,
+            this.labelCambioSection10030,
+            this.labelDescrizioneSection10030,
+            this.labelPrezzoSection10030,
+            this.labelPerc3Section10030,
+            this.labelPerc2Section10030,
+            this.labelPerc1Section10030,
+            this.xrLine126});
+            this.GroupHeaderBandSection10030.Dpi = 254F;
+            this.GroupHeaderBandSection10030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection10030.KeepTogether = true;
+            this.GroupHeaderBandSection10030.Name = "GroupHeaderBandSection10030";
+            this.GroupHeaderBandSection10030.RepeatEveryPage = true;
             // 
-            // xrLine129
+            // labelSubHeaderSection10030
             // 
-            this.xrLine129.Dpi = 254F;
-            this.xrLine129.Name = "xrLine129";
-            this.xrLine129.StyleName = "gridRowLineStyle";
+            this.labelSubHeaderSection10030.Dpi = 254F;
+            this.labelSubHeaderSection10030.Multiline = true;
+            this.labelSubHeaderSection10030.Name = "labelSubHeaderSection10030";
+            this.labelSubHeaderSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection10030.StyleName = "sectionSubHeader";
+            // 
+            // xrLine125
+            // 
+            this.xrLine125.BorderWidth = 0F;
+            this.xrLine125.Dpi = 254F;
+            this.xrLine125.Name = "xrLine125";
+            this.xrLine125.StyleName = "gridHeaderLine";
+            this.xrLine125.StylePriority.UseBorderWidth = false;
+            // 
+            // labelProfPerdNonRealSection10030
+            // 
+            this.labelProfPerdNonRealSection10030.Dpi = 254F;
+            this.labelProfPerdNonRealSection10030.Multiline = true;
+            this.labelProfPerdNonRealSection10030.Name = "labelProfPerdNonRealSection10030";
+            this.labelProfPerdNonRealSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelProfPerdNonRealSection10030.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelStrikeSection10030
+            // 
+            this.labelStrikeSection10030.Dpi = 254F;
+            this.labelStrikeSection10030.Multiline = true;
+            this.labelStrikeSection10030.Name = "labelStrikeSection10030";
+            this.labelStrikeSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelStrikeSection10030.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelQuantitaSection10030
+            // 
+            this.labelQuantitaSection10030.Dpi = 254F;
+            this.labelQuantitaSection10030.Multiline = true;
+            this.labelQuantitaSection10030.Name = "labelQuantitaSection10030";
+            this.labelQuantitaSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelQuantitaSection10030.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelPesoSection10030
+            // 
+            this.labelPesoSection10030.Dpi = 254F;
+            this.labelPesoSection10030.Multiline = true;
+            this.labelPesoSection10030.Name = "labelPesoSection10030";
+            this.labelPesoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPesoSection10030.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelValoreMercatoSection10030
+            // 
+            this.labelValoreMercatoSection10030.Dpi = 254F;
+            this.labelValoreMercatoSection10030.Multiline = true;
+            this.labelValoreMercatoSection10030.Name = "labelValoreMercatoSection10030";
+            this.labelValoreMercatoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection10030.StyleName = "gridColumnHeaderRightStyle";
+            this.labelValoreMercatoSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelCambioSection10030
+            // 
+            this.labelCambioSection10030.Dpi = 254F;
+            this.labelCambioSection10030.Multiline = true;
+            this.labelCambioSection10030.Name = "labelCambioSection10030";
+            this.labelCambioSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelCambioSection10030.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelDescrizioneSection10030
+            // 
+            this.labelDescrizioneSection10030.Dpi = 254F;
+            this.labelDescrizioneSection10030.Multiline = true;
+            this.labelDescrizioneSection10030.Name = "labelDescrizioneSection10030";
+            this.labelDescrizioneSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDescrizioneSection10030.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelPrezzoSection10030
+            // 
+            this.labelPrezzoSection10030.Dpi = 254F;
+            this.labelPrezzoSection10030.Multiline = true;
+            this.labelPrezzoSection10030.Name = "labelPrezzoSection10030";
+            this.labelPrezzoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPrezzoSection10030.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelPerc3Section10030
+            // 
+            this.labelPerc3Section10030.Dpi = 254F;
+            this.labelPerc3Section10030.Multiline = true;
+            this.labelPerc3Section10030.Name = "labelPerc3Section10030";
+            this.labelPerc3Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc3Section10030.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc2Section10030
+            // 
+            this.labelPerc2Section10030.Dpi = 254F;
+            this.labelPerc2Section10030.Multiline = true;
+            this.labelPerc2Section10030.Name = "labelPerc2Section10030";
+            this.labelPerc2Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc2Section10030.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // labelPerc1Section10030
+            // 
+            this.labelPerc1Section10030.Dpi = 254F;
+            this.labelPerc1Section10030.Multiline = true;
+            this.labelPerc1Section10030.Name = "labelPerc1Section10030";
+            this.labelPerc1Section10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPerc1Section10030.StyleName = "gridColumnHeaderCenterStyle";
+            // 
+            // xrLine126
+            // 
+            this.xrLine126.BorderWidth = 0F;
+            this.xrLine126.Dpi = 254F;
+            this.xrLine126.Name = "xrLine126";
+            this.xrLine126.StyleName = "gridHeaderLine";
+            this.xrLine126.StylePriority.UseBorderWidth = false;
+            // 
+            // GroupHeaderBandSectionTitle10030
+            // 
+            this.GroupHeaderBandSectionTitle10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection10030});
+            this.GroupHeaderBandSectionTitle10030.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle10030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle10030.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle10030.Level = 1;
+            this.GroupHeaderBandSectionTitle10030.Name = "GroupHeaderBandSectionTitle10030";
+            this.GroupHeaderBandSectionTitle10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
+            // 
+            // labelHeaderSection10030
+            // 
+            this.labelHeaderSection10030.Dpi = 254F;
+            this.labelHeaderSection10030.Multiline = true;
+            this.labelHeaderSection10030.Name = "labelHeaderSection10030";
+            this.labelHeaderSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection10030.StyleName = "sectionHeader";
+            this.labelHeaderSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
             // 
             // DetailReportSection10040
             // 
@@ -20669,6 +20873,108 @@
             this.DetailSection10040.KeepTogether = true;
             this.DetailSection10040.Name = "DetailSection10040";
             // 
+            // xrLabel567
+            // 
+            this.xrLabel567.Dpi = 254F;
+            this.xrLabel567.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currencyValue]")});
+            this.xrLabel567.Multiline = true;
+            this.xrLabel567.Name = "xrLabel567";
+            this.xrLabel567.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel567.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel567.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel566
+            // 
+            this.xrLabel566.Dpi = 254F;
+            this.xrLabel566.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currency1]")});
+            this.xrLabel566.Multiline = true;
+            this.xrLabel566.Name = "xrLabel566";
+            this.xrLabel566.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel566.StyleName = "gridContentStyle";
+            // 
+            // xrLabel565
+            // 
+            this.xrLabel565.Dpi = 254F;
+            this.xrLabel565.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchange]")});
+            this.xrLabel565.Multiline = true;
+            this.xrLabel565.Name = "xrLabel565";
+            this.xrLabel565.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel565.StyleName = "gridContentStyle";
+            this.xrLabel565.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel564
+            // 
+            this.xrLabel564.Dpi = 254F;
+            this.xrLabel564.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchangeValue]")});
+            this.xrLabel564.Multiline = true;
+            this.xrLabel564.Name = "xrLabel564";
+            this.xrLabel564.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel564.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel564.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel563
+            // 
+            this.xrLabel563.Dpi = 254F;
+            this.xrLabel563.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currency2]")});
+            this.xrLabel563.Multiline = true;
+            this.xrLabel563.Name = "xrLabel563";
+            this.xrLabel563.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel563.StyleName = "gridContentStyle";
+            // 
+            // xrLabel560
+            // 
+            this.xrLabel560.Dpi = 254F;
+            this.xrLabel560.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[expirationDate]")});
+            this.xrLabel560.Multiline = true;
+            this.xrLabel560.Name = "xrLabel560";
+            this.xrLabel560.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel560.StyleName = "gridContentStyleCenter";
+            // 
+            // xrLabel559
+            // 
+            this.xrLabel559.Dpi = 254F;
+            this.xrLabel559.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currentRate]")});
+            this.xrLabel559.Multiline = true;
+            this.xrLabel559.Name = "xrLabel559";
+            this.xrLabel559.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel559.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel559.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel554
+            // 
+            this.xrLabel554.Dpi = 254F;
+            this.xrLabel554.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentWeigth]")});
+            this.xrLabel554.Multiline = true;
+            this.xrLabel554.Name = "xrLabel554";
+            this.xrLabel554.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel554.StyleName = "gridContentStyleRightAlignBold";
+            this.xrLabel554.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel558
+            // 
+            this.xrLabel558.Dpi = 254F;
+            this.xrLabel558.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[profitLoss]")});
+            this.xrLabel558.Multiline = true;
+            this.xrLabel558.Name = "xrLabel558";
+            this.xrLabel558.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel558.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel558.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLine132
+            // 
+            this.xrLine132.Dpi = 254F;
+            this.xrLine132.Name = "xrLine132";
+            this.xrLine132.StyleName = "gridRowLineStyle";
+            // 
             // GroupFooterBandSection10040
             // 
             this.GroupFooterBandSection10040.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -20676,6 +20982,14 @@
             this.GroupFooterBandSection10040.Dpi = 254F;
             this.GroupFooterBandSection10040.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
             this.GroupFooterBandSection10040.Name = "GroupFooterBandSection10040";
+            // 
+            // section10040Separator
+            // 
+            this.section10040Separator.Dpi = 254F;
+            this.section10040Separator.Multiline = true;
+            this.section10040Separator.Name = "section10040Separator";
+            this.section10040Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section10040Separator.StyleName = "sectionSeparator";
             // 
             // GroupHeaderBandSectionTitle10040
             // 
@@ -20696,13 +21010,22 @@
             this.GroupHeaderBandSectionTitle10040.Name = "GroupHeaderBandSectionTitle10040";
             this.GroupHeaderBandSectionTitle10040.RepeatEveryPage = true;
             // 
-            // section10040Separator
+            // labelProfittoPerditaSection10040
             // 
-            this.section10040Separator.Dpi = 254F;
-            this.section10040Separator.Multiline = true;
-            this.section10040Separator.Name = "section10040Separator";
-            this.section10040Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section10040Separator.StyleName = "sectionSeparator";
+            this.labelProfittoPerditaSection10040.Dpi = 254F;
+            this.labelProfittoPerditaSection10040.Multiline = true;
+            this.labelProfittoPerditaSection10040.Name = "labelProfittoPerditaSection10040";
+            this.labelProfittoPerditaSection10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelProfittoPerditaSection10040.StyleName = "gridColumnHeaderRightStyle";
+            this.labelProfittoPerditaSection10040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelPesoSection10040
+            // 
+            this.labelPesoSection10040.Dpi = 254F;
+            this.labelPesoSection10040.Multiline = true;
+            this.labelPesoSection10040.Name = "labelPesoSection10040";
+            this.labelPesoSection10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPesoSection10040.StyleName = "gridColumnHeaderRightStyle";
             // 
             // xrLine130
             // 
@@ -20768,124 +21091,25 @@
             this.labelMoneta2Section10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelMoneta2Section10040.StyleName = "gridColumnHeaderStyle";
             // 
-            // labelProfittoPerditaSection10040
+            // GroupHeaderBandSection10040
             // 
-            this.labelProfittoPerditaSection10040.Dpi = 254F;
-            this.labelProfittoPerditaSection10040.Multiline = true;
-            this.labelProfittoPerditaSection10040.Name = "labelProfittoPerditaSection10040";
-            this.labelProfittoPerditaSection10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelProfittoPerditaSection10040.StyleName = "gridColumnHeaderRightStyle";
-            this.labelProfittoPerditaSection10040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            this.GroupHeaderBandSection10040.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection10040});
+            this.GroupHeaderBandSection10040.Dpi = 254F;
+            this.GroupHeaderBandSection10040.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSection10040.KeepTogether = true;
+            this.GroupHeaderBandSection10040.Level = 1;
+            this.GroupHeaderBandSection10040.Name = "GroupHeaderBandSection10040";
+            this.GroupHeaderBandSection10040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
             // 
-            // labelPesoSection10040
+            // labelHeaderSection10040
             // 
-            this.labelPesoSection10040.Dpi = 254F;
-            this.labelPesoSection10040.Multiline = true;
-            this.labelPesoSection10040.Name = "labelPesoSection10040";
-            this.labelPesoSection10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelPesoSection10040.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // xrLine132
-            // 
-            this.xrLine132.Dpi = 254F;
-            this.xrLine132.Name = "xrLine132";
-            this.xrLine132.StyleName = "gridRowLineStyle";
-            // 
-            // xrLabel554
-            // 
-            this.xrLabel554.Dpi = 254F;
-            this.xrLabel554.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentWeigth]")});
-            this.xrLabel554.Multiline = true;
-            this.xrLabel554.Name = "xrLabel554";
-            this.xrLabel554.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel554.StyleName = "gridContentStyleRightAlignBold";
-            this.xrLabel554.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel558
-            // 
-            this.xrLabel558.Dpi = 254F;
-            this.xrLabel558.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[profitLoss]")});
-            this.xrLabel558.Multiline = true;
-            this.xrLabel558.Name = "xrLabel558";
-            this.xrLabel558.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel558.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel558.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel559
-            // 
-            this.xrLabel559.Dpi = 254F;
-            this.xrLabel559.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currentRate]")});
-            this.xrLabel559.Multiline = true;
-            this.xrLabel559.Name = "xrLabel559";
-            this.xrLabel559.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel559.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel559.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel560
-            // 
-            this.xrLabel560.Dpi = 254F;
-            this.xrLabel560.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[expirationDate]")});
-            this.xrLabel560.Multiline = true;
-            this.xrLabel560.Name = "xrLabel560";
-            this.xrLabel560.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel560.StyleName = "gridContentStyleCenter";
-            // 
-            // xrLabel563
-            // 
-            this.xrLabel563.Dpi = 254F;
-            this.xrLabel563.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currency2]")});
-            this.xrLabel563.Multiline = true;
-            this.xrLabel563.Name = "xrLabel563";
-            this.xrLabel563.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel563.StyleName = "gridContentStyle";
-            // 
-            // xrLabel564
-            // 
-            this.xrLabel564.Dpi = 254F;
-            this.xrLabel564.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchangeValue]")});
-            this.xrLabel564.Multiline = true;
-            this.xrLabel564.Name = "xrLabel564";
-            this.xrLabel564.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel564.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel564.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel565
-            // 
-            this.xrLabel565.Dpi = 254F;
-            this.xrLabel565.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchange]")});
-            this.xrLabel565.Multiline = true;
-            this.xrLabel565.Name = "xrLabel565";
-            this.xrLabel565.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel565.StyleName = "gridContentStyle";
-            this.xrLabel565.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel566
-            // 
-            this.xrLabel566.Dpi = 254F;
-            this.xrLabel566.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currency1]")});
-            this.xrLabel566.Multiline = true;
-            this.xrLabel566.Name = "xrLabel566";
-            this.xrLabel566.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel566.StyleName = "gridContentStyle";
-            // 
-            // xrLabel567
-            // 
-            this.xrLabel567.Dpi = 254F;
-            this.xrLabel567.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currencyValue]")});
-            this.xrLabel567.Multiline = true;
-            this.xrLabel567.Name = "xrLabel567";
-            this.xrLabel567.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel567.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel567.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            this.labelHeaderSection10040.Dpi = 254F;
+            this.labelHeaderSection10040.Multiline = true;
+            this.labelHeaderSection10040.Name = "labelHeaderSection10040";
+            this.labelHeaderSection10040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection10040.StyleName = "sectionHeader";
+            this.labelHeaderSection10040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
             // 
             // DetailReportSection10000
             // 
@@ -20913,6 +21137,55 @@
             this.DetailSection10000.HierarchyPrintOptions.Indent = 50.8F;
             this.DetailSection10000.Name = "DetailSection10000";
             // 
+            // xrLabel556
+            // 
+            this.xrLabel556.Dpi = 254F;
+            this.xrLabel556.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[account]")});
+            this.xrLabel556.Multiline = true;
+            this.xrLabel556.Name = "xrLabel556";
+            this.xrLabel556.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel556.StyleName = "gridContentStyle";
+            // 
+            // xrLabel555
+            // 
+            this.xrLabel555.Dpi = 254F;
+            this.xrLabel555.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currentBalance]")});
+            this.xrLabel555.Multiline = true;
+            this.xrLabel555.Name = "xrLabel555";
+            this.xrLabel555.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel555.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel555.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel553
+            // 
+            this.xrLabel553.Dpi = 254F;
+            this.xrLabel553.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
+            this.xrLabel553.Multiline = true;
+            this.xrLabel553.Name = "xrLabel553";
+            this.xrLabel553.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel553.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel553.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel552
+            // 
+            this.xrLabel552.Dpi = 254F;
+            this.xrLabel552.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentWeight]")});
+            this.xrLabel552.Multiline = true;
+            this.xrLabel552.Name = "xrLabel552";
+            this.xrLabel552.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel552.StyleName = "gridContentStyleRightAlignBold";
+            this.xrLabel552.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLine135
+            // 
+            this.xrLine135.Dpi = 254F;
+            this.xrLine135.Name = "xrLine135";
+            this.xrLine135.StyleName = "gridRowLineStyle";
+            // 
             // GroupHeaderBandSection10000
             // 
             this.GroupHeaderBandSection10000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -20927,42 +21200,6 @@
             this.GroupHeaderBandSection10000.KeepTogether = true;
             this.GroupHeaderBandSection10000.Name = "GroupHeaderBandSection10000";
             this.GroupHeaderBandSection10000.RepeatEveryPage = true;
-            // 
-            // GroupHeaderBandSectionTitle10000
-            // 
-            this.GroupHeaderBandSectionTitle10000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelHeaderSection10000});
-            this.GroupHeaderBandSectionTitle10000.Dpi = 254F;
-            this.GroupHeaderBandSectionTitle10000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSectionTitle10000.KeepTogether = true;
-            this.GroupHeaderBandSectionTitle10000.Level = 1;
-            this.GroupHeaderBandSectionTitle10000.Name = "GroupHeaderBandSectionTitle10000";
-            this.GroupHeaderBandSectionTitle10000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
-            // 
-            // GroupFooterBandSection10000
-            // 
-            this.GroupFooterBandSection10000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.section10000Separator});
-            this.GroupFooterBandSection10000.Dpi = 254F;
-            this.GroupFooterBandSection10000.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
-            this.GroupFooterBandSection10000.Name = "GroupFooterBandSection10000";
-            // 
-            // section10000Separator
-            // 
-            this.section10000Separator.Dpi = 254F;
-            this.section10000Separator.Multiline = true;
-            this.section10000Separator.Name = "section10000Separator";
-            this.section10000Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section10000Separator.StyleName = "sectionSeparator";
-            // 
-            // labelHeaderSection10000
-            // 
-            this.labelHeaderSection10000.Dpi = 254F;
-            this.labelHeaderSection10000.Multiline = true;
-            this.labelHeaderSection10000.Name = "labelHeaderSection10000";
-            this.labelHeaderSection10000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection10000.StyleName = "sectionHeader";
-            this.labelHeaderSection10000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
             // 
             // labelContoSection10000
             // 
@@ -21021,134 +21258,41 @@
             this.labelValoreMercatoSection10000.StyleName = "gridColumnHeaderRightStyle";
             this.labelValoreMercatoSection10000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
             // 
-            // xrLine135
+            // GroupHeaderBandSectionTitle10000
             // 
-            this.xrLine135.Dpi = 254F;
-            this.xrLine135.Name = "xrLine135";
-            this.xrLine135.StyleName = "gridRowLineStyle";
+            this.GroupHeaderBandSectionTitle10000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection10000});
+            this.GroupHeaderBandSectionTitle10000.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle10000.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle10000.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle10000.Level = 1;
+            this.GroupHeaderBandSectionTitle10000.Name = "GroupHeaderBandSectionTitle10000";
+            this.GroupHeaderBandSectionTitle10000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
             // 
-            // xrLabel552
+            // labelHeaderSection10000
             // 
-            this.xrLabel552.Dpi = 254F;
-            this.xrLabel552.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentWeight]")});
-            this.xrLabel552.Multiline = true;
-            this.xrLabel552.Name = "xrLabel552";
-            this.xrLabel552.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel552.StyleName = "gridContentStyleRightAlignBold";
-            this.xrLabel552.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            this.labelHeaderSection10000.Dpi = 254F;
+            this.labelHeaderSection10000.Multiline = true;
+            this.labelHeaderSection10000.Name = "labelHeaderSection10000";
+            this.labelHeaderSection10000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection10000.StyleName = "sectionHeader";
+            this.labelHeaderSection10000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
             // 
-            // xrLabel553
+            // GroupFooterBandSection10000
             // 
-            this.xrLabel553.Dpi = 254F;
-            this.xrLabel553.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
-            this.xrLabel553.Multiline = true;
-            this.xrLabel553.Name = "xrLabel553";
-            this.xrLabel553.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel553.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel553.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            this.GroupFooterBandSection10000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section10000Separator});
+            this.GroupFooterBandSection10000.Dpi = 254F;
+            this.GroupFooterBandSection10000.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection10000.Name = "GroupFooterBandSection10000";
             // 
-            // xrLabel555
+            // section10000Separator
             // 
-            this.xrLabel555.Dpi = 254F;
-            this.xrLabel555.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currentBalance]")});
-            this.xrLabel555.Multiline = true;
-            this.xrLabel555.Name = "xrLabel555";
-            this.xrLabel555.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel555.StyleName = "gridContentStyleRightAlign";
-            this.xrLabel555.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
-            // 
-            // xrLabel556
-            // 
-            this.xrLabel556.Dpi = 254F;
-            this.xrLabel556.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[account]")});
-            this.xrLabel556.Multiline = true;
-            this.xrLabel556.Name = "xrLabel556";
-            this.xrLabel556.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel556.StyleName = "gridContentStyle";
-            // 
-            // GroupHeaderBandSectionTitle10010
-            // 
-            this.GroupHeaderBandSectionTitle10010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelHeaderSection10010});
-            this.GroupHeaderBandSectionTitle10010.Dpi = 254F;
-            this.GroupHeaderBandSectionTitle10010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSectionTitle10010.KeepTogether = true;
-            this.GroupHeaderBandSectionTitle10010.Level = 1;
-            this.GroupHeaderBandSectionTitle10010.Name = "GroupHeaderBandSectionTitle10010";
-            this.GroupHeaderBandSectionTitle10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
-            // 
-            // GroupHeaderBandSectionTitle10020
-            // 
-            this.GroupHeaderBandSectionTitle10020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelHeaderSection10020});
-            this.GroupHeaderBandSectionTitle10020.Dpi = 254F;
-            this.GroupHeaderBandSectionTitle10020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSectionTitle10020.KeepTogether = true;
-            this.GroupHeaderBandSectionTitle10020.Level = 1;
-            this.GroupHeaderBandSectionTitle10020.Name = "GroupHeaderBandSectionTitle10020";
-            this.GroupHeaderBandSectionTitle10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
-            // 
-            // GroupHeaderBandSectionTitle10030
-            // 
-            this.GroupHeaderBandSectionTitle10030.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelHeaderSection10030});
-            this.GroupHeaderBandSectionTitle10030.Dpi = 254F;
-            this.GroupHeaderBandSectionTitle10030.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSectionTitle10030.KeepTogether = true;
-            this.GroupHeaderBandSectionTitle10030.Level = 1;
-            this.GroupHeaderBandSectionTitle10030.Name = "GroupHeaderBandSectionTitle10030";
-            this.GroupHeaderBandSectionTitle10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
-            // 
-            // labelHeaderSection10010
-            // 
-            this.labelHeaderSection10010.Dpi = 254F;
-            this.labelHeaderSection10010.Multiline = true;
-            this.labelHeaderSection10010.Name = "labelHeaderSection10010";
-            this.labelHeaderSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection10010.StyleName = "sectionHeader";
-            this.labelHeaderSection10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
-            // 
-            // labelHeaderSection10020
-            // 
-            this.labelHeaderSection10020.Dpi = 254F;
-            this.labelHeaderSection10020.Multiline = true;
-            this.labelHeaderSection10020.Name = "labelHeaderSection10020";
-            this.labelHeaderSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection10020.StyleName = "sectionHeader";
-            this.labelHeaderSection10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
-            // 
-            // labelHeaderSection10030
-            // 
-            this.labelHeaderSection10030.Dpi = 254F;
-            this.labelHeaderSection10030.Multiline = true;
-            this.labelHeaderSection10030.Name = "labelHeaderSection10030";
-            this.labelHeaderSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection10030.StyleName = "sectionHeader";
-            this.labelHeaderSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
-            // 
-            // GroupHeaderBandSection10040
-            // 
-            this.GroupHeaderBandSection10040.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel557});
-            this.GroupHeaderBandSection10040.Dpi = 254F;
-            this.GroupHeaderBandSection10040.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSection10040.KeepTogether = true;
-            this.GroupHeaderBandSection10040.Level = 1;
-            this.GroupHeaderBandSection10040.Name = "GroupHeaderBandSection10040";
-            this.GroupHeaderBandSection10040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection100_BeforePrint);
-            // 
-            // xrLabel557
-            // 
-            this.xrLabel557.Dpi = 254F;
-            this.xrLabel557.Multiline = true;
-            this.xrLabel557.Name = "xrLabel557";
-            this.xrLabel557.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel557.StyleName = "sectionHeader";
-            this.xrLabel557.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection100CaptionVisibility_BeforePrint);
+            this.section10000Separator.Dpi = 254F;
+            this.section10000Separator.Multiline = true;
+            this.section10000Separator.Name = "section10000Separator";
+            this.section10000Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section10000Separator.StyleName = "sectionSeparator";
             // 
             // ReportPSE
             // 
@@ -21471,7 +21615,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.Detail19000, "Default", "HeightF", 0F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.Detail19000Objects, "Default", "HeightF", 71.39923F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.Detail19010Objects, "Default", "HeightF", 102.5183F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailFooter, "Default", "HeightF", 2742.519F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailFooter, "Default", "HeightF", 2937F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport1000, "Default", "HeightF", 269.5202F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport16000, "Default", "HeightF", 74.29166F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailReport2000, "Default", "HeightF", 120.8414F),
@@ -21599,6 +21743,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1060.77F, 100.54F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10020, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10020, "Default", "Text", "Acquisto"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1107.77F, 100.54F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10030, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection10030, "Default", "Text", "Acquisto"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1060.77F, 100.54F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection11000, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAcquistoSection11000, "Default", "Text", "Acquisto"),
@@ -21647,6 +21794,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1061F, 2.753062F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10020, "Default", "SizeF", new System.Drawing.SizeF(176.77F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10020, "Default", "Text", "Al"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1108F, 2.753062F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10030, "Default", "SizeF", new System.Drawing.SizeF(176.77F, 48.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection10030, "Default", "Text", "Al"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1061F, 2.753062F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection11000, "Default", "SizeF", new System.Drawing.SizeF(176.6898F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelAlSection11000, "Default", "Text", "Al"),
@@ -22110,6 +22260,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10030, "Default", "SizeF", new System.Drawing.SizeF(701.1458F, 76.9408F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10030, "Default", "Text", "METALLI"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10040, "Default", "Bookmark", "Metalli"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10040, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10040, "Default", "SizeF", new System.Drawing.SizeF(701.1458F, 76.9408F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection10040, "Default", "Text", "METALLI"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection11000, "Default", "Bookmark", "Altri investimenti"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection11000, "Default", "SizeF", new System.Drawing.SizeF(701.1458F, 76.9408F)),
@@ -22282,6 +22436,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1060.77F, 51.45F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10020, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10020, "Default", "Text", "Inizio anno"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1107.77F, 51.45F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10030, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection10030, "Default", "Text", "Inizio anno"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection11010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1141.958F, 51.45F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection11010, "Default", "SizeF", new System.Drawing.SizeF(161.33F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInizioAnnoSection11010, "Default", "Text", "Inizio anno"),
@@ -22350,7 +22507,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiSection8030, "Default", "Text", "Interessi"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInvestimentiSection20020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2498.52F, 167.5533F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInvestimentiSection20020, "Default", "SizeF", new System.Drawing.SizeF(271.48F, 50F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInvestimentiSection20020, "Default", "Text", "% investimenti"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInvestimentiSection20020, "Default", "Text", "(%) investimenti"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelLimiteStopLossSection1300, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1901.76F, 195F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelLimiteStopLossSection1300, "Default", "SizeF", new System.Drawing.SizeF(339.69F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelLimiteStopLossSection1300, "Default", "Text", "Limite / Stop loss"),
@@ -22384,24 +22541,24 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNomeClienteDettPortafoglio, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.749832F, 20.25022F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNomeClienteDettPortafoglio, "Default", "SizeF", new System.Drawing.SizeF(431.2708F, 58.41999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNomeClienteDettPortafoglio, "Default", "Text", "Nome cliente"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 136F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent1, "Default", "SizeF", new System.Drawing.SizeF(2352.354F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 360F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent1, "Default", "SizeF", new System.Drawing.SizeF(2391.923F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent1, "Default", "Text", "Performance generata da ogni singolo contributore. Nel caso del Mandato di Gestio" +
                     "ne Multi-Linea, per contributo netto si intende la performance di ogni linea del" +
                     " portafoglio"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.4584F, 864.2163F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent10, "Default", "SizeF", new System.Drawing.SizeF(2352.352F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1088.22F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent10, "Default", "SizeF", new System.Drawing.SizeF(2391.921F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent10, "Default", "Text", "  •  Average: A - BBB - BB"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent11, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 931.4834F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent11, "Default", "SizeF", new System.Drawing.SizeF(2352.352F, 58.42017F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent11, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1155.48F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent11, "Default", "SizeF", new System.Drawing.SizeF(2391.921F, 58.42041F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent11, "Default", "Text", "  •  Leader: AAA - AA"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.4583F, 1016.563F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent12, "Default", "SizeF", new System.Drawing.SizeF(2352.353F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1240.56F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent12, "Default", "SizeF", new System.Drawing.SizeF(2391.922F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent12, "Default", "Text", "Media ponderata dei vari rating ESG di ciascun titolo all\'interno del portafoglio" +
                     ". Nota che il rating medio non tiene in considerazione né la liquiditá, né gli s" +
                     "trumenti derivati"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(404.8945F, 1097.929F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent13, "Default", "SizeF", new System.Drawing.SizeF(2352.352F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1322F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent13, "Default", "SizeF", new System.Drawing.SizeF(2389.351F, 58.41968F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent13, "Default", "Text", "Valore % di titoli privi di valutazione ESG presenti all\'interno del portafoglio"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent14, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(19.49243F, 183.8712F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent14, "Default", "SizeF", new System.Drawing.SizeF(2331.185F, 58.41992F)),
@@ -22411,103 +22568,121 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent15, "Default", "SizeF", new System.Drawing.SizeF(2331.185F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent15, "Default", "Text", "  •  Per garantire una rappresentazione fedele dei valori sopra elencati, sono st" +
                     "ate utilizzate solitamente 4 cifre decimali"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.89F, 420F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 420F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent16, "Default", "SizeF", new System.Drawing.SizeF(934.5182F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent16, "Default", "Text", "Importo nominale"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent17, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1755.996F, 420.0002F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent17, "Default", "SizeF", new System.Drawing.SizeF(928.7621F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent17, "Default", "Text", "Quantità"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent18, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.89F, 495F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent18, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 495F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent18, "Default", "SizeF", new System.Drawing.SizeF(932.6437F, 58.41989F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent18, "Default", "Text", "Yield to Maturity "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent19, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1755.996F, 494.9995F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent19, "Default", "SizeF", new System.Drawing.SizeF(928.762F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent19, "Default", "Text", "Performance percentuale"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 211F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent2, "Default", "SizeF", new System.Drawing.SizeF(2352.354F, 58.4198F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 435F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent2, "Default", "SizeF", new System.Drawing.SizeF(2391.923F, 58.4198F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent2, "Default", "Text", "Environmental (ambiente), Social (società) e Governance"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.77F, 570F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 570F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent20, "Default", "Text", "Profitto/Perdita non realizzata "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1755.996F, 570.0014F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "SizeF", new System.Drawing.SizeF(928.762F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent21, "Default", "Text", "Bank Identifier Code"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.77F, 645F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 645F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent22, "Default", "Text", "Society for Worldwide Interbank Financial Telecommunication "),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent23, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1755.996F, 644.9994F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent23, "Default", "SizeF", new System.Drawing.SizeF(928.7621F, 58.41986F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent23, "Default", "Text", "International Bank Account Number"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent24, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.89F, 826.48F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent24, "Default", "SizeF", new System.Drawing.SizeF(2371.98F, 66F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent24, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1051.48F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent24, "Default", "SizeF", new System.Drawing.SizeF(2392.115F, 65.99988F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent24, "Default", "Text", resources.GetString("$this.LocalizationItems1")),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.7706F, 905F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent25, "Default", "SizeF", new System.Drawing.SizeF(2374.474F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1130F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent25, "Default", "SizeF", new System.Drawing.SizeF(2389.914F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent25, "Default", "Text", "Codice alfanumerico univoco (noto anche come codice SWIFT-BIC) utilizzato per ide" +
                     "ntificare specifiche istituzioni finanziarie, come banche e istituti di credito," +
                     " in tutto il mondo"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent26, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.77F, 976F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent26, "Default", "SizeF", new System.Drawing.SizeF(2372.1F, 66F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent26, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1201F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent26, "Default", "SizeF", new System.Drawing.SizeF(2392.235F, 66F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent26, "Default", "Text", resources.GetString("$this.LocalizationItems2")),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent27, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.7706F, 1055F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent27, "Default", "SizeF", new System.Drawing.SizeF(2372.099F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent27, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1280F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent27, "Default", "SizeF", new System.Drawing.SizeF(2392.234F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent27, "Default", "Text", "Strumento del mercato monetario. Rientrano in questa categoria, ad esempio i depo" +
                     "siti in contanti o a termine"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.8915F, 1130F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent28, "Default", "SizeF", new System.Drawing.SizeF(2374.474F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1355F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent28, "Default", "SizeF", new System.Drawing.SizeF(2389.792F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent28, "Default", "Text", "Evoluzione del valore patrimoniale espresso in percentuale"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.7706F, 1205F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent29, "Default", "SizeF", new System.Drawing.SizeF(2372.099F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1430F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent29, "Default", "SizeF", new System.Drawing.SizeF(2392.234F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent29, "Default", "Text", "Valore patrimoniale che attribuisce un peso proporzionale all’importanza di ciasc" +
                     "un componente all’interno del portafoglio"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 286F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent3, "Default", "SizeF", new System.Drawing.SizeF(2352.354F, 58.4198F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 510F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent3, "Default", "SizeF", new System.Drawing.SizeF(2391.923F, 58.4198F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent3, "Default", "Text", "Interesse lordo di periodo, senza l\'eventuale deduzione dell\'imposta preventiva c" +
                     "he avviene all\'accredito"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.7706F, 1279.999F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent30, "Default", "SizeF", new System.Drawing.SizeF(2372.099F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 135F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent30, "Default", "SizeF", new System.Drawing.SizeF(2392.234F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent30, "Default", "Text", "Grado di rischio che si è disposti ad accettare, per ottenere un determinato rend" +
                     "imento atteso"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent31, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.8915F, 1355F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent31, "Default", "SizeF", new System.Drawing.SizeF(2374.474F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent31, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 210F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent31, "Default", "SizeF", new System.Drawing.SizeF(2389.794F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent31, "Default", "Text", "Rendimento % annuo realizzabile da un\'obbligazione se la si tenesse fino alla dat" +
                     "a di scadenza"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent32, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(367.8915F, 1430.001F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent32, "Default", "SizeF", new System.Drawing.SizeF(2371.978F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent32, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 285F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent32, "Default", "SizeF", new System.Drawing.SizeF(2391.92F, 58.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent32, "Default", "Text", "Valutazione di un prodotto mediante l’utilizzo di una scala di valori definita. U" +
                     "n rating è ad esempio quello prodotto da agenzie di rating indipendenti che valu" +
                     "tano il merito creditizio di aziende"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 361F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent4, "Default", "SizeF", new System.Drawing.SizeF(2352.354F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent34, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 720F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent34, "Default", "SizeF", new System.Drawing.SizeF(932.6437F, 58.41989F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent34, "Default", "Text", "Annuale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent35, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1756F, 720F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent35, "Default", "SizeF", new System.Drawing.SizeF(928.762F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent35, "Default", "Text", "Bimensile"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent36, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 795F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent36, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent36, "Default", "Text", "Mensile"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent37, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1756F, 795F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent37, "Default", "SizeF", new System.Drawing.SizeF(928.762F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent37, "Default", "Text", "Quadrimestrale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent38, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 870F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent38, "Default", "SizeF", new System.Drawing.SizeF(931.7644F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent38, "Default", "Text", "Semestrale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent39, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1756F, 870F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent39, "Default", "SizeF", new System.Drawing.SizeF(928.7621F, 58.41986F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent39, "Default", "Text", "Trimestrale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 585F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent4, "Default", "SizeF", new System.Drawing.SizeF(2391.923F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent4, "Default", "Text", "Prezzo dello strumento a inizio anno"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 436F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent5, "Default", "SizeF", new System.Drawing.SizeF(2352.354F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 660F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent5, "Default", "SizeF", new System.Drawing.SizeF(2391.923F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent5, "Default", "Text", "Prezzo d\'acquisto storico"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 511F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent6, "Default", "SizeF", new System.Drawing.SizeF(2352.353F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 735F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent6, "Default", "SizeF", new System.Drawing.SizeF(2391.922F, 58.42017F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent6, "Default", "Text", "N. quote moltiplicato per valore attuale dello strumento"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent8, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(404.8949F, 710.3543F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent8, "Default", "SizeF", new System.Drawing.SizeF(2362.541F, 58.42004F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent8, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 934.3489F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent8, "Default", "SizeF", new System.Drawing.SizeF(2391.92F, 58.42017F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent8, "Default", "Text", "MSCI ESG Manager"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent9, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(407.46F, 794.9001F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent9, "Default", "SizeF", new System.Drawing.SizeF(2352.352F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent9, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(368F, 1018.9F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent9, "Default", "SizeF", new System.Drawing.SizeF(2391.921F, 58.41968F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesContent9, "Default", "Text", "  •  Laggard: B - CCC"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 136F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 359.9989F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey1, "Default", "Text", "Contributo netto"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(4.470348E-08F, 864.2163F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "SizeF", new System.Drawing.SizeF(407.4584F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1088.221F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "SizeF", new System.Drawing.SizeF(367.7709F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey10, "Default", "Text", "Scala di rating"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.563797F, 1016.564F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.560002F, 1240.56F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "SizeF", new System.Drawing.SizeF(365.2109F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey12, "Default", "Text", "Rating medio portafoglio"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1097.929F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey13, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey13, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1322F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey13, "Default", "SizeF", new System.Drawing.SizeF(367.7709F, 58.41968F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey13, "Default", "Text", "Not rated"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey14, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125.451F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey14, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.42003F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey14, "Default", "Text", "N.B."),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey15, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 349.2888F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey15, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 350F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey15, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey15, "Default", "Text", "Abbreviazioni"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 420F)),
@@ -22522,8 +22697,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey19, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1382.47F, 495F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey19, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey19, "Default", "Text", "Perf. (%)"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 211F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey2, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 434.9995F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey2, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey2, "Default", "Text", "ESG"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey20, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 570F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey20, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
@@ -22537,53 +22712,71 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey23, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1382.47F, 645F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey23, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey23, "Default", "Text", "IBAN"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 755.6888F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 980.6888F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey24, "Default", "Text", "Definizioni"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 826.48F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1051.48F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 61.9411F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey25, "Default", "Text", "SWIFT"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 905F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1130F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey26, "Default", "Text", "BIC"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey27, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 980F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey27, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1205F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey27, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey27, "Default", "Text", "IBAN"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1055F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey28, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1280F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey28, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey28, "Default", "Text", "Liquidità"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1130F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey29, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1355F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey29, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey29, "Default", "Text", "Performance"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 286F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey3, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey3, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 510.0001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey3, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.4198F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey3, "Default", "Text", "Interesse pro rata"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1205F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey30, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1430F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey30, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey30, "Default", "Text", "Performance ponderata"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey31, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1280F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey31, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 135F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey31, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey31, "Default", "Text", "Profilo di rischio"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey32, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1355F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey32, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 210F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey32, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey32, "Default", "Text", "Yield to maturity "),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey33, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1430.001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey33, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 285F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey33, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.42004F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey33, "Default", "Text", "Rating"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 361F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey4, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey34, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 720F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey34, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey34, "Default", "Text", "ANN"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey35, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1382.47F, 720F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey35, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey35, "Default", "Text", "BIMEN"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey36, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 795F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey36, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey36, "Default", "Text", "MENS"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey37, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1382.47F, 795F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey37, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey37, "Default", "Text", "QUADR"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey38, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 870F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey38, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey38, "Default", "Text", "SEM"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey39, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1382.47F, 870F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey39, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey39, "Default", "Text", "TRIM"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 585.0007F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey4, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey4, "Default", "Text", "Prezzo inizio anno"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 436F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey5, "Default", "SizeF", new System.Drawing.SizeF(407.4583F, 58.42001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 659.9988F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey5, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey5, "Default", "Text", "Prezzo all\'acquisto"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 511F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey6, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.560002F, 734.9993F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey6, "Default", "SizeF", new System.Drawing.SizeF(365.2108F, 58.42017F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey6, "Default", "Text", "Valore di mercato"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey7, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.563797F, 633.6265F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey7, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey7, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 856F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey7, "Default", "SizeF", new System.Drawing.SizeF(365.2108F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey7, "Default", "Text", "Focus sostenibilità"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey8, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 710.3556F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey8, "Default", "SizeF", new System.Drawing.SizeF(404.8946F, 58.41992F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey8, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 934.3591F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey8, "Default", "SizeF", new System.Drawing.SizeF(367.7708F, 58.41992F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNotesKey8, "Default", "Text", "Provider"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNumeroCliente, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0.1895879F, 174.9996F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.LabelNumeroCliente, "Default", "SizeF", new System.Drawing.SizeF(431.0813F, 58.41998F)),
@@ -22762,7 +22955,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPerc3Section9030, "Default", "Text", "(%)"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercInvestimentiSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1251.959F, 191.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercInvestimentiSection4000, "Default", "SizeF", new System.Drawing.SizeF(276.44F, 50F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercInvestimentiSection4000, "Default", "Text", "% investimenti"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercInvestimentiSection4000, "Default", "Text", "(%) investimenti"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1214.917F, 191.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "Default", "SizeF", new System.Drawing.SizeF(313.48F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPercPesoSection6000, "Default", "Text", "(%) del patrimonio"),
@@ -22971,7 +23164,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelProfPErdNoRealSection9030, "Default", "Text", "Prof./Perd. non real."),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1689F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10010, "Default", "SizeF", new System.Drawing.SizeF(209.0208F, 76.45835F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10010, "Default", "Text", "Quantità"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10010, "Default", "Text", "Quote"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1689F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10020, "Default", "SizeF", new System.Drawing.SizeF(209.0208F, 76.45835F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10020, "Default", "Text", "Quantità"),
@@ -22980,13 +23173,13 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection10030, "Default", "Text", "Quantità"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1689F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11000, "Default", "SizeF", new System.Drawing.SizeF(209.0208F, 76.45835F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11000, "Default", "Text", "Quantità"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11000, "Default", "Text", "Quote"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1689F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11020, "Default", "SizeF", new System.Drawing.SizeF(209.0208F, 76.45835F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11020, "Default", "Text", "Quantità"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1689F, 93.54209F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11030, "Default", "SizeF", new System.Drawing.SizeF(209.0208F, 76.45835F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11030, "Default", "Text", "Quantità"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection11030, "Default", "Text", "Quote"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1520F, 195F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "SizeF", new System.Drawing.SizeF(197.55F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelQuantitaSection1300, "Default", "Text", "Quantità"),
@@ -23532,7 +23725,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage1, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage1, "Default", "SizeF", new System.Drawing.SizeF(2769.81F, 1508F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage2, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1520F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage2, "Default", "SizeF", new System.Drawing.SizeF(2769.811F, 1193F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.PanelNotesPage2, "Default", "SizeF", new System.Drawing.SizeF(2769.811F, 1417F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.panelSection19000FooterContainer, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.127777F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.panelSection19000FooterContainer, "Default", "SizeF", new System.Drawing.SizeF(1322.872F, 150F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.panelSection19000HeaderContainer, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 95.29166F)),
@@ -25553,15 +25746,6 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "SizeF", new System.Drawing.SizeF(216.94F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "Text", "xrLabel37"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "TextFormatString", "{0:N3}"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1107.77F, 100.54F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "Text", "Acquisto"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel546, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1107.77F, 51.45F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel546, "Default", "SizeF", new System.Drawing.SizeF(177F, 48.42F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel546, "Default", "Text", "Inizio anno"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel547, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1108F, 2.753062F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel547, "Default", "SizeF", new System.Drawing.SizeF(176.77F, 48.42F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel547, "Default", "Text", "Al"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel548, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(875.9998F, 2.75177F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel548, "Default", "SizeF", new System.Drawing.SizeF(227.0003F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel548, "Default", "Text", "xrLabel30"),
@@ -25598,10 +25782,6 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel556, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 4F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel556, "Default", "SizeF", new System.Drawing.SizeF(1237.69F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel556, "Default", "Text", "xrLabel11"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel557, "Default", "Bookmark", "Metalli"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel557, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel557, "Default", "SizeF", new System.Drawing.SizeF(701.1458F, 76.9408F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel557, "Default", "Text", "METALLI"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel558, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2099.52F, 4F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel558, "Default", "SizeF", new System.Drawing.SizeF(387.93F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel558, "Default", "Text", "xrLabel58"),
@@ -25841,8 +26021,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine108, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine109, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine109, "Default", "SizeF", new System.Drawing.SizeF(2770F, 7.000214F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine11, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 559.6415F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine11, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine11, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 561F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine11, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine110, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 84.24999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine110, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine111, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
@@ -25899,14 +26079,20 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine134, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291748F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine135, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 61F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine135, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine14, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 634.3708F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine14, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine136, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 936F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine136, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine137, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 861F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine137, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine138, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 786F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine138, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine14, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 636F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine14, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine15, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine15, "Default", "SizeF", new System.Drawing.SizeF(2770F, 7.000214F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine16, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine17, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 708.4542F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine17, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine17, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 711F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine17, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine18, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 84.24999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine18, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine19, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
@@ -25949,54 +26135,54 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine35, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine36, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2025.249F, 514.9828F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine36, "Default", "SizeF", new System.Drawing.SizeF(547.6257F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine37, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 125F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine37, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine38, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 200F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine38, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine39, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 275F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine39, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine37, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine37, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine38, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 424F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine38, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine39, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 499F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine39, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine4, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2618F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine4, "Default", "SizeF", new System.Drawing.SizeF(1528.397F, 5.291687F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine40, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 350F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine40, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine41, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 425F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine41, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine42, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.56F, 500F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine42, "Default", "SizeF", new System.Drawing.SizeF(2757.246F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine43, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.13F, 575F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine43, "Default", "SizeF", new System.Drawing.SizeF(2757.684F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine44, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 778.4733F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine44, "Default", "SizeF", new System.Drawing.SizeF(2757.684F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine45, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1002.015F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine45, "Default", "SizeF", new System.Drawing.SizeF(2757.684F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine46, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.127777F, 1084.681F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine46, "Default", "SizeF", new System.Drawing.SizeF(2757.684F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine47, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1166.581F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine47, "Default", "SizeF", new System.Drawing.SizeF(2757.684F, 5.000244F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine48, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 894F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine48, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine40, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 574F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine40, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine41, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 649F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine41, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine42, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 724F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine42, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine43, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 799F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine43, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine44, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1002.47F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine44, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine45, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1226.02F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine45, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine46, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1308.68F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine46, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine47, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1390.58F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine47, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine48, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1119F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine48, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine49, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine49, "Default", "SizeF", new System.Drawing.SizeF(2770F, 7.000214F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine5, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(22.24622F, 245.0522F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine5, "Default", "SizeF", new System.Drawing.SizeF(2734.81F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine50, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine50, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine51, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 969F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine51, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine52, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1044F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine52, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine53, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1119F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine53, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine54, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1194F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine54, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine55, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1269F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine55, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine56, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1344F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine56, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine57, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1419F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine57, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine58, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1494F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine58, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine51, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1194F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine51, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine52, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1269F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine52, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine53, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1344F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine53, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine54, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1419F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine54, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine55, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1494F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine55, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine56, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 199F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine56, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine57, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 274F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine57, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine58, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 349F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine58, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine59, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 182.2618F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine59, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine6, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
@@ -26044,7 +26230,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine79, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 1F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine79, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine8, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 486F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine8, "Default", "SizeF", new System.Drawing.SizeF(2757.056F, 5.000061F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine8, "Default", "SizeF", new System.Drawing.SizeF(2758F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine80, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 87.2617F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine80, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine81, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 172F)),
@@ -26745,21 +26931,12 @@
         private DevExpress.XtraReports.UI.XRLabel LabelNotesKey27;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesKey26;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesKey25;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey33;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey32;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey31;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent32;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent31;
-        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent30;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent29;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent28;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent27;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent26;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent25;
         private DevExpress.XtraReports.UI.XRLabel LabelNotesContent24;
-        private DevExpress.XtraReports.UI.XRLine xrLine58;
-        private DevExpress.XtraReports.UI.XRLine xrLine57;
-        private DevExpress.XtraReports.UI.XRLine xrLine56;
         private DevExpress.XtraReports.UI.XRLine xrLine55;
         private DevExpress.XtraReports.UI.XRLine xrLine54;
         private DevExpress.XtraReports.UI.XRLine xrLine53;
@@ -27823,9 +28000,9 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel542;
         private DevExpress.XtraReports.UI.XRLabel xrLabel543;
         private DevExpress.XtraReports.UI.XRLabel xrLabel544;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel545;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel546;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel547;
+        private DevExpress.XtraReports.UI.XRLabel labelAcquistoSection10030;
+        private DevExpress.XtraReports.UI.XRLabel labelInizioAnnoSection10030;
+        private DevExpress.XtraReports.UI.XRLabel labelAlSection10030;
         private DevExpress.XtraReports.UI.XRLabel xrLabel548;
         private DevExpress.XtraReports.UI.XRLabel xrLabel549;
         private DevExpress.XtraReports.UI.XRLabel xrLabel550;
@@ -27884,6 +28061,30 @@
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSectionTitle10030;
         private DevExpress.XtraReports.UI.XRLabel labelHeaderSection10030;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection10040;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel557;
+        private DevExpress.XtraReports.UI.XRLabel labelHeaderSection10040;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent32;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey33;
+        private DevExpress.XtraReports.UI.XRLine xrLine58;
+        private DevExpress.XtraReports.UI.XRLine xrLine56;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent31;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey32;
+        private DevExpress.XtraReports.UI.XRLine xrLine57;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent30;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey31;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent39;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent37;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent35;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent38;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent36;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesContent34;
+        private DevExpress.XtraReports.UI.XRLine xrLine136;
+        private DevExpress.XtraReports.UI.XRLine xrLine137;
+        private DevExpress.XtraReports.UI.XRLine xrLine138;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey39;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey37;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey35;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey38;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey36;
+        private DevExpress.XtraReports.UI.XRLabel LabelNotesKey34;
     }
 }

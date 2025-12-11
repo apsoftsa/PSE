@@ -133,7 +133,7 @@
     <value>Questo stato patrimoniale include tutti gli asset depositati, nonché eventuali debiti. Tuttavia, tutti gli altri impegni sono esclusi. La valutazione si basa solitamente sui prezzi del giorno precedente lordi di eventuali imposte o ritenute. Per i titoli non negoziati sul mercato il giorno precedente, i prezzi dell'ultima transazione effettivamente avvenuta o dell'ultimo prezzo noto, a seconda del caso, vengono invertiti. Inoltre, i tassi di cambio indicati in questo estratto possono differire da quelli effettivamente utilizzati per la conclusione di singole transazioni. Il cliente ï¿½ invitato a richiedere informazioni dettagliate alla banca, in particolare riguardo agli asset con valori volatili e ai prodotti derivati. Le valutazioni sono tratte dalle usuali fonti di informazione finanziaria, escludendo qualsiasi responsabilità della banca.</value>
   </data>
   <data name="$this.LocalizationItems1" xml:space="preserve">
-    <value>Codifica che consente agli istituti di credito di tutto il mondo di identificarsi e comunicare per dare seguito al trasferimento di fondi tra banche e altre istituzioni, utilizzando un sistema di messaggistica</value>
+    <value>Codifica che consente agli istituti di credito di tutto il mondo di identificarsi e comunicare per dare seguito al trasferimento di fondi tra banche e altre istituzioni, utilizzando un sistema di messaggistica elettronica</value>
   </data>
   <data name="$this.LocalizationItems2" xml:space="preserve">
     <value>Codice utilizzato per identificare univocamente un conto bancario in un paese specifico. È composto da una sequenza di caratteri alfanumerici che include il codice del paese, il codice di controllo e il numero di conto bancario del beneficiario</value>
