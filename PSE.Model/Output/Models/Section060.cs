@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
+using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {    
@@ -76,6 +77,8 @@ namespace PSE.Model.Output.Models
 
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public bool HasMeaningfulData { get; set; }
+
+        public int ItemsCount { get { return Content.Count(f => f.Class != CLASS_TOTAL); } private set { } }
 
         public IList<IInvestmentCurrency> Content { get; set; }
 

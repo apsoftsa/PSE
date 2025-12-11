@@ -34,6 +34,8 @@
 
         bool HasMeaningfulData { get; set; }
 
+        int ItemsCount { get; }
+
         IList<IInvestmentCurrency> Content { get; set; }
 
     }

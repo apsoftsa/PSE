@@ -33,6 +33,7 @@
     {
         string Name { get; set; }
         bool HasMeaningfulData { get; set; }
+        int ItemsCount { get; }
         IList<IEndExtractInvestment> Content { get; set; }
     }
 

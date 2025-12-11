@@ -129,6 +129,8 @@ namespace PSE.Model.Output.Models
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public bool HasMeaningfulData { get; set; }
 
+        public int ItemsCount { get { return Content.Count(f => f.Class != CLASS_TOTAL); } private set { } }
+
         public IList<IEndExtractInvestment> Content { get; set; }
 
         public SubSection20010(string name)

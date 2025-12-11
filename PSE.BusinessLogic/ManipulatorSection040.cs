@@ -97,6 +97,7 @@ namespace PSE.BusinessLogic
                                 sectionContent.SubSection4000.Content.Add(investmentAsset);
                             }                            
                         }
+                        sectionContent.SubSection4000.ItemsCount = sectionContent.SubSection4000.Content.Select(sel => sel.AssetClass).Distinct().Count();
                         sectionContent.SubSection4000.HasMeaningfulData = !sectionContent.SubSection4000.Content.Any(f => f.MarketValueReportingCurrencyT < 0);
                         decimal? totalSum = sectionContent.SubSection4000.Content.Sum(sum => sum.MarketValueReportingCurrency);
                         if(!totalSum.HasValue) totalSum = decimal.Zero;

@@ -34,7 +34,9 @@
 
         string Name { get; set; }
 
-        bool HasMeaningfulData { get; set; }    
+        bool HasMeaningfulData { get; set; }
+
+        int ItemsCount { get; set; }
 
         IList<IInvestmentAsset> Content { get; set; }
 

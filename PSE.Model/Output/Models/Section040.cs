@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PSE.Model.Output.Common;
 using PSE.Model.Output.Interfaces;
+using static PSE.Model.Common.Constants;
 
 namespace PSE.Model.Output.Models
 {
@@ -84,19 +85,23 @@ namespace PSE.Model.Output.Models
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
         public bool HasMeaningfulData { get; set; }
 
+        public int ItemsCount { get; set; }
+
         public IList<IInvestmentAsset> Content { get; set; }
 
         public SubSection4000Content()
         {
             Name = "Investments";
             HasMeaningfulData = false;
+            ItemsCount = 0; 
             Content = new List<IInvestmentAsset>();
         }
 
         public SubSection4000Content(ISubSection4000Content source)
         {
             Name = source.Name;
-            HasMeaningfulData |= source.HasMeaningfulData;  
+            HasMeaningfulData |= source.HasMeaningfulData; 
+            ItemsCount |= source.ItemsCount;    
             Content = new List<IInvestmentAsset>();
             if (source.Content != null && source.Content.Any())
             {                

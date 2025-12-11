@@ -398,6 +398,7 @@
       "subSection4000": {
         "name": "Investments",
         "hasMeaningfulData": true,
+        "itemsCount": 4,
         "content": [
           {
             "assetClass": "LIQUIDITA'",
@@ -511,6 +512,7 @@
       "subSection6000": {
         "name": "Investments",
         "hasMeaningfulData": true,
+        "itemsCount": 4,
         "content": [
           {
             "currency": "CHF",
@@ -6080,6 +6082,7 @@
       "subSection20010": {
         "name": "Investments",
         "hasMeaningfulData": true,
+        "itemsCount": 4,
         "content": [
           {
             "assetClass": "LIQUIDITA'",

@@ -34,6 +34,7 @@ namespace PSE.Reporting.Reports {
         string _currentGridChartPointAlphaCode;
         int _multilinePeriodCount;
         int _chartBarsCount;
+        bool _chartHasMeaningfulData;
         bool _hasNotTransfered;
 
         private void ManageSection70VisibilityFlags() {
@@ -84,7 +85,7 @@ namespace PSE.Reporting.Reports {
         private static int GetChartSeriesPointsCount(XRChart chart) {
             int pointsCount = 0;
             if (chart.Series != null && chart.Series.Count > 0 && chart.Series.First().ActualPoints != null)
-                pointsCount = chart.Series.First().ActualPoints.Where(f => f.NumericalValue > 0).Count();
+                pointsCount = chart.Series.First().ActualPoints.Count();
             return pointsCount;
         }
 
@@ -114,6 +115,7 @@ namespace PSE.Reporting.Reports {
             _section110NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
             _hasNotTransfered = false;
+            _chartHasMeaningfulData = false;
             _rowCount = 0;
             _chartBarsCount = 0;
             _multilinePeriodCount = 0;  
@@ -161,6 +163,12 @@ namespace PSE.Reporting.Reports {
         private void applyCurrency_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             label.Text = label.Text.Replace("{0}", _currencyToApply);
+        }
+
+        private void checkChartHasMeaningfulData_BeforePrint(object sender, CancelEventArgs e) {
+            _chartHasMeaningfulData = false;
+            if (bool.TryParse(((XRLabel)sender).Text, out bool tmpCheck))
+                _chartHasMeaningfulData = tmpCheck;
         }
 
         private void injectDateAfterLabelText_BeforePrint(object sender, CancelEventArgs e) {
@@ -242,6 +250,15 @@ namespace PSE.Reporting.Reports {
             _currentPointIndex = 0;
         }
 
+        private void chartDoughnutValid_BeforePrint(object sender, CancelEventArgs e) {
+            if (_chartHasMeaningfulData) {
+                _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
+                _currentPointIndex = 0;
+            }
+            else
+                e.Cancel = true;    
+        }
+
         private void chartDoughnut_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
             if (_currentChartPointsCount > 0) {                
                 e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
@@ -255,10 +272,82 @@ namespace PSE.Reporting.Reports {
             _currentChartPointAlphaCode = string.Empty;
         }
 
+        private void chartDoughnutValidWithLabelAlphaCode_BeforePrint(object sender, CancelEventArgs e) {
+            if (_chartHasMeaningfulData) {
+                _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
+                _currentPointIndex = 0;
+                _currentChartPointAlphaCode = string.Empty;
+            } else
+                e.Cancel = true;
+        }
+
+        private void chartBarInvalid_BeforePrint(object sender, CancelEventArgs e) {
+            if (!_chartHasMeaningfulData) {
+                XRChart chart = (XRChart)sender;
+                _currentChartPointsCount = GetChartSeriesPointsCount(chart);
+                _currentPointIndex = 0;
+                if (chart.Series != null && chart.Series.Count > 0) {
+                    SideBySideBarSeriesView sideBySideBarSeriesView1 = (SideBySideBarSeriesView)chart.Series[0].View;
+                    if (_chartBarsCount < 2)
+                        sideBySideBarSeriesView1.BarWidth = 0.3;
+                    else if (_chartBarsCount < 3)
+                        sideBySideBarSeriesView1.BarWidth = 0.6;
+                    else if (_chartBarsCount < 4)
+                        sideBySideBarSeriesView1.BarWidth = 0.7;
+                    else if (_chartBarsCount < 6)
+                        sideBySideBarSeriesView1.BarWidth = 0.8;
+                    else
+                        sideBySideBarSeriesView1.BarWidth = 0.9;
+                }
+                chart.Visible = true;
+            } else
+                e.Cancel = true;
+        }
+
+        private void chartBarInvalidWithLabelAlphaCode_BeforePrint(object sender, CancelEventArgs e) {
+            if (!_chartHasMeaningfulData) {
+                XRChart chart = (XRChart)sender;
+                _currentChartPointsCount = GetChartSeriesPointsCount(chart);
+                _currentPointIndex = 0;
+                _currentChartPointAlphaCode = string.Empty;
+                if (chart.Series != null && chart.Series.Count > 0) {
+                    SideBySideBarSeriesView sideBySideBarSeriesView1 = (SideBySideBarSeriesView)chart.Series[0].View;
+                    if (_chartBarsCount < 2)
+                        sideBySideBarSeriesView1.BarWidth = 0.3;
+                    else if (_chartBarsCount < 3)
+                        sideBySideBarSeriesView1.BarWidth = 0.6;
+                    else if (_chartBarsCount < 4)
+                        sideBySideBarSeriesView1.BarWidth = 0.7;
+                    else if (_chartBarsCount < 6)
+                        sideBySideBarSeriesView1.BarWidth = 0.8;
+                    else
+                        sideBySideBarSeriesView1.BarWidth = 0.9;
+                }
+                chart.Visible = true;
+            } else
+                e.Cancel = true;
+        }
+
         private void chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith(object sender, CustomDrawSeriesPointEventArgs e) {
             if (_currentChartPointsCount > 0) {
                 _currentChartPointAlphaCode = GetNextLabelAlphaCode(_currentChartPointAlphaCode);
                 e.LabelText += " (" + _currentChartPointAlphaCode + ")";
+                e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
+                _currentPointIndex++;
+            }
+        }
+
+        private void chartBarWithLabelAlphaCode_CustomDrawSeriesPointWith(object sender, CustomDrawSeriesPointEventArgs e) {
+            if (_currentChartPointsCount > 0) {
+                _currentChartPointAlphaCode = GetNextLabelAlphaCode(_currentChartPointAlphaCode);
+                e.LabelText += " (" + _currentChartPointAlphaCode + ")";
+                e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
+                _currentPointIndex++;
+            }
+        }
+
+        private void chartBar_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
+            if (_currentChartPointsCount > 0) {
                 e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
                 _currentPointIndex++;
             }
@@ -484,7 +573,7 @@ namespace PSE.Reporting.Reports {
             if (_needResetRow == false && _currentChartPointsCount > 0) {
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
                     label.BackColor = GetChartSeriesPointColorToApply(this.chartSection4010, _currentChartPointsCount, _currentGridChartPointIndex);
                     label.ForeColor = label.BackColor;
                     label.Visible = true;
@@ -498,7 +587,7 @@ namespace PSE.Reporting.Reports {
             XRLabel label = (XRLabel)sender;
             if (_needResetRow == false && _currentChartPointsCount > 0) {
                 label.Visible = false;
-                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value) && value > 0) {
+                if (label.Value != null && label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
                     _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                     label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
                     label.Visible = true;
@@ -576,13 +665,11 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
-                    if (value > 0) {
-                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
-                        label.ForeColor = label.BackColor;
-                        label.Visible = true;
-                        _currentGridChartPointIndex++;
-                    } 
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                    label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
+                    label.ForeColor = label.BackColor;
+                    label.Visible = true;
+                    _currentGridChartPointIndex++;                    
                 }
             }
         }
@@ -591,12 +678,10 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
-                    if (value > 0) {
-                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
-                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
-                        label.Visible = true;
-                    } 
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
+                    _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                    label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                    label.Visible = true;
                 }
             }
         }
@@ -894,13 +979,11 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
-                    if (value > 0) {
-                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection20010, _currentChartPointsCount, _currentGridChartPointIndex);
-                        label.ForeColor = label.BackColor;
-                        label.Visible = true;
-                        _currentGridChartPointIndex++;
-                    }
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                    label.BackColor = GetChartSeriesPointColorToApply(this.chartSection20010, _currentChartPointsCount, _currentGridChartPointIndex);
+                    label.ForeColor = label.BackColor;
+                    label.Visible = true;
+                    _currentGridChartPointIndex++;                   
                 }
             }
         }
@@ -909,12 +992,10 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double value)) {
-                    if (value > 0) {
-                        _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
-                        label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
-                        label.Visible = true;
-                    }
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                    _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                    label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
+                    label.Visible = true;                    
                 }
             }
         }
