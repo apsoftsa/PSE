@@ -373,6 +373,14 @@ namespace PSE.Reporting.Reports {
                     sideBySideBarSeriesView1.BarWidth = 0.8;
                 else
                     sideBySideBarSeriesView1.BarWidth = 0.9;
+                AxisLabelPosition labelPos = AxisLabelPosition.Outside;
+                foreach (SeriesPoint point in chart.Series[0].Points) {
+                    if (point.GetNumericValue(ValueLevel.Value) < 0) {
+                        labelPos = AxisLabelPosition.Inside;
+                        break;
+                    }
+                }
+                ((XYDiagram)chart.Diagram).AxisX.LabelPosition = labelPos;
             }
         }
 
@@ -1029,7 +1037,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-       
+        
     }
 
 }

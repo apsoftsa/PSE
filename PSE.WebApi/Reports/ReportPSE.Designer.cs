@@ -1089,6 +1089,7 @@
             this.pageInfoStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailReportSection7000 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection7000 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel545 = new DevExpress.XtraReports.UI.XRLabel();
             this.valoreMercatoSection7000 = new DevExpress.XtraReports.UI.XRLabel();
             this.ibanSection7000 = new DevExpress.XtraReports.UI.XRLabel();
             this.pesoSection7000 = new DevExpress.XtraReports.UI.XRLabel();
@@ -1538,6 +1539,14 @@
             this.section16000LineGridDown = new DevExpress.XtraReports.UI.XRLine();
             this.GroupHeaderBandSection16010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.chartSection16010 = new DevExpress.XtraReports.UI.XRChart();
+            this.GroupHeaderBandSection16000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.xrLine26 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine27 = new DevExpress.XtraReports.UI.XRLine();
+            this.labelSubHeaderSection16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelHeaderSection16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelSettoreSection16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection16000 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelAzioniSection16000 = new DevExpress.XtraReports.UI.XRLabel();
             this.verticalSeparatorLine = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailReportSection170 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection17000 = new DevExpress.XtraReports.UI.DetailBand();
@@ -2756,15 +2765,6 @@
             this.labelHeaderSection10000 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooterBandSection10000 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.section10000Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.GroupHeaderBandSection16000 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLine26 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLine27 = new DevExpress.XtraReports.UI.XRLine();
-            this.labelSubHeaderSection16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelHeaderSection16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelSettoreSection16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelValoreMercatoSection16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelAzioniSection16000 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel545 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010Bars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -4082,6 +4082,16 @@
             this.DetailSection7000.HierarchyPrintOptions.Indent = 50.8F;
             this.DetailSection7000.Name = "DetailSection7000";
             // 
+            // xrLabel545
+            // 
+            this.xrLabel545.Dpi = 254F;
+            this.xrLabel545.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description2]")});
+            this.xrLabel545.Multiline = true;
+            this.xrLabel545.Name = "xrLabel545";
+            this.xrLabel545.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel545.StyleName = "gridContentStyle";
+            // 
             // valoreMercatoSection7000
             // 
             this.valoreMercatoSection7000.Dpi = 254F;
@@ -4686,6 +4696,7 @@
             doughnutSeriesView1.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             doughnutSeriesView1.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
             doughnutSeriesView1.HoleRadiusPercent = 50;
+            doughnutSeriesView1.Rotation = 270;
             doughnutSeriesView1.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
             series2.View = doughnutSeriesView1;
             this.chartSection6010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -8579,6 +8590,7 @@
             doughnutSeriesView2.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             doughnutSeriesView2.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
             doughnutSeriesView2.HoleRadiusPercent = 50;
+            doughnutSeriesView2.Rotation = 270;
             doughnutSeriesView2.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
             series4.View = doughnutSeriesView2;
             this.chartSection4010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -8828,6 +8840,7 @@
             xyDiagram3.AxisX.Label.MaxLineCount = 2;
             xyDiagram3.AxisX.Label.MaxWidth = 68;
             xyDiagram3.AxisX.Label.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            xyDiagram3.AxisX.LabelPosition = DevExpress.XtraCharts.AxisLabelPosition.Inside;
             xyDiagram3.AxisX.Tickmarks.MinorVisible = false;
             xyDiagram3.AxisX.Tickmarks.Visible = false;
             xyDiagram3.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.Default;
@@ -9093,12 +9106,85 @@
             doughnutSeriesView3.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             doughnutSeriesView3.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
             doughnutSeriesView3.HoleRadiusPercent = 50;
+            doughnutSeriesView3.Rotation = 270;
             doughnutSeriesView3.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
             series6.View = doughnutSeriesView3;
             this.chartSection16010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series6};
             this.chartSection16010.CustomDrawSeriesPoint += new DevExpress.XtraCharts.CustomDrawSeriesPointEventHandler(this.chartDoughnutWithLabelAlphaCode_CustomDrawSeriesPointWith);
             this.chartSection16010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.chartDoughnutWithLabelAlphaCode_BeforePrint);
+            // 
+            // GroupHeaderBandSection16000
+            // 
+            this.GroupHeaderBandSection16000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLine26,
+            this.xrLine27,
+            this.labelSubHeaderSection16000,
+            this.labelHeaderSection16000,
+            this.labelSettoreSection16000,
+            this.labelValoreMercatoSection16000,
+            this.labelAzioniSection16000});
+            this.GroupHeaderBandSection16000.Dpi = 254F;
+            this.GroupHeaderBandSection16000.Name = "GroupHeaderBandSection16000";
+            this.GroupHeaderBandSection16000.RepeatEveryPage = true;
+            this.GroupHeaderBandSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
+            // 
+            // xrLine26
+            // 
+            this.xrLine26.BorderWidth = 0F;
+            this.xrLine26.Dpi = 254F;
+            this.xrLine26.Name = "xrLine26";
+            this.xrLine26.StyleName = "gridHeaderLine";
+            this.xrLine26.StylePriority.UseBorderWidth = false;
+            // 
+            // xrLine27
+            // 
+            this.xrLine27.BorderWidth = 0F;
+            this.xrLine27.Dpi = 254F;
+            this.xrLine27.Name = "xrLine27";
+            this.xrLine27.StyleName = "gridHeaderLine";
+            this.xrLine27.StylePriority.UseBorderWidth = false;
+            // 
+            // labelSubHeaderSection16000
+            // 
+            this.labelSubHeaderSection16000.Dpi = 254F;
+            this.labelSubHeaderSection16000.Multiline = true;
+            this.labelSubHeaderSection16000.Name = "labelSubHeaderSection16000";
+            this.labelSubHeaderSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection16000.StyleName = "sectionSubHeader";
+            // 
+            // labelHeaderSection16000
+            // 
+            this.labelHeaderSection16000.Dpi = 254F;
+            this.labelHeaderSection16000.Multiline = true;
+            this.labelHeaderSection16000.Name = "labelHeaderSection16000";
+            this.labelHeaderSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection16000.StyleName = "sectionHeader";
+            // 
+            // labelSettoreSection16000
+            // 
+            this.labelSettoreSection16000.Dpi = 254F;
+            this.labelSettoreSection16000.Multiline = true;
+            this.labelSettoreSection16000.Name = "labelSettoreSection16000";
+            this.labelSettoreSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSettoreSection16000.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelValoreMercatoSection16000
+            // 
+            this.labelValoreMercatoSection16000.Dpi = 254F;
+            this.labelValoreMercatoSection16000.Multiline = true;
+            this.labelValoreMercatoSection16000.Name = "labelValoreMercatoSection16000";
+            this.labelValoreMercatoSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection16000.StyleName = "gridColumnHeaderRightStyle";
+            this.labelValoreMercatoSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelAzioniSection16000
+            // 
+            this.labelAzioniSection16000.Dpi = 254F;
+            this.labelAzioniSection16000.Multiline = true;
+            this.labelAzioniSection16000.Name = "labelAzioniSection16000";
+            this.labelAzioniSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelAzioniSection16000.StyleName = "gridColumnHeaderRightStyle";
             // 
             // verticalSeparatorLine
             // 
@@ -9428,6 +9514,7 @@
             doughnutSeriesView4.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             doughnutSeriesView4.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
             doughnutSeriesView4.HoleRadiusPercent = 50;
+            doughnutSeriesView4.Rotation = 270;
             doughnutSeriesView4.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
             series7.View = doughnutSeriesView4;
             this.chartSection17010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -9917,6 +10004,7 @@
             doughnutSeriesView5.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             doughnutSeriesView5.Border.Visibility = DevExpress.Utils.DefaultBoolean.True;
             doughnutSeriesView5.HoleRadiusPercent = 50;
+            doughnutSeriesView5.Rotation = 270;
             doughnutSeriesView5.SweepDirection = DevExpress.XtraCharts.PieSweepDirection.Clockwise;
             series9.View = doughnutSeriesView5;
             this.chartSection20010.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -21603,88 +21691,6 @@
             this.section10000Separator.Name = "section10000Separator";
             this.section10000Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.section10000Separator.StyleName = "sectionSeparator";
-            // 
-            // GroupHeaderBandSection16000
-            // 
-            this.GroupHeaderBandSection16000.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLine26,
-            this.xrLine27,
-            this.labelSubHeaderSection16000,
-            this.labelHeaderSection16000,
-            this.labelSettoreSection16000,
-            this.labelValoreMercatoSection16000,
-            this.labelAzioniSection16000});
-            this.GroupHeaderBandSection16000.Dpi = 254F;
-            this.GroupHeaderBandSection16000.Name = "GroupHeaderBandSection16000";
-            this.GroupHeaderBandSection16000.RepeatEveryPage = true;
-            this.GroupHeaderBandSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeader_BeforePrint);
-            // 
-            // xrLine26
-            // 
-            this.xrLine26.BorderWidth = 0F;
-            this.xrLine26.Dpi = 254F;
-            this.xrLine26.Name = "xrLine26";
-            this.xrLine26.StyleName = "gridHeaderLine";
-            this.xrLine26.StylePriority.UseBorderWidth = false;
-            // 
-            // xrLine27
-            // 
-            this.xrLine27.BorderWidth = 0F;
-            this.xrLine27.Dpi = 254F;
-            this.xrLine27.Name = "xrLine27";
-            this.xrLine27.StyleName = "gridHeaderLine";
-            this.xrLine27.StylePriority.UseBorderWidth = false;
-            // 
-            // labelSubHeaderSection16000
-            // 
-            this.labelSubHeaderSection16000.Dpi = 254F;
-            this.labelSubHeaderSection16000.Multiline = true;
-            this.labelSubHeaderSection16000.Name = "labelSubHeaderSection16000";
-            this.labelSubHeaderSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelSubHeaderSection16000.StyleName = "sectionSubHeader";
-            // 
-            // labelHeaderSection16000
-            // 
-            this.labelHeaderSection16000.Dpi = 254F;
-            this.labelHeaderSection16000.Multiline = true;
-            this.labelHeaderSection16000.Name = "labelHeaderSection16000";
-            this.labelHeaderSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection16000.StyleName = "sectionHeader";
-            // 
-            // labelSettoreSection16000
-            // 
-            this.labelSettoreSection16000.Dpi = 254F;
-            this.labelSettoreSection16000.Multiline = true;
-            this.labelSettoreSection16000.Name = "labelSettoreSection16000";
-            this.labelSettoreSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelSettoreSection16000.StyleName = "gridColumnHeaderStyle";
-            // 
-            // labelValoreMercatoSection16000
-            // 
-            this.labelValoreMercatoSection16000.Dpi = 254F;
-            this.labelValoreMercatoSection16000.Multiline = true;
-            this.labelValoreMercatoSection16000.Name = "labelValoreMercatoSection16000";
-            this.labelValoreMercatoSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelValoreMercatoSection16000.StyleName = "gridColumnHeaderRightStyle";
-            this.labelValoreMercatoSection16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
-            // 
-            // labelAzioniSection16000
-            // 
-            this.labelAzioniSection16000.Dpi = 254F;
-            this.labelAzioniSection16000.Multiline = true;
-            this.labelAzioniSection16000.Name = "labelAzioniSection16000";
-            this.labelAzioniSection16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAzioniSection16000.StyleName = "gridColumnHeaderRightStyle";
-            // 
-            // xrLabel545
-            // 
-            this.xrLabel545.Dpi = 254F;
-            this.xrLabel545.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description2]")});
-            this.xrLabel545.Multiline = true;
-            this.xrLabel545.Name = "xrLabel545";
-            this.xrLabel545.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel545.StyleName = "gridContentStyle";
             // 
             // ReportPSE
             // 
