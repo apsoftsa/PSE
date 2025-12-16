@@ -81,7 +81,7 @@ namespace PSE.BusinessLogic
                                 Period = tmpPeriodChart,
                                 PercentPerformance = AssignRequiredDecimal(perItem.TWR_14)
                             };                            
-                            sectionContent.SubSection2010.Content.Add(chartEvo);
+                            sectionContent.SubSection2010.Content.Insert(0, chartEvo);
                         }
                         sectionContent.SubSection2000.PerformancesCount = sectionContent.SubSection2000.Content.Count;  
                         output.Content = new Section020Content(sectionContent);

@@ -54,7 +54,8 @@ namespace PSE.BusinessLogic
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;
                                             account = new LiquidityAccount()
                                             {
-                                                Description = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Currency1_17), " ", AssignRequiredString(posItem.HostPositionReference_6), " ", AssignRequiredString(posItem.Description2_33)).Trim(),
+                                                Description1 = string.Concat(AssignRequiredString(posItem.Description1_32), " ", AssignRequiredString(posItem.Currency1_17), " ", AssignRequiredString(posItem.HostPositionReference_6)),
+                                                Description2 = AssignRequiredString(posItem.Description2_33),
                                                 MarketValueReportingCurrency = AssignRequiredDecimal(posItem.Amount1Base_23),
                                                 CurrentBalance = AssignRequiredDecimal(posItem.Quantity_28),
                                                 Iban = AssignRequiredString(posItem.IsinIban_85),

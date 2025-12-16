@@ -10,7 +10,9 @@ namespace PSE.Model.Output.Models
     public class LiquidityAccount : ILiquidityAccount
     {
 
-        public string Description { get; set; }
+        public string Description1 { get; set; }
+
+        public string Description2 { get; set; }
 
         public string Iban { get; set; }
 
@@ -22,7 +24,8 @@ namespace PSE.Model.Output.Models
 
         public LiquidityAccount()
         {
-            this.Description = string.Empty;
+            this.Description1 = string.Empty;
+            this.Description2 = string.Empty;
             this.Iban = string.Empty;
             this.CurrentBalance = 0;
             this.MarketValueReportingCurrency = 0;
@@ -31,7 +34,8 @@ namespace PSE.Model.Output.Models
 
         public LiquidityAccount(ILiquidityAccount source)
         {
-            this.Description = source.Description;
+            this.Description1 = source.Description1;
+            this.Description2 = source.Description2;
             this.Iban = source.Iban;
             this.CurrentBalance = source.CurrentBalance;
             this.MarketValueReportingCurrency = source.MarketValueReportingCurrency;

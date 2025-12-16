@@ -584,14 +584,16 @@
         "name": "Accounts",
         "content": [
           {
-            "description": "C/C CHF 1077681AD",
+            "description1": "C/C CHF 1077681AD",
+            "description2": "LINEA DI CREDITO NO. 10005422",
             "iban": "CH98086660001077681AD",
             "currentBalance": 146926.160,
             "marketValueReportingCurrency": 146926.16,
             "percentWeight": 4.985279
           },
           {
-            "description": "C/C USD 1077681A5",
+            "description1": "C/C USD 1077681A5",
+            "description2": "LINEA DI CREDITO NO. 10007596",
             "iban": "CH49086660001077681A5",
             "currentBalance": 1578.860,
             "marketValueReportingCurrency": 1352.55,

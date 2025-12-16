@@ -99,19 +99,21 @@ namespace PSE.BusinessLogic {
                             }
                             tmpMarketValue = continentCountryItems.Value.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(s => s.MarketValueReportingCurrency.Value);
                             tmpPerc = continentCountryItems.Value.Where(f => f.PercentShares.HasValue).Sum(s => s.PercentShares.Value);
-                            sectionContent.SubSection17000.Content.Add(new ShareByNation() { 
-                                Nation = continentsDescription[continentCountryItems.Key],
-                                Class = CLASS_ENTRY,
-                                Content = new List<IShareByCountry>(continentCountries),
-                                MarketValueReportingCurrency = continentCountryItems.Value.Sum(s => s.MarketValueReportingCurrency),
-                                PercentShares = tmpPerc
-                            });                            
-                            sectionContent.SubSection17010.Content.Add(new ShareByNationChart() {
-                                Nation = continentsDescription[continentCountryItems.Key],
-                                PercentShares = tmpPerc
-                            });
-                            totalPerc += tmpPerc;
-                            totalMarketValue += tmpMarketValue; 
+                            if (tmpPerc != 0) {
+                                sectionContent.SubSection17000.Content.Add(new ShareByNation() {
+                                    Nation = continentsDescription[continentCountryItems.Key],
+                                    Class = CLASS_ENTRY,
+                                    Content = new List<IShareByCountry>(continentCountries),
+                                    MarketValueReportingCurrency = continentCountryItems.Value.Sum(s => s.MarketValueReportingCurrency),
+                                    PercentShares = tmpPerc
+                                });
+                                sectionContent.SubSection17010.Content.Add(new ShareByNationChart() {
+                                    Nation = continentsDescription[continentCountryItems.Key],
+                                    PercentShares = tmpPerc
+                                });
+                                totalPerc += tmpPerc;
+                                totalMarketValue += tmpMarketValue;
+                            }
                         }
                         if (totalPerc != 100.0m) {
                             tmpPerc = sectionContent.SubSection17000.Content.Last().PercentShares.Value;

@@ -45,16 +45,17 @@ namespace PSE.BusinessLogic
                     {
                         sectionContent.SubSection6000 = new SubSection6000Content();                        
                         foreach (IGrouping<string, POS> currency in groupByCurrency)
-                        {                                                        
-                            investment = new InvestmentCurrency()
-                            {
-                                Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataCur1_55.HasValue).Sum(sum => sum.ProRataCur1_55).Value, 2),
-                                Currency = currency.Key,
-                                PercentAsset = 0,
-                                MarketValueReportingCurrency = Math.Round(currency.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
-                                Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
-                            };
-                            sectionContent.SubSection6000.Content.Add(investment);
+                        {
+                            if (Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataCur1_55.HasValue).Sum(sum => sum.ProRataCur1_55).Value, 2) != 0) {
+                                investment = new InvestmentCurrency() {
+                                    Amount = Math.Round(currency.Where(f => f.Amount1Cur1_22.HasValue).Sum(sum => sum.Amount1Cur1_22).Value + currency.Where(f => f.ProRataCur1_55.HasValue).Sum(sum => sum.ProRataCur1_55).Value, 2),
+                                    Currency = currency.Key,
+                                    PercentAsset = 0,
+                                    MarketValueReportingCurrency = Math.Round(currency.Where(f => f.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23).Value + currency.Where(f => f.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56).Value, 2),
+                                    Exchange = (curItems != null && curItems.Any(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null)) ? Math.Round(curItems.First(flt => flt.Currency_5 == currency.Key && flt.Rate_6 != null).Rate_6.Value, Model.Common.Constants.DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION) : 0
+                                };
+                                sectionContent.SubSection6000.Content.Add(investment);
+                            }
                         }
                         sectionContent.SubSection6000.HasMeaningfulData = !sectionContent.SubSection6000.Content.Any(f => f.MarketValueReportingCurrency < 0);
                         decimal totalAmount = sectionContent.SubSection6000.Content.Where(f => f.MarketValueReportingCurrency.HasValue).Sum(sum => sum.MarketValueReportingCurrency.Value);

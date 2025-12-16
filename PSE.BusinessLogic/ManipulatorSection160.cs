@@ -50,19 +50,21 @@ namespace PSE.BusinessLogic
                     IEnumerable<IGrouping<string, POS>> groupByEconomicalSector = posItems.Where(flt => flt.CustomerNumber_2 == ideItem.CustomerNumber_2 && ManipulatorOperatingRules.IsRowDestinatedToManipulator(this, flt.SubCat4_15)).GroupBy(gb => gb.SubCat1_12).OrderBy(ob => ob.Key);
                     if (groupByEconomicalSector.Any()) {
                         foreach (IGrouping<string, POS> economicalSector in groupByEconomicalSector) {
-                            sectorDescr = "(Unknown)";
-                            extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section160), nameof(ShareEconomicSector.Sector), economicalSector.Key, propertyParams);
-                            OnExternalCodifyRequest(extEventArgsAdvisor);
-                            if (!extEventArgsAdvisor.Cancel)
-                                sectorDescr = extEventArgsAdvisor.PropertyValue;
-                            econSector = new ShareEconomicSector() {
-                                MarketValueReportingCurrency = Math.Round(economicalSector.Sum(sum => sum.Amount1Base_23).Value, 2),
-                                Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
-                                Class = CLASS_ENTRY,
-                                PercentShares = 0
-                            };
-                            totalSum += Math.Abs(econSector.MarketValueReportingCurrency.Value);
-                            sectionContent.SubSection16000.Content.Add(econSector);
+                            if (economicalSector.Sum(sum => sum.Amount1Base_23).Value != 0) {
+                                sectorDescr = "(Unknown)";
+                                extEventArgsAdvisor = new ExternalCodifyRequestEventArgs(nameof(Section160), nameof(ShareEconomicSector.Sector), economicalSector.Key, propertyParams);
+                                OnExternalCodifyRequest(extEventArgsAdvisor);
+                                if (!extEventArgsAdvisor.Cancel)
+                                    sectorDescr = extEventArgsAdvisor.PropertyValue;
+                                econSector = new ShareEconomicSector() {
+                                    MarketValueReportingCurrency = Math.Round(economicalSector.Sum(sum => sum.Amount1Base_23).Value, 2),
+                                    Sector = string.IsNullOrEmpty(sectorDescr) ? "NON CLASSIFICABILI" : sectorDescr,
+                                    Class = CLASS_ENTRY,
+                                    PercentShares = 0
+                                };
+                                totalSum += Math.Abs(econSector.MarketValueReportingCurrency.Value);
+                                sectionContent.SubSection16000.Content.Add(econSector);
+                            }
                         }
                         totalPerc = currPerc = 0;
                         foreach (var sector in sectionContent.SubSection16000.Content) {

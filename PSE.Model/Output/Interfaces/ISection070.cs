@@ -4,7 +4,9 @@
     public interface ILiquidityAccount
     {
 
-        string Description { get; set; }
+        string Description1 { get; set; }
+
+        string Description2 { get; set; }
 
         string Iban { get; set; }
 
