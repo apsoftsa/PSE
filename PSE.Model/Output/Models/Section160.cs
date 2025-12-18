@@ -108,7 +108,7 @@ namespace PSE.Model.Output.Models
             Content = new List<IShareEconomicSectorChart>();
             if (source.Content != null && source.Content.Any())
             {
-                foreach (var item in source.Content.OrderByDescending(ob => ob.PercentShares))
+                foreach (var item in source.Content)
                     Content.Add(new ShareEconomicSectorChart(item));
             }
         }
@@ -128,8 +128,6 @@ namespace PSE.Model.Output.Models
 
         public Section160Content()
         {
-            //SubSection16000 = new ShareEconomicSectorSubSection("Shares by economic sector");
-            //SubSection16010 = new ShareEconomicSectorChartSubSection("Shares subdivision by economic sector chart");
             SubSection16000 = null;
             SubSection16010 = null; 
         }

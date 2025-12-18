@@ -8,10 +8,13 @@ namespace PSE.Reporting.Reports {
     public partial class ReportPSE : XtraReport {
 
         private const int MAX_ITEMS_SHORT_PALETTE = 9;
+        private const int MAX_CHART_ELEMENT_COUNT = 11;
         private const string PALETTE_FULL_NAME = "BDSPaletteFull";
         private const string PALETTE_SHORT_NAME = "BDSPaletteShort";
         private const string CLASS_ITEM_ENTRY = "Entry";
         private const string CLASS_ITEM_TOTAL = "Total";
+
+        private readonly char _lastLetterChart;
 
         private string _currencyToApply;
         private string _currentAssetClassSection4000;
@@ -28,16 +31,16 @@ namespace PSE.Reporting.Reports {
         private bool _section110NeedPageBreakAtTheEnd;
         private bool _section120NeedPageBreakAtTheEnd;
         private bool _needResetRow;
-        int _rowCount;
-        int _currentChartPointsCount;        
-        int _currentPointIndex;
-        string _currentChartPointAlphaCode;
-        int _currentGridChartPointIndex;
-        string _currentGridChartPointAlphaCode;
-        int _multilinePeriodCount;
-        int _chartBarsCount;
-        bool _chartHasMeaningfulData;
-        bool _hasNotTransfered;
+        private int _rowCount;
+        private int _currentChartPointsCount;
+        private int _currentPointIndex;
+        private string _currentChartPointAlphaCode;
+        private int _currentGridChartPointIndex;
+        private string _currentGridChartPointAlphaCode;
+        private int _multilinePeriodCount;
+        private int _chartBarsCount;
+        private bool _chartHasMeaningfulData;
+        private bool _hasNotTransfered;
 
         private void ManageSection70VisibilityFlags() {
             if (_section70NeedPageBreakAtTheEnd)
@@ -69,7 +72,7 @@ namespace PSE.Reporting.Reports {
                 _section120NeedPageBreakAtTheEnd = false;
         }
 
-        private static string GetNextLabelAlphaCode(string current) {
+        private string GetNextLabelAlphaCode(string current, bool groupToLast = false) {
             if (string.IsNullOrEmpty(current)) {
                 return "A";
             }
@@ -84,7 +87,13 @@ namespace PSE.Reporting.Reports {
                 letter = 'A';
                 number++;
             } else {
-                letter++;
+                if (groupToLast) {
+                    if (letter < _lastLetterChart)
+                        letter++;
+                    else
+                        letter = _lastLetterChart;
+                } else
+                    letter++;
             }
             return number == 0 ? letter.ToString() : $"{letter}{number}";
         }
@@ -96,11 +105,13 @@ namespace PSE.Reporting.Reports {
             return pointsCount;
         }
 
-        private static Color GetChartSeriesPointColorToApply(XRChart chart, int pointsCount, int pointIndex) {
+        private static Color GetChartSeriesPointColorToApply(XRChart chart, int pointsCount, int pointIndex, bool groupToLast = false) {
             Color colorToApply = Color.Transparent; // default
             if (chart.PaletteRepository != null) {
                 Palette paletteToUse = chart.PaletteRepository[pointsCount > MAX_ITEMS_SHORT_PALETTE ? PALETTE_FULL_NAME : PALETTE_SHORT_NAME];
                 int paletteIndex = pointIndex % paletteToUse.Count;
+                if (groupToLast && pointIndex >= MAX_CHART_ELEMENT_COUNT - 1)
+                    paletteIndex = MAX_CHART_ELEMENT_COUNT - 1;
                 colorToApply = paletteToUse[paletteIndex].Color;
             }
             return colorToApply;
@@ -113,21 +124,26 @@ namespace PSE.Reporting.Reports {
             _hasSection70CaptionVisible = false;
             _hasSection80CaptionVisible = false;
             _hasSection90CaptionVisible = false;
-            _hasSection100CaptionVisible = false;   
+            _hasSection100CaptionVisible = false;
             _hasSection110CaptionVisible = false;
             _hasSection120CaptionVisible = false;
             _section70NeedPageBreakAtTheEnd = false;
             _section80NeedPageBreakAtTheEnd = false;
             _section90NeedPageBreakAtTheEnd = false;
-            _section100NeedPageBreakAtTheEnd = false;    
+            _section100NeedPageBreakAtTheEnd = false;
             _section110NeedPageBreakAtTheEnd = false;
             _section120NeedPageBreakAtTheEnd = false;
             _needResetRow = false;
             _hasNotTransfered = false;
             _chartHasMeaningfulData = false;
+            _currentGridChartPointAlphaCode = string.Empty;
+            _currentChartPointAlphaCode = string.Empty;
             _rowCount = 0;
             _chartBarsCount = 0;
-            _multilinePeriodCount = 0;  
+            _multilinePeriodCount = 0;
+            _lastLetterChart = 'A';
+            for (int c = 0; c < MAX_CHART_ELEMENT_COUNT - 1; c++)
+                _lastLetterChart++;
         }
 
         private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
@@ -150,13 +166,13 @@ namespace PSE.Reporting.Reports {
         private void hiddenIfZero_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             bool toHidden = false;
-            if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%",""), out double value))
+            if (string.IsNullOrEmpty(label.Text) == false && double.TryParse(label.Text.Replace("%", ""), out double value))
                 toHidden = value == 0;
             label.Visible = !toHidden;
         }
 
         private void checkIfCambioNotMeaningful_BeforePrint(object sender, CancelEventArgs e) {
-            if (double.TryParse(((XRLabel)sender).Text, out double exchange) && exchange == 1.0d) 
+            if (double.TryParse(((XRLabel)sender).Text, out double exchange) && exchange == 1.0d)
                 ((XRLabel)sender).Text = "-";
         }
 
@@ -255,7 +271,7 @@ namespace PSE.Reporting.Reports {
                 ManageSection120VisibilityFlags();
             }
         }
-      
+
         private void pageBreakBeforeBand_BeforePrint(object sender, CancelEventArgs e) {
             if (_section70NeedPageBreakAtTheEnd || _section80NeedPageBreakAtTheEnd || _section90NeedPageBreakAtTheEnd || _section100NeedPageBreakAtTheEnd || _section110NeedPageBreakAtTheEnd || _section120NeedPageBreakAtTheEnd) {
                 ((DetailReportBand)sender).PageBreak = PageBreak.BeforeBand;
@@ -277,13 +293,12 @@ namespace PSE.Reporting.Reports {
             if (_chartHasMeaningfulData) {
                 _currentChartPointsCount = GetChartSeriesPointsCount((XRChart)sender);
                 _currentPointIndex = 0;
-            }
-            else
-                e.Cancel = true;    
+            } else
+                e.Cancel = true;
         }
 
         private void chartDoughnut_CustomDrawSeriesPoint(object sender, CustomDrawSeriesPointEventArgs e) {
-            if (_currentChartPointsCount > 0) {                
+            if (_currentChartPointsCount > 0) {
                 e.SeriesDrawOptions.Color = GetChartSeriesPointColorToApply((XRChart)sender, _currentChartPointsCount, _currentPointIndex);
                 _currentPointIndex++;
             }
@@ -439,7 +454,7 @@ namespace PSE.Reporting.Reports {
 
         private void linePageHeader_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRLine)sender).Visible = e.PageIndex > 0 && e.PageIndex != e.PageCount - 1;
-        }       
+        }
 
         private void LabelRendicontoGestioneSection1000_BeforePrint(object sender, CancelEventArgs e) {
             string tmpText = ((XRLabel)sender).Text;
@@ -454,7 +469,7 @@ namespace PSE.Reporting.Reports {
         private void LabelSection1000ValoreDelPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLabel)sender).Text = ((XRLabel)sender).Text.Replace("{0}", this.ContentManagementReportPortfolioDate2.Text);
         }
-       
+
         private void labelAsteriscoOscillazionePatrimoniale_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             bool toHidden = false;
@@ -471,13 +486,12 @@ namespace PSE.Reporting.Reports {
                 tmpText = tmpText.Replace("{1}", this.contentPatrimonialFluctuation.Text).Replace("{0}", _currencyToApply).Replace("{2}", this.ContentManagementReportPortfolioDate2.Text);
                 ((XRLabel)sender).Visible = true;
                 ((XRLabel)sender).Text = tmpText;
-            }
-            else
-                ((XRLabel)sender).Visible = false;  
+            } else
+                ((XRLabel)sender).Visible = false;
         }
 
         private void labelESGProfileDettPortafoglio_BeforePrint(object sender, CancelEventArgs e) {
-            XRLabel labelESGProfile = (XRLabel)sender;    
+            XRLabel labelESGProfile = (XRLabel)sender;
             if (labelESGProfile.Tag != null && labelESGProfile.Tag.ToString() == labelESGProfile.Text)
                 labelESGProfile.StyleName = "labelESGProfileSelected";
             else
@@ -498,9 +512,9 @@ namespace PSE.Reporting.Reports {
             chart.SeriesTemplate.Label.BackColor = Color.Transparent;
             chart.SeriesTemplate.Label.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
             chart.SeriesTemplate.Label.TextColor = Color.White;
-            chart.SeriesTemplate.Label.TextPattern = "{V}%";            
+            chart.SeriesTemplate.Label.TextPattern = "{V}%";
             chart.SeriesTemplate.Label.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
-            StackedBarSeriesView view = (StackedBarSeriesView)chart.SeriesTemplate.View;           
+            StackedBarSeriesView view = (StackedBarSeriesView)chart.SeriesTemplate.View;
             if (_multilinePeriodCount < 2)
                 view.BarWidth = 0.3;
             else if (_multilinePeriodCount < 3)
@@ -519,7 +533,7 @@ namespace PSE.Reporting.Reports {
             if (int.TryParse(e.Series.Name, out int currElementIndex) && currElementIndex > 0)
                 e.SeriesDrawOptions.Color = chart.PaletteRepository[chart.PaletteName][currElementIndex - 1].Color;
         }
-       
+
         private void LabelPatrimonioInfChiaveMultilinea_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel label = (XRLabel)sender;
             label.Text = label.Tag != null ? label.Text.Replace("{0}", label.Tag.ToString()) : label.Text.Replace("{0}", "").Trim();
@@ -549,9 +563,9 @@ namespace PSE.Reporting.Reports {
             _rowCount = ((DetailReportBand)sender).RowCount;
             _currentGridChartPointIndex = 0;
             _currentGridChartPointAlphaCode = string.Empty;
-        }        
+        }
 
-        private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {            
+        private void DetailReport4000_BeforePrint(object sender, CancelEventArgs e) {
             this.DetailReport4000.HeightF = 0;
             this.PerformLayout();
         }
@@ -576,13 +590,13 @@ namespace PSE.Reporting.Reports {
             XRLabel currLabel = (XRLabel)sender;
             if (_needResetRow)
                 currLabel.Text = "";
-            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1) 
+            else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
                 currLabel.StyleName = "gridContentStyleBoldItalic";
         }
 
         private void marketValueReportingCurrencyTSection4000_BeforePrint(object sender, CancelEventArgs e) {
             XRLabel currLabel = (XRLabel)sender;
-            if (_needResetRow) 
+            if (_needResetRow)
                 currLabel.Text = "";
             else if (this.DetailReportSection4000.CurrentRowIndex == _rowCount - 1)
                 currLabel.StyleName = "gridContentStyleRightAlignBoldItalic";
@@ -705,11 +719,11 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
                     label.BackColor = GetChartSeriesPointColorToApply(this.chartSection6010, _currentChartPointsCount, _currentGridChartPointIndex);
                     label.ForeColor = label.BackColor;
                     label.Visible = true;
-                    _currentGridChartPointIndex++;                    
+                    _currentGridChartPointIndex++;
                 }
             }
         }
@@ -719,7 +733,7 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
                 if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
-                    _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
+                    _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode, true);
                     label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
                     label.Visible = true;
                 }
@@ -752,10 +766,10 @@ namespace PSE.Reporting.Reports {
                 label.ForeColor = Color.White;
                 if (double.TryParse(label.Value.ToString(), out double value)) {
                     if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && value > 0) {
-                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex);
+                        label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex, true);
                         label.ForeColor = label.BackColor;
                         label.Visible = true;
-                        _currentGridChartPointIndex++;                   
+                        _currentGridChartPointIndex++;
                     }
                 }
             }
@@ -850,7 +864,7 @@ namespace PSE.Reporting.Reports {
 
         private void subSection17000LineGridDown_BeforePrint(object sender, CancelEventArgs e) {
             ((XRLine)sender).Visible = this.DetailReportSubSection170.CurrentRowIndex < _rowCount - 1;
-        }            
+        }
 
         private void Detail19010Objects_BeforePrint(object sender, CancelEventArgs e) {
             this.Detail19010Objects.HeightF = 0;
@@ -915,7 +929,7 @@ namespace PSE.Reporting.Reports {
                         BorderColor = this.xrTableRowSection19010Objects.BorderColor,
                         Borders = i < count - 1 ? this.xrTableRowSection19010Objects.Borders : DevExpress.XtraPrinting.BorderSide.None
                     };
-                    cellObject = new XRTableCell {                        
+                    cellObject = new XRTableCell {
                         CanGrow = this.xrTableCellObject.CanGrow,
                         CanShrink = this.xrTableCellObject.CanShrink,
                         Multiline = this.xrTableCellObject.Multiline,
@@ -975,16 +989,16 @@ namespace PSE.Reporting.Reports {
                     row.Dpi = 254F;
                     row.Name = "xrTableRow" + i.ToString() + "Section19010Objects";
                     row.StylePriority.UseBorderColor = false;
-                    row.StylePriority.UseBorders = false;                    
-                    this.xrTableSection19010Objects.Rows.Add(row);                    
+                    row.StylePriority.UseBorders = false;
+                    this.xrTableSection19010Objects.Rows.Add(row);
                 }
                 this.panelSection19010FooterContainer.TopF = this.xrTableSection19010Objects.TopF + this.xrTableSection19010Objects.HeightF;
                 this.xrTableSection19010Objects.EndInit();
                 this.xrTableSection19010Objects.PerformLayout();
             } else {
                 this.xrTableSection19010Objects.Visible = false;
-                this.panelSection19010HeaderContainer.Visible = false;  
-                this.panelSection19010FooterContainer.Visible = false;                
+                this.panelSection19010HeaderContainer.Visible = false;
+                this.panelSection19010FooterContainer.Visible = false;
             }
         }
 
@@ -1006,7 +1020,7 @@ namespace PSE.Reporting.Reports {
                     this.xrTableSection19010Objects.Rows[index].Cells[5].Borders = DevExpress.XtraPrinting.BorderSide.None;
                 }
             }
-        }       
+        }
 
         private void DetailReportSubSection200_BeforePrint(object sender, CancelEventArgs e) {
             _rowCount = ((DetailReportBand)sender).RowCount;
@@ -1019,11 +1033,11 @@ namespace PSE.Reporting.Reports {
                 XRLabel label = (XRLabel)sender;
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
                     label.BackColor = GetChartSeriesPointColorToApply(this.chartSection20010, _currentChartPointsCount, _currentGridChartPointIndex);
                     label.ForeColor = label.BackColor;
                     label.Visible = true;
-                    _currentGridChartPointIndex++;                   
+                    _currentGridChartPointIndex++;
                 }
             }
         }
@@ -1032,10 +1046,10 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {                    
+                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
                     _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode);
                     label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
-                    label.Visible = true;                    
+                    label.Visible = true;
                 }
             }
         }
@@ -1069,7 +1083,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-        
+
     }
 
 }

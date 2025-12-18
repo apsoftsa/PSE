@@ -13,6 +13,7 @@
         public const string MULTIPLE_BY = "*";
         public const int DEFAULT_MEANINGFUL_DECIMAL_DIGITS_FOR_CALCULATION = 6;
         public const int DEFAULT_CURRENCY_DECIMAL_DIGITS = 2;
+        public const int MAX_CHART_ELEMENT_COUNT = 11;
         public const string CURRENCY_BASE = "CHF";
 
         public const string CLASS_ENTRY = "Entry";

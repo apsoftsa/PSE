@@ -1,0 +1,13 @@
+<Palette Name="BDSPalette" ScaleMode="Extrapolate">
+	<PaletteEntry Color="#212C57" Color2="#FFFFFF" />
+	<PaletteEntry Color="#A69A83" Color2="#FFFFFF" />
+	<PaletteEntry Color="#87D3F5" Color2="#000000" />
+	<PaletteEntry Color="#D6DCE5" Color2="#000000" />
+	<PaletteEntry Color="#2E3A60" Color2="#FFFFFF" />
+	<PaletteEntry Color="#B9AC91" Color2="#FFFFFF" />
+	<PaletteEntry Color="#00A7FF" Color2="#FFFFFF" />
+	<PaletteEntry Color="#DEEBF7" Color2="#000000" />
+	<PaletteEntry Color="#002D86" Color2="#FFFFFF" />
+	<PaletteEntry Color="#DED8C8" Color2="#000000" />
+	<PaletteEntry Color="#8FAADC" Color2="#FFFFFF" />
+</Palette>
