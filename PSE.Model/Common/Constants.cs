@@ -17,6 +17,7 @@
         public const string CURRENCY_BASE = "CHF";
 
         public const string CLASS_ENTRY = "Entry";
+        public const string CLASS_GROUP = "Group";
         public const string CLASS_TOTAL = "Total";
 
         public const string ITALIAN_LANGUAGE_CODE = "I";

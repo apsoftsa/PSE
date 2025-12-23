@@ -17,7 +17,9 @@ namespace PSE.BusinessLogic
     public class ManipulatorSection160 : ManipulatorBase, IManipulator
     {
 
-        public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection160, culture) { }
+        private readonly bool _applyMaxElementCount;
+
+        public ManipulatorSection160(CultureInfo? culture = null) : base(PositionClassifications.SHARES, ManipolationTypes.AsSection160, culture) { _applyMaxElementCount = true; }
 
         public override IOutputModel Manipulate(IPSEDictionaryService dictionaryService, IList<IInputRecord> extractedData, decimal? totalAssets = null)
         {
@@ -74,6 +76,22 @@ namespace PSE.BusinessLogic
                                 sector.PercentShares = currPerc;
                             }
                         }
+                        if (_applyMaxElementCount && sectionContent.SubSection16000.Content.Count(f => f.Class != CLASS_TOTAL) > MAX_CHART_ELEMENT_COUNT) {
+                            ShareEconomicSector otherEconomicSector = new ShareEconomicSector() { Class = CLASS_GROUP, Sector = "<OTHER>", MarketValueReportingCurrency = 0, PercentShares = 0 };
+                            for (int i = 0; i < sectionContent.SubSection16000.Content.Count(f => f.Class != CLASS_TOTAL); i++) {
+                                if (i >= MAX_CHART_ELEMENT_COUNT - 1) {
+                                    otherEconomicSector.PercentShares += sectionContent.SubSection16000.Content.ElementAt(i).PercentShares;
+                                    otherEconomicSector.MarketValueReportingCurrency += sectionContent.SubSection16000.Content.ElementAt(i).MarketValueReportingCurrency;
+                                    sectionContent.SubSection16000.Content.ElementAt(i).Class = "<TO_REMOVE>";
+                                }
+                            }
+                            for (int r = sectionContent.SubSection16000.Content.Count - 1; r >= 0; r--) {
+                                if (sectionContent.SubSection16000.Content.ElementAt(r).Class == "<TO_REMOVE>")
+                                    sectionContent.SubSection16000.Content.RemoveAt(r);
+                            }
+                            currPerc = otherEconomicSector.PercentShares.Value;
+                            sectionContent.SubSection16000.Content.Add(new ShareEconomicSector(otherEconomicSector));
+                        }
                     }
                     sectionContent.SubSection16010 = new ShareEconomicSectorChartSubSection("Shares subdivision by economic sector chart");
                     if (groupByEconomicalSector.Any()) {
@@ -90,7 +108,7 @@ namespace PSE.BusinessLogic
                             Class = CLASS_TOTAL,
                             PercentShares = 100.0m
                         });
-                        if (sectionContent.SubSection16000.Content.Count(f => f.Class != CLASS_TOTAL) > MAX_CHART_ELEMENT_COUNT) {
+                        if (_applyMaxElementCount && sectionContent.SubSection16000.Content.Count(f => f.Class != CLASS_TOTAL) > MAX_CHART_ELEMENT_COUNT) {
                             int count = sectionContent.SubSection16000.Content.Count(f => f.Class != CLASS_TOTAL);
                             IList<IShareEconomicSector> tmpItems = sectionContent.SubSection16000.Content.Where(f => f.Class != CLASS_TOTAL).OrderByDescending(ob => ob.PercentShares).ToList();
                             for (int i = 0; i < MAX_CHART_ELEMENT_COUNT; i++) {
@@ -104,7 +122,7 @@ namespace PSE.BusinessLogic
                                 }
                             }
                         } else {
-                            foreach (var sector in sectionContent.SubSection16000.Content.Where(f => f.Class != CLASS_TOTAL).OrderByDescending(ob => ob.PercentShares)) {
+                            foreach (var sector in sectionContent.SubSection16000.Content.Where(f => f.Class != CLASS_TOTAL).OrderBy(ob=> ob.Class).ThenByDescending(tb => tb.PercentShares)) {
                                 sectionContent.SubSection16010.Content.Add(new ShareEconomicSectorChart() { Sector = sector.Sector, PercentShares = sector.PercentShares, Class = sector.Class });
                             }
                         }

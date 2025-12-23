@@ -2795,11 +2795,18 @@
             this.section12000Separator = new DevExpress.XtraReports.UI.XRLabel();
             this.DetailReportSection12010 = new DevExpress.XtraReports.UI.DetailReportBand();
             this.DetailSection12010 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel581 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine144 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel573 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel574 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel575 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel576 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel577 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel578 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel579 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel580 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeaderBandSection12010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupHeaderBandSectionTitle12010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupFooterBandSection12010 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.section12010Separator = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelHeaderSection12010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelQtaUtilizzataSection12010 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine142 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLine143 = new DevExpress.XtraReports.UI.XRLine();
             this.labelSubHeaderSection12010 = new DevExpress.XtraReports.UI.XRLabel();
@@ -2810,17 +2817,40 @@
             this.labelDataAperturaSection12010 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelCambioSection12010 = new DevExpress.XtraReports.UI.XRLabel();
             this.labelTassoSection12010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.labelQtaUtilizzataSection12010 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLine144 = new DevExpress.XtraReports.UI.XRLine();
-            this.xrLabel573 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel574 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel575 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel576 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel577 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel578 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel579 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel580 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel581 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSectionTitle12010 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection12010 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterBandSection12010 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section12010Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.DetailReportSection12020 = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.DetailSection12020 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel589 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine147 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLabel286 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel572 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel582 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel583 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel584 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel585 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel586 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel587 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel588 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterBandSection12020 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.section12020Separator = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderBandSection12020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelPesoSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelInteressiMaturatiSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelValoreMercatoSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelSaldoAttualeSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDescrizioneSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDataAperturaSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelDataScadenzaSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelCambioSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelTassoSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.labelSubHeaderSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLine145 = new DevExpress.XtraReports.UI.XRLine();
+            this.xrLine146 = new DevExpress.XtraReports.UI.XRLine();
+            this.GroupHeaderBandSectionTitle12020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.labelHeaderSection12020 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010Bars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -4648,29 +4678,29 @@
             this.chartSection6010Bars.Name = "chartSection6010Bars";
             this.chartSection6010Bars.PaletteName = "BDSPaletteFull";
             this.chartSection6010Bars.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection6010Bars.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series1.ArgumentDataMember = "currency";
             sideBySideBarSeriesLabel1.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -4709,29 +4739,29 @@
             this.chartSection6010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.chartSection6010.PaletteName = "BDSPaletteFull";
             this.chartSection6010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection6010.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series2.ArgumentDataMember = "currency";
             series2.FilterString = "[percentAsset] > 0";
             doughnutSeriesLabel1.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -8532,29 +8562,29 @@
             this.chartSection4010Bars.Name = "chartSection4010Bars";
             this.chartSection4010Bars.PaletteName = "BDSPaletteFull";
             this.chartSection4010Bars.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection4010Bars.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series3.ArgumentDataMember = "assetClass";
             sideBySideBarSeriesLabel2.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel2.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -8595,29 +8625,29 @@
             this.chartSection4010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.chartSection4010.PaletteName = "BDSPaletteFull";
             this.chartSection4010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection4010.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series4.ArgumentDataMember = "assetClass";
             series4.FilterString = "[percentInvestment] > 0";
             doughnutSeriesLabel2.Border.Color = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(129)))), ((int)(((byte)(189)))));
@@ -8915,17 +8945,17 @@
             this.chartSection2010.Name = "chartSection2010";
             this.chartSection2010.PaletteName = "BDSPaletteFull";
             this.chartSection2010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series5.ArgumentDataMember = "period";
             sideBySideBarSeriesLabel3.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel3.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -8973,7 +9003,7 @@
             this.DetailReportSection160.DataMember = "section160.content.subSection16000.content";
             this.DetailReportSection160.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection160.Dpi = 254F;
-            this.DetailReportSection160.Level = 33;
+            this.DetailReportSection160.Level = 34;
             this.DetailReportSection160.Name = "DetailReportSection160";
             this.DetailReportSection160.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection160.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -9075,6 +9105,7 @@
             this.sector16000.Name = "sector16000";
             this.sector16000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.sector16000.StyleName = "gridContentStyle";
+            this.sector16000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.sector16000_BeforePrint);
             // 
             // section16000LineGridDown
             // 
@@ -9110,29 +9141,29 @@
             this.chartSection16010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.chartSection16010.PaletteName = "BDSPaletteFull";
             this.chartSection16010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection16010.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series6.ArgumentDataMember = "sector";
             series6.FilterString = "[percentShares] > 0";
             doughnutSeriesLabel3.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -9249,7 +9280,7 @@
             this.DetailReportSection170.DataMember = "section170.content.subSection17000.content";
             this.DetailReportSection170.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection170.Dpi = 254F;
-            this.DetailReportSection170.Level = 34;
+            this.DetailReportSection170.Level = 35;
             this.DetailReportSection170.Name = "DetailReportSection170";
             this.DetailReportSection170.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection170.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -9516,29 +9547,29 @@
             this.chartSection17010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.chartSection17010.PaletteName = "BDSPaletteFull";
             this.chartSection17010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection17010.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series7.ArgumentDataMember = "nation";
             series7.FilterString = "[percentShares] > 0";
             doughnutSeriesLabel4.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -9592,7 +9623,7 @@
             this.DetailReportSubSection200.DataMember = "section200.content.subSection20010.content";
             this.DetailReportSubSection200.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection200.Dpi = 254F;
-            this.DetailReportSubSection200.Level = 37;
+            this.DetailReportSubSection200.Level = 38;
             this.DetailReportSubSection200.Name = "DetailReportSubSection200";
             this.DetailReportSubSection200.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSubSection200.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -9943,29 +9974,29 @@
             this.chartSection20010Bars.Name = "chartSection20010Bars";
             this.chartSection20010Bars.PaletteName = "BDSPaletteFull";
             this.chartSection20010Bars.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection20010Bars.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series8.ArgumentDataMember = "assetClass";
             sideBySideBarSeriesLabel4.BackColor = System.Drawing.Color.Transparent;
             sideBySideBarSeriesLabel4.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -10004,29 +10035,29 @@
             this.chartSection20010.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.chartSection20010.PaletteName = "BDSPaletteFull";
             this.chartSection20010.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             this.chartSection20010.PaletteRepository.Add("BDSPaletteShort", new DevExpress.XtraCharts.Palette("BDSPaletteShort", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             series9.ArgumentDataMember = "assetClass";
             series9.FilterString = "[percentInvestment] > 0";
             doughnutSeriesLabel5.Border.Visibility = DevExpress.Utils.DefaultBoolean.False;
@@ -10812,7 +10843,7 @@
             this.DetailReportFooter.DataMember = "footer";
             this.DetailReportFooter.DataSource = this.jsonDataSourcePSE;
             this.DetailReportFooter.Dpi = 254F;
-            this.DetailReportFooter.Level = 38;
+            this.DetailReportFooter.Level = 39;
             this.DetailReportFooter.Name = "DetailReportFooter";
             this.DetailReportFooter.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportFooter.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeBand_BeforePrint);
@@ -15587,7 +15618,7 @@
             this.DetailReportSection130.DataMember = "section130.content.subSection13000.content";
             this.DetailReportSection130.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection130.Dpi = 254F;
-            this.DetailReportSection130.Level = 30;
+            this.DetailReportSection130.Level = 31;
             this.DetailReportSection130.Name = "DetailReportSection130";
             this.DetailReportSection130.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection130.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -15846,7 +15877,7 @@
             this.DetailReportSubSection19000.DataMember = "section190.content.subSection19000.content";
             this.DetailReportSubSection19000.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection19000.Dpi = 254F;
-            this.DetailReportSubSection19000.Level = 36;
+            this.DetailReportSubSection19000.Level = 37;
             this.DetailReportSubSection19000.Name = "DetailReportSubSection19000";
             this.DetailReportSubSection19000.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSubSection19000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReportSubSection19000_BeforePrint);
@@ -16420,7 +16451,7 @@
             this.DetailReportSubSection19010.DataMember = "section190.content.subSection19010.content.objects";
             this.DetailReportSubSection19010.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSubSection19010.Dpi = 254F;
-            this.DetailReportSubSection19010.Level = 35;
+            this.DetailReportSubSection19010.Level = 36;
             this.DetailReportSubSection19010.Name = "DetailReportSubSection19010";
             this.DetailReportSubSection19010.ReportPrintOptions.PrintOnEmptyDataSource = false;
             this.DetailReportSubSection19010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.DetailReportSubSection19010_BeforePrint);
@@ -19117,17 +19148,17 @@
             this.chartSection3020.Name = "chartSection3020";
             this.chartSection3020.PaletteName = "BDSPaletteFull";
             this.chartSection3020.PaletteRepository.Add("BDSPaletteFull", new DevExpress.XtraCharts.Palette("BDSPaletteFull", DevExpress.XtraCharts.PaletteScaleMode.Extrapolate, new DevExpress.XtraCharts.PaletteEntry[] {
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(154)))), ((int)(((byte)(131))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(245))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(220)))), ((int)(((byte)(229))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(58)))), ((int)(((byte)(96))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(172)))), ((int)(((byte)(145))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(167)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(247))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(134))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(216)))), ((int)(((byte)(200))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
-                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(170)))), ((int)(((byte)(220))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))))}));
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(44)))), ((int)(((byte)(87))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(128)))), ((int)(((byte)(97))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(208)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(231)))), ((int)(((byte)(246))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(124)))), ((int)(((byte)(165))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(176)))), ((int)(((byte)(150))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(168)))), ((int)(((byte)(255))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(197)))), ((int)(((byte)(231))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(92)))), ((int)(((byte)(164))))), System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))),
+                new DevExpress.XtraCharts.PaletteEntry(System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(223)))), ((int)(((byte)(209))))), System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0))))))}));
             stackedBarSeriesLabel1.DXFont = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             stackedBarSeriesLabel1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Empty;
             series10.Label = stackedBarSeriesLabel1;
@@ -19164,7 +19195,7 @@
             this.DetailReportSection140.DataMember = "section140.content.subSection14000.content";
             this.DetailReportSection140.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection140.Dpi = 254F;
-            this.DetailReportSection140.Level = 31;
+            this.DetailReportSection140.Level = 32;
             this.DetailReportSection140.Name = "DetailReportSection140";
             this.DetailReportSection140.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection140.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -19465,7 +19496,7 @@
             this.DetailReportSection150.DataMember = "section150.content.subSection15000.content";
             this.DetailReportSection150.DataSource = this.jsonDataSourcePSE;
             this.DetailReportSection150.Dpi = 254F;
-            this.DetailReportSection150.Level = 32;
+            this.DetailReportSection150.Level = 33;
             this.DetailReportSection150.Name = "DetailReportSection150";
             this.DetailReportSection150.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
             this.DetailReportSection150.ReportPrintOptions.PrintOnEmptyDataSource = false;
@@ -21777,6 +21808,7 @@
             this.xrLabel561.Name = "xrLabel561";
             this.xrLabel561.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel561.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel561.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // xrLabel547
             // 
@@ -21787,6 +21819,7 @@
             this.xrLabel547.Name = "xrLabel547";
             this.xrLabel547.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel547.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel547.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // xrLabel546
             // 
@@ -21827,6 +21860,7 @@
             this.xrLabel562.Name = "xrLabel562";
             this.xrLabel562.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel562.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel562.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // xrLabel569
             // 
@@ -21837,6 +21871,7 @@
             this.xrLabel569.Name = "xrLabel569";
             this.xrLabel569.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel569.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel569.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // xrLabel570
             // 
@@ -21847,6 +21882,7 @@
             this.xrLabel570.Name = "xrLabel570";
             this.xrLabel570.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel570.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel570.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
             // xrLine141
             // 
@@ -22032,6 +22068,108 @@
             this.DetailSection12010.HierarchyPrintOptions.Indent = 50.8F;
             this.DetailSection12010.Name = "DetailSection12010";
             // 
+            // xrLabel581
+            // 
+            this.xrLabel581.Dpi = 254F;
+            this.xrLabel581.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description2]")});
+            this.xrLabel581.Multiline = true;
+            this.xrLabel581.Name = "xrLabel581";
+            this.xrLabel581.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel581.StyleName = "gridContentStyle";
+            // 
+            // xrLine144
+            // 
+            this.xrLine144.Dpi = 254F;
+            this.xrLine144.Name = "xrLine144";
+            this.xrLine144.StyleName = "gridRowLineStyle";
+            // 
+            // xrLabel573
+            // 
+            this.xrLabel573.Dpi = 254F;
+            this.xrLabel573.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
+            this.xrLabel573.Multiline = true;
+            this.xrLabel573.Name = "xrLabel573";
+            this.xrLabel573.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel573.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel573.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel574
+            // 
+            this.xrLabel574.Dpi = 254F;
+            this.xrLabel574.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchange]")});
+            this.xrLabel574.Multiline = true;
+            this.xrLabel574.Name = "xrLabel574";
+            this.xrLabel574.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel574.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel574.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel575
+            // 
+            this.xrLabel575.Dpi = 254F;
+            this.xrLabel575.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[quantityAvailable]")});
+            this.xrLabel575.Multiline = true;
+            this.xrLabel575.Name = "xrLabel575";
+            this.xrLabel575.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel575.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel575.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel576
+            // 
+            this.xrLabel576.Dpi = 254F;
+            this.xrLabel576.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description1]")});
+            this.xrLabel576.Multiline = true;
+            this.xrLabel576.Name = "xrLabel576";
+            this.xrLabel576.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel576.StyleName = "gridContentStyle";
+            // 
+            // xrLabel577
+            // 
+            this.xrLabel577.Dpi = 254F;
+            this.xrLabel577.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[quantityUsed]")});
+            this.xrLabel577.Multiline = true;
+            this.xrLabel577.Name = "xrLabel577";
+            this.xrLabel577.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel577.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel577.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel578
+            // 
+            this.xrLabel578.Dpi = 254F;
+            this.xrLabel578.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[advanceValue]")});
+            this.xrLabel578.Multiline = true;
+            this.xrLabel578.Name = "xrLabel578";
+            this.xrLabel578.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel578.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel578.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel579
+            // 
+            this.xrLabel579.Dpi = 254F;
+            this.xrLabel579.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentRate]")});
+            this.xrLabel579.Multiline = true;
+            this.xrLabel579.Name = "xrLabel579";
+            this.xrLabel579.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel579.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel579.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel580
+            // 
+            this.xrLabel580.Dpi = 254F;
+            this.xrLabel580.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[openingDate]")});
+            this.xrLabel580.Multiline = true;
+            this.xrLabel580.Name = "xrLabel580";
+            this.xrLabel580.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel580.StyleName = "gridContentStyleRightAlign";
+            // 
             // GroupHeaderBandSection12010
             // 
             this.GroupHeaderBandSection12010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -22051,41 +22189,14 @@
             this.GroupHeaderBandSection12010.KeepTogether = true;
             this.GroupHeaderBandSection12010.Name = "GroupHeaderBandSection12010";
             // 
-            // GroupHeaderBandSectionTitle12010
+            // labelQtaUtilizzataSection12010
             // 
-            this.GroupHeaderBandSectionTitle12010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.labelHeaderSection12010});
-            this.GroupHeaderBandSectionTitle12010.Dpi = 254F;
-            this.GroupHeaderBandSectionTitle12010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
-            this.GroupHeaderBandSectionTitle12010.KeepTogether = true;
-            this.GroupHeaderBandSectionTitle12010.Level = 1;
-            this.GroupHeaderBandSectionTitle12010.Name = "GroupHeaderBandSectionTitle12010";
-            this.GroupHeaderBandSectionTitle12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection120_BeforePrint);
-            // 
-            // GroupFooterBandSection12010
-            // 
-            this.GroupFooterBandSection12010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.section12010Separator});
-            this.GroupFooterBandSection12010.Dpi = 254F;
-            this.GroupFooterBandSection12010.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
-            this.GroupFooterBandSection12010.Name = "GroupFooterBandSection12010";
-            // 
-            // section12010Separator
-            // 
-            this.section12010Separator.Dpi = 254F;
-            this.section12010Separator.Multiline = true;
-            this.section12010Separator.Name = "section12010Separator";
-            this.section12010Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.section12010Separator.StyleName = "sectionSeparator";
-            // 
-            // labelHeaderSection12010
-            // 
-            this.labelHeaderSection12010.Dpi = 254F;
-            this.labelHeaderSection12010.Multiline = true;
-            this.labelHeaderSection12010.Name = "labelHeaderSection12010";
-            this.labelHeaderSection12010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelHeaderSection12010.StyleName = "sectionHeader";
-            this.labelHeaderSection12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection120CaptionVisibility_BeforePrint);
+            this.labelQtaUtilizzataSection12010.Dpi = 254F;
+            this.labelQtaUtilizzataSection12010.Multiline = true;
+            this.labelQtaUtilizzataSection12010.Name = "labelQtaUtilizzataSection12010";
+            this.labelQtaUtilizzataSection12010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelQtaUtilizzataSection12010.StyleName = "gridColumnHeaderRightStyle";
+            this.labelQtaUtilizzataSection12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
             // 
             // xrLine142
             // 
@@ -22170,110 +22281,339 @@
             this.labelTassoSection12010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.labelTassoSection12010.StyleName = "gridColumnHeaderRightStyle";
             // 
-            // labelQtaUtilizzataSection12010
+            // GroupHeaderBandSectionTitle12010
             // 
-            this.labelQtaUtilizzataSection12010.Dpi = 254F;
-            this.labelQtaUtilizzataSection12010.Multiline = true;
-            this.labelQtaUtilizzataSection12010.Name = "labelQtaUtilizzataSection12010";
-            this.labelQtaUtilizzataSection12010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelQtaUtilizzataSection12010.StyleName = "gridColumnHeaderRightStyle";
-            this.labelQtaUtilizzataSection12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            this.GroupHeaderBandSectionTitle12010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection12010});
+            this.GroupHeaderBandSectionTitle12010.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle12010.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle12010.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle12010.Level = 1;
+            this.GroupHeaderBandSectionTitle12010.Name = "GroupHeaderBandSectionTitle12010";
+            this.GroupHeaderBandSectionTitle12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection120_BeforePrint);
             // 
-            // xrLine144
+            // labelHeaderSection12010
             // 
-            this.xrLine144.Dpi = 254F;
-            this.xrLine144.Name = "xrLine144";
-            this.xrLine144.StyleName = "gridRowLineStyle";
+            this.labelHeaderSection12010.Dpi = 254F;
+            this.labelHeaderSection12010.Multiline = true;
+            this.labelHeaderSection12010.Name = "labelHeaderSection12010";
+            this.labelHeaderSection12010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection12010.StyleName = "sectionHeader";
+            this.labelHeaderSection12010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection120CaptionVisibility_BeforePrint);
             // 
-            // xrLabel573
+            // GroupFooterBandSection12010
             // 
-            this.xrLabel573.Dpi = 254F;
-            this.xrLabel573.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.GroupFooterBandSection12010.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section12010Separator});
+            this.GroupFooterBandSection12010.Dpi = 254F;
+            this.GroupFooterBandSection12010.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection12010.Name = "GroupFooterBandSection12010";
+            // 
+            // section12010Separator
+            // 
+            this.section12010Separator.Dpi = 254F;
+            this.section12010Separator.Multiline = true;
+            this.section12010Separator.Name = "section12010Separator";
+            this.section12010Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section12010Separator.StyleName = "sectionSeparator";
+            // 
+            // DetailReportSection12020
+            // 
+            this.DetailReportSection12020.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+            this.DetailSection12020,
+            this.GroupFooterBandSection12020,
+            this.GroupHeaderBandSection12020,
+            this.GroupHeaderBandSectionTitle12020});
+            this.DetailReportSection12020.DataMember = "section120.content.subSection12020.content";
+            this.DetailReportSection12020.DataSource = this.jsonDataSourcePSE;
+            this.DetailReportSection12020.Dpi = 254F;
+            this.DetailReportSection12020.Level = 30;
+            this.DetailReportSection12020.Name = "DetailReportSection12020";
+            this.DetailReportSection12020.ReportPrintOptions.PrintOnEmptyDataSource = false;
+            // 
+            // DetailSection12020
+            // 
+            this.DetailSection12020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel589,
+            this.xrLine147,
+            this.xrLabel286,
+            this.xrLabel572,
+            this.xrLabel582,
+            this.xrLabel583,
+            this.xrLabel584,
+            this.xrLabel585,
+            this.xrLabel586,
+            this.xrLabel587,
+            this.xrLabel588});
+            this.DetailSection12020.Dpi = 254F;
+            this.DetailSection12020.HierarchyPrintOptions.Indent = 50.8F;
+            this.DetailSection12020.Name = "DetailSection12020";
+            // 
+            // xrLabel589
+            // 
+            this.xrLabel589.Dpi = 254F;
+            this.xrLabel589.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentWeigth]")});
+            this.xrLabel589.Multiline = true;
+            this.xrLabel589.Name = "xrLabel589";
+            this.xrLabel589.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel589.StyleName = "gridContentStyleRightAlignBold";
+            this.xrLabel589.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLine147
+            // 
+            this.xrLine147.Dpi = 254F;
+            this.xrLine147.Name = "xrLine147";
+            this.xrLine147.StyleName = "gridRowLineStyle";
+            // 
+            // xrLabel286
+            // 
+            this.xrLabel286.Dpi = 254F;
+            this.xrLabel286.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[accruedInterestReportingCurrency]")});
+            this.xrLabel286.Multiline = true;
+            this.xrLabel286.Name = "xrLabel286";
+            this.xrLabel286.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel286.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel286.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel572
+            // 
+            this.xrLabel572.Dpi = 254F;
+            this.xrLabel572.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[marketValueReportingCurrency]")});
-            this.xrLabel573.Multiline = true;
-            this.xrLabel573.Name = "xrLabel573";
-            this.xrLabel573.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel573.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel572.Multiline = true;
+            this.xrLabel572.Name = "xrLabel572";
+            this.xrLabel572.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel572.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel572.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
-            // xrLabel574
+            // xrLabel582
             // 
-            this.xrLabel574.Dpi = 254F;
-            this.xrLabel574.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchange]")});
-            this.xrLabel574.Multiline = true;
-            this.xrLabel574.Name = "xrLabel574";
-            this.xrLabel574.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel574.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel582.Dpi = 254F;
+            this.xrLabel582.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[currentBalance]")});
+            this.xrLabel582.Multiline = true;
+            this.xrLabel582.Name = "xrLabel582";
+            this.xrLabel582.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel582.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel582.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
             // 
-            // xrLabel575
+            // xrLabel583
             // 
-            this.xrLabel575.Dpi = 254F;
-            this.xrLabel575.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[quantityAvailable]")});
-            this.xrLabel575.Multiline = true;
-            this.xrLabel575.Name = "xrLabel575";
-            this.xrLabel575.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel575.StyleName = "gridContentStyleRightAlign";
-            // 
-            // xrLabel576
-            // 
-            this.xrLabel576.Dpi = 254F;
-            this.xrLabel576.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrLabel583.Dpi = 254F;
+            this.xrLabel583.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description1]")});
-            this.xrLabel576.Multiline = true;
-            this.xrLabel576.Name = "xrLabel576";
-            this.xrLabel576.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel576.StyleName = "gridContentStyle";
+            this.xrLabel583.Multiline = true;
+            this.xrLabel583.Name = "xrLabel583";
+            this.xrLabel583.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel583.StyleName = "gridContentStyle";
             // 
-            // xrLabel577
+            // xrLabel584
             // 
-            this.xrLabel577.Dpi = 254F;
-            this.xrLabel577.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[quantityUsed]")});
-            this.xrLabel577.Multiline = true;
-            this.xrLabel577.Name = "xrLabel577";
-            this.xrLabel577.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel577.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel584.Dpi = 254F;
+            this.xrLabel584.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[expirationDate]")});
+            this.xrLabel584.Multiline = true;
+            this.xrLabel584.Name = "xrLabel584";
+            this.xrLabel584.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel584.StyleName = "gridContentStyle";
             // 
-            // xrLabel578
+            // xrLabel585
             // 
-            this.xrLabel578.Dpi = 254F;
-            this.xrLabel578.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[advanceValue]")});
-            this.xrLabel578.Multiline = true;
-            this.xrLabel578.Name = "xrLabel578";
-            this.xrLabel578.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel578.StyleName = "gridContentStyleRightAlign";
-            // 
-            // xrLabel579
-            // 
-            this.xrLabel579.Dpi = 254F;
-            this.xrLabel579.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentRate]")});
-            this.xrLabel579.Multiline = true;
-            this.xrLabel579.Name = "xrLabel579";
-            this.xrLabel579.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel579.StyleName = "gridContentStyleRightAlign";
-            // 
-            // xrLabel580
-            // 
-            this.xrLabel580.Dpi = 254F;
-            this.xrLabel580.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrLabel585.Dpi = 254F;
+            this.xrLabel585.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[openingDate]")});
-            this.xrLabel580.Multiline = true;
-            this.xrLabel580.Name = "xrLabel580";
-            this.xrLabel580.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel580.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel585.Multiline = true;
+            this.xrLabel585.Name = "xrLabel585";
+            this.xrLabel585.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel585.StyleName = "gridContentStyle";
             // 
-            // xrLabel581
+            // xrLabel586
             // 
-            this.xrLabel581.Dpi = 254F;
-            this.xrLabel581.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            this.xrLabel586.Dpi = 254F;
+            this.xrLabel586.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[percentRate]")});
+            this.xrLabel586.Multiline = true;
+            this.xrLabel586.Name = "xrLabel586";
+            this.xrLabel586.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel586.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel586.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel587
+            // 
+            this.xrLabel587.Dpi = 254F;
+            this.xrLabel587.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[exchange]")});
+            this.xrLabel587.Multiline = true;
+            this.xrLabel587.Name = "xrLabel587";
+            this.xrLabel587.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel587.StyleName = "gridContentStyleRightAlign";
+            this.xrLabel587.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.hiddenIfZero_BeforePrint);
+            // 
+            // xrLabel588
+            // 
+            this.xrLabel588.Dpi = 254F;
+            this.xrLabel588.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[description2]")});
-            this.xrLabel581.Multiline = true;
-            this.xrLabel581.Name = "xrLabel581";
-            this.xrLabel581.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel581.StyleName = "gridContentStyle";
+            this.xrLabel588.Multiline = true;
+            this.xrLabel588.Name = "xrLabel588";
+            this.xrLabel588.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel588.StyleName = "gridContentStyle";
+            // 
+            // GroupFooterBandSection12020
+            // 
+            this.GroupFooterBandSection12020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.section12020Separator});
+            this.GroupFooterBandSection12020.Dpi = 254F;
+            this.GroupFooterBandSection12020.GroupUnion = DevExpress.XtraReports.UI.GroupFooterUnion.WithLastDetail;
+            this.GroupFooterBandSection12020.Name = "GroupFooterBandSection12020";
+            // 
+            // section12020Separator
+            // 
+            this.section12020Separator.Dpi = 254F;
+            this.section12020Separator.Multiline = true;
+            this.section12020Separator.Name = "section12020Separator";
+            this.section12020Separator.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.section12020Separator.StyleName = "sectionSeparator";
+            // 
+            // GroupHeaderBandSection12020
+            // 
+            this.GroupHeaderBandSection12020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelPesoSection12020,
+            this.labelInteressiMaturatiSection12020,
+            this.labelValoreMercatoSection12020,
+            this.labelSaldoAttualeSection12020,
+            this.labelDescrizioneSection12020,
+            this.labelDataAperturaSection12020,
+            this.labelDataScadenzaSection12020,
+            this.labelCambioSection12020,
+            this.labelTassoSection12020,
+            this.labelSubHeaderSection12020,
+            this.xrLine145,
+            this.xrLine146});
+            this.GroupHeaderBandSection12020.Dpi = 254F;
+            this.GroupHeaderBandSection12020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WholePage;
+            this.GroupHeaderBandSection12020.KeepTogether = true;
+            this.GroupHeaderBandSection12020.Name = "GroupHeaderBandSection12020";
+            // 
+            // labelPesoSection12020
+            // 
+            this.labelPesoSection12020.Dpi = 254F;
+            this.labelPesoSection12020.Multiline = true;
+            this.labelPesoSection12020.Name = "labelPesoSection12020";
+            this.labelPesoSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelPesoSection12020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelInteressiMaturatiSection12020
+            // 
+            this.labelInteressiMaturatiSection12020.Dpi = 254F;
+            this.labelInteressiMaturatiSection12020.Multiline = true;
+            this.labelInteressiMaturatiSection12020.Name = "labelInteressiMaturatiSection12020";
+            this.labelInteressiMaturatiSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelInteressiMaturatiSection12020.StyleName = "gridColumnHeaderRightStyle";
+            this.labelInteressiMaturatiSection12020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelValoreMercatoSection12020
+            // 
+            this.labelValoreMercatoSection12020.Dpi = 254F;
+            this.labelValoreMercatoSection12020.Multiline = true;
+            this.labelValoreMercatoSection12020.Name = "labelValoreMercatoSection12020";
+            this.labelValoreMercatoSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelValoreMercatoSection12020.StyleName = "gridColumnHeaderRightStyle";
+            this.labelValoreMercatoSection12020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.applyCurrency_BeforePrint);
+            // 
+            // labelSaldoAttualeSection12020
+            // 
+            this.labelSaldoAttualeSection12020.Dpi = 254F;
+            this.labelSaldoAttualeSection12020.Multiline = true;
+            this.labelSaldoAttualeSection12020.Name = "labelSaldoAttualeSection12020";
+            this.labelSaldoAttualeSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSaldoAttualeSection12020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelDescrizioneSection12020
+            // 
+            this.labelDescrizioneSection12020.Dpi = 254F;
+            this.labelDescrizioneSection12020.Multiline = true;
+            this.labelDescrizioneSection12020.Name = "labelDescrizioneSection12020";
+            this.labelDescrizioneSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDescrizioneSection12020.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelDataAperturaSection12020
+            // 
+            this.labelDataAperturaSection12020.Dpi = 254F;
+            this.labelDataAperturaSection12020.Multiline = true;
+            this.labelDataAperturaSection12020.Name = "labelDataAperturaSection12020";
+            this.labelDataAperturaSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDataAperturaSection12020.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelDataScadenzaSection12020
+            // 
+            this.labelDataScadenzaSection12020.Dpi = 254F;
+            this.labelDataScadenzaSection12020.Multiline = true;
+            this.labelDataScadenzaSection12020.Name = "labelDataScadenzaSection12020";
+            this.labelDataScadenzaSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelDataScadenzaSection12020.StyleName = "gridColumnHeaderStyle";
+            // 
+            // labelCambioSection12020
+            // 
+            this.labelCambioSection12020.Dpi = 254F;
+            this.labelCambioSection12020.Multiline = true;
+            this.labelCambioSection12020.Name = "labelCambioSection12020";
+            this.labelCambioSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelCambioSection12020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelTassoSection12020
+            // 
+            this.labelTassoSection12020.Dpi = 254F;
+            this.labelTassoSection12020.Multiline = true;
+            this.labelTassoSection12020.Name = "labelTassoSection12020";
+            this.labelTassoSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelTassoSection12020.StyleName = "gridColumnHeaderRightStyle";
+            // 
+            // labelSubHeaderSection12020
+            // 
+            this.labelSubHeaderSection12020.Dpi = 254F;
+            this.labelSubHeaderSection12020.Multiline = true;
+            this.labelSubHeaderSection12020.Name = "labelSubHeaderSection12020";
+            this.labelSubHeaderSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelSubHeaderSection12020.StyleName = "sectionSubHeader";
+            // 
+            // xrLine145
+            // 
+            this.xrLine145.BorderWidth = 0F;
+            this.xrLine145.Dpi = 254F;
+            this.xrLine145.Name = "xrLine145";
+            this.xrLine145.StyleName = "gridHeaderLine";
+            this.xrLine145.StylePriority.UseBorderWidth = false;
+            // 
+            // xrLine146
+            // 
+            this.xrLine146.BorderWidth = 0F;
+            this.xrLine146.Dpi = 254F;
+            this.xrLine146.Name = "xrLine146";
+            this.xrLine146.StyleName = "gridHeaderLine";
+            this.xrLine146.StylePriority.UseBorderWidth = false;
+            // 
+            // GroupHeaderBandSectionTitle12020
+            // 
+            this.GroupHeaderBandSectionTitle12020.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.labelHeaderSection12020});
+            this.GroupHeaderBandSectionTitle12020.Dpi = 254F;
+            this.GroupHeaderBandSectionTitle12020.GroupUnion = DevExpress.XtraReports.UI.GroupUnion.WithFirstDetail;
+            this.GroupHeaderBandSectionTitle12020.KeepTogether = true;
+            this.GroupHeaderBandSectionTitle12020.Level = 1;
+            this.GroupHeaderBandSectionTitle12020.Name = "GroupHeaderBandSectionTitle12020";
+            this.GroupHeaderBandSectionTitle12020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.pageBreakBeforeGroupHeaderSection120_BeforePrint);
+            // 
+            // labelHeaderSection12020
+            // 
+            this.labelHeaderSection12020.Dpi = 254F;
+            this.labelHeaderSection12020.Multiline = true;
+            this.labelHeaderSection12020.Name = "labelHeaderSection12020";
+            this.labelHeaderSection12020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.labelHeaderSection12020.StyleName = "sectionHeader";
+            this.labelHeaderSection12020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection120CaptionVisibility_BeforePrint);
             // 
             // ReportPSE
             // 
@@ -22322,7 +22662,8 @@
             this.DetailReportSection10040,
             this.DetailReportSection10000,
             this.DetailReportSection12000,
-            this.DetailReportSection12010});
+            this.DetailReportSection12010,
+            this.DetailReportSection12020});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.jsonDataSourcePSE});
             this.DataSource = this.jsonDataSourcePSE;
@@ -22651,6 +22992,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection11030, "Default", "HeightF", 160F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection12000, "Default", "HeightF", 66F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection12010, "Default", "HeightF", 66F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection12020, "Default", "HeightF", 66F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection1300, "Default", "HeightF", 66F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection1400, "Default", "HeightF", 160F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.DetailSection1500, "Default", "HeightF", 66F),
@@ -22679,6 +23021,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection1000, "Default", "HeightF", 1070F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection10030, "Default", "HeightF", 100F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection12000, "Default", "HeightF", 100F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection12020, "Default", "HeightF", 100F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection19000, "Default", "HeightF", 150F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection7020, "Default", "HeightF", 100F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupFooterBandSection7030, "Default", "HeightF", 100F),
@@ -22698,6 +23041,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection11030, "Default", "HeightF", 180F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection12000, "Default", "HeightF", 180F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection12010, "Default", "HeightF", 180F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection12020, "Default", "HeightF", 180F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection13000, "Default", "HeightF", 281F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection14000, "Default", "HeightF", 281F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection15000, "Default", "HeightF", 281F),
@@ -22741,6 +23085,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle11030, "Default", "HeightF", 79F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle12000, "Default", "HeightF", 79F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle12010, "Default", "HeightF", 79F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle12020, "Default", "HeightF", 79F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle7000, "Default", "HeightF", 79.19F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle7010, "Default", "HeightF", 79.19F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSectionTitle7020, "Default", "HeightF", 79.19F),
@@ -22907,6 +23252,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2220.215F, 95.53664F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12010, "Default", "SizeF", new System.Drawing.SizeF(178.2412F, 76.45834F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12010, "Default", "Text", "Cambio"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1705.411F, 95.25F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12020, "Default", "SizeF", new System.Drawing.SizeF(175.2999F, 76.45834F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection12020, "Default", "Text", "Cambio"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(591.7943F, 191.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "SizeF", new System.Drawing.SizeF(223.1269F, 49.99998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelCambioSection6000, "Default", "Text", "Cambio"),
@@ -23026,6 +23374,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1962.545F, 95.53923F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12010, "Default", "SizeF", new System.Drawing.SizeF(257.67F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12010, "Default", "Text", "Data apertura"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(926.921F, 95.539F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12020, "Default", "SizeF", new System.Drawing.SizeF(257.67F, 76.46F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection12020, "Default", "Text", "Data apertura"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection1500, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(907.921F, 195F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection1500, "Default", "SizeF", new System.Drawing.SizeF(300F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataAperturaSection1500, "Default", "Text", "Data apertura"),
@@ -23044,6 +23395,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1280.254F, 95.53939F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12000, "Default", "SizeF", new System.Drawing.SizeF(257.6671F, 76.45998F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12000, "Default", "Text", "Data scadenza"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1185.254F, 95.53939F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12020, "Default", "SizeF", new System.Drawing.SizeF(257.6671F, 76.45998F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection12020, "Default", "Text", "Data scadenza"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection1300, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2498.52F, 194.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection1300, "Default", "SizeF", new System.Drawing.SizeF(267.35F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDataScadenzaSection1300, "Default", "Text", "Data scadenza"),
@@ -23087,8 +23441,11 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12000, "Default", "SizeF", new System.Drawing.SizeF(797.0001F, 76.45997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12000, "Default", "Text", "Descrizione titolo"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 95.53939F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12010, "Default", "SizeF", new System.Drawing.SizeF(694.1692F, 76.45997F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12010, "Default", "SizeF", new System.Drawing.SizeF(695F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12010, "Default", "Text", "Descrizione titolo"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 95.53939F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12020, "Default", "SizeF", new System.Drawing.SizeF(695F, 76.46F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection12020, "Default", "Text", "Descrizione titolo"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection1300, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(600F, 195F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection1300, "Default", "SizeF", new System.Drawing.SizeF(460F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelDescrizioneSection1300, "Default", "Text", "Descrizione"),
@@ -23335,6 +23692,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12010, "Default", "SizeF", new System.Drawing.SizeF(1557.521F, 76.9408F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12010, "Default", "Text", "SOLUZIONI DI FINANZIAMENTO"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12020, "Default", "Bookmark", "Soluzioni di finanziamento"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12020, "Default", "SizeF", new System.Drawing.SizeF(1557.521F, 76.9408F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection12020, "Default", "Text", "SOLUZIONI DI FINANZIAMENTO"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection13000, "Default", "Bookmark", "Ordini in sospeso"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection13000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelHeaderSection13000, "Default", "SizeF", new System.Drawing.SizeF(907.5212F, 76.9408F)),
@@ -23536,6 +23897,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2394.319F, 95.53674F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12000, "Default", "SizeF", new System.Drawing.SizeF(375.021F, 76.46001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12000, "Default", "Text", "Interessi maturati ({0})"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2232.319F, 95.53674F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12020, "Default", "SizeF", new System.Drawing.SizeF(350F, 76.46F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection12020, "Default", "Text", "Interessi maturati ({0})"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection1500, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2349.34F, 194.9984F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection1500, "Default", "SizeF", new System.Drawing.SizeF(420F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelInteressiMaturatiSection1500, "Default", "Text", "Interessi maturati ({0})"),
@@ -24066,6 +24430,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection11030, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2577.103F, 92.99949F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection11030, "Default", "SizeF", new System.Drawing.SizeF(191.8972F, 76.46001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection11030, "Default", "Text", "Peso"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2582.319F, 95.99949F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection12020, "Default", "SizeF", new System.Drawing.SizeF(186.6816F, 76.46001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection12020, "Default", "Text", "Peso"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection7000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2456.521F, 94.5535F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection7000, "Default", "SizeF", new System.Drawing.SizeF(313.48F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelPesoSection7000, "Default", "Text", "Peso"),
@@ -24327,6 +24694,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1538.92F, 95.53927F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12000, "Default", "SizeF", new System.Drawing.SizeF(300F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12000, "Default", "Text", "Saldo attuale"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1443.92F, 95.53939F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12020, "Default", "SizeF", new System.Drawing.SizeF(261.4913F, 76.46F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection12020, "Default", "Text", "Saldo attuale"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection1500, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1508.92F, 195.001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection1500, "Default", "SizeF", new System.Drawing.SizeF(420F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSaldoAttualeSection1500, "Default", "Text", "Saldo attuale"),
@@ -24448,6 +24818,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 26.10685F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12010, "Default", "SizeF", new System.Drawing.SizeF(1557.521F, 50.48247F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12010, "Default", "Text", "Anticipi in conto corrente"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 26.10682F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12020, "Default", "SizeF", new System.Drawing.SizeF(1557.521F, 50.48247F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection12020, "Default", "Text", "Anticipi fissi"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection13000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 125F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection13000, "Default", "SizeF", new System.Drawing.SizeF(431.2708F, 50.48246F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelSubHeaderSection13000, "Default", "Text", "Borsa"),
@@ -24540,9 +24913,12 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(797.0001F, 95.5368F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12000, "Default", "SizeF", new System.Drawing.SizeF(161.1492F, 76.45999F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12000, "Default", "Text", "Tasso"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(694.1685F, 95.5368F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12010, "Default", "SizeF", new System.Drawing.SizeF(157.9807F, 76.46001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(697.6199F, 95.5368F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12010, "Default", "SizeF", new System.Drawing.SizeF(154.5294F, 76.46001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12010, "Default", "Text", "Tasso"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(702.0001F, 95.5368F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12020, "Default", "SizeF", new System.Drawing.SizeF(155.2503F, 76.46001F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection12020, "Default", "Text", "Tasso"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection7020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(500F, 94.55366F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection7020, "Default", "SizeF", new System.Drawing.SizeF(170.5598F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelTassoSection7020, "Default", "Text", "Tasso"),
@@ -24651,6 +25027,9 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2399.319F, 95.53671F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12010, "Default", "SizeF", new System.Drawing.SizeF(370F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12010, "Default", "Text", "Valore di mercato ({0})"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12020, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 95.53939F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12020, "Default", "SizeF", new System.Drawing.SizeF(350F, 76.46F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMercatoSection12020, "Default", "Text", "Valore di mercato ({0})"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMErcatoSection1500, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1929.126F, 195.001F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMErcatoSection1500, "Default", "SizeF", new System.Drawing.SizeF(420F, 76.46F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.labelValoreMErcatoSection1500, "Default", "Text", "Valore di mercato ({0})"),
@@ -24887,6 +25266,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section12000Separator, "Default", "SizeF", new System.Drawing.SizeF(399.5212F, 42.33333F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section12010Separator, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2357.146F, 47.73772F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section12010Separator, "Default", "SizeF", new System.Drawing.SizeF(399.5212F, 42.33333F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.section12020Separator, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2357.146F, 47.73772F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.section12020Separator, "Default", "SizeF", new System.Drawing.SizeF(399.5212F, 42.33333F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section16000LineGridDown, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(3F, 69F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section16000LineGridDown, "Default", "SizeF", new System.Drawing.SizeF(1185.957F, 5.291667F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section16000LineGridUpper, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1F, 5F)),
@@ -25741,6 +26122,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel285, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(918.3755F, 2.753062F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel285, "Default", "SizeF", new System.Drawing.SizeF(142.62F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel285, "Default", "Text", "xrLabel30"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel286, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2233.45F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel286, "Default", "SizeF", new System.Drawing.SizeF(348.8689F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel286, "Default", "Text", "xrLabel347"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel286, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel287, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.999817F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel287, "Default", "SizeF", new System.Drawing.SizeF(200F, 63.99981F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel287, "Default", "Text", "xrLabel287"),
@@ -26947,6 +27332,10 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel571, "Default", "SizeF", new System.Drawing.SizeF(257.6664F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel571, "Default", "Text", "xrLabel348"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel571, "Default", "TextFormatString", "{0:d MMM yyyy}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel572, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1881.71F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel572, "Default", "SizeF", new System.Drawing.SizeF(350.0002F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel572, "Default", "Text", "xrLabel346"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel572, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel573, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2399.319F, 3.999756F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel573, "Default", "SizeF", new System.Drawing.SizeF(368.3049F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel573, "Default", "Text", "xrLabel347"),
@@ -26985,6 +27374,36 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel581, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(345.8332F, 3.999756F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel581, "Default", "SizeF", new System.Drawing.SizeF(348.3369F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel581, "Default", "Text", "xrLabel342"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel582, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1443.92F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel582, "Default", "SizeF", new System.Drawing.SizeF(261.4912F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel582, "Default", "Text", "xrLabel344"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel582, "Default", "TextFormatString", "{0:N2}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel583, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.127777F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel583, "Default", "SizeF", new System.Drawing.SizeF(340.7024F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel583, "Default", "Text", "xrLabel342"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel584, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1185.958F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel584, "Default", "SizeF", new System.Drawing.SizeF(256.9636F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel584, "Default", "Text", "xrLabel348"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel584, "Default", "TextFormatString", "{0:d MMM yyyy}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel585, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(928.6898F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel585, "Default", "SizeF", new System.Drawing.SizeF(255.9009F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel585, "Default", "Text", "xrLabel348"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel585, "Default", "TextFormatString", "{0:d MMM yyyy}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel586, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(697.6199F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel586, "Default", "SizeF", new System.Drawing.SizeF(154.5294F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel586, "Default", "Text", "xrLabel96"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel586, "Default", "TextFormatString", "{0:0.000}%"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel587, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1705.411F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel587, "Default", "SizeF", new System.Drawing.SizeF(175.2999F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel587, "Default", "Text", "xrLabel43"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel587, "Default", "TextFormatString", "{0:N4}"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel588, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(345.8332F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel588, "Default", "SizeF", new System.Drawing.SizeF(349.167F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel588, "Default", "Text", "xrLabel342"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel589, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2582.319F, 2.754354F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel589, "Default", "SizeF", new System.Drawing.SizeF(186.6836F, 51.24541F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel589, "Default", "Text", "xrLabel62"),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel589, "Default", "TextFormatString", "{0:0.00}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel59, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2319.38F, 51.45F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel59, "Default", "SizeF", new System.Drawing.SizeF(192.4363F, 48F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel59, "Default", "Text", "xrLabel59"),
@@ -27262,6 +27681,12 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine143, "Default", "SizeF", new System.Drawing.SizeF(2766.478F, 5.291687F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine144, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 61F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine144, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine145, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2.319949F, 86.26646F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine145, "Default", "SizeF", new System.Drawing.SizeF(2766.478F, 5.291687F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine146, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 174.7083F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine146, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5.291748F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine147, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 61F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine147, "Default", "SizeF", new System.Drawing.SizeF(2770F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine15, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 171.9997F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine15, "Default", "SizeF", new System.Drawing.SizeF(2770F, 7.000214F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLine16, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 152F)),
@@ -29342,5 +29767,35 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel579;
         private DevExpress.XtraReports.UI.XRLabel xrLabel580;
         private DevExpress.XtraReports.UI.XRLabel xrLabel581;
+        private DevExpress.XtraReports.UI.DetailReportBand DetailReportSection12020;
+        private DevExpress.XtraReports.UI.DetailBand DetailSection12020;
+        private DevExpress.XtraReports.UI.GroupFooterBand GroupFooterBandSection12020;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSection12020;
+        private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderBandSectionTitle12020;
+        private DevExpress.XtraReports.UI.XRLabel section12020Separator;
+        private DevExpress.XtraReports.UI.XRLabel labelHeaderSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelSubHeaderSection12020;
+        private DevExpress.XtraReports.UI.XRLine xrLine145;
+        private DevExpress.XtraReports.UI.XRLine xrLine146;
+        private DevExpress.XtraReports.UI.XRLabel labelPesoSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelInteressiMaturatiSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelValoreMercatoSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelSaldoAttualeSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelDescrizioneSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelDataAperturaSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelDataScadenzaSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelCambioSection12020;
+        private DevExpress.XtraReports.UI.XRLabel labelTassoSection12020;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel589;
+        private DevExpress.XtraReports.UI.XRLine xrLine147;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel286;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel572;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel582;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel583;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel584;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel585;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel586;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel587;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel588;
     }
 }

@@ -1,13 +1,13 @@
 <Palette Name="BDSPalette" ScaleMode="Extrapolate">
-	<PaletteEntry Color="#212C57" Color2="#FFFFFF" />
-	<PaletteEntry Color="#A69A83" Color2="#FFFFFF" />
-	<PaletteEntry Color="#87D3F5" Color2="#000000" />
-	<PaletteEntry Color="#D6DCE5" Color2="#000000" />
-	<PaletteEntry Color="#2E3A60" Color2="#FFFFFF" />
-	<PaletteEntry Color="#B9AC91" Color2="#FFFFFF" />
-	<PaletteEntry Color="#00A7FF" Color2="#FFFFFF" />
-	<PaletteEntry Color="#DEEBF7" Color2="#000000" />
-	<PaletteEntry Color="#002D86" Color2="#FFFFFF" />
-	<PaletteEntry Color="#DED8C8" Color2="#000000" />
-	<PaletteEntry Color="#8FAADC" Color2="#FFFFFF" />
+	<PaletteEntry Color="#222C57" Color2="#FFFFFF" />
+	<PaletteEntry Color="#8C8061" Color2="#FFFFFF" />
+	<PaletteEntry Color="#86D0FF" Color2="#FFFFFF" />
+	<PaletteEntry Color="#D8E7F6" Color2="#000000" />
+	<PaletteEntry Color="#757CA5" Color2="#FFFFFF" />
+	<PaletteEntry Color="#BCB096" Color2="#FFFFFF" />
+	<PaletteEntry Color="#3BA8FF" Color2="#FFFFFF" />
+	<PaletteEntry Color="#F4F4F4" Color2="#000000" />
+	<PaletteEntry Color="#B2C5E7" Color2="#FFFFFF" />
+	<PaletteEntry Color="#3B5CA4" Color2="#FFFFFF" />
+	<PaletteEntry Color="#E3DFD1" Color2="#000000" />
 </Palette>

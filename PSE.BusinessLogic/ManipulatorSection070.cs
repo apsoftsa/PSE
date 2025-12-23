@@ -48,7 +48,7 @@ namespace PSE.BusinessLogic
                                         decimal customerSumAmounts = subCategoryItems.Where(subFlt => subFlt.Amount1Base_23.HasValue).Sum(sum => sum.Amount1Base_23.Value);
                                         customerSumAmounts += subCategoryItems.Where(subFlt => subFlt.ProRataBase_56.HasValue).Sum(sum => sum.ProRataBase_56.Value);
                                         sectionContent.SubSection7000 = new SubSection7000Content();
-                                        foreach (POS posItem in subCategoryItems.OrderByDescending(ob => ob.Amount1Base_23))
+                                        foreach (POS posItem in subCategoryItems.OrderBy(ob => ob.HostPositionReference_6))
                                         {
                                             currentBaseValue = posItem.Amount1Base_23.HasValue ? posItem.Amount1Base_23.Value : 0;
                                             currentBaseValue += posItem.ProRataBase_56.HasValue ? posItem.ProRataBase_56.Value : 0;

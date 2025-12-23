@@ -16,6 +16,8 @@ namespace PSE.Reporting.Reports {
 
         private readonly char _lastLetterChart;
 
+        private string _customerLanguage;
+        private string _customerCulture;
         private string _currencyToApply;
         private string _currentAssetClassSection4000;
         private bool _hasSection70CaptionVisible;
@@ -119,6 +121,8 @@ namespace PSE.Reporting.Reports {
 
         public ReportPSE() {
             InitializeComponent();
+            _customerLanguage = "E";
+            _customerCulture = "en-CH";
             _currencyToApply = "?";
             _currentAssetClassSection4000 = string.Empty;
             _hasSection70CaptionVisible = false;
@@ -147,16 +151,16 @@ namespace PSE.Reporting.Reports {
         }
 
         private void languageToApply_BeforePrint(object sender, CancelEventArgs e) {
-            string customerLanguage = ((XRLabel)sender).Text;
-            if (string.IsNullOrWhiteSpace(customerLanguage) || string.IsNullOrEmpty(customerLanguage))
-                customerLanguage = "E";
-            customerLanguage = customerLanguage.Trim().ToUpper() switch {
+            _customerLanguage = ((XRLabel)sender).Text;
+            if (string.IsNullOrWhiteSpace(_customerLanguage) || string.IsNullOrEmpty(_customerLanguage))
+                _customerLanguage = "E";
+            _customerCulture = _customerLanguage.Trim().ToUpper() switch {
                 "E" => "en-CH",
                 "F" => "fr-CH",
                 "G" => "de-CH",
                 _ => "it-CH",
             };
-            this.ApplyLocalization(customerLanguage);
+            this.ApplyLocalization(_customerCulture);
         }
 
         private void currencyToApply_BeforePrint(object sender, CancelEventArgs e) {
@@ -732,11 +736,23 @@ namespace PSE.Reporting.Reports {
             if (_currentChartPointsCount > 0) {
                 XRLabel label = (XRLabel)sender;
                 label.Visible = false;
-                if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && double.TryParse(label.Value.ToString(), out double _)) {
+                if (label.Tag != null && label.Tag.ToString() != CLASS_ITEM_TOTAL && double.TryParse(label.Value.ToString(), out double _)) {
                     _currentGridChartPointAlphaCode = GetNextLabelAlphaCode(_currentGridChartPointAlphaCode, true);
                     label.Text = "(" + _currentGridChartPointAlphaCode.ToString() + ")";
                     label.Visible = true;
                 }
+            }
+        }
+
+        private void sector16000_BeforePrint(object sender, CancelEventArgs e) {
+            XRLabel label = (XRLabel)sender;
+            if (label.Text.Trim() == "<OTHER>") {
+                label.Text = _customerLanguage.Trim().ToUpper() switch {
+                    "E" => "OTHER",
+                    "F" => "AUTRE",
+                    "G" => "ANDERE",
+                    _ => "ALTRO",
+                };
             }
         }
 
@@ -765,7 +781,7 @@ namespace PSE.Reporting.Reports {
                 label.BackColor = Color.White;
                 label.ForeColor = Color.White;
                 if (double.TryParse(label.Value.ToString(), out double value)) {
-                    if (label.Tag != null && label.Tag.ToString() == CLASS_ITEM_ENTRY && value > 0) {
+                    if (label.Tag != null && label.Tag.ToString() != CLASS_ITEM_TOTAL && value > 0) {
                         label.BackColor = GetChartSeriesPointColorToApply(this.chartSection16010, _currentChartPointsCount, _currentGridChartPointIndex, true);
                         label.ForeColor = label.BackColor;
                         label.Visible = true;
@@ -1083,7 +1099,7 @@ namespace PSE.Reporting.Reports {
         private void pageFooterContainer_PrintOnPage(object sender, PrintOnPageEventArgs e) {
             ((XRPanel)sender).Visible = !(e.PageIndex == 0 || e.PageIndex == e.PageCount - 1);
         }
-
+        
     }
 
 }
