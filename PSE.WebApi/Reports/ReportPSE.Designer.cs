@@ -2851,6 +2851,13 @@
             this.xrLine146 = new DevExpress.XtraReports.UI.XRLine();
             this.GroupHeaderBandSectionTitle12020 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.labelHeaderSection12020 = new DevExpress.XtraReports.UI.XRLabel();
+            this.gridContentStyleSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleBoldSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleBoldItalicSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleCenterSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleRightAlignSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleRightAlignBoldSmall = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.gridContentStyleRightAlignBoldItalicSmall = new DevExpress.XtraReports.UI.XRControlStyle();
             ((System.ComponentModel.ISupportInitialize)(this.chartSection6010Bars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -4349,7 +4356,7 @@
             // 
             // gridContentStyle
             // 
-            this.gridContentStyle.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyle.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.gridContentStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyle.Name = "gridContentStyle";
             this.gridContentStyle.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -4399,14 +4406,14 @@
             // 
             // gridContentStyleRightAlign
             // 
-            this.gridContentStyleRightAlign.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyleRightAlign.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.gridContentStyleRightAlign.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleRightAlign.Name = "gridContentStyleRightAlign";
             this.gridContentStyleRightAlign.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // gridContentStyleRightAlignBold
             // 
-            this.gridContentStyleRightAlignBold.Font = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.gridContentStyleRightAlignBold.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.gridContentStyleRightAlignBold.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleRightAlignBold.Name = "gridContentStyleRightAlignBold";
             this.gridContentStyleRightAlignBold.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
@@ -4795,7 +4802,7 @@
             // 
             // gridContentStyleBold
             // 
-            this.gridContentStyleBold.Font = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.gridContentStyleBold.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.gridContentStyleBold.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleBold.Name = "gridContentStyleBold";
             this.gridContentStyleBold.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
@@ -5112,7 +5119,7 @@
             this.labelTotaleSection8000.Multiline = true;
             this.labelTotaleSection8000.Name = "labelTotaleSection8000";
             this.labelTotaleSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection8000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInteressiSection8000
             // 
@@ -5120,7 +5127,7 @@
             this.labelInteressiSection8000.Multiline = true;
             this.labelInteressiSection8000.Name = "labelInteressiSection8000";
             this.labelInteressiSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection8000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelCapitaleSection8000
             // 
@@ -5128,7 +5135,7 @@
             this.labelCapitaleSection8000.Multiline = true;
             this.labelCapitaleSection8000.Name = "labelCapitaleSection8000";
             this.labelCapitaleSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection8000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel54
             // 
@@ -5329,7 +5336,7 @@
             this.labelAcquistoSection8000.Multiline = true;
             this.labelAcquistoSection8000.Name = "labelAcquistoSection8000";
             this.labelAcquistoSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection8000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection8000
             // 
@@ -5337,7 +5344,7 @@
             this.labelInizioAnnoSection8000.Multiline = true;
             this.labelInizioAnnoSection8000.Name = "labelInizioAnnoSection8000";
             this.labelInizioAnnoSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection8000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection8000
             // 
@@ -5347,7 +5354,7 @@
             this.labelAlSection8000.Multiline = true;
             this.labelAlSection8000.Name = "labelAlSection8000";
             this.labelAlSection8000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection8000.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection8000.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection8000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel32
@@ -5801,7 +5808,7 @@
             this.labelAlSection8010.Multiline = true;
             this.labelAlSection8010.Name = "labelAlSection8010";
             this.labelAlSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection8010.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection8010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection8010
@@ -5810,7 +5817,7 @@
             this.labelInizioAnnoSection8010.Multiline = true;
             this.labelInizioAnnoSection8010.Name = "labelInizioAnnoSection8010";
             this.labelInizioAnnoSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection8010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection8010
             // 
@@ -5818,7 +5825,7 @@
             this.labelAcquistoSection8010.Multiline = true;
             this.labelAcquistoSection8010.Name = "labelAcquistoSection8010";
             this.labelAcquistoSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection8010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel69
             // 
@@ -6019,7 +6026,7 @@
             this.labelCapitaleSection8010.Multiline = true;
             this.labelCapitaleSection8010.Name = "labelCapitaleSection8010";
             this.labelCapitaleSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection8010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInteressiSection8010
             // 
@@ -6027,7 +6034,7 @@
             this.labelInteressiSection8010.Multiline = true;
             this.labelInteressiSection8010.Name = "labelInteressiSection8010";
             this.labelInteressiSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection8010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelTotaleSection8010
             // 
@@ -6035,7 +6042,7 @@
             this.labelTotaleSection8010.Multiline = true;
             this.labelTotaleSection8010.Name = "labelTotaleSection8010";
             this.labelTotaleSection8010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection8010.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection8010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel90
             // 
@@ -6484,7 +6491,7 @@
             this.labelTotaleSection8020.Multiline = true;
             this.labelTotaleSection8020.Name = "labelTotaleSection8020";
             this.labelTotaleSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection8020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInteressiSection8020
             // 
@@ -6492,7 +6499,7 @@
             this.labelInteressiSection8020.Multiline = true;
             this.labelInteressiSection8020.Name = "labelInteressiSection8020";
             this.labelInteressiSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection8020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelCapitaleSection8020
             // 
@@ -6500,7 +6507,7 @@
             this.labelCapitaleSection8020.Multiline = true;
             this.labelCapitaleSection8020.Name = "labelCapitaleSection8020";
             this.labelCapitaleSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection8020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel103
             // 
@@ -6701,7 +6708,7 @@
             this.labelAcquistoSection8020.Multiline = true;
             this.labelAcquistoSection8020.Name = "labelAcquistoSection8020";
             this.labelAcquistoSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection8020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection8020
             // 
@@ -6709,7 +6716,7 @@
             this.labelInizioAnnoSection8020.Multiline = true;
             this.labelInizioAnnoSection8020.Name = "labelInizioAnnoSection8020";
             this.labelInizioAnnoSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection8020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection8020
             // 
@@ -6719,7 +6726,7 @@
             this.labelAlSection8020.Multiline = true;
             this.labelAlSection8020.Name = "labelAlSection8020";
             this.labelAlSection8020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection8020.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection8020.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection8020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel124
@@ -7151,7 +7158,7 @@
             this.labelAlSection8030.Multiline = true;
             this.labelAlSection8030.Name = "labelAlSection8030";
             this.labelAlSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection8030.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection8030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection8030
@@ -7160,7 +7167,7 @@
             this.labelInizioAnnoSection8030.Multiline = true;
             this.labelInizioAnnoSection8030.Name = "labelInizioAnnoSection8030";
             this.labelInizioAnnoSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection8030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection8030
             // 
@@ -7168,7 +7175,7 @@
             this.labelAcquistoSection8030.Multiline = true;
             this.labelAcquistoSection8030.Name = "labelAcquistoSection8030";
             this.labelAcquistoSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection8030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel136
             // 
@@ -7369,7 +7376,7 @@
             this.labelCapitaleSection8030.Multiline = true;
             this.labelCapitaleSection8030.Name = "labelCapitaleSection8030";
             this.labelCapitaleSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection8030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInteressiSection8030
             // 
@@ -7377,7 +7384,7 @@
             this.labelInteressiSection8030.Multiline = true;
             this.labelInteressiSection8030.Name = "labelInteressiSection8030";
             this.labelInteressiSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection8030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelTotaleSection8030
             // 
@@ -7385,7 +7392,7 @@
             this.labelTotaleSection8030.Multiline = true;
             this.labelTotaleSection8030.Name = "labelTotaleSection8030";
             this.labelTotaleSection8030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection8030.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection8030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel157
             // 
@@ -7788,7 +7795,7 @@
             this.labelTotaleSection8040.Multiline = true;
             this.labelTotaleSection8040.Name = "labelTotaleSection8040";
             this.labelTotaleSection8040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection8040.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection8040.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelCapitaleSection8040
             // 
@@ -7796,7 +7803,7 @@
             this.labelCapitaleSection8040.Multiline = true;
             this.labelCapitaleSection8040.Name = "labelCapitaleSection8040";
             this.labelCapitaleSection8040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection8040.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection8040.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel155
             // 
@@ -7997,7 +8004,7 @@
             this.labelAcquistoSection8040.Multiline = true;
             this.labelAcquistoSection8040.Name = "labelAcquistoSection8040";
             this.labelAcquistoSection8040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection8040.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection8040.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection8040
             // 
@@ -8005,7 +8012,7 @@
             this.labelInizioAnnoSection8040.Multiline = true;
             this.labelInizioAnnoSection8040.Name = "labelInizioAnnoSection8040";
             this.labelInizioAnnoSection8040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection8040.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection8040.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection8040
             // 
@@ -8015,7 +8022,7 @@
             this.labelAlSection8040.Multiline = true;
             this.labelAlSection8040.Name = "labelAlSection8040";
             this.labelAlSection8040.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection8040.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection8040.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection8040.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel185
@@ -10412,7 +10419,7 @@
             this.labelAlSection9010.Multiline = true;
             this.labelAlSection9010.Name = "labelAlSection9010";
             this.labelAlSection9010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection9010.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection9010.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection9010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection9010
@@ -10421,7 +10428,7 @@
             this.labelInizioAnnoSection9010.Multiline = true;
             this.labelInizioAnnoSection9010.Name = "labelInizioAnnoSection9010";
             this.labelInizioAnnoSection9010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection9010.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection9010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection9010
             // 
@@ -10429,7 +10436,7 @@
             this.labelAcquistoSection9010.Multiline = true;
             this.labelAcquistoSection9010.Name = "labelAcquistoSection9010";
             this.labelAcquistoSection9010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection9010.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection9010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel190
             // 
@@ -11757,14 +11764,14 @@
             // 
             // gridContentStyleBoldItalic
             // 
-            this.gridContentStyleBoldItalic.Font = new DevExpress.Drawing.DXFont("Arial", 7F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
+            this.gridContentStyleBoldItalic.Font = new DevExpress.Drawing.DXFont("Arial", 8F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
             this.gridContentStyleBoldItalic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleBoldItalic.Name = "gridContentStyleBoldItalic";
             this.gridContentStyleBoldItalic.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // gridContentStyleRightAlignBoldItalic
             // 
-            this.gridContentStyleRightAlignBoldItalic.Font = new DevExpress.Drawing.DXFont("Arial", 7F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
+            this.gridContentStyleRightAlignBoldItalic.Font = new DevExpress.Drawing.DXFont("Arial", 8F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
             this.gridContentStyleRightAlignBoldItalic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleRightAlignBoldItalic.Name = "gridContentStyleRightAlignBoldItalic";
             this.gridContentStyleRightAlignBoldItalic.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
@@ -12536,7 +12543,7 @@
             // 
             // gridContentStyleCenter
             // 
-            this.gridContentStyleCenter.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyleCenter.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.gridContentStyleCenter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.gridContentStyleCenter.Name = "gridContentStyleCenter";
             this.gridContentStyleCenter.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -12631,7 +12638,7 @@
             this.labelCapitaleSection9020.Multiline = true;
             this.labelCapitaleSection9020.Name = "labelCapitaleSection9020";
             this.labelCapitaleSection9020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection9020.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection9020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelTotaleSection9020
             // 
@@ -12639,7 +12646,7 @@
             this.labelTotaleSection9020.Multiline = true;
             this.labelTotaleSection9020.Name = "labelTotaleSection9020";
             this.labelTotaleSection9020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection9020.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection9020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel1
             // 
@@ -12901,7 +12908,7 @@
             this.labelAcquistoSection9020.Multiline = true;
             this.labelAcquistoSection9020.Name = "labelAcquistoSection9020";
             this.labelAcquistoSection9020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection9020.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection9020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection9020
             // 
@@ -12909,7 +12916,7 @@
             this.labelInizioAnnoSection9020.Multiline = true;
             this.labelInizioAnnoSection9020.Name = "labelInizioAnnoSection9020";
             this.labelInizioAnnoSection9020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection9020.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection9020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAlSection9020
             // 
@@ -12919,7 +12926,7 @@
             this.labelInizioAlSection9020.Multiline = true;
             this.labelInizioAlSection9020.Name = "labelInizioAlSection9020";
             this.labelInizioAlSection9020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAlSection9020.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAlSection9020.StyleName = "gridContentStyleRightAlignSmall";
             this.labelInizioAlSection9020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel235
@@ -13185,7 +13192,7 @@
             this.labelTotaleSection9030.Multiline = true;
             this.labelTotaleSection9030.Name = "labelTotaleSection9030";
             this.labelTotaleSection9030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection9030.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection9030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel2
             // 
@@ -13203,7 +13210,7 @@
             this.labelCapitaleSection9030.Multiline = true;
             this.labelCapitaleSection9030.Name = "labelCapitaleSection9030";
             this.labelCapitaleSection9030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection9030.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection9030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel232
             // 
@@ -13243,7 +13250,7 @@
             this.labelAlSection9030.Multiline = true;
             this.labelAlSection9030.Name = "labelAlSection9030";
             this.labelAlSection9030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection9030.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection9030.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection9030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection9030
@@ -13252,7 +13259,7 @@
             this.labelInizioAnnoSection9030.Multiline = true;
             this.labelInizioAnnoSection9030.Name = "labelInizioAnnoSection9030";
             this.labelInizioAnnoSection9030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection9030.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection9030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection9030
             // 
@@ -13260,7 +13267,7 @@
             this.labelAcquistoSection9030.Multiline = true;
             this.labelAcquistoSection9030.Name = "labelAcquistoSection9030";
             this.labelAcquistoSection9030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection9030.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection9030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel242
             // 
@@ -14822,7 +14829,7 @@
             this.labelAcquistoSection7050.Multiline = true;
             this.labelAcquistoSection7050.Name = "labelAcquistoSection7050";
             this.labelAcquistoSection7050.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection7050.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection7050.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection7050
             // 
@@ -14830,7 +14837,7 @@
             this.labelInizioAnnoSection7050.Multiline = true;
             this.labelInizioAnnoSection7050.Name = "labelInizioAnnoSection7050";
             this.labelInizioAnnoSection7050.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection7050.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection7050.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection7050
             // 
@@ -14840,7 +14847,7 @@
             this.labelAlSection7050.Multiline = true;
             this.labelAlSection7050.Name = "labelAlSection7050";
             this.labelAlSection7050.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection7050.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection7050.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection7050.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel324
@@ -15117,7 +15124,7 @@
             this.labelInteressiSection7010.Multiline = true;
             this.labelInteressiSection7010.Name = "labelInteressiSection7010";
             this.labelInteressiSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection7010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel282
             // 
@@ -15157,7 +15164,7 @@
             this.labelAlSection7010.Multiline = true;
             this.labelAlSection7010.Name = "labelAlSection7010";
             this.labelAlSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection7010.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection7010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection7010
@@ -15166,7 +15173,7 @@
             this.labelInizioAnnoSection7010.Multiline = true;
             this.labelInizioAnnoSection7010.Name = "labelInizioAnnoSection7010";
             this.labelInizioAnnoSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection7010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection7010
             // 
@@ -15174,7 +15181,7 @@
             this.labelAcquistoSection7010.Multiline = true;
             this.labelAcquistoSection7010.Name = "labelAcquistoSection7010";
             this.labelAcquistoSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection7010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel289
             // 
@@ -15380,7 +15387,7 @@
             this.labelCapitaleSection7010.Multiline = true;
             this.labelCapitaleSection7010.Name = "labelCapitaleSection7010";
             this.labelCapitaleSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection7010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelTotaleSection7010
             // 
@@ -15388,7 +15395,7 @@
             this.labelTotaleSection7010.Multiline = true;
             this.labelTotaleSection7010.Name = "labelTotaleSection7010";
             this.labelTotaleSection7010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection7010.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection7010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel331
             // 
@@ -16827,7 +16834,7 @@
             this.labelAcquistoSection11000.Multiline = true;
             this.labelAcquistoSection11000.Name = "labelAcquistoSection11000";
             this.labelAcquistoSection11000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection11000.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection11000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labellnizioAnnoSection11000
             // 
@@ -16835,7 +16842,7 @@
             this.labellnizioAnnoSection11000.Multiline = true;
             this.labellnizioAnnoSection11000.Name = "labellnizioAnnoSection11000";
             this.labellnizioAnnoSection11000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labellnizioAnnoSection11000.StyleName = "gridContentStyleRightAlign";
+            this.labellnizioAnnoSection11000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection11000
             // 
@@ -16845,7 +16852,7 @@
             this.labelAlSection11000.Multiline = true;
             this.labelAlSection11000.Name = "labelAlSection11000";
             this.labelAlSection11000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection11000.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection11000.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection11000.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel374
@@ -16884,7 +16891,7 @@
             this.labelCapitaleSection11000.Multiline = true;
             this.labelCapitaleSection11000.Name = "labelCapitaleSection11000";
             this.labelCapitaleSection11000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection11000.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection11000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel378
             // 
@@ -16903,7 +16910,7 @@
             this.labelTotaleSection11000.Multiline = true;
             this.labelTotaleSection11000.Name = "labelTotaleSection11000";
             this.labelTotaleSection11000.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection11000.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection11000.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // GroupHeaderBandSection11000
             // 
@@ -17211,7 +17218,7 @@
             this.labelTotaleSection11010.Multiline = true;
             this.labelTotaleSection11010.Name = "labelTotaleSection11010";
             this.labelTotaleSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection11010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInteressiSection11010
             // 
@@ -17219,7 +17226,7 @@
             this.labelInteressiSection11010.Multiline = true;
             this.labelInteressiSection11010.Name = "labelInteressiSection11010";
             this.labelInteressiSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInteressiSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelInteressiSection11010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelCapitaleSection11010
             // 
@@ -17227,7 +17234,7 @@
             this.labelCapitaleSection11010.Multiline = true;
             this.labelCapitaleSection11010.Name = "labelCapitaleSection11010";
             this.labelCapitaleSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection11010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel383
             // 
@@ -17433,7 +17440,7 @@
             this.labelAcquistoSection11010.Multiline = true;
             this.labelAcquistoSection11010.Name = "labelAcquistoSection11010";
             this.labelAcquistoSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection11010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection11010
             // 
@@ -17441,7 +17448,7 @@
             this.labelInizioAnnoSection11010.Multiline = true;
             this.labelInizioAnnoSection11010.Name = "labelInizioAnnoSection11010";
             this.labelInizioAnnoSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection11010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection11010
             // 
@@ -17451,7 +17458,7 @@
             this.labelAlSection11010.Multiline = true;
             this.labelAlSection11010.Name = "labelAlSection11010";
             this.labelAlSection11010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection11010.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection11010.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection11010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel406
@@ -17755,7 +17762,7 @@
             this.labelTotaleSection11020.Multiline = true;
             this.labelTotaleSection11020.Name = "labelTotaleSection11020";
             this.labelTotaleSection11020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection11020.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection11020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel380
             // 
@@ -17774,7 +17781,7 @@
             this.labelCapitaleSection11020.Multiline = true;
             this.labelCapitaleSection11020.Name = "labelCapitaleSection11020";
             this.labelCapitaleSection11020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection11020.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection11020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel382
             // 
@@ -17814,7 +17821,7 @@
             this.labelAlSection11020.Multiline = true;
             this.labelAlSection11020.Name = "labelAlSection11020";
             this.labelAlSection11020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection11020.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection11020.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection11020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection11020
@@ -17823,7 +17830,7 @@
             this.labelInizioAnnoSection11020.Multiline = true;
             this.labelInizioAnnoSection11020.Name = "labelInizioAnnoSection11020";
             this.labelInizioAnnoSection11020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection11020.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection11020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection11020
             // 
@@ -17831,7 +17838,7 @@
             this.labelAcquistoSection11020.Multiline = true;
             this.labelAcquistoSection11020.Name = "labelAcquistoSection11020";
             this.labelAcquistoSection11020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection11020.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection11020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel411
             // 
@@ -18311,7 +18318,7 @@
             this.labelTotaleSection11030.Multiline = true;
             this.labelTotaleSection11030.Name = "labelTotaleSection11030";
             this.labelTotaleSection11030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection11030.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection11030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel434
             // 
@@ -18330,7 +18337,7 @@
             this.labelCapitaleSection11030.Multiline = true;
             this.labelCapitaleSection11030.Name = "labelCapitaleSection11030";
             this.labelCapitaleSection11030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection11030.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection11030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel436
             // 
@@ -18370,7 +18377,7 @@
             this.labelAlSection11030.Multiline = true;
             this.labelAlSection11030.Name = "labelAlSection11030";
             this.labelAlSection11030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection11030.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection11030.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection11030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection11030
@@ -18379,7 +18386,7 @@
             this.labelInizioAnnoSection11030.Multiline = true;
             this.labelInizioAnnoSection11030.Name = "labelInizioAnnoSection11030";
             this.labelInizioAnnoSection11030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection11030.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection11030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection11030
             // 
@@ -18387,7 +18394,7 @@
             this.labelAcquistoSection11030.Multiline = true;
             this.labelAcquistoSection11030.Name = "labelAcquistoSection11030";
             this.labelAcquistoSection11030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection11030.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection11030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel442
             // 
@@ -19981,7 +19988,7 @@
             this.labelAcquistoSection10010.Multiline = true;
             this.labelAcquistoSection10010.Name = "labelAcquistoSection10010";
             this.labelAcquistoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection10010.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection10010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection10010
             // 
@@ -19989,7 +19996,7 @@
             this.labelInizioAnnoSection10010.Multiline = true;
             this.labelInizioAnnoSection10010.Name = "labelInizioAnnoSection10010";
             this.labelInizioAnnoSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection10010.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection10010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection10010
             // 
@@ -19999,7 +20006,7 @@
             this.labelAlSection10010.Multiline = true;
             this.labelAlSection10010.Name = "labelAlSection10010";
             this.labelAlSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection10010.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection10010.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection10010.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel499
@@ -20038,7 +20045,7 @@
             this.labelCapitaleSection10010.Multiline = true;
             this.labelCapitaleSection10010.Name = "labelCapitaleSection10010";
             this.labelCapitaleSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection10010.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection10010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel503
             // 
@@ -20057,7 +20064,7 @@
             this.labelTotaleSection10010.Multiline = true;
             this.labelTotaleSection10010.Name = "labelTotaleSection10010";
             this.labelTotaleSection10010.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection10010.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection10010.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // GroupFooterBandSection10010
             // 
@@ -20296,7 +20303,7 @@
             this.labelTotaleSection10020.Multiline = true;
             this.labelTotaleSection10020.Name = "labelTotaleSection10020";
             this.labelTotaleSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelTotaleSection10020.StyleName = "gridContentStyleRightAlign";
+            this.labelTotaleSection10020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel496
             // 
@@ -20315,7 +20322,7 @@
             this.labelCapitaleSection10020.Multiline = true;
             this.labelCapitaleSection10020.Name = "labelCapitaleSection10020";
             this.labelCapitaleSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelCapitaleSection10020.StyleName = "gridContentStyleRightAlign";
+            this.labelCapitaleSection10020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel498
             // 
@@ -20355,7 +20362,7 @@
             this.labelAlSection10020.Multiline = true;
             this.labelAlSection10020.Name = "labelAlSection10020";
             this.labelAlSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection10020.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection10020.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection10020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // labelInizioAnnoSection10020
@@ -20364,7 +20371,7 @@
             this.labelInizioAnnoSection10020.Multiline = true;
             this.labelInizioAnnoSection10020.Name = "labelInizioAnnoSection10020";
             this.labelInizioAnnoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection10020.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection10020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAcquistoSection10020
             // 
@@ -20372,7 +20379,7 @@
             this.labelAcquistoSection10020.Multiline = true;
             this.labelAcquistoSection10020.Name = "labelAcquistoSection10020";
             this.labelAcquistoSection10020.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection10020.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection10020.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // xrLabel508
             // 
@@ -21081,7 +21088,7 @@
             this.labelAcquistoSection10030.Multiline = true;
             this.labelAcquistoSection10030.Name = "labelAcquistoSection10030";
             this.labelAcquistoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAcquistoSection10030.StyleName = "gridContentStyleRightAlign";
+            this.labelAcquistoSection10030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelInizioAnnoSection10030
             // 
@@ -21089,7 +21096,7 @@
             this.labelInizioAnnoSection10030.Multiline = true;
             this.labelInizioAnnoSection10030.Name = "labelInizioAnnoSection10030";
             this.labelInizioAnnoSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelInizioAnnoSection10030.StyleName = "gridContentStyleRightAlign";
+            this.labelInizioAnnoSection10030.StyleName = "gridContentStyleRightAlignSmall";
             // 
             // labelAlSection10030
             // 
@@ -21099,7 +21106,7 @@
             this.labelAlSection10030.Multiline = true;
             this.labelAlSection10030.Name = "labelAlSection10030";
             this.labelAlSection10030.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.labelAlSection10030.StyleName = "gridContentStyleRightAlign";
+            this.labelAlSection10030.StyleName = "gridContentStyleRightAlignSmall";
             this.labelAlSection10030.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.injectDateAfterLabelText_BeforePrint);
             // 
             // xrLabel548
@@ -22615,6 +22622,55 @@
             this.labelHeaderSection12020.StyleName = "sectionHeader";
             this.labelHeaderSection12020.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.checkSection120CaptionVisibility_BeforePrint);
             // 
+            // gridContentStyleSmall
+            // 
+            this.gridContentStyleSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyleSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleSmall.Name = "gridContentStyleSmall";
+            this.gridContentStyleSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // gridContentStyleBoldSmall
+            // 
+            this.gridContentStyleBoldSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.gridContentStyleBoldSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleBoldSmall.Name = "gridContentStyleBoldSmall";
+            this.gridContentStyleBoldSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // gridContentStyleBoldItalicSmall
+            // 
+            this.gridContentStyleBoldItalicSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
+            this.gridContentStyleBoldItalicSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleBoldItalicSmall.Name = "gridContentStyleBoldItalicSmall";
+            this.gridContentStyleBoldItalicSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            // 
+            // gridContentStyleCenterSmall
+            // 
+            this.gridContentStyleCenterSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyleCenterSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleCenterSmall.Name = "gridContentStyleCenterSmall";
+            this.gridContentStyleCenterSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // gridContentStyleRightAlignSmall
+            // 
+            this.gridContentStyleRightAlignSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F);
+            this.gridContentStyleRightAlignSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleRightAlignSmall.Name = "gridContentStyleRightAlignSmall";
+            this.gridContentStyleRightAlignSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // gridContentStyleRightAlignBoldSmall
+            // 
+            this.gridContentStyleRightAlignBoldSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.gridContentStyleRightAlignBoldSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleRightAlignBoldSmall.Name = "gridContentStyleRightAlignBoldSmall";
+            this.gridContentStyleRightAlignBoldSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // gridContentStyleRightAlignBoldItalicSmall
+            // 
+            this.gridContentStyleRightAlignBoldItalicSmall.Font = new DevExpress.Drawing.DXFont("Arial", 7F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Italic))));
+            this.gridContentStyleRightAlignBoldItalicSmall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.gridContentStyleRightAlignBoldItalicSmall.Name = "gridContentStyleRightAlignBoldItalicSmall";
+            this.gridContentStyleRightAlignBoldItalicSmall.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
             // ReportPSE
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -22732,7 +22788,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1550F, 136.18F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection16010, "Default", "SizeF", new System.Drawing.SizeF(1203.71F, 995.82F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1550F, 155.18F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1550F, 136.18F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "Series.1.Label.TextPattern", "{V}%"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection17010, "Default", "SizeF", new System.Drawing.SizeF(1203.71F, 995.82F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.chartSection20010, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0.1895879F, 534.7503F)),
@@ -22965,7 +23021,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentValoreMercatoSection20020, "Default", "Text", "contentValoreMercatoSection20020"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contentValoreMercatoSection20020, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contiSection7000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(0F, 3.999756F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.contiSection7000, "Default", "SizeF", new System.Drawing.SizeF(264.8501F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.contiSection7000, "Default", "SizeF", new System.Drawing.SizeF(300.0004F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.contiSection7000, "Default", "Text", "contiSection7000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.currencyToApply, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2241.45F, 107.0208F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.currencyToApply, "Default", "SizeF", new System.Drawing.SizeF(246F, 58.42F)),
@@ -23048,7 +23104,7 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection16000, "Default", "HeightF", 250.2917F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection16010, "Default", "HeightF", 1158.797F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection17000, "Default", "HeightF", 250.2917F),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection17010, "Default", "HeightF", 1161.392F),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection17010, "Default", "HeightF", 1148.84F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection19000, "Default", "HeightF", 275.2917F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection19010, "Default", "HeightF", 431.1232F),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.GroupHeaderBandSection2000, "Default", "HeightF", 251.4217F),
@@ -25127,8 +25183,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineSeparator19000, "Default", "SizeF", new System.Drawing.SizeF(1315F, 5F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineUpperSection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(5F, 0F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.lineUpperSection4000, "Default", "SizeF", new System.Drawing.SizeF(1523.399F, 5F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(731.9999F, 13.58057F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "SizeF", new System.Drawing.SizeF(285.4548F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(750.5204F, 13.58057F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "SizeF", new System.Drawing.SizeF(266.934F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "Text", ""),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValue16000, "Default", "TextFormatString", "{0:N2}"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.marketValueReportingCurrencySection4000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(928.6878F, 71.16675F)),
@@ -25307,8 +25363,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section9020Separator, "Default", "SizeF", new System.Drawing.SizeF(399.5212F, 42.33333F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section9030Separator, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(2357.146F, 47.73772F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.section9030Separator, "Default", "SizeF", new System.Drawing.SizeF(399.5212F, 42.33333F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.sector16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(134.9375F, 13.57927F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.sector16000, "Default", "SizeF", new System.Drawing.SizeF(597.0624F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.sector16000, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(134.9372F, 13.57798F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.sector16000, "Default", "SizeF", new System.Drawing.SizeF(615.5832F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.sector16000, "Default", "Text", ""),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.subSection17000LineGridDown, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(3F, 60F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.subSection17000LineGridDown, "Default", "SizeF", new System.Drawing.SizeF(1185.961F, 5F)),
@@ -27223,8 +27279,8 @@
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "SizeF", new System.Drawing.SizeF(216.94F, 48.42F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "Text", "xrLabel37"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel544, "Default", "TextFormatString", "{0:N3}"),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(264.8543F, 3.999756F)),
-            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "SizeF", new System.Drawing.SizeF(653.526F, 50F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(300.0001F, 3.999756F)),
+            new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "SizeF", new System.Drawing.SizeF(618.3802F, 50F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel545, "Default", "Text", "contiSection7000"),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel546, "Default", "LocationFloat", new DevExpress.Utils.PointFloat(1021.92F, 3.999756F)),
             new DevExpress.XtraReports.Localization.LocalizationItem(this.xrLabel546, "Default", "SizeF", new System.Drawing.SizeF(257.67F, 50F)),
@@ -27945,7 +28001,14 @@
             this.labelESGProfileSelected,
             this.reportContentStyleBoldRightAlign,
             this.reportContentStyleRightAlign,
-            this.reportContentStyleItalicRightAlign});
+            this.reportContentStyleItalicRightAlign,
+            this.gridContentStyleSmall,
+            this.gridContentStyleBoldSmall,
+            this.gridContentStyleBoldItalicSmall,
+            this.gridContentStyleCenterSmall,
+            this.gridContentStyleRightAlignSmall,
+            this.gridContentStyleRightAlignBoldSmall,
+            this.gridContentStyleRightAlignBoldItalicSmall});
             this.Version = "24.2";
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
@@ -29797,5 +29860,12 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel586;
         private DevExpress.XtraReports.UI.XRLabel xrLabel587;
         private DevExpress.XtraReports.UI.XRLabel xrLabel588;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleBoldSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleBoldItalicSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleCenterSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleRightAlignSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleRightAlignBoldSmall;
+        private DevExpress.XtraReports.UI.XRControlStyle gridContentStyleRightAlignBoldItalicSmall;
     }
 }
